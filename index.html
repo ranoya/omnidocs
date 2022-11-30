@@ -68,7 +68,7 @@
     <meta name="msapplication-navbutton-color" content="#000000" />
     <meta name="apple-mobile-web-app-status-bar-style" content="#000000" />
 
-    <script src="https://poepalette.vercel.app/poeinstance.js"></script>
+    <script src="./dev/custompoeinstance.js"></script>
 
     <style>
       #ativapoe {
@@ -100,21 +100,6 @@
     </style>
 
     <script>
-      $_GET = [];
-      (function () {
-        corte = window.location.href.toString().indexOf("?");
-        if (corte > 0) {
-          argumento = window.location.href.toString().substring(corte + 1);
-          argumentos = argumento.split("&");
-          for (arg in argumentos) {
-            let argCorte = argumentos[arg].indexOf("=");
-            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
-              arg
-            ].substring(argCorte + 1);
-          }
-        }
-      })();
-
       let be = function (url) {
         if (typeof url != "undefined" && url != "" && url != null) {
           document.getElementById("base").src = url;
@@ -122,33 +107,11 @@
           document.getElementById("base").src = "./docs/open.html";
         }
       };
-
-      atvpoe = function (e) {
-        e = e || event;
-        keymapping[e.keyCode] = e.type == "keydown";
-
-        // ctrl+shift+p
-        if (
-          ((keymapping[93] || keymapping[91]) &&
-            keymapping[80] &&
-            keymapping[16]) ||
-          ((keymapping[93] || keymapping[91]) && keymapping[75])
-        ) {
-          keymapping[93] = false;
-          keymapping[91] = false;
-          keymapping[75] = false;
-          keymapping[80] = false;
-          keymapping[16] = false;
-          toggle("poeinst");
-        }
-      };
     </script>
   </head>
 
   <body style="background-color: #000000; padding: 0; margin: 0">
     <iframe
-      onkeydown="atvpoe(e)"
-      onkeyup="atvpoe(e)"
       id="base"
       frameborder="0"
       style="
