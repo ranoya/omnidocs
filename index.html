@@ -1,1 +1,183 @@
-hello world
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="" />
+    <title>OMNIDOCS</title>
+    <meta property="og:title" content="OMNIDOCS" />
+    <meta name="generator" content="POE" />
+    <meta
+      name="description"
+      content="Compilação de documentos, materiais e produtos desenvolvidos pelo prof. Guilherme Ranoya"
+    />
+    <meta
+      property="og:description"
+      content="Compilação de documentos, materiais e produtos desenvolvidos pelo prof. Guilherme Ranoya"
+    />
+    <meta name="author" content="Guilherme Ranoya" />
+    <meta property="og:url" content="https://omnidocs.vercel.app" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:site_name" content="ranoya.com" />
+    <meta name="application-name" content="ranoya.com" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image" content="./assets/omnidocs600.jpg" />
+    <meta property="og:image:secure_url" content="./assets/omnidocs600.jpg" />
+    <link rel="image_src" type="image/jpg" href="./assets/omnidocs600.jpg" />
+    <link rel="icon" type="image/png" href="./assets/omnidocs16.png" />
+    <link rel="shortcut icon" href="./assets/omnidocs57.png" />
+    <link rel="apple-touch-icon" href="./assets/omnidocs57.png" />
+    <link rel="apple-touch-icon" href="./assets/omnidocs72.png" sizes="72x72" />
+    <link
+      rel="apple-touch-icon"
+      href="./assets/omnidocs114.png"
+      sizes="114x114"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="./assets/omnidocs144.png"
+      sizes="144x144"
+    />
+    <meta
+      name="msapplication-square70x70logo"
+      content="./assets/omnidocs70.png"
+    />
+    <meta
+      name="msapplication-square150x150logo"
+      content="./assets/omnidocs150.png"
+    />
+    <meta
+      name="msapplication-wide310x150logo"
+      content="./assets/omnidocs310x150.png"
+    />
+    <meta
+      name="msapplication-square310x310logo"
+      content="./assets/omnidocs310.png"
+    />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-navbutton-color" content="#000000" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000000" />
+
+    <script src="https://poepalette.vercel.app/poeinstance.js"></script>
+
+    <style>
+      #ativapoe {
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        z-index: 10;
+        right: 15px;
+        top: calc(50vh - 25px);
+      }
+
+      #ativapoe:hover #buttombase {
+        fill: red;
+      }
+    </style>
+
+    <script>
+      $_GET = [];
+      (function () {
+        corte = window.location.href.toString().indexOf("?");
+        if (corte > 0) {
+          argumento = window.location.href.toString().substring(corte + 1);
+          argumentos = argumento.split("&");
+          for (arg in argumentos) {
+            let argCorte = argumentos[arg].indexOf("=");
+            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+              arg
+            ].substring(argCorte + 1);
+          }
+        }
+      })();
+
+      let be = function (url) {
+        if (typeof url != "undefined" && url != "" && url != null) {
+          document.getElementById("base").src = url;
+        } else {
+          document.getElementById("base").src = "./docs/open.html";
+        }
+      };
+    </script>
+  </head>
+
+  <body style="background-color: #000000; padding: 0; margin: 0">
+    <iframe
+      id="base"
+      frameborder="0"
+      style="
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        outline: 0;
+      "
+    ></iframe>
+
+    <a id="ativapoe" href="javascript:toggle('poeinst');"
+      ><svg
+        style="width: 100%; height: 100%"
+        viewBox="0 0 1896 1703"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          id="buttombase"
+          x="475"
+          y="379"
+          width="946"
+          height="946"
+          fill="#A9A9A9"
+        />
+        <path
+          d="M1031.77 1003.88C1017.1 949.148 1080.32 1009.94 1031.77 1003.88C1044.6 1051.78 1010.86 1123.88 970.052 1134.82C929.242 1145.75 862.074 1093.09 851.139 1052.28C840.204 1011.47 925.607 903.265 1031.77 1003.88Z"
+          fill="white"
+        />
+        <path
+          d="M1121.23 855.343C1066.5 840.676 1150.76 816.321 1121.23 855.343C1169.13 868.176 1214.7 933.446 1203.77 974.256C1192.83 1015.07 1113.65 1046.91 1072.84 1035.97C1032.03 1025.04 981.016 896.97 1121.23 855.343Z"
+          fill="white"
+        />
+        <path
+          d="M773.945 848.544C828.681 863.21 744.423 887.566 773.945 848.544C726.051 835.711 680.475 770.441 691.41 729.63C702.345 688.82 781.534 656.981 822.344 667.916C863.154 678.851 914.163 806.917 773.945 848.544Z"
+          fill="white"
+        />
+        <path
+          d="M857.849 1000.3C897.918 960.227 876.882 1045.37 857.849 1000.3C822.788 1035.36 743.474 1042.19 713.599 1012.32C683.724 982.442 695.745 897.943 725.62 868.068C755.495 838.193 891.908 858.05 857.849 1000.3Z"
+          fill="white"
+        />
+        <path
+          d="M1037.61 702.621C997.543 742.691 1018.58 657.543 1037.61 702.621C1072.67 667.561 1151.99 660.725 1181.86 690.6C1211.74 720.475 1199.72 804.975 1169.84 834.85C1139.97 864.725 1003.55 844.868 1037.61 702.621Z"
+          fill="white"
+        />
+        <path
+          d="M864.233 699.409C878.9 754.145 815.678 693.353 864.233 699.409C851.4 651.516 885.138 579.41 925.948 568.475C966.758 557.54 1033.93 610.2 1044.86 651.01C1055.8 691.82 970.393 800.028 864.233 699.409Z"
+          fill="white"
+        />
+      </svg>
+    </a>
+  </body>
+
+  <script>
+    be($_GET["url"]);
+    startpoe(
+      "https://opensheet.elk.sh/10wpfmMWn3igQF4rJBYCo8OR90igO1tfKwcmrot0ult0/CodeEditors",
+      "https://poepalette.vercel.app/dev/bigblue.css",
+      "https://opensheet.elk.sh/10wpfmMWn3igQF4rJBYCo8OR90igO1tfKwcmrot0ult0/POEPlugins"
+    );
+  </script>
+</html>
