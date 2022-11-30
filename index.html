@@ -69,6 +69,158 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#000000" />
 
     <style>
+      :root {
+        --bg-color: #616161;
+        --line-separator: #697a7b;
+        --text-color: #a7caca;
+        --color-link: #e1e1e1;
+        --color-hover: #a7caca;
+        --input-text: #ffffff;
+        --scroll-track: #ffffff00;
+        --color-shadow: #00000055;
+      }
+
+      #outputs::-webkit-scrollbar {
+        width: 5px;
+        border: 5px solid transparent;
+      }
+
+      #outputs::-webkit-scrollbar-track {
+        background: var(--scroll-track, #ffffff77);
+      }
+
+      #outputs::-webkit-scrollbar-thumb {
+        background: #808080;
+      }
+
+      #outputs::-webkit-scrollbar-thumb:hover {
+        background: var(--color-hover, #34f8d1);
+      }
+
+      #poeinst {
+        position: fixed;
+        width: 420px;
+        left: -420px;
+        top: 0;
+        height: 100vh;
+        transition: all 0.3s ease-in;
+        display: block !important;
+        width: calc(420px - 40px);
+        height: calc(100vh - 40px);
+        padding: 20px;
+        z-index: 9999999999;
+        background-color: var(--bg-color, #000000);
+        color: var(--text-color, #a7caca);
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        line-height: 20px;
+        box-shadow: inset -6px 0 10px 0 var(--color-shadow);
+      }
+
+      #entrada {
+        padding: 4px;
+        padding-left: 8px;
+        padding-right: 8px;
+
+        min-width: 0;
+        height: 50px;
+        font-size: 24px !important;
+        line-height: 30px;
+        width: 100% !important;
+        border: 0;
+        outline: 0;
+        margin-left: -10px;
+        background-color: transparent;
+        color: var(--input-text, #443535);
+        margin-bottom: -10px;
+      }
+
+      #outputs {
+        width: calc(100% + 40px);
+        height: calc(100vh - 136px);
+        display: block;
+        margin-left: -20px;
+        color: var(--fg-color, #d2d2d2);
+        overflow-y: auto;
+        padding-top: 3px;
+      }
+
+      #outputs iframe {
+        width: 100%;
+        height: calc(100vh - 160px);
+      }
+
+      .gridhead {
+        display: grid;
+        grid-template-columns: 1fr [fim];
+        gap: 3px 10px;
+        text-transform: uppercase;
+      }
+
+      .outputgrid {
+        display: grid;
+        grid-template-columns: 1fr [fim];
+        gap: 3px 10px;
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-bottom: 20px;
+      }
+
+      .categoria {
+        grid-column: 1 / fim;
+        margin-top: 16px;
+        border-bottom: 1px solid var(--line-separator, #dddddd);
+        color: var(--text-color, #bbbbbb);
+        text-transform: uppercase;
+        font-size: 11px;
+      }
+
+      .grouplink {
+        padding: 4px 8px 4px 8px;
+        margin: -4px -8px -4px -8px;
+        text-decoration: none;
+        color: var(--text-color, #bbbbbb);
+        font-size: 11px;
+        display: inline-block;
+      }
+
+      .grouplink:hover {
+        background-color: var(--text-color, #bbbbbb);
+        color: var(--bg-color, black);
+      }
+
+      .separaline {
+        grid-column: 1 / fim;
+        margin-top: 16px;
+        border-top: 1px solid var(--line-separator, #dddddd);
+        color: var(--text-color, #bbbbbb);
+        text-transform: uppercase;
+        font-size: 11px;
+        height: 20px;
+      }
+
+      .noline {
+        grid-column: 1 / fim;
+        margin-top: 16px;
+        color: var(--text-color, #bbbbbb);
+        text-transform: uppercase;
+        font-size: 11px;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--color-link, #3498c7);
+        padding: 4px 8px 4px 8px;
+        margin: -4px -8px -4px -8px;
+      }
+
+      a:hover {
+        color: var(--bg-color, #888888);
+        cursor: pointer;
+        background-color: var(--input-text, #ffffff);
+      }
+
       #ativapoe {
         width: 30px;
         height: 30px;
@@ -82,6 +234,20 @@
         overflow: hidden;
       }
 
+      #base {
+        transition: all 0.3s ease-in;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        outline: 0;
+      }
+
       .svg {
         width: 100%;
         height: 100%;
@@ -93,7 +259,7 @@
       }
 
       #ativapoe:hover #buttombase {
-        fill: red;
+        fill: var(--bg-color);
       }
     </style>
 
@@ -109,61 +275,18 @@
   </head>
 
   <body style="background-color: #000000; padding: 0; margin: 0">
-    <iframe
-      id="base"
-      frameborder="0"
-      style="
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100vw;
-        height: 100vh;
-        padding: 0;
-        margin: 0;
-        border: 0;
-        outline: 0;
-      "
-    ></iframe>
+    <iframe id="base" frameborder="0"></iframe>
 
     <a id="ativapoe" href="javascript:toggle('poeinst');"
       ><svg
-        viewBox="0 0 946 946"
+        viewBox="0 0 600 600"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_139_258)">
-          <rect id="buttombase" width="946" height="946" fill="#A9A9A9" />
-          <path
-            d="M556.766 624.884C542.1 570.148 605.322 630.94 556.766 624.884C569.599 672.777 535.862 744.883 495.052 755.818C454.242 766.753 387.073 714.093 376.138 673.283C365.203 632.473 450.607 524.264 556.766 624.884Z"
-            fill="white"
-          />
-          <path
-            d="M646.236 476.341C591.5 461.675 675.758 437.319 646.236 476.341C694.129 489.175 739.706 554.445 728.771 595.255C717.836 636.065 638.647 667.905 597.836 656.97C557.026 646.035 506.017 517.969 646.236 476.341Z"
-            fill="white"
-          />
-          <path
-            d="M298.945 469.544C353.68 484.21 269.422 508.566 298.945 469.544C251.051 456.711 205.474 391.44 216.409 350.63C227.344 309.82 306.534 277.981 347.344 288.916C388.154 299.851 439.163 427.917 298.945 469.544Z"
-            fill="white"
-          />
-          <path
-            d="M382.851 621.297C422.92 581.228 401.884 666.375 382.851 621.297C347.79 656.358 268.476 663.193 238.601 633.318C208.726 603.443 220.747 518.943 250.622 489.068C280.497 459.193 416.91 479.051 382.851 621.297Z"
-            fill="white"
-          />
-          <path
-            d="M562.611 323.62C522.542 363.689 543.579 278.541 562.611 323.62C597.672 288.559 676.986 281.724 706.861 311.599C736.736 341.474 724.716 425.973 694.84 455.848C664.965 485.724 528.553 465.866 562.611 323.62Z"
-            fill="white"
-          />
-          <path
-            d="M389.236 320.408C403.902 375.144 340.681 314.352 389.236 320.408C376.403 272.514 410.14 200.409 450.95 189.474C491.76 178.539 558.929 231.199 569.864 272.009C580.799 312.819 495.395 421.027 389.236 320.408Z"
-            fill="white"
-          />
-        </g>
-        <defs>
-          <clipPath id="clip0_139_258">
-            <rect width="946" height="946" fill="white" />
-          </clipPath>
-        </defs>
+        <rect id="buttombase" width="600" height="600" fill="#A9A9A9" />
+        <rect x="140" y="158" width="320" height="67" fill="white" />
+        <rect x="140" y="266" width="320" height="68" fill="white" />
+        <rect x="140" y="375" width="320" height="67" fill="white" />
       </svg>
     </a>
   </body>
@@ -173,7 +296,7 @@
     be($_GET["url"]);
     startpoe(
       "https://opensheet.elk.sh/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/Materiais",
-      "https://poepalette.vercel.app/dev/bigblue.css",
+      "",
       ""
     );
   </script>

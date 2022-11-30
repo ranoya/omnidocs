@@ -1,6 +1,8 @@
 
 let customcmd = [];
 
+let poeopen = false;
+
 var keymapping = {}; // You could also use an array
 document.getElementById("base").onkeydown = document.getElementById("base").onkeyup = function(e){
     e = e || event;
@@ -20,31 +22,31 @@ document.getElementById("base").onkeydown = document.getElementById("base").onke
 
 
 let toggle = function (who) {
-  if (document.getElementById(who).style.display == "none" || document.getElementById(who).style.display == "") {
-    document.getElementById(who).style.display = "block";
+  if (document.getElementById(who).style.left == "-420px" || !poeopen) {
+
+    poeopen = true;
     keymapping[93] = false;
     keymapping[91] = false;
     keymapping[75] = false;
     keymapping[80] = false;
     keymapping[16] = false;
-    document.getElementById("entrada").focus();
+      document.getElementById("entrada").focus();
+      document.getElementById("poeinst").style.left = 0;
+      document.getElementById("base").style.left = "420px";
   } else {
-    document.getElementById(who).style.display = "none";
+
+    poeopen = false;
     keymapping[93] = false;
     keymapping[91] = false;
     keymapping[75] = false;
     keymapping[80] = false;
-    keymapping[16] = false;
+      keymapping[16] = false;
+      document.getElementById("poeinst").style.left = "-30vw";
+      document.getElementById("base").style.left = 0;
   }
 }
 
 let startpoe = function (json, css, plugins) {
-
-  let lnkcss = document.createElement("link");
-    lnkcss.href = "https://poepalette.vercel.app/dev/instancestyle.css";
-    lnkcss.type = "text/css";
-    lnkcss.rel = "stylesheet";
-    document.head.appendChild(lnkcss);
     
     if (typeof css != "undefined" || css != "" || css != null) {
         let customcss = document.createElement("link");
