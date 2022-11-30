@@ -72,12 +72,26 @@
 
     <style>
       #ativapoe {
-        width: 50px;
-        height: 50px;
+        width: 30px;
+        height: 30px;
         position: fixed;
         z-index: 10;
         right: 15px;
         top: calc(50vh - 25px);
+        margin: 0 !important;
+        padding: 0 !important;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .svg {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        width: 50px;
+        height: 50px;
       }
 
       #ativapoe:hover #buttombase {
@@ -108,11 +122,33 @@
           document.getElementById("base").src = "./docs/open.html";
         }
       };
+
+      atvpoe = function (e) {
+        e = e || event;
+        keymapping[e.keyCode] = e.type == "keydown";
+
+        // ctrl+shift+p
+        if (
+          ((keymapping[93] || keymapping[91]) &&
+            keymapping[80] &&
+            keymapping[16]) ||
+          ((keymapping[93] || keymapping[91]) && keymapping[75])
+        ) {
+          keymapping[93] = false;
+          keymapping[91] = false;
+          keymapping[75] = false;
+          keymapping[80] = false;
+          keymapping[16] = false;
+          toggle("poeinst");
+        }
+      };
     </script>
   </head>
 
   <body style="background-color: #000000; padding: 0; margin: 0">
     <iframe
+      onkeydown="atvpoe(e)"
+      onkeyup="atvpoe(e)"
       id="base"
       frameborder="0"
       style="
@@ -131,43 +167,42 @@
 
     <a id="ativapoe" href="javascript:toggle('poeinst');"
       ><svg
-        style="width: 100%; height: 100%"
-        viewBox="0 0 1896 1703"
+        viewBox="0 0 946 946"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect
-          id="buttombase"
-          x="475"
-          y="379"
-          width="946"
-          height="946"
-          fill="#A9A9A9"
-        />
-        <path
-          d="M1031.77 1003.88C1017.1 949.148 1080.32 1009.94 1031.77 1003.88C1044.6 1051.78 1010.86 1123.88 970.052 1134.82C929.242 1145.75 862.074 1093.09 851.139 1052.28C840.204 1011.47 925.607 903.265 1031.77 1003.88Z"
-          fill="white"
-        />
-        <path
-          d="M1121.23 855.343C1066.5 840.676 1150.76 816.321 1121.23 855.343C1169.13 868.176 1214.7 933.446 1203.77 974.256C1192.83 1015.07 1113.65 1046.91 1072.84 1035.97C1032.03 1025.04 981.016 896.97 1121.23 855.343Z"
-          fill="white"
-        />
-        <path
-          d="M773.945 848.544C828.681 863.21 744.423 887.566 773.945 848.544C726.051 835.711 680.475 770.441 691.41 729.63C702.345 688.82 781.534 656.981 822.344 667.916C863.154 678.851 914.163 806.917 773.945 848.544Z"
-          fill="white"
-        />
-        <path
-          d="M857.849 1000.3C897.918 960.227 876.882 1045.37 857.849 1000.3C822.788 1035.36 743.474 1042.19 713.599 1012.32C683.724 982.442 695.745 897.943 725.62 868.068C755.495 838.193 891.908 858.05 857.849 1000.3Z"
-          fill="white"
-        />
-        <path
-          d="M1037.61 702.621C997.543 742.691 1018.58 657.543 1037.61 702.621C1072.67 667.561 1151.99 660.725 1181.86 690.6C1211.74 720.475 1199.72 804.975 1169.84 834.85C1139.97 864.725 1003.55 844.868 1037.61 702.621Z"
-          fill="white"
-        />
-        <path
-          d="M864.233 699.409C878.9 754.145 815.678 693.353 864.233 699.409C851.4 651.516 885.138 579.41 925.948 568.475C966.758 557.54 1033.93 610.2 1044.86 651.01C1055.8 691.82 970.393 800.028 864.233 699.409Z"
-          fill="white"
-        />
+        <g clip-path="url(#clip0_139_258)">
+          <rect id="buttombase" width="946" height="946" fill="#A9A9A9" />
+          <path
+            d="M556.766 624.884C542.1 570.148 605.322 630.94 556.766 624.884C569.599 672.777 535.862 744.883 495.052 755.818C454.242 766.753 387.073 714.093 376.138 673.283C365.203 632.473 450.607 524.264 556.766 624.884Z"
+            fill="white"
+          />
+          <path
+            d="M646.236 476.341C591.5 461.675 675.758 437.319 646.236 476.341C694.129 489.175 739.706 554.445 728.771 595.255C717.836 636.065 638.647 667.905 597.836 656.97C557.026 646.035 506.017 517.969 646.236 476.341Z"
+            fill="white"
+          />
+          <path
+            d="M298.945 469.544C353.68 484.21 269.422 508.566 298.945 469.544C251.051 456.711 205.474 391.44 216.409 350.63C227.344 309.82 306.534 277.981 347.344 288.916C388.154 299.851 439.163 427.917 298.945 469.544Z"
+            fill="white"
+          />
+          <path
+            d="M382.851 621.297C422.92 581.228 401.884 666.375 382.851 621.297C347.79 656.358 268.476 663.193 238.601 633.318C208.726 603.443 220.747 518.943 250.622 489.068C280.497 459.193 416.91 479.051 382.851 621.297Z"
+            fill="white"
+          />
+          <path
+            d="M562.611 323.62C522.542 363.689 543.579 278.541 562.611 323.62C597.672 288.559 676.986 281.724 706.861 311.599C736.736 341.474 724.716 425.973 694.84 455.848C664.965 485.724 528.553 465.866 562.611 323.62Z"
+            fill="white"
+          />
+          <path
+            d="M389.236 320.408C403.902 375.144 340.681 314.352 389.236 320.408C376.403 272.514 410.14 200.409 450.95 189.474C491.76 178.539 558.929 231.199 569.864 272.009C580.799 312.819 495.395 421.027 389.236 320.408Z"
+            fill="white"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_139_258">
+            <rect width="946" height="946" fill="white" />
+          </clipPath>
+        </defs>
       </svg>
     </a>
   </body>
@@ -175,9 +210,9 @@
   <script>
     be($_GET["url"]);
     startpoe(
-      "https://opensheet.elk.sh/10wpfmMWn3igQF4rJBYCo8OR90igO1tfKwcmrot0ult0/CodeEditors",
+      "https://opensheet.elk.sh/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/Materiais",
       "https://poepalette.vercel.app/dev/bigblue.css",
-      "https://opensheet.elk.sh/10wpfmMWn3igQF4rJBYCo8OR90igO1tfKwcmrot0ult0/POEPlugins"
+      ""
     );
   </script>
 </html>
