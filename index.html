@@ -336,10 +336,39 @@
   <script src="./dev/custompoeinstance.js"></script>
   <script>
     be($_GET["url"]);
-    startpoe(
-      "https://opensheet.elk.sh/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/Materiais",
-      "",
-      ""
-    );
+
+    let estilo = "";
+
+    if (
+      typeof $_GET["css"] != "" &&
+      $_GET["css"] != "" &&
+      $_GET["css"] != null
+    ) {
+      estilo = $_GET["css"];
+    }
+
+    let plugs =
+      "https://opensheet.elk.sh/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/Plugins";
+
+    if (
+      typeof $_GET["plugins"] != "" &&
+      $_GET["plugins"] != "" &&
+      $_GET["plugins"] != null
+    ) {
+      plugs = $_GET["plugs"];
+    }
+
+    let lista =
+      "https://opensheet.elk.sh/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/Materiais";
+
+    if (
+      typeof $_GET["json"] != "" &&
+      $_GET["json"] != "" &&
+      $_GET["json"] != null
+    ) {
+      lista = $_GET["json"];
+    }
+
+    startpoe(lista, estilo, plugs);
   </script>
 </html>

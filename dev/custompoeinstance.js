@@ -165,19 +165,6 @@ let createpoe = function (json, css, plugins) {
           code = "";
         }
 
-        // TODO
-        // CALCULATOR NOT WORKING PROPERLY
-        if (
-          document.getElementById("entrada").value.match(/^[0-9 \+\*\/\-\(\)\^\%\.]+[0-9\)]$/)
-        ) {
-          try {
-            let potencia = document.getElementById("entrada")
-              .value.replace(/([0-9]+)(\^)([0-9]+)/gim, "Math.pow($1,$3)");
-            let xpto = potencia.match(/.*/);
-            code = `<div class="outputgrid">= ` + eval(xpto[0]) + `</div>`;
-          } catch (error) {}
-        }
-
         present(code);
       } else {
         let code = "";
