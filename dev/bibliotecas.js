@@ -17,9 +17,7 @@ let bibliotecas = function (par) {
       let dados = select(jsondata, multipatterncheck_exclude, par);   
       let selectedarr = tags(dados, groupkey, ",");
       let code = `<div class="outputgrid">`;
-          let arr = orderbytemplate(dados, selectedarr, groupkey, [namekey, groupkey, linkkey, typekey]);
-          
-          console.table(arr);
+      let arr = orderbytemplate(dados, selectedarr, groupkey, [namekey, groupkey, linkkey, typekey]);
           
       if (arr.length > 10) {
         for (let c = 0; c < selectedarr.length; c++) {

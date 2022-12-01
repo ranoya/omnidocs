@@ -64,7 +64,7 @@ let startpoe = function (json, css, plugins) {
         fetch(plugins)
           .then((response) => response.json())
           .then((dados) => {
-            console.table(dados);
+            //console.table(dados);
 
             for (i = 0; i < dados.length; i++) {
               customcmd[i] = dados[i].instruction;
@@ -832,8 +832,8 @@ let omnifilterfetchdata = function (arquivojson, el_id) {
 
 // Omnifilter Event Listener Function
 let startomnifilter = function (omnifdados, elemento, funcprocessa) {
-    console.log("Omnifilter: fetch finished");
-    console.table(omnifdados);
+    //console.log("Omnifilter: fetch finished");
+    //console.table(omnifdados);
 
     /**
      *  Add a Listener Funcion filtering JSON data with
@@ -845,7 +845,7 @@ let startomnifilter = function (omnifdados, elemento, funcprocessa) {
         funcprocessa(newomniarray);
     });
 
-    console.log("Omnifilter: filtering event listener started");
+    //console.log("Omnifilter: filtering event listener started");
 
     let newomniarray = select(omnifdados, multipatterncheck_exclude, "");
     funcprocessa(newomniarray);
