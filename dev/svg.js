@@ -1,6 +1,7 @@
 let svg = function (par) {
 
-    let mydata = cfilter(alldata, "tech", "svg");
+    let alldatabycrit = cfilter(alldata, "tech", "svg");
+    let mydata = select(alldatabycrit, multipatterncheck_exclude, par);
 
     let icolecao = tags(mydata, "Group", ",");
 

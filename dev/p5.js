@@ -1,6 +1,7 @@
 let p5 = function (par) {
 
-    let mydata = cfilter(alldata, "tech", "p5");
+    let alldatabycrit = cfilter(alldata, "tech", "p5");
+    let mydata = select(alldatabycrit, multipatterncheck_exclude, par);
 
     let icolecao = tags(mydata, "Group", ",");
 

@@ -1,6 +1,7 @@
 let processing = function (par) {
 
-    let mydata = cfilter(alldata, "tech", "processing");
+    let alldatabycrit = cfilter(alldata, "tech", "processing");
+    let mydata = select(alldatabycrit, multipatterncheck_exclude, par);
 
     let icolecao = tags(mydata, "Group", ",");
 

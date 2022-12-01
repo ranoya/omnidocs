@@ -1,6 +1,7 @@
 let javascript = function (par) {
 
-    let mydata = cfilter(alldata, "tech", "javascript");
+    let alldatabycrit = cfilter(alldata, "tech", "javascript");
+    let mydata = select(alldatabycrit, multipatterncheck_exclude, par);
 
     let icolecao = tags(mydata, "Group", ",");
 

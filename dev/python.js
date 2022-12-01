@@ -1,7 +1,8 @@
 let python = function (par) {
 
-    let mydata = cfilter(alldata, "tech", "python");
-
+    let alldatabycrit = cfilter(alldata, "tech", "python");
+    let mydata = select(alldatabycrit, multipatterncheck_exclude, par);
+    
     let icolecao = tags(mydata, "Group", ",");
 
     let code = `<div class="outputgrid">`;
