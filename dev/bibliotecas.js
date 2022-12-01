@@ -11,8 +11,13 @@ let bibliotecas = function (par) {
 
   fetch(jsonfile)
     .then((response) => response.json())
-    .then((jsondata) => {
-      let dados = select(jsondata, multipatterncheck_exclude, par);
+      .then((jsondata) => {
+        
+          console.table(jsondata);
+          let dados = select(jsondata, multipatterncheck_exclude, par);
+          
+          console.table(dados);
+          
       let selectedarr = tags(dados, groupkey, ",");
       let code = `<div class="outputgrid">`;
       let arr = orderby(dados, selectedarr, groupkey);
