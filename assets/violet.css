@@ -1,10 +1,10 @@
 :root {
-  --bg-color: #621e75;
+  --bg-color: #55355e;
   --line-separator: #713c80;
-  --text-color: #a7caca;
+  --text-color: #e74ff0;
   --color-link: #cea2da;
   --color-hover: #d333ff;
-  --input-text: #c481ff;
+  --input-text: #f0dfff;
   --scroll-track: #ffffff00;
   --color-shadow: #00000055;
 }
