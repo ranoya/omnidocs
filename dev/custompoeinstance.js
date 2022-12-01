@@ -302,7 +302,36 @@ orderby = function (arr, lista, crit) {
   return mynewarr;
 }
 
+orderbytemplate = function (arr, lista, crit, keys) {
+  let mynewarr = [];
+  let myregex = new RegExp();
+  let listacrit = 0;
+  let nomecrit = [];
+  let posicao = 0;
 
+  for (let a = 0; a < arr.length; a++) {
+    listacrit = 0;
+    nomecrit = [];
+    for (let l = 0; l < lista.length; l++) {
+      myregex = new RegExp(lista[l]);
+      if (myregex.test(arr[a][crit])) {
+        nomecrit[listacrit] = lista[l];
+        listacrit++;
+      }
+    }
+
+    for (let lc = 0; lc < listacrit; lc++) {
+      mynewarr[posicao] = {};
+      mynewarr[posicao][keys[0]] = arr[a].Name;
+      mynewarr[posicao][keys[2]] = arr[a].Link;
+      mynewarr[posicao][keys[3]] = arr[a].Type;
+      mynewarr[posicao][keys[1]] = nomecrit[lc];
+      posicao++;
+    }
+  }
+
+  return mynewarr;
+}
 
 /**
  * DataT: small tools for data operations
