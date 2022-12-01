@@ -1,0 +1,63 @@
+let editores = function (par) {
+
+    let jsonfile = `https://opensheet.elk.sh/10wpfmMWn3igQF4rJBYCo8OR90igO1tfKwcmrot0ult0/CodeEditors`;
+    let groupkey = `Group`;
+    
+    fetch(jsonfile).then(response => response.json()).then((dados) => {
+
+        let selectedarr = tags(dados, groupkey, ",");
+
+        let code = `<div class="outputgrid">`;
+            let arr = orderby(dados, selectedarr, "Group");
+
+            if (arr.length > 10) {
+                for (let c = 0; c < selectedarr.length; c++) {
+                    code += `<span class='categoria'><a href='javascript:setinput("${selectedarr[c]}")' class='grouplink'>${selectedarr[c]}</a></span>`;
+
+                    for (let l = 0; l < arr.length; l++) {
+                        if (arr[l]["cat"] == selectedarr[c]) {
+                            if (arr[l]["Type"] == "self") {
+                            code += `<a target='_self' href='javascript:be("${arr[l].Link}"); toggle("poeinst");' class='linksrecursos'>${arr[l].Name}</a>`;
+                            } else if (arr[l]["Type"] == "embed") {
+                            code += `<a target='_self' href='javascript:embed("${arr[l].Link}")' class='linksrecursos'>${arr[l].Name}</a>`;
+                            } else {
+                            code += `<a target='_blank' href='javascript:be("${arr[l].Link}"); toggle("poeinst");' class='linksrecursos'>${arr[l].Name}</a>`;
+                            }
+                        }
+                    }
+                }
+            } else {
+                let ultimoregistro = "";
+                code += `<span class='categoria'>`;
+
+                for (let c = 0; c < selectedarr.length; c++) {
+                    code += `<a href='javascript:setinput("${selectedarr[c]}")' class='grouplink'>${selectedarr[c]}</a> • `;
+                }
+
+                code += `</span>`;
+
+                for (let l = 0; l < arr.length; l++) {
+                    if (arr[l].Link != ultimoregistro) {
+                        if (arr[l]["Type"] == "self") {
+                            code += `<a target='_self' href='javascript:be("${arr[l].Link}"); toggle("poeinst");' class='linksrecursos'>${arr[l].Name}</a>`;
+                        } else if (arr[l]["Type"] == "embed") {
+                            code += `<a target='_self' href='javascript:embed("${arr[l].Link}")' class='linksrecursos'>${arr[l].Name}</a>`;
+                        } else {
+                            code += `<a target='_blank' href='javascript:be("${arr[l].Link}"); toggle("poeinst");' class='linksrecursos'>${arr[l].Name}</a>`;
+                        }
+
+                    ultimoregistro = arr[l].Link;
+                    }
+                }
+            }
+
+            code += `<div>`;
+
+            if (arr.length == 0) {
+                code = "";
+            }
+
+            present(xpto);
+        });
+    
+}
