@@ -9,5 +9,5 @@
   --color-shadow: #00000055;
 }
 #poeinst {
-  background-color: var(--bg-color);
+  background: var(--bg-color);
 }
