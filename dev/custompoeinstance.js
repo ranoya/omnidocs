@@ -225,6 +225,15 @@ let setinput = function (n) {
         
 };
 
+let addinput = function (n) {
+       let z = document.getElementById("entrada").value;
+       document.getElementById("entrada").value = z + " " + n;
+        document
+          .getElementById("entrada")
+          .dispatchEvent(new Event("input", { bubbles: true }));
+        document.getElementById("entrada").focus();
+}
+
 
 // Present results in Poe
 let present = function (code) {
@@ -432,7 +441,7 @@ bfilter = function (arr, crit) {
  * 
  * Ex:
  * 
- * separate = bfilter(oldarray, "active");
+ * separate = cfilter(oldarray, "status", "(.*)ok");
  * 
  */
 
