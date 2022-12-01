@@ -41,7 +41,7 @@ let toggle = function (who) {
     keymapping[75] = false;
     keymapping[80] = false;
       keymapping[16] = false;
-      document.getElementById("poeinst").style.left = "-30vw";
+      document.getElementById("poeinst").style.left = "-420px";
       document.getElementById("base").style.left = 0;
   }
 }
