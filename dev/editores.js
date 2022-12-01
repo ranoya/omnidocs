@@ -57,7 +57,7 @@ let editores = function (par) {
                 code = "";
             }
 
-            present(xpto);
+            present(code);
         });
     
 }
