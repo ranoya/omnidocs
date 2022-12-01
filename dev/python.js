@@ -2,7 +2,7 @@ let python = function (par) {
 
     let mydata = cfilter(alldata, "tech", "python");
 
-    let icolecao = tags(mydataa, "Group", ",");
+    let icolecao = tags(mydata, "Group", ",");
 
     let code = `<div class="outputgrid">`;
         let arr = orderby(mydata, icolecao, "Group");
