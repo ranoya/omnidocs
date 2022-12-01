@@ -12,7 +12,7 @@ let editores = function (par) {
 
             if (arr.length > 10) {
                 for (let c = 0; c < selectedarr.length; c++) {
-                    code += `<span class='categoria'><a href='javascript:setinput("${selectedarr[c]}")' class='grouplink'>${selectedarr[c]}</a></span>`;
+                    code += `<span class='categoria'><a href='javascript:addinput("${selectedarr[c]}")' class='grouplink'>${selectedarr[c]}</a></span>`;
 
                     for (let l = 0; l < arr.length; l++) {
                         if (arr[l]["cat"] == selectedarr[c]) {
@@ -31,7 +31,7 @@ let editores = function (par) {
                 code += `<span class='categoria'>`;
 
                 for (let c = 0; c < selectedarr.length; c++) {
-                    code += `<a href='javascript:setinput("${selectedarr[c]}")' class='grouplink'>${selectedarr[c]}</a> • `;
+                    code += `<a href='javascript:addinput("${selectedarr[c]}")' class='grouplink'>${selectedarr[c]}</a> • `;
                 }
 
                 code += `</span>`;

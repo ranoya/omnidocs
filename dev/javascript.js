@@ -9,7 +9,7 @@ let javascript = function (par) {
 
         if (arr.length > 10) {
           for (let c = 0; c < icolecao.length; c++) {
-            code += `<span class='categoria'><a href='javascript:setinput("${icolecao[c]}")' class='grouplink'>${icolecao[c]}</a></span>`;
+            code += `<span class='categoria'><a href='javascript:addinput("${icolecao[c]}")' class='grouplink'>${icolecao[c]}</a></span>`;
 
             for (let l = 0; l < arr.length; l++) {
               if (arr[l]["cat"] == icolecao[c]) {
@@ -28,7 +28,7 @@ let javascript = function (par) {
           code += `<span class='categoria'>`;
 
           for (let c = 0; c < icolecao.length; c++) {
-            code += `<a href='javascript:setinput("${icolecao[c]}")' class='grouplink'>${icolecao[c]}</a> • `;
+            code += `<a href='javascript:addinput("${icolecao[c]}")' class='grouplink'>${icolecao[c]}</a> • `;
           }
 
           code += `</span>`;
