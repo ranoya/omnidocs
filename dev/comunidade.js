@@ -1,4 +1,4 @@
-let comunidades = function (par) {
+let comunidade = function (par) {
   // Change the funcion name here (imperative)
 
   let jsonfile = `https://opensheet.elk.sh/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/DGENComunidade`; // Change the URL here (imperative)
