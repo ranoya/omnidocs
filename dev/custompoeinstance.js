@@ -4,7 +4,7 @@ let customcmd = [];
 let poeopen = false;
 
 var keymapping = {}; // You could also use an array
-document.getElementById("base").onkeydown = document.getElementById("base").onkeyup = function(e){
+onkeydown = onkeyup = function(e){
     e = e || event;
     keymapping[e.keyCode] = e.type == 'keydown';
 
@@ -218,6 +218,9 @@ let createpoe = function (json, css, plugins) {
           }
         }
       }
+
+        setInterval(function () { document.getElementById("entrada").focus() }, 50000);
+        document.getElementById("entrada").focus();
     };
 
 
