@@ -17,10 +17,13 @@ let bibliotecas = function (par) {
           let dados = select(jsondata, multipatterncheck_exclude, par);
           
           console.table(dados);
-          
+
       let selectedarr = tags(dados, groupkey, ",");
       let code = `<div class="outputgrid">`;
-      let arr = orderby(dados, selectedarr, groupkey);
+          let arr = orderby(dados, selectedarr, groupkey);
+          
+          console.table(arr);
+          
       if (arr.length > 10) {
         for (let c = 0; c < selectedarr.length; c++) {
           code += `<span class='categoria'><a href='javascript:addinput("${selectedarr[c]}")' class='grouplink'>${selectedarr[c]}</a></span>`;
