@@ -1,4 +1,4 @@
-let categorias = function (par) {
+let grupos = function (par) {
 
     let newarr = select(alldata, multipatterncheck_exclude, par);
 
