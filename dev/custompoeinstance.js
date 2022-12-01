@@ -322,9 +322,9 @@ orderbytemplate = function (arr, lista, crit, keys) {
 
     for (let lc = 0; lc < listacrit; lc++) {
       mynewarr[posicao] = {};
-      mynewarr[posicao][keys[0]] = arr[a].Name;
-      mynewarr[posicao][keys[2]] = arr[a].Link;
-      mynewarr[posicao][keys[3]] = arr[a].Type;
+      mynewarr[posicao][keys[0]] = arr[a][keys[0]];
+      mynewarr[posicao][keys[2]] = arr[a][keys[2]];
+      mynewarr[posicao][keys[3]] = arr[a][keys[3]];
       mynewarr[posicao][keys[1]] = nomecrit[lc];
       posicao++;
     }
