@@ -1,5 +1,6 @@
 
 let customcmd = [];
+let cloudfiles = [];
 
 let poeopen = false;
 
@@ -46,8 +47,21 @@ let toggle = function (who) {
   }
 }
 
-let startpoe = function (json, css, plugins) {
-    
+let startpoe = function (json, css, plugins, files) {
+  
+    if (typeof files != "undefined" && files != "" && files != null) {
+ 
+    files = json;
+     
+  }
+
+  fetch(files)
+        .then((response) => response.json())
+        .then((dados) => {
+          cloudfiles = dados;
+        });
+  
+  
     if (typeof css != "undefined" || css != "" || css != null) {
         let customcss = document.createElement("link");
         customcss.href = css
