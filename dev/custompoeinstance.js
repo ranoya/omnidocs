@@ -120,7 +120,7 @@ let createpoe = function (json, css, plugins) {
 
         if (arr.length > 10) {
           for (let c = 0; c < colecao.length; c++) {
-            code += `<span class='categoria'><a href='javascript:setinput("${colecao[c]}")' class='grouplink'>${colecao[c]}</a></span>`;
+            code += `<span class='categoria'><a href='javascript:setinput("&gt;${colecao[c]} ")' class='grouplink'>${colecao[c]}</a></span>`;
 
             for (let l = 0; l < arr.length; l++) {
               if (arr[l]["cat"] == colecao[c]) {
@@ -139,7 +139,7 @@ let createpoe = function (json, css, plugins) {
           code += `<span class='categoria'>`;
 
           for (let c = 0; c < colecao.length; c++) {
-            code += `<a href='javascript:setinput("${colecao[c]}")' class='grouplink'>${colecao[c]}</a> • `;
+            code += `<a href='javascript:setinput("&gt;${colecao[c]} ")' class='grouplink'>${colecao[c]}</a> • `;
           }
 
           code += `</span>`;
