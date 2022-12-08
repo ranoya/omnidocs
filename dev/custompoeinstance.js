@@ -269,7 +269,7 @@ let createpoe = function (json, css, plugins) {
 
             let myhtml = `<div class="outputgrid">`;
             for (let i = 0; i < narr.length; i++) {
-              myhtml += `<a target='_blank' href='${narr[i].Link}'>${narr[i].Name}</a>`;
+              myhtml += `<a target='_blank' href='javascript:be("${narr[i].Link}"); toggle("poeinst");'>${narr[i].Name}</a>`;
             }
 
             myhtml += `</div>`;
