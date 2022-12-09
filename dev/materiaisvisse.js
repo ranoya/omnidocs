@@ -13,7 +13,7 @@ let materiais = function (par) {
         let code = `<div class="outputgrid">`;
 
         for (let i = 0; i < arr.length; i++) {
-            code += `<a href='javascript:be(${arr[i].link}); toggle("poeinst");'>${arr[i].titulomaterial}</a>`;
+            code += `<a href='javascript:be("${arr[i].link}"); toggle("poeinst");'>${arr[i].titulomaterial}</a>`;
         }
 
             code += `<div>`;
