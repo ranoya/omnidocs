@@ -1,0 +1,13 @@
+:root {
+  --bg-color: #94818c;
+  --line-separator: #846677;
+  --text-color: #74cbe6;
+  --color-link: #d072a7;
+  --color-hover: #ec369d;
+  --input-text: #b6e8f7;
+  --scroll-track: #ffffff00;
+  --color-shadow: #00000055;
+}
+#poeinst {
+  background: var(--bg-color);
+}
