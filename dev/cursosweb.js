@@ -9,12 +9,10 @@ let cursos = function (par) {
   fetch(jsonfile)
     .then((response) => response.json())
     .then((jsondata) => {
-      let dados = select(jsondata, multipatterncheck_exclude, "CURSOS E TUTORIAIS_LIST WEBDESIGN_DISCP " + par);
+      let arr = select(jsondata, multipatterncheck_exclude, "CURSOS E TUTORIAIS_LIST WEBDESIGN_DISCP " + par);
 
       let code = `<div class="outputgrid"><span class='categoria noline'>Tutoriais e cursos online</span><span class='categoria'>&nbsp;</span>`;
-      
-      let arr = jsondata;
-            
+                  
           for (let l = 0; l < arr.length; l++) {
                 code += `<a target='_blank' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linksrecursos'>${arr[l][namekey]}</a>`;
               }
