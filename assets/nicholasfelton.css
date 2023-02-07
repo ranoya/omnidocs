@@ -3,7 +3,7 @@
   --line-separator: #1fd2ff;
   --text-color: #3fd1db;
   --color-link: #eac7ba;
-  --color-hover: #eac7bb
+  --color-hover: #eac7bb;
   --input-text: #f79684;
   --scroll-track: #ffffff00;
   --color-shadow: #00000055;
@@ -13,9 +13,9 @@
 }
 
 #ativapoe {
-    top: 15px !important;
+  top: 15px !important;
 }
 
 #ativapoe:hover #buttombase {
-    fill: #ce4f38 !important;
+  fill: #ce4f38 !important;
 }
