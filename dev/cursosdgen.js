@@ -14,7 +14,7 @@ let cursos = function (par) {
       let code = `<div class="outputgrid"><span class='categoria noline'>Tutoriais e cursos online</span><span class='categoria'>&nbsp;</span>`;
             
           for (let l = 0; l < arr.length; l++) {
-                code += `<a target='_blank' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linksrecursos'>${arr[l][namekey]}</a>`;
+                code += `<a target='_blank' href='${arr[l][linkkey]}' class='linksrecursos'>${arr[l][namekey]}</a>`;
               }
  
       code += `<div>`;
