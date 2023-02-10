@@ -23,7 +23,7 @@ let editores = function (par) {
                             } else if (arr[l]["Type"] == "embed") {
                             code += `<a target='_self' href='javascript:embed("${arr[l].Link}")' class='linksrecursos'>${arr[l].Name}</a>`;
                             } else {
-                            code += `<a target='_blank' href='javascript:be("${arr[l].Link}"); toggle("poeinst");' class='linksrecursos'>${arr[l].Name}</a>`;
+                            code += `<a target='_blank' href='${arr[l].Link}' class='linksrecursos'>${arr[l].Name}</a>`;
                             }
                         }
                     }
