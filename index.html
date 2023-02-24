@@ -309,7 +309,14 @@
     <script>
       let be = function (url) {
         if (typeof url != "undefined" && url != "" && url != null) {
+
+
           document.getElementById("base").src = url;
+          if (url.match(/slides.com(.*)embed/i) {
+            document.getElementById("base").style.height = "calc(100vh + 34px)";
+          } else {
+            document.getElementById("base").style.height = "100vh";
+          }
         } else {
           document.getElementById("base").src = "./docs/open.html";
         }
