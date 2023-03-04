@@ -1,3 +1,7 @@
+let clipboard = function (gurl) {
+     navigator.clipboard.writeText(gurl);
+}
+
 let links = function (par) {
   // Change the funcion name here (imperative)
 
@@ -8,9 +12,7 @@ let links = function (par) {
   let linkkey = `Link`; // Change the Key for the link url of the links, if needed
   let typekey = `Type`; // Change the Key for the link type of the links, if needed
 
-  let clipboard = function (gurl) {
-        navigator.clipboard.writeText(gurl);
-  }
+
 
   fetch(jsonfile)
     .then((response) => response.json())
@@ -26,7 +28,7 @@ let links = function (par) {
       ]);
       if (arr.length > 10) {
         for (let c = 0; c < selectedarr.length; c++) {
-          code += `<span class='categoria'><a href='javascript:addinput("${selectedarr[c]}")' class='grouplink'>${selectedarr[c]}</a></span>`;
+          code += `<span class='categoria'><a href='javascript:addinput("${selectedarr[c]}");' class='grouplink'>${selectedarr[c]}</a></span>`;
           for (let l = 0; l < arr.length; l++) {
               if (arr[l][groupkey] == selectedarr[c]) {
                 
@@ -38,7 +40,7 @@ let links = function (par) {
         let ultimoregistro = "";
         code += `<span class='categoria'>`;
         for (let c = 0; c < selectedarr.length; c++) {
-          code += `<a href='javascript:addinput("${selectedarr[c]}")' class='grouplink'>${selectedarr[c]}</a> • `;
+          code += `<a href='javascript:addinput("${selectedarr[c]}");' class='grouplink'>${selectedarr[c]}</a> • `;
         }
         code += `</span>`;
         for (let l = 0; l < arr.length; l++) {
