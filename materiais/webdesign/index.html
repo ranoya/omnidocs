@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html
+  class="sl-root decks export loaded ua-phantomjs reveal-viewport theme-font-opensans theme-color-black-blue"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>WEBDESIGN</title>
+    <meta name="generator" content="slides.com" />
+    <meta
+      name="description"
+      content="Material de apoio da disciplina de Webdesign do Bacharelado de Design da Universidade Federal de Pernambuco"
+    />
+    <meta name="author" content="Prof. Dr. Guilherme Ranoya" />
+    <meta name="keywords" content="webdesign, html, css, disciplina" />
+    <meta
+      property="og:url"
+      content="https://omnidocs.vercel.app/docs/webdesign"
+    />
+    <meta property="og:title" content="WEBDESIGN" />
+    <meta
+      property="og:description"
+      content="Material de apoio da disciplina de Webdesign do Bacharelado de Design da Universidade Federal de Pernambuco"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="ranoya.com" />
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta
+      property="og:image"
+      content="https://www.ranoya.com/Assets/coverimages/webdesign600.jpg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://www.ranoya.com/Assets/coverimages/webdesign600.jpg"
+    />
+    <link
+      rel="image_src"
+      type="image/jpg"
+      href="https://www.ranoya.com/Assets/coverimages/webdesign600.jpg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.ranoya.com/Assets/coverimages/WebdesignFavicon.png"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://www.ranoya.com/Assets/coverimages/webdesign57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://www.ranoya.com/Assets/coverimages/webdesign57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="https://www.ranoya.com/Assets/coverimages/webdesign72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="https://www.ranoya.com/Assets/coverimages/webdesign114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="https://www.ranoya.com/Assets/coverimages/webdesign144.png"
+    />
+
+    <link rel="stylesheet" type="text/css" href="./unifiedstyle.css" />
+
+    <script src="./audiolead.js"></script>
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#000cd0" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000cd0" />
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000cd0" />
+  </head>
+
+  <body
+    style="
+      padding: 0 0 0 0;
+      margin: 0 0 0 0;
+      overflow-y: hidden;
+      overflow-x: hidden;
+    "
+  >
+    <div
+      id="placehold"
+      frameborder="0"
+      style="position: fixed; left: 0; width: 100%; height: calc(100% + 34px)"
+      scrolling="no"
+    ></div>
+
+    <audio
+      id="myVideo"
+      controls
+      controlslist="nofullscreen noplaybackrate nodownload"
+      style="
+        position: fixed;
+        bottom: 30px;
+        left: calc(50% - 135px);
+        width: 270px;
+        height: 30px;
+        z-index: 500;
+        outline: none;
+        transition: all 0.6s ease-in-out;
+      "
+      controls
+    >
+      <source
+        src="https://drive.google.com/uc?export=view&id=1p_tsd82nmiuG47vKfz7njp8O-rAWjgxO"
+        type="audio/mp3"
+      />
+      Your browser does not support HTML5 video.
+    </audio>
+
+    <script>
+      $_GET = [];
+      (function () {
+        let corte = window.location.href.toString().indexOf("?");
+        if (corte > 0) {
+          let argumento = window.location.href.toString().substring(corte + 1);
+          argumentos = argumento.split("&");
+          for (arg in argumentos) {
+            let argCorte = argumentos[arg].indexOf("=");
+            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+              arg
+            ].substring(argCorte + 1);
+          }
+        }
+      })();
+
+      /*
+       *
+       * TABELA DE MINUTAGEM DA APRESENTAÇÃO
+       *
+       */
+
+      var minutagem = [
+        {
+          time: 0,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/capa",
+        },
+        {
+          time: 11.5,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/programa",
+        },
+        {
+          time: 44,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/justificativa",
+        },
+        {
+          time: 72,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/just2",
+        },
+        {
+          time: 86.4,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/just3",
+        },
+        {
+          time: 99,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/just4",
+        },
+        {
+          time: 133,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/just5",
+        },
+        {
+          time: 161,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/qexpectativa",
+        },
+        {
+          time: 183,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/qexpectativa",
+          pause: true,
+        },
+        {
+          time: 184,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/parte1",
+        },
+        {
+          time: 202.5,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/naturezadocodigo",
+        },
+        {
+          time: 235,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/naturezadocodigo2",
+        },
+        {
+          time: 264.5,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/naturezadocodigo3",
+        },
+        {
+          time: 314,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/clienteservidor",
+        },
+        {
+          time: 404,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/clienteservidor2",
+        },
+        {
+          time: 449,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/arede",
+        },
+        {
+          time: 496,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/arede2",
+        },
+        {
+          time: 551.5,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/arede3",
+        },
+        {
+          time: 597,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/arede4",
+        },
+        {
+          time: 692,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/arede1n",
+        },
+        {
+          time: 762.5,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/aredefinal",
+        },
+        {
+          time: 801,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/processo1",
+        },
+        {
+          time: 810,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/processo2",
+        },
+        {
+          time: 823,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/processo3",
+        },
+        {
+          time: 832,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/processo4",
+        },
+        {
+          time: 862,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/processo5",
+        },
+        {
+          time: 922,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/limites1",
+        },
+        {
+          time: 968,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/limites2",
+        },
+        {
+          time: 999.5,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/limites3",
+        },
+        {
+          time: 1038,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/limites4",
+        },
+        {
+          time: 1069,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/montagem1",
+        },
+        {
+          time: 1110,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/processo6",
+        },
+        {
+          time: 1189,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/processo7",
+        },
+        {
+          time: 1220,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/arquivos1",
+        },
+        {
+          time: 1261,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/arquivos2",
+        },
+        {
+          time: 1276,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/arquivos3",
+        },
+        {
+          time: 1303,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/arquivos4",
+        },
+        {
+          time: 1326.7,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/arquivos5",
+        },
+        {
+          time: 1377.6,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/arquivos6",
+        },
+        {
+          time: 1395,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/arquivos7",
+        },
+        {
+          time: 1407.5,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/arquivos8",
+        },
+        {
+          time: 1444,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/arquivos9",
+        },
+        {
+          time: 1463,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/aurl",
+        },
+        {
+          time: 1493,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/aurl2",
+        },
+        {
+          time: 1512,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/aurl3",
+        },
+        {
+          time: 1525,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/aurl4",
+        },
+        {
+          time: 1538,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/aurl5",
+        },
+        {
+          time: 1556,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/aurl6",
+        },
+        {
+          time: 1573,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/parte2",
+        },
+        {
+          time: 1602,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/sintaxehtml",
+        },
+        {
+          time: 1622,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/sintaxehtml2",
+        },
+        {
+          time: 1630,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/sintaxehtml3",
+        },
+        {
+          time: 1659,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/sintaxehtml4",
+        },
+        {
+          time: 1693,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/sintaxehtml5",
+        },
+        {
+          time: 1713,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/sintaxehtml6",
+        },
+        {
+          time: 1737,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/sintaxehtml7",
+        },
+        {
+          time: 1763,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/sintaxehtml8",
+        },
+        {
+          time: 1779.5,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/errosintaxehtml",
+        },
+        {
+          time: 1796.5,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/errosintaxehtml",
+          pause: true,
+        },
+        {
+          time: 1797,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/errosintaxehtml2",
+        },
+        {
+          time: 1824,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/errosintaxehtml3",
+        },
+        {
+          time: 1832,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/sintaxehtml9",
+        },
+        {
+          time: 1863,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/exercicioserroshtml",
+        },
+        {
+          time: 1875.7,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/exercicioserroshtml",
+          pause: true,
+        },
+        {
+          time: 1876,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/estruturahtml",
+        },
+        {
+          time: 1888,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/estruturahtml2",
+        },
+        {
+          time: 1900,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/estruturahtml3",
+        },
+        {
+          time: 1915,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/mapaestruturahtml",
+        },
+        {
+          time: 1955,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/taghead",
+        },
+        {
+          time: 1979.5,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/tagsdohead",
+        },
+        {
+          time: 1998,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/tagsdohead",
+          pause: true,
+        },
+        {
+          time: 1998.3,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/atagbody",
+        },
+        {
+          time: 2007.6,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/trestiposdetags",
+        },
+        {
+          time: 2021,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/tagsinline",
+        },
+        {
+          time: 2039,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/tagsinline",
+          pause: true,
+        },
+        {
+          time: 2039.3,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/tagsblocs",
+        },
+        {
+          time: 2058,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/tagsblocs",
+          pause: true,
+        },
+        {
+          time: 2058.3,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/tagform",
+        },
+        {
+          time: 2073.7,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/tagform",
+          pause: true,
+        },
+        {
+          time: 2074,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/parte3",
+        },
+        {
+          time: 2093,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/oqueecss1",
+        },
+        {
+          time: 2103,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/oqueecss2",
+        },
+        {
+          time: 2107,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/cssaplicacao",
+        },
+        {
+          time: 2149,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/csssintaxe1",
+        },
+        {
+          time: 2165,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/csssintaxe2",
+        },
+        {
+          time: 2183,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/csssintaxe3",
+        },
+        {
+          time: 2206.6,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/cssseletores",
+        },
+        {
+          time: 2233,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/cssseletoresclass",
+        },
+        {
+          time: 2263,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/cssseletoresid",
+        },
+        {
+          time: 2295,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/cssoperador1",
+        },
+        {
+          time: 2335,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/cssoperador2",
+        },
+        {
+          time: 2344,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/cssoperador3",
+        },
+        {
+          time: 2381,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/cssoverride1",
+        },
+        {
+          time: 2400,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/cssoverride2",
+        },
+        {
+          time: 2427,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/cssoverride3",
+        },
+        {
+          time: 2451,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/csscomportamento",
+        },
+        {
+          time: 2499,
+          href: "https://slides.com/ranoya/webdesignv4audio/embed#/csspropriedades",
+        },
+      ];
+
+      function contrai() {
+        document.getElementById("myVideo").style.width = "112px";
+        document.getElementById("myVideo").style.left = "calc(50% - 56px)";
+      }
+
+      function saidafrente() {
+        document.getElementById("myVideo").style.width = "111px";
+        document.getElementById("myVideo").style.left = "30px";
+      }
+
+      function voltaaonormal() {
+        document.getElementById("myVideo").style.width = "270px";
+        document.getElementById("myVideo").style.left = "calc(50% - 135px)";
+      }
+
+      function gototime(tempo) {
+        document.getElementById("myVideo").currentTime = tempo;
+        document.getElementById("myVideo").play();
+        document.getElementById("myVideo").pause();
+      }
+
+      if (typeof $_GET["pos"] != "undefined" && $_GET["pos"] != "") {
+        if (parseFloat($_GET["pos"]) >= 0) {
+          let mytmo = setTimeout(function () {
+            voltaaonormal();
+            gototime(parseFloat($_GET["pos"]));
+            document.getElementById("myVideo").play();
+            document.getElementById("myVideo").pause();
+          }, 1000);
+        } else if (parseFloat($_GET["pos"]) == -1) {
+          let mytmo = setTimeout(function () {
+            document.getElementById("audioleadstage0").src =
+              "https://slides.com/ranoya/webdesignv4audio/embed#/livro";
+            saidafrente();
+            document.getElementById("myVideo").pause();
+          }, 3000);
+        } else {
+          let mytmo = setTimeout(function () {
+            document.getElementById("audioleadstage0").src =
+              "https://slides.com/ranoya/webdesignv4audio/embed#/editorplayground";
+            saidafrente();
+            document.getElementById("myVideo").pause();
+          }, 3000);
+        }
+      }
+
+      /*
+       *
+       * CARREGAMENTO DO SAM E DO AUDIOLEAD
+       *
+       */
+
+      document.addEventListener("DOMContentLoaded", function () {
+        addAudioLead("placehold", "myVideo", minutagem);
+
+        if (
+          localStorage.getItem("pontodomaterial") != null &&
+          localStorage.getItem("pontodomaterial") != undefined
+        ) {
+          console.log(
+            "AudioLead capturou o ponto e mandou o video para " +
+              eval(localStorage.getItem("pontodomaterial"))
+          );
+
+          document.getElementById("myVideo").currentTime = eval(
+            localStorage.getItem("pontodomaterial")
+          );
+        } else {
+          console.log("AudioLead zerou o ponto do video");
+          localStorage.setItem("pontodomaterial", 0);
+        }
+
+        audiolead_interface = function (slidenumber, assetsObject) {
+          if (assetsObject[slidenumber].contrai == true) {
+            contrai();
+          }
+
+          if (assetsObject[slidenumber].normal == true) {
+            voltaaonormal();
+          }
+
+          localStorage.setItem(
+            "pontodomaterial",
+            document.getElementById("myVideo").currentTime
+          );
+        };
+      });
+    </script>
+  </body>
+</html>
