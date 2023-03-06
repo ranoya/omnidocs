@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html
+  class="sl-root decks export loaded ua-phantomjs reveal-viewport theme-font-opensans theme-color-black-blue"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>DESIGN GENERATIVO</title>
+    <meta name="generator" content="slides.com" />
+    <meta
+      name="description"
+      content="Material interativo para ensino de programação com a linguagem Processing"
+    />
+    <meta name="author" content="Prof. Dr. Guilherme Ranoya" />
+    <meta name="keywords" content="webdesign, html, css, disciplina" />
+    <meta
+      property="og:url"
+      content="https://omnidocs.vercel.app/docs/designgenerativo"
+    />
+    <meta property="og:title" content="DESIGN GENERATIVO" />
+    <meta
+      property="og:description"
+      content="Material interativo para ensino de programação com a linguagem Processing"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="ranoya.com" />
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta
+      property="og:image"
+      content="https://omnidocs.vercel.app/assets/dgen600.jpg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://omnidocs.vercel.app/assets/dgen600.jpg"
+    />
+    <link
+      rel="image_src"
+      type="image/jpg"
+      href="https://omnidocs.vercel.app/assets/dgen600.jpg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://omnidocs.vercel.app/assets/dgenFavicon.png"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://omnidocs.vercel.app/assets/dgen57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://omnidocs.vercel.app/assets/dgen57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="https://omnidocs.vercel.app/assets/dgen72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="https://omnidocs.vercel.app/assets/dgen114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="https://omnidocs.vercel.app/assets/dgen144.png"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://omnidocs.vercel.app/materiais/designgenerativo/unifiedstyle.css"
+    />
+
+    <script src="https://omnidocs.vercel.app/materiais/webdesign/audiolead.js"></script>
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#40124d" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#40124d" />
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#40124d" />
+  </head>
+
+  <body
+    style="
+      padding: 0 0 0 0;
+      margin: 0 0 0 0;
+      overflow-y: hidden;
+      overflow-x: hidden;
+    "
+  >
+    <div
+      id="placehold"
+      frameborder="0"
+      style="position: fixed; left: 0; width: 100%; height: calc(100% + 34px)"
+      scrolling="no"
+    ></div>
+
+    <audio
+      id="myVideo"
+      controls
+      controlslist="nofullscreen noplaybackrate nodownload"
+      style="
+        position: fixed;
+        bottom: 30px;
+        left: calc(50% - 135px);
+        width: 270px;
+        height: 30px;
+        z-index: 500;
+        outline: none;
+        transition: all 0.6s ease-in-out;
+      "
+      controls
+    >
+      <source
+        src="https://drive.google.com/uc?export=view&id=1vb4LVGw-bIOVkuKiGM2vOC8x_cnSeMqe"
+        type="audio/mp3"
+      />
+      Your browser does not support HTML5 video.
+    </audio>
+
+    <script>
+      $_GET = [];
+      (function () {
+        let corte = window.location.href.toString().indexOf("?");
+        if (corte > 0) {
+          let argumento = window.location.href.toString().substring(corte + 1);
+          argumentos = argumento.split("&");
+          for (arg in argumentos) {
+            let argCorte = argumentos[arg].indexOf("=");
+            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+              arg
+            ].substring(argCorte + 1);
+          }
+        }
+      })();
+
+      /*
+       *
+       * TABELA DE MINUTAGEM DA APRESENTAÇÃO
+       *
+       */
+
+      var minutagem = [
+        {
+          time: 0,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/capa",
+        },
+        {
+          time: 76.2,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/futuro1",
+        },
+        {
+          time: 112.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/futuro2",
+        },
+        {
+          time: 127.3,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/futuro3",
+        },
+        {
+          time: 139.2,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/futuro4",
+        },
+        {
+          time: 171.6,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/futuro5",
+        },
+        {
+          time: 199.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/fundamentossub",
+        },
+        {
+          time: 213.7,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/codigo1",
+        },
+        {
+          time: 273.6,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/codigo2",
+        },
+        {
+          time: 300.7,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/codigo3",
+        },
+        {
+          time: 345.0,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/codigosimples",
+        },
+        {
+          time: 366.3,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/codigosimples",
+          pause: true,
+        },
+        {
+          time: 367.6,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/msxpier",
+        },
+        {
+          time: 394.9,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/msxpier",
+          pause: true,
+        },
+        {
+          time: 396.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/codigo4",
+        },
+        {
+          time: 410.6,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/codigo5",
+        },
+        {
+          time: 429.2,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/codigo6",
+        },
+        {
+          time: 441.5,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/codigo7",
+        },
+        {
+          time: 464.6,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/linguagens1",
+        },
+        {
+          time: 507.5,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/linguagens2",
+        },
+        {
+          time: 525.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/linguagens3",
+        },
+        {
+          time: 559.2,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/hexagono1",
+        },
+        {
+          time: 618.5,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxecapa",
+        },
+        {
+          time: 635.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe1",
+        },
+        {
+          time: 663.7,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe2",
+        },
+        {
+          time: 669.7,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe3",
+        },
+        {
+          time: 685.6,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe4",
+        },
+        {
+          time: 719.9,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe5",
+        },
+        {
+          time: 741.9,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe6",
+        },
+        {
+          time: 755.3,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe7",
+        },
+        {
+          time: 766.7,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe8",
+        },
+        {
+          time: 807.2,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe9",
+        },
+        {
+          time: 819.7,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe10",
+        },
+        {
+          time: 836.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe11",
+        },
+        {
+          time: 849.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe12",
+        },
+        {
+          time: 895,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe13",
+        },
+        {
+          time: 928.7,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe14",
+        },
+        {
+          time: 958.6,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe15",
+        },
+        {
+          time: 984,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe16",
+        },
+        {
+          time: 1011.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe17",
+        },
+        {
+          time: 1028.7,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe17-2",
+        },
+        {
+          time: 1047.6,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/exemplosintaxe",
+        },
+        {
+          time: 1096.3,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/exemplosintaxe",
+          pause: true,
+        },
+        {
+          time: 1097.6,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe18",
+        },
+        {
+          time: 1134.4,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/sintaxe19",
+        },
+        {
+          time: 1157.4,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/variaveiscapa",
+        },
+        {
+          time: 1183.6,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/variaveis1",
+        },
+        {
+          time: 1212.6,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/variaveis2",
+        },
+        {
+          time: 1247.7,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/variaveis3",
+        },
+        {
+          time: 1298.5,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/variaveis4",
+        },
+        {
+          time: 1355.9,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/variaveis5",
+        },
+        {
+          time: 1372.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/variaveis6",
+        },
+        {
+          time: 1393.5,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/variaveis6-2",
+        },
+        {
+          time: 1417.7,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/varexemplo",
+        },
+        {
+          time: 1432.4,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/varexemplo",
+          pause: true,
+        },
+        {
+          time: 1432.8,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/variaveis7",
+        },
+        {
+          time: 1452.8,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/variaveis8",
+        },
+        {
+          time: 1476.2,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/calculocapa",
+        },
+        {
+          time: 1493.6,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/calculo1",
+        },
+        {
+          time: 1509.9,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/calculo2",
+        },
+        {
+          time: 1532.3,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/calculo3",
+        },
+        {
+          time: 1541.4,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/calculo4",
+        },
+        {
+          time: 1586.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/calculo5",
+        },
+        {
+          time: 1621.2,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/calculo6",
+        },
+        {
+          time: 1640.4,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/calculo7",
+        },
+        {
+          time: 1665.9,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/calculo8",
+        },
+        {
+          time: 1686.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/calculo9",
+        },
+        {
+          time: 1710.9,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/calculo10",
+        },
+        {
+          time: 1743.3,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/calculo11",
+        },
+        {
+          time: 1750.5,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/calculo12",
+        },
+        {
+          time: 1785.7,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/calculo13",
+        },
+        {
+          time: 1797.8,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/calculo14",
+        },
+        {
+          time: 1809.8,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/calculo15",
+        },
+        {
+          time: 1829.2,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/logicacapa",
+        },
+        {
+          time: 1846.3,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/logica1",
+        },
+        {
+          time: 1860.8,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/logica2",
+        },
+        {
+          time: 1891.6,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/logica3",
+        },
+        {
+          time: 1913.3,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/logica4",
+        },
+        {
+          time: 1931.2,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/logica5",
+        },
+        {
+          time: 1947.5,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/logica6",
+        },
+        {
+          time: 1996.4,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/logica7",
+        },
+        {
+          time: 2018.9,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/logica8",
+        },
+        {
+          time: 2035.3,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/logicaexemplo1",
+        },
+        {
+          time: 2105.5,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/logicaexemplo1",
+          pause: true,
+        },
+        {
+          time: 2106.3,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/logica9",
+        },
+        {
+          time: 2153.0,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/logica11",
+        },
+        {
+          time: 2183.5,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/logica12",
+        },
+        {
+          time: 2199.7,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/logica13",
+        },
+        {
+          time: 2217.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/logica14",
+        },
+        {
+          time: 2232.4,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/logica15",
+        },
+        {
+          time: 2249,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/logica16",
+        },
+        {
+          time: 2266.6,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/funccapa",
+        },
+        {
+          time: 2291.7,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/func1",
+        },
+        {
+          time: 2328.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/func2",
+        },
+        {
+          time: 2355.4,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/func3",
+        },
+        {
+          time: 2372,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/func4",
+        },
+        {
+          time: 2396.2,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/func5",
+        },
+        {
+          time: 2420.9,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/func6",
+        },
+        {
+          time: 2441.7,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/func7",
+        },
+        {
+          time: 2479.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/funcexemplo1",
+        },
+        {
+          time: 2533.8,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/funcexemplo1",
+          pause: true,
+        },
+        {
+          time: 2534.7,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/func8",
+        },
+        {
+          time: 2554.8,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/func9",
+        },
+        {
+          time: 2566.3,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/func10",
+        },
+        {
+          time: 2592,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/func11",
+        },
+        {
+          time: 2629.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/func12",
+        },
+        {
+          time: 2656,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/func13",
+        },
+        {
+          time: 2670.6,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/func14",
+        },
+        {
+          time: 2687.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/matrizcapa",
+        },
+        {
+          time: 2747.5,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/matrizcapa",
+          pause: true,
+        },
+        {
+          time: 2748.3,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/matriz1",
+        },
+        {
+          time: 2775.3,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/matriz2",
+        },
+        {
+          time: 2796.9,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/matriz3",
+        },
+        {
+          time: 2802.4,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/matriz4",
+        },
+        {
+          time: 2806.5,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/matriz5",
+        },
+        {
+          time: 2827.5,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/matriz6",
+        },
+        {
+          time: 2834.6,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/matriz7",
+        },
+        {
+          time: 2863.9,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/matriz8",
+        },
+        {
+          time: 2893.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/matriz9",
+        },
+        {
+          time: 2932.3,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/matriz10",
+        },
+        {
+          time: 2960.6,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/matriz11",
+        },
+        {
+          time: 2970.4,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/matriz12",
+        },
+        {
+          time: 3006.5,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/matrizexemplo1",
+        },
+        {
+          time: 3077.8,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/matrizexemplo1",
+          pause: true,
+        },
+        {
+          time: 3078.3,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/matriz13",
+        },
+        {
+          time: 3124.8,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/objetocapa",
+        },
+        {
+          time: 3161.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/objeto1",
+        },
+        {
+          time: 3208.7,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/objeto2",
+        },
+        {
+          time: 3275.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/objeto3",
+        },
+        {
+          time: 3306.8,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/objeto4",
+        },
+        {
+          time: 3339.2,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/objeto5",
+        },
+        {
+          time: 3383.8,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/objeto6",
+        },
+        {
+          time: 3454.8,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/objeto7",
+        },
+        {
+          time: 3509.5,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/objeto8",
+        },
+        {
+          time: 3559.4,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/objeto9",
+        },
+        {
+          time: 3594.7,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/objeto10",
+        },
+        {
+          time: 3629,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/objetoexemplo1",
+        },
+        {
+          time: 3716.4,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/objetoexemplo1",
+          pause: true,
+        },
+        {
+          time: 3717.1,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/objetoexemplo2",
+        },
+        {
+          time: 3780.2,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/objetoexemplo2",
+          pause: true,
+        },
+        {
+          time: 3780.7,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/objetoexemplo3",
+        },
+        {
+          time: 3904.3,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/objetoexemplo3",
+          pause: true,
+        },
+        {
+          time: 3905.2,
+          href: "https://slides.com/ranoya/dgen-storytelling/embed#/fim",
+        },
+      ];
+
+      function contrai() {
+        document.getElementById("myVideo").style.width = "112px";
+        document.getElementById("myVideo").style.left = "calc(50% - 56px)";
+      }
+
+      function saidafrente() {
+        document.getElementById("myVideo").style.width = "111px";
+        document.getElementById("myVideo").style.left = "30px";
+      }
+
+      function voltaaonormal() {
+        document.getElementById("myVideo").style.width = "270px";
+        document.getElementById("myVideo").style.left = "calc(50% - 135px)";
+      }
+
+      function gototime(tempo) {
+        document.getElementById("myVideo").currentTime = tempo;
+        document.getElementById("myVideo").play();
+        document.getElementById("myVideo").pause();
+      }
+
+      if (typeof $_GET["pos"] != "undefined" && $_GET["pos"] != "") {
+        if (parseFloat($_GET["pos"]) >= 0) {
+          let mytmo = setTimeout(function () {
+            voltaaonormal();
+            gototime(parseFloat($_GET["pos"]));
+            document.getElementById("myVideo").play();
+            document.getElementById("myVideo").pause();
+          }, 1000);
+        } else if (parseFloat($_GET["pos"]) == -1) {
+          let mytmo = setTimeout(function () {
+            document.getElementById("audioleadstage0").src =
+              "https://slides.com/ranoya/dgen-storytelling/embed#/livro";
+            saidafrente();
+            document.getElementById("myVideo").pause();
+          }, 3000);
+        } else {
+          let mytmo = setTimeout(function () {
+            document.getElementById("audioleadstage0").src =
+              "https://slides.com/ranoya/dgen-storytelling/embed#/livecode";
+            saidafrente();
+            document.getElementById("myVideo").pause();
+          }, 3000);
+        }
+      }
+
+      /*
+       *
+       * CARREGAMENTO DO SAM E DO AUDIOLEAD
+       *
+       */
+
+      document.addEventListener("DOMContentLoaded", function () {
+        addAudioLead("placehold", "myVideo", minutagem);
+
+        if (
+          localStorage.getItem("pontodomaterial") != null &&
+          localStorage.getItem("pontodomaterial") != undefined
+        ) {
+          console.log(
+            "AudioLead capturou o ponto e mandou o video para " +
+              eval(localStorage.getItem("pontodomaterial"))
+          );
+
+          document.getElementById("myVideo").currentTime = eval(
+            localStorage.getItem("pontodomaterial")
+          );
+        } else {
+          console.log("AudioLead zerou o ponto do video");
+          localStorage.setItem("pontodomaterial", 0);
+        }
+
+        audiolead_interface = function (slidenumber, assetsObject) {
+          if (assetsObject[slidenumber].contrai == true) {
+            contrai();
+          }
+
+          if (assetsObject[slidenumber].normal == true) {
+            voltaaonormal();
+          }
+
+          localStorage.setItem(
+            "pontodomaterial",
+            document.getElementById("myVideo").currentTime
+          );
+        };
+      });
+    </script>
+  </body>
+</html>
