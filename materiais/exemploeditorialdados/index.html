@@ -1,0 +1,127 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="dataviz editorial" />
+    <title>Editorial com Dados</title>
+    <meta property="og:title" content="Editorial com Dados" />
+    <meta name="generator" content="artesanal" />
+    <meta
+      name="description"
+      content="Um exemplo de como a equipe editorial do The Economist produz editoriais com dados"
+    />
+    <meta
+      property="og:description"
+      content="Um exemplo de como a equipe editorial do The Economist produz editoriais com dados"
+    />
+    <meta name="author" content="Guilherme Ranoya" />
+    <meta
+      property="og:url"
+      content="https://omnidocs.vercel.app/materiais/exemploeditorialdados"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:site_name" content="omnidocs" />
+    <meta name="application-name" content="omnidocs" />
+
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="theme-color" content="#FFFFFF" />
+    <meta name="msapplication-navbutton-color" content="#FFFFFF" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF" />
+
+    <style>
+      #linkA {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: max(20%, 380px);
+        height: 100vh;
+        overflow-y: auto;
+      }
+
+      #linkB {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: max(20%, 380px);
+        width: 40%;
+        height: 100vh;
+        overflow-y: auto;
+      }
+
+      #linkC {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: max(60%, calc(380px + 40%));
+        width: 40%;
+        height: 100vh;
+        overflow-y: auto;
+      }
+
+      #linkD {
+        display: none;
+      }
+
+      @media screen and (max-width: 1024px) {
+        #linkA {
+          display: none;
+        }
+
+        #linkB {
+          display: none;
+        }
+
+        #linkC {
+          display: none;
+        }
+
+        #linkD {
+          display: block;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          padding: 0;
+          margin: 0;
+          background-color: gray;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <iframe
+      id="linkA"
+      frameborder="0"
+      src="https://view.e.economist.com/?qs=06c048ddf305becb44562995e5626bf038498571262c7e4f62cd506f9e1614525bb1a6cc428d93e738d69fdea8477d6f392033cae3a22c7cb09ebb1097dd556a4eb21860ac989834aebd04f1017cada6"
+    ></iframe>
+    <iframe
+      id="linkB"
+      frameborder="0"
+      src="https://observablehq.com/embed/@theeconomist/oil-and-gas-breakeven-prices?cell=*"
+    ></iframe>
+    <iframe
+      id="linkC"
+      frameborder="0"
+      src="https://www.economist.com/interactive/briefing/2022/09/24/war-in-ukraine-has-reshaped-worlds-fuel-markets"
+    ></iframe>
+
+    <iframe
+      id="linkD"
+      frameborder="0"
+      src="https://slidelines.vercel.app/slides/?s=1&file=https://opensheet.elk.sh/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/DatavizEconomist"
+    ></iframe>
+  </body>
+</html>
