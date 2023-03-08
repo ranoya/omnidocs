@@ -1,4 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
+
 :root {
   --base-background: transparent !important;
-  --littlemenu-over: #000000;
+  --littlemenu-over: #000000 !important;
+  --timeline-text-over: #11eade !important;
+  --timeline-font: "Press Start 2P";
+  --meta-font: "Press Start 2P";
+  --meta-margins: 40px;
+}
+
+#titulodoslide {
+}
+
+#loslinks {
 }
