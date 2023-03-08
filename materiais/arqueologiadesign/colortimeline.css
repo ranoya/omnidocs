@@ -1,4 +1,4 @@
 :root {
-  --base-background: transparent;
+  --base-background: transparent !important;
   --littlemenu-over: #000000;
 }
