@@ -13,6 +13,7 @@
 #titulodoslide {
   width: 60% !important;
   height: 22px !important;
+  top: auto;
   bottom: 25px !important;
   left: 20% !important;
   text-align: center !important;
