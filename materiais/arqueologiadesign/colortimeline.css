@@ -6,11 +6,13 @@
   --timeline-text-over: #11eade !important;
   --timeline-font: "Press Start 2P";
   --meta-font: "Press Start 2P";
-  --meta-margins: 40px;
+  --meta-margins: 50px;
 }
 
 #titulodoslide {
 }
 
 #loslinks {
+  font-size: 26px !important;
+  text-shadow: 2px 2px black !important;
 }
