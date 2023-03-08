@@ -11,6 +11,13 @@
 }
 
 #titulodoslide {
+  width: 60%;
+  height: 22px;
+  bottom: 25px;
+  left: 20%;
+  text-align: center !important;
+  font-size: 24px;
+  text-shadow: 2px 2px black !important;
 }
 
 #loslinks {
