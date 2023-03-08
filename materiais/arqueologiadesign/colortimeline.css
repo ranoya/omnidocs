@@ -25,3 +25,11 @@
   font-size: 26px !important;
   text-shadow: 2px 2px black !important;
 }
+
+#sliding1 div,
+#sliding2 div,
+#sliding3 div,
+#frontslide div {
+  margin-top: 60px !important;
+  height: calc(100vh - 120px) !important;
+}
