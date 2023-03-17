@@ -23,7 +23,7 @@ onkeydown = onkeyup = function(e){
 
 
 let toggle = function (who) {
-  if (document.getElementById(who).style.left == "-420px" || !poeopen) {
+  if (document.getElementById(who).style.left == "-380px" || !poeopen) {
 
     poeopen = true;
     keymapping[93] = false;
@@ -33,7 +33,7 @@ let toggle = function (who) {
     keymapping[16] = false;
       document.getElementById("entrada").focus();
       document.getElementById("poeinst").style.left = 0;
-      document.getElementById("base").style.left = "420px";
+      document.getElementById("base").style.left = "380px";
   } else {
 
     poeopen = false;
@@ -42,7 +42,7 @@ let toggle = function (who) {
     keymapping[75] = false;
     keymapping[80] = false;
       keymapping[16] = false;
-      document.getElementById("poeinst").style.left = "-420px";
+      document.getElementById("poeinst").style.left = "-380px";
       document.getElementById("base").style.left = 0;
   }
 }
