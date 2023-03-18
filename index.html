@@ -305,6 +305,9 @@
       }
 
       @media screen and (max-width: 480px) {
+        #poeinst {
+          height: calc(100vh - 40px);
+        }
       }
     </style>
 
@@ -314,13 +317,17 @@
           document.getElementById("base").src = url;
           if (url.match(/slides.com(.*)embed/i)) {
             if (window.innerWidth <= 480) {
-              document.getElementById("base").style.height = "100vh";
+              document.getElementById("base").style.height = "96vh";
             } else {
               document.getElementById("base").style.height =
                 "calc(100vh + 34px)";
             }
           } else {
-            document.getElementById("base").style.height = "100vh";
+            if (window.innerWidth <= 480) {
+            } else {
+              document.getElementById("base").style.height =
+                "calc(100vh - 40px)";
+            }
           }
         } else {
           document.getElementById("base").src = "./docs/open.html";
