@@ -593,18 +593,24 @@
       ];
 
       function contrai() {
-        document.getElementById("myVideo").style.width = "112px";
-        document.getElementById("myVideo").style.left = "calc(50% - 56px)";
+        if (window.innerWidth > 480) {
+          document.getElementById("myVideo").style.width = "112px";
+          document.getElementById("myVideo").style.left = "calc(50% - 56px)";
+        }
       }
 
       function saidafrente() {
-        document.getElementById("myVideo").style.width = "111px";
-        document.getElementById("myVideo").style.left = "30px";
+        if (window.innerWidth > 480) {
+          document.getElementById("myVideo").style.width = "111px";
+          document.getElementById("myVideo").style.left = "30px";
+        }
       }
 
       function voltaaonormal() {
-        document.getElementById("myVideo").style.width = "270px";
-        document.getElementById("myVideo").style.left = "calc(50% - 135px)";
+        if (window.innerWidth > 480) {
+          document.getElementById("myVideo").style.width = "270px";
+          document.getElementById("myVideo").style.left = "calc(50% - 135px)";
+        }
       }
 
       function gototime(tempo) {
