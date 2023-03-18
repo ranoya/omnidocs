@@ -92,6 +92,14 @@
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#40124d" />
     <style>
+      audio::-webkit-media-controls-time-remaining-display {
+        display: none;
+      }
+
+      audio::-webkit-media-controls-current-time-display {
+        display: none;
+      }
+
       #placehold {
         position: fixed;
         left: 0;
@@ -112,8 +120,29 @@
       }
 
       @media screen and (max-width: 480px) {
+        audio::-webkit-media-controls-time-remaining-display {
+          display: none;
+        }
+        audio::-webkit-media-controls-current-time-display {
+          display: none;
+        }
+        audio::-webkit-media-controls-panel {
+          padding-left: 50px;
+          padding-right: 200px;
+          background-color: #ea999a;
+        }
+
         #myVideo {
-          bottom: 70px;
+          left: -15px;
+          width: 130vw;
+          height: 40px;
+          bottom: 0;
+          background-color: #ea999a;
+          padding-bottom: 40px;
+        }
+
+        #placehold {
+          height: calc(100% - 45px) !important;
         }
       }
     </style>
@@ -751,18 +780,24 @@
       ];
 
       function contrai() {
-        document.getElementById("myVideo").style.width = "112px";
-        document.getElementById("myVideo").style.left = "calc(50% - 56px)";
+        if (window.innerWidth > 480) {
+          document.getElementById("myVideo").style.width = "112px";
+          document.getElementById("myVideo").style.left = "calc(50% - 56px)";
+        }
       }
 
       function saidafrente() {
-        document.getElementById("myVideo").style.width = "111px";
-        document.getElementById("myVideo").style.left = "30px";
+        if (window.innerWidth > 480) {
+          document.getElementById("myVideo").style.width = "111px";
+          document.getElementById("myVideo").style.left = "30px";
+        }
       }
 
       function voltaaonormal() {
-        document.getElementById("myVideo").style.width = "270px";
-        document.getElementById("myVideo").style.left = "calc(50% - 135px)";
+        if (window.innerWidth > 480) {
+          document.getElementById("myVideo").style.width = "270px";
+          document.getElem;
+        }
       }
 
       function gototime(tempo) {
