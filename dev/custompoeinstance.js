@@ -339,8 +339,8 @@ let createpoe = function (json, css, plugins) {
         }
       }
 
-        setInterval(function () { document.getElementById("entrada").focus() }, 50000);
-        document.getElementById("entrada").focus();
+        //setInterval(function () { document.getElementById("entrada").focus() }, 50000);
+        //document.getElementById("entrada").focus();
     };
 
 
