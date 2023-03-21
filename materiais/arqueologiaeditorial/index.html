@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+
+<head>
+
+    <title>Arqueologia Editorial Digital</title>
+
+    <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap'); */
+
+        @font-face {
+            font-family: 'pixChicago';
+            src: url('https://omnidocs.vercel.app/materiais/arqueologiadesign/ChicagoNormal.ttf');
+        }
+
+        body {
+            overflow: hidden;
+            background-repeat: repeat;
+            background-color: #FE6D6D;
+            background-image: url(https://omnidocs.vercel.app/materiais/arqueologiaeditorial/quadbranca.png);
+        }
+
+        #supermenu {
+            background-color: #ffffff;
+            position: fixed;
+            display: block;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 32px;
+            z-index: 5;
+            box-shadow: 0 3px black;
+            font-weight: bolder;
+
+        }
+
+
+        .menuoption {
+            padding: 5px 10px 3px 10px;
+            color: black;
+            font-family: 'pixChicago', monospace;
+            display: inline-block;
+            position: fixed;
+
+            top: 0;
+            font-weight: bolder;
+            z-index: 6;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .menuoption:hover {
+            background-color: #000000;
+            color: #ffffff;
+            cursor: pointer;
+
+        }
+
+        .historico {
+            left: 30px;
+        }
+
+        .desktoppublishing {
+            left: 140px;
+        }
+
+        .impressao {
+            left: 260px;
+        }
+
+        .dados {
+            left: 380px;
+        }
+
+        .animacao {
+            left: 470px;
+        }
+
+        .menulink {
+            padding: 4px 10px 4px 10px;
+            background-color: transparent;
+            display: block;
+            width: calc(100% - 20px);
+            color: #000000;
+            text-decoration: none;
+            font-weight: bolder;
+        }
+
+        .menulink:hover {
+            background-color: #000000;
+            color: white;
+        }
+
+        .menu {
+
+            font-family: 'pixChicago', monospace;
+            display: block;
+            width: 320px;
+            position: fixed;
+            top: 34px;
+            z-index: 10;
+            background-color: #ffffff;
+            color: black;
+            outline-width: 2px;
+            outline-color: #000000;
+            outline-style: solid;
+            box-shadow: 7px 7px black;
+            display: none;
+            padding: 2px;
+            height: auto;
+        }
+
+        .subhistorico {
+            left: 30px;
+        }
+
+        .subpublishing {
+            left: 140px;
+        }
+
+        .subimpressao {
+            left: 260px;
+        }
+
+        .subdados {
+            left: 380px;
+        }
+
+        .subanimacao {
+            left: 470px;
+        }
+
+
+
+        .althover {
+            text-decoration: underline;
+            /* color: cyan; */
+            color: #ff5750;
+        }
+
+        hr {
+            width: calc(100%);
+            margin-left: 0;
+        }
+
+        #conteudo {
+            width: 100%;
+            height: 100%;
+        }
+
+        #scut {
+            position: fixed;
+            top: 24px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 24px);
+            z-index: 1;
+            overflow-y: hidden;
+        }
+
+        #relogio {
+            position: fixed;
+            right: 0;
+            color: black;
+            width: 80px;
+            font-family: 'pixChicago', monospace;
+
+            padding: 6px 10px 2px 10px;
+            font-weight: bolder;
+            display: inline-block;
+            z-index: 6;
+            font-size: 14px;
+            line-height: 24px;
+
+
+        }
+
+        .tick {
+            color: black;
+            animation: pisca;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+
+        }
+
+        @keyframes pisca {
+
+            0% {
+                color: black;
+
+            }
+
+            50% {
+                color: transparent;
+            }
+
+            100% {
+                color: black;
+            }
+        }
+
+        @media screen and (max-width: 655px) {
+            #supermenu {
+                display: none;
+            }
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div id="scut">
+    <iframe id="conteudo" frameborder=0 src="https://slidelines.vercel.app/continuum/?theme=https://omnidocs.vercel.app/materiais/arqueologiadesign/colortimeline.css&&file=https://opensheet.elk.sh/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/ArqueologiaEditorialDigital"></iframe>
+    </div>
+
+    <div id="supermenu">
+
+        <div class="menuoption historico" onclick="openandclose('menuhistorico');"
+            onmouseover="closeall('menuhistorico');">
+            Historico</div>
+
+        <div class="menuoption desktoppublishing" onclick="openandclose('menupublishing');"
+            onmouseover="closeall('menupublishing');">
+            Publishing</div>
+
+        <div class="menuoption impressao" onclick="openandclose('menuimpressao');"
+            onmouseover="closeall('menuimpressao');">
+            Impressao</div>
+
+        <div class="menuoption dados" onclick="openandclose('businessgraphics');" onmouseover="closeall('businessgraphics');">
+            Dados</div>
+
+        <div class="menuoption animacao" onclick="openandclose('menuanimacao');"
+            onmouseover="closeall('menuanimacao');">
+            Animacao</div>
+
+        <div id="relogio"></div>
+
+    </div>
+
+    <div id='menuhistorico' class="menu subhistorico">
+
+        <a class="menulink" href="javascript:goto(2)">Antes do Computador</a>
+        <a class="menulink" href="javascript:goto(5)">A Computacao Pessoal</a>
+    </div>
+
+    <div id='menupublishing' class="menu subpublishing">
+
+        <a class="menulink" href="javascript:goto(8)">Mercado
+            Editorial</a>
+        <hr>
+        </hr>
+        <a class="menulink" href="javascript:goto(14)">Tipografia</a>
+        <a class="menulink" href="javascript:goto(16)">Ilustracao e Desenho Tecnico</a>
+        <a class="menulink" href="javascript:goto(29)">Bitmap e Fotografia</a>
+        <a class="menulink" href="javascript:goto(36)">Diagramacao Editorial</a>
+        <hr>
+        </hr>
+        <a class="menulink" href="javascript:goto(52)">As empresas de software</a>
+    </div>
+
+
+    <div id='menuimpressao' class="menu subimpressao">
+
+        <a class="menulink" href="javascript:goto(54)">Tecnologias de
+            impressao</a>
+        <hr>
+        </hr>
+        <a class="menulink" href="javascript:goto(60)">Copydesk (Redacao)</a>
+        <a class="menulink" href="javascript:goto(76)">Papelaria e Artefatos Impressos</a>
+        <hr>
+        </hr>
+        <a class="menulink" href="javascript:goto(79)">As empresas de software</a>
+    </div>
+
+    <div id='businessgraphics' class="menu subdados">
+
+        <a class="menulink" href="javascript:goto(81)">O Mundo Corporativo</a>
+        <hr>
+        </hr>
+        <a class="menulink" href="javascript:goto(84)">Producao e Apresentacao</a>
+        <a class="menulink" href="javascript:goto(164)">Planilhas</a>
+        <a class="menulink" href="javascript:goto(176)">Bancos de Dados</a>
+        <a class="menulink" href="javascript:goto(179)">Suites Completas</a>
+        <hr>
+        </hr>
+        <a class="menulink" href="javascript:goto(216)">As empresas de software</a>
+    </div>
+
+    <div id='menuanimacao' class="menu subanimacao">
+
+        <a class="menulink" href="javascript:goto(218)">Bidimensionais</a>
+        <a class="menulink" href="javascript:goto(221)">Tridimensionais</a>
+        <a class="menulink" href="javascript:goto(224)">Multimedia e autoracao</a>
+        <hr>
+        </hr>
+        <a class="menulink" href="javascript:goto(230)">As empresas de software</a>
+    </div>
+
+
+    <script>
+        $_GET = [];
+        (function () {
+            corte = window.location.href.toString().indexOf('?');
+            if (corte > 0) {
+                argumento = window.location.href.toString().substring(corte + 1);
+                argumentos = argumento.split('&');
+                for (arg in argumentos) {
+                    let argCorte = argumentos[arg].indexOf('=');
+                    $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[arg].substring(argCorte + 1);
+                }
+            }
+        })();
+
+
+
+        let goto = function (keyword) {
+
+            document.getElementById("conteudo").src = "https://slidelines.vercel.app/continuum/?theme=https://omnidocs.vercel.app/materiais/arqueologiadesign/colortimeline.css&&file=https://opensheet.elk.sh/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/ArqueologiaEditorialDigital&s=" +
+                keyword;
+
+            let fechaoscaras = setTimeout(closeall,200);
+        }
+
+        let gotostayopen = function (keyword) {
+
+            /*
+            let conv = {'menuhistorico': 1,'menupublishing': 7,'menuimpressao': 15,'businessgraphics': 20,'menuanimacao':1}
+
+            document.getElementById("conteudo").src = "https://slidelines.vercel.app/continuum/?theme=https://omnidocs.vercel.app/materiais/arqueologiadesign/colortimeline.css&&file=https://opensheet.elk.sh/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/ArqueologiaDesign&s=" +
+                conv[keyword];
+             */
+        }
+
+        let addzero = function (str) {
+            nstr = str.toString();
+
+            if (str.length <= 1) {
+
+                nstr = "0" + str;
+            }
+
+            return nstr;
+        }
+
+
+        let hora = new Date().getHours();
+        let minuto = new Date().getMinutes();
+
+
+        document.getElementById("relogio").innerHTML = addzero(hora.toString()) + "<span class='tick'>:</span>" +
+            addzero(minuto.toString());
+
+        setInterval(function () {
+
+            hora = new Date().getHours();
+            minuto = new Date().getMinutes();
+            document.getElementById("relogio").innerHTML = addzero(hora.toString()) +
+                "<span class='tick'>:</span>" + addzero(minuto.toString());
+        }, 60000);
+
+        let whoisopen = [];
+
+        whoisopen['menuhistorico'] = false;
+        whoisopen['menupublishing'] = false;
+        whoisopen['menuimpressao'] = false;
+        whoisopen['businessgraphics'] = false;
+        whoisopen['menuanimacao'] = false;
+
+        let closeall = function (excp) {
+            for (let elm in whoisopen) {
+
+                if (elm != excp) {
+                    document.getElementById(elm).style.display = "none";
+                    whoisopen[elm] = false;
+                }
+            }
+        }
+
+        let openandclose = function (quem) {
+
+            for (let elm in whoisopen) {
+                document.getElementById(elm).style.display = "none";
+            }
+
+            if (whoisopen[quem] == false) {
+                whoisopen[quem] = true;
+                document.getElementById(quem).style.display = "block";
+            } else {
+                whoisopen[quem] = false;
+                document.getElementById(quem).style.display = "none";
+            }
+
+            gotostayopen(quem);
+
+        }
+
+        if ($_GET['slide'] != "" && typeof $_GET['slide'] != "undefined") {
+
+            goto($_GET['slide']);
+
+        }
+    </script>
+
+</body>
+
+</html>
