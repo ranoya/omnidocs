@@ -221,22 +221,15 @@
 
         <div class="menuoption historico" onclick="openandclose('menuhistorico');"
             onmouseover="closeall('menuhistorico');">
-            Historico</div>
+            Publishing</div>
 
         <div class="menuoption desktoppublishing" onclick="openandclose('menupublishing');"
             onmouseover="closeall('menupublishing');">
-            Publishing</div>
+            Business</div>
 
         <div class="menuoption impressao" onclick="openandclose('menuimpressao');"
             onmouseover="closeall('menuimpressao');">
-            Impressao</div>
-
-        <div class="menuoption dados" onclick="openandclose('businessgraphics');" onmouseover="closeall('businessgraphics');">
-            Dados</div>
-
-        <div class="menuoption animacao" onclick="openandclose('menuanimacao');"
-            onmouseover="closeall('menuanimacao');">
-            Animacao</div>
+            New Media</div>
 
         <div id="relogio"></div>
 
@@ -244,64 +237,37 @@
 
     <div id='menuhistorico' class="menu subhistorico">
 
-        <a class="menulink" href="javascript:goto(2)">Antes do Computador</a>
-        <a class="menulink" href="javascript:goto(5)">A Computacao Pessoal</a>
+        <a class="menulink" href="javascript:goto(1)">Design Editorial</a>
+        <hr>
+        </hr>
+        <a class="menulink" href="javascript:goto(10)">Editoracao</a>
+        <a class="menulink" href="javascript:goto(30)">Textual</a>
+        <a class="menulink" href="javascript:goto(46)">Imagem Bitmap</a>
+        <a class="menulink" href="javascript:goto(53)">Imagem Vetorial</a>
     </div>
 
     <div id='menupublishing' class="menu subpublishing">
 
-        <a class="menulink" href="javascript:goto(8)">Mercado
-            Editorial</a>
+        <a class="menulink" href="javascript:goto(64)">Mundo Corporativo</a>
         <hr>
         </hr>
-        <a class="menulink" href="javascript:goto(14)">Tipografia</a>
-        <a class="menulink" href="javascript:goto(16)">Ilustracao e Desenho Tecnico</a>
-        <a class="menulink" href="javascript:goto(29)">Bitmap e Fotografia</a>
-        <a class="menulink" href="javascript:goto(36)">Diagramacao Editorial</a>
-        <hr>
-        </hr>
-        <a class="menulink" href="javascript:goto(52)">As empresas de software</a>
+        <a class="menulink" href="javascript:goto(77)">Charts & Presentation</a>
+        
     </div>
 
 
     <div id='menuimpressao' class="menu subimpressao">
 
-        <a class="menulink" href="javascript:goto(54)">Tecnologias de
-            impressao</a>
+        <a class="menulink" href="javascript:goto(145)">A tela do computador</a>
         <hr>
         </hr>
-        <a class="menulink" href="javascript:goto(60)">Copydesk (Redacao)</a>
-        <a class="menulink" href="javascript:goto(76)">Papelaria e Artefatos Impressos</a>
+        <a class="menulink" href="javascript:goto(147)">Presentation</a>
         <hr>
         </hr>
-        <a class="menulink" href="javascript:goto(79)">As empresas de software</a>
+        <a class="menulink" href="javascript:goto(170)">Multimedia</a>
     </div>
 
-    <div id='businessgraphics' class="menu subdados">
-
-        <a class="menulink" href="javascript:goto(81)">O Mundo Corporativo</a>
-        <hr>
-        </hr>
-        <a class="menulink" href="javascript:goto(84)">Producao e Apresentacao</a>
-        <a class="menulink" href="javascript:goto(164)">Planilhas</a>
-        <a class="menulink" href="javascript:goto(176)">Bancos de Dados</a>
-        <a class="menulink" href="javascript:goto(179)">Suites Completas</a>
-        <hr>
-        </hr>
-        <a class="menulink" href="javascript:goto(216)">As empresas de software</a>
-    </div>
-
-    <div id='menuanimacao' class="menu subanimacao">
-
-        <a class="menulink" href="javascript:goto(218)">Bidimensionais</a>
-        <a class="menulink" href="javascript:goto(221)">Tridimensionais</a>
-        <a class="menulink" href="javascript:goto(224)">Multimedia e autoracao</a>
-        <hr>
-        </hr>
-        <a class="menulink" href="javascript:goto(230)">As empresas de software</a>
-    </div>
-
-
+   
     <script>
         $_GET = [];
         (function () {
@@ -368,8 +334,6 @@
         whoisopen['menuhistorico'] = false;
         whoisopen['menupublishing'] = false;
         whoisopen['menuimpressao'] = false;
-        whoisopen['businessgraphics'] = false;
-        whoisopen['menuanimacao'] = false;
 
         let closeall = function (excp) {
             for (let elm in whoisopen) {
