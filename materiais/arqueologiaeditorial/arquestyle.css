@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+
+:root {
+  --base-background: transparent !important;
+  --littlemenu-over: #000000 !important;
+  --timeline-text-over: #11eade !important;
+  --timeline-text-highlight: #29c9c6 !important;
+  --timeline-font: Times;
+  --meta-font: "Merriweather";
+  --meta-margins: 50px;
+}
+
+#titulodoslide {
+  width: 60% !important;
+  height: 22px !important;
+  top: auto;
+  bottom: 25px !important;
+  left: 20% !important;
+  text-align: center !important;
+  font-size: 24px !important;
+  text-shadow: 2px 2px black !important;
+}
+
+#loslinks {
+  font-size: 24px !important;
+  text-shadow: 2px 2px black !important;
+  text-transform: none;
+}
+
+#sliding1 div,
+#sliding2 div,
+#sliding3 div,
+#frontslide div {
+  margin-top: 60px !important;
+  height: calc(100vh - 130px) !important;
+}
