@@ -555,11 +555,11 @@
         if (whoisopen[quem] == false) {
             whoisopen[quem] = true;
             document.getElementById(quem).style.display = "block";
-            document.getElementById("super" + elm).classList.add("fixamenulink");
+            document.getElementById("super" + quem).classList.add("fixamenulink");
         } else {
             whoisopen[quem] = false;
             document.getElementById(quem).style.display = "none";
-            document.getElementById("super" + elm).classList.remove("fixamenulink");
+            document.getElementById("super" + quem).classList.remove("fixamenulink");
         }
 
         gotostayopen(quem);
