@@ -149,9 +149,37 @@
         color: #762678;
     }
 
+    div.submenulink {
+        font-family: Helvetica, Arial, sans-serif;
+        display: block;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-decoration: none;
+        background-color: #762678;
+        color: #ffffff;
+        font-size: 10px;
+        font-weight: bolder;
+        line-height: 36px;
+        height: 36px;
+        cursor: pointer;
+    }
+
+    div.submenulink:hover {
+        background-color: white;
+        color: #762678;
+    }
+
     .subvideos {
 
         left: 30px;
+    }
+
+    .sub2 {
+        left: 130px;
+    }
+
+    .sub3 {
+        left: 200px;
     }
 
     .margindivide {
@@ -356,12 +384,38 @@
       <div class="menulink" style="margin-left: 30px;" onclick="openandclose('menuvideos');"
             onmouseover="closeall('menuvideos');">VÍDEOS</div>
             
-      <a href="javascript:goto('planilha')" class="menulink">PLANILHA</a
-      ><a href="javascript:goto('mysql')" class="menulink">SQL</a
-      >
+      <div class="menulink" onclick="openandclose('menu2');"
+            onmouseover="closeall('menu2');">MENU 2</div>
+
+      <div class="menulink" onclick="openandclose('menu3');"
+            onmouseover="closeall('menu3');">MENU 3</div>
     </div>
 
     <div id='menuvideos' class="submenu subvideos">
+
+        <a href="javascript:goto('capa','sumario')" class="submenulink">VÍDEOS 1</a
+      >
+        <hr>
+        </hr>
+        <a href="javascript:goto('capa','sumario')" class="submenulink">VÍDEOS 2</a
+      >
+        <a href="javascript:goto('capa','sumario')" class="submenulink">VÍDEOS 3</a
+      >
+    </div>
+
+    <div id='menu2' class="submenu sub2">
+
+        <a href="javascript:goto('capa','sumario')" class="submenulink">VÍDEOS 1</a
+      >
+        <hr>
+        </hr>
+        <a href="javascript:goto('capa','sumario')" class="submenulink">VÍDEOS 2</a
+      >
+        <a href="javascript:goto('capa','sumario')" class="submenulink">VÍDEOS 3</a
+      >
+    </div>
+
+    <div id='menu3' class="submenu sub3">
 
         <a href="javascript:goto('capa','sumario')" class="submenulink">VÍDEOS 1</a
       >
@@ -384,6 +438,8 @@
 
     let whoisopen = [];
     whoisopen['menuvideos'] = false;
+    whoisopen['menu2'] = false;
+    whoisopen['menu3'] = false;
 
 
     let goto = function (keyword, presentslide) {
@@ -470,38 +526,38 @@
 
     
 
-        let closeall = function (excp) {
-            for (let elm in whoisopen) {
+    let closeall = function (excp) {
+        for (let elm in whoisopen) {
 
-                if (elm != excp) {
-                    document.getElementById(elm).style.display = "none";
-                    whoisopen[elm] = false;
-                }
-            }
-        }
-
-        let openandclose = function (quem) {
-
-            for (let elm in whoisopen) {
+            if (elm != excp) {
                 document.getElementById(elm).style.display = "none";
+                whoisopen[elm] = false;
             }
+        }
+    }
 
-            if (whoisopen[quem] == false) {
-                whoisopen[quem] = true;
-                document.getElementById(quem).style.display = "block";
-            } else {
-                whoisopen[quem] = false;
-                document.getElementById(quem).style.display = "none";
-            }
+    let openandclose = function (quem) {
 
-            gotostayopen(quem);
-
+        for (let elm in whoisopen) {
+            document.getElementById(elm).style.display = "none";
         }
 
-        if ($_GET['slide'] != "" && typeof $_GET['slide'] != "undefined") {
-
-            goto($_GET['slide']);
-
+        if (whoisopen[quem] == false) {
+            whoisopen[quem] = true;
+            document.getElementById(quem).style.display = "block";
+        } else {
+            whoisopen[quem] = false;
+            document.getElementById(quem).style.display = "none";
         }
+
+        gotostayopen(quem);
+
+    }
+
+    if ($_GET['slide'] != "" && typeof $_GET['slide'] != "undefined") {
+
+        goto($_GET['slide']);
+
+    }
   </script>
 </html>
