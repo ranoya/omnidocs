@@ -106,24 +106,49 @@
             display: block;
             width: auto;
             position: fixed;
-            top: 34px;
+            top: 38px;
             z-index: 10;
             background-color: #762678;
             color: white;
             outline-width: 2px;
             outline-color: white;
             outline-style: solid;
-            box-shadow: 7px 7px black;
+            box-shadow: 8px 8px 7px 7px #00000022;
             /* display: none; */
             padding: 2px;
             height: auto;
+            min-width: 150px;
         }
+    
+    .submenu a {
+        clear: both;
+
+    }
     
     hr {
             width: calc(100%);
             margin-left: 0;
-            border-top: 1px solid white;
+            border-top: 1px solid #7d7837;
             
+    }
+
+    a.submenulink {
+        font-family: Helvetica, Arial, sans-serif;
+        display: block;
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 10px;
+        font-weight: bolder;
+        line-height: 36px;
+        height: 36px;
+    }
+
+    a.submenulink:hover {
+        background-color: white;
+        color: #762678;
     }
 
     .subvideos {
@@ -334,13 +359,13 @@
 
     <div id='menuvideos' class="submenu subvideos">
 
-        <a href="javascript:goto('capa','sumario')" class="menulink">VÍDEOS 1</a
+        <a href="javascript:goto('capa','sumario')" class="submenulink">VÍDEOS 1</a
       >
         <hr>
         </hr>
-        <a href="javascript:goto('capa','sumario')" class="menulink">VÍDEOS 2</a
+        <a href="javascript:goto('capa','sumario')" class="submenulink">VÍDEOS 2</a
       >
-        <a href="javascript:goto('capa','sumario')" class="menulink">VÍDEOS 3</a
+        <a href="javascript:goto('capa','sumario')" class="submenulink">VÍDEOS 3</a
       >
     </div>
 
