@@ -150,6 +150,8 @@
         color: #762678;
     }
 
+    
+
     .subvideos {
 
         left: 30px;
@@ -200,6 +202,10 @@
 
     div.menulink:hover {
       background-color: #762678;
+    }
+
+    .fixamenulink {
+        background-color: #762678;
     }
 
     .workbechgrande {
@@ -380,13 +386,13 @@
     </div>
 
     <div id="menu" class="nada workbechgrande">
-      <div class="menulink" style="margin-left: 30px;" onclick="openandclose('menuvideos');"
+      <div id="supermenuvideos" class="menulink" style="margin-left: 30px;" onclick="openandclose('menuvideos');"
             onmouseover="closeall('menuvideos');">VÍDEOS</div>
             
-      <div class="menulink" onclick="openandclose('menu2');"
+      <div id="supermenu2" class="menulink" onclick="openandclose('menu2');"
             onmouseover="closeall('menu2');">MENU 2</div>
 
-      <div class="menulink" onclick="openandclose('menu3');"
+      <div id="supermenu3" class="menulink" onclick="openandclose('menu3');"
             onmouseover="closeall('menu3');">MENU 3</div>
     </div>
 
@@ -530,7 +536,11 @@
 
             if (elm != excp) {
                 document.getElementById(elm).style.display = "none";
+                document.getElementById("super" + elm).classList.remove("fixamenulink");
                 whoisopen[elm] = false;
+
+            } else {
+                document.getElementById("super" + elm).classList.add("fixamenulink");
             }
         }
     }
@@ -539,14 +549,17 @@
 
         for (let elm in whoisopen) {
             document.getElementById(elm).style.display = "none";
+            document.getElementById("super" + elm).classList.remove("fixamenulink");
         }
 
         if (whoisopen[quem] == false) {
             whoisopen[quem] = true;
             document.getElementById(quem).style.display = "block";
+            document.getElementById("super" + elm).classList.add("fixamenulink");
         } else {
             whoisopen[quem] = false;
             document.getElementById(quem).style.display = "none";
+            document.getElementById("super" + elm).classList.remove("fixamenulink");
         }
 
         gotostayopen(quem);
