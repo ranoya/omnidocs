@@ -205,7 +205,7 @@
     }
 
     .fixamenulink {
-        background-color: #762678;
+        background-color: #762678 !important;
     }
 
     .workbechgrande {
@@ -538,10 +538,6 @@
                 document.getElementById(elm).style.display = "none";
                 document.getElementById("super" + elm).classList.remove("fixamenulink");
                 whoisopen[elm] = false;
-
-            } else {
-                document.getElementById("super" + elm).classList.add("fixamenulink");
-            }
         }
     }
 
