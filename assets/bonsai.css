@@ -5,10 +5,14 @@
   --color-link: #ffffff;
   --color-hover: #5e0c3a;
   --input-text: #ffffff;
-  --scroll-track: #7d7837;
+  --scroll-track: #7d783700;
   --color-shadow: #00000055;
 }
 
 #poeinst {
   background: var(--bg-color);
+}
+
+#outputs::-webkit-scrollbar-thumb {
+  background: #410524;
 }
