@@ -1,12 +1,12 @@
 :root {
   --bg-color: #7d7837;
-  --line-separator: #a39d43;
-  --text-color: #ffffff;
-  --color-link: #fbb7e2;
+  --line-separator: #68641c;
+  --text-color: #611a52;
+  --color-link: #ffffff;
   --color-hover: #5e0c3a;
   --input-text: #ffffff;
   --scroll-track: #7d7837;
-  --color-shadow: #ffffff55;
+  --color-shadow: #00000055;
 }
 
 #poeinst {
