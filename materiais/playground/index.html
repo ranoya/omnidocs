@@ -101,6 +101,36 @@
       transition: all 0.4s ease-in;
     }
 
+    .submenu {
+
+            display: block;
+            width: auto;
+            position: fixed;
+            top: 34px;
+            z-index: 10;
+            background-color: #762678;
+            color: white;
+            outline-width: 2px;
+            outline-color: white;
+            outline-style: solid;
+            box-shadow: 7px 7px black;
+            /* display: none; */
+            padding: 2px;
+            height: auto;
+        }
+    
+    hr {
+            width: calc(100%);
+            margin-left: 0;
+            border-top: 1px solid white;
+            
+    }
+
+    .subvideos {
+
+        left: 200px;
+    }
+
     a.menulink {
       padding-left: 15px;
       padding-right: 15px;
@@ -296,21 +326,21 @@
     </div>
 
     <div id="menu" class="nada workbechgrande">
-      <a href="javascript:goto('capa','sumario')" class="menulink">SUMÁRIO</a
+      <a href="javascript:goto('capa','sumario')" class="menulink">VÍDEOS</a
       ><a href="javascript:goto('planilha')" class="menulink">PLANILHA</a
       ><a href="javascript:goto('mysql')" class="menulink">SQL</a
-      ><a href="javascript:goto('notebooks','notebooks')" class="menulink"
-        >NOTEBOOKS</a
-      ><a href="javascript:goto('viz','notebooks')" class="menulink">DATAVIZ</a
-      ><a href="javascript:goto('dataexport','dataexport')" class="menulink"
-        >INTEROPERABILIDADE</a
-      ><a
-        href="javascript:goto('programajava','tipologiasdedados')"
-        class="menulink"
-        >VARIÁVEIS</a
-      ><a href="javascript:goto('dbase','database')" class="menulink">DBASE</a
-      ><a href="javascript:goto('visicalc','calculo')" class="menulink"
-        >VISICALC</a
+      >
+    </div>
+
+    <div id='menuvideos' class="submenu subvideos">
+
+        <a href="javascript:goto('capa','sumario')" class="menulink">VÍDEOS 1</a
+      >
+        <hr>
+        </hr>
+        <a href="javascript:goto('capa','sumario')" class="menulink">VÍDEOS 2</a
+      >
+        <a href="javascript:goto('capa','sumario')" class="menulink">VÍDEOS 3</a
       >
     </div>
 
