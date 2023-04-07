@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="" />
+    <title>Experience Playground</title>
+    <meta property="og:title" content="Experience Playground" />
+    <meta name="generator" content="artesanal" />
+    <meta
+      name="description"
+      content="Contexto de trabalho para ensino sobre a experiência"
+    />
+    <meta
+      property="og:description"
+      content="Contexto de trabalho para ensino sobre a experiência"
+    />
+    <meta name="author" content="Guilherme Ranoya" />
+    <meta
+      property="og:url"
+      content="https://omnidocs.vercel.app/docs/playground"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:site_name" content="Experience Playground" />
+    <meta name="application-name" content="Experience Playground" />
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta name="msapplication-TileColor" content="#7d7837" />
+    <meta name="theme-color" content="#debe34" />
+    <meta name="msapplication-navbutton-color" content="#7d7837" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#7d7837" />
+  </head>
+
+  <style>
+    body {
+      height: 100vh;
+      height: -webkit-fill-available;
+      overflow: hidden;
+    }
+
+    html {
+      height: -webkit-fill-available;
+      overflow: hidden;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background-color: #7d7837;
+    }
+
+    #apresentacao {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 430px;
+      height: 100vh;
+      height: -webkit-fill-available;
+      z-index: 10;
+      box-shadow: 8px 0px 4px #2f2f2f22;
+      overflow-y: hidden;
+
+      transition: all 0.4s ease-in;
+    }
+
+    #workspace {
+      position: fixed;
+      top: 36px;
+      left: 430px;
+      width: calc(100vw - 430px);
+      height: calc(100vh - 36px);
+      z-index: 5;
+
+      transition: all 0.4s ease-in;
+    }
+
+    #menu {
+      position: fixed;
+      top: 0;
+      left: 430px;
+      width: calc(100vw - 430px);
+      height: 36px;
+      z-index: 6;
+      background-color: #7d7837;
+      color: #ffffff;
+      font-family: Helvetica, Arial, sans-serif;
+
+      font-size: 12px;
+      line-height: 36px;
+
+      transition: all 0.4s ease-in;
+    }
+
+    a.menulink {
+      padding-left: 15px;
+      padding-right: 15px;
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #7d7837;
+      font-size: 10px;
+      font-weight: bolder;
+      line-height: 36px;
+      height: 36px;
+      display: inline-block;
+    }
+
+    a.menulink:hover {
+      background-color: #762678;
+    }
+
+    .workbechgrande {
+      width: 100% !important;
+      left: 0 !important;
+      transition: all 0.4s ease-in;
+      overflow-y: hidden;
+    }
+
+    .workbenchpequeno {
+      left: 100vw;
+      width: calc(100vw - 430px);
+      overflow-y: hidden;
+    }
+
+    .apresentacaopequena {
+      left: -440px !important;
+      width: 430px !important;
+      box-shadow: 0px 0px 0px #2f2f2f22 !important;
+      overflow-y: hidden;
+    }
+
+    .apresentacaogrande {
+      left: 0 !important;
+      width: 100vw !important;
+      box-shadow: 0px 0px 0px #2f2f2f22 !important;
+      overflow-y: hidden;
+    }
+
+    .apresentacaonormal {
+      left: 0;
+      width: 430px;
+      box-shadow: 8px 0px 4px #2f2f2f22;
+      overflow-y: hidden;
+    }
+
+    .workbenchnormal {
+      left: 430px;
+      width: calc(100vw - 430px);
+      overflow-y: hidden;
+    }
+
+    #interfacebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 148px;
+      height: 36px;
+      z-index: 18;
+      background-color: transparent !important;
+    }
+
+    #bot1 {
+      position: fixed;
+      text-align: center;
+      top: 0;
+      right: 92px;
+      width: 36px;
+      height: 36px;
+      z-index: 20;
+      background-color: transparent;
+      color: white;
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bolder;
+      font-size: 12px;
+      line-height: 36px;
+
+      transition: all 0.4s ease-in;
+      background-image: url(https://www.ranoya.com/Assets/Diagramas/fullpresentation.svg);
+      background-repeat: no-repeat;
+      background-size: 36px 36px;
+    }
+
+    #bot2 {
+      position: fixed;
+      text-align: center;
+      top: 0;
+      right: 56px;
+      width: 36px;
+      height: 36px;
+      z-index: 20;
+      background-color: transparent;
+      color: white;
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bolder;
+      font-size: 12px;
+      line-height: 36px;
+
+      transition: all 0.4s ease-in;
+      /*
+      background-image: url(https://www.ranoya.com/Assets/Diagramas/dividescreen.svg);
+      background-repeat: no-repeat;
+      background-size: 36px 36px;
+      */
+    }
+
+    #bot3 {
+      position: fixed;
+      text-align: center;
+      top: 0;
+      right: 20px;
+      width: 36px;
+      height: 36px;
+      z-index: 20;
+      background-color: transparent;
+      color: white;
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bolder;
+      font-size: 12px;
+      line-height: 36px;
+
+      transition: all 0.4s ease-in;
+      /*
+      background-image: url(https://www.ranoya.com/Assets/Diagramas/fullworkbench.svg);
+      background-repeat: no-repeat;
+      background-size: 36px 36px;
+      */
+    }
+
+    #bot1:hover,
+    #bot2:hover,
+    #bot3:hover {
+      background-color: #762678;
+    }
+
+    .nada {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: calc(100% + 34px);
+    }
+
+    @media screen and (max-width: 480px) {
+      iframe {
+        height: calc (100% - 6px);
+      }
+    }
+  </style>
+
+  <script>
+    // FUNÇÃO URL GET
+    // urlGet('xpto'); www.site.com/?xpto=teste
+    // let data = $_GET['xpto']; www.site.com/?xpto=teste
+
+    $_GET = [];
+    (function () {
+      let corte = window.location.href.toString().indexOf("?");
+      if (corte > 0) {
+        let argumento = window.location.href.toString().substring(corte + 1);
+        argumentos = argumento.split("&");
+        for (arg in argumentos) {
+          let argCorte = argumentos[arg].indexOf("=");
+          $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+            arg
+          ].substring(argCorte + 1);
+        }
+      }
+    })();
+  </script>
+
+  <body>
+    <div id="apresentacao" class="nada apresentacaopequena">
+      <iframe id="iapres" frameborder="0" src=""></iframe>
+    </div>
+
+    <div id="workspace" class="nada workbechgrande">
+      <iframe
+        id="iwork"
+        frameborder="0"
+        src="https://slides.com/ranoya/dataliteracyworkbench/embed"
+      ></iframe>
+    </div>
+
+    <div id="menu" class="nada workbechgrande">
+      <a href="javascript:goto('capa','sumario')" class="menulink">SUMÁRIO</a
+      ><a href="javascript:goto('planilha')" class="menulink">PLANILHA</a
+      ><a href="javascript:goto('mysql')" class="menulink">SQL</a
+      ><a href="javascript:goto('notebooks','notebooks')" class="menulink"
+        >NOTEBOOKS</a
+      ><a href="javascript:goto('viz','notebooks')" class="menulink">DATAVIZ</a
+      ><a href="javascript:goto('dataexport','dataexport')" class="menulink"
+        >INTEROPERABILIDADE</a
+      ><a
+        href="javascript:goto('programajava','tipologiasdedados')"
+        class="menulink"
+        >VARIÁVEIS</a
+      ><a href="javascript:goto('dbase','database')" class="menulink">DBASE</a
+      ><a href="javascript:goto('visicalc','calculo')" class="menulink"
+        >VISICALC</a
+      >
+    </div>
+
+    <div id="interfacebar">
+      <a id="bot1" href="javascript:fullpresentation();"></a>
+      <a id="bot2" href="javascript:dividescreen();"></a>
+      <a id="bot3" href="javascript:fullworkbench()"></a>
+    </div>
+  </body>
+
+  <script>
+    let goto = function (keyword, presentslide) {
+      if (keyword != "" && typeof keyword != "undefined" && keyword != null) {
+        document.getElementById("iwork").src =
+          "https://slides.com/ranoya/dataliteracyworkbench/embed#/" + keyword;
+      }
+
+      if (
+        presentslide != "" &&
+        typeof presentslide != "undefined" &&
+        presentslide != null
+      ) {
+        document.getElementById("iapres").src =
+          "https://slides.com/ranoya/dataliteracyworkshop/embed#/" +
+          presentslide;
+      }
+    };
+
+    let fullworkbench = function () {
+      document
+        .getElementById("apresentacao")
+        .classList.remove("apresentacaogrande");
+      document.getElementById("menu").classList.remove("workbechpequeno");
+      document.getElementById("workspace").classList.remove("workbechpequeno");
+
+      document
+        .getElementById("apresentacao")
+        .classList.add("apresentacaopequena");
+      document.getElementById("menu").classList.add("workbechgrande");
+      document.getElementById("workspace").classList.add("workbechgrande");
+    };
+
+    let fullpresentation = function () {
+      document
+        .getElementById("apresentacao")
+        .classList.remove("apresentacaopequena");
+      document.getElementById("menu").classList.remove("workbechgrande");
+      document.getElementById("workspace").classList.remove("workbechgrande");
+
+      document
+        .getElementById("apresentacao")
+        .classList.add("apresentacaogrande");
+      document.getElementById("menu").classList.add("workbechpequeno");
+      document.getElementById("workspace").classList.add("workbechpequeno");
+    };
+
+    let dividescreen = function () {
+      document
+        .getElementById("apresentacao")
+        .classList.remove("apresentacaopequena");
+      document.getElementById("menu").classList.remove("workbechgrande");
+      document.getElementById("workspace").classList.remove("workbechgrande");
+
+      document
+        .getElementById("apresentacao")
+        .classList.remove("apresentacaogrande");
+      document.getElementById("menu").classList.remove("workbechpequeno");
+      document.getElementById("workspace").classList.remove("workbechpequeno");
+    };
+
+    if (typeof $_GET["inst"] != "undefined" || $_GET["wrk"] != "undefined") {
+      let mto = setTimeout(function () {
+        goto($_GET["wrk"], $_GET["inst"]);
+      }, 2000);
+    } else {
+      goto("capa", "capa");
+    }
+
+    if (typeof $_GET["setup"] != "undefined") {
+      if ($_GET["setup"] == "pres") {
+        fullpresentation();
+      } else {
+        dividescreen();
+      }
+    }
+  </script>
+</html>
