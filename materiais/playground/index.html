@@ -103,7 +103,6 @@
 
     .submenu {
 
-            display: block;
             width: auto;
             position: fixed;
             top: 38px;
@@ -111,34 +110,33 @@
             background-color: #762678;
             color: white;
             outline-width: 2px;
-            outline-color: white;
+            outline-color: #762678;
             outline-style: solid;
             box-shadow: 8px 8px 7px 7px #00000022;
-            /* display: none; */
+            display: none;
             padding: 2px;
             height: auto;
             min-width: 150px;
+            margin-left: 0;
         }
     
-    .submenu a {
-        clear: both;
-
-    }
     
     hr {
             width: calc(100%);
             margin-left: 0;
             border-top: 1px solid #7d7837;
+            margin-top: 2px;
+            margin-bottom: 2px;
             
     }
 
     a.submenulink {
         font-family: Helvetica, Arial, sans-serif;
         display: block;
-        width: 100%;
         padding-left: 15px;
         padding-right: 15px;
         text-decoration: none;
+        background-color: #762678;
         color: #ffffff;
         font-size: 10px;
         font-weight: bolder;
@@ -153,7 +151,11 @@
 
     .subvideos {
 
-        left: 200px;
+        left: 30px;
+    }
+
+    .margindivide {
+        margin-left: 430px;
     }
 
     a.menulink {
@@ -351,8 +353,10 @@
     </div>
 
     <div id="menu" class="nada workbechgrande">
-      <a href="javascript:goto('capa','sumario')" class="menulink">VÍDEOS</a
-      ><a href="javascript:goto('planilha')" class="menulink">PLANILHA</a
+      <div class="menulink" style="margin-left: 30px;" onclick="openandclose('menuvideos');"
+            onmouseover="closeall('menuvideos');">VÍDEOS</div>
+            
+      <a href="javascript:goto('planilha')" class="menulink">PLANILHA</a
       ><a href="javascript:goto('mysql')" class="menulink">SQL</a
       >
     </div>
@@ -377,6 +381,11 @@
   </body>
 
   <script>
+
+    let whoisopen = [];
+    whoisopen['menuvideos'] = false;
+
+
     let goto = function (keyword, presentslide) {
       if (keyword != "" && typeof keyword != "undefined" && keyword != null) {
         document.getElementById("iwork").src = keyword;
@@ -403,9 +412,15 @@
         .classList.add("apresentacaopequena");
       document.getElementById("menu").classList.add("workbechgrande");
       document.getElementById("workspace").classList.add("workbechgrande");
+
+      for (let elm in whoisopen) {
+        document.getElementById(elm).className.remove("margindivide");
+      }
     };
 
     let fullpresentation = function () {
+
+      closeall();
       document
         .getElementById("apresentacao")
         .classList.remove("apresentacaopequena");
@@ -431,6 +446,10 @@
         .classList.remove("apresentacaogrande");
       document.getElementById("menu").classList.remove("workbechpequeno");
       document.getElementById("workspace").classList.remove("workbechpequeno");
+
+      for (let elm in whoisopen) {
+        document.getElementById(elm).className.add("margindivide");
+      }
     };
 
     if (typeof $_GET["inst"] != "undefined" || $_GET["wrk"] != "undefined") {
@@ -448,5 +467,41 @@
         dividescreen();
       }
     }
+
+    
+
+        let closeall = function (excp) {
+            for (let elm in whoisopen) {
+
+                if (elm != excp) {
+                    document.getElementById(elm).style.display = "none";
+                    whoisopen[elm] = false;
+                }
+            }
+        }
+
+        let openandclose = function (quem) {
+
+            for (let elm in whoisopen) {
+                document.getElementById(elm).style.display = "none";
+            }
+
+            if (whoisopen[quem] == false) {
+                whoisopen[quem] = true;
+                document.getElementById(quem).style.display = "block";
+            } else {
+                whoisopen[quem] = false;
+                document.getElementById(quem).style.display = "none";
+            }
+
+            gotostayopen(quem);
+
+        }
+
+        if ($_GET['slide'] != "" && typeof $_GET['slide'] != "undefined") {
+
+            goto($_GET['slide']);
+
+        }
   </script>
 </html>
