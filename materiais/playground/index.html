@@ -468,7 +468,7 @@
       document.getElementById("workspace").classList.add("workbechgrande");
 
       for (let elm in whoisopen) {
-        document.getElementById(elm).className.remove("margindivide");
+        document.getElementById(elm).classList.remove("margindivide");
       }
     };
 
@@ -502,7 +502,7 @@
       document.getElementById("workspace").classList.remove("workbechpequeno");
 
       for (let elm in whoisopen) {
-        document.getElementById(elm).className.add("margindivide");
+        document.getElementById(elm).classList.add("margindivide");
       }
     };
 
