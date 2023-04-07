@@ -150,20 +150,18 @@
         color: #762678;
     }
 
-    
+    .subprojeto {
+        left: 97px;
+    }
 
     .subvideos {
-
-        left: 30px;
+        left: 150px;
     }
 
     .sub2 {
-        left: 130px;
-    }
-
-    .sub3 {
         left: 200px;
     }
+
 
     .margindivide {
         margin-left: 430px;
@@ -390,14 +388,45 @@
       <div id="superstart" class="menulink" style="margin-left: 30px;" onclick="goto('https://slides.com/ranoya/playground/embed#/capa','https://slides.com/ranoya/play/embed#/capa')"
             onmouseover="closeall();">INÍCIO</div>
       
+      <div id="supermenuvideos" class="menulink" onclick="openandclose('menuprojeto');"
+            onmouseover="closeall('menuprojeto');">PROJETO</div>
+
       <div id="supermenuvideos" class="menulink" onclick="openandclose('menuvideos');"
             onmouseover="closeall('menuvideos');">VÍDEOS</div>
             
       <div id="supermenu2" class="menulink" onclick="openandclose('menu2');"
             onmouseover="closeall('menu2');">MENU 2</div>
 
-      <div id="supermenu3" class="menulink" onclick="openandclose('menu3');"
-            onmouseover="closeall('menu3');">MENU 3</div>
+
+    </div>
+
+    <div id='menuprojeto' class="submenu subprojeto">
+        
+            <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/projeto1')" class="submenulink">REQUISITOS</a
+            >
+
+            <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/projeto2')" class="submenulink">JORNADA</a
+            >
+                
+                <hr>
+                </hr>
+
+            <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/circulomagico','https://slides.com/ranoya/play/embed#/etapa1')" class="submenulink">FASES 1</a
+            >
+            
+            <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/projeto3','https://slides.com/ranoya/play/embed#/etapa1')" class="submenulink">FASES 2</a
+            >
+            
+            <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/projeto4','https://slides.com/ranoya/play/embed#/etapa1')" class="submenulink">FASES 3</a
+            >
+
+            <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/projeto5','https://slides.com/ranoya/play/embed#/etapa1')" class="submenulink">FASES 4</a
+            >
+
+            <hr>
+                </hr>
+            <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/projeto6')" class="submenulink">EXPERIMENTAÇÃO</a
+            >
     </div>
 
     <div id='menuvideos' class="submenu subvideos">
@@ -428,17 +457,7 @@
       >
     </div>
 
-    <div id='menu3' class="submenu sub3">
-
-        <a href="javascript:goto('capa','sumario')" class="submenulink">VÍDEOS 1</a
-      >
-        <hr>
-        </hr>
-        <a href="javascript:goto('capa','sumario')" class="submenulink">VÍDEOS 2</a
-      >
-        <a href="javascript:goto('capa','sumario')" class="submenulink">VÍDEOS 3</a
-      >
-    </div>
+    
 
     <div id="interfacebar">
       <a id="bot1" href="javascript:fullpresentation();"></a>
@@ -450,6 +469,7 @@
   <script>
 
     let whoisopen = [];
+    whoisopen['menuprojeto'] = false;
     whoisopen['menuvideos'] = false;
     whoisopen['menu2'] = false;
     whoisopen['menu3'] = false;
