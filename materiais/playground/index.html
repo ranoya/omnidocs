@@ -291,7 +291,7 @@
       <iframe
         id="iwork"
         frameborder="0"
-        src="https://slides.com/ranoya/dataliteracyworkbench/embed"
+        src="https://slides.com/ranoya/playground/embed"
       ></iframe>
     </div>
 
@@ -324,8 +324,7 @@
   <script>
     let goto = function (keyword, presentslide) {
       if (keyword != "" && typeof keyword != "undefined" && keyword != null) {
-        document.getElementById("iwork").src =
-          "https://slides.com/ranoya/dataliteracyworkbench/embed#/" + keyword;
+        document.getElementById("iwork").src = keyword;
       }
 
       if (
@@ -333,9 +332,7 @@
         typeof presentslide != "undefined" &&
         presentslide != null
       ) {
-        document.getElementById("iapres").src =
-          "https://slides.com/ranoya/dataliteracyworkshop/embed#/" +
-          presentslide;
+        document.getElementById("iapres").src = presentslide;
       }
     };
 
