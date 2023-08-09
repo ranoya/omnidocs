@@ -148,7 +148,7 @@ let createpoe = function (json, css, plugins) {
                   /*
                   code += `<a target='_blank' href='javascript:be("${arr[l].Link}"); toggle("poeinst");' class='linksrecursos'>${arr[l].Name}</a>`;
                   */
-                  code += `<a target='_blank' href='javascript:bo("${arr[l].Link}"); toggle("poeinst");' class='linksrecursos'>${arr[l].Name}</a>`;
+                  code += `<a href='javascript:bo("${arr[l].Link}"); toggle("poeinst");' class='linksrecursos'>${arr[l].Name}</a>`;
 
                 }
               }
@@ -176,7 +176,7 @@ let createpoe = function (json, css, plugins) {
                   /*
                   code += `<a target='_blank' href='javascript:be("${arr[l].Link}"); toggle("poeinst");' class='linksrecursos'>${arr[l].Name}</a>`;
                   */
-                  code += `<a target='_blank' href='javascript:bo("${arr[l].Link}"); toggle("poeinst");' class='linksrecursos'>${arr[l].Name}</a>`;
+                  code += `<a href='javascript:bo("${arr[l].Link}"); toggle("poeinst");' class='linksrecursos'>${arr[l].Name}</a>`;
                 
               }
 
