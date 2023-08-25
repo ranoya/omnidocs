@@ -142,6 +142,8 @@ let createpoe = function (json, css, plugins) {
                   code += `<a target='_self' href='javascript:be("${arr[l].Link}"); toggle("poeinst");' class='linksrecursos'>${arr[l].Name}</a>`;
                 } else if (arr[l]["Type"] == "embed") {
                   code += `<a target='_self' href='javascript:embed("${arr[l].Link}")' class='linksrecursos'>${arr[l].Name}</a>`;
+                } else if (arr[l]["Type"] == "run") {
+                  code += `<a target='_self' href='${arr[l].Link}' class='linksrecursos'>${arr[l].Name}</a>`;
                 } else {
                   // alterei aqui por conta do formulário no Estudio de DI
                   // qualquer problema, retorne ao original
@@ -170,6 +172,8 @@ let createpoe = function (json, css, plugins) {
                 code += `<a target='_self' href='javascript:be("${arr[l].Link}"); toggle("poeinst");' class='linksrecursos'>${arr[l].Name}</a>`;
               } else if (arr[l]["Type"] == "embed") {
                 code += `<a target='_self' href='javascript:embed("${arr[l].Link}")' class='linksrecursos'>${arr[l].Name}</a>`;
+              } else if (arr[l]["Type"] == "run") {
+                  code += `<a target='_self' href='${arr[l].Link}' class='linksrecursos'>${arr[l].Name}</a>`;
               } else {
                 // alterei aqui por conta do formulário no Estudio de DI
                   // qualquer problema, retorne ao original
