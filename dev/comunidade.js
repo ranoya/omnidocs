@@ -3,6 +3,7 @@ let comunidade = function (par) {
 
   let jsonfile = `https://opensheet.elk.sh/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/DGENComunidade`; // Change the URL here (imperative)
 
+  
   let namekey = `Name`; // Change the Key for the Title of the links, if needed
   let groupkey = `Group`; // Change the Key for the Groups of the links, if needed
   let linkkey = `Link`; // Change the Key for the link url of the links, if needed
@@ -15,7 +16,58 @@ let comunidade = function (par) {
     .then((jsondata) => {
       let dados = select(jsondata, multipatterncheck_exclude, par);
       let selectedarr = tags(dados, groupkey, ",");
-      let code = `<div class="outputgrid"><span class='categoria noline'>Produções desenvolvidas pela Comunidade de Programação Criativa</span><span class='categoria'>&nbsp;</span>`;
+        let code = `
+
+        <style>
+
+            .linkeimagedovideo {
+                display: block;
+                width: 100%;
+                padding: 0;
+                padding-top: 75%;
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                outline-color: transparent;
+                outline-width: 3px;
+                outline-style: solid;
+                transition: all .3s ease-in;
+            }
+
+            .linkeimagedovideo:hover {
+                outline-color: var(--color-hover, #63baa9);
+                outline-bottom-color: transparent;
+            }
+
+            .textosobre {
+                position: relative;
+                z-index: 10;
+                bottom: 55%;
+                background-color: var(--line-separator, #713c80);
+                color: var(--color-link, #cea2da);
+                padding-left: 0;
+                padding-top: 6px;
+                padding-bottom: 6px;
+                line-height: 26px;
+                padding-right: 12px;
+                display: inline;
+                width: 75%;
+            }
+
+            .blocovideolist {
+                margin-top: 10px;
+                display: block;
+                width: calc(100% + 10px);
+                height: calc(100% - 50px);
+                overflow-y: hidden;
+                margin-bottom: -40px;
+            }
+
+        </style>
+      
+        <div class="outputgrid">
+        
+        `;
       let arr = orderbytemplate(dados, selectedarr, groupkey, [
         namekey,
         groupkey,
@@ -27,12 +79,18 @@ let comunidade = function (par) {
           code += `<span class='categoria'><a href='javascript:addinput("${selectedarr[c]}")' class='grouplink'>${selectedarr[c]}</a></span>`;
           for (let l = 0; l < arr.length; l++) {
             if (arr[l][groupkey] == selectedarr[c]) {
-              if (arr[l][typekey] == "self") {
-                code += `<a target='_self' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linksrecursos'>${arr[l][namekey]}</a>`;
-              } else if (arr[l][typekey] == "embed") {
-                code += `<a target='_self' href='javascript:embed("${arr[l][linkkey]}")' class='linksrecursos'>${arr[l][namekey]}</a>`;
-              } else {
-                code += `<a target='_blank' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linksrecursos'>${arr[l][namekey]}</a>`;
+                if (arr[l][typekey] == "self") {
+                  
+                    code += `<div class='blocovideolist'><a target='_self' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");'  style='background-image: url(${imagefromallsources(arr[l][linkkey])});' class='linkeimagedovideo'></a><span class='textosobre'>${arr[l][namekey]}</span></div>`;
+                    
+                } else if (arr[l][typekey] == "embed") {
+                    
+                    code += `<div class='blocovideolist'><a target='_self' href='javascript:embed("${arr[l][linkkey]}")' class='linkeimagedovideo' style='background-image: url(${imagefromallsources(arr[l][linkkey])});'></a><span class='textosobre'>${arr[l][namekey]}</span></div>`;
+                    
+                } else {
+                    
+                    code += `<div class='blocovideolist'><a target='_blank' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo' style='background-image: url(${imagefromallsources(arr[l][linkkey])});'></a><span class='textosobre'>${arr[l][namekey]}</span></div>`;
+                    
               }
             }
           }
@@ -40,18 +98,26 @@ let comunidade = function (par) {
       } else {
         let ultimoregistro = "";
         code += `<span class='categoria'>`;
-        for (let c = 0; c < selectedarr.length; c++) {
-          code += `<a href='javascript:addinput("${selectedarr[c]}")' class='grouplink'>${selectedarr[c]}</a> • `;
+          for (let c = 0; c < selectedarr.length; c++) {
+            
+              code += `<a href='javascript:addinput("${selectedarr[c]}")' class='grouplink'>${selectedarr[c]}</a> • `;
+              
         }
         code += `</span>`;
         for (let l = 0; l < arr.length; l++) {
           if (arr[l][linkkey] != ultimoregistro) {
-            if (arr[l][typekey] == "self") {
-              code += `<a target='_self' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linksrecursos'>${arr[l][namekey]}</a>`;
-            } else if (arr[l][typekey] == "embed") {
-              code += `<a target='_self' href='javascript:embed("${arr[l][linkkey]}")' class='linksrecursos'>${arr[l][namekey]}</a>`;
-            } else {
-              code += `<a target='_blank' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linksrecursos'>${arr[l][namekey]}</a>`;
+              if (arr[l][typekey] == "self") {
+                
+                  code += `<div class='blocovideolist'><a target='_self' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo' style='background-image: url(${imagefromallsources(arr[l][linkkey])});'></a><span class='textosobre'>${arr[l][namekey]}</span></div>`;
+                  
+              } else if (arr[l][typekey] == "embed") {
+                  
+                  code += `<div class='blocovideolist'><a target='_self' href='javascript:embed("${arr[l][linkkey]}")' class='linkeimagedovideo' style='background-image: url(${imagefromallsources(arr[l][linkkey])});'></a><span class='textosobre'>${arr[l][namekey]}</span></div>`;
+                  
+              } else {
+                  
+                  code += `<div class='blocovideolist'><a target='_blank' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo' style='background-image: url(${imagefromallsources(arr[l][linkkey])});'></a><span class='textosobre'>${arr[l][namekey]}</span></div>`;
+                  
             }
             ultimoregistro = arr[l][linkkey];
           }
