@@ -55,7 +55,7 @@ let videoslist = function (par) {
                 padding-bottom: 6px;
                 line-height: 26px;
                 padding-right: 12px;
-                display: block;
+                display: inline;
                 width: 75%;
             }
 
