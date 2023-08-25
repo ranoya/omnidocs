@@ -48,7 +48,7 @@ let videoslist = function (par) {
             .textosobre {
                 position: relative;
                 z-index: 10;
-                bottom: 40%;
+                bottom: 55%;
                 background-color: var(--line-separator, #713c80);
                 color: var(--color-link, #cea2da);
                 padding-left: 0;
@@ -64,7 +64,7 @@ let videoslist = function (par) {
                 margin-top: 10px;
                 display: block;
                 width: calc(100% + 10px);
-                height: calc(100% - 25px);
+                height: calc(100% - 50px);
                 overflow-y: hidden;
                 margin-bottom: -40px;
             }
