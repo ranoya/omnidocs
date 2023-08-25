@@ -27,8 +27,9 @@ let videoslist = function (par) {
         <style>
 
             .linkeimagedovideo {
-                width: 100%;
-                padding: 75%;
+                width: calc(100% + 10px);
+                padding: 0;
+                padding-top: 75%;
                 background-position: center center;
                 background-size: cover;
                 background-repeat: no-repeat;
@@ -36,7 +37,8 @@ let videoslist = function (par) {
                 outline-width: 3px;
                 outline-style: solid;
                 transition: all .3s ease-in;
-                margin-bottom: 10px;
+                margin-bottom: 2px;
+                margin-top: 10px;
             }
 
             .linkeimagedovideo:hover {
@@ -61,15 +63,15 @@ let videoslist = function (par) {
             if (arr[l][groupkey] == selectedarr[c]) {
                 if (arr[l][typekey] == "self") {
                   
-                    code += `<a target='_self' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo'></a>`;
+                    code += `<a target='_self' href='javascript:be("${arr[l][linkkey]}") style='background-color: ${imagefromallsources(arr[l][linkkey])};' toggle("poeinst");' class='linkeimagedovideo'></a>`;
                     
                 } else if (arr[l][typekey] == "embed") {
                     
-                    code += `<a target='_self' href='javascript:embed("${arr[l][linkkey]}")' class='linkeimagedovideo'></a>`;
+                    code += `<a target='_self' href='javascript:embed("${arr[l][linkkey]}")' class='linkeimagedovideo' style='background-color: ${imagefromallsources(arr[l][linkkey])};'></a>`;
                     
                 } else {
                     
-                    code += `<a target='_blank' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo'></a>`;
+                    code += `<a target='_blank' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo' style='background-color: ${imagefromallsources(arr[l][linkkey])};'></a>`;
                     
               }
             }
@@ -88,15 +90,15 @@ let videoslist = function (par) {
           if (arr[l][linkkey] != ultimoregistro) {
               if (arr[l][typekey] == "self") {
                 
-                  code += `<a target='_self' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo'></a>`;
+                  code += `<a target='_self' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo' style='background-color: ${imagefromallsources(arr[l][linkkey])};'></a>`;
                   
               } else if (arr[l][typekey] == "embed") {
                   
-                  code += `<a target='_self' href='javascript:embed("${arr[l][linkkey]}")' class='linkeimagedovideo'></a>`;
+                  code += `<a target='_self' href='javascript:embed("${arr[l][linkkey]}")' class='linkeimagedovideo' style='background-color: ${imagefromallsources(arr[l][linkkey])};'></a>`;
                   
               } else {
                   
-                  code += `<a target='_blank' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo'></a>`;
+                  code += `<a target='_blank' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo' style='background-color: ${imagefromallsources(arr[l][linkkey])};'></a>`;
                   
             }
             ultimoregistro = arr[l][linkkey];
