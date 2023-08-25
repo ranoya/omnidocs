@@ -27,7 +27,8 @@ let videoslist = function (par) {
         <style>
 
             .linkeimagedovideo {
-                width: calc(100% + 10px);
+                display: block;
+                width: 100%;
                 padding: 0;
                 padding-top: 75%;
                 background-position: center center;
@@ -37,8 +38,6 @@ let videoslist = function (par) {
                 outline-width: 3px;
                 outline-style: solid;
                 transition: all .3s ease-in;
-                margin-bottom: 2px;
-                margin-top: 10px;
             }
 
             .linkeimagedovideo:hover {
@@ -60,6 +59,15 @@ let videoslist = function (par) {
                 width: 75%;
             }
 
+            .blocovideolist {
+                margin-top: 10px;
+                display: block;
+                width: calc(100% + 10px);
+                height: 75%;
+                overflow-y: hidden;
+                margin-bottom: 10px;
+            }
+
         </style>
       
         <div class="outputgrid">
@@ -78,15 +86,15 @@ let videoslist = function (par) {
             if (arr[l][groupkey] == selectedarr[c]) {
                 if (arr[l][typekey] == "self") {
                   
-                    code += `<div><a target='_self' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");'  style='background-image: url(${imagefromallsources(arr[l][linkkey])});' class='linkeimagedovideo'></a><span class='textosobre'>${arr[l][namekey]}</span></div>`;
+                    code += `<div class='blocovideolist'><a target='_self' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");'  style='background-image: url(${imagefromallsources(arr[l][linkkey])});' class='linkeimagedovideo'></a><span class='textosobre'>${arr[l][namekey]}</span></div>`;
                     
                 } else if (arr[l][typekey] == "embed") {
                     
-                    code += `<div><a target='_self' href='javascript:embed("${arr[l][linkkey]}")' class='linkeimagedovideo' style='background-image: url(${imagefromallsources(arr[l][linkkey])});'></a><span class='textosobre'>${arr[l][namekey]}</span></div>`;
+                    code += `<div class='blocovideolist'><a target='_self' href='javascript:embed("${arr[l][linkkey]}")' class='linkeimagedovideo' style='background-image: url(${imagefromallsources(arr[l][linkkey])});'></a><span class='textosobre'>${arr[l][namekey]}</span></div>`;
                     
                 } else {
                     
-                    code += `<div><a target='_blank' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo' style='background-image: url(${imagefromallsources(arr[l][linkkey])});'></a><span class='textosobre'>${arr[l][namekey]}</span></div>`;
+                    code += `<div class='blocovideolist'><a target='_blank' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo' style='background-image: url(${imagefromallsources(arr[l][linkkey])});'></a><span class='textosobre'>${arr[l][namekey]}</span></div>`;
                     
               }
             }
@@ -105,15 +113,15 @@ let videoslist = function (par) {
           if (arr[l][linkkey] != ultimoregistro) {
               if (arr[l][typekey] == "self") {
                 
-                  code += `<div><a target='_self' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo' style='background-image: url(${imagefromallsources(arr[l][linkkey])});'></a><span class='textosobre'>${arr[l][namekey]}</span></div>`;
+                  code += `<div class='blocovideolist'><a target='_self' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo' style='background-image: url(${imagefromallsources(arr[l][linkkey])});'></a><span class='textosobre'>${arr[l][namekey]}</span></div>`;
                   
               } else if (arr[l][typekey] == "embed") {
                   
-                  code += `<div><a target='_self' href='javascript:embed("${arr[l][linkkey]}")' class='linkeimagedovideo' style='background-image: url(${imagefromallsources(arr[l][linkkey])});'></a><span class='textosobre'>${arr[l][namekey]}</span></div>`;
+                  code += `<div class='blocovideolist'><a target='_self' href='javascript:embed("${arr[l][linkkey]}")' class='linkeimagedovideo' style='background-image: url(${imagefromallsources(arr[l][linkkey])});'></a><span class='textosobre'>${arr[l][namekey]}</span></div>`;
                   
               } else {
                   
-                  code += `<div><a target='_blank' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo' style='background-image: url(${imagefromallsources(arr[l][linkkey])});'></a><span class='textosobre'>${arr[l][namekey]}</span></div>`;
+                  code += `<div class='blocovideolist'><a target='_blank' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo' style='background-image: url(${imagefromallsources(arr[l][linkkey])});'></a><span class='textosobre'>${arr[l][namekey]}</span></div>`;
                   
             }
             ultimoregistro = arr[l][linkkey];
