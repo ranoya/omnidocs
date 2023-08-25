@@ -63,15 +63,15 @@ let videoslist = function (par) {
             if (arr[l][groupkey] == selectedarr[c]) {
                 if (arr[l][typekey] == "self") {
                   
-                    code += `<a target='_self' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");'  style='background-color: ${imagefromallsources(arr[l][linkkey])};' class='linkeimagedovideo'></a>`;
+                    code += `<a target='_self' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");'  style='background-color: url("${imagefromallsources(arr[l][linkkey])}");' class='linkeimagedovideo'></a>`;
                     
                 } else if (arr[l][typekey] == "embed") {
                     
-                    code += `<a target='_self' href='javascript:embed("${arr[l][linkkey]}")' class='linkeimagedovideo' style='background-color: ${imagefromallsources(arr[l][linkkey])};'></a>`;
+                    code += `<a target='_self' href='javascript:embed("${arr[l][linkkey]}")' class='linkeimagedovideo' style='background-color: url("${imagefromallsources(arr[l][linkkey])}");'></a>`;
                     
                 } else {
                     
-                    code += `<a target='_blank' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo' style='background-color: ${imagefromallsources(arr[l][linkkey])};'></a>`;
+                    code += `<a target='_blank' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo' style='background-color: url("${imagefromallsources(arr[l][linkkey])}");'></a>`;
                     
               }
             }
@@ -90,15 +90,15 @@ let videoslist = function (par) {
           if (arr[l][linkkey] != ultimoregistro) {
               if (arr[l][typekey] == "self") {
                 
-                  code += `<a target='_self' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo' style='background-color: ${imagefromallsources(arr[l][linkkey])};'></a>`;
+                  code += `<a target='_self' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo' style='background-color: url("${imagefromallsources(arr[l][linkkey])}");'></a>`;
                   
               } else if (arr[l][typekey] == "embed") {
                   
-                  code += `<a target='_self' href='javascript:embed("${arr[l][linkkey]}")' class='linkeimagedovideo' style='background-color: ${imagefromallsources(arr[l][linkkey])};'></a>`;
+                  code += `<a target='_self' href='javascript:embed("${arr[l][linkkey]}")' class='linkeimagedovideo' style='background-color: url("${imagefromallsources(arr[l][linkkey])}");'></a>`;
                   
               } else {
                   
-                  code += `<a target='_blank' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo' style='background-color: ${imagefromallsources(arr[l][linkkey])};'></a>`;
+                  code += `<a target='_blank' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");' class='linkeimagedovideo' style='background-color: url("${imagefromallsources(arr[l][linkkey])}");'></a>`;
                   
             }
             ultimoregistro = arr[l][linkkey];
