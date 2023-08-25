@@ -63,7 +63,7 @@ let videoslist = function (par) {
             if (arr[l][groupkey] == selectedarr[c]) {
                 if (arr[l][typekey] == "self") {
                   
-                    code += `<a target='_self' href='javascript:be("${arr[l][linkkey]}") style='background-color: ${imagefromallsources(arr[l][linkkey])};' toggle("poeinst");' class='linkeimagedovideo'></a>`;
+                    code += `<a target='_self' href='javascript:be("${arr[l][linkkey]}"); toggle("poeinst");'  style='background-color: ${imagefromallsources(arr[l][linkkey])};' class='linkeimagedovideo'></a>`;
                     
                 } else if (arr[l][typekey] == "embed") {
                     
