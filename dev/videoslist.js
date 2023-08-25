@@ -42,6 +42,7 @@ let videoslist = function (par) {
 
             .linkeimagedovideo:hover {
                 outline-color: var(--color-hover, #63baa9);
+                outline-bottom-color: transparent;
             }
 
             .textosobre {
