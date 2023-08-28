@@ -12,3 +12,7 @@
 #poeinst {
   background: var(--bg-color);
 }
+
+#ativapoe {
+  top: calc(50vh - 75px);
+}
