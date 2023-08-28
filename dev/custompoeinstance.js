@@ -10,12 +10,14 @@ onkeydown = onkeyup = function(e){
     keymapping[e.keyCode] = e.type == 'keydown';
 
     // ctrl+shift+p
-  if ((keymapping[93] || keymapping[91]) && keymapping[80] && keymapping[16] || (keymapping[93] || keymapping[91]) && keymapping[75]) {
+  if ((keymapping[93] || keymapping[91] || keymapping[92] || keymapping[17]) && keymapping[80] && keymapping[16] || (keymapping[93] || keymapping[91] || keymapping[92] || keymapping[17]) && keymapping[75]) {
     keymapping[93] = false;
+    keymapping[92] = false;
     keymapping[91] = false;
     keymapping[75] = false;
     keymapping[80] = false;
     keymapping[16] = false;
+    keymapping[17] = false;
       toggle("poeinst");
     }
   
@@ -27,10 +29,12 @@ let toggle = function (who) {
 
     poeopen = true;
     keymapping[93] = false;
+    keymapping[92] = false;
     keymapping[91] = false;
     keymapping[75] = false;
     keymapping[80] = false;
     keymapping[16] = false;
+    keymapping[17] = false;
       document.getElementById("entrada").focus();
       document.getElementById("poeinst").style.left = 0;
       document.getElementById("base").style.left = "325px";
@@ -38,10 +42,12 @@ let toggle = function (who) {
 
     poeopen = false;
     keymapping[93] = false;
+    keymapping[92] = false;
     keymapping[91] = false;
     keymapping[75] = false;
     keymapping[80] = false;
-      keymapping[16] = false;
+    keymapping[16] = false;
+    keymapping[17] = false;
       document.getElementById("poeinst").style.left = "-325px";
       document.getElementById("base").style.left = 0;
   }
