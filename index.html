@@ -413,5 +413,19 @@
     }
 
     startpoe(lista, estilo, plugs, lista);
+
+    // Marca o link inicial no menu
+    const inicialink = setTimeout(function () {
+      linkclicked = $_GET["url"];
+
+      let todosA = document.getElementsByTagName("a");
+
+      for (let i = 0; i < todosA.length; i++) {
+        todosA[i].classList.remove("linkligado");
+        if (todosA[i].href.indexOf(linkclicked) >= 0) {
+          todosA[i].classList.add("linkligado");
+        }
+      }
+    }, 500);
   </script>
 </html>
