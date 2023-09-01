@@ -424,6 +424,7 @@
         todosA[i].classList.remove("linkligado");
         if (todosA[i].href.indexOf(linkclicked) >= 0) {
           todosA[i].classList.add("linkligado");
+          i = todosA.length + 1;
         }
       }
     }, 500);
