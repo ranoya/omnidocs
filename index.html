@@ -263,6 +263,11 @@
         background-color: var(--input-text, #ffffff);
       }
 
+      .linkligado {
+        background-color: var(--color-hover, #0bebff);
+        color: var(--line-separator, #18676f);
+      }
+
       #ativapoe {
         width: 30px;
         height: 30px;
@@ -312,8 +317,20 @@
     </style>
 
     <script>
+      let linkclicked = "";
       const be = function (url) {
         if (typeof url != "undefined" && url != "" && url != null) {
+          linkclicked = url;
+
+          let todosA = document.getElementsByTagName("a");
+
+          for (let i = 0; i < todosA.length; i++) {
+            todosA[i].classList.remove("linkligado");
+            if (todosA[i].href.match(linkclicked)) {
+              todosA[i].classList.add("linkligado");
+            }
+          }
+
           document.getElementById("base").src = url;
           if (url.match(/slides.com(.*)embed/i)) {
             if (window.innerWidth <= 480) {
