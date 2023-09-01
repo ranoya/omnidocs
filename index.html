@@ -326,7 +326,7 @@
 
           for (let i = 0; i < todosA.length; i++) {
             todosA[i].classList.remove("linkligado");
-            if (todosA[i].href.match(linkclicked)) {
+            if (todosA[i].href.match(linkclicked) != null) {
               todosA[i].classList.add("linkligado");
             }
           }
