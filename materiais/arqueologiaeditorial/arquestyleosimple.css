@@ -4,8 +4,10 @@
   --base-background: transparent !important;
   --littlemenu-over: #000000 !important;
   --timeline-text-color: #ffffff;
-  --timeline-text-over: #000000 !important;
+  --pagination-color: #e7d5f4 !important;
+  --timeline-text-over: #ffffff !important;
   --timeline-text-highlight: #29c9c6 !important;
+
   --timeline-font: Times;
   --meta-font: "Merriweather";
   --meta-margins: 50px;
