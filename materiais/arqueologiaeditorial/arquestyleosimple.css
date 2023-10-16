@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+
+:root {
+  --base-background: transparent !important;
+  --littlemenu-over: #000000 !important;
+  --timeline-text-over: #11eade !important;
+  --timeline-text-highlight: #29c9c6 !important;
+  --timeline-font: Times;
+  --meta-font: "Merriweather";
+  --meta-margins: 50px;
+  --track-height: 60px;
+}
+
+.track {
+  font-size: 24px !important;
+  text-shadow: 2px 2px black !important;
+  font-family: "Times New Roman", Times, serif !important;
+  font-size: 19px !important;
+  text-shadow: 2px 2px black !important;
+  text-transform: none;
+}
+
+#tracktopicos.track {
+  text-align: center !important;
+  width: 60% !important;
+  height: 60px !important;
+  top: auto;
+  bottom: 25px !important;
+  left: 20% !important;
+  text-align: center !important;
+  font-size: 24px !important;
+  text-shadow: 2px 2px black !important;
+  font-family: "Times New Roman", Times, serif !important;
+  text-transform: uppercase;
+}
