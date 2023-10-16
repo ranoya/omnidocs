@@ -3,7 +3,8 @@
 :root {
   --base-background: transparent !important;
   --littlemenu-over: #000000 !important;
-  --timeline-text-over: #11eade !important;
+  --timeline-text-color: #ffffff;
+  --timeline-text-over: #000000 !important;
   --timeline-text-highlight: #29c9c6 !important;
   --timeline-font: Times;
   --meta-font: "Merriweather";
@@ -12,8 +13,6 @@
 }
 
 .track {
-  font-size: 24px !important;
-  text-shadow: 2px 2px black !important;
   font-family: "Times New Roman", Times, serif !important;
   font-size: 19px !important;
   text-shadow: 2px 2px black !important;
@@ -32,4 +31,8 @@
   text-shadow: 2px 2px black !important;
   font-family: "Times New Roman", Times, serif !important;
   text-transform: uppercase;
+}
+
+#indice {
+  color: #8e59b4 !important;
 }
