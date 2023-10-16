@@ -18,13 +18,13 @@
 
 #indice {
   color: black !important;
-  top: calc(100vh - 31px - var(--inclui-scroll, 0px)) !important;
+  top: calc(100vh - 34px - var(--inclui-scroll, 0px)) !important;
 }
 
 #prev {
-  top: calc(100vh - 30px - var(--inclui-scroll, 0px));
+  top: calc(100vh - 33px - var(--inclui-scroll, 0px));
 }
 
 #next {
-  top: calc(100vh - 30px - var(--inclui-scroll, 0px));
+  top: calc(100vh - 33px - var(--inclui-scroll, 0px));
 }
