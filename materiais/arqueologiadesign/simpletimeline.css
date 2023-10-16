@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
+
+:root {
+  --base-background: transparent !important;
+  --littlemenu-over: #000000 !important;
+  --timeline-text-over: #11eade !important;
+  --timeline-text-highlight: #29c9c6 !important;
+  --timeline-font: "VT323";
+  --meta-font: "VT323";
+  --meta-margins: 50px;
+  --track-height: 30px;
+}
+
+.track {
+  font-size: 26px !important;
+  text-shadow: 2px 2px black !important;
+}
