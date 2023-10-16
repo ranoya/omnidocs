@@ -3,6 +3,7 @@
 :root {
   --base-background: transparent !important;
   --littlemenu-over: #000000 !important;
+  --timeline-text-color: #d7d7d7;
   --timeline-text-over: #11eade !important;
   --timeline-text-highlight: #29c9c6 !important;
   --timeline-font: "VT323";
