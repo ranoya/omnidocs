@@ -16,7 +16,7 @@
   text-shadow: 2px 2px black !important;
 }
 
-.indice {
+#indice {
   color: black !important;
   top: calc(100vh - 31px - var(--inclui-scroll, 0px)) !important;
 }
