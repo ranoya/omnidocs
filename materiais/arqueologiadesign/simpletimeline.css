@@ -8,10 +8,23 @@
   --timeline-font: "VT323";
   --meta-font: "VT323";
   --meta-margins: 50px;
-  --track-height: 30px;
+  --track-height: 45px;
 }
 
 .track {
   font-size: 26px !important;
   text-shadow: 2px 2px black !important;
+}
+
+.indice {
+  color: black !important;
+  top: calc(100vh - 31px - var(--inclui-scroll, 0px)) !important;
+}
+
+#prev {
+  top: calc(100vh - 30px - var(--inclui-scroll, 0px));
+}
+
+#next {
+  top: calc(100vh - 30px - var(--inclui-scroll, 0px));
 }
