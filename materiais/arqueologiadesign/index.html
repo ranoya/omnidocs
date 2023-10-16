@@ -214,8 +214,10 @@
 <body>
 
     <div id="scut">
-    <iframe id="conteudo" frameborder=0 src="https://slidelines.vercel.app/continuum/?theme=https://omnidocs.vercel.app/materiais/arqueologiadesign/colortimeline.css&&file=https://opensheet.elk.sh/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/ArqueologiaDesign"></iframe>
-    </div>
+    <!--<iframe id="conteudo" frameborder=0 src="https://slidelines.vercel.app/continuum/?theme=https://omnidocs.vercel.app/materiais/arqueologiadesign/colortimeline.css&&file=https://opensheet.elk.sh/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/ArqueologiaDesign"></iframe>
+    </div>-->
+
+    <iframe id="conteudo" frameborder=0 src="https://slidelines.vercel.app/simple/?allowverticalscroll=true&file=https://opensheet.elk.sh/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/ArqueologiaDesignOutline"></iframe>
 
     <div id="supermenu">
 
@@ -323,8 +325,12 @@
 
         let goto = function (keyword) {
 
+            /*
             document.getElementById("conteudo").src = "https://slidelines.vercel.app/continuum/?theme=https://omnidocs.vercel.app/materiais/arqueologiadesign/colortimeline.css&&file=https://opensheet.elk.sh/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/ArqueologiaDesign&s=" +
                 keyword;
+            */
+
+            document.getElementById("conteudo").src = "https://slidelines.vercel.app/simple/?s=" + keyword + "allowverticalscroll=true&file=https://opensheet.elk.sh/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/ArqueologiaDesignOutline";
 
             let fechaoscaras = setTimeout(closeall,200);
         }
