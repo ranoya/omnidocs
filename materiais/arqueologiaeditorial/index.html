@@ -215,8 +215,11 @@
 <body>
 
     <div id="scut">
+    <!--
     <iframe id="conteudo" frameborder=0 src="https://slidelines.vercel.app/continuum/?theme=https://omnidocs.vercel.app/materiais/arqueologiaeditorial/arquestyle.css&file=https://opensheet.elk.sh/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/ArqueologiaEditorialDigital"></iframe>
-    </div>
+    </div>-->
+
+    <iframe id="conteudo" frameborder=0 src="https://slidelines.vercel.app/simple/?allowverticalscroll=true&file=https://opensheet.elk.sh/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/ArqueologiaEditorialDigitalOutline&theme=https://omnidocs.vercel.app/materiais/arqueologiaeditorial/arquestyleosimple.css"></iframe>
 
     <div id="supermenu">
 
@@ -289,8 +292,12 @@
 
         let goto = function (keyword) {
 
+            /*
             document.getElementById("conteudo").src = "https://slidelines.vercel.app/continuum/?theme=https://omnidocs.vercel.app/materiais/arqueologiaeditorial/arquestyle.css&file=https://opensheet.elk.sh/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/ArqueologiaEditorialDigital&s=" +
                 keyword;
+                */
+
+            document.getElementById("conteudo").src = "https://slidelines.vercel.app/simple/?s=" + keyword + "&allowverticalscroll=true&file=https://opensheet.elk.sh/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/ArqueologiaEditorialDigitalOutline&theme=https://omnidocs.vercel.app/materiais/arqueologiaeditorial/arquestyleosimple.css";
 
             let fechaoscaras = setTimeout(closeall,200);
         }
