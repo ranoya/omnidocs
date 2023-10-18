@@ -35,3 +35,9 @@
   margin-top: 60px !important;
   height: calc(100vh - 130px) !important;
 }
+
+.track a {
+  border-bottom: 1px solid white !important;
+  padding: 4px 12px 7px 10px !important;
+  margin: -4px -12px -4px -10px !important;
+}
