@@ -44,33 +44,72 @@
         background-color: white;
       }
 
-      #linkA {
+      #headA {
         display: block;
         position: fixed;
         top: 0;
         left: 0;
         width: max(20%, 380px);
-        height: 100vh;
+        height: 18px;
+        line-height: 18px;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #aaaaaa;
+      }
+
+      #linkA {
+        display: block;
+        position: fixed;
+        top: 18px;
+        left: 0;
+        width: max(20%, 380px);
+        height: calc(100vh - 18px);
         overflow-y: auto;
       }
 
-      #linkB {
+      #headB {
         display: block;
         position: fixed;
         top: 0;
         left: max(20%, 380px);
         width: 40%;
-        height: 100vh;
+        height: 18px;
+        line-height: 18px;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #aaaaaa;
+      }
+
+      #linkB {
+        display: block;
+        position: fixed;
+        top: 18px;
+        left: max(20%, 380px);
+        width: 40%;
+        height: calc(100vh - 18px);
         overflow-y: auto;
       }
 
-      #linkC {
+      #headC {
         display: block;
         position: fixed;
         top: 0;
         left: max(60%, calc(380px + 40%));
         width: calc(40% - 100px);
-        height: 100vh;
+        height: 18px;
+        line-height: 18px;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #aaaaaa;
+      }
+
+      #linkC {
+        display: block;
+        position: fixed;
+        top: 18px;
+        left: max(60%, calc(380px + 40%));
+        width: calc(40% - 100px);
+        height: calc(100vh - 18px);
         overflow-y: auto;
       }
 
@@ -79,7 +118,10 @@
       }
 
       @media screen and (max-width: 1024px) {
-        #linkA {
+        #linkA,
+        #headA,
+        #headB,
+        #headC {
           display: none;
         }
 
@@ -107,6 +149,10 @@
   </head>
 
   <body>
+    <div id="headA">Sobre a produção do editorial</div>
+    <div id="headB">O desenvolvimento das visualizações</div>
+    <div id="headC">O editorial publicado</div>
+
     <iframe
       id="linkA"
       frameborder="0"
