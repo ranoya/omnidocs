@@ -1,4 +1,4 @@
-let referenciasviz = function (par) {
+let editorialferramentas = function (par) {
 
     let jsonfile = `https://opensheet.elk.sh/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/EDITORIALFerramentas`;
     let groupkey = `Group`;
