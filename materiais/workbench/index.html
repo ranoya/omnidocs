@@ -400,7 +400,7 @@
       <div id="superstart" class="menulink" style="margin-left: 30px;" onclick="goto('https://slides.com/ranoya/dataliteracyworkshop/embed#/capa','https://slides.com/ranoya/dataliteracyworkbench/embed#/sumario')"
             onmouseover="closeall();">SUMÁRIO</div>
 
-      <div id="superblank" class="menulink" style="margin-left: 110px;" onclick="goto('planilha')"
+      <div id="superblank" class="menulink" onclick="goto('planilha')"
             onmouseover="closeall();">WORKSHEET</div>
       
       <div id="supermenuarqueologia" class="menulink" onclick="openandclose('menuarqueologia');"
@@ -586,6 +586,9 @@
     whoisopen['menuarqueologia'] = false;
     whoisopen['menusql'] = false;
     whoisopen['menuplanilhas'] = false;
+    whoisopen['menuregex'] = false;
+    whoisopen['menunotebooks'] = false;
+    whoisopen['menuvis'] = false;
 
 
     let goto = function (keyword, presentslide) {
