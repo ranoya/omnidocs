@@ -15,11 +15,11 @@
     <meta name="generator" content="artesanal" />
     <meta
       name="description"
-      content="Workshop introdutório para uso de ciência de dados por não especialistas"
+      content="Workbench para disciplina de Cultura de Dados e Workshop Ciência de dados na prática para quem não é cientista de dados"
     />
     <meta
       property="og:description"
-      content="Workshop introdutório para uso de ciência de dados por não especialistas"
+      content="Workbench para disciplina de Cultura de Dados e Workshop Ciência de dados na prática para quem não é cientista de dados"
     />
     <meta name="author" content="Guilherme Ranoya" />
     <meta
@@ -102,49 +102,69 @@
     }
 
     .submenu {
-      width: auto;
-      position: fixed;
-      top: 38px;
-      z-index: 10;
-      background-color: #762678;
-      color: white;
-      outline-width: 2px;
-      outline-color: #762678;
-      outline-style: solid;
-      box-shadow: 8px 8px 7px 7px #00000022;
-      display: none;
-      padding: 2px;
-      height: auto;
-      min-width: 150px;
-      margin-left: 0;
-      transition: margin-left 0.4s ease-in;
-    }
 
+            width: auto;
+            position: fixed;
+            top: 38px;
+            z-index: 10;
+            background-color: #762678;
+            color: white;
+            outline-width: 2px;
+            outline-color: #762678;
+            outline-style: solid;
+            box-shadow: 8px 8px 7px 7px #00000022;
+            display: none;
+            padding: 2px;
+            height: auto;
+            min-width: 150px;
+            margin-left: 0;
+            transition: margin-left 0.4s ease-in;
+        }
+    
+    
     hr {
-      width: calc(100%);
-      margin-left: 0;
-      border-top: 1px solid #debe34;
-      margin-top: 2px;
-      margin-bottom: 2px;
+            width: calc(100%);
+            margin-left: 0;
+            border-top: 1px solid #debe34;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            
     }
 
     a.submenulink {
-      font-family: Helvetica, Arial, sans-serif;
-      display: block;
-      padding-left: 15px;
-      padding-right: 15px;
-      text-decoration: none;
-      background-color: #762678;
-      color: #debe34;
-      font-size: 10px;
-      font-weight: bolder;
-      line-height: 36px;
-      height: 36px;
+        font-family: Helvetica, Arial, sans-serif;
+        display: block;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-decoration: none;
+        background-color: #762678;
+        color: #debe34;
+        font-size: 10px;
+        font-weight: bolder;
+        line-height: 36px;
+        height: 36px;
     }
 
     a.submenulink:hover {
-      background-color: #debe34;
-      color: #762678;
+        background-color: #debe34;
+        color: #762678;
+    }
+
+    .subarqueologia {
+      left: 196px;
+    }
+
+    .subsql {
+      left: 277px;
+    }
+
+    .subplanilhas {
+      left: 364px;
+    }
+
+
+    .margindivide {
+        margin-left: 430px;
     }
 
     a.menulink {
@@ -162,6 +182,28 @@
 
     a.menulink:hover {
       background-color: #762678;
+    }
+
+    div.menulink {
+      padding-left: 15px;
+      padding-right: 15px;
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #7d7837;
+      font-size: 10px;
+      font-weight: bolder;
+      line-height: 36px;
+      height: 36px;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    div.menulink:hover {
+      background-color: #762678;
+    }
+
+    .fixamenulink {
+        background-color: #762678 !important;
     }
 
     .workbechgrande {
@@ -251,6 +293,7 @@
       line-height: 36px;
 
       transition: all 0.4s ease-in;
+
       background-image: url(https://www.ranoya.com/Assets/Diagramas/dividescreen.svg);
       background-repeat: no-repeat;
       background-size: 36px 36px;
@@ -272,6 +315,7 @@
       line-height: 36px;
 
       transition: all 0.4s ease-in;
+
       background-image: url(https://www.ranoya.com/Assets/Diagramas/fullworkbench.svg);
       background-repeat: no-repeat;
       background-size: 36px 36px;
@@ -298,18 +342,6 @@
       iframe {
         height: calc (100% - 6px);
       }
-    }
-
-    .subarqueologia {
-      left: 196px;
-    }
-
-    .subsql {
-      left: 277px;
-    }
-
-    .subplanilhas {
-      left: 364px;
     }
   </style>
 
@@ -352,82 +384,151 @@
     </div>
 
     <div id="menu" class="nada workbechgrande">
-      <div
-        id="superstart"
-        class="menulink"
-        style="margin-left: 30px"
-        onclick="goto('capa','sumario')"
-        onmouseover="closeall();"
-      >
-        SUMÁRIO
-      </div>
 
-      <div
-        id="supercanvas"
-        class="menulink"
-        style="margin-left: 110px"
-        onclick="goto('planilha')"
-        onmouseover="closeall();"
-      >
-        WORKSHEET
-      </div>
+      <div id="superstart" class="menulink" style="margin-left: 30px;" onclick="goto('https://slides.com/ranoya/dataliteracyworkshop/embed#/capa','https://slides.com/ranoya/dataliteracyworkbench/embed#/sumario')"
+            onmouseover="closeall();">SUMÁRIO</div>
+      
+      <div id="supermenuarqueologia" class="menulink" onclick="openandclose('menuarqueologia');"
+            onmouseover="closeall('menuarqueologia');">ARQUEOLOGIA</div>
 
-      <div
-        id="supermenuarqueologia"
-        class="menulink"
-        onclick="openandclose('menuarqueologia');"
-        onmouseover="closeall('menuarqueologia');"
-      >
-        ARQUEOLOGIA
-      </div>
+      <div id="supermenusql" class="menulink" onclick="openandclose('menusql');"
+            onmouseover="closeall('menusql');">SQL</div>
+            
+      <div id="supermenuplanilhas" class="menulink" onclick="openandclose('menuplanilhas');"
+            onmouseover="closeall('menuplanilhas');">PLANILHAS</div>
 
-      <div
-        id="supermenusql"
-        class="menulink"
-        onclick="openandclose('menusql');"
-        onmouseover="closeall('menusql');"
-      >
-        SQL
-      </div>
 
-      <div
-        id="supermenuplanilhas"
-        class="menulink"
-        onclick="openandclose('menuplanilhas');"
-        onmouseover="closeall('menuplanilhas');"
-      >
-        PLANILHAS
-      </div>
-
-      <!--
-
-      <a href="javascript:goto('notebooks','notebooks')" class="menulink"
-        >NOTEBOOKS</a
-      ><a href="javascript:goto('viz','notebooks')" class="menulink">DATAVIZ</a
-      ><a href="javascript:goto('dataexport','dataexport')" class="menulink"
-        >INTEROPERABILIDADE</a
-      ><a
-        href="javascript:goto('programajava','tipologiasdedados')"
-        class="menulink"
-        >VARIÁVEIS</a
-      >
-
-      -->
     </div>
 
-    <div id="menuarqueologia" class="submenu subarqueologia">
-      <a href="javascript:goto('visicalc','calculo')" class="submenulink"
-        >VISICALC</a
-      >
+    <div id='menuarqueologia' class="submenu subarqueologia">
 
-      <a href="javascript:goto('dbase','database')" class="submenulink"
-        >DBASE</a
-      >
+            <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/mdaefunology','https://slides.com/ranoya/play/embed#/mdasintese')" class="submenulink">FRAMEWORK</a
+            >
+
+            <hr>
+            </hr>
+
+            <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/projeto1')" class="submenulink">REQUISITOS</a
+            >
+
+            <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/projeto2')" class="submenulink">JORNADA</a
+            >
+                
+                <hr>
+                </hr>
+
+            <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/circulomagico','https://slides.com/ranoya/play/embed#/etapa1')" class="submenulink">FASE 1</a
+            >
+            
+            <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/projeto3','https://slides.com/ranoya/play/embed#/etapa2')" class="submenulink">FASE 2</a
+            >
+            
+            <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/projeto4','https://slides.com/ranoya/play/embed#/etapa3')" class="submenulink">FASE 3</a
+            >
+
+            <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/projeto5','https://slides.com/ranoya/play/embed#/etapa4')" class="submenulink">FASE 4</a
+            >
+
+            <hr>
+                </hr>
+            <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/projeto6','https://slides.com/ranoya/play/embed#/tuning' )" class="submenulink">EXPERIMENTAÇÃO</a
+            >
     </div>
 
-    <div id="menusql" class="submenu subsql">
-      <a href="javascript:goto('mysql')" class="submenulink">SQL</a>
+    <div id='menusql' class="submenu subsql">
+
+    <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/wittgenstein','https://slides.com/ranoya/desconstruindoux/embed#/perspectivalinguistica')" class="submenulink">LUDIWIG WITTGENSTEIN</a
+      >
+
+    <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/improv','https://slides.com/ranoya/desconstruindoux/embed#/quadrosimbolico')" class="submenulink">CHARLIE TODD (IMPROV EVERYWHERE)</a
+      >
+
+    <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/carson','https://slides.com/ranoya/desconstruindoux/embed#/esimbolica')" class="submenulink">DAVID CARSON</a
+      >
+
+    <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/video-mariolevellinguagem','https://slides.com/ranoya/desconstruindoux/embed#/esimbolica')" class="submenulink">KISHŌTENKETSU, KOICHI HAYASHIDA</a
+      >
+
+    <hr>
+        </hr>
+
+     <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/paulascher','https://slides.com/ranoya/desconstruindoux/embed#/funxpleasure')" class="submenulink">PAULA SCHER</a
+      >
+
+        <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/norman','https://slides.com/ranoya/desconstruindoux/embed#/tresniveisnorman')" class="submenulink">DONALD NORMAN</a
+      >
+        
+        <hr>
+        </hr>
+
+    <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/rashid','https://slides.com/ranoya/desconstruindoux/embed#/painelemocional')" class="submenulink">KARIM RASHID</a
+      >
+
+    <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/marchassenzahl','https://slides.com/ranoya/desconstruindoux/embed#/hassenzahl')" class="submenulink">MARC HASSENZAHL</a
+      >
+
+    <hr>
+    </hr>
+
+    <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/suits','https://slides.com/ranoya/play/embed#/suits')" class="submenulink">BERNARD SUITS</a
+      >
+
+    <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/funtheory','https://slides.com/ranoya/desconstruindoux/embed#/funxpleasure')" class="submenulink">FUN THEORY (VW)</a
+      >
+
+    
+    <hr>
+    </hr>
+
+    <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/thefounder','https://slides.com/ranoya/play/embed#/prototipagem')" class="submenulink">THE FOUNDER</a
+      >
+
+
     </div>
+
+    <div id='menuplanilhas' class="submenu subplanilhas">
+
+      <a href="javascript:goto('https://slidelines.vercel.app/continuum/?file=https://opensheet.elk.sh/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/CriticaUX')" class="submenulink">MERCADO</a>
+      <hr>
+        </hr>
+      <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/capa','https://slides.com/ranoya/desconstruindoux/embed#/capa')" class="submenulink">DESCONSTRUÍNDO A EXPERIÊNCIA</a
+      >
+
+      <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/capa','https://slides.com/ranoya/play/embed#/capa')" class="submenulink">PROJETANDO A EXPERIÊNCIA</a
+      >
+
+
+                  <hr>
+        </hr>
+
+        <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/procedural')" class="submenulink">PRODCEDURAL RETHORIC</a
+      >
+
+        <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/capa','https://slides.com/ranoya/play/embed#/playfulness')" class="submenulink">PLAYFULNESS</a
+      >
+
+      <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/capa','https://slides.com/ranoya/play/embed#/circulomagico')" class="submenulink">CÍRCULO MÁGICO</a
+      >
+
+      <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/video-jogosparametrizacoes','https://slides.com/ranoya/play/embed#/ffff')" class="submenulink">FOLLOW THE FUN</a
+      >
+
+      <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/paperprototyping','https://slides.com/ranoya/play/embed#/mockups')" class="submenulink">PROTOTIPAGEM</a
+      >
+
+            <hr>
+        </hr>
+
+    <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/qsimbolico','https://slides.com/ranoya/desconstruindoux/embed#/esimbolica')" class="submenulink">PAINEL SIMBÓLICO</a
+      >
+
+    <a href="javascript:goto('https://slides.com/ranoya/playground/embed#/qemocional','https://slides.com/ranoya/desconstruindoux/embed#/eemocional')" class="submenulink">PAINEL EMOCIONAL</a
+      >
+
+        
+    </div>
+
+    
 
     <div id="interfacebar">
       <a id="bot1" href="javascript:fullpresentation();"></a>
@@ -437,15 +538,16 @@
   </body>
 
   <script>
+
     let whoisopen = [];
-    whoisopen["menuarqueologia"] = false;
-    whoisopen["menusql"] = false;
-    whoisopen["menuplanilhas"] = false;
+    whoisopen['menuarqueologia'] = false;
+    whoisopen['menusql'] = false;
+    whoisopen['menuplanilhas'] = false;
+
 
     let goto = function (keyword, presentslide) {
       if (keyword != "" && typeof keyword != "undefined" && keyword != null) {
-        document.getElementById("iwork").src =
-          "https://slides.com/ranoya/dataliteracyworkbench/embed#/" + keyword;
+        document.getElementById("iwork").src = keyword;
       }
 
       if (
@@ -453,9 +555,7 @@
         typeof presentslide != "undefined" &&
         presentslide != null
       ) {
-        document.getElementById("iapres").src =
-          "https://slides.com/ranoya/dataliteracyworkshop/embed#/" +
-          presentslide;
+        document.getElementById("iapres").src = presentslide;
       }
     };
 
@@ -471,9 +571,15 @@
         .classList.add("apresentacaopequena");
       document.getElementById("menu").classList.add("workbechgrande");
       document.getElementById("workspace").classList.add("workbechgrande");
+
+      for (let elm in whoisopen) {
+        document.getElementById(elm).classList.remove("margindivide");
+      }
     };
 
     let fullpresentation = function () {
+
+      closeall();
       document
         .getElementById("apresentacao")
         .classList.remove("apresentacaopequena");
@@ -499,6 +605,10 @@
         .classList.remove("apresentacaogrande");
       document.getElementById("menu").classList.remove("workbechpequeno");
       document.getElementById("workspace").classList.remove("workbechpequeno");
+
+      for (let elm in whoisopen) {
+        document.getElementById(elm).classList.add("margindivide");
+      }
     };
 
     if (typeof $_GET["inst"] != "undefined" || $_GET["wrk"] != "undefined") {
@@ -517,41 +627,45 @@
       }
     }
 
+    
+
     let closeall = function (excp) {
-      for (let elm in whoisopen) {
-        if (elm != excp) {
-          document.getElementById(elm).style.display = "none";
-          document
-            .getElementById("super" + elm)
-            .classList.remove("fixamenulink");
-          whoisopen[elm] = false;
+        for (let elm in whoisopen) {
+
+            if (elm != excp) {
+                document.getElementById(elm).style.display = "none";
+                document.getElementById("super" + elm).classList.remove("fixamenulink");
+                whoisopen[elm] = false;
+
+            } 
         }
-      }
-    };
+    }
 
     let openandclose = function (quem) {
-      for (let elm in whoisopen) {
-        document.getElementById(elm).style.display = "none";
-        document.getElementById("super" + elm).classList.remove("fixamenulink");
-      }
 
-      if (whoisopen[quem] == false) {
-        whoisopen[quem] = true;
-        document.getElementById(quem).style.display = "block";
-        document.getElementById("super" + quem).classList.add("fixamenulink");
-      } else {
-        whoisopen[quem] = false;
-        document.getElementById(quem).style.display = "none";
-        document
-          .getElementById("super" + quem)
-          .classList.remove("fixamenulink");
-      }
+        for (let elm in whoisopen) {
+            document.getElementById(elm).style.display = "none";
+            document.getElementById("super" + elm).classList.remove("fixamenulink");
+        }
 
-      //gotostayopen(quem);
-    };
+        if (whoisopen[quem] == false) {
+            whoisopen[quem] = true;
+            document.getElementById(quem).style.display = "block";
+            document.getElementById("super" + quem).classList.add("fixamenulink");
+        } else {
+            whoisopen[quem] = false;
+            document.getElementById(quem).style.display = "none";
+            document.getElementById("super" + quem).classList.remove("fixamenulink");
+        }
 
-    if ($_GET["slide"] != "" && typeof $_GET["slide"] != "undefined") {
-      goto($_GET["slide"]);
+        //gotostayopen(quem);
+
+    }
+
+    if ($_GET['slide'] != "" && typeof $_GET['slide'] != "undefined") {
+
+        goto($_GET['slide']);
+
     }
   </script>
 </html>
