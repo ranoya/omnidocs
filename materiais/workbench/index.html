@@ -10,8 +10,8 @@
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="keywords" content="" />
-    <title>Ciência de Dados [na prática]</title>
-    <meta property="og:title" content="Ciência de Dados [na prática]" />
+    <title>Cultura de Dados</title>
+    <meta property="og:title" content="Cultura de Dados" />
     <meta name="generator" content="artesanal" />
     <meta
       name="description"
@@ -24,20 +24,14 @@
     <meta name="author" content="Guilherme Ranoya" />
     <meta
       property="og:url"
-      content="https://omnidocs.vercel.app/docs/workbench"
+      content="https://omnidocs.vercel.app/materiais/workbench"
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:image:width" content="600" />
     <meta property="og:image:height" content="600" />
-    <meta
-      property="og:site_name"
-      content="Workshop Ciência de Dados [na prática]"
-    />
-    <meta
-      name="application-name"
-      content="Workshop Ciência de Dados [na prática]"
-    />
+    <meta property="og:site_name" content="Cultura de Dados" />
+    <meta name="application-name" content="Cultura de Dados" />
     <meta property="og:image:type" content="image/jpeg" />
 
     <meta name="msapplication-TileColor" content="#debe34" />
@@ -105,6 +99,52 @@
       line-height: 36px;
 
       transition: all 0.4s ease-in;
+    }
+
+    .submenu {
+      width: auto;
+      position: fixed;
+      top: 38px;
+      z-index: 10;
+      background-color: #762678;
+      color: white;
+      outline-width: 2px;
+      outline-color: #762678;
+      outline-style: solid;
+      box-shadow: 8px 8px 7px 7px #00000022;
+      display: none;
+      padding: 2px;
+      height: auto;
+      min-width: 150px;
+      margin-left: 0;
+      transition: margin-left 0.4s ease-in;
+    }
+
+    hr {
+      width: calc(100%);
+      margin-left: 0;
+      border-top: 1px solid #debe34;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+
+    a.submenulink {
+      font-family: Helvetica, Arial, sans-serif;
+      display: block;
+      padding-left: 15px;
+      padding-right: 15px;
+      text-decoration: none;
+      background-color: #762678;
+      color: #debe34;
+      font-size: 10px;
+      font-weight: bolder;
+      line-height: 36px;
+      height: 36px;
+    }
+
+    a.submenulink:hover {
+      background-color: #debe34;
+      color: #762678;
     }
 
     a.menulink {
@@ -259,6 +299,18 @@
         height: calc (100% - 6px);
       }
     }
+
+    .subarqueologia {
+      left: 196px;
+    }
+
+    .subsql {
+      left: 277px;
+    }
+
+    .subplanilhas {
+      left: 364px;
+    }
   </style>
 
   <script>
@@ -300,10 +352,56 @@
     </div>
 
     <div id="menu" class="nada workbechgrande">
-      <a href="javascript:goto('capa','sumario')" class="menulink">SUMÁRIO</a
-      ><a href="javascript:goto('planilha')" class="menulink">PLANILHA</a
-      ><a href="javascript:goto('mysql')" class="menulink">SQL</a
-      ><a href="javascript:goto('notebooks','notebooks')" class="menulink"
+      <div
+        id="superstart"
+        class="menulink"
+        style="margin-left: 30px"
+        onclick="goto('capa','sumario')"
+        onmouseover="closeall();"
+      >
+        SUMÁRIO
+      </div>
+
+      <div
+        id="supercanvas"
+        class="menulink"
+        style="margin-left: 110px"
+        onclick="goto('planilha')"
+        onmouseover="closeall();"
+      >
+        WORKSHEET
+      </div>
+
+      <div
+        id="supermenuarqueologia"
+        class="menulink"
+        onclick="openandclose('menuarqueologia');"
+        onmouseover="closeall('menuarqueologia');"
+      >
+        ARQUEOLOGIA
+      </div>
+
+      <div
+        id="supermenusql"
+        class="menulink"
+        onclick="openandclose('menusql');"
+        onmouseover="closeall('menusql');"
+      >
+        SQL
+      </div>
+
+      <div
+        id="supermenuplanilhas"
+        class="menulink"
+        onclick="openandclose('menuplanilhas');"
+        onmouseover="closeall('menuplanilhas');"
+      >
+        PLANILHAS
+      </div>
+
+      <!--
+
+      <a href="javascript:goto('notebooks','notebooks')" class="menulink"
         >NOTEBOOKS</a
       ><a href="javascript:goto('viz','notebooks')" class="menulink">DATAVIZ</a
       ><a href="javascript:goto('dataexport','dataexport')" class="menulink"
@@ -312,10 +410,23 @@
         href="javascript:goto('programajava','tipologiasdedados')"
         class="menulink"
         >VARIÁVEIS</a
-      ><a href="javascript:goto('dbase','database')" class="menulink">DBASE</a
-      ><a href="javascript:goto('visicalc','calculo')" class="menulink"
+      >
+
+      -->
+    </div>
+
+    <div id="menuarqueologia" class="submenu subarqueologia">
+      <a href="javascript:goto('visicalc','calculo')" class="submenulink"
         >VISICALC</a
       >
+
+      <a href="javascript:goto('dbase','database')" class="submenulink"
+        >DBASE</a
+      >
+    </div>
+
+    <div id="menusql" class="submenu subsql">
+      <a href="javascript:goto('mysql')" class="submenulink">SQL</a>
     </div>
 
     <div id="interfacebar">
@@ -326,6 +437,11 @@
   </body>
 
   <script>
+    let whoisopen = [];
+    whoisopen["menuarqueologia"] = false;
+    whoisopen["menusql"] = false;
+    whoisopen["menuplanilhas"] = false;
+
     let goto = function (keyword, presentslide) {
       if (keyword != "" && typeof keyword != "undefined" && keyword != null) {
         document.getElementById("iwork").src =
@@ -399,6 +515,43 @@
       } else {
         dividescreen();
       }
+    }
+
+    let closeall = function (excp) {
+      for (let elm in whoisopen) {
+        if (elm != excp) {
+          document.getElementById(elm).style.display = "none";
+          document
+            .getElementById("super" + elm)
+            .classList.remove("fixamenulink");
+          whoisopen[elm] = false;
+        }
+      }
+    };
+
+    let openandclose = function (quem) {
+      for (let elm in whoisopen) {
+        document.getElementById(elm).style.display = "none";
+        document.getElementById("super" + elm).classList.remove("fixamenulink");
+      }
+
+      if (whoisopen[quem] == false) {
+        whoisopen[quem] = true;
+        document.getElementById(quem).style.display = "block";
+        document.getElementById("super" + quem).classList.add("fixamenulink");
+      } else {
+        whoisopen[quem] = false;
+        document.getElementById(quem).style.display = "none";
+        document
+          .getElementById("super" + quem)
+          .classList.remove("fixamenulink");
+      }
+
+      //gotostayopen(quem);
+    };
+
+    if ($_GET["slide"] != "" && typeof $_GET["slide"] != "undefined") {
+      goto($_GET["slide"]);
     }
   </script>
 </html>
