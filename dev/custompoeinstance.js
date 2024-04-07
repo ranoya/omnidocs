@@ -522,6 +522,83 @@ const getdata = function (arquivojson, callback) {
 
 }
 
+const getcsvdata = function (csvurl, callback) {
+
+  fetch(csvurl).then(response => response.text()).then((dados) => {
+
+        let total = omnifdados.length;
+        let changecsv = "";
+        let quantquotes = 0;
+        for (let r = 0; r < total; r++) {
+          if (omnifdados.substring(r, r+1) == '"') {
+            quantquotes++;
+          }
+
+          if (omnifdados.substring(r, r+1) == '\n' && quantquotes % 2 != 0) {
+            changecsv = omnifdados.substring(0, r) + ' ' + omnifdados.substring(r + 1);
+            omnifdados = changecsv;
+          }
+
+        }
+    
+        let linhas = dados.split(/\r?\n|\r|\n/g);
+        let linhadados = "";
+        let valorfinal = "";
+        let temp1 = "";
+        let temp2 = "";
+
+        let heads = linhas[0].split(",");
+
+        let arr = [];
+
+        for (let i = 1; i < linhas.length; i++) {
+          arr[i - 1] = {};
+          linhadados = linhas[i].split(/[,]{1}(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))/);
+
+          for (let k = 0; k < linhadados.length; k++) {
+            linhadados[k].trim();
+
+            if (
+              linhadados[k].substring(0, 1) == '"'
+            ) {
+              temp1 = linhadados[k].substring(1, linhadados[k].length);
+            } else {
+              temp1 = linhadados[k];
+            }
+
+            
+            if (
+              temp1.substring(
+                temp1.length - 2,
+                temp1.length
+              ) == '\"'
+            ) {
+              temp1 = temp1.substring(0, temp1.length - 2);
+            } 
+
+            if (
+              temp1.substring(
+                temp1.length - 1,
+                temp1.length
+              ) == '"'
+            ) {
+              temp2 = temp1.substring(0, temp1.length - 1);
+            } else {
+              temp2 = temp1;
+            }
+
+            valorfinal = temp2.replace(/""/g, '"');
+
+            arr[i - 1][heads[k]] = valorfinal;
+
+          }
+        }
+
+        callback(arr);
+    });
+  
+}
+
 /**
  * Get images from any kind of url
  * (under improvement) 
@@ -570,25 +647,7 @@ const googlesheet = function (url, aba) {
   return `https://opensheet.elk.sh/${arquivo[1]}/${aba}`;
 }
 
-
-
-
-
-/**
- * Get a CSV from Google Sheet
- * 
- * 
- * Return a CSV file from the provided Google Sheet URL
- * 
- * Ex:
- * 
- * let mycsvdata = GoogleSheetData('https://docs.google.com/spreadsheets/d/1ih4V4CumuIl5ZynobsazNzGiaPrE2V2Dpt13FI22XNU/edit#gid=0')
- * 
- */
-
-
-
-const GoogleSheetDataCSV = function(url) {
+const GoogleSheetCsvURL = function(url) {
   url = new URL(url);
   const id = url.pathname.split("/")[3];
   const gid = new URLSearchParams(url.hash.slice(1)).get("gid") || 0;
@@ -1004,4 +1063,84 @@ let startomnifilter = function (omnifdados, elemento, funcprocessa) {
 
     let newomniarray = select(omnifdados, multipatterncheck_exclude, "");
     funcprocessa(newomniarray);
+}
+
+let omnifilterfetchcsvdata = function (csvurl, el_id) {
+    
+    // Fetch CSV file
+  fetch(csvurl).then(response => response.text()).then((omnifdados) => {
+
+        let total = omnifdados.length;
+        let changecsv = "";
+        let quantquotes = 0;
+        for (let r = 0; r < total; r++) {
+          if (omnifdados.substring(r, r+1) == '"') {
+            quantquotes++;
+          }
+
+          if (omnifdados.substring(r, r+1) == '\n' && quantquotes % 2 != 0) {
+            changecsv = omnifdados.substring(0, r) + ' ' + omnifdados.substring(r + 1);
+            omnifdados = changecsv;
+          }
+
+        }
+
+        let linhas = omnifdados.split(/\r?\n|\r|\n/g);
+        let linhadados = "";
+        let valorfinal = "";
+        let temp1 = "";
+        let temp2 = "";
+
+        let heads = linhas[0].split(",");
+
+        let arr = [];
+
+        for (let i = 1; i < linhas.length; i++) {
+          arr[i - 1] = {};
+          linhadados = linhas[i].split(/[,]{1}(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))/);
+
+          for (let k = 0; k < linhadados.length; k++) {
+            linhadados[k].trim();
+
+            if (
+              linhadados[k].substring(0, 1) == '"'
+            ) {
+              temp1 = linhadados[k].substring(1, linhadados[k].length);
+            } else {
+              temp1 = linhadados[k];
+            }
+
+            
+            if (
+              temp1.substring(
+                temp1.length - 2,
+                temp1.length
+              ) == '\"'
+            ) {
+              temp1 = temp1.substring(0, temp1.length - 2);
+            } 
+
+            if (
+              temp1.substring(
+                temp1.length - 1,
+                temp1.length
+              ) == '"'
+            ) {
+              temp2 = temp1.substring(0, temp1.length - 1);
+            } else {
+              temp2 = temp1;
+            }
+
+            valorfinal = temp2.replace(/""/g, '"');
+
+            arr[i - 1][heads[k]] = valorfinal;
+
+          }
+        }
+         
+        alldata = arr;
+        startomnifilter(arr, el_id, omnifilter);
+
+    });
+
 }
