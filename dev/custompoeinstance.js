@@ -1133,6 +1133,8 @@ let omnifilterfetchcsvdata = function (csvurl, el_id) {
 
           }
         }
+    
+    console.table(arr);
          
         alldata = arr;
         startomnifilter(arr, el_id, omnifilter);
