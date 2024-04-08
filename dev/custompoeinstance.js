@@ -109,7 +109,7 @@ let createpoe = function (json, css, plugins) {
 
     
 
-    omnifilterfetchcsvdata(json, "entrada");
+    omnifilterfetchcsvdata(GoogleSheetCsvURL(json), "entrada");
 }
 
 
