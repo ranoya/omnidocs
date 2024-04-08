@@ -1,9 +1,9 @@
 let editores = function (par) {
 
-    let jsonfile = `https://opensheet.elk.sh/10wpfmMWn3igQF4rJBYCo8OR90igO1tfKwcmrot0ult0/CodeEditors`;
+    let jsonfile = `https://docs.google.com/spreadsheets/d/10wpfmMWn3igQF4rJBYCo8OR90igO1tfKwcmrot0ult0/edit#gid=0`;
     let groupkey = `Group`;
     
-    fetch(jsonfile).then(response => response.json()).then((jsondata) => {
+    getcsvdata(GoogleSheetCsvURL(jsonfile), function (jsondata) {
 
         let dados = select(jsondata, multipatterncheck_exclude, par);
         let selectedarr = tags(dados, groupkey, ",");

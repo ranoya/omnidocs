@@ -1,7 +1,7 @@
 let javascript = function (par) {
   // Change the funcion name here (imperative)
 
-  let jsonfile = `https://opensheet.elk.sh/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/EDITORIALCodigo`; // Change the URL here (imperative)
+  let jsonfile = `https://docs.google.com/spreadsheets/d/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/edit#gid=1755588864`; // Change the URL here (imperative)
 
   let namekey = `Name`; // Change the Key for the Title of the links, if needed
   let groupkey = `Group`; // Change the Key for the Groups of the links, if needed
@@ -10,9 +10,8 @@ let javascript = function (par) {
 
   // Don't mess with the rest, if you don't want trouble ;-)
 
-  fetch(jsonfile)
-    .then((response) => response.json())
-    .then((jsondata) => {
+  getcsvdata(GoogleSheetCsvURL(jsonfile), function (jsondata) {
+
       let dados = select(jsondata, multipatterncheck_exclude, par);
       let selectedarr = tags(dados, groupkey, ",");
       let code = `<div class="outputgrid"><span class='categoria noline'>PROGRAMAÇÃO PARA DATAVIZ</span><span class='categoria'>&nbsp;</span>`;

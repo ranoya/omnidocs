@@ -1,9 +1,9 @@
 let referenciasviz = function (par) {
 
-    let jsonfile = `https://opensheet.elk.sh/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/EDITORIALReferencia`;
+    let jsonfile = `https://docs.google.com/spreadsheets/d/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/edit#gid=1339317255`;
     let groupkey = `Group`;
     
-    fetch(jsonfile).then(response => response.json()).then((jsondata) => {
+    getcsvdata(GoogleSheetCsvURL(jsonfile), function (jsondata) {
 
         let dados = select(jsondata, multipatterncheck_exclude, par);
         let selectedarr = tags(dados, groupkey, ",");

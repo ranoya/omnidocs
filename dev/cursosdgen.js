@@ -1,14 +1,13 @@
 let cursos = function (par) {
   // Change the funcion name here (imperative)
 
-    let jsonfile = `https://opensheet.elk.sh/1oYqRAaiwTiYMIy832-4Knu_9MXQWiu6Nl2jmQY0_B10/Simplificado`; // Change the URL here (imperative)
+    let jsonfile = `https://docs.google.com/spreadsheets/d/1oYqRAaiwTiYMIy832-4Knu_9MXQWiu6Nl2jmQY0_B10/edit#gid=839487142`; // Change the URL here (imperative)
     
     let linkkey = 'link';
     let namekey = 'descricao';
 
-  fetch(jsonfile)
-    .then((response) => response.json())
-    .then((jsondata) => {
+  getcsvdata(GoogleSheetCsvURL(jsonfile), function (jsondata) {
+    
       let arr = select(jsondata, multipatterncheck_exclude, "CURSOS E TUTORIAIS_LIST DESIGN GENERATIVO_DISCP " + par);
 
       let code = `<div class="outputgrid"><span class='categoria noline'>Tutoriais e cursos online</span><span class='categoria'>&nbsp;</span>`;

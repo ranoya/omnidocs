@@ -1,7 +1,7 @@
 let comunidade = function (par) {
   // Change the funcion name here (imperative)
 
-  let jsonfile = `https://opensheet.elk.sh/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/DGENComunidade`; // Change the URL here (imperative)
+  let jsonfile = `https://docs.google.com/spreadsheets/d/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/edit#gid=2059876861`; // Change the URL here (imperative)
 
   
   let namekey = `Name`; // Change the Key for the Title of the links, if needed
@@ -11,9 +11,8 @@ let comunidade = function (par) {
 
   // Don't mess with the rest, if you don't want trouble ;-)
 
-  fetch(jsonfile)
-    .then((response) => response.json())
-    .then((jsondata) => {
+  getcsvdata(GoogleSheetCsvURL(jsonfile), function (jsondata) {
+    
       let dados = select(jsondata, multipatterncheck_exclude, par);
       let selectedarr = tags(dados, groupkey, ",");
         let code = `

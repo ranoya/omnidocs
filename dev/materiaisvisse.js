@@ -1,9 +1,9 @@
 let materiais = function (par) {
 
-    let jsonfile = `https://opensheet.elk.sh/1d9eKw82lnM5GvVkBUe8wLcHSxpmDm5B6dUqWRbazOik/MATERIAIS_VISSE`;
+    let jsonfile = `https://docs.google.com/spreadsheets/d/1d9eKw82lnM5GvVkBUe8wLcHSxpmDm5B6dUqWRbazOik/edit#gid=1383218068`;
     
-    fetch(jsonfile).then(response => response.json()).then((jsondata) => {
-
+    getcsvdata(GoogleSheetCsvURL(jsonfile), function (jsondata) {
+    
         if (par == "") {
             par = "dataviz";
         }

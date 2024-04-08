@@ -1,7 +1,7 @@
 let bibliotecas = function (par) {
   // Change the funcion name here (imperative)
 
-  let jsonfile = `https://opensheet.elk.sh/10wpfmMWn3igQF4rJBYCo8OR90igO1tfKwcmrot0ult0/Bibliotecas`; // Change the URL here (imperative)
+  let jsonfile = `https://docs.google.com/spreadsheets/d/10wpfmMWn3igQF4rJBYCo8OR90igO1tfKwcmrot0ult0/edit#gid=231516235`; // Change the URL here (imperative)
 
   let namekey = `nome`; // Change the Key for the Title of the links, if needed
   let groupkey = `linguagem`; // Change the Key for the Groups of the links, if needed
@@ -10,9 +10,7 @@ let bibliotecas = function (par) {
 
   // Don't mess with the rest, if you don't want trouble ;-)
 
-  fetch(jsonfile)
-    .then((response) => response.json())
-      .then((jsondata) => {
+  getcsvdata(GoogleSheetCsvURL(jsonfile), function (jsondata) {
         
       let dados = select(jsondata, multipatterncheck_exclude, par);   
       let selectedarr = tags(dados, groupkey, ",");
