@@ -55,15 +55,13 @@ let toggle = function (who) {
 
 let startpoe = function (json, css, plugins, files) {
   
-    if (typeof files != "undefined" && files != "" && files != null) {
+    if (typeof files == "undefined" || files == "" || files == null) {
  
     files = json;
      
   }
 
-  fetch(files)
-        .then((response) => response.json())
-        .then((dados) => {
+  getcsvdata(GoogleSheetCsvURL(files), function(dados) {
           cloudfiles = dados;
         });
   
@@ -81,9 +79,7 @@ let startpoe = function (json, css, plugins, files) {
         plugins != "" &&
         plugins != null
       ) {
-        fetch(plugins)
-          .then((response) => response.json())
-          .then((dados) => {
+        getcsvdata(GoogleSheetCsvURL(plugins), function(dados) {
             //console.table(dados);
 
             for (i = 0; i < dados.length; i++) {
@@ -113,7 +109,7 @@ let createpoe = function (json, css, plugins) {
 
     
 
-    omnifilterfetchdata(json, "entrada");
+    omnifilterfetchcsvdata(json, "entrada");
 }
 
 
