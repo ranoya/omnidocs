@@ -112,6 +112,6 @@ hr {
   width: 100%;
   max-width: 950px;
   border-top: 1px solid #cccccc;
-  left: max(calc(50% - 475px), 0);
+  left: max(calc(50% - 475px), 0px);
   height: 25px;
 }
