@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  font: 15px/1.65 var(--serif) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  color: #333333;
+}
+
+#wrap {
+  display: grid;
+  grid-template-columns: auto min(640px, calc(100% - 40px)) auto;
+  gap: 20px 20px;
+  width: 100%;
+  color: #333333;
+}
+
+p,
+table,
+figure,
+figcaption,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.katex-display {
+  max-width: 720px !important;
+  font-family: "Source Serif 4", serif;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table td {
+  border: 1px solid #aaaaaa;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 8px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bolder;
+  font-style: normal;
+}
+
+code {
+  font: 12px/1.65 monospace !important;
+}
+
+p {
+  font-family: "Source Serif 4", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font: normal 15px/1.65 "Source Serif 4", serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  color: #333333;
+}
+
+b,
+strong {
+  font-family: "Source Serif 4", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font: bolder 15px/1.65 "Source Serif 4", serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  color: #333333;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #cccccc;
+}
+
+#notebook {
+  width: 100%;
+  max-width: 720px;
+  background-color: white;
+}
