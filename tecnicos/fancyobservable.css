@@ -8,7 +8,7 @@ body {
 }
 
 html {
-  font: 15px/1.65 var(--serif) !important;
+  font: 20px/1.65 var(--serif) !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
   font-smoothing: antialiased;
@@ -64,7 +64,7 @@ h3 {
 }
 
 code {
-  font: 12px/1.65 monospace !important;
+  font: 16px/1.65 monospace !important;
 }
 
 p {
@@ -72,7 +72,7 @@ p {
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
-  font: normal 15px/1.65 "Source Serif 4", serif !important;
+  font: normal 20px/1.65 "Source Serif 4", serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
   font-smoothing: antialiased;
@@ -85,7 +85,7 @@ strong {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font: bolder 15px/1.65 "Source Serif 4", serif !important;
+  font: bolder 20px/1.65 "Source Serif 4", serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
   font-smoothing: antialiased;
