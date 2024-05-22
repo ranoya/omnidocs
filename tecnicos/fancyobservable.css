@@ -115,3 +115,10 @@ hr {
   left: max(calc(50% - 475px), 0px);
   height: 40px;
 }
+
+@media screen and (max-width: 980px) {
+  #spaceblock {
+    width: calc(100% - 40px);
+    left: 20px;
+  }
+}
