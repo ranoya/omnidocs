@@ -45,14 +45,14 @@ h6,
 
 table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: collapse !important;
 }
 
 table td {
-  border: 1px solid #aaaaaa;
+  border: 1px solid #aaaaaa !important;
   font-size: 16px;
   line-height: 20px;
-  padding: 8px;
+  padding: 8px !important;
 }
 
 h1,
