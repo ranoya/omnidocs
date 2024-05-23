@@ -114,6 +114,12 @@ hr {
   border-top: 1px solid #cccccc;
   left: max(calc(50% - 475px), 0px);
   height: 40px;
+  line-height: 37px;
+  text-align: right;
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  font-family: "Source Sans 3";
 }
 
 @media screen and (max-width: 980px) {
