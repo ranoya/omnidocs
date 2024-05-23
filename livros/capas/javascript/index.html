@@ -64,6 +64,35 @@
         background-size: contain;
       }
     </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.js"></script>
+
+    <div
+      id="dblobis"
+      style="
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        left: -30%;
+        width: 100%;
+        height: 100vh;
+      "
+    ></div>
+
+    <script type="module">
+      import dblob from "https://omnidocs.vercel.app/livros/capas/javascript/theblob.js";
+
+      let playblob = dblob({
+        p5,
+        bgcolor: getComputedStyle(document.documentElement).getPropertyValue(
+          "--bg-color"
+        ),
+        fcolor: getComputedStyle(document.documentElement).getPropertyValue(
+          "--text-link"
+        ),
+        el: "dblobis",
+      });
+    </script>
   </head>
 
   <body>
