@@ -26,8 +26,8 @@ export default ({
       this.displace = function () {
         this.disp =
           120 +
-          (20 * this.raio) / p.dist(p.mouseX - 500, p.mouseY, this.x, this.y);
-        this.a = p.atan2(p.mouseY - this.y, p.mouseX - 500 - this.x);
+          (20 * this.raio) / p.dist(p.mouseX + 500, p.mouseY, this.x, this.y);
+        this.a = p.atan2(p.mouseY - this.y, p.mouseX + 500 - this.x);
       };
 
       this.desenha = function () {
