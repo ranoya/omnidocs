@@ -122,6 +122,11 @@ hr {
   font-family: "Source Sans 3";
 }
 
+#spaceblock b {
+  font-family: "Source Sans 3" !important;
+  font-size: 12px !important;
+}
+
 @media screen and (max-width: 980px) {
   #spaceblock {
     width: calc(100% - 40px);
