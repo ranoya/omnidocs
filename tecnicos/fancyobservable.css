@@ -153,6 +153,7 @@ hr {
 .olho {
   display: block;
   max-width: 100vw !important;
-  width: calc(100vw - 110px);
+  width: calc(100vw - 110px) !important;
   margin-left: -22vw;
+  max-height: calc(100dvh - 100px) !important;
 }
