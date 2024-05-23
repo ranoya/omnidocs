@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="" />
+    <title>Reflexões sobre o Design de Interfaces</title>
+    <meta
+      property="og:title"
+      content="Reflexões sobre o Design de Interfaces"
+    />
+    <meta name="generator" content="Slidelines" />
+    <meta name="description" content="Textos sobre o projeto de interfaces" />
+    <meta
+      property="og:description"
+      content="Textos sobre o projeto de interfaces"
+    />
+    <meta name="author" content="Guilherme Ranoya" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+
+      body {
+        background-color: #361e73;
+      }
+
+      #obs {
+        position: fixed;
+        z-index: 10;
+        width: 60vw;
+        height: 60vh;
+        top: 25vh;
+        left: 30vw;
+        background-image: url(livrologo.svg);
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-size: contain;
+        z-index: 5000;
+      }
+
+      #init {
+        position: fixed;
+        z-index: 11;
+        width: 100px;
+        height: 107px;
+        bottom: 10px;
+        right: 59px;
+        background-image: url(init.svg);
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size: contain;
+        z-index: 5001;
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.js"></script>
+
+    <script>
+      function setup() {
+        background("#361e73");
+        createCanvas(windowWidth, windowHeight);
+        frameRate(15);
+      }
+
+      function draw() {
+        background("#361e73");
+        stroke("#3d257c");
+        strokeWeight(3);
+
+        let tam = 20;
+
+        for (let x1 = 0; x1 < width; x1 = x1 + tam) {
+          for (let y1 = 0; y1 < height; y1 = y1 + tam) {
+            if (random(1) < 0.5) {
+              line(x1, y1, x1 + tam, y1 + tam);
+            } else {
+              line(x1 + tam, y1, x1, y1 + tam);
+            }
+          }
+        }
+
+        noLoop();
+      }
+
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+        draw();
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="obs"></div>
+    <div id="init"></div>
+  </body>
+</html>
