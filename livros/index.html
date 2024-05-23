@@ -1,26 +1,64 @@
-<script>
-  $_GET = [];
-  (function () {
-    corte = window.location.href.toString().indexOf("?");
-    if (corte > 0) {
-      argumento = window.location.href.toString().substring(corte + 1);
-      argumentos = argumento.split("&");
-      for (arg in argumentos) {
-        let argCorte = argumentos[arg].indexOf("=");
-        $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
-          arg
-        ].substring(argCorte + 1);
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Livros Interativos</title>
+
+    <style>
+      * {
+        margin: 0;
+        border: 0;
+        padding: 0;
       }
-    }
-  })();
 
-  if ($_GET["titulo"] == "observable") {
-    window.location =
-      "https://slidelines.vercel.app/timelineh/?pattern=true&followbg=true&timeheight=130&file=https://docs.google.com/spreadsheets/d/1SxGT3E57CSn6r19a8BeVDWpT9dce0gi7jkAYltREeu4/edit#gid=0&theme=https://slidelines.vercel.app/styles/observabletexts.css";
-  }
+      body,
+      html {
+        overflow: hidden;
+        width: 100vw;
+        height: 100dvh;
+      }
 
-  if ($_GET["titulo"] == "interfaces") {
-    window.location =
-      "https://slidelines.vercel.app/timelineh/?pattern=true&followbg=true&timeheight=130&file=https://docs.google.com/spreadsheets/d/1SxGT3E57CSn6r19a8BeVDWpT9dce0gi7jkAYltREeu4/edit#gid=1696762081&theme=https://slidelines.vercel.app/styles/livrointerfaces.css";
-  }
-</script>
+      iframe {
+        width: 100vw;
+        height: 100dvh;
+      }
+    </style>
+
+    <script>
+      $_GET = [];
+      (function () {
+        corte = window.location.href.toString().indexOf("?");
+        if (corte > 0) {
+          argumento = window.location.href.toString().substring(corte + 1);
+          argumentos = argumento.split("&");
+          for (arg in argumentos) {
+            let argCorte = argumentos[arg].indexOf("=");
+            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+              arg
+            ].substring(argCorte + 1);
+          }
+        }
+      })();
+
+      let u = "";
+
+      if ($_GET["titulo"] == "observable") {
+        u =
+          "https://slidelines.vercel.app/timelineh/?pattern=true&followbg=true&timeheight=130&file=https://docs.google.com/spreadsheets/d/1SxGT3E57CSn6r19a8BeVDWpT9dce0gi7jkAYltREeu4/edit#gid=0&theme=https://slidelines.vercel.app/styles/observabletexts.css";
+      }
+
+      if ($_GET["titulo"] == "interfaces") {
+        u =
+          "https://slidelines.vercel.app/timelineh/?pattern=true&followbg=true&timeheight=130&file=https://docs.google.com/spreadsheets/d/1SxGT3E57CSn6r19a8BeVDWpT9dce0gi7jkAYltREeu4/edit#gid=1696762081&theme=https://slidelines.vercel.app/styles/livrointerfaces.css";
+      }
+    </script>
+  </head>
+
+  <body>
+    <iframe id="conteudo"></iframe>
+  </body>
+
+  <script>
+    document.getElementById("conteudo").src = u;
+  </script>
+</html>
