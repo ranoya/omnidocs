@@ -120,7 +120,8 @@ export default ({
     };
 
     p.draw = function () {
-      p.translate(p.width / 3);
+      p.push();
+      p.translate((p.width / 3) * -1);
       p.background(bgcolor);
       p.fill(fcolor);
       for (let i = 0; i < 300; i++) {
@@ -148,6 +149,7 @@ export default ({
       p.bolasB[300] = p.bolasB[0];
       p.bolasC[300] = p.bolasC[0];
       p.bolasD[300] = p.bolasD[0];
+      p.pop();
     };
     p.windowResized = function () {
       p.resizeCanvas(
