@@ -149,3 +149,10 @@ hr {
     left: 20px;
   }
 }
+
+.olho {
+  display: block;
+  max-width: 100vw !important;
+  width: calc(100vw - 110px);
+  margin-left: -22vw;
+}
