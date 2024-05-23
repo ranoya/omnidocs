@@ -30,7 +30,7 @@ export default ({
       };
 
       this.desenha = function () {
-        this.dx = this.x - p.cos(this.a) * this.disp;
+        this.dx = this.x - p.cos(this.a) * this.disp - 500;
         this.dy = this.y - p.sin(this.a) * this.disp;
         //ellipse(x-(p.cos(a)*disp), y-(p.sin(a)*disp), raio,raio);
       };
