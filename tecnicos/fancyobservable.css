@@ -43,6 +43,20 @@ h6,
   font-smoothing: antialiased;
 }
 
+form {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.observablehq a {
+  color: #2e8ec4;
+  text-decoration: none;
+}
+
+.observablehq a:hover {
+  text-decoration: underline;
+}
+
 table {
   width: 100%;
   border-collapse: collapse !important;
