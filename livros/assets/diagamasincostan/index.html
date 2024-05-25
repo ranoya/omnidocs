@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        overflow: hidden;
+      }
+
+      #sincostan {
+        width: 100vw;
+        height: 100dvh;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+  </head>
+
+  <body>
+    <div id="sincostan"></div>
+  </body>
+
+  <script type="module">
+    import diaint from "https://omnidocs.vercel.app/livros/assets/diagramasincostan/sincostan.js";
+
+    let playdiaint = diaint({
+      p5,
+      bgcolor: "#FFFFFF",
+      fcolorA: "#ac229d",
+      fcolorC: "#edd21f",
+      el: "sincostan",
+    });
+  </script>
+</html>
