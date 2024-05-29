@@ -9,6 +9,7 @@ function setup() {
   // cria o contexto gráfico
   createCanvas(windowWidth, windowHeight);
   background(255);
+  showlinegrid();
 }
 
 function draw() {
