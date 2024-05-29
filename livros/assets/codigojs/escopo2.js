@@ -1,7 +1,7 @@
 let A = "Estou no escopo geral";
 
 function teste1() {
-  var B = "Estou no escopo de teste1";
+  B = "Estou no escopo de teste1";
   console.log(A); // funcionará
   console.log(B); // funcionará
 }
