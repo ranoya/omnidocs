@@ -6,7 +6,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   background(255);
   showlinegrid();
-  stroke(0);
+  stroke("#2e8ec4");
 }
 
 function draw() {
