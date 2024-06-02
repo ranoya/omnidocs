@@ -160,7 +160,7 @@ hr {
 
   max-width: 90vw !important;
   width: calc(95vw - 50px) !important;
-  margin-left: min(calc(-55vw + (360px + 20px)), 5vw);
+  margin-left: min(calc(-45vw + (360px + 20px)), 5vw);
   max-height: calc(100dvh - 200px) !important;
 }
 
