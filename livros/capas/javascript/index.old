@@ -80,7 +80,7 @@
     ></div>
 
     <script type="module">
-      import dblob from "https://omnidocs.vercel.app/livros/capas/javascript/quadra.js";
+      import dblob from "https://omnidocs.vercel.app/livros/capas/javascript/outro.js";
 
       let playblob = dblob({
         p5,
