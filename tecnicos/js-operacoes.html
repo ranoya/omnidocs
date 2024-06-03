@@ -38,12 +38,14 @@
 
     <!-- METAINFORMAÇÃO DO DOCUMENTO -->
 
-    <title>título</title>
-    <meta property='og:title' content='título' />
-    <meta name='description' content='descrição' />
-    <meta property='og:description' content='descrição' />
+    <title>Operações aritméticas e lógicas</title>
+    <meta property='og:title' content='Operações aritméticas e lógicas' />
+    <meta name='description' content='Operações aritméticas e lógicas - Guliherme Ranoya' />
+    <meta property='og:description' content='Operações aritméticas e lógicas - Guliherme Ranoya' />
 </head>
 
+<body>
+  
 <div id="wrap">
   <div></div>
   <div id="notebook"></div>
@@ -79,19 +81,42 @@
   if (typeof $_GET['blink'] != 'undefined' && $_GET['blink'] != null && $_GET['blink'] != '') {
     document.getElementById("spaceblock").innerHTML = decodeURI($_GET['blink']);
   }
+
+  let badScroll = (window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigator.platform.toString().indexOf("Linux") >= 0);
+
+  if (badScroll) {
+    document.getElementsByTagName("head")[0].innerHTML += `
+    <style>
+
+        ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+        background-color: var(--base-background, #ffffff);
+        }
+
+        ::-webkit-scrollbar-track {
+        background: var(--base-background, #ffffff);
+        }
+
+        ::-webkit-scrollbar:hover {
+        background-color: var(--timeline-text-over, #ffffff);
+        }
+
+        ::-webkit-scrollbar-thumb {
+        background: var(--timeline-text-color, #dfd4b7);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+        /* background: var(--timeline-text-over, #aed5d5); */
+        background: var(--timeline-text-over, #ba890a);
+        }
+
+    </style>
+
+    `;
+  }
 </script>
 
-
-
-        
-
-
-
-    </head>
-    
-    <body>
-
-        
 
     </body>
 </html>
