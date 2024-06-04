@@ -37,6 +37,22 @@
         background-size: 50px 50px;
       }
 
+      #titulo {
+        position: fixed;
+        z-index: 9;
+        width: 60vw;
+        height: 100dvh;
+        top: 0;
+        right: 0;
+
+        background: rgb(186, 137, 10);
+        background: linear-gradient(
+          90deg,
+          rgba(186, 137, 10, 0) 0%,
+          rgba(186, 137, 10, 1) 43%
+        );
+      }
+
       #obs {
         position: fixed;
         z-index: 10;
@@ -66,7 +82,9 @@
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.js"></script>
+  </head>
 
+  <body>
     <div
       id="dblobis"
       style="
@@ -79,20 +97,19 @@
       "
     ></div>
 
+    <div id="titulo"></div>
+    <div id="obs"></div>
+    <div id="init"></div>
+
     <script type="module">
       import dblob from "https://omnidocs.vercel.app/livros/capas/javascript/quadra.js";
 
       let playblob = dblob({
         p5,
         bgcolor: "#ba890a",
-        fcolor: "#FFFFFF",
+        fcolor: "#e7cb83",
         el: "dblobis",
       });
     </script>
-  </head>
-
-  <body>
-    <div id="obs"></div>
-    <div id="init"></div>
   </body>
 </html>
