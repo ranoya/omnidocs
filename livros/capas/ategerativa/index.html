@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="" />
+    <title>Programação javascript para Designers</title>
+    <meta property="og:title" content="Programação javascript para Designers" />
+    <meta name="generator" content="Observable" />
+    <meta
+      name="description"
+      content="Livro sobre programação em javascript para Designers"
+    />
+    <meta
+      property="og:description"
+      content="Livro sobre programação em javascript para Designers"
+    />
+    <meta name="author" content="Guilherme Ranoya" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+
+      body {
+        background-color: #cf3173;
+        background-repeat: repeat;
+        background-image: url(https://omnidocs.vercel.app/livros/capas/observable/Pattern.svg);
+        background-size: 50px 50px;
+      }
+
+      #obs {
+        position: fixed;
+        z-index: 10;
+        width: 60vw;
+        height: 60vh;
+        top: 25vh;
+        left: 30vw;
+        background-image: url(https://omnidocs.vercel.app/livros/capas/javascript/logo.svg);
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-size: contain;
+        z-index: 5000;
+      }
+
+      #init {
+        position: fixed;
+        z-index: 11;
+        width: 100px;
+        height: 107px;
+        bottom: 10px;
+        right: 59px;
+        background-image: url(https://omnidocs.vercel.app/livros/capas/observable/init.svg);
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size: contain;
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.js"></script>
+
+    <div
+      id="dblobis"
+      style="
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+      "
+    ></div>
+
+    <script type="module">
+      import dblob from "https://omnidocs.vercel.app/livros/capas/javascript/outro.js";
+
+      let playblob = dblob({
+        p5,
+        bgcolor: "#cf3173",
+        fcolor: "#FFFFFF",
+        el: "dblobis",
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="obs"></div>
+    <div id="init"></div>
+  </body>
+</html>
