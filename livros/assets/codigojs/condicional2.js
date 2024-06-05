@@ -5,7 +5,7 @@ if (interruptor == true) {
   interruptor = false;
 }
 
-if (interruptor == true) {
+if (interruptor == false) {
   // liga caso esteja desligado
   interruptor = true;
 }
