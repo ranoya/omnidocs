@@ -90,7 +90,7 @@
     <style>
 
         ::-webkit-scrollbar {
-        width: 8px;
+        width: 30px;
         height: 8px;
         background-color: var(--base-background, #ffffff);
         }
@@ -104,12 +104,15 @@
         }
 
         ::-webkit-scrollbar-thumb {
-        background: var(--timeline-text-color, #dfd4b7);
+        background: var(--base-background, #ffffff);
+        border-right: 8px solid var(--timeline-text-color, #dfd4b7);
         }
 
         ::-webkit-scrollbar-thumb:hover {
         /* background: var(--timeline-text-over, #aed5d5); */
-        background: var(--timeline-text-over, #ba890a);
+        background: var(--base-background, #ffffff);
+        border-right: 8px solid var(--timeline-text-over, #ba890a);
+
         }
 
     </style>
