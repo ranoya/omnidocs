@@ -79,6 +79,43 @@
   if (typeof $_GET['blink'] != 'undefined' && $_GET['blink'] != null && $_GET['blink'] != '') {
     document.getElementById("spaceblock").innerHTML = decodeURI($_GET['blink']);
   }
+
+    let badScroll = (window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigator.platform.toString().indexOf("Linux") >= 0);
+
+  if (badScroll) {
+    document.getElementsByTagName("head")[0].innerHTML += `
+    <style>
+
+        ::-webkit-scrollbar {
+        width: 30px;
+        height: 8px;
+        background-color: var(--base-background, #ffffff);
+        }
+
+        ::-webkit-scrollbar-track {
+        background: var(--base-background, #ffffff);
+        }
+
+        ::-webkit-scrollbar:hover {
+        background-color: var(--timeline-text-over, #ffffff);
+        }
+
+        ::-webkit-scrollbar-thumb {
+        background: var(--base-background, #ffffff);
+        border-right: 8px solid var(--timeline-text-color, #dfd4b7);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+        /* background: var(--timeline-text-over, #aed5d5); */
+        background: var(--base-background, #ffffff);
+        border-right: 8px solid var(--timeline-text-over, #ba890a);
+
+        }
+
+    </style>
+
+    `;
+  }
 </script>
 
 
