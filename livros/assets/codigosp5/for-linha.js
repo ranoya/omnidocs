@@ -13,7 +13,7 @@ function draw() {
   stroke(cor);
 
   // loop que gera o desenho
-  for (let x = 0; x < 300; x = x + 2) {
+  for (let x = 0; x < 200; x = x + 5) {
     line(x, 0, 0, x);
   }
 
