@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<head>
+    <meta charset='utf-8' />
+    <meta name ='pinterest' content ='nopin' />
+    <meta name='pinterest' content='nohover' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css"
+/>
+    <link rel='stylesheet' type='text/css' href='https://omnidocs.vercel.app/tecnicos/fancyobservable.css' />
+    <meta property='og:type' content='article' />
+    <meta name='author' content='Guilherme Ranoya'>
+    <meta property='og:locale' content='pt_BR' />
+    <meta property='og:site_name' content='Omnidocs' />
+    <meta name='application-name' content='Omnidocs' />
+    <meta name='generator' content='Observable' />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+
+
+    <!-- METAINFORMAÇÃO PARA COMPARTILHAMENTO -->
+
+    <meta property='og:url' content='https://url' />
+    <meta property='og:image:width' content='600' />
+    <meta property='og:image:height' content='600' />
+    <meta property='og:image:type' content='image/jpeg' />
+    <meta property='og:image' content='cover image600.jpg' />
+    <meta property='og:image:secure_url' content='cover image600.jpg' />
+    <link rel='image_src' type='image/jpg' href='cover image600.jpg' />
+    <link rel='icon' type='image/png' href='cover image16.png' />
+    <link rel='shortcut icon' href='cover image57.png' />
+
+    <!-- METAINFORMAÇÃO DO DOCUMENTO -->
+
+    <title>Sumário</title>
+    <meta property='og:title' content='Sumário' />
+    <meta name='description' content='Sumário' />
+    <meta property='og:description' content='Sumário' />
+</head>
+
+<div id="wrap">
+  <div></div>
+  <div id="notebook"></div>
+  <div></div>
+</div>
+<div id="spaceblock"></div>
+
+<script type="module">
+  import {
+    Runtime,
+    Inspector,
+  } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+  import define from "https://api.observablehq.com/@ranoya/livroobservable-sumario.js?v=4";
+  new Runtime().module(define, Inspector.into("#notebook"));
+</script>
+
+<script>
+  hljs.highlightAll();
+
+  $_GET = [];
+  (function(){
+    corte = window.location.href.toString().indexOf('?');
+    if (corte > 0) {
+        argumento = window.location.href.toString().substring(corte + 1);
+        argumentos = argumento.split('&');
+        for (arg in argumentos){
+            let argCorte = argumentos[arg].indexOf('=');
+            $_GET[argumentos[arg].substring(0,argCorte)] = argumentos[arg].substring(argCorte + 1);
+        }
+    } 
+  })();
+  
+  if (typeof $_GET['blink'] != 'undefined' && $_GET['blink'] != null && $_GET['blink'] != '') {
+    document.getElementById("spaceblock").innerHTML = decodeURI($_GET['blink']);
+  }
+
+    let badScroll = (window.navigator.platform.toString().indexOf("Win") >= 0 || window.navigator.platform.toString().indexOf("Linux") >= 0);
+
+  if (badScroll) {
+    document.getElementsByTagName("head")[0].innerHTML += `
+    <style>
+
+        :root {
+        --timeline-text-color: #e6edf5;
+        --timeline-text-over: #77cfe3;
+        }
+
+        ::-webkit-scrollbar {
+        width: 30px;
+        height: 8px;
+        background-color: var(--base-background, #ffffff);
+        }
+
+        ::-webkit-scrollbar-track {
+        background: var(--base-background, #ffffff);
+        border-right: 1px dashed var(--timeline-text-color, #dfd4b7);
+        }
+
+        ::-webkit-scrollbar:hover {
+        background-color: var(--timeline-text-over, #ffffff);
+        }
+
+        ::-webkit-scrollbar-thumb {
+        background: var(--base-background, #ffffff);
+        border-right: 8px solid var(--timeline-text-color, #dfd4b7);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+        /* background: var(--timeline-text-over, #aed5d5); */
+        background: var(--base-background, #ffffff);
+        border-right: 8px solid var(--timeline-text-over, #ba890a);
+
+        }
+
+    </style>
+
+    `;
+  }
+</script>
+
+
+
+        
+
+
+
+    </head>
+    
+    <body>
+
+        
+
+    </body>
+</html>
