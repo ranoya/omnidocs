@@ -206,4 +206,5 @@ hr {
 
 .navega:hover {
   background-color: #ff006a;
+  text-decoration: none !important;
 }
