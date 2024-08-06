@@ -201,7 +201,7 @@ hr {
   font-weight: bolder;
   font-family: Helvetica, Arial, sans-serif;
   background-color: #aaaaaa;
-  color: white;
+  color: white !important;
 }
 
 .navega:hover {
