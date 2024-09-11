@@ -9,7 +9,7 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://omnidocs.vercel.app/docs/codigocriativo",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#000000"
