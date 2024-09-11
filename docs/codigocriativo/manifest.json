@@ -3,14 +3,48 @@
   "name": "Código Criativo",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "256x256 48x48 16x16",
-      "type": "image/x-icon",
-      "purpose": "any maskable"
+      "src": "/assets/Futuro1024.png",
+      "type": "image/svg+xml",
+      "sizes": "1024x1024"
+    },
+    {
+      "src": "/assets/Futuro512.png",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/assets/Futuro256.png",
+      "type": "image/svg+xml",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/assets/Futuro144.png",
+      "type": "image/svg+xml",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/assets/Futuro128.png",
+      "type": "image/svg+xml",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/assets/Futuro48.png",
+      "type": "image/svg+xml",
+      "sizes": "48x48"
+    },
+    {
+      "src": "/assets/Futuro32.png",
+      "type": "image/svg+xml",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/assets/Futuro16.png",
+      "type": "image/svg+xml",
+      "sizes": "16x16"
     }
   ],
-  "start_url": "https://omnidocs.vercel.app/docs/codigocriativo",
-  "display": "standalone",
+  "start_url": ".",
+  "display": "fullscreen",
   "theme_color": "#000000",
   "background_color": "#000000"
 }
