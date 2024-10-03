@@ -1,0 +1,22 @@
+<h2 id="msg"></h2>
+
+<script>
+  let Hello = function () {
+    let objetoDate = new Date();
+    let hora = objetoDate.getHours();
+
+    if (hora >= 18) {
+      return "Boa Noite!";
+    } else {
+      return "Bom dia!";
+    }
+  };
+
+  let saudacao = function (frase) {
+    let mensagemcompleta = frase + " Sejam todos bem vindos!";
+
+    document.getElementById("msg").innerHTML = mensagemcompleta;
+  };
+
+  saudacao(Hello());
+</script>
