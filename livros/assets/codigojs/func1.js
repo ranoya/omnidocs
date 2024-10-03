@@ -3,7 +3,7 @@ let Hello = function () {
   let hora = objetoDate.getHours();
 
   if (hora >= 18) {
-    console.log("Boa Noite");
+    console.log("Boa Noite!");
   } else {
     console.log("Bom dia!");
   }
