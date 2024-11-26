@@ -553,6 +553,12 @@
         document.getElementById("iwork").src = keyword;
       }
 
+      if (keyword.regexmatch(/^https:\/\/slides.co/)) {
+        document.getElementById("iwork").style.height = "calc(100% + 34px)";
+      } else {
+        document.getElementById("iwork").style.height = "100%";
+      }
+
       if (
         presentslide != "" &&
         typeof presentslide != "undefined" &&
