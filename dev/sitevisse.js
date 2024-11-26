@@ -1,13 +1,9 @@
 let visse = function (par) {
-  let jsonfile = `https://docs.google.com/spreadsheets/d/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/edit?gid=743128170#gid=743128170`;
+  let jsonfile = `https://docs.google.com/spreadsheets/d/1Wu1v5jb8chg1Fi9chuT1QAPknJmVHF8Kz2cKvA6s2qw/edit?gid=1979792953#gid=1979792953`;
   let groupkey = `Group`;
 
   getcsvdata(GoogleSheetCsvURL(jsonfile), function (jsondata) {
-    let dados = select(
-      jsondata,
-      multipatterncheck_exclude,
-      "aula-and editorial_visse " + par
-    );
+    let dados = select(jsondata, multipatterncheck_exclude, par);
     let selectedarr = tags(dados, groupkey, ",");
 
     let code = `<div class="outputgrid">`;
