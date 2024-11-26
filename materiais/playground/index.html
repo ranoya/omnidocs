@@ -553,7 +553,7 @@
         document.getElementById("iwork").src = keyword;
       }
 
-      if (keyword.regexmatch(/^https:\/\/slides.co/)) {
+      if (keyword.match(/^https:\/\/slides.com/)) {
         document.getElementById("iwork").style.height = "calc(100% + 34px)";
       } else {
         document.getElementById("iwork").style.height = "100%";
