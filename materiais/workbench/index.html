@@ -105,7 +105,7 @@
 
             width: auto;
             position: fixed;
-            top: 38px;
+            top: 37px;
             z-index: 10;
             background-color: #762678;
             color: white;
@@ -141,8 +141,8 @@
         color: #debe34;
         font-size: 10px;
         font-weight: bolder;
-        line-height: 36px;
-        height: 36px;
+        line-height: 35px;
+        height: 35px;
     }
 
     a.submenulink:hover {
@@ -529,17 +529,32 @@
 
     <div id='menunotebooks' class="submenu subnotebooks">
 
-      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/intronotebooks','https://slides.com/ranoya/culturadedados/embed#/diagramasoftwares')" class="submenulink">OBSERVABLE</a>
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/intronotebooks','https://slides.com/ranoya/culturadedados/embed#/notebooks')" class="submenulink">NOTEBOOKS</a>
 
       <hr></hr>
 
-      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/experimentod31')" class="submenulink">D3</a>
+       <a href="javascript:goto('https://booklines.vercel.app/livros/observable','https://slides.com/ranoya/culturadedados/embed#/notebooks')" class="submenulink">PROGRAMANDO</a>
+
+       <a href="javascript:goto('https://omnicode.vercel.app/docs/nocap.html?url=https://observablehq.com/embed/@ranoya/obs_dadosiniciantes','https://slides.com/ranoya/culturadedados/embed#/notebooks')" class="submenulink">OBSERVABLE + DADOS</a>
+
+       <hr></hr>
+
+       <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/dadosdoiib','https://slides.com/ranoya/culturadedados/embed#/datasets')" class="submenulink">DATASETS</a>
+       
+
+       <hr></hr>
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/experimentod31','https://slides.com/ranoya/culturadedados/embed#/d3')" class="submenulink">D3</a>
       <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/notebooks')" class="submenulink">VEGA LITE</a>
 
 
     </div>
 
     <div id='menuvis' class="submenu subvis">
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/linechart','https://slides.com/ranoya/culturadedados/embed#/datav')" class="submenulink">VISUALIZAÇÃO</a>
+
+      <hr></hr>
 
       <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/notebooks','https://slides.com/ranoya/culturadedados/embed#/graficoseestatisticas')" class="submenulink">GRÁFICOS EM PLANILHAS</a>
 
@@ -558,7 +573,7 @@
 
       <hr></hr>
 
-      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/experimentod31')" class="submenulink">D3</a>
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/experimentod31','https://slides.com/ranoya/culturadedados/embed#/d3')" class="submenulink">D3</a>
       <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/notebooks')" class="submenulink">VEGA LITE</a>
 
     </div>
@@ -606,6 +621,12 @@
     let goto = function (keyword, presentslide) {
       if (keyword != "" && typeof keyword != "undefined" && keyword != null) {
         document.getElementById("iwork").src = keyword;
+      }
+
+      if (keyword.match(/^https:\/\/slides.com/)) {
+        document.getElementById("iwork").style.height = "calc(100% + 34px)";
+      } else {
+        document.getElementById("iwork").style.height = "100%";
       }
 
       if (
