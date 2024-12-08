@@ -94,7 +94,7 @@
         transition: left 0.3s ease-in;
         display: block !important;
         width: calc(325px - 40px);
-        height: calc(100vh - 40px);
+        height: calc(100dvh - 40px);
         padding: 20px;
         z-index: 9999999999;
         /* background-color: var(--bg-color, #000000); 
@@ -138,7 +138,7 @@
 
       #outputs {
         width: calc(100% + 40px);
-        height: calc(100vh - 136px);
+        height: calc(100dvh - 136px);
         display: block;
         margin-left: -20px;
         color: var(--fg-color, #d2d2d2);
@@ -148,7 +148,7 @@
 
       #outputs iframe {
         width: 100%;
-        height: calc(100vh - 160px);
+        height: calc(100dvh - 160px);
       }
 
       .gridhead {
@@ -234,7 +234,7 @@
         position: fixed;
         z-index: 10;
         right: 15px;
-        top: calc(50vh - 25px);
+        top: calc(50dvh - 25px);
         margin: 0 !important;
         padding: 0 !important;
         border-radius: 5px;
@@ -271,7 +271,7 @@
 
       @media screen and (max-width: 480px) {
         #outputs {
-          height: calc(100vh - 176px);
+          height: calc(10dvh - 176px);
         }
 
         #ativapoe {
@@ -299,15 +299,15 @@
           if (url.match(/slides.com(.*)embed/i)) {
             if (window.innerWidth <= 480) {
               document.getElementById("base").style.height =
-                "calc(100vh - 4px)";
+                "calc(100dvh - 4px)";
             } else {
               document.getElementById("base").style.height =
-                "calc(100vh + 34px)";
+                "calc(100dvh + 34px)";
             }
           } else {
             if (window.innerWidth <= 480) {
               document.getElementById("base").style.height =
-                "calc(100vh - 40px)";
+                "calc(100dvh - 40px)";
             } else {
               document.getElementById("base").style.height = "100vh";
             }
