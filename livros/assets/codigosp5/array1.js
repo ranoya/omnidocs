@@ -13,10 +13,7 @@ function setup() {
 function draw() {
   // processa a Array
   arr.map(function (v, i) {
-    console.log(windowWidth + " " + i);
-
     let pos_x = (windowWidth / 5) * i;
-
     ellipse(pos_x, v, 20, 20);
   });
 
