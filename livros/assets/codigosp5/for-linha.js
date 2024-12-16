@@ -1,5 +1,5 @@
 // variáveis
-var cor = "#2e8ec4";
+let cor = "#2e8ec4";
 
 function setup() {
   // cria o contexto gráfico
@@ -9,7 +9,7 @@ function setup() {
 }
 
 function draw() {
-  // desenha linha
+  // aplica a cor para a linha
   stroke(cor);
 
   // loop que gera o desenho

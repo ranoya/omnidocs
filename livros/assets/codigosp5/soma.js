@@ -1,5 +1,5 @@
 // variáveis
-var x1 = 0;
+let x1 = 0;
 
 function setup() {
   // cria o contexto gráfico
