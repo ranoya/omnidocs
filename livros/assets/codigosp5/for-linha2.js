@@ -18,6 +18,6 @@ function draw() {
 
   // loop que gera o desenho
   for (let x = 0; x < 100; x = x + 5) {
-    line(x + mouseX, 0, 0, x + mouseY);
+    line(x + mouseX, mouseY, mouseX, x + mouseY);
   }
 }
