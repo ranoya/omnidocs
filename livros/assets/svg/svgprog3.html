@@ -1,0 +1,31 @@
+<div id="elemento" style="border: 1px solid orange; padding: 10px"></div>
+
+<script>
+  let w = 400;
+  let h = 600;
+
+  let meusvg = `
+  <svg
+  width="200"
+  height="300"
+  viewBox="0 0 ${w} ${h}"
+  xmlns="http://www.w3.org/2000/svg"
+  style="border: 1px solid #cccccc"
+  >`;
+
+  // Cria quadrados através de loops em x e y
+  for (let ix = 0; ix < w; ix = ix + 20) {
+    for (let iy = 0; iy < h; iy = iy + 20) {
+      meusvg =
+        meusvg +
+        `
+         <rect x="${ix}" y="${iy}" width="10" height="10" fill="#888888"></rect>
+       `;
+    }
+  }
+
+  meusvg = meusvg + `</svg>`;
+
+  let elem = document.querySelector("#elemento");
+  elem.innerHTML = meusvg;
+</script>
