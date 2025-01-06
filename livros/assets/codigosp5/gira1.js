@@ -7,15 +7,16 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 }
 
-function gira() {
-  px = Math.cos(radians(angulo)) * raio;
-  py = Math.sin(radians(angulo)) * raio;
-  ellipse(px + mouseX, py + mouseY, 20, 20);
+function gira(mX, mY) {
+  px = Math.cos(angulo) * raio;
+  py = Math.sin(angulo) * raio;
+  ellipse(px + mX, py + mY, 20, 20);
+  angulo = angulo + 0.01;
 }
 
 function draw() {
   background(255);
+  showlinegrid();
   fill(0);
-  gira();
-  angulo = angulo + 1;
+  gira(mouseX, mouseY);
 }
