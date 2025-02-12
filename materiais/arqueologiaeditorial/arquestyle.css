@@ -35,3 +35,7 @@
   margin-top: 60px !important;
   height: calc(100vh - 130px) !important;
 }
+
+.slidewrap {
+  width: 99.9299vw !important;
+}
