@@ -48,8 +48,3 @@
 #indice {
   color: #8e59b4 !important;
 }
-
-/* POG para correção do acumulo de espaço entre slides no documento com menu... pode ser que seja apenas coisa do chrome-windows */
-.slidewrap {
-  width: 99.9299vw !important;
-}

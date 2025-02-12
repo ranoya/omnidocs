@@ -39,8 +39,3 @@
 #next {
   top: calc(100vh - 33px - var(--inclui-scroll, 0px));
 }
-
-/* POG para correção do acumulo de espaço entre slides no documento com menu... pode ser que seja apenas coisa do chrome-windows */
-.slidewrap {
-  width: 99.9299vw !important;
-}
