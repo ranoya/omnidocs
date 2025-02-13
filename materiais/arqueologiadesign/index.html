@@ -417,6 +417,12 @@
             goto($_GET['slide']);
 
         }
+
+        addEventListener("resize", (event) => {
+            document.getElementById("conteudo").style.width = parseInt(window.innerWidth) + "px";
+        });
+
+        document.getElementById("conteudo").style.width = parseInt(window.innerWidth) + "px";
     </script>
 
 </body>
