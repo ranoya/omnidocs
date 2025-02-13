@@ -164,6 +164,7 @@
             height: calc(100vh - 24px);
             z-index: 1;
             overflow-y: hidden;
+            overflow-x: hidden;
         }
 
         #relogio {
@@ -384,6 +385,18 @@
             goto($_GET['slide']);
 
         }
+
+        addEventListener("resize", (event) => {
+        let quantofalta = window.innerWidth % 10;
+        let diff = 10 - quantofalta;
+        document.getElementById("conteudo").style.width =
+          parseInt(window.innerWidth) + diff + "px";
+      });
+
+      let resto = window.innerWidth % 10;
+      let dff = 10 - resto;
+      document.getElementById("conteudo").style.width =
+        parseInt(window.innerWidth) + dff + "px";
     </script>
 
 </body>
