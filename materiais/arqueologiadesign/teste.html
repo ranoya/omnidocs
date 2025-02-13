@@ -11,6 +11,7 @@
         margin: 0 !important;
         padding: 0 !important;
         border: 0 !important;
+        overflow-x: hidden;
       }
 
       html {
@@ -38,13 +39,15 @@
     <script>
       addEventListener("resize", (event) => {
         let quantofalta = window.innerWidth % 10;
+        let diff = 10 - quantofalta;
         document.getElementById("conteudo").style.width =
-          parseInt(window.innerWidth) - quantofalta + "px";
+          parseInt(window.innerWidth) + diff + "px";
       });
 
       let resto = window.innerWidth % 10;
+      let dff = 10 - resto;
       document.getElementById("conteudo").style.width =
-        parseInt(window.innerWidth) - resto + "px";
+        parseInt(window.innerWidth) + dff + "px";
     </script>
   </body>
 </html>
