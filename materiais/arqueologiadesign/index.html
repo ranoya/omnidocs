@@ -161,6 +161,7 @@
             height: calc(100vh - 35px);
             z-index: 1;
             overflow-y: hidden;
+            overflow-x: hidden;
         }
 
         #relogio {
@@ -419,10 +420,16 @@
         }
 
         addEventListener("resize", (event) => {
-            document.getElementById("conteudo").style.width = parseInt(window.innerWidth) + "px";
-        });
+        let quantofalta = window.innerWidth % 10;
+        let diff = 10 - quantofalta;
+        document.getElementById("conteudo").style.width =
+          parseInt(window.innerWidth) + diff + "px";
+      });
 
-        document.getElementById("conteudo").style.width = parseInt(window.innerWidth) + "px";
+      let resto = window.innerWidth % 10;
+      let dff = 10 - resto;
+      document.getElementById("conteudo").style.width =
+        parseInt(window.innerWidth) + dff + "px";
     </script>
 
 </body>
