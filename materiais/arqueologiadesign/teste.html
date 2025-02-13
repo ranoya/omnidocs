@@ -22,7 +22,7 @@
       }
 
       #conteudo {
-        width: 100vw;
+        width: 300px;
         height: 100vh;
       }
     </style>
@@ -34,5 +34,15 @@
       frameborder="0"
       src="https://slidelines.vercel.app/simple/?allowverticalscroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit#gid=2027317325&theme=https://omnidocs.vercel.app/materiais/arqueologiadesign/simpletimeline.css"
     ></iframe>
+
+    <script>
+      addEventListener("resize", (event) => {
+        document.getElementById("conteudo").style.width =
+          parseInt(window.innerWidth) + "px";
+      });
+
+      document.getElementById("conteudo").style.width =
+        parseInt(window.innerWidth) + "px";
+    </script>
   </body>
 </html>
