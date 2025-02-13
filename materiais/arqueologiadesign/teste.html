@@ -37,12 +37,14 @@
 
     <script>
       addEventListener("resize", (event) => {
+        let quantofalta = window.innerWidth % 10;
         document.getElementById("conteudo").style.width =
-          parseInt(window.innerWidth) - 5 + "px";
+          parseInt(window.innerWidth) - quantofalta + "px";
       });
 
+      let resto = window.innerWidth % 10;
       document.getElementById("conteudo").style.width =
-        parseInt(window.innerWidth) - 5 + "px";
+        parseInt(window.innerWidth) - resto + "px";
     </script>
   </body>
 </html>
