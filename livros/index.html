@@ -56,33 +56,25 @@
         $_GET["go"] != "" &&
         $_GET["go"] != null
       ) {
-        go = "&s=" + $_GET["go"];
+        go = "/?go=" + $_GET["go"];
       }
 
       let u = "";
 
       if ($_GET["titulo"] == "observable") {
-        u =
-          "https://slidelines.vercel.app/timelineh/?pattern=true&allblocks=true&followbg=true&timeheight=130&file=https://docs.google.com/spreadsheets/d/1SxGT3E57CSn6r19a8BeVDWpT9dce0gi7jkAYltREeu4/edit#gid=0&theme=https://slidelines.vercel.app/styles/observabletexts.css" +
-          go;
+        u = "https://booklines.vercel.app/livros/observable" + go;
       }
 
       if ($_GET["titulo"] == "interfaces") {
-        u =
-          "https://slidelines.vercel.app/timelineh/?pattern=true&allblocks=true&followbg=true&timeheight=130&file=https://docs.google.com/spreadsheets/d/1SxGT3E57CSn6r19a8BeVDWpT9dce0gi7jkAYltREeu4/edit#gid=1696762081&theme=https://slidelines.vercel.app/styles/livrointerfaces.css" +
-          go;
+        u = "https://booklines.vercel.app/livros/interface" + go;
       }
 
       if ($_GET["titulo"] == "javascript") {
-        u =
-          "https://slidelines.vercel.app/timelineh/?pattern=true&allblocks=true&followbg=true&timeheight=130&file=https://docs.google.com/spreadsheets/d/1SxGT3E57CSn6r19a8BeVDWpT9dce0gi7jkAYltREeu4/edit#gid=328972305&theme=https://slidelines.vercel.app/styles/livrojavascript.css" +
-          go;
+        u = "https://booklines.vercel.app/livros/javascript" + go;
       }
 
       if ($_GET["titulo"] == "artegerativa") {
-        u =
-          "https://slidelines.vercel.app/timelineh/?pattern=true&allblocks=true&followbg=true&timeheight=130&file=https://docs.google.com/spreadsheets/d/1SxGT3E57CSn6r19a8BeVDWpT9dce0gi7jkAYltREeu4/edit#gid=1854410519&theme=https://slidelines.vercel.app/styles/livroartegerativa.css" +
-          go;
+        u = "https://artegerativabrasileira.vercel.app" + go;
       }
     </script>
   </head>
