@@ -17,15 +17,13 @@
         font-weight: 400;
         font-style: normal;
         font-variation-settings: "wdth" 100;
-        color: white
+        color: white;
         font-size: 36px;
         line-height: 36px;
       }
     </style>
   </head>
-  <body>
-    18/06/2025
-  </body>
+  <body></body>
 
   <script>
     $_GET = [];
@@ -50,7 +48,8 @@
           data,
           "aula-and " + decodeURI($_GET["aula"] || "Introdução")
         );
-        document.getElementByTagName("body")[0].innerHTML = aula[0].computerdia;
+        document.getElementsByTagName("body")[0].innerHTML =
+          aula[0].computerdia;
       }
     );
   </script>
