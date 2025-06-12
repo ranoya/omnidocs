@@ -49,7 +49,8 @@
           data,
           "aula-and " + decodeURI($_GET["aula"] || "Introdução")
         );
-        document.getElementsByTagName("body")[0].innerHTML = aula[0].conteudo;
+        document.getElementsByTagName("body")[0].innerHTML =
+          aula[0].atividadeaplicacao;
       }
     );
   </script>
