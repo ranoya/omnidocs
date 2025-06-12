@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://datat.vercel.app/basicsmin.js"></script>
+    <style>
+      * {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        color: white;
+        text-decoration: none;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+
+        font-weight: 600;
+        font-style: normal;
+
+        color: white;
+        font-size: 12px;
+        line-height: 14px;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body></body>
+
+  <script>
+    $_GET = [];
+    (function () {
+      corte = window.location.href.toString().indexOf("?");
+      if (corte > 0) {
+        argumento = window.location.href.toString().substring(corte + 1);
+        argumentos = argumento.split("&");
+        for (arg in argumentos) {
+          let argCorte = argumentos[arg].indexOf("=");
+          $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+            arg
+          ].substring(argCorte + 1);
+        }
+      }
+    })();
+
+    gsdata(
+      "https://docs.google.com/spreadsheets/d/1d9eKw82lnM5GvVkBUe8wLcHSxpmDm5B6dUqWRbazOik/edit#gid=1057070194",
+      function (data) {
+        let aula = selecte(
+          data,
+          "aula-and " + decodeURI($_GET["aula"] || "Introdução")
+        );
+        document.getElementsByTagName("body")[0].innerHTML = aula[0].entregas;
+      }
+    );
+  </script>
+</html>
