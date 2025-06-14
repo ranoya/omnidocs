@@ -95,12 +95,14 @@
     let checasetem = function (arr) {
       let tem = false;
 
+      console.log("-------------------------------");
+      console.table(arr);
       for (k in arr) {
         if (typeof arr[k] != "undefined" && arr[k] != null && arr[k] != "") {
           tem = true;
         }
       }
-
+      console.log(tem);
       return tem;
     };
 
