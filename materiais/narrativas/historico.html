@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://datat.vercel.app/basicsmin.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=League+Gothic&display=swap");
+
+      * {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+
+        font-weight: 400;
+        font-style: normal;
+
+        color: white;
+        font-size: 16px;
+        line-height: 20px;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        font-family: "League Gothic", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+        color: white;
+        font-size: 14px;
+        line-height: 14px;
+      }
+
+      h2 {
+        font-family: "League Gothic", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+        color: white;
+        font-size: 36px;
+        line-height: 36px;
+        margin-top: 40px;
+        margin-bottom: 10px;
+      }
+
+      h3 {
+        font-family: Arial, Helvetica, sans-serif;
+
+        font-weight: 700;
+        font-style: normal;
+
+        color: white;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      p {
+        font-family: Arial, Helvetica, sans-serif;
+
+        font-weight: 400;
+        font-style: normal;
+
+        color: white;
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body></body>
+
+  <script>
+    $_GET = [];
+    (function () {
+      corte = window.location.href.toString().indexOf("?");
+      if (corte > 0) {
+        argumento = window.location.href.toString().substring(corte + 1);
+        argumentos = argumento.split("&");
+        for (arg in argumentos) {
+          let argCorte = argumentos[arg].indexOf("=");
+          $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+            arg
+          ].substring(argCorte + 1);
+        }
+      }
+    })();
+
+    gsdata(
+      "https://docs.google.com/spreadsheets/d/1oKAhdlYfcC8WEVzLptc89OUzD68dd8X2gnmeCIWjC8Q/edit?gid=713687612#gid=713687612",
+      function (data) {
+        let code = "";
+
+        for (let i = 0; i < data.lentgth; i++) {
+          code += `<h2>${data[i].Grupo}</h2>`;
+
+          let c = 1;
+
+          for (let k in data[i]) {
+            if (
+              k !== "Grupo" &&
+              typeof data[i][k] != "undefined" &&
+              data[i][k] != "" &&
+              data[i][k] != null
+            ) {
+              code += `<div style="opacity: ${c}">`;
+
+              code += `<h3>${k}</h3>`;
+              code += `<p>${data[i][k]}</p>`;
+
+              code += `</div>`;
+
+              c -= 0.1;
+              if (c < 0.1) {
+                c = 0.1;
+              }
+            }
+          }
+        }
+
+        document.getElementsByTagName("body")[0].innerHTML = code;
+      }
+    );
+  </script>
+</html>
