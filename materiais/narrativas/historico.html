@@ -98,7 +98,12 @@
       console.log("-------------------------------");
       console.table(arr);
       for (k in arr) {
-        if (typeof arr[k] != "undefined" && arr[k] != null && arr[k] != "") {
+        if (
+          typeof arr[k] != "undefined" &&
+          arr[k] != null &&
+          arr[k] != "" &&
+          k != "Grupo"
+        ) {
           tem = true;
         }
       }
