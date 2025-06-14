@@ -17,6 +17,7 @@
 
         font-weight: 400;
         font-style: normal;
+        margin: 30px;
 
         color: white;
         font-size: 16px;
@@ -97,7 +98,9 @@
       function (data) {
         let code = "<h1>HISTÓRICO / FEEDBACKS</h1>";
 
-        for (let i = 0; i < data.lentgth; i++) {
+        console.table(data);
+
+        for (let i = 0; i < data.length; i++) {
           code += `<h2>${data[i].Grupo}</h2>`;
 
           let c = 1;
