@@ -48,6 +48,7 @@
         line-height: 36px;
         margin-top: 70px;
         margin-bottom: 10px;
+        border-bottom: 1px dotted white;
       }
 
       h3 {
@@ -57,7 +58,7 @@
         font-style: normal;
 
         color: white;
-        font-size: 14px;
+        font-size: 11px;
         line-height: 20px;
       }
 
@@ -95,8 +96,6 @@
     let checasetem = function (arr) {
       let tem = false;
 
-      console.log("-------------------------------");
-      console.table(arr);
       for (k in arr) {
         if (
           typeof arr[k] != "undefined" &&
@@ -107,7 +106,7 @@
           tem = true;
         }
       }
-      console.log(tem);
+
       return tem;
     };
 
