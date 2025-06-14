@@ -22,20 +22,19 @@
         color: white;
         font-size: 16px;
         line-height: 20px;
-        text-transform: uppercase;
 
-        background-color: black;
+        background-color: #b86d95;
       }
 
       h1 {
         font-family: "League Gothic", sans-serif;
         font-optical-sizing: auto;
-        font-weight: 600;
+        font-weight: 400;
         font-style: normal;
         font-variation-settings: "wdth" 100;
         color: white;
-        font-size: 14px;
-        line-height: 14px;
+        font-size: 18px;
+        line-height: 18px;
       }
 
       h2 {
@@ -47,7 +46,7 @@
         color: white;
         font-size: 36px;
         line-height: 36px;
-        margin-top: 40px;
+        margin-top: 70px;
         margin-bottom: 10px;
       }
 
@@ -58,7 +57,7 @@
         font-style: normal;
 
         color: white;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 20px;
       }
 
@@ -69,9 +68,9 @@
         font-style: normal;
 
         color: white;
-        font-size: 16px;
+        font-size: 18px;
         line-height: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 12px;
       }
     </style>
   </head>
@@ -93,35 +92,49 @@
       }
     })();
 
+    let checasetem = function (arr) {
+      let tem = false;
+
+      for (k in arr) {
+        if (typeof arr[k] != "undefined" && arr[k] != null && arr[k] != "") {
+          tem = true;
+        }
+      }
+
+      return tem;
+    };
+
     gsdata(
       "https://docs.google.com/spreadsheets/d/1oKAhdlYfcC8WEVzLptc89OUzD68dd8X2gnmeCIWjC8Q/edit?gid=713687612#gid=713687612",
-      function (data) {
+      function (datasemfiltro) {
         let code = "<h1>HISTÓRICO / FEEDBACKS</h1>";
 
-        console.table(data);
+        let data = selecte(datasemfiltro, decodeURI($_GET["grupo"]) || "");
 
         for (let i = 0; i < data.length; i++) {
-          code += `<h2>${data[i].Grupo}</h2>`;
+          if (checasetem(data[i])) {
+            code += `<h2>${data[i].Grupo}</h2>`;
 
-          let c = 1;
+            let c = 1;
 
-          for (let k in data[i]) {
-            if (
-              k !== "Grupo" &&
-              typeof data[i][k] != "undefined" &&
-              data[i][k] != "" &&
-              data[i][k] != null
-            ) {
-              code += `<div style="opacity: ${c}">`;
+            for (let k in data[i]) {
+              if (
+                k !== "Grupo" &&
+                typeof data[i][k] != "undefined" &&
+                data[i][k] != "" &&
+                data[i][k] != null
+              ) {
+                code += `<div style="opacity: ${c}">`;
 
-              code += `<h3>${k}</h3>`;
-              code += `<p>${data[i][k]}</p>`;
+                code += `<h3>${k}</h3>`;
+                code += `<p>${data[i][k]}</p>`;
 
-              code += `</div>`;
+                code += `</div>`;
 
-              c -= 0.1;
-              if (c < 0.1) {
-                c = 0.1;
+                c -= 0.1;
+                if (c < 0.1) {
+                  c = 0.1;
+                }
               }
             }
           }
