@@ -109,35 +109,47 @@
       function (datasemfiltro) {
         let code = "<h1>HISTÓRICO / FEEDBACKS</h1>";
 
-        let data = selecte(datasemfiltro, decodeURI($_GET["grupo"]) || "");
+        let data = datasemfiltro;
 
-        for (let i = 0; i < data.length; i++) {
-          if (checasetem(data[i])) {
-            code += `<h2>${data[i].Grupo}</h2>`;
+        if (
+          typeof $_GET["grupo"] != "undefined" &&
+          $_GET["grupo"] != null &&
+          $_GET["grupo"] != ""
+        ) {
+          data = selecte(datasemfiltro, decodeURI($_GET["grupo"]) || "");
+        }
 
-            let c = 1;
+        if (data.length > 0) {
+          for (let i = 0; i < data.length; i++) {
+            if (checasetem(data[i])) {
+              code += `<h2>${data[i].Grupo}</h2>`;
 
-            for (let k in data[i]) {
-              if (
-                k !== "Grupo" &&
-                typeof data[i][k] != "undefined" &&
-                data[i][k] != "" &&
-                data[i][k] != null
-              ) {
-                code += `<div style="opacity: ${c}">`;
+              let c = 1;
 
-                code += `<h3>${k}</h3>`;
-                code += `<p>${data[i][k]}</p>`;
+              for (let k in data[i]) {
+                if (
+                  k !== "Grupo" &&
+                  typeof data[i][k] != "undefined" &&
+                  data[i][k] != "" &&
+                  data[i][k] != null
+                ) {
+                  code += `<div style="opacity: ${c}">`;
 
-                code += `</div>`;
+                  code += `<h3>${k}</h3>`;
+                  code += `<p>${data[i][k]}</p>`;
 
-                c -= 0.1;
-                if (c < 0.1) {
-                  c = 0.1;
+                  code += `</div>`;
+
+                  c -= 0.1;
+                  if (c < 0.1) {
+                    c = 0.1;
+                  }
                 }
               }
             }
           }
+        } else {
+          code += `<h2>Os feedbacks para cada grupo aparecerão aqui assim que o projeto começar a ser desenvolvido.</h2>`;
         }
 
         document.getElementsByTagName("body")[0].innerHTML = code;
