@@ -22,6 +22,8 @@
         font-size: 16px;
         line-height: 20px;
         text-transform: uppercase;
+
+        background-color: black;
       }
 
       h1 {
@@ -93,7 +95,7 @@
     gsdata(
       "https://docs.google.com/spreadsheets/d/1oKAhdlYfcC8WEVzLptc89OUzD68dd8X2gnmeCIWjC8Q/edit?gid=713687612#gid=713687612",
       function (data) {
-        let code = "";
+        let code = "<h1>HISTÓRICO / FEEDBACKS</h1>";
 
         for (let i = 0; i < data.lentgth; i++) {
           code += `<h2>${data[i].Grupo}</h2>`;
