@@ -1,0 +1,27 @@
+<style>
+  #grafico {
+    width: 280px;
+    height: 300px;
+    border: 1px solid black;
+  }
+</style>
+
+<div id="grafico"></div>
+
+<script>
+  let graf = `<svg
+  width="280"
+  height="300"
+  viewBox="0 0 280 300"
+  xmlns="http://www.w3.org/2000/svg"
+  style="border: 1px solid #cccccc"
+>`;
+
+  // O desenho será construído aqui
+
+  graf += `
+  </svg>
+`;
+
+  document.getElementById("grafico").innerHTML = graf;
+</script>
