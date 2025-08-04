@@ -1,0 +1,82 @@
+<script src="https://datat.vercel.app/basicsmin.js"></script>
+
+<style>
+  #grafico {
+    width: 280px;
+    height: 250px;
+    border: 1px solid black;
+  }
+</style>
+
+<div id="grafico"></div>
+
+<a id="botao" href="#">download</a>
+
+<script>
+  gsdata(
+    "https://docs.google.com/spreadsheets/d/1utMS_ubGKavjrTucwA8YoFAj1tz93_8YiIcol0myH14/edit",
+    function (dados) {
+      let graf = `<svg
+  width="280"
+  height="250"
+  viewBox="0 0 280 300"
+  xmlns="http://www.w3.org/2000/svg"
+  style="border: 1px solid #cccccc"
+>`;
+
+      // O desenho será construído aqui
+
+      let c = 0;
+
+      for (let y = 250; y > 50; y = y - 10) {
+        graf += `
+    
+    <line x1="50" y1="${y}" x2="250" y2="${y}" stroke="#000000" />
+    
+    `;
+
+        graf += `
+
+    <text x="25" y="${y}" dominant-baseline="middle" font-size="8">${c}</text>
+
+    `;
+        c = c + 1;
+
+        let px = 60;
+
+        for (let d = 0; d < dados.length; d = d + 1) {
+          graf += `
+          <rect x="${px}" y="${250 - dados[d].Votos * 10}" width="30" height="${
+            dados[d].Votos * 10
+          }" fill="#000000" />
+        `;
+
+          graf += `
+      
+      <text x="${px + 15}" y="265" text-anchor="middle" font-size="8">${
+            dados[d].Layout
+          }</text>
+      
+      `;
+
+          px = px + 50;
+        }
+      }
+
+      graf += `
+  </svg>
+`;
+
+      document.getElementById("grafico").innerHTML = graf;
+
+      // gera arquivo para download
+      let meulink = document.getElementById("botao");
+      meulink.setAttribute(
+        "href",
+        "data:image/svg+xml;utf-8," + encodeURIComponent(graf)
+      );
+
+      meulink.setAttribute("download", "chart.svg");
+    }
+  );
+</script>
