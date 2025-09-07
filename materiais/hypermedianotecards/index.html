@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>notecards</title>
+  </head>
+
+  <body>
+    <style>
+      body,
+      html {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+      }
+
+      .tudo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: calc(100dvh - 50px);
+      }
+
+      .ano {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        color: #333333;
+        font-weight: bolder;
+      }
+
+      .main {
+        max-width: 1400px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 60px;
+      }
+
+      .notecard {
+      }
+
+      .outros {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 30px;
+      }
+
+      .vids {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+    <div class="tudo">
+      <div class="main">
+        <div class="ano">1985</div>
+        <div class="ano">2010+</div>
+
+        <div class="notecard">
+          <img
+            src="https://omnifolio.vercel.app/omnifiles/apps_xeroxnotecards1.png"
+            style="width: 100%"
+          />
+        </div>
+
+        <div class="outros">
+          <iframe
+            class="vids"
+            src="https://www.youtube.com/embed/oTahLEX3NXo?si=wn7NZ14eXnWCTmHM"
+          ></iframe>
+          <iframe
+            class="vids"
+            src="https://www.youtube.com/embed/d3e7GWsqoU0?si=VqWK-okMOt6qjg3n"
+          ></iframe>
+          <iframe
+            class="vids"
+            src="https://www.youtube.com/embed/fYhInYej-lg?si=RyBS0zqPM22n1hM_"
+          ></iframe>
+          <iframe
+            class="vids"
+            src="https://www.youtube.com/embed/XM3sxkwU1Rg?si=ObeA0lhXQzLas_-B"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
