@@ -150,6 +150,10 @@
         color: #762678;
     }
 
+    .subbasicos {
+      left: 111px;
+    }
+
     .subarqueologia {
       left: 231px;
     }
@@ -405,8 +409,11 @@
       <div id="superstart" class="menulink" style="margin-left: 30px;" onclick="goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/capa','https://slides.com/ranoya/culturadedados/embed#/capa')"
             onmouseover="closeall();">INTRODUÇÃO</div>
 
-      <div id="superblank" class="menulink" onclick="goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/planilha')"
-            onmouseover="closeall();">WORKSHEET</div>
+      <!-- <div id="superblank" class="menulink" onclick="goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/planilha')"
+            onmouseover="closeall();">WORKSHEET</div> -->
+
+      <div id="superbasicos" class="menulink" onclick="openandclose('menubasicos');"
+            onmouseover="closeall();">CANVAS</div>
       
       <div id="supermenuarqueologia" class="menulink" onclick="openandclose('menuarqueologia');"
             onmouseover="closeall('menuarqueologia');">ARQUEOLOGIA</div>
@@ -429,6 +436,16 @@
       <div id="supermenuoutros" class="menulink" onclick="openandclose('menuoutros');"
             onmouseover="closeall('menuvis');">OUTROS</div>
 
+
+    </div>
+
+    <div id='menubasicos' class="submenu subbasicos">
+
+        <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/visicalc','https://slides.com/ranoya/culturadedados/embed#/diagramaferramentas')" class="submenulink">WORKSHEET</a>
+
+        <hr></hr>
+
+        <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/lotus','https://slides.com/ranoya/culturadedados/embed#/diagramaferramentas')" class="submenulink">LOUSA</a>
 
     </div>
 
@@ -653,6 +670,7 @@
     whoisopen['menunotebooks'] = false;
     whoisopen['menuvis'] = false;
     whoisopen['menuoutros'] = false;
+    whoisopen['basicos'] = false;
 
 
     let goto = function (keyword, presentslide) {
