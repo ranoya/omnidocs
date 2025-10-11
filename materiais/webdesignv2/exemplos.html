@@ -27,7 +27,7 @@
   <body>
     <div id="titulo"></div>
     <div id="tabela"></div>
-    <div id="embed"></div>
+    <iframe id="embed" frameborder="0"></iframe>
     <div id="estaile"></div>
 
     <link
@@ -39,7 +39,7 @@
         Runtime,
         Inspector,
       } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-      import define from "https://api.observablehq.com/@ranoya/interface-exemplos@36.js?v=4";
+      import define from "https://api.observablehq.com/@ranoya/interface-exemplos.js?v=4";
       new Runtime().module(define, (name) => {
         if (name === "allexemplos")
           return new Inspector(document.querySelector("#tabela"));
@@ -48,6 +48,12 @@
         if (name === "estaileweb")
           return new Inspector(document.querySelector("#estaile"));
       });
+    </script>
+
+    <script>
+      let embed = function (str) {
+        document.getElementById("embed").href = str;
+      };
     </script>
 
     <style>
@@ -64,6 +70,11 @@
         margin: 40px;
         background-color: blue;
         color: white;
+      }
+
+      iframe {
+        width: 100%;
+        height: 500px;
       }
     </style>
   </body>
