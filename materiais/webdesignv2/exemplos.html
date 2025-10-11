@@ -31,6 +31,8 @@
       frameborder="0"
       src="https://omnicode.vercel.app/?&preview=50&nomenu=true&buffer=vazio&dark=true&lang=html&nostatus=true&noconsole=true&bgcolor=000cd0&bordercolor=9fc5e866&gutcolor=000cd0&&theme=cobalt&"
     ></iframe>
+
+    <div id="botoes"></div>
     <div id="tabela"></div>
     <div id="estaile"></div>
 
@@ -45,11 +47,14 @@
       } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
       import define from "https://api.observablehq.com/@ranoya/interface-exemplos.js?v=4";
       new Runtime().module(define, (name) => {
-        if (name === "allexemplos")
+        if (name === "allexemplos_web")
           return new Inspector(document.querySelector("#tabela"));
-        if (name === "tituloweb")
+        if (name === "titulo_web")
           return new Inspector(document.querySelector("#titulo"));
-        if (name === "estaileweb")
+        if (name === "botoes_web")
+          return new Inspector(document.querySelector("#botoes"));
+        botoes_web;
+        if (name === "estaile_web")
           return new Inspector(document.querySelector("#estaile"));
       });
     </script>
@@ -89,6 +94,11 @@
         margin-bottom: 30px;
         width: 100%;
         height: 500px;
+      }
+
+      #botoes {
+        margin-top: 16px;
+        margin-bottom: 16px;
       }
 
       .simplebutton {
