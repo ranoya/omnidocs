@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="" />
+    <title>Exemplos</title>
+    <meta property="og:title" content="Exemplos" />
+    <meta name="generator" content="plataforma" />
+    <meta name="description" content="Exemplos didáticos de programação" />
+    <meta
+      property="og:description"
+      content="Exemplos didáticos de programação"
+    />
+    <meta name="author" content="Guilherme Ranoya" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+  </head>
+
+  <body>
+    <div id="titulo"></div>
+    <div id="tabela"></div>
+    <div id="embed"></div>
+    <div id="estaile"></div>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css"
+    />
+    <script type="module">
+      import {
+        Runtime,
+        Inspector,
+      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+      import define from "https://api.observablehq.com/@ranoya/interface-exemplos@36.js?v=4";
+      new Runtime().module(define, (name) => {
+        if (name === "allexemplos")
+          return new Inspector(document.querySelector("#tabela"));
+        if (name === "tituloweb")
+          return new Inspector(document.querySelector("#titulo"));
+        if (name === "estaileweb")
+          return new Inspector(document.querySelector("#estaile"));
+      });
+    </script>
+
+    <style>
+      * {
+        border: 0;
+        padding: 0;
+        margin: 0;
+        background-color: blue;
+        color: white;
+      }
+
+      body,
+      html {
+        margin: 40px;
+        background-color: blue;
+        color: white;
+      }
+    </style>
+  </body>
+</html>
