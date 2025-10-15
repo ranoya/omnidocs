@@ -69,8 +69,8 @@
       };
 
       let descreve = function (strA, strB) {
-        console.log(strB);
-        document.getElementById("descrit").innerHTML = strA + "<br><br>" + strB;
+        document.getElementById("descrit").innerHTML =
+          decodeURI(strA) + "<br><br>" + decodeURI(strB);
       };
     </script>
 
