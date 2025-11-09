@@ -70,37 +70,13 @@ function addAudioLead(elId, audioElementId, assetsObject) {
   var campoinit = document.getElementById(elId);
   var controle = document.getElementById(audioElementId);
 
-  // Preload de imagens
-
-  for (var i = 0; i < assetsObject.length; i++) {
-    if (
-      assetsObject[i].href.toUpperCase().indexOf("SVG") >= 0 ||
-      assetsObject[i].href.toUpperCase().indexOf("JPG") >= 0 ||
-      assetsObject[i].href.toUpperCase().indexOf("JPEG") >= 0 ||
-      assetsObject[i].href.toUpperCase().indexOf("PNG") >= 0
-    ) {
-      var imagem = new Image();
-      imagem.src = assetsObject[i].href;
-    }
-  }
-
   campoinit.innerHTML =
     "<iframe frameborder=0 id='audioleadstage" +
     audioleadenumerator +
     "' style='width: 100%; height: 100%; margin: 0; padding: 0; border: 0; background-color: transparent; background-size: contain; background-position: center center; background-repeat: no-repeat;'></iframe>";
 
   campo = document.getElementById("audioleadstage" + audioleadenumerator);
-
-  if (
-    assetsObject[0].href.toUpperCase().indexOf("SVG") >= 0 ||
-    assetsObject[0].href.toUpperCase().indexOf("JPG") >= 0 ||
-    assetsObject[0].href.toUpperCase().indexOf("JPEG") >= 0 ||
-    assetsObject[0].href.toUpperCase().indexOf("PNG") >= 0
-  ) {
-    campo.style.backgroundImage = "url(" + assetsObject[0].href + ")";
-  } else {
-    campo.src = assetsObject[0].href;
-  }
+  campo.src = assetsObject[0].href;
 
   var elementocampo = "audioleadstage" + audioleadenumerator;
 
@@ -124,17 +100,11 @@ function audiolead_update(assetsobj, audioctrl, campoId) {
     }
   }
 
-  if (
-    assetsobj[bloco].href.toUpperCase().indexOf("SVG") >= 0 ||
-    assetsobj[bloco].href.toUpperCase().indexOf("JPG") >= 0 ||
-    assetsobj[bloco].href.toUpperCase().indexOf("JPEG") >= 0 ||
-    assetsobj[bloco].href.toUpperCase().indexOf("PNG") >= 0
-  ) {
-    var frame = (document.getElementById(campoId).src = "");
-    document.getElementById(campoId).style.backgroundImage =
-      "url(" + assetsobj[bloco].href + ")";
-  } else {
-    document.getElementById(campoId).src = assetsobj[bloco].href;
+  // é aqui.
+  if (bloco != 0) {
+    document
+      .getElementById(campoId)
+      .contentDocument.nowgo(assetsobj[bloco].href);
   }
 
   if (assetsobj[bloco].pause && assetsobj[bloco].used == null) {
