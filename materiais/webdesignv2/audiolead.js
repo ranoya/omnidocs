@@ -104,7 +104,7 @@ function audiolead_update(assetsobj, audioctrl, campoId) {
   if (bloco != 0) {
     document
       .getElementById(campoId)
-      .contentDocument.nowgo(assetsobj[bloco].href);
+      .contentWindow.postMessage(assetsobj[bloco].href, "*");
   }
 
   if (assetsobj[bloco].pause && assetsobj[bloco].used == null) {
