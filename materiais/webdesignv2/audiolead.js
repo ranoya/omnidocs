@@ -66,7 +66,7 @@ $_GET = [];
 
 var audioleadenumerator = 0;
 
-function addAudioLead(elId, audioElementId, assetsObject) {
+function addAudioLead(file, elId, audioElementId, assetsObject) {
   var campoinit = document.getElementById(elId);
   var controle = document.getElementById(audioElementId);
 
@@ -76,7 +76,7 @@ function addAudioLead(elId, audioElementId, assetsObject) {
     "' style='width: 100%; height: 100%; margin: 0; padding: 0; border: 0; background-color: transparent; background-size: contain; background-position: center center; background-repeat: no-repeat;'></iframe>";
 
   campo = document.getElementById("audioleadstage" + audioleadenumerator);
-  campo.src = assetsObject[0].href;
+  campo.src = file;
 
   var elementocampo = "audioleadstage" + audioleadenumerator;
 
@@ -101,11 +101,10 @@ function audiolead_update(assetsobj, audioctrl, campoId) {
   }
 
   // é aqui.
-  if (bloco != 0) {
-    document
-      .getElementById(campoId)
-      .contentWindow.postMessage(assetsobj[bloco].href, "*");
-  }
+
+  document
+    .getElementById(campoId)
+    .contentWindow.postMessage(assetsobj[bloco].href, "*");
 
   if (assetsobj[bloco].pause && assetsobj[bloco].used == null) {
     assetsobj[bloco].used = "usado";

@@ -197,11 +197,19 @@
       var minutagem = [
         {
           time: 0,
-          href: "https://slidelines.vercel.app/level/?allowverticalscroll=true&s=0&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1705994585#gid=1705994585&theme=https://slidelines.vercel.app/styles/minifit.css",
+          href: "capa",
+        },
+        {
+          time: 2,
+          href: "0",
         },
         {
           time: 120,
           href: "3",
+        },
+        {
+          time: 130,
+          href: "capa",
         },
         {
           time: 2451,
@@ -258,7 +266,12 @@
        */
 
       document.addEventListener("DOMContentLoaded", function () {
-        addAudioLead("placehold", "myVideo", minutagem);
+        addAudioLead(
+          "https://slidelines.vercel.app/level/?allowverticalscroll=true&s=0&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1705994585#gid=1705994585&theme=https://slidelines.vercel.app/styles/minifit.css",
+          "placehold",
+          "myVideo",
+          minutagem
+        );
 
         if (
           localStorage.getItem("pontodomaterial") != null &&
