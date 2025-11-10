@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,800,900&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+:root {
+  --text-color: #777777;
+  --highlight-color: #40124d;
+  --invert-color: white;
+  --darker-color: #40124d;
+  --other-color: #ff5baa;
+  --neutral-color: #cccccc;
+  --darker-neutral: grey;
+
+  --sam-foreground: white;
+  --sam-bgcolor: transparent;
+  --sam-borderColor: transparent;
+  --sam-outer: #999999;
+  --sam-inter: #eeeeee;
+  --other-color: #cccccc;
+
+  --icn-foregroundcolor: #000cd0;
+  --icn-hovercolor: #000cd0;
+  --navtop-backgroundcolor: rgba(255, 255, 255, 0.95);
+  --cont-backgroundcolor: white;
+  --cont-foregroundcolor: #000cd0;
+  --cont-altcolor: #cccccc;
+  --cont-althover: white;
+  --page-backgroundcolor: #000cd0;
+  --menu-backgroundcolor: white;
+  --menuitem-neutrocolor: #cccccc;
+  --menuitem-hovercolor: #000cd0;
+  --rodape-foregroundcolor: #000cd0;
+  --block-pale: #000cd0cc;
+  --neutral-grey: #9b9b9b;
+  --overscroll: #000cd0;
+}
+
+html {
+  overscroll-behavior: none;
+  font-family: "Montserrat", sans-serif;
+  color: var(--rodape-foregroundcolor, red);
+  background-color: var(--overscroll, white);
+}
+
+body {
+  color: var(--rodape-foregroundcolor, red);
+  background-color: var(--overscroll, white);
+}
