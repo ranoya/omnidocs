@@ -149,7 +149,7 @@ function audiolead_update(assetsobj, audioctrl, campoId) {
 
   audiolead_interface(bloco, assetsobj);
 
-  document.getElementById("debug").innerHTML = audioctrl.currentTime;
+  // document.getElementById("debug").innerHTML = audioctrl.currentTime;
 }
 
 if (typeof audiolead_interface == "function") {
