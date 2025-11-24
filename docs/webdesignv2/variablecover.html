@@ -66,7 +66,9 @@
       let bg = "000000";
       let fg = "FFFFFF";
       let art = "mitp";
-      let cover = "https://omnifolio.vercel.app/omnifiles/programacao-capa.svg";
+      let cover = "https://omnifolio.vercel.app/omnifiles/programacao-capa";
+      let imgtype = "s";
+      let extensao = "svg";
 
       if (
         typeof $_GET["bgcolor"] != "undefined" &&
@@ -74,6 +76,14 @@
         $_GET["bgcolor"] != ""
       ) {
         bg = $_GET["bgcolor"];
+      }
+
+      if (
+        typeof $_GET["imgtype"] != "undefined" &&
+        $_GET["imgtype"] != null &&
+        $_GET["imgtype"] != ""
+      ) {
+        imgtype = $_GET["imgtype"];
       }
 
       if (
@@ -100,11 +110,24 @@
         cover = $_GET["cover"];
       }
 
+      if (imgtype == "p") {
+        extensao = "png";
+      }
+
+      if (imgtype == "j") {
+        extensao = "jpg";
+      }
+
       document.getElementById(
         "fundo"
       ).src = `https://www.ranoya.com/Art/Singles/${art}.html?fcolor=${fg}&bgcolor=${bg}`;
 
-      document.getElementById("frente").style.backgroundImage = `url(${cover})`;
+      document.getElementById(
+        "frente"
+      ).style.backgroundImage = `url(${cover}.${extensao})`;
+
+      document.getElementsByTagName("html")[0].style.backgroundColor = `#${bg}`;
+      document.getElementsByTagName("body")[0].style.backgroundColor = `#${bg}`;
     </script>
   </body>
 </html>
