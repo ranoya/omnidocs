@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="" />
+    <title>título</title>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #666666;
+      }
+
+      #imagem {
+        position: fixed;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        width: 100%;
+        height: 100dvh;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url("https://omnifolio.vercel.app/omnifiles/atlantic_scientificpaper.png");
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 0 #333333;
+      }
+
+      #imagem:hover {
+        transition: all 0.3s ease-in-out;
+        box-shadow: 10px 10x #333333;
+        width: calc(100% - 60px);
+        height: calc(100dvh - 60px);
+        top: 30px;
+        left: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="imagem" onclick="vai()"></div>
+  </body>
+
+  <script>
+    function vai() {
+      window.location.href =
+        "https://web.archive.org/web/20190312102208/https://www.theatlantic.com/science/archive/2018/04/the-scientific-paper-is-obsolete/556676/";
+    }
+  </script>
+</html>
