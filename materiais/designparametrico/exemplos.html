@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="" />
+    <title>Exemplos</title>
+    <meta property="og:title" content="Exemplos" />
+    <meta name="generator" content="plataforma" />
+    <meta name="description" content="Exemplos didáticos de programação" />
+    <meta
+      property="og:description"
+      content="Exemplos didáticos de programação"
+    />
+    <meta name="author" content="Guilherme Ranoya" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+  </head>
+
+  <body>
+    <div id="titulo"></div>
+    <iframe
+      id="embed"
+      frameborder="0"
+      src="https://omnicode.vercel.app/?&preview=50&nomenu=true&buffer=vaziodgen&dark=true&lang=p5&nostatus=true&noconsole=true&bgcolor=266b64&bordercolor=9fc5e866&gutcolor=266b64&&theme=tomorrow_night_blue&"
+    ></iframe>
+
+    <div id="botoes"></div>
+    <div id="tabela"></div>
+    <div id="estaile"></div>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css"
+    />
+    <script type="module">
+      import {
+        Runtime,
+        Inspector,
+      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+      import define from "https://api.observablehq.com/@ranoya/interface-exemplos-dgen.js?v=4";
+      new Runtime().module(define, (name) => {
+        if (name === "allexemplos_web")
+          return new Inspector(document.querySelector("#tabela"));
+        if (name === "titulo_web")
+          return new Inspector(document.querySelector("#titulo"));
+        if (name === "botoes_web")
+          return new Inspector(document.querySelector("#botoes"));
+        if (name === "estaile_web")
+          return new Inspector(document.querySelector("#estaile"));
+      });
+    </script>
+
+    <script>
+      let embed = function (str) {
+        document.getElementById("embed").src =
+          str +
+          "&nomenu=true&buffer=exemplosweb&dark=true&lang=html&nostatus=true&noconsole=true&bgcolor=0865e9&bordercolor=9fc5e866&gutcolor=0865e9&&theme=cobalt&";
+      };
+    </script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+      * {
+        border: 0;
+        padding: 0;
+        margin: 0;
+        background-color: #266b64;
+        color: white;
+      }
+
+      body,
+      html {
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+        margin: 40px;
+        background-color: #266b64;
+        color: white;
+        scrollbar-gutter: stable;
+        scrollbar-color: #266b64 !important;
+      }
+
+      /* Style the entire scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      /* Style the scrollbar track */
+      ::-webkit-scrollbar-track {
+        background: #266b64;
+        scrollbar-color: #266b64 !important;
+        background-color: #266b64 !important;
+      }
+
+      /* Style the scrollbar thumb */
+      ::-webkit-scrollbar-thumb {
+        background: white;
+      }
+
+      /* Style the scrollbar thumb on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: cyan;
+      }
+
+      iframe {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        width: 100%;
+        height: 500px;
+      }
+
+      #botoes {
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+
+      .simplebutton {
+        cursor: pointer;
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+        color: white;
+        padding: 3px 16px 3px 16px;
+      }
+
+      .simplebutton:hover {
+        cursor: pointer;
+        color: #266b64;
+        background-color: white;
+        padding: 3px 16px 3px 16px;
+      }
+    </style>
+  </body>
+</html>
