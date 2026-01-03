@@ -32,6 +32,18 @@
       src="https://omnicode.vercel.app/?&preview=50&nomenu=true&buffer=vaziodgen&dark=true&lang=p5&nostatus=true&bgcolor=266b64&bordercolor=9fc5e866&gutcolor=266b64&&theme=tomorrow_night_blue&file=https://omnicode.vercel.app/examples/p5empty.js"
     ></iframe>
 
+    <div>
+      <a
+        id="mylink"
+        class="simplebutton"
+        style="text-decoration: none"
+        target="_blank"
+        href="https://omnicode.vercel.app/?&preview=50&nomenu=true&buffer=vaziodgen&lang=p5&file=https://omnicode.vercel.app/examples/p5empty.js"
+        >Abrir em um editor externo</a
+      >
+    </div>
+    <br />
+
     <div id="botoes"></div>
     <div id="tabela"></div>
     <div id="estaile"></div>
@@ -63,6 +75,8 @@
         document.getElementById("embed").src =
           str +
           "&nomenu=true&buffer=exemplosdgen&dark=true&nostatus=true&bgcolor=266b64&bordercolor=9fc5e866&gutcolor=266b64&&theme=tomorrow_night_blue&";
+
+        document.getElementById("mylink").href = str + "&buffer=exemplosdgen";
       };
     </script>
 
@@ -114,7 +128,7 @@
 
       iframe {
         margin-top: 30px;
-        margin-bottom: 30px;
+        margin-bottom: 0;
         width: 100%;
         height: 500px;
       }
