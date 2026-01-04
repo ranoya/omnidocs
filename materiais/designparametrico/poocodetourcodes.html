@@ -15,20 +15,23 @@
         align-items: center;
       "
     >
-      <div
-        id="comentario"
-        style="
-          background-repeat: no-repeat;
-          background-position: center center;
-          background-size: contain;
-        "
-      ></div>
       <iframe
         id="codigo"
         frameborder="0"
         style="width: 100%; height: calc(100dvh - 40px)"
         src=""
       ></iframe>
+
+      <div
+        id="comentario"
+        style="
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: contain;
+          width: 100%;
+          height: 100%;
+        "
+      ></div>
     </div>
 
     <script>
@@ -65,10 +68,22 @@
         corfg = $_GET["fgcolor"];
       }
 
+      let theme = "tomorrow_night_bright";
+
+      if (
+        typeof $_GET["theme"] != "undefined" &&
+        $_GET["theme"] != null &&
+        $_GET["theme"] != ""
+      ) {
+        theme = $_GET["theme"];
+      }
+
       document.getElementById("comentario").style.backgroundImage =
         "url('" + decodeURIComponent($_GET["img"]) + "')";
       document.getElementById("codigo").src =
-        "https://omnicode.vercel.app/?buffer=poocodetourcodes&nostatus=true&noconsole=true&readonly=true&bgcolor=" +
+        "https://omnicode.vercel.app/?buffer=poocodetourcodes&preview=0&nostatus=true&noconsole=true&readonly=true&theme=" +
+        theme +
+        "&bgcolor=" +
         corbg +
         "&bordercolor=" +
         corbg +
