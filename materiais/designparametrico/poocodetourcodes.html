@@ -78,10 +78,22 @@
         theme = $_GET["theme"];
       }
 
+      let linha = 1;
+
+      if (
+        typeof $_GET["linha"] != "undefined" &&
+        $_GET["linha"] != null &&
+        $_GET["linha"] != ""
+      ) {
+        linha = $_GET["linha"];
+      }
+
       document.getElementById("comentario").style.backgroundImage =
         "url('" + decodeURIComponent($_GET["img"]) + "')";
       document.getElementById("codigo").src =
-        "https://omnicode.vercel.app/?buffer=poocodetourcodes&preview=0&nostatus=true&noconsole=true&readonly=true&theme=" +
+        "https://omnicode.vercel.app/?buffer=poocodetourcodes&line=" +
+        linha +
+        "&preview=0&nostatus=true&noconsole=true&readonly=true&theme=" +
         theme +
         "&bgcolor=" +
         corbg +
