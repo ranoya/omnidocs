@@ -1,0 +1,85 @@
+<html>
+  <head> </head>
+  <body>
+    <div
+      style="
+        position: fixed;
+        z-index: 2;
+        top: 20px;
+        left: 20px;
+        width: calc(100% - 40px);
+        height: calc(100dvh - 40px);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        align-items: center;
+      "
+    >
+      <div
+        id="comentario"
+        style="
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: contain;
+        "
+      ></div>
+      <iframe
+        id="codigo"
+        frameborder="0"
+        style="width: 100%; height: calc(100dvh - 40px)"
+        src=""
+      ></iframe>
+    </div>
+
+    <script>
+      $_GET = [];
+      (function () {
+        corte = window.location.href.toString().indexOf("?");
+        if (corte > 0) {
+          argumento = window.location.href.toString().substring(corte + 1);
+          argumentos = argumento.split("&");
+          for (arg in argumentos) {
+            let argCorte = argumentos[arg].indexOf("=");
+            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+              arg
+            ].substring(argCorte + 1);
+          }
+        }
+      })();
+
+      let corbg = "FFFFFF";
+      if (
+        typeof $_GET["bgcolor"] != "undefined" &&
+        $_GET["bgcolor"] != null &&
+        $_GET["bgcolor"] != ""
+      ) {
+        corbg = $_GET["bgcolor"];
+      }
+
+      let corfg = "888888";
+      if (
+        typeof $_GET["fgcolor"] != "undefined" &&
+        $_GET["fgcolor"] != null &&
+        $_GET["fgcolor"] != ""
+      ) {
+        corfg = $_GET["fgcolor"];
+      }
+
+      document.getElementById("comentario").style.backgroundImage =
+        "url('" + decodeURIComponent($_GET["img"]) + "')";
+      document.getElementById("codigo").src =
+        "https://omnicode.vercel.app/?buffer=poocodetourcodes&nostatus=true&noconsole=true&readonly=true&bgcolor=" +
+        corbg +
+        "&bordercolor=" +
+        corbg +
+        "&gutcolor=" +
+        corbg +
+        "&file=" +
+        decodeURIComponent($_GET["code"]) +
+        "&";
+
+      document.body.style.backgroundColor = "#" + corbg;
+      document.body.style.color = "#" + corfg;
+    </script>
+  </body>
+</html>
