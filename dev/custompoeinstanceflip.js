@@ -47,10 +47,12 @@ let toggle = function (who) {
     let ddd = setInterval(function () {
       if (contasec >= 0) {
         clearInterval(ddd);
+        /*
         document.getElementById("outputs").style.transform = "unset";
         document.getElementsByClassName("gridhead")[0].style.transform =
           "unset";
         document.getElementById("entrada").style.transform = "unset";
+        */
       }
 
       document.getElementById("outputs").style.transform =
