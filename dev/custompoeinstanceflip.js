@@ -50,14 +50,14 @@ let toggle = function (who) {
         document.getElementById("outputs").style.transform = "unset";
         document.getElementsByClassName("gridhead")[0].style.transform =
           "unset";
-        document.getElementById("entrada")[0].style.transform = "unset";
+        document.getElementById("entrada").style.transform = "unset";
       }
 
       document.getElementById("outputs").style.transform =
         "rotateY(" + startangle + "deg);";
       document.getElementsByClassName("gridhead")[0].style.transform =
         "rotateY(" + startangle + "deg);";
-      document.getElementById("entrada")[0].style.transform =
+      document.getElementById("entrada").style.transform =
         "rotateY(" + startangle + "deg);";
 
       startangle = startangle - (75 - 7) / 300;
@@ -82,16 +82,13 @@ let toggle = function (who) {
   let ddd = setInterval(function () {
     if (contasec >= 0) {
       clearInterval(ddd);
-      document.getElementById("outputs").style.transform = "unset";
-      document.getElementsByClassName("gridhead")[0].style.transform = "unset";
-      document.getElementById("entrada")[0].style.transform = "unset";
     }
 
     document.getElementById("outputs").style.transform =
       "rotateY(" + startangle + "deg);";
     document.getElementsByClassName("gridhead")[0].style.transform =
       "rotateY(" + startangle + "deg);";
-    document.getElementById("entrada")[0].style.transform =
+    document.getElementById("entrada").style.transform =
       "rotateY(" + startangle + "deg);";
 
     startangle = startangle + (75 - 7) / 300;
