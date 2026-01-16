@@ -141,6 +141,7 @@ let createpoe = function (json, css, plugins) {
     <style>
       #poeinst {
         perspective: 600px;
+        box-shadow: 3px 0px 10px 0 var(--color-shadow) !important;
         
       }
 

@@ -1,0 +1,22 @@
+:root {
+  --bg-color: #0a8c8d;
+  --line-separator: #65a8af;
+  --text-color: #4fddf0;
+  --color-link: #ffffff;
+  --color-hover: #0bebff;
+  --input-text: #ffffff;
+  --scroll-track: #994e4e00;
+  --color-shadow: #00000082;
+}
+
+#poeinst {
+  background: var(--bg-color);
+}
+
+#ativapoe {
+  top: calc(50vh - 75px);
+}
+
+#outputs::-webkit-scrollbar-thumb {
+  background: #09b4b5;
+}
