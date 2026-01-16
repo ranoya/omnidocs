@@ -45,7 +45,7 @@ let toggle = function (who) {
     let startangle = 75;
 
     let ddd = setInterval(function () {
-      if (contasec >= 0) {
+      if (contasec <= 0) {
         clearInterval(ddd);
         /*
         document.getElementById("outputs").style.transform = "unset";
@@ -81,7 +81,7 @@ let toggle = function (who) {
     let startangle = 7;
 
     let ddd = setInterval(function () {
-      if (contasec >= 0) {
+      if (contasec <= 0) {
         clearInterval(ddd);
       }
 
