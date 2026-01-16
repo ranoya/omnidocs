@@ -41,7 +41,7 @@ let toggle = function (who) {
     document.getElementById("poeinst").style.left = 0;
     document.getElementById("base").style.left = "325px";
 
-    let contasec = 200;
+    let contasec = 100;
     let startangle = 74;
 
     let ddd = setInterval(function () {
@@ -61,7 +61,7 @@ let toggle = function (who) {
       document.getElementById("entrada").style.transform =
         "rotateY(" + startangle + "deg)";
 
-      startangle = startangle - (74 - 7) / 200;
+      startangle = startangle - (74 - 7) / 100;
       contasec--;
     }, 1);
   } else {
@@ -76,7 +76,7 @@ let toggle = function (who) {
     document.getElementById("poeinst").style.left = "-325px";
     document.getElementById("base").style.left = 0;
 
-    let contasec = 200;
+    let contasec = 100;
     let startangle = 7;
 
     let ddd = setInterval(function () {
@@ -91,7 +91,7 @@ let toggle = function (who) {
       document.getElementById("entrada").style.transform =
         "rotateY(" + startangle + "deg)";
 
-      startangle = startangle + (74 - 7) / 200;
+      startangle = startangle + (74 - 7) / 100;
       contasec--;
     }, 1);
   }
@@ -146,6 +146,10 @@ let createpoe = function (json, css, plugins) {
 
       #entrada {
         transform-origin: bottom right;
+      }
+
+      #entrada:hover {
+       background-color: #ffffff21;
       }
       .gridhead {
         transform-origin: bottom right;
