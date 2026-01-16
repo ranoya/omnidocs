@@ -92,7 +92,7 @@ let toggle = function (who) {
         "rotateY(" + startangle + "deg)";
 
       startangle = startangle + (75 - 7) / 300;
-      contasec++;
+      contasec--;
     }, 1);
   }
 };
