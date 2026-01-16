@@ -41,7 +41,7 @@ let toggle = function (who) {
     document.getElementById("poeinst").style.left = 0;
     document.getElementById("base").style.left = "325px";
 
-    let contasec = 100;
+    let contasec = 70;
     let startangle = 74;
 
     let ddd = setInterval(function () {
@@ -61,7 +61,7 @@ let toggle = function (who) {
       document.getElementById("entrada").style.transform =
         "rotateY(" + startangle + "deg)";
 
-      startangle = startangle - (74 - 7) / 100;
+      startangle = startangle - (74 - 7) / 70;
       contasec--;
     }, 1);
   } else {
