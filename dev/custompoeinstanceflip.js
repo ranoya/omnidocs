@@ -41,8 +41,8 @@ let toggle = function (who) {
     document.getElementById("poeinst").style.left = 0;
     document.getElementById("base").style.left = "325px";
 
-    let contasec = 300;
-    let startangle = 75;
+    let contasec = 200;
+    let startangle = 74;
 
     let ddd = setInterval(function () {
       if (contasec <= 0) {
@@ -61,7 +61,7 @@ let toggle = function (who) {
       document.getElementById("entrada").style.transform =
         "rotateY(" + startangle + "deg)";
 
-      startangle = startangle - (75 - 7) / 300;
+      startangle = startangle - (74 - 7) / 200;
       contasec--;
     }, 1);
   } else {
@@ -76,7 +76,7 @@ let toggle = function (who) {
     document.getElementById("poeinst").style.left = "-325px";
     document.getElementById("base").style.left = 0;
 
-    let contasec = 300;
+    let contasec = 200;
     let startangle = 7;
 
     let ddd = setInterval(function () {
@@ -91,7 +91,7 @@ let toggle = function (who) {
       document.getElementById("entrada").style.transform =
         "rotateY(" + startangle + "deg)";
 
-      startangle = startangle + (75 - 7) / 300;
+      startangle = startangle + (74 - 7) / 200;
       contasec--;
     }, 1);
   }
