@@ -76,26 +76,26 @@ let toggle = function (who) {
     keymapping[17] = false;
     document.getElementById("poeinst").style.left = "-325px";
     document.getElementById("base").style.left = 0;
+
+    let contasec = 300;
+    let startangle = 7;
+
+    let ddd = setInterval(function () {
+      if (contasec >= 0) {
+        clearInterval(ddd);
+      }
+
+      document.getElementById("outputs").style.transform =
+        "rotateY(" + startangle + "deg);";
+      document.getElementsByClassName("gridhead")[0].style.transform =
+        "rotateY(" + startangle + "deg);";
+      document.getElementById("entrada").style.transform =
+        "rotateY(" + startangle + "deg);";
+
+      startangle = startangle + (75 - 7) / 300;
+      contasec++;
+    }, 1);
   }
-
-  let contasec = 300;
-  let startangle = 7;
-
-  let ddd = setInterval(function () {
-    if (contasec >= 0) {
-      clearInterval(ddd);
-    }
-
-    document.getElementById("outputs").style.transform =
-      "rotateY(" + startangle + "deg);";
-    document.getElementsByClassName("gridhead")[0].style.transform =
-      "rotateY(" + startangle + "deg);";
-    document.getElementById("entrada").style.transform =
-      "rotateY(" + startangle + "deg);";
-
-    startangle = startangle + (75 - 7) / 300;
-    contasec++;
-  }, 1);
 };
 
 let startpoe = function (json, css, plugins, files) {
