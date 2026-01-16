@@ -84,7 +84,7 @@ let toggle = function (who) {
     let ddd = setInterval(function () {
       if (contasec <= 0) {
         clearInterval(ddd);
-        document.getElementById("poeinst").style.boxShadow = "unset";
+        document.getElementById("poeinst").style.boxShadow = "unset !important";
       }
 
       document.getElementById("outputs").style.transform =
