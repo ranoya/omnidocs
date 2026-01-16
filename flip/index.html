@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="" />
+    <title>OMNIDOCS</title>
+    <meta property="og:title" content="OMNIDOCS" />
+    <meta name="generator" content="POE" />
+    <meta
+      name="description"
+      content="Compilação de documentos, materiais e produtos desenvolvidos pelo prof. Guilherme Ranoya"
+    />
+    <meta
+      property="og:description"
+      content="Compilação de documentos, materiais e produtos desenvolvidos pelo prof. Guilherme Ranoya"
+    />
+    <meta name="author" content="Guilherme Ranoya" />
+    <meta property="og:url" content="https://omnidocs.vercel.app" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:site_name" content="ranoya.com" />
+    <meta name="application-name" content="ranoya.com" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta
+      property="og:image"
+      content="https://omnidocs.vercel.app/assets/omnidocs600.jpg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://omnidocs.vercel.app/assets/omnidocs600.jpg"
+    />
+    <link
+      rel="image_src"
+      type="image/jpg"
+      href="https://omnidocs.vercel.app/assets/omnidocs600.jpg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://omnidocs.vercel.app/favicon.ico"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://omnidocs.vercel.app/assets/omnidocs57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://omnidocs.vercel.app/assets/omnidocs57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://omnidocs.vercel.app/assets/omnidocs72.png"
+      sizes="72x72"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      href="https://omnidocs.vercel.app/assets/omnidocs192.png"
+      sizes="192x192"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      href="https://omnidocs.vercel.app/assets/omnidocs152.png"
+      sizes="152x152"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      href="https://omnidocs.vercel.app/assets/omnidocs180.png"
+      sizes="180x180"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      href="https://omnidocs.vercel.app/assets/omnidocs128.png"
+      sizes="128x128"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      href="https://omnidocs.vercel.app/assets/omnidocs120.png"
+      sizes="120x120"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      href="https://omnidocs.vercel.app/assets/omnidocs114.png"
+      sizes="114x114"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      href="https://omnidocs.vercel.app/assets/omnidocs72.png"
+      sizes="72x72"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      href="https://omnidocs.vercel.app/assets/omnidocs60.png"
+      sizes="60x60"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      href="https://omnidocs.vercel.app/assets/omnidocs144.png"
+      sizes="144x144"
+    />
+    <meta
+      name="msapplication-square70x70logo"
+      content="https://omnidocs.vercel.app/assets/omnidocs72.png"
+    />
+    <meta
+      name="msapplication-square150x150logo"
+      content="https://omnidocs.vercel.app/assets/omnidocs152.png"
+    />
+
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-navbutton-color" content="#000000" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000000" />
+
+    <style>
+      :root {
+        --bg-color: #616161;
+        --line-separator: #697a7b;
+        --text-color: #a7caca;
+        --color-link: #e1e1e1;
+        --color-hover: #a7caca;
+        --input-text: #ffffff;
+        --scroll-track: #ffffff00;
+        --color-shadow: #00000055;
+      }
+
+      #outputs::-webkit-scrollbar {
+        width: 5px;
+        border: 5px solid transparent;
+      }
+
+      #outputs::-webkit-scrollbar-track {
+        background: var(--scroll-track, #ffffff77);
+      }
+
+      #outputs::-webkit-scrollbar-thumb {
+        background: #808080;
+      }
+
+      #outputs::-webkit-scrollbar-thumb:hover {
+        background: var(--color-hover, #34f8d1);
+      }
+
+      #poeinst {
+        position: fixed;
+        left: -325px;
+        top: 0;
+        height: 100dvh;
+        transition: left 0.3s ease-in;
+        display: block !important;
+        width: calc(325px - 40px);
+        height: calc(100dvh - 40px);
+        padding: 20px;
+        z-index: 9999999999;
+        /* background-color: var(--bg-color, #000000); 
+        background: rgb(75, 75, 75);
+        background: linear-gradient(
+          166deg,
+          rgba(75, 75, 75, 1) 0%,
+          rgba(169, 185, 185, 1) 100%
+        );
+        */
+        background: rgb(75, 75, 75);
+        background: linear-gradient(
+          166deg,
+          rgb(75, 75, 75) 0%,
+          rgba(51, 84, 84, 1) 100%
+        );
+        color: var(--text-color, #a7caca);
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        line-height: 20px;
+        box-shadow: inset -6px 0 10px 0 var(--color-shadow);
+      }
+
+      #entrada {
+        padding: 4px;
+        padding-left: 8px;
+        padding-right: 8px;
+
+        min-width: 0;
+        height: 50px;
+        font-size: 24px !important;
+        line-height: 30px;
+        width: 100% !important;
+        border: 0;
+        outline: 0;
+        margin-left: -10px;
+        background-color: transparent;
+        color: var(--input-text, #443535);
+        margin-bottom: -10px;
+      }
+
+      #outputs {
+        width: calc(100% + 40px);
+        height: calc(100dvh - 136px);
+        display: block;
+        margin-left: -20px;
+        color: var(--fg-color, #d2d2d2);
+        overflow-y: auto;
+        padding-top: 3px;
+      }
+
+      #outputs iframe {
+        width: 100%;
+        height: calc(100dvh - 160px);
+      }
+
+      .gridhead {
+        display: grid;
+        grid-template-columns: 1fr [fim];
+        gap: 3px 10px;
+        text-transform: uppercase;
+      }
+
+      .outputgrid {
+        display: grid;
+        grid-template-columns: 1fr [fim];
+        gap: 3px 10px;
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-bottom: 20px;
+      }
+
+      .categoria {
+        grid-column: 1 / fim;
+        margin-top: 16px;
+        border-bottom: 1px solid var(--line-separator, #dddddd);
+        color: var(--text-color, #bbbbbb);
+        text-transform: uppercase;
+        font-size: 11px;
+      }
+
+      .grouplink {
+        padding: 4px 8px 4px 8px;
+        margin: -4px -8px -4px -8px;
+        text-decoration: none;
+        color: var(--text-color, #bbbbbb);
+        font-size: 11px;
+        display: inline-block;
+      }
+
+      .grouplink:hover {
+        background-color: var(--text-color, #bbbbbb);
+        color: var(--bg-color, black);
+      }
+
+      .separaline {
+        grid-column: 1 / fim;
+        margin-top: 16px;
+        border-top: 1px solid var(--line-separator, #dddddd);
+        color: var(--text-color, #bbbbbb);
+        text-transform: uppercase;
+        font-size: 11px;
+        height: 20px;
+      }
+
+      .noline {
+        grid-column: 1 / fim;
+        margin-top: 16px;
+        color: var(--text-color, #bbbbbb);
+        text-transform: uppercase;
+        font-size: 11px;
+        border-bottom: transparent 0 none;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--color-link, #3498c7);
+        padding: 4px 8px 4px 8px;
+        margin: -4px -8px 2px -8px;
+      }
+
+      a:hover {
+        color: var(--bg-color, #888888);
+        cursor: pointer;
+        background-color: var(--input-text, #ffffff);
+      }
+
+      .linkligado {
+        background-color: var(--color-hover, #0bebff);
+        color: var(--line-separator, #18676f);
+      }
+
+      #ativapoe {
+        width: 30px;
+        height: 30px;
+        position: fixed;
+        z-index: 10;
+        right: 15px;
+        top: calc(50vh - 25px);
+        margin: 0 !important;
+        padding: 0 !important;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      #base {
+        transition: left 0.3s ease-in;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100dvh;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        outline: 0;
+      }
+
+      .svg {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        width: 50px;
+        height: 50px;
+      }
+
+      #ativapoe:hover #buttombase {
+        fill: var(--bg-color);
+      }
+
+      @media screen and (max-width: 480px) {
+        #outputs {
+          height: calc(100dvh - 176px);
+        }
+
+        #ativapoe {
+          top: 30px;
+        }
+      }
+    </style>
+
+    <script>
+      let linkclicked = "";
+      const be = function (url) {
+        if (typeof url != "undefined" && url != "" && url != null) {
+          linkclicked = url;
+
+          let todosA = document.getElementsByTagName("a");
+
+          for (let i = 0; i < todosA.length; i++) {
+            todosA[i].classList.remove("linkligado");
+            if (todosA[i].href.indexOf(linkclicked) >= 0) {
+              todosA[i].classList.add("linkligado");
+            }
+          }
+
+          document.getElementById("base").src = url;
+          if (url.match(/slides.com(.*)embed/i)) {
+            if (window.innerWidth <= 480) {
+              document.getElementById("base").style.height =
+                "calc(100dvh - 4px)";
+            } else {
+              document.getElementById("base").style.height =
+                "calc(100dvh + 34px)";
+            }
+          } else {
+            if (window.innerWidth <= 480) {
+              document.getElementById("base").style.height =
+                "calc(100dvh - 40px)";
+            } else {
+              document.getElementById("base").style.height = "100dvh";
+            }
+          }
+        } else {
+          document.getElementById("base").src =
+            "https://omnidocs.vercel.app/docs/open.html";
+        }
+      };
+
+      const bo = function (url) {
+        window.open(url, "_blank").focus();
+      };
+    </script>
+  </head>
+
+  <body style="background-color: #000000; padding: 0; margin: 0">
+    <iframe id="base" frameborder="0"></iframe>
+
+    <a id="ativapoe" href="javascript:toggle('poeinst');"
+      ><svg
+        viewBox="0 0 600 600"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect id="buttombase" width="600" height="600" fill="#A9A9A9" />
+        <rect x="140" y="158" width="320" height="67" fill="white" />
+        <rect x="140" y="266" width="320" height="68" fill="white" />
+        <rect x="140" y="375" width="320" height="67" fill="white" />
+      </svg>
+    </a>
+  </body>
+
+  <script src="https://omnidocs.vercel.app/dev/custompoeinstanceflip.js"></script>
+  <script>
+    be($_GET["url"]);
+
+    let estilo = "";
+
+    if (
+      typeof $_GET["css"] != "" &&
+      $_GET["css"] != "" &&
+      $_GET["css"] != null
+    ) {
+      estilo = $_GET["css"];
+    }
+
+    let plugs =
+      "https://docs.google.com/spreadsheets/d/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/edit#gid=1507141427";
+
+    if (
+      typeof $_GET["plugins"] != "" &&
+      $_GET["plugins"] != "" &&
+      $_GET["plugins"] != null
+    ) {
+      plugs = $_GET["plugins"];
+    }
+
+    let lista =
+      "https://docs.google.com/spreadsheets/d/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/edit#gid=0";
+
+    if (
+      typeof $_GET["json"] != "" &&
+      $_GET["json"] != "" &&
+      $_GET["json"] != null
+    ) {
+      lista = $_GET["json"];
+    }
+
+    startpoe(lista, estilo, plugs, lista);
+
+    // Marca o link inicial no menu
+    const inicialink = setTimeout(function () {
+      linkclicked = $_GET["url"];
+
+      let todosA = document.getElementsByTagName("a");
+
+      for (let i = 0; i < todosA.length; i++) {
+        todosA[i].classList.remove("linkligado");
+        if (todosA[i].href.indexOf(linkclicked) >= 0) {
+          todosA[i].classList.add("linkligado");
+          i = todosA.length + 1;
+        }
+      }
+    }, 500);
+  </script>
+</html>
