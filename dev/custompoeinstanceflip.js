@@ -28,7 +28,7 @@ onkeydown = onkeyup = function (e) {
 };
 
 let toggle = function (who) {
-  if (document.getElementById(who).style.left == "-350px" || !poeopen) {
+  if (document.getElementById(who).style.left == "-325px" || !poeopen) {
     poeopen = true;
     keymapping[93] = false;
     keymapping[92] = false;
@@ -39,7 +39,9 @@ let toggle = function (who) {
     keymapping[17] = false;
     document.getElementById("entrada").focus();
     document.getElementById("poeinst").style.left = 0;
-    document.getElementById("base").style.left = "350px";
+    document.getElementById("base").style.left = "325px";
+    document.getElementById("poeinst").style.boxShadow =
+      "3px 0px 10px 0 var(--color-shadow) !important";
 
     let contasec = 70;
     let startangle = 74;
@@ -73,7 +75,7 @@ let toggle = function (who) {
     keymapping[80] = false;
     keymapping[16] = false;
     keymapping[17] = false;
-    document.getElementById("poeinst").style.left = "-350px";
+    document.getElementById("poeinst").style.left = "-325px";
     document.getElementById("base").style.left = 0;
 
     let contasec = 100;
@@ -82,6 +84,7 @@ let toggle = function (who) {
     let ddd = setInterval(function () {
       if (contasec <= 0) {
         clearInterval(ddd);
+        document.getElementById("poeinst").style.boxShadow = "unset";
       }
 
       document.getElementById("outputs").style.transform =
@@ -141,7 +144,7 @@ let createpoe = function (json, css, plugins) {
     <style>
       #poeinst {
         perspective: 600px;
-        box-shadow: 3px 0px 10px 0 var(--color-shadow) !important;
+        box-shadow: 3px 0px 10px 0 var(--color-shadow)
         
       }
 
