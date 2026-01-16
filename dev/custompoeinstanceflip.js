@@ -146,6 +146,13 @@ let createpoe = function (json, css, plugins) {
 
       #entrada {
         transform-origin: bottom right;
+            margin-left: 1px;
+            width: calc(100% - 17px) !important;
+            border-bottom: 2px dashed transparent;
+      }
+
+      #entrada:focus {
+        border-bottom: 2px dashed var(--input-text, #ffffff);
       }
 
       #entrada:hover {
