@@ -1,0 +1,285 @@
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+  ::root {
+    --cor-bg: #ffffff;
+    --cor-fg: #000000;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--cor-bg);
+    opacity: 0.2;
+    background-size: 4px 4px;
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--cor-bg) 0,
+      var(--cor-bg) 0.4px,
+      var(--cor-fg) 0,
+      var(--cor-fg) 25%
+    );
+    border-left: 1px solid var(--cor-fg);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    width: 8px;
+    background-color: var(--cor-fg);
+    cursor: default;
+  }
+
+  html,
+  body {
+    margin: 40px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 0;
+    color: var(--cor-fg);
+    background-color: var(--cor-bg);
+  }
+
+  textarea {
+    background-color: var(--cor-bg);
+    color: var(--cor-fg);
+    border: 1px dotted var(--cor-fg);
+    outline: 0;
+    padding: 10px;
+  }
+
+  .separalinha {
+    grid-column: init / fim;
+    height: 1px;
+    border-top: 1px dotted var(--cor-fg);
+    margin-top: 1px;
+    opacity: 0.6;
+  }
+
+  .separabloco {
+    height: 30px;
+    grid-column: init / fim;
+  }
+
+  #wrap {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px 30px;
+  }
+
+  #variaveis {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+    height: max-content;
+    resize: vertical;
+    overflow: auto;
+    grid-column: 1;
+    min-height: 200px;
+  }
+
+  #operacoes {
+    width: 100%;
+    grid-row: span 2;
+    grid-column: 2;
+  }
+
+  #listagem {
+    width: 100%;
+    grid-column: 1;
+    font-size: 12px;
+  }
+
+  .head {
+    padding-top: 80px;
+    background-color: var(--cor-bg);
+    position: sticky;
+    top: 0;
+    font-weight: bolder;
+    z-index: 2;
+  }
+
+  h1 {
+    position: fixed;
+    right: 80px;
+    text-align: right;
+    font-size: 11px;
+    line-height: 11px;
+    top: 40px;
+    margin: 0;
+    padding: 0;
+    color: var(--cor-fg);
+    z-index: 10;
+  }
+</style>
+
+<h1>TIPOS DE DADOS</h1>
+
+<div id="wrap">
+  <div style="position: sticky; top: 0px; padding-top: 80px">
+    <textarea id="variaveis">
+
+    int a = 10;
+
+    float b = 20.5;
+
+    string nome = "João";
+
+    bool ativo = true;
+
+    object z = [];
+
+    z[1] = 50;
+    z[2] = 50 + 80;
+
+  </textarea
+    ><br /><br />
+    <div id="listagem"></div>
+  </div>
+  <div id="operacoes"></div>
+</div>
+
+<script>
+  $_GET = [];
+  (function () {
+    corte = window.location.href.toString().indexOf("?");
+    if (corte > 0) {
+      argumento = window.location.href.toString().substring(corte + 1);
+      argumentos = argumento.split("&");
+      for (arg in argumentos) {
+        let argCorte = argumentos[arg].indexOf("=");
+        $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+          arg
+        ].substring(argCorte + 1);
+      }
+    }
+  })();
+
+  let separavars = function (str) {
+    let arr = str.split(/\r?\n|\r|\n/g);
+    let vars2 = [];
+    let c = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+      if (typeof arr[i] != "undefined" && arr[i] != null && arr[i] != "") {
+        let tt = arr[i].match(
+          /(?:(\w+)\s+)?(\w+(?:\[\d+\])?)\s*=\s*([^;]+?)(?:;|$)/,
+        );
+
+        if (typeof tt != "undefined" && tt != null) {
+          if (typeof tt[3] != "undefined" && tt[3] != null && tt[3] != "") {
+            vars2[c] = {};
+            vars2[c].variavel = tt[2];
+            if (typeof tt[1] != "undefined") {
+              vars2[c].tipo = tt[1];
+            } else {
+              vars2[c].tipo = typeof eval(tt[3]);
+            }
+
+            switch (vars2[c].tipo.toLowerCase()) {
+              case "int":
+                vars2[c].valor = parseInt(tt[3]);
+                break;
+              case "number":
+                vars2[c].valor = parseInt(tt[3]);
+                break;
+              case "string":
+                vars2[c].valor = eval(tt[3].toString())
+                  .toString()
+                  .replace(/\"|'/g, ``);
+                break;
+              case "boolean":
+              case "bool":
+                vars2[c].valor = Boolean(tt[3]);
+                break;
+              case "float":
+                vars2[c].valor = parseFloat(tt[3]);
+                break;
+              default:
+                vars2[c].valor = eval(tt[3].toString())
+                  .toString()
+                  .replace(/\"|'/g, ``);
+            }
+
+            c++;
+          }
+        }
+      }
+    }
+
+    return vars2;
+  };
+
+  recalcula = function () {
+    let tabela = separavars(document.getElementById("variaveis").value);
+    console.table(tabela);
+
+    let codeA = `<div style='display: grid; grid-template-columns: [init]1fr 1fr 1fr[fim]; gap: 4px 10px'>
+                <b>Variável</b><b>Tipo</b><b>Valor</b>
+                <b class="separalinha"></b>`;
+
+    for (let i = 0; i < tabela.length; i++) {
+      codeA += `<div>${tabela[i].variavel}</div><div>${tabela[i].tipo}</div><div>${tabela[i].valor}</div>
+      <div class="separalinha"></div>
+      `;
+    }
+
+    codeA += `</div>`;
+
+    let code = `<div style='display: grid; grid-template-columns: [init]1fr 1fr 0.3fr 0.3fr 0.3fr 1fr[fim]; gap: 4px 0'>
+                <div class="head">Variável</div><div class="head">Operação</div><div class="head"></div><div class="head"></div><div class="head"></div><div class="head">Resultado</div>
+                <div class="separalinha"></div>`;
+
+    for (let i = 0; i < tabela.length; i++) {
+      if (tabela[i].tipo != "object") {
+        let c = 0;
+        for (let k = 0; k < tabela.length; k++) {
+          if (tabela[k].tipo != "object") {
+            if (c > 0) {
+              code += `<div></div>`;
+            } else {
+              code += `<div class="separabloco"></div><div>${tabela[i].variavel}</div>`;
+            }
+
+            c++;
+
+            code += `<div>${tabela[i].variavel} + ${tabela[k].variavel}</div><div>${tabela[i].valor}</div><div>${tabela[k].valor}</div><div>=</div><div>${tabela[i].valor + tabela[k].valor}</div>
+      <div class="separalinha"></div>
+      `;
+          }
+        }
+      }
+    }
+
+    document.getElementById("listagem").innerHTML = codeA + "</div>";
+    document.getElementById("operacoes").innerHTML = code + "</div>";
+  };
+
+  document
+    .getElementById("variaveis")
+    .addEventListener("input", function (event) {
+      recalcula();
+    });
+
+  if (
+    typeof $_GET["bgcolor"] != "undefined" &&
+    $_GET["bgcolor"] != null &&
+    $_GET["bgcolor"] != ""
+  ) {
+    document.documentElement.style.setProperty(
+      "--cor-bg",
+      "#" + $_GET["bgcolor"],
+    );
+  }
+
+  if (
+    typeof $_GET["fcolor"] != "undefined" &&
+    $_GET["fcolor"] != null &&
+    $_GET["fcolor"] != ""
+  ) {
+    document.documentElement.style.setProperty(
+      "--cor-fg",
+      "#" + $_GET["fcolor"],
+    );
+  }
+
+  recalcula();
+</script>
