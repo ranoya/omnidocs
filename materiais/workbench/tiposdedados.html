@@ -201,12 +201,24 @@ z[2] = 50 + 80;
                 break;
               case "boolean":
               case "bool":
+                eval(tt[2] + " = " + Boolean(eval(tt[3])));
+                console.log(
+                  tt[2] + " = " + Boolean(eval(tt[3])) + " -> " + eval(tt[2]),
+                );
+
                 vars2[c].valor = Boolean(eval(tt[3]));
-                eval(vars2[c].variavel + " = " + Boolean(eval(tt[3])));
                 break;
               case "float":
+                eval(tt[2] + " = " + parseFloat(eval(tt[3])));
+                console.log(
+                  tt[2] +
+                    " = " +
+                    parseFloat(eval(tt[3])) +
+                    " -> " +
+                    eval(tt[2]),
+                );
+
                 vars2[c].valor = parseFloat(eval(tt[3]));
-                eval(vars2[c].variavel + " = " + parseFloat(eval(tt[3])));
                 break;
               default:
                 eval(tt[2] + ' = "' + eval(tt[3]).toString() + '"');
