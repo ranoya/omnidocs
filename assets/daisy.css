@@ -1,6 +1,6 @@
 :root {
   --bg-color: #ffa312;
-  --line-separator: #ffffff40;
+  --line-separator: #ffffff;
   --text-color: #4e6a6c;
   --color-link: #ffffff;
   --color-hover: #eac7bb;
@@ -20,4 +20,8 @@
 
 #ativapoe:hover #buttombase {
   fill: #ce4f38 !important;
+}
+
+.categoria {
+  border-bottom: 1px solid #ffffff55;
 }
