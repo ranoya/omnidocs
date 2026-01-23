@@ -170,6 +170,7 @@ z[2] = 50 + 80;
             switch (vars2[c].tipo.toLowerCase()) {
               case "object":
                 eval(tt[2] + " = " + parseInt(eval(tt[3])));
+                vars2[c].valor = "[]";
                 break;
               case "int":
                 eval(tt[2] + " = " + parseInt(eval(tt[3])));
