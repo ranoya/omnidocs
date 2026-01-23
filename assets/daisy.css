@@ -1,0 +1,23 @@
+:root {
+  --bg-color: #ffa312;
+  --line-separator: #ffffff40;
+  --text-color: #4e6a6c;
+  --color-link: #ffffff;
+  --color-hover: #eac7bb;
+
+  --input-text: #ffffff;
+
+  --scroll-track: #ffffff00;
+  --color-shadow: #ffffff55;
+}
+#poeinst {
+  background: var(--bg-color);
+}
+
+#ativapoe {
+  top: 15px !important;
+}
+
+#ativapoe:hover #buttombase {
+  fill: #ce4f38 !important;
+}
