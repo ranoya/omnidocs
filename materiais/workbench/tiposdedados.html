@@ -168,32 +168,19 @@ z[2] = 50 + 80;
             }
 
             switch (vars2[c].tipo.toLowerCase()) {
+              case "objetct":
+                eval(tt[2] + " = " + parseInt(eval(tt[3])));
+                break;
               case "int":
                 eval(tt[2] + " = " + parseInt(eval(tt[3])));
-                console.log(
-                  tt[2] + " = " + parseInt(eval(tt[3])) + " -> " + eval(tt[2]),
-                );
-
                 vars2[c].valor = parseInt(eval(tt[3]));
                 break;
               case "number":
                 eval(tt[2] + " = " + parseInt(eval(tt[3])));
-                console.log(
-                  tt[2] + " = " + parseInt(eval(tt[3])) + " -> " + eval(tt[2]),
-                );
-
                 vars2[c].valor = parseInt(eval(tt[3]));
                 break;
               case "string":
                 eval(tt[2] + ' = "' + eval(tt[3]).toString() + '"');
-                console.log(
-                  tt[2] +
-                    ' = "' +
-                    eval(tt[3]).toString() +
-                    '" -> ' +
-                    eval(tt[2]),
-                );
-
                 vars2[c].valor = eval('"' + eval(tt[3]).toString() + '"')
                   .toString()
                   .replace(/\"|'/g, ``);
@@ -202,34 +189,14 @@ z[2] = 50 + 80;
               case "boolean":
               case "bool":
                 eval(tt[2] + " = " + Boolean(eval(tt[3])));
-                console.log(
-                  tt[2] + " = " + Boolean(eval(tt[3])) + " -> " + eval(tt[2]),
-                );
-
                 vars2[c].valor = Boolean(eval(tt[3]));
                 break;
               case "float":
                 eval(tt[2] + " = " + parseFloat(eval(tt[3])));
-                console.log(
-                  tt[2] +
-                    " = " +
-                    parseFloat(eval(tt[3])) +
-                    " -> " +
-                    eval(tt[2]),
-                );
-
                 vars2[c].valor = parseFloat(eval(tt[3]));
                 break;
               default:
                 eval(tt[2] + ' = "' + eval(tt[3]).toString() + '"');
-                console.log(
-                  tt[2] +
-                    ' = "' +
-                    eval(tt[3]).toString() +
-                    '" -> ' +
-                    eval(tt[2]),
-                );
-
                 vars2[c].valor = eval('"' + eval(tt[3]).toString() + '"')
                   .toString()
                   .replace(/\"|'/g, ``);
