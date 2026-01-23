@@ -170,26 +170,32 @@ z[2] = 50 + 80;
             switch (vars2[c].tipo.toLowerCase()) {
               case "int":
                 vars2[c].valor = parseInt(tt[3]);
+                eval(vars2[c].variavel + " = " + parseInt(vars2[c].valor));
                 break;
               case "number":
                 vars2[c].valor = parseInt(tt[3]);
+                eval(vars2[c].variavel + " = " + parseInt(vars2[c].valor));
                 break;
               case "string":
                 vars2[c].valor = eval(tt[3].toString())
                   .toString()
                   .replace(/\"|'/g, ``);
+                eval(vars2[c].variavel + " = " + tt[3].toString());
                 break;
               case "boolean":
               case "bool":
                 vars2[c].valor = Boolean(tt[3]);
+                eval(vars2[c].variavel + " = " + Boolean(tt[3]));
                 break;
               case "float":
                 vars2[c].valor = parseFloat(tt[3]);
+                eval(vars2[c].variavel + " = " + parseFloat(tt[3]));
                 break;
               default:
                 vars2[c].valor = eval(tt[3].toString())
                   .toString()
                   .replace(/\"|'/g, ``);
+                eval(vars2[c].variavel + " = " + tt[3].toString());
             }
 
             c++;
