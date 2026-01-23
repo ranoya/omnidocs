@@ -169,14 +169,27 @@ z[2] = 50 + 80;
 
             switch (vars2[c].tipo.toLowerCase()) {
               case "int":
+                eval(tt[2] + " = " + parseInt(tt[3]));
+                console.log(
+                  tt[2] + " = " + parseInt(tt[3]) + " -> " + eval(tt[2]),
+                );
+
                 vars2[c].valor = parseInt(tt[3]);
-                eval(vars2[c].variavel + " = " + parseInt(vars2[c].valor));
                 break;
               case "number":
+                eval(tt[2] + " = " + parseInt(tt[3]));
+                console.log(
+                  tt[2] + " = " + parseInt(tt[3]) + " -> " + eval(tt[2]),
+                );
+
                 vars2[c].valor = parseInt(tt[3]);
-                eval(vars2[c].variavel + " = " + parseInt(vars2[c].valor));
                 break;
               case "string":
+                eval(tt[2] + " = " + tt[3].toString());
+                console.log(
+                  tt[2] + " = " + tt[3].toString() + " -> " + eval(tt[2]),
+                );
+
                 vars2[c].valor = eval(tt[3].toString())
                   .toString()
                   .replace(/\"|'/g, ``);
