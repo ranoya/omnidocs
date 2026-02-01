@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html style="margin: 0; padding: 0; overflow-y: hidden; overflow-x: hidden">
   <head>
@@ -16,7 +16,10 @@
     <meta name="pinterest" content="nohover" />
   </head>
 
-  <body style="margin: 0; padding: 0; overflow-y: hidden; overflow-x: hidden">
+  <body
+    style="margin: 0; padding: 0; overflow-y: hidden; overflow-x: hidden"
+    onclick="roda()"
+  >
     <iframe
       id="fundo"
       frameborder="0"
@@ -63,6 +66,24 @@
           }
         }
       })();
+
+      if (
+        typeof $_GET["goto"] != "undefined" &&
+        $_GET["goto"] != null &&
+        $_GET["goto"] != ""
+      ) {
+        document.body.style.cursor = "pointer";
+      }
+
+      let roda = function () {
+        if (
+          typeof $_GET["goto"] != "undefined" &&
+          $_GET["goto"] != null &&
+          $_GET["goto"] != ""
+        ) {
+          window.open($_GET["goto"], "_blank");
+        }
+      };
 
       let bg = "000000";
       let fg = "FFFFFF";
@@ -119,13 +140,11 @@
         extensao = "jpg";
       }
 
-      document.getElementById(
-        "fundo"
-      ).src = `https://artndcode.vercel.app/Singles/${art}.html?fcolor=${fg}&bgcolor=${bg}`;
+      document.getElementById("fundo").src =
+        `https://artndcode.vercel.app/Singles/${art}.html?fcolor=${fg}&bgcolor=${bg}`;
 
-      document.getElementById(
-        "frente"
-      ).style.backgroundImage = `url(${cover}.${extensao})`;
+      document.getElementById("frente").style.backgroundImage =
+        `url(${cover}.${extensao})`;
 
       document.getElementsByTagName("html")[0].style.backgroundColor = `#${bg}`;
       document.getElementsByTagName("body")[0].style.backgroundColor = `#${bg}`;
