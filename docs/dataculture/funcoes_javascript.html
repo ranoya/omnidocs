@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funções em JavaScript</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --bg: #ffffff;
+        --bg2: #f5f4f0;
+        --bg3: #eeece8;
+        --border: rgba(0, 0, 0, 0.12);
+        --border2: rgba(0, 0, 0, 0.22);
+        --text: #1a1a18;
+        --text2: #5a5a56;
+        --text3: #8a8a84;
+        --success-bg: #eaf3de;
+        --success-text: #27500a;
+        --radius-md: 8px;
+        --radius-lg: 12px;
+        --mono: "Courier New", monospace;
+        --sans: system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        font-family: var(--sans);
+        background: var(--bg);
+        color: var(--text);
+        padding: 2rem 1.5rem;
+        max-width: 680px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      h1 {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+      }
+      .subtitle {
+        font-size: 14px;
+        color: var(--text2);
+        margin-bottom: 1.5rem;
+      }
+
+      .tabs {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+      }
+      .tab {
+        padding: 6px 14px;
+        border: 0.5px solid var(--border2);
+        border-radius: var(--radius-md);
+        font-size: 13px;
+        cursor: pointer;
+        background: transparent;
+        color: var(--text2);
+        font-family: var(--sans);
+        transition: all 0.15s;
+      }
+      .tab.ativo {
+        background: var(--bg);
+        color: var(--text);
+        border-color: var(--border2);
+        font-weight: 500;
+        box-shadow: 0 0 0 1px var(--border2);
+      }
+      .tab:hover {
+        background: var(--bg2);
+      }
+
+      .bloco {
+        background: var(--bg2);
+        border: 0.5px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 1rem 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .codigo {
+        background: var(--bg3);
+        border-radius: var(--radius-md);
+        padding: 0.75rem 1rem;
+        font-family: var(--mono);
+        font-size: 13px;
+        line-height: 1.7;
+        color: var(--text);
+        white-space: pre;
+        margin: 0.75rem 0;
+        overflow-x: auto;
+      }
+
+      .kw {
+        color: #7c5cbf;
+        font-weight: 500;
+      }
+      .fn {
+        color: #1a7abf;
+      }
+      .str {
+        color: #2e9e5b;
+      }
+      .num {
+        color: #c97a1a;
+      }
+      .cm {
+        color: var(--text3);
+        font-style: italic;
+      }
+
+      .lbl {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--text2);
+        letter-spacing: 0.05em;
+        margin-bottom: 6px;
+      }
+
+      .resultado {
+        background: var(--success-bg);
+        border-radius: var(--radius-md);
+        padding: 0.5rem 1rem;
+        font-family: var(--mono);
+        font-size: 14px;
+        color: var(--success-text);
+        min-height: 36px;
+        display: flex;
+        align-items: center;
+        margin-top: 0.5rem;
+      }
+
+      .row {
+        display: flex;
+        gap: 12px;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        margin: 0.5rem 0;
+      }
+      .campo {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .campo label {
+        font-size: 12px;
+        color: var(--text2);
+      }
+      .campo input {
+        width: 130px;
+        padding: 6px 10px;
+        border: 0.5px solid var(--border2);
+        border-radius: var(--radius-md);
+        font-size: 14px;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--sans);
+        outline: none;
+      }
+      .campo input:focus {
+        box-shadow: 0 0 0 2px var(--border2);
+      }
+
+      .badge {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 500;
+        padding: 2px 8px;
+        border-radius: var(--radius-md);
+        margin-left: 6px;
+        vertical-align: middle;
+      }
+      .badge-purple {
+        background: #eeedfe;
+        color: #3c3489;
+      }
+      .badge-teal {
+        background: #e1f5ee;
+        color: #085041;
+      }
+
+      .nota {
+        font-size: 13px;
+        color: var(--text2);
+        margin: 0;
+        line-height: 1.6;
+      }
+      .nota code {
+        font-family: var(--mono);
+        font-size: 12px;
+        background: var(--bg3);
+        padding: 1px 5px;
+        border-radius: 4px;
+        color: var(--text);
+      }
+
+      button.acao {
+        margin-top: 0.75rem;
+        padding: 7px 14px;
+        border: 0.5px solid var(--border2);
+        border-radius: var(--radius-md);
+        font-size: 13px;
+        cursor: pointer;
+        background: transparent;
+        color: var(--text2);
+        font-family: var(--sans);
+        transition: all 0.15s;
+      }
+      button.acao:hover {
+        background: var(--bg2);
+        color: var(--text);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Funções em JavaScript</h1>
+    <p class="subtitle">
+      Explore os exemplos abaixo — edite os campos e veja o resultado em tempo
+      real.
+    </p>
+
+    <div class="tabs">
+      <button class="tab ativo" onclick="aba(0)">Exemplo 1: saudação</button>
+      <button class="tab" onclick="aba(1)">Exemplo 2: cálculo</button>
+      <button class="tab" onclick="aba(2)">Exemplo 3: decisão</button>
+      <button class="tab" onclick="aba(3)">Bônus: arrow function</button>
+    </div>
+
+    <!-- Aba 0 -->
+    <div id="a0">
+      <div class="bloco">
+        <div class="lbl">
+          Definição <span class="badge badge-purple">function declaration</span>
+        </div>
+        <div class="codigo">
+          <span class="kw">function</span> <span class="fn">saudar</span>(nome)
+          { <span class="kw">return</span>
+          <span class="str">`Olá, ${nome}!`</span>; }
+        </div>
+        <div class="lbl">Teste ao vivo</div>
+        <div class="row">
+          <div class="campo">
+            <label>Nome</label
+            ><input type="text" id="n0" value="Maria" oninput="r0()" />
+          </div>
+        </div>
+        <div class="codigo">
+          <span class="fn">saudar</span>(<span class="str" id="s0">"Maria"</span
+          >);
+        </div>
+        <div class="resultado" id="res0">→ "Olá, Maria!"</div>
+      </div>
+      <p class="nota">
+        Em JS, usamos <code>function</code> no lugar de <code>def</code>, chaves
+        <code>{}</code> delimitam o bloco, e template literals
+        <code>`${variavel}`</code> facilitam montar strings.
+      </p>
+    </div>
+
+    <!-- Aba 1 -->
+    <div id="a1" style="display: none">
+      <div class="bloco">
+        <div class="lbl">
+          Definição <span class="badge badge-purple">múltiplos parâmetros</span>
+        </div>
+        <div class="codigo">
+          <span class="kw">function</span>
+          <span class="fn">calcularArea</span>(largura, altura) {
+          <span class="kw">const</span> area = largura * altura;
+          <span class="kw">return</span> area; }
+        </div>
+        <div class="lbl">Teste ao vivo</div>
+        <div class="row">
+          <div class="campo">
+            <label>Largura</label
+            ><input
+              type="number"
+              id="n1a"
+              value="5"
+              min="1"
+              max="999"
+              oninput="r1()"
+            />
+          </div>
+          <div class="campo">
+            <label>Altura</label
+            ><input
+              type="number"
+              id="n1b"
+              value="3"
+              min="1"
+              max="999"
+              oninput="r1()"
+            />
+          </div>
+        </div>
+        <div class="codigo">
+          <span class="fn">calcularArea</span>(<span class="num" id="s1a"
+            >5</span
+          >, <span class="num" id="s1b">3</span>);
+        </div>
+        <div class="resultado" id="res1">→ 15</div>
+      </div>
+      <p class="nota">
+        Usamos <code>const</code> para variáveis locais que não mudam. JS também
+        tem <code>let</code> (pode mudar) e <code>var</code> (mais antigo,
+        evite). Os ponto-e-vírgula são opcionais, mas recomendados.
+      </p>
+    </div>
+
+    <!-- Aba 2 -->
+    <div id="a2" style="display: none">
+      <div class="bloco">
+        <div class="lbl">
+          Definição <span class="badge badge-purple">decisão com if/else</span>
+        </div>
+        <div class="codigo">
+          <span class="kw">function</span>
+          <span class="fn">verificarAcesso</span>(idade) {
+          <span class="kw">if</span> (idade >= <span class="num">18</span>) {
+          <span class="kw">return</span>
+          <span class="str">"Acesso liberado!"</span>; }
+          <span class="kw">else</span> { <span class="kw">return</span>
+          <span class="str">"Acesso negado."</span>; } }
+        </div>
+        <div class="lbl">Teste ao vivo</div>
+        <div class="row">
+          <div class="campo">
+            <label>Idade</label
+            ><input
+              type="number"
+              id="n2"
+              value="20"
+              min="1"
+              max="120"
+              oninput="r2()"
+            />
+          </div>
+        </div>
+        <div class="codigo">
+          <span class="fn">verificarAcesso</span>(<span class="num" id="s2"
+            >20</span
+          >);
+        </div>
+        <div class="resultado" id="res2">→ "Acesso liberado!"</div>
+      </div>
+      <p class="nota">
+        A lógica é idêntica ao Python — a diferença está na sintaxe: condições
+        ficam entre parênteses <code>()</code> e os blocos entre chaves
+        <code>{}</code>.
+      </p>
+    </div>
+
+    <!-- Aba 3 -->
+    <div id="a3" style="display: none">
+      <div class="bloco">
+        <div class="lbl">
+          Forma clássica vs.
+          <span class="badge badge-teal">arrow function</span>
+        </div>
+        <div class="codigo">
+          <span class="cm">// forma clássica</span>
+          <span class="kw">function</span> <span class="fn">dobrar</span>(n) {
+          <span class="kw">return</span> n * <span class="num">2</span>; }
+
+          <span class="cm">// arrow function — mesma coisa, mais curta</span>
+          <span class="kw">const</span> <span class="fn">dobrar</span> = (n) =>
+          n * <span class="num">2</span>;
+        </div>
+        <div class="lbl">Teste ao vivo</div>
+        <div class="row">
+          <div class="campo">
+            <label>Número</label
+            ><input
+              type="number"
+              id="n3"
+              value="7"
+              min="0"
+              max="9999"
+              oninput="r3()"
+            />
+          </div>
+        </div>
+        <div class="codigo">
+          <span class="fn">dobrar</span>(<span class="num" id="s3">7</span>);
+        </div>
+        <div class="resultado" id="res3">→ 14</div>
+      </div>
+      <p class="nota">
+        Arrow functions são um atalho do JS moderno. Quando a função tem só uma
+        linha, você pode omitir o <code>return</code> e as chaves — o resultado
+        é retornado automaticamente. Você vai ver muito esse estilo no dia a
+        dia.
+      </p>
+    </div>
+
+    <script>
+      function aba(i) {
+        [0, 1, 2, 3].forEach((j) => {
+          document.getElementById("a" + j).style.display =
+            j === i ? "" : "none";
+          document
+            .querySelectorAll(".tab")
+            [j].classList.toggle("ativo", j === i);
+        });
+      }
+      function r0() {
+        const n = document.getElementById("n0").value || "";
+        document.getElementById("s0").textContent = '"' + n + '"';
+        document.getElementById("res0").textContent = '→ "Olá, ' + n + '!"';
+      }
+      function r1() {
+        const l = parseInt(document.getElementById("n1a").value) || 0;
+        const a = parseInt(document.getElementById("n1b").value) || 0;
+        document.getElementById("s1a").textContent = l;
+        document.getElementById("s1b").textContent = a;
+        document.getElementById("res1").textContent = "→ " + l * a;
+      }
+      function r2() {
+        const v = parseInt(document.getElementById("n2").value) || 0;
+        document.getElementById("s2").textContent = v;
+        document.getElementById("res2").textContent =
+          v >= 18 ? '→ "Acesso liberado!"' : '→ "Acesso negado."';
+      }
+      function r3() {
+        const v = parseInt(document.getElementById("n3").value) || 0;
+        document.getElementById("s3").textContent = v;
+        document.getElementById("res3").textContent = "→ " + v * 2;
+      }
+    </script>
+  </body>
+</html>
