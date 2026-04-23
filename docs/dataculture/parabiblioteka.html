@@ -208,6 +208,7 @@
             border-radius: 0;
             box-shadow: 0px 0px 30px 6px #44444433;
             transition: .3s ease;
+            font-family: "Share Tech Mono", monospace;
         }
 
         .input:focus {
@@ -305,6 +306,16 @@
             },2500);
 
           });
+
+          if ($_GET['bg'] != null && $_GET['bg'] != undefined && $_GET['bg'] != "") {
+            document.documentElement.style.setProperty('--ranoyav2-bg', `#${$_GET['bg']}`);
+          }
+          
+           if ($_GET['fg'] != null && $_GET['fg'] != undefined && $_GET['fg'] != "") {
+            document.documentElement.style.setProperty('--ranoyav2-text', `#${$_GET['fg']}`);
+            document.documentElement.style.setProperty('--ranoyav2-border', `#${$_GET['fg']}44`);
+
+          }
     </script>
 
 </body>
