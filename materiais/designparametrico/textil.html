@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ot">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programação Textil</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+
+      #bloco {
+        display: grid;
+        grid-template-columns: 1fr 10fr;
+        position: fiexed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100dvh;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+
+      #vid {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="bloco">
+      <video id="vid" controls autoplay loop>
+        <source
+          src="https://omnifolio.vercel.app/omnifiles/textiles_codingknitting.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <iframe
+        frameborder="0"
+        src="https://generativeknitting.rosieloraine.xyz/"
+      ></iframe>
+    </div>
+  </body>
+</html>
