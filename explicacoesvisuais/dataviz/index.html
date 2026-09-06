@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="" />
+    <title>Dataviz</title>
+    <meta property="og:title" content="Dataviz" />
+    <meta name="generator" content="Explicações Visuais" />
+    <meta name="description" content="A complexidade do projeto de dataviz" />
+    <meta
+      property="og:description"
+      content="A complexidade do projeto de dataviz"
+    />
+    <meta name="author" content="Guilherme Ranoya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:site_name" content="Explicações Visuais" />
+    <meta name="application-name" content="Explicações Visuais" />
+    <link rel="icon" type="image/png" href="icon.png" />
+
+    <style>
+      :root {
+        --cor-bg: #eeeeee;
+      }
+
+      body {
+        background-color: var(--cor-bg);
+      }
+
+      #wrap {
+        position: fixed;
+        width: 100%;
+        height: 100dvh;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        perspective: 300px !important;
+        perspective-origin: center center;
+        cursor: pointer;
+      }
+
+      #pg2 {
+        position: fixed;
+        z-index: 20;
+        width: calc(100% - 40px);
+        height: calc(100dvh - 40px);
+        top: 20px;
+        left: 20px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        background-image: url("./pg2.svg");
+        filter: drop-shadow(0px 0px 15px #00000000);
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(0px, 0px);
+        transition: all 0.4s ease-out;
+      }
+
+      #pg1 {
+        position: fixed;
+        z-index: 10;
+        width: calc(100% - 40px);
+        height: calc(100dvh - 40px);
+        top: 20px;
+        left: 20px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        background-image: url("./pg1.svg");
+        filter: drop-shadow(0px 0px 15px #00000000);
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(0px, 0px);
+        transition: all 0.4s ease-out;
+      }
+
+      .move {
+        filter: drop-shadow(10px 5px 15px #00000088) blur(1px) !important;
+        transform: rotateX(-5deg) rotateY(-5deg) rotateZ(20deg)
+          translate(-35%, 93dvh) !important;
+        transition: all 0.4s ease-out;
+      }
+
+      .blured {
+        filter: drop-shadow(0px 0px 15px #00000000) blur(6px) !important;
+      }
+    </style>
+
+    <script>
+      let estado = false;
+      let toggle = function () {
+        if (estado) {
+          document.getElementById("pg2").classList.remove("move");
+          document.getElementById("pg1").classList.add("blured");
+          estado = false;
+        } else {
+          document.getElementById("pg2").classList.add("move");
+          document.getElementById("pg1").classList.remove("blured");
+          estado = true;
+        }
+      };
+    </script>
+  </head>
+
+  <body>
+    <div id="wrap" onclick="toggle()">
+      <div id="pg2"></div>
+      <div id="pg1" class="blured"></div>
+    </div>
+  </body>
+
+  <script>
+    $_GET = [];
+    (function () {
+      corte = window.location.href.toString().indexOf("?");
+      if (corte > 0) {
+        argumento = window.location.href.toString().substring(corte + 1);
+        argumentos = argumento.split("&");
+        for (arg in argumentos) {
+          let argCorte = argumentos[arg].indexOf("=");
+          $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+            arg
+          ].substring(argCorte + 1);
+        }
+      }
+    })();
+
+    if (
+      typeof $_GET["bg"] != "undefined" &&
+      $_GET["bg"] != null &&
+      $_GET["bg"] != ""
+    ) {
+      document.documentElement.style.setProperty("--cor-bg", "#" + $_GET["bg"]);
+      document.documentElement.style.setProperty(
+        "--cor-text",
+        "#" + $_GET["bg"],
+      );
+    }
+  </script>
+</html>
