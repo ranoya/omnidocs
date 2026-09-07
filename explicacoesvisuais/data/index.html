@@ -10,14 +10,11 @@
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="keywords" content="" />
-    <title>Dataviz</title>
-    <meta property="og:title" content="Dataviz" />
+    <title>Design e Dados</title>
+    <meta property="og:title" content="Design e Dados" />
     <meta name="generator" content="Explicações Visuais" />
-    <meta name="description" content="A complexidade do projeto de dataviz" />
-    <meta
-      property="og:description"
-      content="A complexidade do projeto de dataviz"
-    />
+    <meta name="description" content="Design e Dados" />
+    <meta property="og:description" content="Design e Dados" />
     <meta name="author" content="Guilherme Ranoya" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
@@ -50,6 +47,23 @@
         perspective: 300px !important;
         perspective-origin: center center;
         cursor: pointer;
+      }
+
+      #pg3 {
+        position: fixed;
+        z-index: 30;
+        width: calc(100% - 40px);
+        height: calc(100dvh - 40px);
+        top: 20px;
+        left: 20px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        background-image: url("https://omnidocs.vercel.app/explicacoesvisuais/dataviz/pg3.svg");
+        filter: drop-shadow(0px 0px 15px #00000000);
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(0px, 0px);
+        transition: all 0.4s ease-out;
+        transform-origin: left;
       }
 
       #pg2 {
@@ -86,7 +100,14 @@
         transform-origin: left;
       }
 
-      .move {
+      #pg3.move {
+        filter: drop-shadow(10px 5px 15px #00000088) blur(1px) !important;
+        transform: rotateX(-10deg) rotateY(-60deg) rotateZ(0deg)
+          translate(-73%, 60dvh) !important;
+        transition: all 0.4s ease-out;
+      }
+
+      #pg2.move {
         filter: drop-shadow(10px 5px 15px #00000088) blur(1px) !important;
         transform: rotateX(-10deg) rotateY(-60deg) rotateZ(0deg)
           translate(-70%, 60dvh) !important;
@@ -99,16 +120,35 @@
     </style>
 
     <script>
-      let estado = false;
+      let estado = 0;
       let toggle = function () {
-        if (estado) {
-          document.getElementById("pg2").classList.remove("move");
-          document.getElementById("pg1").classList.add("blured");
-          estado = false;
-        } else {
+        estado++;
+        if (estado > 2) {
+          estado = 0;
+        }
+
+        if (estado == 2) {
+          document.getElementById("pg3").classList.add("move");
           document.getElementById("pg2").classList.add("move");
+          document.getElementById("pg3").classList.remove("blured");
+          document.getElementById("pg2").classList.remove("blured");
           document.getElementById("pg1").classList.remove("blured");
-          estado = true;
+        }
+
+        if (estado == 1) {
+          document.getElementById("pg3").classList.add("move");
+          document.getElementById("pg2").classList.remove("move");
+          document.getElementById("pg3").classList.remove("blured");
+          document.getElementById("pg2").classList.remove("blured");
+          document.getElementById("pg1").classList.add("blured");
+        }
+
+        if (estado == 0) {
+          document.getElementById("pg3").classList.remove("move");
+          document.getElementById("pg2").classList.remove("move");
+          document.getElementById("pg3").classList.remove("blured");
+          document.getElementById("pg2").classList.add("blured");
+          document.getElementById("pg1").classList.add("blured");
         }
       };
     </script>
@@ -116,7 +156,8 @@
 
   <body>
     <div id="wrap" onclick="toggle()">
-      <div id="pg2"></div>
+      <div id="pg3"></div>
+      <div id="pg2" class="blured"></div>
       <div id="pg1" class="blured"></div>
     </div>
   </body>
