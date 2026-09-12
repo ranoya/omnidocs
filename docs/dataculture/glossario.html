@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Glossário</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Sixtyfour&display=swap");
+
+      :root {
+        --paper: #503f48;
+        --paper-2: #ffffff22;
+        --ink: #ffffff;
+        --ink-soft: #ffffff88;
+        --line: #ffffff44;
+        --accent: #ffffffaa;
+        --accent-soft: #00000066;
+        --flag: #8a5a2b;
+        --panel-w: 420px;
+      }
+      * {
+        box-sizing: border-box;
+        font-family: "Share Tech Mono", monospace;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-weight: 400;
+        font-style: normal;
+        padding: 40px 20px 80px;
+        transition: padding-right 0.3s ease;
+      }
+      body.panel-open {
+        padding-right: calc(20px + var(--panel-w));
+      }
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+      }
+      header {
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 20px;
+        margin-bottom: 24px;
+      }
+      h1 {
+        font-weight: normal;
+        font-size: 2.1rem;
+        letter-spacing: -0.01em;
+        margin: 0 0 6px;
+        font-family: "Sixtyfour", sans-serif !important;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-variation-settings:
+          "BLED" 0,
+          "SCAN" 0;
+      }
+      .sub {
+        font-weight: 400;
+        font-style: normal;
+        color: var(--ink-soft);
+        font-size: 0.92rem;
+        line-height: 1.5;
+        max-width: 640px;
+      }
+      .search-row {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin: 26px 0 8px;
+      }
+      #search {
+        flex: 1;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1rem;
+        padding: 12px 14px;
+        border: 1.5px solid var(--ink);
+        background: var(--paper-2);
+        color: var(--ink);
+        border-radius: 2px;
+      }
+      #search:focus {
+        outline: 2px solid var(--accent);
+        outline-offset: 1px;
+      }
+      #count {
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.82rem;
+        color: var(--ink-soft);
+        white-space: nowrap;
+      }
+      .caveat {
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.82rem;
+        line-height: 1.55;
+        color: var(--ink-soft);
+        background: var(--accent-soft);
+        border-left: 3px solid var(--accent);
+        padding: 12px 14px;
+        margin: 18px 0 26px;
+      }
+      .caveat strong {
+        color: var(--ink);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      thead th {
+        text-align: left;
+        font-size: 0.78rem;
+        color: var(--ink-soft);
+        font-weight: normal;
+        border-bottom: 1.5px solid var(--ink);
+        padding: 8px 10px;
+      }
+      tbody tr {
+        border-bottom: 1px solid var(--line);
+        cursor: pointer;
+      }
+      tbody tr:hover {
+        background: var(--paper-2);
+      }
+      tbody tr.active-row {
+        background: var(--accent-soft);
+      }
+      tbody td {
+        padding: 12px 10px;
+        vertical-align: top;
+        font-size: 0.92rem;
+        line-height: 1.4;
+      }
+      .term-en {
+        font-style: italic;
+        color: var(--ink-soft);
+        font-size: 0.82rem;
+        display: block;
+        margin-top: 2px;
+      }
+      .term-pt {
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.02rem;
+      }
+      .obra-name {
+        font-size: 0.82rem;
+        color: var(--ink-soft);
+        word-break: break-word;
+      }
+      .org-tag {
+        display: inline-block;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.72rem;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: var(--accent);
+        /* border: 1px solid var(--accent); */
+        /* border-radius: 999px; */
+        padding: 2px 9px;
+      }
+      .row-hint {
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.7rem;
+        color: var(--ink-soft);
+        opacity: 0.7;
+      }
+      .empty {
+        text-align: center;
+        padding: 40px 0;
+        color: var(--ink-soft);
+        font-weight: 400;
+        font-style: normal;
+      }
+      footer {
+        margin-top: 30px;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.78rem;
+        color: var(--ink-soft);
+        line-height: 1.6;
+      }
+
+      /* Side panel */
+      #overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(35, 41, 31, 0.25);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+        z-index: 30;
+      }
+      #overlay.visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #panel {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: var(--panel-w);
+        max-width: 92vw;
+        background: var(--paper-2);
+        border-left: 2px solid var(--ink);
+        box-shadow: -6px 0 18px rgba(0, 0, 0, 0.12);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 40;
+        display: flex;
+        flex-direction: column;
+      }
+      #panel.open {
+        transform: translateX(0);
+      }
+      .panel-head {
+        padding: 22px 22px 16px;
+        border-bottom: 1.5px solid var(--line);
+        position: relative;
+      }
+      .panel-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: none;
+        border: 1.5px solid var(--ink);
+        color: var(--ink);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1rem;
+        cursor: pointer;
+        line-height: 1;
+      }
+      .panel-close:hover {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .panel-org {
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+        margin-bottom: 8px;
+      }
+      .panel-title {
+        font-size: 1.35rem;
+        line-height: 1.3;
+        margin: 0 0 4px;
+        padding-right: 30px;
+      }
+      .panel-title-en {
+        font-style: italic;
+        color: var(--ink-soft);
+        font-size: 0.95rem;
+      }
+      .panel-body {
+        padding: 18px 22px 30px;
+        overflow-y: auto;
+        flex: 1;
+      }
+      .panel-field {
+        margin-bottom: 16px;
+      }
+      .panel-label {
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--ink-soft);
+        margin-bottom: 4px;
+      }
+      .panel-value {
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+      .panel-value.obra {
+        font-style: italic;
+      }
+      .synthesis-box {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 3px;
+        padding: 14px 16px;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+      .confidence {
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 0.72rem;
+        font-weight: 400;
+        font-style: normal;
+        padding: 3px 9px;
+        border-radius: 999px;
+      }
+      .confidence.alta {
+        background: var(--accent-soft);
+        color: var(--accent);
+        border: 1px solid var(--accent);
+      }
+      .confidence.media {
+        background: #f1e7d3;
+        color: var(--flag);
+        border: 1px solid var(--flag);
+      }
+      .confidence.baixa {
+        background: #f3dede;
+        color: #8a2b2b;
+        border: 1px solid #8a2b2b;
+      }
+      .panel-note {
+        margin-top: 18px;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.78rem;
+        color: var(--ink-soft);
+        line-height: 1.55;
+        border-top: 1px dashed var(--line);
+        padding-top: 14px;
+      }
+      @media (max-width: 720px) {
+        body.panel-open {
+          padding-right: 20px;
+        }
+        #panel {
+          width: 100vw;
+          max-width: 100vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>Glossário<br /><br /></h1>
+        <div class="sub">
+          Termos, tradução, autor(es), obra de referência e organização/campo de
+          origem. Clique em qualquer linha para ver a síntese da obra no painel
+          lateral.
+        </div>
+      </header>
+
+      <div class="search-row">
+        <input
+          id="search"
+          type="text"
+          placeholder="Buscar termo, autor, obra ou organização…"
+          autocomplete="off"
+        />
+        <span id="count"></span>
+      </div>
+
+      <br /><br />
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 32%">Conceitos</th>
+            <th style="width: 20%">Autor(es)</th>
+            <th style="width: 32%">Obra de Referência</th>
+            <th style="width: 14%">Organização</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <div class="empty" id="empty" style="display: none">
+        Nenhum termo encontrado.
+      </div>
+
+      <footer id="foot"></footer>
+    </div>
+
+    <div id="overlay"></div>
+    <aside id="panel" aria-hidden="true">
+      <div class="panel-head">
+        <button class="panel-close" id="panelClose" aria-label="Fechar painel">
+          ✕
+        </button>
+        <div class="panel-org" id="panelOrg"></div>
+        <h2 class="panel-title" id="panelTitlePt"></h2>
+        <div class="panel-title-en" id="panelTitleEn"></div>
+      </div>
+      <div class="panel-body">
+        <div class="panel-field">
+          <div class="panel-label">Autor(es)</div>
+          <div class="panel-value" id="panelAutor"></div>
+        </div>
+        <div class="panel-field">
+          <div class="panel-label">Obra de referência</div>
+          <div class="panel-value obra" id="panelObra"></div>
+        </div>
+        <div class="panel-field">
+          <div class="panel-label">Síntese</div>
+          <div class="synthesis-box" id="panelSynthesis"></div>
+          <span class="confidence" id="panelConfidence"></span>
+        </div>
+        <div class="panel-note" id="panelNote"></div>
+      </div>
+    </aside>
+
+    <script>
+      const data = [
+        {
+          pt: "Virada Computacional / Humanidades Digitais",
+          en: "Computational Turn / Digital Humanities",
+          ref: "David M. Berry",
+          obra: "The computational turn: thinking about the digital humanities",
+          org: "Digital Humanities",
+          synthesis:
+            'Este arquivo corresponde ao ensaio de David M. Berry sobre a "virada computacional", no qual ele argumenta que a computação deixou de ser apenas uma ferramenta auxiliar para se tornar o próprio objeto e condição de possibilidade do pensamento humanístico contemporâneo. Berry propõe que as Humanidades Digitais de "segunda onda" precisam ir além do uso instrumental de software e desenvolver uma teoria crítica do código, tratando algoritmos e infraestruturas computacionais como camadas que merecem interpretação humanística, não apenas execução técnica.',
+          confidence: "",
+          note: "Texto publicado na revista Culture Machine V.12, em 2011.",
+        },
+        {
+          pt: "Hipermídia e Estudos Literários / Hipertexto",
+          en: "Hypermedia and Literary Studies / Hypertext",
+          ref: "Paul Delany e George P. Landow (Ed.)",
+          obra: "Hypermedia and Literary Studies",
+          org: "Digital Humanities",
+          synthesis:
+            "Trata-se de uma coletânea organizada por Delany e Landow que reúne ensaios de diferentes autores sobre como a hipermídia e o hipertexto transformam categorias centrais dos estudos literários — autoria, linearidade, fronteiras do texto, leitura. A obra costuma ser lida como um dos primeiros esforços coletivos de aproximar a teoria literária pós-estruturalista (Barthes, Derrida) das tecnologias emergentes de texto eletrônico no início dos anos 1990.",
+          confidence: "",
+          note: "",
+        },
+        {
+          pt: "Visualização Humanística / Graphesis",
+          en: "Humanistic Visualization / Graphesis",
+          ref: "Johanna Drucker",
+          obra: "Visualization and interpretation - humanistic approaches to display",
+          org: "Digital Humanities",
+          synthesis:
+            'Neste livro, Drucker questiona a suposta neutralidade das visualizações de dados (gráficos, mapas, linhas do tempo) tomadas de empréstimo das ciências exatas para uso nas humanidades. Ela propõe o conceito de "grafese" (graphesis) — a ideia de que a forma visual não apenas exibe informação, mas produz interpretação e conhecimento. A obra defende uma epistemologia humanística da visualização, distinta de uma epistemologia positivista que trata dados como dados brutos e neutros.',
+          confidence: "",
+          note: "Este é um argumento central e bem documentado do trabalho de Drucker sobre visualização e humanidades digitais.",
+        },
+        {
+          pt: "Cultura da Interface / Design de Interface",
+          en: "Interface Culture / Interface Design",
+          ref: "Steven Johnson",
+          obra: "Cultura da Interface",
+          org: "Digital Humanities",
+          synthesis:
+            "Neste livro, Johnson analisa a interface gráfica (desktop, ícones, janelas, links) como uma forma cultural em si mesma — comparável, em seu argumento, a formas narrativas e artísticas anteriores como o romance ou a cidade. Ele discute como metáforas visuais organizam a experiência do usuário com a informação e defende que o design de interface deveria ser estudado como um campo estético e cultural, não apenas técnico.",
+          confidence: "",
+          note: "",
+        },
+        {
+          pt: "Visualização de Dados nas Humanidades Digitais",
+          en: "Data Visualization in Digital Humanities",
+          ref: "Aimée Knight",
+          obra: "Where data meets design - visualization in the digital humanities",
+          org: "Digital Humanities",
+          synthesis:
+            'Nesta obra Aimée Knight explora como a integração do design no processo de visualização de dados pode transformar a pesquisa em humanidades digitais, permitindo aos pesquisadores "re-ver" seus dados e perguntas sob novas perspectivas. A autora defende a transição de um "design orientado pelos dados" (em que a pesquisa precisa se moldar rigidamente aos limites do software) para "dados orientados pelo design" (design-driven data), no qual as decisões visuais e conceituais ocupam o centro da investigação',
+          confidence: "",
+          note: "",
+        },
+        {
+          pt: "Teoria do Hipertexto / Mídia Digital",
+          en: "Hypertext Theory / Digital Media",
+          ref: "George P. Landow (Ed.)",
+          obra: "Hyper/Text/Theory",
+          org: "Digital Humanities",
+          synthesis:
+            'Esta é uma coletânea organizada por Landow que reúne ensaios de vários teóricos sobre a convergência entre teoria crítica pós-estruturalista e hipertexto. O volume amplia e testa, por meio de múltiplas vozes, os argumentos que Landow desenvolve em seu próprio livro "Hypertext", explorando como conceitos como rede, nó e link dialogam com noções de texto descentrado.',
+          confidence: "",
+          note: "Parece interessante olhar também os livros Hypertext 2.0 e Hypertext 3.0",
+        },
+        {
+          pt: "Hipertexto e Convergência com a Teoria Crítica",
+          en: "Hypertext and Convergence with Critical Theory",
+          ref: "George P. Landow",
+          obra: "Hypertext - The Convergence of Contemporary Critical Theory and Techonology",
+          org: "Digital Humanities",
+          synthesis:
+            'Este é o livro fundador de Landow sobre hipertexto, no qual ele argumenta que conceitos centrais da teoria crítica pós-estruturalista — a morte do autor em Barthes, a descentralização do texto em Derrida, as redes de poder-saber em Foucault — encontram uma realização tecnológica concreta no hipertexto eletrônico. A obra é um dos textos fundacionais da chamada "teoria do hipertexto" nos estudos literários e de mídia digital.',
+          confidence: "",
+          note: "Esta é uma obra amplamente citada (1992) e sua tese central é bem estabelecida na literatura da área.",
+        },
+        {
+          pt: "Hipertexto e Teoria Crítica Contemporânea",
+          en: "Hypertext and Contemporary Critical Theory",
+          ref: "George P. Landow",
+          obra: "Hypertext 2.0",
+          org: "Digital Humanities",
+          synthesis:
+            "Esta é a edição revista e ampliada do livro anterior de Landow, atualizada para incorporar o impacto da World Wide Web (que ainda não existia na primeira edição de 1992). Landow revisita seus argumentos sobre a convergência entre hipertexto e teoria crítica pós-estruturalista, agora com exemplos do ambiente web e discussão mais aprofundada sobre leitura não linear, autoria colaborativa e redes de links em escala pública.",
+          confidence: "",
+          note: 'O status desta obra como segunda edição revisada de "Hypertext" (1997) é bem documentado.',
+        },
+        {
+          pt: "Hipertexto e Novas Mídias na Era da Globalização",
+          en: "Hypertext and New Media in an Era of Globalization",
+          ref: "George P. Landow",
+          obra: "Hypertext 3.0",
+          org: "Digital Humanities",
+          synthesis:
+            "Terceira edição do livro de Landow, novamente revista e ampliada, que estende a discussão original para dar conta de novas mídias digitais e do contexto de globalização em rede. Landow atualiza seus exemplos e amplia a reflexão sobre como redes de hipertexto se relacionam com dinâmicas culturais e econômicas globais, mantendo o eixo teórico original de diálogo com o pós-estruturalismo.",
+          confidence: "",
+          note: 'Terceira edição da obra de Landow, onde se inclui também o subtítulo "Critical Theory and New Media in an Era of Globalization".',
+        },
+        {
+          pt: "Humanidades Digitais / Humanidades Gerativas",
+          en: "Digital Humanities / Generative Humanities",
+          ref: "Jeffrey Schnapp e Todd Presner",
+          obra: "Manifesto das Humanidades Digitais 2.0",
+          org: "Digital Humanities",
+          synthesis:
+            'Amplamente conhecido como o "Manifesto das Humanidades Digitais 2.0", de autoria coletiva com participação central de Presner e Schnapp. O texto declara as Humanidades Digitais como um momento de mudança de paradigma nas práticas humanísticas — defendendo uma humanidade "gerativa", colaborativa, aberta e não hierárquica, em contraste com modelos tradicionais de produção de conhecimento humanístico centrados no indivíduo e no texto impresso.',
+          confidence: "",
+          note: "",
+        },
+        {
+          pt: "Estudos de Software / Metamídia Computacional",
+          en: "Software Studies / Computational Metamedium",
+          ref: "Lev Manovich",
+          obra: "Software takes command",
+          org: "Digital Humanities",
+          synthesis:
+            'Neste livro, Manovich argumenta que o software se tornou um "metamídia" universal — uma camada computacional que hoje molda a produção e o consumo de praticamente todas as formas de mídia (imagem, vídeo, texto, som). Ele examina softwares de uso cotidiano, como editores de imagem, como objetos culturais que merecem análise própria, e defende a constituição de um campo de "estudos de software" (software studies) para entender como essas ferramentas moldam esteticamente a produção cultural contemporânea.',
+          confidence: "",
+          note: '"Software Takes Command" (2013) é uma obra central de Manovich, coerente com o eixo de interesse dele em estética computacional.',
+        },
+        {
+          pt: "Multimodalidade, Estudos do Livro e Edição",
+          en: "Multimodality, Book Studies and Publishing",
+          ref: "Ana Elisa Ribeiro",
+          obra: "Livro e multimodalidade: concepções em trânsito na obra de Gunther Kress",
+          org: "Digital Humanities",
+          synthesis:
+            'No artigo "Livro e multimodalidade: concepções em trânsito na obra de Gunther Kress", a pesquisadora Ana Elisa Ribeiro analisa a evolução do conceito de livro e das práticas de leitura contemporâneas, utilizando como chave teórica os estudos de semiótica social e multimodalidade do linguista Gunther Kress (em especial sua obra Literacy in the New Media Age, de 2003)',
+          confidence: "",
+          note: "Artigo publicado na revista Dispositiva (UFMG) em 2022.",
+        },
+        {
+          pt: "Visualização de Dados e Superpoderes de Percepção",
+          en: "Data Visualization and Superpowers of Perception",
+          ref: "Wesley Willett, A. Aseniero, Sheelagh Carpendale, Pierre Dragicevic, Yvonne Jansen, Lora Oehlberg e Petra Isenberg",
+          obra: "Perception! Immersion! Empowerment! Superpowers as Metaphors for Visualization",
+          org: "Digital Humanities",
+          synthesis:
+            'Texto no qual os autores usam a metáfora de "superpoderes" (percepção aumentada, imersão, empoderamento) para organizar e comparar diferentes capacidades oferecidas por técnicas de visualização de dados e analítica imersiva — como visão ampliada no espaço/tempo, presença em dados remotos, ou manipulação direta de grandes conjuntos de dados.',
+          confidence: "",
+          note: "Texto publicado na revista IEEE TVCG e apresentado na IEEE VIS em 2021.",
+        },
+        {
+          pt: "Semiótica das Interações Digitais / Comunicação Mediada por Computador",
+          en: "Semiotics of Digital Interactions / Computer-Mediated Communication",
+          ref: "Carlos Alberto Scolari",
+          obra: "DIGITAL ECO\_LOGY: Umberto Eco and a semiotic approach to digital communication",
+          org: "Digital Humanities",
+          synthesis:
+            'O artigo "DIGITAL ECO\_LOGY: Umberto Eco and a semiotic approach to digital communication", de Carlos Alberto Scolari examina como as teorias semiótica e de interpretação desenvolvidas por Umberto Eco oferecem um arcabouço conceitual fundamental para compreender a comunicação mediada por computador, a interação homem-computador (IHC) e os novos meios digitais.',
+          confidence: "",
+          note: "Artigo publicado na revsita Information, Communication & Society Vol. 12, No. 1 em 2009",
+        },
+      ];
+
+      const rowsEl = document.getElementById("rows");
+      const searchEl = document.getElementById("search");
+      const countEl = document.getElementById("count");
+      const emptyEl = document.getElementById("empty");
+      const overlayEl = document.getElementById("overlay");
+      const panelEl = document.getElementById("panel");
+      const panelCloseEl = document.getElementById("panelClose");
+
+      const confidenceLabel = {
+        alta: "Confiança alta",
+        media: "Confiança média",
+        baixa: "Confiança baixa",
+      };
+
+      function render(list) {
+        rowsEl.innerHTML = "";
+        emptyEl.style.display = list.length === 0 ? "block" : "none";
+        list.forEach((item, idx) => {
+          const tr = document.createElement("tr");
+          tr.dataset.idx = data.indexOf(item);
+          tr.innerHTML = `
+      <td><span class="term-pt">${item.pt}</span><span class="term-en">${item.en}</span></td>
+      <td>${item.ref}</td>
+      <td><span class="obra-name">${item.obra}</span></td>
+      <td><span class="org-tag">${item.org}</span></td>
+    `;
+
+          document.getElementById("foot").innerHTML =
+            `${list.length} referências<br><br>`;
+
+          tr.addEventListener("click", () => openPanel(item, tr));
+          rowsEl.appendChild(tr);
+        });
+        countEl.textContent =
+          list.length + (list.length === 1 ? " termo" : " termos");
+      }
+
+      function filterData(q) {
+        q = q.trim().toLowerCase();
+        if (!q) return data;
+        return data.filter(
+          (d) =>
+            d.en.toLowerCase().includes(q) ||
+            d.pt.toLowerCase().includes(q) ||
+            d.ref.toLowerCase().includes(q) ||
+            d.obra.toLowerCase().includes(q) ||
+            d.org.toLowerCase().includes(q),
+        );
+      }
+
+      function openPanel(item, rowEl) {
+        document
+          .querySelectorAll("tbody tr")
+          .forEach((r) => r.classList.remove("active-row"));
+        if (rowEl) rowEl.classList.add("active-row");
+
+        document.getElementById("panelOrg").textContent = item.org;
+        document.getElementById("panelTitlePt").textContent = item.pt;
+        document.getElementById("panelTitleEn").textContent = item.en;
+        document.getElementById("panelAutor").textContent = item.ref;
+        document.getElementById("panelObra").textContent = item.obra;
+        document.getElementById("panelSynthesis").textContent = item.synthesis;
+
+        const confEl = document.getElementById("panelConfidence");
+        confEl.textContent = confidenceLabel[item.confidence] || "";
+        confEl.className = "confidence " + item.confidence;
+
+        document.getElementById("panelNote").textContent = item.note;
+
+        panelEl.classList.add("open");
+        panelEl.setAttribute("aria-hidden", "false");
+        overlayEl.classList.add("visible");
+        document.body.classList.add("panel-open");
+      }
+
+      function closePanel() {
+        panelEl.classList.remove("open");
+        panelEl.setAttribute("aria-hidden", "true");
+        overlayEl.classList.remove("visible");
+        document.body.classList.remove("panel-open");
+        document
+          .querySelectorAll("tbody tr")
+          .forEach((r) => r.classList.remove("active-row"));
+      }
+
+      panelCloseEl.addEventListener("click", closePanel);
+      overlayEl.addEventListener("click", closePanel);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closePanel();
+      });
+
+      searchEl.addEventListener("input", () =>
+        render(filterData(searchEl.value)),
+      );
+
+      data.sort((a, b) => a.pt.localeCompare(b.pt, "pt-BR"));
+      render(data);
+
+      // FUNÇÃO URL GET
+      // urlGet('xpto'); www.site.com/?xpto=teste
+      // let data = $_GET['xpto']; www.site.com/?xpto=teste
+
+      urlGet = function (name) {
+        var results = new RegExp("[\?&]" + name + "=([^&#]*)").exec(
+          window.location.href,
+        );
+        if (results == null) {
+          return null;
+        } else {
+          return results[1] || 0;
+        }
+      };
+
+      $_GET = [];
+      (function () {
+        corte = window.location.href.toString().indexOf("?");
+        if (corte > 0) {
+          argumento = window.location.href.toString().substring(corte + 1);
+          argumentos = argumento.split("&");
+          for (arg in argumentos) {
+            let argCorte = argumentos[arg].indexOf("=");
+            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+              arg
+            ].substring(argCorte + 1);
+          }
+        }
+      })();
+
+      if (
+        typeof $_GET["bg"] != "undefined" &&
+        $_GET["bg"] != null &&
+        $_GET["bg"] != ""
+      ) {
+        document.documentElement.style.setProperty(
+          "--paper",
+          "#" + $_GET["bg"],
+        );
+      }
+
+      // Atualiza dados dos inputs
+      const atualizainput = function (arg, inputnumber) {
+        let inpt = document.getElementsByTagName("input")[inputnumber];
+        inpt.value = arg;
+        inpt.dispatchEvent(new Event("input", { bubbles: true }));
+      };
+
+      if (
+        typeof $_GET["filtra"] != "undefined" &&
+        $_GET["filtra"] != null &&
+        $_GET["filtra"] != ""
+      ) {
+        atualizainput($_GET["filtra"], 0);
+      }
+    </script>
+  </body>
+</html>
