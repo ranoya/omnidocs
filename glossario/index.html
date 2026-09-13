@@ -68,7 +68,7 @@
         :root {
 
             --ranoyav2-text: #23291F;
-            --ranoyav2-border: #23291F;
+            --ranoyav2-border: #88888844;
             --ranoyav2-bg: #EFEDE3;
         }
 
@@ -104,7 +104,7 @@
             font-family: "Source Serif 4", serif;
             color: var(--ranoyav2-text, #888888);
             text-decoration: none;
-            font-size: 20px;
+            font-size: 14px;
             line-height: 26px;
             font-weight: lighter;
             position: relative;
@@ -135,8 +135,8 @@
             display: grid !important;
             grid-template-columns: 1fr 0.7fr;
             color: var(--ranoyav2-text, #888888);
-            font-size: 24px;
-            line-height: 28px;
+            font-size: 20px;
+            line-height: 24px;
             font-family: "Source Serif 4", serif !important;
             font-optical-sizing: auto;
             font-weight: 400;
@@ -238,11 +238,13 @@
         #subpalco p {
             font-size: 18px;
             line-height: 18px;
+            font-family: 'Source Serif 4', serif !important;
         }
 
         #subpalco p.descrit {
             font-size: 22px !important;
             line-height: 24px !important;
+            font-family: 'Source Serif 4', serif !important;
         }
 
         #subpalco a {
@@ -259,8 +261,8 @@
         }
 
         .small {
-            font-size: 16px !important;
-            opacity: 0.8;
+            font-size: 14px !important;
+            opacity: 0.7;
         }
 
         .custom_input {
@@ -309,11 +311,28 @@
             height: 100px;
         }
 
+        .nav a {
+            color: var(--ranoyav2-bg);
+            background-color: var(--ranoyav2-text);
+            opacity: 0.8;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 8px 4px 8px 4px;
+            margin: -8px -4px 0px -4px;
+            font-size: 14px;
+            line-height: 14px;
+        }
+
+        .nav a:hover {
+            opacity: 1;
+        }
+
         </style>
 </head>
 
 <body>
 
+    <nav></nav>
     <div id="subpalco"></div>
     <div id="palco" onclick="fecha()"></div>
 
@@ -373,8 +392,26 @@
 
         omnifilter = function(dadosfull) {
 
+
             let dados = selecte(dadosfull, document.getElementById("shadowfiltro").value);
             dataselected = dados;
+
+            let catalogos = tags(dados, "Organizacao", ";");
+
+            if (catalogos.length > 1) {
+
+                let code = "";
+
+                for (let i=0; i<catalogs.length; i++) {
+                    code += `<a href='muda("${catalogos[i]}")'>${catalogos[i]}</a> `;
+                }
+
+                document.getElementsByTagName("nav")[0].innerHTML = code;
+
+                document.getElementsByTagName("nav")[0].display = "block";
+            } else {
+                document.getElementsByTagName("nav")[0].display = "none";
+            }
 
             let data = [];
 
