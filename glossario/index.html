@@ -443,7 +443,7 @@
             let catalogos = tags(dados, "Organizacao", ";");
             let colecoes = tags(dados, "Colecoes", ";");
 
-            if (primeravez) {
+            if (primeravez && (typeof $_GET['nomenu'] == 'undefined' || $_GET['nomenu'] == null || $_GET['nomenu'] == '')) {
             if (catalogos.length > 1) {
 
                 let code = "";
