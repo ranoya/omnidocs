@@ -216,13 +216,14 @@
         }
 
         #subpalco {
+
             position: fixed;
             opacity: 1;
-            width: 58%;
-            height: 50dvh;
-            padding: 10% 10dvh 10% 10dvh;
-            left: 15%;
-            top: 10%;
+            width: 60%;
+            height: 55dvh;
+            padding: 10dvh 10% 10dvh 10%;
+            left: 10%;
+            top: 10dvh;
             z-index: 2600;
             display: none;
             background-color: var(--ranoyav2-text);
@@ -246,7 +247,7 @@
 
         #subpalco a {
             padding: 10px 15px 10px 15px;
-            margin: 10px -15px -10px -15px;
+            margin: -10px -15px -10px -15px;
             text-decoration: underline;
             color: var(--ranoyav2-bg);
         }
@@ -340,7 +341,7 @@
             let link = `<p>${dataselected[i].ObraRef}</p>`;
 
             if (typeof $_GET['p'] != 'undefined' && $_GET['p'] != null && $_GET['p'] != '' && typeof dataselected[i].link != 'undefined' && dataselected[i].link != null && dataselected[i].link != '') {
-               link = `<a target='blank' href='${dataselected[i].link}'>${dataselected[i].ObraRef}</a>`;
+               link = `<p><a target='blank' href='${dataselected[i].link}'>${dataselected[i].ObraRef}</a></p>`;
             }
 
             document.getElementById("subpalco").innerHTML = `
