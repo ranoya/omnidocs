@@ -471,14 +471,18 @@
 
             for (let i = 0; i < data.length; i++) {
 
-                code += `<div onclick='mostra(${i})' class="listaitem">
-                        ${dados[i].AutorPrincipal}<br>
-                        <div class="blocotermos">
-                            <div>${dados[i].Conceito}</div>
-                            <div style="opacity: 0.5; text-align: right;">${dados[i].ConceitoEN}</div>    
-                        </div>
-                        
-                    </div>`;
+                if (dados[i].Conceito != '') {
+
+                    code += `<div onclick='mostra(${i})' class="listaitem">
+                            ${dados[i].AutorPrincipal}<br>
+                            <div class="blocotermos">
+                                <div>${dados[i].Conceito}</div>
+                                <div style="opacity: 0.5; text-align: right;">${dados[i].ConceitoEN}</div>    
+                            </div>
+                            
+                        </div>`;
+
+                }
                 
             }
 
