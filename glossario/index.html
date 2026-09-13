@@ -404,22 +404,37 @@
 
         }
 
+        let muda = function(s) {
+
+            let inpt = document.getElementById("shadowfiltro");
+            inpt.value = s;
+            inpt.dispatchEvent(new Event('input', { bubbles: true }));
+
+            omnifilter(fulldataset);
+
+
+        }
+
+        let fulldataset = [];
         let dataselected = [];
 
         omnifilter = function(dadosfull) {
+
+            let fulldataset = dadosfull;
 
 
             let dados = selecte(dadosfull, document.getElementById("shadowfiltro").value);
             dataselected = dados;
 
             let catalogos = tags(dados, "Organizacao", ";");
+            let colecoes = tags(dados, "Colecoes", ";");
 
             if (catalogos.length > 1) {
 
                 let code = "";
 
                 for (let i=0; i<catalogos.length; i++) {
-                    code += `<a href='muda("${catalogos[i]}")'>${catalogos[i]}</a> `;
+                    code += `<a href='muda("${catalogos[i]}")'>${colecoes[i]}</a> `;
                 }
 
                 document.getElementsByTagName("nav")[0].innerHTML = code;
