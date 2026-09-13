@@ -311,6 +311,18 @@
             height: 100px;
         }
 
+        nav {
+            max-width: 1200px;
+            padding: 24px;
+            width: calc(100% - 48px);
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 100;
+            background-color: var(--ranoyav2-bg, #000000);
+            display: none;
+        }
+
         nav a {
             color: var(--ranoyav2-bg);
             background-color: var(--ranoyav2-text);
@@ -321,6 +333,8 @@
             margin: -8px -4px 0px -4px;
             font-size: 14px;
             line-height: 14px;
+
+            
         }
 
         nav a:hover {
@@ -347,7 +361,7 @@
 </div>
 
     <nav></nav>
-    
+
     <div id='conteudo'></div>
 
     <input id="shadowfiltro" type="text" />
