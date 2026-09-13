@@ -419,7 +419,9 @@
         let dataselected = [];
         let primeravez = true;
 
-        omnifilter = function(dadosfull) {
+        omnifilter = function(dadosorig) {
+
+            let dadosfull = alphabetic(dadosorig, "Conceito");
 
             fulldataset = dadosfull;
 
