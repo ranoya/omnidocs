@@ -434,7 +434,7 @@
                 let code = "";
 
                 for (let i=0; i<catalogos.length; i++) {
-                    code += `<a href='muda("${catalogos[i]}")'>${colecoes[i]}</a> `;
+                    code += `<a href='javascript:muda("${catalogos[i]}")'>${colecoes[i]}</a> `;
                 }
 
                 document.getElementsByTagName("nav")[0].innerHTML = code;
