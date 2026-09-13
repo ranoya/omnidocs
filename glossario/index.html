@@ -426,7 +426,18 @@
             fulldataset = dadosfull;
 
 
-            let dados = selecte(dadosfull, document.getElementById("shadowfiltro").value);
+            let dadoscombrancos = selecte(dadosfull, document.getElementById("shadowfiltro").value);
+
+            let dados = [];
+            let c = 0;
+
+            for (let i=0; i<dadoscombrancos.length; i++) {
+                if (dadoscombrancos[i].Conceito != '') {
+                    dados[c] = dadoscombrancos[i];
+                    c++;
+                }
+            }
+
             dataselected = dados;
 
             let catalogos = tags(dados, "Organizacao", ";");
@@ -471,8 +482,6 @@
 
             for (let i = 0; i < data.length; i++) {
 
-                if (dados[i].Conceito != '') {
-
                     code += `<div onclick='mostra(${i})' class="listaitem">
                             ${dados[i].AutorPrincipal}<br>
                             <div class="blocotermos">
@@ -481,9 +490,7 @@
                             </div>
                             
                         </div>`;
-
-                }
-                
+ 
             }
 
             code += `<p style="border-top: 1px solid var(--ranoyav2-border, #88888844);margin-top: 0;"></p>`;
