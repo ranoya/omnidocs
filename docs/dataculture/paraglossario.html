@@ -218,16 +218,43 @@
         #subpalco {
             position: fixed;
             opacity: 1;
-            width: 50%;
+            width: 58%;
             height: 50dvh;
             padding: 10% 10dvh 10% 10dvh;
             left: 15%;
-            top: 15%;
+            top: 10%;
             z-index: 2600;
             display: none;
             background-color: var(--ranoyav2-text);
             color: var(--ranoyav2-bg);
             font-family: "Share Tech Mono", monospace;
+            box-shadow: 0px 0px 17px 6px #00000066;
+            font-size: 18px;
+            line-height: 18px;
+            overflow: hidden;
+        }
+
+        #subpalco p {
+            font-size: 22px !important;
+            line-height: 24px !important;
+        }
+
+        #subpalco a {
+            padding: 10px 15px 10px 15px;
+            margin: 10px -15px -10px -15px;
+            text-decoration: underline;
+            color: var(--ranoyav2-bg);
+        }
+
+        #subpalco a:hover {
+            text-decoration: none;
+            background-color: var(--ranoyav2-bg) !important;
+            color: var(--ranoyav2-text) !important;
+        }
+
+        .small {
+            font-size: 16px !important;
+            opacity: 0.8;
         }
 
         .custom_input {
@@ -305,6 +332,12 @@
 
         let mostra = function(i) {
 
+            let link = `<p>${dataselected[i].ObraRef}</p>`;
+
+            if (typeof $_GET['p'] != 'undefined' && $_GET['p'] != null && $_GET['p'] != '' && typeof dataselected[i].link != 'undefined' && dataselected[i].link != null && dataselected[i].link != '') {
+               link = `<a target='blank' href='${dataselected[i].link}'>${dataselected[i].ObraRef}</a>`;
+            }
+
             document.getElementById("subpalco").innerHTML = `
             
             <span class="small">Definição</span><br>
@@ -312,7 +345,7 @@
             <span class="small">Autores</span><br>
             <p>${dataselected[i].AutorPrincipal}<br>${dataselected[i].OutrosAutores}</p><br>
             <span class="small">Obra de referência</span><br>
-            <p>${dataselected[i].ObraRef}</p>
+            ${link}
             
             
             `;
@@ -336,12 +369,6 @@
 
             let dados = selecte(dadosfull, document.getElementById("shadowfiltro").value);
             dataselected = dados;
-
-            let link = "linkaberto";
-            if (typeof $_GET['p'] != 'undefined' && $_GET['p'] != null && $_GET['p'] != '') {
-               link = "link";
-            }
-            
 
             let data = [];
 
