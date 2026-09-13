@@ -417,6 +417,7 @@
 
         let fulldataset = [];
         let dataselected = [];
+        let primeravez = true;
 
         omnifilter = function(dadosfull) {
 
@@ -429,6 +430,7 @@
             let catalogos = tags(dados, "Organizacao", ";");
             let colecoes = tags(dados, "Colecoes", ";");
 
+            if (primeiravez) {
             if (catalogos.length > 1) {
 
                 let code = "";
@@ -440,8 +442,13 @@
                 document.getElementsByTagName("nav")[0].innerHTML = code;
 
                 document.getElementsByTagName("nav")[0].style.display = "block";
+                primeiravez = false;
+                
             } else {
+                
                 document.getElementsByTagName("nav")[0].style.display = "none";
+                primeiravez = false;
+            }
             }
 
             let data = [];
