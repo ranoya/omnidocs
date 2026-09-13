@@ -235,6 +235,11 @@
         }
 
         #subpalco p {
+            font-size: 18px;
+            line-height: 18px;
+        }
+
+        #subpalco p.descrit {
             font-size: 22px !important;
             line-height: 24px !important;
         }
@@ -341,11 +346,11 @@
             document.getElementById("subpalco").innerHTML = `
             
             <span class="small">Definição</span><br>
-            <p>${dataselected[i].Descricao}</p><br>
+            <p class="descrit">${dataselected[i].Descricao}</p><br>
             <span class="small">Autores</span><br>
             <p>${dataselected[i].AutorPrincipal}<br>${dataselected[i].OutrosAutores}</p><br>
             <span class="small">Obra de referência</span><br>
-            ${link}
+            ${link}</p>
             
             
             `;
