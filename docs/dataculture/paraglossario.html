@@ -436,7 +436,7 @@
 
           if ($_GET['filtra'] != null && $_GET['filtra'] != undefined && $_GET['filtra'] != "") {
 
-            let inpt = document.getElementsById("shadowfiltro");
+            let inpt = document.getElementById("shadowfiltro");
             inpt.value = $_GET['filtra'];
             inpt.dispatchEvent(new Event('input', { bubbles: true }));
 
