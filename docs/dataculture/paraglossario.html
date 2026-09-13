@@ -89,6 +89,10 @@
         h1 {
             margin-top: 50px;
             margin-bottom: 80px;
+            font-family: 'Sixtyfour';
+            font-size: 32px;
+            line-height: 32px;
+            opacity: 0.7;
         }
 
         #conteudo {
@@ -132,7 +136,7 @@
             grid-template-columns: 1fr 0.7fr;
             color: var(--ranoyav2-text, #888888);
             font-size: 24px;
-            line-height: 24px;
+            line-height: 28px;
             font-family: "Sixtyfour", sans-serif !important;
             font-optical-sizing: auto;
             font-weight: 400;
@@ -200,7 +204,7 @@
 
         #palco {
             position: fixed;
-            opacity: 0.8;
+            opacity: 0.6;
             width: 100%;
             height: 100dvh;
             left: 0;
@@ -209,6 +213,21 @@
             display: none;
             background-color: var(--ranoyav2-text);
             color: var(--ranoyav2-bg);
+        }
+
+        #subpalco {
+            position: fixed;
+            opacity: 1;
+            width: 50%;
+            height: 50dvh;
+            padding: 10% 10dvh 10% 10dvh;
+            left: 15%;
+            top: 15%;
+            z-index: 2600;
+            display: none;
+            background-color: var(--ranoyav2-text);
+            color: var(--ranoyav2-bg);
+            font-family: "Share Tech Mono", monospace;
         }
 
         .custom_input {
@@ -262,6 +281,7 @@
 
 <body>
 
+    <div id="subpalco"></div>
     <div id="palco" onclick="fecha()"></div>
 
     <div id="inputwrap" class="custom_input">
@@ -285,13 +305,28 @@
 
         let mostra = function(i) {
 
+            document.getElementById("subpalco").innerHTML = `
+            
+            <span class="small">Definição</span><br>
+            <p>${dataselected[i].Descricao}</p><br>
+            <span class="small">Autores</span><br>
+            <p>${dataselected[i].AutorPrincipal}<br>${dataselected[i].OutrosAutores}</p><br>
+            <span class="small">Obra de referência</span><br>
+            <p>${dataselected[i].ObraRef}</p>
+            
+            
+            `;
+
+
             document.getElementById("palco").style.display = "block";
+            document.getElementById("subpalco").style.display = "block";
 
         }
 
         let fecha = function() {
 
             document.getElementById("palco").style.display = "none";
+            document.getElementById("subpalco").style.display = "none";
 
         }
 
@@ -330,7 +365,7 @@
                         ${dados[i].AutorPrincipal}<br>
                         <div class="blocotermos">
                             <div>${dados[i].Conceito}</div>
-                            <div style="opacity: 0.7; text-align: right;">${dados[i].ConceitoEN}</div>    
+                            <div style="opacity: 0.5; text-align: right;">${dados[i].ConceitoEN}</div>    
                         </div>
                         
                     </div>`;
