@@ -2,6 +2,7 @@ setTempTheme("light");
 setTransparentBackground();
 setZoom(.35);
 multicolor();
+groovy();
 centerControls();
 
 newframe(

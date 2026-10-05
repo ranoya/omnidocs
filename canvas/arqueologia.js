@@ -1,5 +1,6 @@
 setTempTheme("solarized-light");
 setZoom(.5);
+groovy();
 multicolor();
 
 newframe(
