@@ -111,6 +111,10 @@ lock("Turbo Pascal 3.0");
 lock("PC-XT");
 lock("Computação Pessoal");
 
+svg(`https://omnidocs.vercel.app/canvas/postitBBS.svg`, "Postit TheDraw", 290, 214, 2035, -1298);
+lock("Postit TheDraw");
+
+
 polaroid("https://winworldpc.com/res/img/screenshots/4x-2a6c50c90e0131fad1624943cf6d4d22-Thedraw%204%20-%20Tron.png", "TheDraw 4.0, 1991 - Editor de arte ASCII e animações ANSI, utilizadas na construção de artes para os Bulletin Board Systems (BBS)", "TheDraw", 642, 466, 2211, -1194);
 lock("TheDraw");
 
