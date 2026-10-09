@@ -14,6 +14,8 @@ newframe(
   30,
 );
 
+lock("Projeto");
+
 polaroid(
   "https://www.youtube.com/embed/0r0-RjoZ8Wk?si=x-7b-UhhOZuRt8Dj&start=920%22", "Palestra realizada no laboratório Lexus da UFRN sobre os softwares de design utilizados nas décadas de 1980 e 1990",
   "Palestra",
@@ -22,6 +24,8 @@ polaroid(
   -630,
   -820,
 );
+
+lock("Palestra");
 
 connect("Projeto", "Palestra");
 
@@ -33,6 +37,7 @@ newframe(
   -1200,
   -200,
 );
+lock("Arqueologia do Design");
 
 connect("Arqueologia do Design", "Palestra");
 connect("Arqueologia do Design", "Projeto");
@@ -47,6 +52,8 @@ newframe(
   650,
 );
 
+lock("Arqueologia do Editorial");
+
 connect("Arqueologia do Design", "Arqueologia do Editorial");
 
 newframe(
@@ -58,6 +65,8 @@ newframe(
   280,
   1100,
 );
+
+lock("Bullet Points");
 
 connect("Projeto", "Bullet Points");
 connect("Arqueologia do Editorial", "Bullet Points");
@@ -71,6 +80,7 @@ newidoc(
   -100,
   1900,
 );
+lock("Método de Pesquisa");
 
 connect("Método de Pesquisa", "Bullet Points");
 
@@ -84,6 +94,8 @@ newframe(
   1700,
 );
 
+lock("Acervo de Pesquisa (v.1)");
+
 connect("Método de Pesquisa", "Acervo de Pesquisa (v.1)");
 
 newframe(
@@ -96,6 +108,8 @@ newframe(
   2800,
 );
 
+lock("Acervo de Pesquisa (v.2)");
+
 connect("Método de Pesquisa", "Acervo de Pesquisa (v.2)");
 
 newframe(
@@ -107,6 +121,8 @@ newframe(
   -2700,
   1000,
 );
+lock("Emulação");
+
 
 connect("Emulação", "Arqueologia do Editorial");
 connect("Emulação", "Arqueologia do Design");
@@ -124,6 +140,8 @@ newframe(
   -730,
 );
 
+lock("Pixel Art");
+
 connect("Pixel Art", "Projeto");
 
 newframe(
@@ -135,6 +153,8 @@ newframe(
   1430,
   -1930,
 );
+
+lock("Demoscene");
 
 connect("Pixel Art", "Demoscene");
 
@@ -148,6 +168,8 @@ newidoc(
   -730,
 );
 
+lock("Cultura Visual");
+
 connect("Pixel Art", "Cultura Visual");
 
 newidoc(
@@ -159,6 +181,8 @@ newidoc(
   -2700,
   -550,
 );
+
+lock("Interfaces de Texto");
 
 connect("Interfaces de Texto", "Arqueologia do Design");
 connect("Interfaces de Texto", "Emulação");
@@ -173,6 +197,8 @@ newidoc(
   -950,
 );
 
+lock("Mais Interfaces de Texto");
+
 connect("Interfaces de Texto", "Mais Interfaces de Texto");
 connect("Emulação", "Mais Interfaces de Texto");
 
@@ -186,6 +212,8 @@ newidoc(
   150,
 );
 
+lock("Menus");
+
 connect("Menus", "Mais Interfaces de Texto");
 connect("Menus", "Emulação");
 
@@ -198,6 +226,8 @@ newframe(
   -50,
   -1830,
 );
+
+lock("ASCII Art");
 
 connect("ASCII Art", "Pixel Art");
 
@@ -213,6 +243,8 @@ newframe(
   -2700,
 );
 
+lock("BBS");
+
 connect("ASCII Art", "BBS");
 
 
@@ -220,7 +252,7 @@ polaroid("https://winworldpc.com/res/img/screenshots/4x-2a6c50c90e0131fad1624943
 connect("TheDraw", "ASCII Art");
 connect("TheDraw", "BBS");
 
-
+lock("TheDraw");
 
 newidoc(
   "https://drive.google.com/file/d/1yNAfpLxgX3xW1JQtY2KSI2xsSiLSV8K_/preview",
@@ -231,6 +263,8 @@ newidoc(
   -930,
   -3330,
 );
+
+lock("Erthos Albino de Souza");
 
 connect("Erthos Albino de Souza", "ASCII Art");
 connect("Erthos Albino de Souza", "BBS");
@@ -245,8 +279,11 @@ newframe(
   -1740,
 );
 
+lock("Transformações na Pixel Art");
+
 connect("Tranformações na Pixel Art", "Pixel Art");
 connect("Tranformações na Pixel Art", "Cultura Visual");
+
 
 newframe(
   "https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=110&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1898658317#gid=1898658317&theme=https://slidelines.vercel.app/level/hypermedia.css",
@@ -257,6 +294,8 @@ newframe(
   1430,
   1200,
 );
+
+lock("Hipertexto");
 
 connect("Projeto", "Hipertexto");
 
@@ -272,6 +311,8 @@ newframe(
   2500,
 );
 
+lock("Ficção Interativa");
+
 connect("Hipertexto", "Ficção Interativa");
 
 
@@ -284,6 +325,8 @@ newframe(
   800,
   3600,
 );
+
+lock("Emulação de Narrativas Interativas");
 
 connect("Emulação de Narrativas Interativas", "Ficção Interativa");
 connect("Emulação de Narrativas Interativas", "Emulação");
@@ -300,6 +343,8 @@ newframe(
   360,
 );
 
+lock("Mapeamento Point & Clicks");
+
 
 
 
@@ -315,6 +360,8 @@ newframe(
   1050,
 );
 
+lock("Mapeamento Point & Clicks v.4");
+
 connect("Mapeamento Point & Clicks v.4", "Mapeamento Point & Clicks");
 
 newframe(
@@ -326,6 +373,8 @@ newframe(
   -3000,
   -2250,
 );
+
+lock("Acervo de Interfaces de Texto");
 
 connect("Acervo de Interfaces de Texto", "Interfaces de Texto");
 connect("Acervo de Interfaces de Texto", "BBS");
@@ -339,6 +388,8 @@ newframe(
   5230,
   470,
 );
+
+lock("Point and Clicks");
 
 
 connect("Point and Clicks", "Emulação");
@@ -355,6 +406,8 @@ newframe(
   3540,
   2400,
 );
+
+lock("Estudo de Caso");
 
 connect("Point and Clicks", "Estudo de Caso");
 connect("Mapeamento Point & Clicks v.4", "Estudo de Caso");
@@ -374,6 +427,8 @@ newframe(
   -5000,
   -1450,
 );
+
+lock("História das Interfaces Computacionais");
 
 connect("História das Interfaces Computacionais", "Mais Interfaces de Texto");
 
