@@ -173,7 +173,7 @@ connect("Futuro", "Compoética");
 connect("Arte Generativa Brasileira", "Compoética");
 lock("Compoética");
 
-polaroid("https://omnifolio.vercel.app/omnifiles/interface_arteria8_2.jpg", "Artéria #8", 530, 438, 4246, 3610);
+polaroid("https://omnifolio.vercel.app/omnifiles/interface_arteria8_2.jpg", "Revista Artéria #8, 2003", "Artéria #8", 530, 438, 4246, 3610);
 lock("Artéria #8");
 connect("Artéria #8", "Variável");
 connect("Artéria #8", "Cortex");
