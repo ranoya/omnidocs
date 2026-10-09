@@ -109,7 +109,7 @@ svg(`https://omnidocs.vercel.app/canvas/postitCamaleao.svg`, "Postit Fractal", 4
 lock("Postit Fractal");
 
 
-polaroid("https://omnifolio.vercel.app/fractais/camaleaonamaiormuvuca_17770185844_o.jpg", "Fractais", "Fractais", 600, 360, -2208, 485);
+polaroid("https://omnifolio.vercel.app/fractais/camaleaonamaiormuvuca_17770185844_o.jpg", "Camaleão na Maior Muvuca, 2007", "Fractais", 600, 360, -2208, 485);
 connect("Fractais", "PC-XT");
 
 polaroid("https://www.youtube.com/embed/xFlPWVOdGzw?si=rutAgPaKpkF1FImc", "Turbo Basic", "Turbo Basic", 500, 360, -2469, -62);
