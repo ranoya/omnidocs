@@ -56,6 +56,9 @@ polaroid("https://www.youtube.com/embed/m9joBLOZVEo?si=sUP37vdG5LHp5c-H", "Demon
 connect("C64 10 PRINT", "BASIC");
 connect("C64 10 PRINT", "10 Print, MSX");
 
+svg(`https://omnidocs.vercel.app/canvas/postitExpiritae.svg`, "Postit Expiritae", 268, 300, 1183, 1789);
+lock("Postit Expiritae");
+
 
 newidoc("https://artndcode.vercel.app/Singles/pathwavesexpiritae.html?fcolor=44FFFF&bgcolor=4272cf", "Pathwaves Expiritae", 600, 500, 900, 2000);
 connect("Gráficos Programados", "Pathwaves Expiritae");
