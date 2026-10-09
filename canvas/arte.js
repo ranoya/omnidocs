@@ -4,7 +4,7 @@ groovy();
 centerControls();
 svg(`https://omnidocs.vercel.app/canvas/postit1980.svg`, "Postit 1980", 399, 254, 317, 1100);
 
-Lock("Postit 1980");
+lock("Postit 1980");
 
 
 
