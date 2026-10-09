@@ -156,6 +156,10 @@ connect("PC-XT", "Korg 01/W");
 connect("Korg 01/W", "Ballade 2.5");
 connect("Korg 01/W", "Cakewalk 3.5");
 
+newidoc("https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A249238319&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true", "Sarabanda", 568, 223, -3199, -852);
+connect("Sarabanda", "Korg 01/W");
+connect("Sarabanda", "Cakewalk 3.5");
+
 
 center("Gráficos Programados");
 
