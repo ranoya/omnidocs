@@ -104,6 +104,9 @@ newframe(
 
 connect("BBS", "TheDraw");
 
+svg(`https://omnidocs.vercel.app/canvas/postitCamaleao.svg`, "Postit Fractal", 474, 249, -3461, -991);
+
+lock("Postit Fractal");
 
 
 polaroid("https://omnifolio.vercel.app/fractais/camaleaonamaiormuvuca_17770185844_o.jpg", "Fractais", "Fractais", 600, 360, -2208, 485);

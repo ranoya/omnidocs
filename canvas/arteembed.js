@@ -128,10 +128,14 @@ connect("BBS", "TheDraw");
 lock("BBS");
 
 
+svg(`https://omnidocs.vercel.app/canvas/postitCamaleao.svg`, "Postit Fractal", 474, 249, -3461, -991);
+
+lock("Postit Fractal");
 
 polaroid("https://omnifolio.vercel.app/fractais/camaleaonamaiormuvuca_17770185844_o.jpg", "Fractais", "Fractais", 600, 360, -2208, 485);
 connect("Fractais", "PC-XT");
 lock("Fractais");
+
 
 polaroid("https://www.youtube.com/embed/xFlPWVOdGzw?si=rutAgPaKpkF1FImc", "Turbo Basic", "Turbo Basic", 500, 360, -2469, -62);
 connect("Turbo Basic", "PC-XT");
