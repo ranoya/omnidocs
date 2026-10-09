@@ -179,6 +179,18 @@ connect("Artéria #8", "Variável");
 connect("Artéria #8", "Cortex");
 connect("Artéria #8", "Erthos Albino de Souza");
 
+polaroid("https://omnifolio.vercel.app/omnifiles/01wfd.jpg", "Sintetizador Korg 01/W", "Korg 01/W", 495, 244, -2748, -484);
+polaroid("https://omnifolio.vercel.app/omnifiles/ballade25.png", "Software de composição musical Ballade 2.5 que acompanhava a placa de som Roland LAPD-1", "Ballade 2.5", 352, 276, -3003, 268);
+polaroid("https://omnifolio.vercel.app/omnifiles/cakewalk35.png", "Sequencer Cakewalk 3.5", "Cakewalk 3.5", 360, 328, -3413, -202);
+
+connect("PC-XT", "Korg 01/W");
+connect("Korg 01/W", "Ballade 2.5");
+connect("Korg 01/W", "Cakewalk 3.5");
+
+lock("Korg 01/W");
+lock("Ballade 2.5");
+lock("Cakewalk 3.5");
+
 center("Gráficos Programados");
 
 
