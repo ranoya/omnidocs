@@ -104,7 +104,7 @@ newframe(
 
 connect("BBS", "TheDraw");
 
-svg(`https://omnidocs.vercel.app/canvas/postitCamaleao.svg`, "Postit Fractal", 474, 249, -2359, 302);
+svg(`https://omnidocs.vercel.app/canvas/postitCamaleao.svg`, "Postit Fractal", 474, 249, -2483, 374);
 
 lock("Postit Fractal");
 
