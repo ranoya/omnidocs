@@ -63,6 +63,9 @@ newframe("https://apple2ts.com/?appmode=embed&crtdistort=off&color=amber&scanlin
 connect("Logo", "Apple II");
 lock("Logo");
 
+svg(`https://omnidocs.vercel.app/canvas/postitLogo.svg`, "Postit Logo", 240, 443, 3640, -417);
+lock("Postit Logo");
+
 newframe("https://namco.vercel.app/sx/?ROM=logo.rom", "MSX Logo", 595, 438, 3201, -657);
 connect("Logo", "MSX Logo");
 connect("10 Print, MSX", "MSX Logo");
@@ -86,7 +89,7 @@ connect("Processing", "Pathwaves Expiritae");
 lock("Processing");
 
 newidoc("https://www.ranoya.com/pt/futuro/?nomenu=true&temptheme=cleantext", "Futuro", 600, 600, -870, 1830);
-connect("Futuro", "Pathwaves Expiritae");
+
 lock("Futuro");
 
 
@@ -137,8 +140,13 @@ newframe(
   3569, 615
 );
 
+connect("BBS", "PC-XT");
 connect("BBS", "TheDraw");
 lock("BBS");
+
+polaroid("https://www.youtube.com/embed/mLkINlXCd7c?si=ZNAe2-2iZqwsOeAH", "Bullet Board Systems eram sistemas de comunicação digital que funcionavam em modo texto - a internet antes da internet.", "Modem", 569, 424, 4426, 143);
+connect("Modem", "BBS");
+lock("Modem");
 
 
 

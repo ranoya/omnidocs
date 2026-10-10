@@ -51,6 +51,9 @@ connect("10 Print, MSX", "MSX");
 newframe("https://apple2ts.com/?appmode=embed&crtdistort=off&color=amber&scanlines=on&ghosting=off&text=TO%20MAGIC%20%3ASTART%20%3AANGLE%20%3AINC%20%3AN%0AFORWARD%20%3ASTART%20RIGHT%20%3AANGLE%0AIF%20%3AN%20%3D%200%20%5BSTOP%5D%0AMAGIC%20%3ASTART%20%2B%20%3AINC%20%3AANGLE%20%3AINC%20%3AN%20-%201%0AEND%0A%0AMAGIC%205%20135%203%2040%0A%0A#https://namco.vercel.app/a2/disk/Apple_LOGO.dsk", "Logo", 600, 400, 1900, -400);
 connect("Logo", "Apple II");
 
+svg(`https://omnidocs.vercel.app/canvas/postitLogo.svg`, "Postit Logo", 240, 443, 3640, -417);
+lock("Postit Logo");
+
 newframe("https://namco.vercel.app/sx/?ROM=logo.rom", "MSX Logo", 595, 438, 3201, -657);
 connect("Logo", "MSX Logo");
 connect("10 Print, MSX", "MSX Logo");
@@ -72,7 +75,7 @@ polaroid("https://www.youtube.com/embed/Pz5MQ8DTvKI?si=vn8FMNZaRCiqUVHL", "A com
 connect("Processing", "Pathwaves Expiritae");
 
 newidoc("https://www.ranoya.com/pt/futuro/?nomenu=true&temptheme=cleantext", "Futuro", 600, 600, -870, 1830);
-connect("Futuro", "Pathwaves Expiritae");
+
 
 
 newidoc("https://booklines.vercel.app/livros/javascript/?go=", "Livro", 670, 890, -2480, 2100);
@@ -113,7 +116,11 @@ newframe(
   3569, 615
 );
 
+connect("BBS", "PC-XT");
 connect("BBS", "TheDraw");
+
+polaroid("https://www.youtube.com/embed/mLkINlXCd7c?si=ZNAe2-2iZqwsOeAH", "Bullet Board Systems eram sistemas de comunicação digital que funcionavam em modo texto - a internet antes da internet.", "Modem", 569, 424, 4426, 143);
+connect("Modem", "BBS");
 
 polaroid("https://omnifolio.vercel.app/omnifiles/fractint.png", "Software Fractint para criação de fractais", "Fractint", 331, 307, -1908, 429);
 
