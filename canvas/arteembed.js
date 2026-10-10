@@ -88,6 +88,9 @@ polaroid("https://www.youtube.com/embed/Pz5MQ8DTvKI?si=vn8FMNZaRCiqUVHL", "A com
 connect("Processing", "Pathwaves Expiritae");
 lock("Processing");
 
+svg(`https://omnidocs.vercel.app/canvas/postitFuturo.svg`, "Postit Futuro", 258, 320, -569, 2282);
+lock("Postit Futuro");
+
 newidoc("https://www.ranoya.com/pt/futuro/?nomenu=true&temptheme=cleantext", "Futuro", 600, 600, -870, 1830);
 
 lock("Futuro");
