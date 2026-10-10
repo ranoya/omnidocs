@@ -256,6 +256,10 @@ lock("Sarabanda");
 connect("Fractais", "1980");
 connect("1980", "Pathwaves Expiritae");
 
+polaroid("https://omnifolio.vercel.app/omnifiles/videotexto_1.jpg", "Videotexto, TELESP, 1983", "Videotexto", 504, 391, 4378, 909);
+connect("Videotexto", "Modem");
+connect("Videotexto", "BBS");
+
 center("1980");
 
 
