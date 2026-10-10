@@ -104,7 +104,7 @@ lock("Arte Generativa Brasileira");
 
 polaroid("https://omnifolio.vercel.app/omnifiles/ibm-pc-5150.webp", "Computador IBM PC XT, 1981", "PC-XT", 516, 579, -1322, -665);
 
-newframe("https://namco.vercel.app/interfaces/?rom=tp3", "Turbo Pascal 3.0", 500, 360, -1850, 1350);
+newframe("https://namco.vercel.app/interfaces/?rom=tp3", "Borland Turbo Pascal 3.0, primeiros ambientes de programação usados no PC", 500, 360, -1850, 1350);
 connect("Turbo Pascal 3.0", "PC-XT");
 connect("Futuro", "PC-XT");
 connect("Futuro", "Turbo Pascal 3.0");
@@ -134,16 +134,24 @@ connect("BBS", "TheDraw");
 lock("BBS");
 
 
-svg(`https://omnidocs.vercel.app/canvas/postitCamaleao.svg`, "Postit Fractal", 474, 249, -2483, 374);
+
+polaroid("https://omnidocs.vercel.app/fractint.png", "Software Fractint para criação de fractais", "Fractint", 331, 307, -1908, 429);
+lock("Fractint");
+
+
+svg(`https://omnidocs.vercel.app/canvas/postitCamaleao.svg`, "Postit Fractal", 474, 249, -2992, 865);
 
 lock("Postit Fractal");
 
-polaroid("https://omnifolio.vercel.app/fractais/camaleaonamaiormuvuca_17770185844_o.jpg", "Camaleão na Maior Muvuca, 2007", "Fractais", 600, 360, -2208, 485);
-connect("Fractais", "PC-XT");
+polaroid("https://omnifolio.vercel.app/fractais/camaleaonamaiormuvuca_17770185844_o.jpg", "Camaleão na Maior Muvuca, 2007", "Fractais", 600, 360, -2798, 991);
+
 lock("Fractais");
 
+connect("Fractint", "PC-XT");
+connect("Fractais", "Fractint");
 
-polaroid("https://www.youtube.com/embed/xFlPWVOdGzw?si=rutAgPaKpkF1FImc", "Turbo Basic", "Turbo Basic", 500, 360, -2469, -62);
+
+polaroid("https://www.youtube.com/embed/xFlPWVOdGzw?si=rutAgPaKpkF1FImc", "Borland Turbo Basic, primeiros ambientes de programação usados no PC", "Turbo Basic", 500, 360, -2469, -62);
 connect("Turbo Basic", "PC-XT");
 lock("Turbo Basic");
 
