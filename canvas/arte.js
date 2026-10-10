@@ -88,7 +88,7 @@ connect("Pathwaves Expiritae", "Arte Generativa Brasileira");
 polaroid("https://omnifolio.vercel.app/omnifiles/ibm-pc-5150.webp", "Computador IBM PC XT, 1981", "PC-XT", 516, 579, -1322, -665);
 
 newframe("https://namco.vercel.app/interfaces/?rom=tp3", "Turbo Pascal 3.0", 500, 360, -1948, 1501);
-connect("Turbo Pascal 3.0", "Turbo Basic");
+
 connect("Turbo Pascal 3.0", "PC-XT");
 connect("Futuro", "PC-XT");
 connect("Futuro", "Turbo Pascal 3.0");
@@ -125,6 +125,7 @@ connect("Fractais", "Fractint");
 
 polaroid("https://www.youtube.com/embed/xFlPWVOdGzw?si=rutAgPaKpkF1FImc", "TORUS.BAS, exemplo distribuído junto com o Borland Turbo Basic, um dos primeiros ambientes de programação usados no PC", "Turbo Basic", 500, 360, -2469, -62);
 connect("Turbo Basic", "PC-XT");
+connect("Turbo Pascal 3.0", "Turbo Basic");
 
 newframe("https://slidelines.vercel.app/timelineh/?allblocks=true&startvisible=true&allowverticalscroll=true&followbg=true&timeheight=190&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit#gid=1569220645&theme=https://slidelines.vercel.app/level/arte.css", "Arte Generativa", 600, 780, 1600, 1400);
 connect("Arte Generativa", "Pathwaves Expiritae");
