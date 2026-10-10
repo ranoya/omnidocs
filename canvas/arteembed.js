@@ -190,7 +190,7 @@ connect("Arte Generativa", "Precursores");
 lock("ASCII Art");
 
 
-polaroid("https://namco.vercel.app/flash/?file=cortex/cortexmain.swf", "Cortex #1 - Revista eletrônica de poesia digital, 2003", "Cortex", 600, 500, 3200, 3100);
+polaroid("https://namco.vercel.app/flash/?file=cortex/cortexmain.swf", "Cortex #1 - Revista eletrônica de poesia digital, editada e publicada em 2003 junto aos poetas Thiago R. e Lúcio Agra", "Cortex", 600, 500, 3200, 3100);
 lock("Cortex");
 
 newidoc(
@@ -207,7 +207,7 @@ connect("ASCII Art", "Erthos Albino de Souza")
 connect("Cortex", "Erthos Albino de Souza");
 connect("Precursores", "Erthos Albino de Souza");
 
-polaroid("https://revistavariavel.com/Banner-variavel.jpg", "Revista Variável, 2026", "Variável", 600, 300, 230, 3800);
+polaroid("https://revistavariavel.com/Banner-variavel.jpg", "Revista Variável, 2026, criada pela artista Monica Rizzolli como forma de dar voz à comunidade brasileira de artistas que trabalham com arte-tecnologia, e mais especificamente com programação criativa", "Variável", 600, 300, 230, 3800);
 
 connect("Variável", "Cortex");
 connect("Variável", "Arte Generativa Brasileira");
@@ -222,7 +222,7 @@ connect("Futuro", "Compoética");
 connect("Arte Generativa Brasileira", "Compoética");
 lock("Compoética");
 
-polaroid("https://omnifolio.vercel.app/omnifiles/interface_arteria8_2.jpg", "Revista Artéria #8, 2003", "Artéria #8", 530, 438, 4246, 3610);
+polaroid("https://omnifolio.vercel.app/omnifiles/interface_arteria8_2.jpg", "Revista Artéria #8, 2003. Revista experimental de poesia criada em 1975 por Omar Khouri e Paulo Miranda. Sua edição #8 foi publicada online, com desenvolvimento do artista e pesquisador Fabio FON.", "Artéria #8", 530, 438, 4246, 3610);
 lock("Artéria #8");
 connect("Artéria #8", "Variável");
 connect("Artéria #8", "Cortex");
