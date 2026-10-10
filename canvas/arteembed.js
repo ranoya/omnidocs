@@ -63,8 +63,12 @@ newframe("https://apple2ts.com/?appmode=embed&crtdistort=off&color=amber&scanlin
 connect("Logo", "Apple II");
 lock("Logo");
 
+newframe("https://namco.vercel.app/sx/?ROM=logo.rom", "MSX Logo", 595, 438, 3201, -657);
+connect("Logo", "MSX Logo");
+connect("10 Print, MSX", "MSX Logo");
 
-polaroid("https://www.youtube.com/embed/m9joBLOZVEo?si=sUP37vdG5LHp5c-H", "Demonstração do 10 PRINT original", "C64 10 PRINT", 500, 360, -450, 1000);
+
+polaroid("https://www.youtube.com/embed/m9joBLOZVEo?si=sUP37vdG5LHp5c-H", "Demonstração do 10 PRINT original, em um computador Commodore 64", "C64 10 PRINT", 500, 360, -450, 1000);
 connect("C64 10 PRINT", "BASIC");
 connect("C64 10 PRINT", "10 Print, MSX");
 lock("C64 10 PRINT");
