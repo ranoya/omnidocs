@@ -104,7 +104,8 @@ lock("Arte Generativa Brasileira");
 
 polaroid("https://omnifolio.vercel.app/omnifiles/ibm-pc-5150.webp", "Computador IBM PC XT, 1981", "PC-XT", 516, 579, -1322, -665);
 
-newframe("https://namco.vercel.app/interfaces/?rom=tp3", "Borland Turbo Pascal 3.0, primeiros ambientes de programação usados no PC", 500, 360, -1850, 1350);
+newframe("https://namco.vercel.app/interfaces/?rom=tp3", "Borland Turbo Pascal 3.0, primeiros ambientes de programação usados no PC", "Turbo Pascal 3.0", 500, 360, -1948, 1501);
+connect("Turbo Pascal 3.0", "Turbo Basic");
 connect("Turbo Pascal 3.0", "PC-XT");
 connect("Futuro", "PC-XT");
 connect("Futuro", "Turbo Pascal 3.0");
@@ -112,6 +113,8 @@ connect("PC-XT", "Computação Pessoal");
 lock("Turbo Pascal 3.0");
 lock("PC-XT");
 lock("Computação Pessoal");
+
+    
 
 svg(`https://omnidocs.vercel.app/canvas/postitBBS.svg`, "Postit TheDraw", 290, 214, 2035, -1298);
 lock("Postit TheDraw");
@@ -135,7 +138,7 @@ lock("BBS");
 
 
 
-polaroid("https://omnidocs.vercel.app/fractint.png", "Software Fractint para criação de fractais", "Fractint", 331, 307, -1908, 429);
+polaroid("https://omnidocs.vercel.app/omnifiles/fractint.png", "Software Fractint para criação de fractais", "Fractint", 331, 307, -1908, 429);
 lock("Fractint");
 
 
