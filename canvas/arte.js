@@ -15,8 +15,8 @@ lock("Postit Sarabanda");
 
 polaroid("https://omnifolio.vercel.app/omnifiles/atari800_computer.png", "Computador Atari 800, 1979", "Atari 800", 350, 340, 300, 300);
 
-newidoc("https://www.ranoya.com/Art/Singles/1980.html?bgcolor=417cd7&fcolor=FFFFFF", "Gráficos Programados", 600, 500, 600, 700);
-connect("Atari 800", "Gráficos Programados");
+newidoc("https://www.ranoya.com/Art/Singles/1980.html?bgcolor=417cd7&fcolor=FFFFFF", "1980", 600, 500, 600, 700);
+connect("Atari 800", "1980");
 
 polaroid("https://omnifolio.vercel.app/omnifiles/manual_Atari800_VideoEasel.jpg", "Video Easel, 1979", "Video Easel", 400, 550, -300, -200);
 connect("Atari 800", "Video Easel");
@@ -30,9 +30,9 @@ polaroid("https://omnifolio.vercel.app/omnifiles/Sharp_HotBit_MSX_computer.jpg",
 
 polaroid("https://omnifolio.vercel.app/omnifiles/computers_Apple2_cgi.png", "Computador Apple II, 1979", "Apple II", 500, 490, 1050, 50);
 
-connect("Gráficos Programados", "MSX");
-connect("Gráficos Programados", "Apple II");
-connect("Gráficos Programados", "Atari 800");
+connect("1980", "MSX");
+connect("1980", "Apple II");
+connect("1980", "Atari 800");
 
 svg(`https://omnidocs.vercel.app/canvas/postitAtariBasic.svg`, "Postit Atari BASIC", 362, 260, -798, 306);
 lock("Postit Atari BASIC");
@@ -71,12 +71,15 @@ lock("Postit Expiritae");
 
 
 newidoc("https://artndcode.vercel.app/Singles/pathwavesexpiritae.html?fcolor=44FFFF&bgcolor=4272cf", "Pathwaves Expiritae", 600, 500, 900, 2000);
-connect("Gráficos Programados", "Pathwaves Expiritae");
+connect("1980", "Pathwaves Expiritae");
 
 
 polaroid("https://www.youtube.com/embed/Pz5MQ8DTvKI?si=vn8FMNZaRCiqUVHL", "A comunidade de Arte Generativa Brasileira e o Processing Community Day Brasil, 2021", "Processing", 600, 400, -40, 1530);
 connect("Processing", "Pathwaves Expiritae");
 
+newidoc("https://www.ranoya.com/pt/futuro/pcdpapertimeline.php", "PCD", 1100, 476, -560, 2880);
+
+connect("PCD", "Processing");
 
 svg(`https://omnidocs.vercel.app/canvas/postitFuturo.svg`, "Postit Futuro", 258, 320, -569, 2282);
 lock("Postit Futuro");
@@ -148,7 +151,7 @@ connect("Turbo Pascal 3.0", "Turbo Basic");
 
 newframe("https://slidelines.vercel.app/timelineh/?allblocks=true&startvisible=true&allowverticalscroll=true&followbg=true&timeheight=190&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit#gid=1569220645&theme=https://slidelines.vercel.app/level/arte.css", "Arte Generativa", 600, 780, 1600, 1400);
 connect("Arte Generativa", "Pathwaves Expiritae");
-connect("Arte Generativa", "Gráficos Programados");
+connect("Arte Generativa", "1980");
 connect("Arte Generativa", "Processing");
 
 polaroid("https://omnifolio.vercel.app/omnifiles/Knowlton_1967_ComputerNudeStudiesInPerceptionI_b.jpg", "Computer Nude Kenneth C. Knowlton & Leon D. Harmon, 1967", "Precursores", 600, 366, 2540, 1480);
@@ -203,9 +206,13 @@ connect("Korg 01/W", "Cakewalk 3.5");
 newidoc("https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A249238319&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true", "Sarabanda", 568, 223, -3199, -852);
 connect("Sarabanda", "Korg 01/W");
 connect("Sarabanda", "Cakewalk 3.5");
+connect("Fractais", "1980");
+connect("1980", "Pathwaves Expiritae");
 
 
-center("Gráficos Programados");
+
+
+center("1980");
 
 
 
