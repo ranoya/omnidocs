@@ -34,6 +34,9 @@ connect("Gráficos Programados", "MSX");
 connect("Gráficos Programados", "Apple II");
 connect("Gráficos Programados", "Atari 800");
 
+svg(`https://omnidocs.vercel.app/canvas/postitAtariBasic.svg`, "Postit Atari BASIC", 362, 260, -798, 306);
+lock("Postit Atari BASIC");
+
 newframe("https://namco.vercel.app/a8/?cart=bas.c", "BASIC", 560, 450, -600, 450);
 connect("BASIC", "Atari 800");
 
