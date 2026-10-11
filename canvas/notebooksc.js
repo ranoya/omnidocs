@@ -28,6 +28,8 @@ newidoc("https://slidelines.vercel.app/timelineh/?file=https://omnicode.vercel.a
 newidoc("https://booklines.vercel.app/pub/?titulo=Publicando&blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EPublicando%20o%20notebook%3C/b%3E&notebook=@ranoya/livroobservable-15", "Booklines", 824, 1292, -2802, 1078);
 newidoc("https://booklines.vercel.app/scriba/?notebook=@ranoya/teste-scriba", "Scriba", 1368, 718, -4471, 1388);
 newidoc("https://www.youtube.com/embed/__qjsUWJoNs?si=s52qcw_5pa-O1gqY", "Diferenças", 739, 426, 2851, -809);
+newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=130&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1461132281#gid=1461132281&theme=https://slidelines.vercel.app/styles/slidescomnormal.css", "Interactive Textbooks", 1446, 793, -1235, 1180);
+
 
 
 
@@ -62,7 +64,9 @@ connect("Nextjournal", "Jupyter");
 connect("Omnicode Notebook", "Jupyter");
 connect("Wolfram Hoje", "Mathematica");
 connect("d3", "Booklines");
-connect("Booklines", "Palestra Theo Gray");
+connect("Interactive Textbooks", "Palestra Theo Gray");
+
+connect("Booklines", "Interactive Textbooks");
 connect("Diferenças", "Knuth");
 
 lock("Diferenças");
