@@ -25,8 +25,12 @@ newidoc("https://nextjournal.com/try", "Nextjournal", 1080, 727, 1841, 3153);
 polaroid("https://observablehq.com/embed/@d3/sortable-bar-chart?cell=viewof+order&cell=chart", "Componentes de visualização de dados construídos com a biblioteca D3 publicados online a partir de um notebook Observable", "d3", 682, 730, -1497, 2248);
 newidoc("https://slidelines.vercel.app/timelineh/?file=https://omnicode.vercel.app/examples/elementosmd.md&allblocks=true&s=1&pattern=true&timelineheight=60px&startvisible=true&allowverticalscroll=true&timeheight=110&followbg=true&theme=https://slidelines.vercel.app/styles/aulasslides.css&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=962495491#gid=962495491", "Aulas do Cláudio", 1164, 868, -1772, 3304);
 
+newidoc("https://booklines.vercel.app/pub/?titulo=Publicando&blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EPublicando%20o%20notebook%3C/b%3E&notebook=@ranoya/livroobservable-15", "Booklines", 824, 1292, -2802, 1078);
+newidoc("https://booklines.vercel.app/scriba/?notebook=@ranoya/teste-scriba", "Scriba", 1368, 718, -4471, 1388);
 
 
+connect("Scriba", "Booklines");
+connect("Booklines", "PJO");
 connect("Aulas do Cláudio", "d3");
 connect("Aulas do Cláudio", "PJO");
 connect("PJO", "d3");
@@ -51,6 +55,7 @@ connect("Wolfram Cloud", "Wolfram Hoje");
 connect("Nextjournal", "Jupyter");
 connect("Omnicode Notebook", "Jupyter");
 connect("Wolfram Hoje", "Mathematica");
+connect("d3", "Booklines");
 
 lock("Omnicode Notebook");
 lock("Nextjournal");
@@ -70,6 +75,8 @@ lock("Texto Notebooks");
 lock("DocInterfaces");
 lock("Linguagem Wolfram");
 lock("Mathematica");
+lock("Booklines");
+lock("Scriba");
 
 setZoom(.75);
 center("Knuth");
