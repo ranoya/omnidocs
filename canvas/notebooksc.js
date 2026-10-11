@@ -27,6 +27,8 @@ newidoc("https://slidelines.vercel.app/timelineh/?file=https://omnicode.vercel.a
 
 newidoc("https://booklines.vercel.app/pub/?titulo=Publicando&blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EPublicando%20o%20notebook%3C/b%3E&notebook=@ranoya/livroobservable-15", "Booklines", 824, 1292, -2802, 1078);
 newidoc("https://booklines.vercel.app/scriba/?notebook=@ranoya/teste-scriba", "Scriba", 1368, 718, -4471, 1388);
+newidoc("https://www.youtube.com/embed/__qjsUWJoNs?si=s52qcw_5pa-O1gqY", "Diferenças", 739, 426, 2851, -809);
+
 
 
 connect("Scriba", "Booklines");
@@ -34,6 +36,7 @@ connect("Booklines", "PJO");
 connect("Aulas do Cláudio", "d3");
 connect("Aulas do Cláudio", "PJO");
 connect("PJO", "d3");
+connect("Diferenças", "Mathematica");
 connect("Donald Knuth", "Knuth");
 connect("Palestra Theo Gray", "Jupyter");
 connect("Macintosh", "Stephen Wolfram");
@@ -47,9 +50,12 @@ connect("DocInterfaces", "Theo Gray");
 connect("Macintosh", "Linguagem Wolfram");
 connect("Macintosh", "Mathematica");
 connect("Linguagem Wolfram", "Mathematica");
+
 connect("d3", "Jupyter");
 connect("Theo Gray", "Palestra Theo Gray");
 connect("Ferramentas", "Jupyter");
+connect("Macintosh", "Diferenças");
+
 connect("Wolfram Cloud", "Linguagem Wolfram");
 connect("Wolfram Cloud", "Wolfram Hoje");
 connect("Nextjournal", "Jupyter");
@@ -57,7 +63,9 @@ connect("Omnicode Notebook", "Jupyter");
 connect("Wolfram Hoje", "Mathematica");
 connect("d3", "Booklines");
 connect("Booklines", "Palestra Theo Gray");
+connect("Diferenças", "Knuth");
 
+lock("Diferenças");
 lock("Omnicode Notebook");
 lock("Nextjournal");
 lock("Wolfram Cloud");
