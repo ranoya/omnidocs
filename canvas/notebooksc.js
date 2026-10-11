@@ -1,10 +1,8 @@
-
-
-
-
 ungroovy();
 setTransparentBackground();
 centerControls();
+setTempTheme("light");
+multicolor();
 
 
 newidoc("https://www.ranoya.com/pt/textos/documentos.php?id=T010&temptheme=cleantext&nomenu=true&contentonly=true", "DocInterfaces", 1075, 795, 798, 243);
@@ -36,6 +34,27 @@ connect("Donald Knuth", "Knuth");
 connect("Palestra Theo Gray", "Jupyter");
 connect("Macintosh", "Stephen Wolfram");
 connect("Macintosh", "Theo Gray");
+connect("DocInterfaces", "Knuth");
+connect("DocInterfaces", "Texto Notebooks");
+connect("DocInterfaces", "Palestra Theo Gray");
+connect("Texto Notebooks", "Palestra Theo Gray");
+connect("DocInterfaces", "Stephen Wolfram");
+connect("DocInterfaces", "Theo Gray");
+connect("Macintosh", "Linguagem Wolfram");
+connect("Macintosh", "Mathematica");
+connect("Linguagem Wolfram", "Mathematica");
+connect("d3", "Jupyter");
+connect("Ferramentas", "Jupyter");
+connect("Wolfram Cloud", "Linguagem Wolfram");
+connect("Wolfram Cloud", "Wolfram Hoje");
+connect("Nextjournal", "Jupyter");
+connect("Omnicode Notebook", "Jupyter");
+connect("Wolfram Hoje", "Mathematica");
+
+lock("Omnicode Notebook");
+lock("Nextjournal");
+lock("Wolfram Cloud");
+lock("Wolfram Hoje");
 lock("Donald Knuth");
 lock("Knuth");
 lock("Aulas do Cláudio");
@@ -46,5 +65,9 @@ lock("Palestra Theo Gray");
 lock("Theo Gray");
 lock("Macintosh");
 lock("Stephen Wolfram");
+lock("Texto Notebooks");
+lock("DocInterfaces");
+lock("Linguagem Wolfram");
+lock("Mathematica");
 
 center("Knuth");
