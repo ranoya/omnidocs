@@ -70,5 +70,5 @@ lock("DocInterfaces");
 lock("Linguagem Wolfram");
 lock("Mathematica");
 
+setZoom(.75);
 center("Knuth");
-setZoom(.8);
