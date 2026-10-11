@@ -44,6 +44,7 @@ connect("Macintosh", "Linguagem Wolfram");
 connect("Macintosh", "Mathematica");
 connect("Linguagem Wolfram", "Mathematica");
 connect("d3", "Jupyter");
+connect("Theo Gray", "Palestra Theo Gray");
 connect("Ferramentas", "Jupyter");
 connect("Wolfram Cloud", "Linguagem Wolfram");
 connect("Wolfram Cloud", "Wolfram Hoje");
