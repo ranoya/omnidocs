@@ -23,7 +23,7 @@ newframe("https://visse.vercel.app/ferramentas/paralaxe2.html?fg=ffffff&cv=88888
 newidoc("https://omnicode.vercel.app/notebook/?temptheme=light&load=https://omnicode.vercel.app/notebook/creativecode.html", "Omnicode Notebook", 918, 1027, 732, 3518);
 newidoc("https://nextjournal.com/try", "Nextjournal", 1080, 727, 1841, 3153);
 polaroid("https://observablehq.com/embed/@d3/sortable-bar-chart?cell=viewof+order&cell=chart", "Componentes de visualização de dados construídos com a biblioteca D3 publicados online a partir de um notebook Observable", "d3", 682, 730, -1497, 2248);
-newidoc("https://slidelines.vercel.app/timelineh/?file=https://omnicode.vercel.app/examples/elementosmd.md&allblocks=true&s=1&pattern=true&timelineheight=60px&startvisible=true&allowverticalscroll=true&timeheight=110&followbg=true&theme=https://slidelines.vercel.app/styles/aulasslides.css&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1622442665#gid=1622442665", "Aulas do Cláudio", 1164, 868, -1772, 3304);
+newidoc("https://slidelines.vercel.app/timelineh/?file=https://omnicode.vercel.app/examples/elementosmd.md&allblocks=true&s=1&pattern=true&timelineheight=60px&startvisible=true&allowverticalscroll=true&timeheight=110&followbg=true&theme=https://slidelines.vercel.app/styles/aulasslides.css&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=962495491#gid=962495491", "Aulas do Cláudio", 1164, 868, -1772, 3304);
 
 
 
