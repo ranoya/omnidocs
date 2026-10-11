@@ -56,6 +56,7 @@ connect("Nextjournal", "Jupyter");
 connect("Omnicode Notebook", "Jupyter");
 connect("Wolfram Hoje", "Mathematica");
 connect("d3", "Booklines");
+connect("Booklines", "Palestra Theo Gray");
 
 lock("Omnicode Notebook");
 lock("Nextjournal");
