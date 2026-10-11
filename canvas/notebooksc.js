@@ -71,3 +71,4 @@ lock("Linguagem Wolfram");
 lock("Mathematica");
 
 center("Knuth");
+setZoom(.8);
