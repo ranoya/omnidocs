@@ -373,4 +373,35 @@ newframe(
 
 connect("História das Interfaces Computacionais", "Mais Interfaces de Texto");
 
+
+lock("Projeto");
+lock("Palestra");
+lock("Arqueologia do Design");
+lock("Arqueologia do Editorial");
+lock("Bullet Points");
+lock("Método de Pesquisa");
+lock("Acervo de Pesquisa (v.1)");
+lock("Acervo de Pesquisa (v.2)");
+lock("Emulação");
+lock("Pixel Art");
+lock("Demoscene");
+lock("Cultura Visual");
+lock("Interfaces de Texto");
+lock("Mais Interfaces de Texto");
+lock("Menus");
+lock("ASCII Art");
+lock("BBS");
+lock("TheDraw");
+lock("Erthos Albino de Souza");
+lock("Transformações na Pixel Art");
+lock("Hipertexto");
+lock("Ficção Interativa");
+lock("Emulação de Narrativas Interativas");
+lock("Mapeamento Point & Clicks");
+lock("Mapeamento Point & Clicks v.4");
+lock("Acervo de Interfaces de Texto");
+lock("Point and Clicks");
+lock("Estudo de Caso");
+lock("História das Interfaces Computacionais");
+
 center("Projeto");
