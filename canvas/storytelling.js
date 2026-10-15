@@ -99,14 +99,21 @@ newidoc("https://www.youtube.com/embed/sOOtt5-jy1k?si=0rpUPM5oHKHgXL--", "Vídeo
 
 newidoc("https://www.youtube.com/embed/Ex0bM3vvOm0?si=W-zpv_Tpg28ZerKf", "Tale of Crows", 746, 519, 2744, -177);
 newidoc("https://www.youtube.com/embed/igUK55Qn1Go?si=cATIV9tGisbtps06", "Disco Elysium", 697, 388, 1541, 1410);
-newidoc("https://www.youtube.com/embed/YpInAoWNxao?si=kFeLvj720XbHEeAb", "Citzen Sleeper", 646, 368, 2097, 561);
+newidoc("https://www.youtube.com/embed/YpInAoWNxao?si=kFeLvj720XbHEeAb", "Citizen Sleeper", 646, 368, 2097, 561);
 
 
 newidoc("https://linguagensinterativas.vercel.app/?filtra=medieval", "Jogos", 1153, 830, 310, 3489);
 
-connect("Citzen Sleeper", "Disco Elysium");
-connect("Citzen Sleeper", "Tale of Crows");
+connect("Citizen Sleeper", "Disco Elysium");
+connect("Citizen Sleeper", "Tale of Crows");
 connect("Caves of Qud", "Disco Elysium");
+
+connect("Logo", "Caves of Qud");
+connect("Logo", "Disco Elysium");
+connect("Logo", "Tale of Crows");
+connect("Logo", "Citizen Sleeper");
+
+connect("Logo", "Patchwork Girl");
 
 connect("Jogos", "Ultima IV");
 connect("Jogos", "Dwarf Fortress");
