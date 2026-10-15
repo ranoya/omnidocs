@@ -141,7 +141,8 @@ connect("Things", "Hipertexto");
 connect("Encarta", "Hipertexto");
 connect("Encarta", "TIES");
 connect("Things", "TIES");
-
+connect("Things", "Encarta");
+connect("Kindle", "Hipertexto");
 connect("Kindle", "Dynabook");
 connect("Dynabook", "Hipertexto");
 connect("Ad Sierra 1", "Point & Click Adventures");
@@ -211,8 +212,9 @@ svg("https://omnidocs.vercel.app/canvas/rpglabel-rpg.svg", "rpg", 575, 132, 75, 
 svg("https://omnidocs.vercel.app/canvas/labelJogos.svg", "Label Jogos", 387, 164, -858, 1337);
 svg("https://omnidocs.vercel.app/canvas/labelHistorias.svg", "Label Histórias", 385, 110, -892, -466);
 svg("https://omnidocs.vercel.app/canvas/label-if.svg", "Label IFs", 605, 190, 3075, -918);
+svg("https://omnidocs.vercel.app/canvas/labelMultimidia.svg", "Multimidia", 830, 149, 4344, 2732);
 
-
+lock("Multimidia");
 lock("Encarta");
 lock("Things");
 
