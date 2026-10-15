@@ -81,7 +81,18 @@ newidoc("https://apple2ts.com/?appmode=embed&crtdistort=off&color=nofringe&scanl
 
 newidoc("https://grack.com/demos/adventure/", "Colossal", 1140, 1014, 952, -2291);
 
-newidoc("https://www.youtube.com/embed/0e8WIvty_3Y?si=4v7WFeKWwDkcwSiJ&amp;start=6", "Superbrothers", 770, 467, -3243, 41);
+newidoc("https://www.youtube.com/embed/0e8WIvty_3Y?si=4v7WFeKWwDkcwSiJ&amp;start=6", "Superbrothers", 770, 467, -3236, 606);
+
+
+polaroid("https://omnifolio.vercel.app/omnifiles/conquestofcamelot_merlin.png", "Conquests of Camelot, Sierra On-line, 1990", "Camelot 4", 540, 366, -2609, -5);
+
+polaroid("https://omnifolio.vercel.app/omnifiles/conquestofcamelot_1.jpg", "Conquests of Camelot, Sierra On-line, 1990", "Camelot 1", 473, 337, -2226, 183);
+
+polaroid("https://omnifolio.vercel.app/omnifiles/conquestofcamelot_3.jpg", "Conquests of Camelot, Sierra On-line, 1990", "Camelot 3", 448, 309, -2172, -116);
+
+polaroid("https://omnifolio.vercel.app/omnifiles/conquestofcamelot_2.jpg", "Conquests of Camelot, Sierra On-line, 1990", "Camelot 2", 487, 369, -1924, 9);
+
+
 
 newidoc("https://namco.vercel.app/interfaces/?rom=zgue", "Jogando Zork", 1053, 606, -981, -2418);
 
@@ -101,8 +112,29 @@ newidoc("https://www.youtube.com/embed/Ex0bM3vvOm0?si=W-zpv_Tpg28ZerKf", "Tale o
 newidoc("https://www.youtube.com/embed/igUK55Qn1Go?si=cATIV9tGisbtps06", "Disco Elysium", 697, 388, 1541, 1410);
 newidoc("https://www.youtube.com/embed/YpInAoWNxao?si=kFeLvj720XbHEeAb", "Citizen Sleeper", 646, 368, 2097, 561);
 
-
+newidoc("https://www.youtube.com/embed/1MjvJErKEeQ?si=5QYfqOSwc5EMhUMw", "Diablo", 701, 415, 514, 1529);
 newidoc("https://linguagensinterativas.vercel.app/?filtra=medieval", "Jogos", 1153, 830, 310, 3489);
+
+
+
+polaroid("https://www.myabandonware.com/media/screenshots/d/dungeon-master-n0/dungeon-master_9.gif", "Dungeon Master, 1992", "Dungeon Master", 482, 362, -890, 2166);
+polaroid("https://www.myabandonware.com/media/screenshots/w/wizardry-proving-grounds-of-the-mad-overlord-bq3/wizardry-proving-grounds-of-the-mad-overlord_1.gif", "Wizardry: Proving Grounds of the Mad Overlord, 1984", "Wizardry", 472, 379, -843, 2512);
+polaroid("https://www.myabandonware.com/media/screenshots/t/tales-of-the-unknown-volume-i-the-bard-s-tale-10j2/tales-of-the-unknown-volume-i-the-bard-s-tale_2.png", "Tales of the Unknown: Volume I - The Bard's Tale, 1987", "Bards Tale", 485, 408, -1271, 2320);
+
+
+connect("Wizardry", "Ultima IV");
+connect("Wizardry", "Ultima Pixel");
+connect("Wizardry", "Diablo");
+connect("Wizardry", "D&D");
+connect("Diablo", "Ultima Pixel");
+connect("Diablo", "Ultima IV");
+connect("Diablo", "Caves of Qud");
+connect("Diablo", "PEDIT5");
+connect("Diablo", "D&D");
+
+connect("Camelot 3", "Point & Click Adventures");
+connect("Camelot 3", "KQ1");
+connect("Camelot 3", "Superbrothers");
 
 connect("Citizen Sleeper", "Disco Elysium");
 connect("Citizen Sleeper", "Tale of Crows");
@@ -154,6 +186,16 @@ svg("https://omnidocs.vercel.app/canvas/labelJogos.svg", "Label Jogos", 387, 164
 svg("https://omnidocs.vercel.app/canvas/labelHistorias.svg", "Label Histórias", 385, 110, -892, -466);
 svg("https://omnidocs.vercel.app/canvas/label-if.svg", "Label IFs", 605, 190, 3075, -918);
 
+
+lock("Wizardry");
+lock("Bards Tale");
+lock("Dungeon Master");
+
+lock("Diablo");
+lock("Camelot 1");
+lock("Camelot 2");
+lock("Camelot 3");
+lock("Camelot 4");
 lock("AMFV");
 lock("Cover AMFV");
 lock("AMFV Disk");
