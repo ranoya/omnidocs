@@ -78,7 +78,7 @@ newidoc("https://apple2ts.com/?appmode=embed&crtdistort=off&color=nofringe&scanl
 
 newidoc("https://grack.com/demos/adventure/", "Colossal", 1140, 1014, 952, -2291);
 
-newidoc("https://www.youtube.com/embed/0e8WIvty_3Y?si=4v7WFeKWwDkcwSiJ&amp;start=6", "Superbrothers: Sword & Sworcery, 2011", "Superbrothers", 770, 467, -3146, 306);
+newidoc("https://www.youtube.com/embed/0e8WIvty_3Y?si=4v7WFeKWwDkcwSiJ&amp;start=6", "Superbrothers", 770, 467, -3081, 383);
 
 newidoc("https://linguagensinterativas.vercel.app/?filtra=medieval", "Jogos", 1153, 830, 310, 3489);
 connect("Jogos", "Ultima IV");
@@ -94,7 +94,7 @@ connect("Storytelling", "Hipertexto");
 connect("Ultima IV", "Ultima Pixel");
 connect("Caves of Qud", "Ultima IV");
 
-connect("Jogando Adventure", "Adventure Inicio");
+connect("Jogando Adventure", "Adventure Início");
 connect("Caves of Qud", "Cave of Time");
 connect("Caves of Qud", "Ultima Pixel");
 connect("Caves of Qud", "D&D");
