@@ -35,6 +35,9 @@ polaroid("https://omnifolio.vercel.app/omnifiles/press_infocom.png", "Publicidad
 
 svg("https://omnidocs.vercel.app/canvas/label-fantasiamedieval.svg", "medieval", 555, 163, -544, 587);
 
+svg("https://omnidocs.vercel.app/canvas/rpglabel-rpg.svg", "rpg", 575, 132, 75, 1273);
+
+
 
 connect("Infocom Ad", "Zork");
 connect("Infocom Ad", "Get Lamp");
@@ -52,7 +55,8 @@ connect("Colossal Cave", "Adventure Início");
 connect("Get Lamp", "Adventure Início");
 connect("Ultima I", "Adventure Início");
 connect("Ultima Pixel", "Adventure Início");
-newidoc("https://pointandclick.vercel.app/", "Point & Click Adventures", 1353, 873, -2502, 1273);
+newidoc("https://pointandclick.vercel.app/", "Point & Click Adventures", 1353, 873, -3443, 999);
+
 connect("Point & Click Adventures", "KQ1");
 polaroid("https://www.youtube.com/embed/lUH8nR-_Jfc?si=Tod0lkk9N9PcZTrZ", "PEDIT 5, 1975, é um dos primeiros RPGs em um computador DEC PDP-11", "PEDIT5", 747, 520, -357, 804);
 connect("PEDIT5", "Logo");
@@ -62,10 +66,41 @@ polaroid("https://www.youtube.com/embed/mWNgQdybISA?si=gZkXVpi_0I94tfF3", "Zork 
 connect("Zork", "Colossal Cave");
 connect("Zork", "Logo");
 polaroid("https://omnifolio.vercel.app/omnifiles/caveoftimebook.jpg", "Cave of Time - Choose Your Own Adventure, 1975", "Cave of Time", 300, 535, 218, 200);
+
+newidoc("https://booklines.vercel.app/pub/?notebook=@ranoya/dwarffortress&blink=%3Cb%20style=%27margin-right:%2020px%27%3EDwarf%20Frotress%20|%20The%20Washigton%20Post,%202022%3C/b%3E", "Dwarf Fortress", 854, 1179, -1521, 1732);
+newidoc("https://www.youtube.com/embed/NgyXGvzdBq0?si=TzkMYVdTONuEgp8i&amp;start=631", "Caves of Qud", 709, 434, 960, 2108);
+
+
+newidoc("https://namco.vercel.app/?core=atari2600&rom=files/adv.b", "Jogando Adventure", 625, 466, -2961, -785);
+
+
+newidoc("https://apple2ts.com/?appmode=embed&crtdistort=off&color=nofringe&scanlines=off&ghosting=off&#https://namco.vercel.app/a3/disks/Ultima%20IV.hdv", "Ultima IV", 742, 514, -92, 2425);
+
+newidoc("https://grack.com/demos/adventure/", "Colossal", 1140, 1014, 952, -2291);
+
+newidoc("https://www.youtube.com/embed/0e8WIvty_3Y?si=4v7WFeKWwDkcwSiJ&amp;start=6", "Superbrothers: Sword & Sworcery, 2011", "Superbrothers", 770, 467, -3146, 306);
+
+connect("Superbrothers", "KQ1");
+connect("Colossal", "Zork");
+connect("Storytelling", "Hipertexto");
+connect("Ultima IV", "Ultima Pixel");
+connect("Caves of Qud", "Ultima IV");
+
+connect("Jogando Adventure", "Adventure Inicio");
+connect("Caves of Qud", "Cave of Time");
+connect("Caves of Qud", "Ultima Pixel");
+connect("Caves of Qud", "D&D");
+connect("Caves of Qud", "PEDIT5");
 connect("Logo", "Cave of Time");
 connect("Cave of Time", "PEDIT5");
 connect("Cave of Time", "Colossal Cave");
 
+lock("Dwarf Fortress");
+lock("Ultima IV");
+lock("Colossal");
+lock("Superbrothers");
+lock("Jogando Adventure");
+lock("Caves of Qud");
 lock("Storytelling");
 lock("Hipertexto");
 lock("Infocom Ad");
@@ -85,4 +120,9 @@ lock("Adventure Início");
 lock("Cartucho");
 lock("Cover Adventure");
 lock("Get Lamp");
+lock("rpg");
+
+
+setZoom(.75);
+center("Logo");
 
