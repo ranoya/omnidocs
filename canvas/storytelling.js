@@ -1,0 +1,66 @@
+devmode();
+centerControls();
+multicolor();
+setTempTheme("rose-pine-dawn");
+
+svg("https://omnidocs.vercel.app/canvas/narrativasinterativas.svg", "Logo", 399, 200, 736, 261);
+lock("Logo");
+groovy();
+polaroid("https://www.youtube.com/embed/zEJXZ2wnO3w?si=9fpsW2JFi5yY-0bb", "Get Lamp: The Text Adventure Documentary", "Get Lamp", 768, 514, -1010, -1306);
+
+connect("Logo", "Get Lamp");
+polaroid("https://www.youtube.com/embed/O3etkSoHrR8", "Colossal Cave Adventure para computadores DEC PDP-11", "Colossal Cave", 746, 542, -423, -374);
+connect("Logo", "Colossal Cave");
+connect("Colossal Cave", "Get Lamp");
+polaroid("https://upload.wikimedia.org/wikipedia/commons/0/0b/D%26D_Game_1.jpg", "Dungeon & Dragons, 1974", "D&D", 506, 519, 686, 575);
+connect("D&D", "Colossal Cave");
+polaroid("https://omnifolio.vercel.app/omnifiles/cover_ultima1.jpg", "Ultima I: The First Age of Darkness, 1981", "Ultima I", 358, 535, -7, 1629);
+connect("Ultima I", "D&D");
+connect("Ultima I", "Colossal Cave");
+polaroid("https://i.ytimg.com/vi/kPYTUSSLy10/maxresdefault.jpg", "Ultima I: The First Age of Darkness, Abertura em Pixel Art, 1981", "Ultima Pixel", 710, 469, -569, 1427);
+connect("Ultima I", "Ultima Pixel");
+connect("Ultima Pixel", "Colossal Cave");
+polaroid("https://i.ebayimg.com/images/g/8goAAOSwNGtilLg2/s-l1200.jpg", "Adventure, Atari 1979", "Cartucho", 446, 387, -1439, -511);
+polaroid("https://www.coleka.com/media/item/201702/02/atari-2600-adventure-cx-2613-001.jpg", "Adventure, Atari 1979", "Cover Adventure", 464, 721, -2063, -357);
+polaroid("https://omnifolio.vercel.app/omnifiles/adventure_firstscreen.png", "Adventure, Atari 1979", "Adventure Início", 631, 479, -1738, -222);
+polaroid("https://omnifolio.vercel.app/omnifiles/ataristella_2.jpg", "Atari 2600, 1977", "Atari", 653, 436, -1288, 0);
+polaroid("https://omnifolio.vercel.app/omnifiles/screenshot_kq1_high.png", "King's Quest I - Quest for the Crown, 1984, é o primeiro Point & Click Adventure em seu formato clássico. Foi criado por Roberta Williams, co-fundadora da Sierra On-Line, e considerada a primeira Game Designer", "KQ1", 769, 516, -1395, 650);
+connect("KQ1", "Colossal Cave");
+connect("KQ1", "Ultima Pixel");
+connect("KQ1", "Logo");
+connect("KQ1", "Adventure Início");
+connect("Colossal Cave", "Adventure Início");
+connect("Get Lamp", "Adventure Início");
+connect("Ultima I", "Adventure Início");
+connect("Ultima Pixel", "Adventure Início");
+newidoc("https://pointandclick.vercel.app/", "Point & Click Adventures", 1353, 873, -2502, 1273);
+connect("Point & Click Adventures", "KQ1");
+polaroid("https://www.youtube.com/embed/lUH8nR-_Jfc?si=Tod0lkk9N9PcZTrZ", "PEDIT 5, 1975, é um dos primeiros RPGs em um computador DEC PDP-11", "PEDIT5", 747, 520, -357, 804);
+connect("PEDIT5", "Logo");
+connect("PEDIT5", "D&D");
+connect("PEDIT5", "Ultima Pixel");
+polaroid("https://www.youtube.com/embed/mWNgQdybISA?si=gZkXVpi_0I94tfF3", "Zork I - The Great Underground Empire, 1980, lançado pela Infocom, uma das maiores editoras de Ficção Interativa entre as décadas de 1980 e 1990", "Zork", 758, 507, -76, -804);
+connect("Zork", "Colossal Cave");
+connect("Zork", "Logo");
+polaroid("https://omnifolio.vercel.app/omnifiles/caveoftimebook.jpg", "Cave of Time - Choose Your Own Adventure, 1975", "Cave of Time", 300, 535, 218, 200);
+connect("Logo", "Cave of Time");
+connect("Cave of Time", "PEDIT5");
+connect("Cave of Time", "Colossal Cave");
+
+
+lock("Cave of Time");
+lock("Colossal Cave");
+lock("PEDIT5");
+lock("Zork");
+lock("Ultima Pixel");
+lock("D&D");
+lock("KQ1");
+lock("Point & Click Adventures");
+lock("Ultima I");
+lock("Get Lamp");
+lock("Atari");
+lock("Adventure Início");
+lock("Cartucho");
+lock("Cover Adventure");
+lock("Get Lamp");
+
