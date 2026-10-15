@@ -22,14 +22,19 @@ polaroid("https://upload.wikimedia.org/wikipedia/commons/0/0b/D%26D_Game_1.jpg",
 polaroid("https://i.ytimg.com/vi/kPYTUSSLy10/maxresdefault.jpg", "Ultima I: The First Age of Darkness, Abertura em Pixel Art, 1981", "Ultima Pixel", 710, 469, -569, 1427);
 polaroid("https://omnifolio.vercel.app/omnifiles/cover_ultima1.jpg", "Ultima I: The First Age of Darkness, 1981", "Ultima I", 358, 535, -7, 1629);
 
-polaroid("https://i.ebayimg.com/images/g/8goAAOSwNGtilLg2/s-l1200.jpg", "Adventure, Atari 1979", "Cartucho", 446, 387, -1439, -511);
-polaroid("https://www.coleka.com/media/item/201702/02/atari-2600-adventure-cx-2613-001.jpg", "Adventure, Atari 1979", "Cover Adventure", 464, 721, -2063, -357);
+polaroid("https://i.ebayimg.com/images/g/8goAAOSwNGtilLg2/s-l1200.jpg", "Adventure, Atari 1979", "Cartucho", 446, 387, -1395, 420);
+
+
+polaroid("https://www.coleka.com/media/item/201702/02/atari-2600-adventure-cx-2613-001.jpg", "Adventure, Atari 1979", "Cover Adventure", 464, 721, -2091, 602);
 
 polaroid("https://omnifolio.vercel.app/omnifiles/ataristella_2.jpg", "Atari 2600, 1977", "Atari", 653, 436, -1288, 0);
 
-polaroid("https://omnifolio.vercel.app/omnifiles/adventure_firstscreen.png", "Adventure, Atari 1979", "Adventure Início", 631, 479, -1738, -222);
+polaroid("https://omnifolio.vercel.app/omnifiles/adventure_firstscreen.png", "Adventure, Atari 1979", "Adventure Início", 631, 479, -1731, 719);
 
-polaroid("https://omnifolio.vercel.app/omnifiles/screenshot_kq1_high.png", "King's Quest I - Quest for the Crown, 1984, é o primeiro Point & Click Adventure em seu formato clássico. Foi criado por Roberta Williams, co-fundadora da Sierra On-Line, e considerada a primeira Game Designer", "KQ1", 769, 516, -1395, 650);
+
+polaroid("https://omnifolio.vercel.app/omnifiles/screenshot_kq1_high.png", "King's Quest I - Quest for the Crown, 1984, é o primeiro Point & Click Adventure em seu formato clássico. Foi criado por Roberta Williams, co-fundadora da Sierra On-Line, e considerada a primeira Game Designer", "KQ1", 769, 516, -1415, -391);
+
+
 
 polaroid("https://omnifolio.vercel.app/omnifiles/press_infocom.png", "Publicidade da Infocom na década de 1980", "Infocom Ad", 759, 592, -83, -1571);
 
@@ -49,11 +54,11 @@ connect("KQ1", "Colossal Cave");
 connect("KQ1", "Ultima Pixel");
 connect("KQ1", "Logo");
 connect("KQ1", "Adventure Início");
-connect("Colossal Cave", "Adventure Início");
+
 connect("Get Lamp", "Adventure Início");
 connect("Ultima I", "Adventure Início");
 connect("Ultima Pixel", "Adventure Início");
-newidoc("https://pointandclick.vercel.app/", "Point & Click Adventures", 1353, 873, -3443, 999);
+newidoc("https://pointandclick.vercel.app/", "Point & Click Adventures", 1353, 873, -2942, -1067);
 
 connect("Point & Click Adventures", "KQ1");
 polaroid("https://www.youtube.com/embed/lUH8nR-_Jfc?si=Tod0lkk9N9PcZTrZ", "PEDIT 5, 1975, é um dos primeiros RPGs em um computador DEC PDP-11", "PEDIT5", 747, 520, -357, 804);
@@ -69,14 +74,16 @@ newidoc("https://booklines.vercel.app/pub/?notebook=@ranoya/dwarffortress&blink=
 newidoc("https://www.youtube.com/embed/NgyXGvzdBq0?si=TzkMYVdTONuEgp8i&amp;start=631", "Caves of Qud", 709, 434, 960, 2108);
 
 
-newidoc("https://namco.vercel.app/?core=atari2600&rom=files/adv.b", "Jogando Adventure", 625, 466, -2961, -785);
+newidoc("https://namco.vercel.app/?core=atari2600&rom=files/adv.b", "Jogando Adventure", 625, 466, -2674, 1841);
 
 
 newidoc("https://apple2ts.com/?appmode=embed&crtdistort=off&color=nofringe&scanlines=off&ghosting=off&#https://namco.vercel.app/a3/disks/Ultima%20IV.hdv", "Ultima IV", 742, 514, -92, 2425);
 
 newidoc("https://grack.com/demos/adventure/", "Colossal", 1140, 1014, 952, -2291);
 
-newidoc("https://www.youtube.com/embed/0e8WIvty_3Y?si=4v7WFeKWwDkcwSiJ&amp;start=6", "Superbrothers", 770, 467, -3081, 383);
+newidoc("https://www.youtube.com/embed/0e8WIvty_3Y?si=4v7WFeKWwDkcwSiJ&amp;start=6", "Superbrothers", 770, 467, -3243, 41);
+
+
 
 newidoc("https://linguagensinterativas.vercel.app/?filtra=medieval", "Jogos", 1153, 830, 310, 3489);
 connect("Jogos", "Ultima IV");
@@ -87,6 +94,7 @@ connect("Jogos", "D&D");
 connect("Jogos", "Superbrothers");
 
 connect("Superbrothers", "KQ1");
+connect("Superbrothers", "Point & Click Adventures");
 connect("Colossal", "Zork");
 connect("Storytelling", "Hipertexto");
 connect("Ultima IV", "Ultima Pixel");
@@ -100,6 +108,8 @@ connect("Caves of Qud", "PEDIT5");
 connect("Logo", "Cave of Time");
 connect("Cave of Time", "PEDIT5");
 connect("Cave of Time", "Colossal Cave");
+connect("PEDIT5", "Adventure Início");
+connect("D&D", "Adventure Início");
 
 
 svg("https://omnidocs.vercel.app/canvas/label-fantasiamedieval.svg", "medieval", 555, 163, -544, 587);
