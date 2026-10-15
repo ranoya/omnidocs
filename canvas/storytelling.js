@@ -1,5 +1,4 @@
-devmode();
-centerControls();
+
 multicolor();
 setTempTheme("rose-pine-dawn");
 
@@ -277,6 +276,8 @@ lock("Get Lamp");
 lock("rpg");
 
 
+
 setZoom(.75);
 center("Logo");
 
+devmode();
