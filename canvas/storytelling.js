@@ -115,7 +115,11 @@ connect("Dwarf Fortress", "Superbrothers");
 
 svg("https://omnidocs.vercel.app/canvas/label-fantasiamedieval.svg", "medieval", 555, 163, -544, 587);
 svg("https://omnidocs.vercel.app/canvas/rpglabel-rpg.svg", "rpg", 575, 132, 75, 1273);
+svg("https://omnidocs.vercel.app/canvas/labelJogos.svg", "Label Jogos", 387, 164, -858, 1337);
+svg("https://omnidocs.vercel.app/canvas/labelHistorias.svg", "Label Histórias", 385, 110, -892, -466);
 
+lock("Label Histórias");
+lock("Label Jogos");
 lock("Jogos");
 lock("Dwarf Fortress");
 lock("Ultima IV");
