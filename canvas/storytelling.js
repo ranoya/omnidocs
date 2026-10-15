@@ -70,12 +70,12 @@ connect("Zork", "Colossal Cave");
 connect("Zork", "Logo");
 polaroid("https://omnifolio.vercel.app/omnifiles/caveoftimebook.jpg", "Cave of Time - Choose Your Own Adventure, 1975", "Cave of Time", 300, 535, 218, 200);
 
-newidoc("https://booklines.vercel.app/pub/?notebook=@ranoya/dwarffortress&blink=%3Cb%20style=%27margin-right:%2020px%27%3EDwarf%20Frotress%20|%20The%20Washigton%20Post,%202022%3C/b%3E", "Dwarf Fortress", 854, 1179, -1521, 1732);
+newidoc("https://booklines.vercel.app/pub/?notebook=@ranoya/dwarffortress&blink=%3Cb%20style=%27margin-right:%2020px%27%3EDwarf%20Frotress%20|%20The%20Washigton%20Post,%202022%3C/b%3E", "Dwarf Fortress", 854, 1179, -2561, 1932);
+
 newidoc("https://www.youtube.com/embed/NgyXGvzdBq0?si=TzkMYVdTONuEgp8i&amp;start=631", "Caves of Qud", 709, 434, 960, 2108);
 
 
-newidoc("https://namco.vercel.app/?core=atari2600&rom=files/adv.b", "Jogando Adventure", 625, 466, -2674, 1841);
-
+newidoc("https://namco.vercel.app/?core=atari2600&rom=files/adv.b", "Jogando Adventure", 625, 466, -1444, 1541);
 
 newidoc("https://apple2ts.com/?appmode=embed&crtdistort=off&color=nofringe&scanlines=off&ghosting=off&#https://namco.vercel.app/a3/disks/Ultima%20IV.hdv", "Ultima IV", 742, 514, -92, 2425);
 
@@ -110,6 +110,7 @@ connect("Cave of Time", "PEDIT5");
 connect("Cave of Time", "Colossal Cave");
 connect("PEDIT5", "Adventure Início");
 connect("D&D", "Adventure Início");
+connect("Dwarf Fortress", "Superbrothers");
 
 
 svg("https://omnidocs.vercel.app/canvas/label-fantasiamedieval.svg", "medieval", 555, 163, -544, 587);
