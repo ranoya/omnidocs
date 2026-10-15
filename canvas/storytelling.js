@@ -80,6 +80,8 @@ newidoc("https://namco.vercel.app/?core=atari2600&rom=files/adv.b", "Jogando Adv
 
 newidoc("https://apple2ts.com/?appmode=embed&&sound=off&crtdistort=off&color=nofringe&scanlines=off&ghosting=off&#https://namco.vercel.app/a3/disks/Ultima%20IV.hdv", "Ultima IV", 742, 514, -92, 2425);
 
+center("Ultima IV");
+
 newidoc("https://grack.com/demos/adventure/", "Colossal", 1140, 1014, 952, -2291);
 
 newidoc("https://www.youtube.com/embed/0e8WIvty_3Y?si=4v7WFeKWwDkcwSiJ&amp;start=6", "Superbrothers", 770, 467, -3236, 606);
