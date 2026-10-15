@@ -78,7 +78,7 @@ newidoc("https://www.youtube.com/embed/NgyXGvzdBq0?si=TzkMYVdTONuEgp8i&amp;start
 
 newidoc("https://namco.vercel.app/?core=atari2600&rom=files/adv.b", "Jogando Adventure", 625, 466, -1444, 1541);
 
-newidoc("https://apple2ts.com/?appmode=embed&crtdistort=off&color=nofringe&scanlines=off&ghosting=off&#https://namco.vercel.app/a3/disks/Ultima%20IV.hdv", "Ultima IV", 742, 514, -92, 2425);
+newidoc("https://apple2ts.com/?appmode=embed&&sound=off&crtdistort=off&color=nofringe&scanlines=off&ghosting=off&#https://namco.vercel.app/a3/disks/Ultima%20IV.hdv", "Ultima IV", 742, 514, -92, 2425);
 
 newidoc("https://grack.com/demos/adventure/", "Colossal", 1140, 1014, 952, -2291);
 
@@ -99,7 +99,12 @@ newidoc("https://namco.vercel.app/interfaces/?rom=zgue", "Jogando Zork", 1053, 6
 
 polaroid("https://omniboards.vercel.app/embed/?limita=0&filtra=_selectedhyperties&bg=af8f54&fg=aaaaaa&hl=FFFFFF&start=https://omnifolio.vercel.app/omnifiles/hyperties_exemplo17.png", "HyperTIES, 1986, originalmente chamado de originalmente chamado de TIES – The Interactive Encyclopedia System, foi um dos primeiros sistemas de hipertexto criado", "TIES", 895, 664, 4151, 2086);
 
+polaroid("https://omnifolio.vercel.app/omnifiles/computerdiskography-afternoon-a_story_4.png", "Afternoon: a Story, Michael Joyce, 1987", "Afternoon 2", 787, 694, 4355, -972);
+
+
 polaroid("https://omniboards.vercel.app/embed/?limita=0&filtra=Patchwork%20Girl&bg=000000&fg=2dd249&start=https://omnifolio.vercel.app/omnifiles/storyspace_9j_patchworkgirl.png", "Patchwork Girl or a Modern Monster, 1995, de Shelley Jackson", "Patchwork Girl", 889, 634, 3572, -807);
+
+polaroid("https://omnifolio.vercel.app/omnifiles/computerdiskography-afternoon-a_story_2.png", "Afternoon: a Story, Michael Joyce, 1987", "Afternoon 1", 662, 532, 4254, -318);
 
 polaroid("https://omnifolio.vercel.app/omnifiles/mitmuseum_if.jpg", "Ficções Interativas da Infocom", "IF Infocom", 456, 439, 1920, -1181);
 polaroid("https://omnifolio.vercel.app/omnifiles/amfv-disk.jpg", "Diskette da Ficção Interativa A Mind Forever Voyaging, 1985", "AMFV Disk", 363, 417, 2746, -734);
@@ -129,6 +134,13 @@ polaroid("https://omnifolio.vercel.app/omnifiles/publi_kingsquest1.png", "Public
 polaroid("https://cdn.mos.cms.futurecdn.net/v2/t:58,l:0,cw:1280,ch:720,q:80,w:1280/oUPLy9aK9dJLTyQ6Ke2VUK.jpg", "Dynabook, Alan Kay, 1972", "Dynabook", 825, 517, 5276, 544);
 polaroid("https://m.media-amazon.com/images/I/91lyOEEyi6S.jpg", "Amazon Kindle, 2007", "Kindle", 745, 797, 6201, 904);
 
+polaroid("https://www.youtube.com/embed/BJ1ecE_ZKSA?si=w0PRJzeupIurGp3V", "Microsoft Encarta, 1994", "Encarta", 862, 548, 4991, 2500);
+polaroid("https://namco.vercel.app/iarchive/?rom=the-way-things-work-emulation", "David Macaulay, The Way Things Work, 1994", "Things", 556, 436, 5236, 1912);
+
+connect("Things", "Hipertexto");
+connect("Encarta", "Hipertexto");
+connect("Encarta", "TIES");
+connect("Things", "TIES");
 
 connect("Kindle", "Dynabook");
 connect("Dynabook", "Hipertexto");
@@ -199,6 +211,13 @@ svg("https://omnidocs.vercel.app/canvas/rpglabel-rpg.svg", "rpg", 575, 132, 75, 
 svg("https://omnidocs.vercel.app/canvas/labelJogos.svg", "Label Jogos", 387, 164, -858, 1337);
 svg("https://omnidocs.vercel.app/canvas/labelHistorias.svg", "Label Histórias", 385, 110, -892, -466);
 svg("https://omnidocs.vercel.app/canvas/label-if.svg", "Label IFs", 605, 190, 3075, -918);
+
+
+lock("Encarta");
+lock("Things");
+
+lock("Afternoon 1");
+lock("Afternoon 2");
 
 lock("Kindle");
 lock("Dynabook");
