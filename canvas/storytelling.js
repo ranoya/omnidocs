@@ -95,10 +95,19 @@ polaroid("https://omnifolio.vercel.app/omnifiles/amfv.jpg", "Caixa da Ficção I
 polaroid("https://omnifolio.vercel.app/omnifiles/mitmuseum_amfv.jpg", "Ficção Interativa A Mind Forever Voyaging, Infocom, 1985", "AMFV", 700, 589, 2175, -1087);
 
 
+newidoc("https://www.youtube.com/embed/sOOtt5-jy1k?si=0rpUPM5oHKHgXL--", "Vídeo AMFV", 803, 529, 2494, -2196);
 
+newidoc("https://www.youtube.com/embed/Ex0bM3vvOm0?si=W-zpv_Tpg28ZerKf", "Tale of Crows", 746, 519, 2744, -177);
+newidoc("https://www.youtube.com/embed/igUK55Qn1Go?si=cATIV9tGisbtps06", "Disco Elysium", 697, 388, 1541, 1410);
+newidoc("https://www.youtube.com/embed/YpInAoWNxao?si=kFeLvj720XbHEeAb", "Citzen Sleeper", 646, 368, 2097, 561);
 
 
 newidoc("https://linguagensinterativas.vercel.app/?filtra=medieval", "Jogos", 1153, 830, 310, 3489);
+
+connect("Citzen Sleeper", "Disco Elysium");
+connect("Citzen Sleeper", "Tale of Crows");
+connect("Caves of Qud", "Disco Elysium");
+
 connect("Jogos", "Ultima IV");
 connect("Jogos", "Dwarf Fortress");
 connect("Jogos", "Caves of Qud");
@@ -129,6 +138,7 @@ connect("AMFV", "Logo");
 connect("AMFV", "Zork");
 connect("AMFV", "Get Lamp");
 connect("AMFV", "Infocom Ad");
+connect("AMFV", "Vídeo AMFV");
 
 
 svg("https://omnidocs.vercel.app/canvas/label-fantasiamedieval.svg", "medieval", 555, 163, -544, 587);
