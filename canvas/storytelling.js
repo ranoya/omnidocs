@@ -83,6 +83,19 @@ newidoc("https://grack.com/demos/adventure/", "Colossal", 1140, 1014, 952, -2291
 
 newidoc("https://www.youtube.com/embed/0e8WIvty_3Y?si=4v7WFeKWwDkcwSiJ&amp;start=6", "Superbrothers", 770, 467, -3243, 41);
 
+newidoc("https://namco.vercel.app/interfaces/?rom=zgue", "Jogando Zork", 1053, 606, -981, -2418);
+
+polaroid("https://omniboards.vercel.app/embed/?limita=0&filtra=_selectedhyperties&bg=af8f54&fg=aaaaaa&hl=FFFFFF&start=https://omnifolio.vercel.app/omnifiles/hyperties_exemplo17.png", "HyperTIES, 1986, originalmente chamado de originalmente chamado de TIES – The Interactive Encyclopedia System, foi um dos primeiros sistemas de hipertexto criado", "TIES", 895, 664, 4151, 2086);
+
+polaroid("https://omniboards.vercel.app/embed/?limita=0&filtra=Patchwork%20Girl&bg=000000&fg=2dd249&start=https://omnifolio.vercel.app/omnifiles/storyspace_9j_patchworkgirl.png", "Patchwork Girl or a Modern Monster, 1995, de Shelley Jackson", "Patchwork Girl", 889, 634, 3572, -807);
+
+polaroid("https://omnifolio.vercel.app/omnifiles/mitmuseum_if.jpg", "Ficções Interativas da Infocom", "IF Infocom", 456, 439, 1920, -1181);
+polaroid("https://omnifolio.vercel.app/omnifiles/amfv-disk.jpg", "Diskette da Ficção Interativa A Mind Forever Voyaging, 1985", "AMFV Disk", 363, 417, 2746, -734);
+polaroid("https://omnifolio.vercel.app/omnifiles/amfv.jpg", "Caixa da Ficção Interativa A Mind Forever Voyaging, 1985", "Cover AMFV", 404, 548, 2833, -1339);
+polaroid("https://omnifolio.vercel.app/omnifiles/mitmuseum_amfv.jpg", "Ficção Interativa A Mind Forever Voyaging, Infocom, 1985", "AMFV", 700, 589, 2175, -1087);
+
+
+
 
 
 newidoc("https://linguagensinterativas.vercel.app/?filtra=medieval", "Jogos", 1153, 830, 310, 3489);
@@ -92,14 +105,15 @@ connect("Jogos", "Caves of Qud");
 connect("Jogos", "Ultima Pixel");
 connect("Jogos", "D&D");
 connect("Jogos", "Superbrothers");
-
+connect("Zork", "Jogando Zork");
+connect("TIES", "Hipertexto");
 connect("Superbrothers", "KQ1");
 connect("Superbrothers", "Point & Click Adventures");
 connect("Colossal", "Zork");
 connect("Storytelling", "Hipertexto");
 connect("Ultima IV", "Ultima Pixel");
 connect("Caves of Qud", "Ultima IV");
-
+connect("Patchwork Girl", "Hipertexto");
 connect("Jogando Adventure", "Adventure Início");
 connect("Caves of Qud", "Cave of Time");
 connect("Caves of Qud", "Ultima Pixel");
@@ -111,13 +125,27 @@ connect("Cave of Time", "Colossal Cave");
 connect("PEDIT5", "Adventure Início");
 connect("D&D", "Adventure Início");
 connect("Dwarf Fortress", "Superbrothers");
+connect("AMFV", "Logo");
+connect("AMFV", "Zork");
+connect("AMFV", "Get Lamp");
+connect("AMFV", "Infocom Ad");
 
 
 svg("https://omnidocs.vercel.app/canvas/label-fantasiamedieval.svg", "medieval", 555, 163, -544, 587);
 svg("https://omnidocs.vercel.app/canvas/rpglabel-rpg.svg", "rpg", 575, 132, 75, 1273);
 svg("https://omnidocs.vercel.app/canvas/labelJogos.svg", "Label Jogos", 387, 164, -858, 1337);
 svg("https://omnidocs.vercel.app/canvas/labelHistorias.svg", "Label Histórias", 385, 110, -892, -466);
+svg("https://omnidocs.vercel.app/canvas/label-if.svg", "Label IFs", 605, 190, 3075, -918);
 
+lock("AMFV");
+lock("Cover AMFV");
+lock("AMFV Disk");
+lock("IF Infocom");
+lock("Patchwork Girl");
+lock("TIES");
+lock("Jogando Zork");
+
+lock("Label IFs");
 lock("Label Histórias");
 lock("Label Jogos");
 lock("Jogos");
