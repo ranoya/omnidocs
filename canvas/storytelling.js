@@ -80,6 +80,14 @@ newidoc("https://grack.com/demos/adventure/", "Colossal", 1140, 1014, 952, -2291
 
 newidoc("https://www.youtube.com/embed/0e8WIvty_3Y?si=4v7WFeKWwDkcwSiJ&amp;start=6", "Superbrothers: Sword & Sworcery, 2011", "Superbrothers", 770, 467, -3146, 306);
 
+newidoc("https://linguagensinterativas.vercel.app/?filtra=medieval", "Jogos", 1153, 830, 310, 3489);
+connect("Jogos", "Ultima IV");
+connect("Jogos", "Dwarf Fortress");
+connect("Jogos", "Caves of Qud");
+connect("Jogos", "Ultima Pixel");
+connect("Jogos", "D&D");
+connect("Jogos", "Superbrothers");
+
 connect("Superbrothers", "KQ1");
 connect("Colossal", "Zork");
 connect("Storytelling", "Hipertexto");
@@ -95,6 +103,7 @@ connect("Logo", "Cave of Time");
 connect("Cave of Time", "PEDIT5");
 connect("Cave of Time", "Colossal Cave");
 
+lock("Jogos");
 lock("Dwarf Fortress");
 lock("Ultima IV");
 lock("Colossal");
