@@ -33,6 +33,9 @@ polaroid("https://omnifolio.vercel.app/omnifiles/screenshot_kq1_high.png", "King
 
 polaroid("https://omnifolio.vercel.app/omnifiles/press_infocom.png", "Publicidade da Infocom na década de 1980", "Infocom Ad", 759, 592, -83, -1571);
 
+svg("https://omnidocs.vercel.app/canvas/label-fantasiamedieval.svg", "medieval", 555, 163, -544, 587);
+
+
 connect("Infocom Ad", "Zork");
 connect("Infocom Ad", "Get Lamp");
 connect("Ultima I", "Ultima Pixel");
@@ -63,7 +66,10 @@ connect("Logo", "Cave of Time");
 connect("Cave of Time", "PEDIT5");
 connect("Cave of Time", "Colossal Cave");
 
-
+lock("Storytelling");
+lock("Hipertexto");
+lock("Infocom Ad");
+lock("medieval");
 lock("Cave of Time");
 lock("Colossal Cave");
 lock("PEDIT5");
