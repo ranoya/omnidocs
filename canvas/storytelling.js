@@ -27,7 +27,7 @@ polaroid("https://i.ebayimg.com/images/g/8goAAOSwNGtilLg2/s-l1200.jpg", "Adventu
 
 polaroid("https://www.coleka.com/media/item/201702/02/atari-2600-adventure-cx-2613-001.jpg", "Adventure, Atari 1979", "Cover Adventure", 464, 721, -2091, 602);
 
-polaroid("https://omnifolio.vercel.app/omnifiles/ataristella_2.jpg", "Atari 2600, 1977", "Atari", 653, 436, -1288, 0);
+polaroid("https://omnifolio.vercel.app/omnifiles/ataristella_2.jpg", "Atari 2600, 1977", "Atari", 653, 436, -1283, 908);
 
 polaroid("https://omnifolio.vercel.app/omnifiles/adventure_firstscreen.png", "Adventure, Atari 1979", "Adventure Início", 631, 479, -1731, 719);
 
