@@ -33,9 +33,7 @@ polaroid("https://omnifolio.vercel.app/omnifiles/screenshot_kq1_high.png", "King
 
 polaroid("https://omnifolio.vercel.app/omnifiles/press_infocom.png", "Publicidade da Infocom na década de 1980", "Infocom Ad", 759, 592, -83, -1571);
 
-svg("https://omnidocs.vercel.app/canvas/label-fantasiamedieval.svg", "medieval", 555, 163, -544, 587);
 
-svg("https://omnidocs.vercel.app/canvas/rpglabel-rpg.svg", "rpg", 575, 132, 75, 1273);
 
 
 
@@ -102,6 +100,10 @@ connect("Caves of Qud", "PEDIT5");
 connect("Logo", "Cave of Time");
 connect("Cave of Time", "PEDIT5");
 connect("Cave of Time", "Colossal Cave");
+
+
+svg("https://omnidocs.vercel.app/canvas/label-fantasiamedieval.svg", "medieval", 555, 163, -544, 587);
+svg("https://omnidocs.vercel.app/canvas/rpglabel-rpg.svg", "rpg", 575, 132, 75, 1273);
 
 lock("Jogos");
 lock("Dwarf Fortress");
