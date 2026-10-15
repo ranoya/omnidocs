@@ -3,11 +3,15 @@ centerControls();
 multicolor();
 setTempTheme("rose-pine-dawn");
 
+
+newidoc("https://slidelines.vercel.app/level/?s=0&order=ord&filtra=_full&allowverticalscroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=137178476#gid=137178476&theme=https://slidelines.vercel.app/styles/fit.css", "Storytelling", 1314, 686, 930, -373);
+newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=110&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1898658317#gid=1898658317&theme=https://slidelines.vercel.app/level/hypermedia.css", "Hipertexto", 1853, 876, 2913, 875);
+
+
 svg("https://omnidocs.vercel.app/canvas/narrativasinterativas.svg", "Logo", 399, 200, 736, 261);
 lock("Logo");
 groovy();
 polaroid("https://www.youtube.com/embed/zEJXZ2wnO3w?si=9fpsW2JFi5yY-0bb", "Get Lamp: The Text Adventure Documentary", "Get Lamp", 768, 514, -1010, -1306);
-
 
 polaroid("https://www.youtube.com/embed/O3etkSoHrR8", "Colossal Cave Adventure para computadores DEC PDP-11", "Colossal Cave", 746, 542, -423, -374);
 connect("Logo", "Colossal Cave");
@@ -27,6 +31,10 @@ polaroid("https://omnifolio.vercel.app/omnifiles/adventure_firstscreen.png", "Ad
 
 polaroid("https://omnifolio.vercel.app/omnifiles/screenshot_kq1_high.png", "King's Quest I - Quest for the Crown, 1984, é o primeiro Point & Click Adventure em seu formato clássico. Foi criado por Roberta Williams, co-fundadora da Sierra On-Line, e considerada a primeira Game Designer", "KQ1", 769, 516, -1395, 650);
 
+polaroid("https://omnifolio.vercel.app/omnifiles/press_infocom.png", "Publicidade da Infocom na década de 1980", "Infocom Ad", 759, 592, -83, -1571);
+
+connect("Infocom Ad", "Zork");
+connect("Infocom Ad", "Get Lamp");
 connect("Ultima I", "Ultima Pixel");
 connect("Ultima Pixel", "Colossal Cave");
 connect("Logo", "Get Lamp");
