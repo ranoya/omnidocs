@@ -278,6 +278,6 @@ lock("rpg");
 
 setTransparentBackground();
 centerControls();
-setZoom(.75);
+setZoom(.5);
 center("Logo");
 
