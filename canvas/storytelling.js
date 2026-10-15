@@ -58,7 +58,8 @@ connect("KQ1", "Adventure Início");
 connect("Get Lamp", "Adventure Início");
 connect("Ultima I", "Adventure Início");
 connect("Ultima Pixel", "Adventure Início");
-newidoc("https://pointandclick.vercel.app/", "Point & Click Adventures", 1353, 873, -2942, -1067);
+newidoc("https://pointandclick.vercel.app/", "Point & Click Adventures", 1353, 873, -3962, -962);
+
 
 connect("Point & Click Adventures", "KQ1");
 polaroid("https://www.youtube.com/embed/lUH8nR-_Jfc?si=Tod0lkk9N9PcZTrZ", "PEDIT 5, 1975, é um dos primeiros RPGs em um computador DEC PDP-11", "PEDIT5", 747, 520, -357, 804);
@@ -121,6 +122,19 @@ polaroid("https://www.myabandonware.com/media/screenshots/d/dungeon-master-n0/du
 polaroid("https://www.myabandonware.com/media/screenshots/w/wizardry-proving-grounds-of-the-mad-overlord-bq3/wizardry-proving-grounds-of-the-mad-overlord_1.gif", "Wizardry: Proving Grounds of the Mad Overlord, 1984", "Wizardry", 472, 379, -843, 2512);
 polaroid("https://www.myabandonware.com/media/screenshots/t/tales-of-the-unknown-volume-i-the-bard-s-tale-10j2/tales-of-the-unknown-volume-i-the-bard-s-tale_2.png", "Tales of the Unknown: Volume I - The Bard's Tale, 1987", "Bards Tale", 485, 408, -1271, 2320);
 
+
+polaroid("https://omnifolio.vercel.app/omnifiles/press_sierra13.png", "Publicidade dos Point & Click Adventures da Sierra On-line, 1985", "Ad Sierra 1", 490, 695, -1796, -1515);
+polaroid("https://omnifolio.vercel.app/omnifiles/publi_kingsquest1.png", "Publicidade dos Point & Click Adventures da Sierra On-line, 1985", "Ad Sierra 2", 510, 757, -2216, -1315);
+
+polaroid("https://cdn.mos.cms.futurecdn.net/v2/t:58,l:0,cw:1280,ch:720,q:80,w:1280/oUPLy9aK9dJLTyQ6Ke2VUK.jpg", "Dynabook, Alan Kay, 1972", "Dynabook", 825, 517, 5276, 544);
+polaroid("https://m.media-amazon.com/images/I/91lyOEEyi6S.jpg", "Amazon Kindle, 2007", "Kindle", 745, 797, 6201, 904);
+
+
+connect("Kindle", "Dynabook");
+connect("Dynabook", "Hipertexto");
+connect("Ad Sierra 1", "Point & Click Adventures");
+connect("Ad Sierra 1", "KQ1");
+connect("Ad Sierra 1", "Camelot 3");
 
 connect("Wizardry", "Ultima IV");
 connect("Wizardry", "Ultima Pixel");
@@ -186,6 +200,10 @@ svg("https://omnidocs.vercel.app/canvas/labelJogos.svg", "Label Jogos", 387, 164
 svg("https://omnidocs.vercel.app/canvas/labelHistorias.svg", "Label Histórias", 385, 110, -892, -466);
 svg("https://omnidocs.vercel.app/canvas/label-if.svg", "Label IFs", 605, 190, 3075, -918);
 
+lock("Kindle");
+lock("Dynabook");
+lock("Ad Sierra 1");
+lock("Ad Sierra 2");
 
 lock("Wizardry");
 lock("Bards Tale");
