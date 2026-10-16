@@ -246,8 +246,9 @@ svg("https://omnidocs.vercel.app/canvas/labelJogos.svg", "Label Jogos", 387, 164
 svg("https://omnidocs.vercel.app/canvas/labelHistorias.svg", "Label Histórias", 385, 110, -892, -466);
 svg("https://omnidocs.vercel.app/canvas/label-if.svg", "Label IFs", 605, 190, 3075, -918);
 svg("https://omnidocs.vercel.app/canvas/labelMultimidia.svg", "Multimidia", 830, 149, 4344, 2732);
+svg("https://omnidocs.vercel.app/canvas/labelquadrinhos.svg", "Label Quadrinhos", 603, 145, 6267, -894);
 
-
+lock("Label Quadrinhos");
 lock("Accolade Comics");
 lock("Pangea");
 lock("Lance Stone");
