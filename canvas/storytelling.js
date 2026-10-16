@@ -150,7 +150,13 @@ newidoc("https://namco.vercel.app/iarchive/?rom=BeyondCyberpunkMacintosh", "Beyo
 newidoc("https://info.cern.ch/hypertext/WWW/Proposal.html", "HTML", 609, 921, 2602, 2105);
 
 
+newidoc("https://www.youtube.com/embed/MgKcf_HvQFU?si=O-Gns-LK6m6JkfP-", "Accolade Comics", 684, 396, 5860, -634);
+newidoc("https://www.youtube.com/embed/p3cvAzqtC5M?si=pCQ3RS94M9AAVHkQ", "Pangea", 609, 459, 6451, -752);
+newidoc("https://www.youtube.com/embed/3mcGBviHfIM?si=9hIufP6kOU3LBSC-", "Lance Stone", 674, 401, 6289, -341);
 
+
+
+connect("Accolade Comics", "Hipertexto");
 connect("Manhole", "Hypercard");
 connect("Flash", "Hypercard");
 connect("Flash", "HTML");
@@ -242,6 +248,9 @@ svg("https://omnidocs.vercel.app/canvas/label-if.svg", "Label IFs", 605, 190, 30
 svg("https://omnidocs.vercel.app/canvas/labelMultimidia.svg", "Multimidia", 830, 149, 4344, 2732);
 
 
+lock("Accolade Comics");
+lock("Pangea");
+lock("Lance Stone");
 lock("Scrollytelling");
 lock("Dataviz 2");
 lock("Dataviz");
