@@ -140,7 +140,11 @@ polaroid("https://namco.vercel.app/iarchive/?rom=the-way-things-work-emulation",
 
 newidoc("https://hcsimulator.com/", "Hypercard", 842, 597, 3440, 2752);
 newidoc("https://namco.vercel.app/iarchive/?rom=BeyondCyberpunkMacintosh", "Beyond Cyberpunk", 554, 374, 4397, 3258);
+newidoc("https://info.cern.ch/hypertext/WWW/Proposal.html", "HTML", 609, 921, 2602, 2105);
 
+connect("TIES", "HTML");
+connect("Hypercard", "HTML");
+connect("Hipertexto", "HTML");
 connect("Hypercard", "Beyond Cyberpunk");
 connect("Hypercard", "Hipertexto");
 connect("Things", "Hipertexto");
@@ -221,6 +225,7 @@ svg("https://omnidocs.vercel.app/canvas/label-if.svg", "Label IFs", 605, 190, 30
 svg("https://omnidocs.vercel.app/canvas/labelMultimidia.svg", "Multimidia", 830, 149, 4344, 2732);
 
 
+lock("HTML");
 lock("Beyond Cyberpunk");
 lock("Hypercard");
 lock("Multimidia");
