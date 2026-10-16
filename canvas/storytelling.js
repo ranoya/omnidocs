@@ -44,9 +44,10 @@ newidoc("https://namco.vercel.app/flash/obiturario.html", "Jobs on Flash", 716, 
 newidoc("https://omnidocs.vercel.app/materiais/narrativas/obama.html", "Dataviz 2", 713, 597, 7588, 1124);
 newidoc("https://omnidocs.vercel.app/materiais/narrativas/visualmachinelearning.html", "Dataviz", 694, 463, 8065, 1489);
 
+newidoc("https://www.nytimes.com/newsgraphics/2013/10/13/russia/index.html", "Scrollytelling", 846, 567, 9530, 1239);
 
 
-
+connect("Scrollytelling", "Dataviz");
 connect("Infocom Ad", "Zork");
 connect("Infocom Ad", "Get Lamp");
 connect("Ultima I", "Ultima Pixel");
@@ -241,6 +242,7 @@ svg("https://omnidocs.vercel.app/canvas/label-if.svg", "Label IFs", 605, 190, 30
 svg("https://omnidocs.vercel.app/canvas/labelMultimidia.svg", "Multimidia", 830, 149, 4344, 2732);
 
 
+lock("Scrollytelling");
 lock("Dataviz 2");
 lock("Dataviz");
 lock("Jobs on Flash");
