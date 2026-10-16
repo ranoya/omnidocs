@@ -37,6 +37,12 @@ polaroid("https://omnifolio.vercel.app/omnifiles/screenshot_kq1_high.png", "King
 
 polaroid("https://omnifolio.vercel.app/omnifiles/press_infocom.png", "Publicidade da Infocom na década de 1980", "Infocom Ad", 759, 592, -83, -1571);
 
+newidoc("https://namco.vercel.app/iarchive/?rom=TheManholeMacintosh", "Manhole", 525, 351, 4025, 3731);
+newidoc("https://namco.vercel.app/sites/mono/", "Flash", 670, 342, 2910, 3639);
+newidoc("https://namco.vercel.app/flash/obiturario.html", "Jobs on Flash", 716, 907, 3660, 4418);
+
+newidoc("https://omnidocs.vercel.app/materiais/narrativas/obama.html", "Dataviz 2", 713, 597, 7588, 1124);
+newidoc("https://omnidocs.vercel.app/materiais/narrativas/visualmachinelearning.html", "Dataviz", 694, 463, 8065, 1489);
 
 
 
@@ -142,6 +148,16 @@ newidoc("https://hcsimulator.com/", "Hypercard", 842, 597, 3440, 2752);
 newidoc("https://namco.vercel.app/iarchive/?rom=BeyondCyberpunkMacintosh", "Beyond Cyberpunk", 554, 374, 4397, 3258);
 newidoc("https://info.cern.ch/hypertext/WWW/Proposal.html", "HTML", 609, 921, 2602, 2105);
 
+
+
+connect("Manhole", "Hypercard");
+connect("Flash", "Hypercard");
+connect("Flash", "HTML");
+connect("Hypercard", "Jobs on Flash");
+connect("Flash", "Jobs on Flash");
+connect("Dataviz", "HTML");
+
+
 connect("TIES", "HTML");
 connect("Hypercard", "HTML");
 connect("Hipertexto", "HTML");
@@ -225,6 +241,11 @@ svg("https://omnidocs.vercel.app/canvas/label-if.svg", "Label IFs", 605, 190, 30
 svg("https://omnidocs.vercel.app/canvas/labelMultimidia.svg", "Multimidia", 830, 149, 4344, 2732);
 
 
+lock("Dataviz 2");
+lock("Dataviz");
+lock("Jobs on Flash");
+lock("Flash");
+lock("Manhole");
 lock("HTML");
 lock("Beyond Cyberpunk");
 lock("Hypercard");
@@ -287,7 +308,6 @@ lock("Cartucho");
 lock("Cover Adventure");
 lock("Get Lamp");
 lock("rpg");
-
 
 
 setTransparentBackground();
