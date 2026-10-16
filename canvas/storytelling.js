@@ -138,6 +138,11 @@ polaroid("https://m.media-amazon.com/images/I/91lyOEEyi6S.jpg", "Amazon Kindle, 
 polaroid("https://www.youtube.com/embed/BJ1ecE_ZKSA?si=w0PRJzeupIurGp3V", "Microsoft Encarta, 1994", "Encarta", 862, 548, 4991, 2500);
 polaroid("https://namco.vercel.app/iarchive/?rom=the-way-things-work-emulation", "David Macaulay, The Way Things Work, 1994", "Things", 556, 436, 5236, 1912);
 
+newidoc("https://hcsimulator.com/", "Hypercard", 842, 597, 3440, 2752);
+newidoc("https://namco.vercel.app/iarchive/?rom=BeyondCyberpunkMacintosh", "Beyond Cyberpunk", 554, 374, 4397, 3258);
+
+connect("Hypercard", "Beyond Cyberpunk");
+connect("Hypercard", "Hipertexto");
 connect("Things", "Hipertexto");
 connect("Encarta", "Hipertexto");
 connect("Encarta", "TIES");
@@ -215,6 +220,9 @@ svg("https://omnidocs.vercel.app/canvas/labelHistorias.svg", "Label Histórias",
 svg("https://omnidocs.vercel.app/canvas/label-if.svg", "Label IFs", 605, 190, 3075, -918);
 svg("https://omnidocs.vercel.app/canvas/labelMultimidia.svg", "Multimidia", 830, 149, 4344, 2732);
 
+
+lock("Beyond Cyberpunk");
+lock("Hypercard");
 lock("Multimidia");
 lock("Encarta");
 lock("Things");
