@@ -44,7 +44,7 @@ newidoc("https://namco.vercel.app/flash/obiturario.html", "Jobs on Flash", 716, 
 newidoc("https://omnidocs.vercel.app/materiais/narrativas/obama.html", "Dataviz 2", 713, 597, 7588, 1124);
 newidoc("https://omnidocs.vercel.app/materiais/narrativas/visualmachinelearning.html", "Dataviz", 694, 463, 8065, 1489);
 
-newidoc("https://www.nytimes.com/newsgraphics/2013/10/13/russia/index.html", "Scrollytelling", 846, 567, 9530, 1239);
+newidoc("https://www.nytimes.com/newsgraphics/2013/10/13/russia/index.html", "Scrollytelling", 988, 712, 9530, 1239);
 
 
 connect("Scrollytelling", "Dataviz");
