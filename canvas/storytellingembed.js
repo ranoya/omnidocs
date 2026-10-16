@@ -154,8 +154,16 @@ newidoc("https://www.youtube.com/embed/MgKcf_HvQFU?si=O-Gns-LK6m6JkfP-", "Accola
 newidoc("https://www.youtube.com/embed/p3cvAzqtC5M?si=pCQ3RS94M9AAVHkQ", "Pangea", 609, 459, 6451, -752);
 newidoc("https://www.youtube.com/embed/3mcGBviHfIM?si=9hIufP6kOU3LBSC-", "Lance Stone", 674, 401, 6289, -341);
 
+newidoc("https://web.archive.org/web/20180526144846/http://www.nawlz.com/season1/", "NAWLZ", 1164, 788, 7367, -928);
+newidoc("https://www.youtube.com/embed/Oag5tUQePHA?si=uEit_TC_3Rg9bHB_&amp;start=6", "Device 6", 1171, 661, 3971, -1987);
+newidoc("https://www.youtube.com/embed/afr27sHwDGU", "Protanopia", 1085, 614, 5792, -1761);
+newidoc("https://www.youtube.com/embed/9vfLEA0ks-Y", "Utopia", 465, 532, 7714, -1911);
 
-
+connect("NAWLZ", "Utopia");
+connect("Device 6", "Patchwork Girl");
+connect("NAWLZ", "Accolade Comics");
+connect("Protanopia", "NAWLZ");
+connect("NAWLZ", "Flash");
 connect("Accolade Comics", "Hipertexto");
 connect("Manhole", "Hypercard");
 connect("Flash", "Hypercard");
@@ -248,6 +256,10 @@ svg("https://omnidocs.vercel.app/canvas/label-if.svg", "Label IFs", 605, 190, 30
 svg("https://omnidocs.vercel.app/canvas/labelMultimidia.svg", "Multimidia", 830, 149, 4344, 2732);
 svg("https://omnidocs.vercel.app/canvas/labelquadrinhos.svg", "Label Quadrinhos", 603, 145, 6267, -894);
 
+lock("Utopia");
+lock("Protanopia");
+lock("NAWLZ");
+lock("Device 6");
 lock("Label Quadrinhos");
 lock("Accolade Comics");
 lock("Pangea");
