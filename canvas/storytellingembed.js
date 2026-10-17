@@ -7,6 +7,9 @@ newidoc("https://slidelines.vercel.app/level/?s=0&order=ord&filtra=_full&allowve
 newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=110&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1898658317#gid=1898658317&theme=https://slidelines.vercel.app/level/hypermedia.css", "Hipertexto", 1853, 876, 2913, 875);
 
 
+newidoc("https://namco.vercel.app/?core=atari2600&rom=files/adv.b", "Jogando Adventure", 625, 466, -1971, 1516);
+
+
 svg("https://omnidocs.vercel.app/canvas/narrativasinterativas.svg", "Logo", 399, 200, 736, 261);
 lock("Logo");
 groovy();
@@ -82,7 +85,8 @@ newidoc("https://booklines.vercel.app/pub/?notebook=@ranoya/dwarffortress&blink=
 newidoc("https://www.youtube.com/embed/NgyXGvzdBq0?si=TzkMYVdTONuEgp8i&amp;start=631", "Caves of Qud", 709, 434, 960, 2108);
 
 
-newidoc("https://namco.vercel.app/?core=atari2600&rom=files/adv.b", "Jogando Adventure", 625, 466, -1444, 1541);
+
+
 
 newidoc("https://apple2ts.com/?appmode=embed&&sound=off&crtdistort=off&color=nofringe&scanlines=off&ghosting=off&#https://namco.vercel.app/a3/disks/Ultima%20IV.hdv", "Ultima IV", 742, 514, -92, 2425);
 
@@ -158,6 +162,21 @@ newidoc("https://web.archive.org/web/20180526144846/http://www.nawlz.com/season1
 newidoc("https://www.youtube.com/embed/Oag5tUQePHA?si=uEit_TC_3Rg9bHB_&amp;start=6", "Device 6", 1171, 661, 3971, -1987);
 newidoc("https://www.youtube.com/embed/afr27sHwDGU", "Protanopia", 1085, 614, 5792, -1761);
 newidoc("https://www.youtube.com/embed/9vfLEA0ks-Y", "Utopia", 465, 532, 7714, -1911);
+
+polaroid("https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png", "The Lord of The Rings, J.R.R.Tolkien, 1954", "LOTR", 342, 379, -1124, 1612);
+newidoc("https://www.youtube.com/embed/yDqGnrbkuyk?si=lBS-AQKYsqqJ7LtL", "Wolf Among Us", 887, 507, -3082, -2045);
+
+connect("Point & Click Adventures", "Wolf Among Us");
+connect("Ad Sierra 1", "Wolf Among Us");
+connect("LOTR", "Ultima Pixel");
+connect("LOTR", "Ultima IV");
+connect("LOTR", "PEDIT5");
+connect("LOTR", "Adventure Início");
+connect("LOTR", "Superbrothers");
+connect("LOTR", "Dwarf Fortress");
+connect("LOTR", "Wizardry");
+
+
 
 connect("NAWLZ", "Utopia");
 connect("Device 6", "Patchwork Girl");
@@ -256,6 +275,9 @@ svg("https://omnidocs.vercel.app/canvas/label-if.svg", "Label IFs", 605, 190, 30
 svg("https://omnidocs.vercel.app/canvas/labelMultimidia.svg", "Multimidia", 830, 149, 4344, 2732);
 svg("https://omnidocs.vercel.app/canvas/labelquadrinhos.svg", "Label Quadrinhos", 603, 145, 6267, -894);
 
+
+lock("Wolf Among Us");
+lock("LOTR");
 lock("Utopia");
 lock("Protanopia");
 lock("NAWLZ");
@@ -332,6 +354,8 @@ lock("Cartucho");
 lock("Cover Adventure");
 lock("Get Lamp");
 lock("rpg");
+
+
 
 setTransparentBackground();
 centerControls();
