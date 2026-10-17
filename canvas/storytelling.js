@@ -166,6 +166,35 @@ newidoc("https://www.youtube.com/embed/9vfLEA0ks-Y", "Utopia", 465, 532, 7714, -
 polaroid("https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png", "The Lord of The Rings, J.R.R.Tolkien, 1954", "LOTR", 342, 379, -1124, 1612);
 newidoc("https://www.youtube.com/embed/yDqGnrbkuyk?si=lBS-AQKYsqqJ7LtL", "Wolf Among Us", 887, 507, -3082, -2045);
 
+
+newidoc("https://linguagensinterativas.vercel.app/?filtra=naves", "Espaciais", 1160, 793, -1602, 4037);
+polaroid("https://omnifolio.vercel.app/omnifiles/spaceinvaders_cabinet.webp", "Space Invaders, Arcade, 1978", "Space Invaders Cabinet", 466, 959, -2378, 3484);
+polaroid("https://omnifolio.vercel.app/omnifiles/StarRaiders_cart_2.jpg", "Star Raiders, Atari 800, 1980", "Star Raiders 800", 574, 791, -966, 5177);
+polaroid("https://omnifolio.vercel.app/omnifiles/atari_star_raiders_packing.jpg", "Star Raiders, Atari, 1982", "Star Raiders Box", 602, 872, -1520, 5114);
+polaroid("https://omnifolio.vercel.app/omnifiles/atari_star_raiders_cartridge.jpg", "Star Raiders, Atari, 1982", "Star Raiders Cart", 325, 439, -1149, 5698);
+
+newidoc("https://namco.vercel.app/?core=fbneo&rom=files/invaders.zip", "Space Invaders Jogando", 616, 815, -2957, 3825);
+polaroid("https://omnifolio.vercel.app/omnifiles/platoV.jpg", "Rede Plato V, 1981", "PlatoV", 735, 896, -164, 4719);
+newidoc("https://namco.vercel.app/?core=fbneo&rom=files/zaxxon.zip", "Zaxxon", 665, 858, -3280, 5375);
+newidoc("https://namco.vercel.app/?core=atari2600&rom=files/strd.b", "Star Raiders Jogando", 816, 620, -2205, 5499);
+polaroid("https://omnifolio.vercel.app/omnifiles/starwarsposteroriginal.jpg", "Star Wars, 1977", "Star Wars Poster", 420, 695, -2292, 4660);
+polaroid("https://omnifolio.vercel.app/omnifiles/Star_Trek_TOS_cast.webp", "Star Trek, 1966", "Star Trek Cast", 830, 529, 174, 5449);
+
+newidoc("https://namco.vercel.app/?core=fbneo&rom=files/dkong.zip", "Donkey Kong", 639, 857, -2033, -3145);
+newidoc("https://namco.vercel.app/?rom=files/ng.n", "Ninja Gaiden", 672, 506, -2705, -2915);
+
+connect("Ad Sierra 1", "Donkey Kong");
+
+connect("Jogos", "Espaciais");
+connect("Espaciais", "Star Raiders Cart");
+connect("Espaciais", "Space Invaders Jogando");
+connect("Espaciais", "Zaxxon");
+connect("Espaciais", "Star Wars Poster");
+connect("Espaciais", "PlatoV");
+connect("Zaxxon", "Star Wars Poster");
+connect("Space Invaders Jogando", "Star Wars Poster");
+connect("Star Raiders Cart", "Star Wars Poster");
+
 connect("Point & Click Adventures", "Wolf Among Us");
 connect("Ad Sierra 1", "Wolf Among Us");
 connect("LOTR", "Ultima Pixel");
@@ -275,6 +304,20 @@ svg("https://omnidocs.vercel.app/canvas/label-if.svg", "Label IFs", 605, 190, 30
 svg("https://omnidocs.vercel.app/canvas/labelMultimidia.svg", "Multimidia", 830, 149, 4344, 2732);
 svg("https://omnidocs.vercel.app/canvas/labelquadrinhos.svg", "Label Quadrinhos", 603, 145, 6267, -894);
 
+
+lock("Espaciais");
+lock("Space Invaders Cabinet");
+lock("Star Raiders 800");
+lock("Star Raiders Box");
+lock("Star Raiders Cart");
+lock("Space Invaders Jogando");
+lock("PlatoV");
+lock("Zaxxon");
+lock("Star Raiders Jogando");
+lock("Star Wars Poster");
+lock("Star Trek Cast");
+lock("Donkey Kong");
+lock("Ninja Gaiden");
 
 lock("Wolf Among Us");
 lock("LOTR");
