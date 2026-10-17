@@ -50,7 +50,9 @@ newidoc("https://omnidocs.vercel.app/materiais/narrativas/visualmachinelearning.
 newidoc("https://www.nytimes.com/newsgraphics/2013/10/13/russia/index.html", "Scrollytelling", 988, 712, 9530, 1239);
 
 
-connect("Scrollytelling", "Dataviz");
+connect("Scrollytelling", "Dataviz 2");
+connect("Scrollytelling", "Dataviz 2");
+connect("Flash", "Dataviz 2");
 connect("Infocom Ad", "Zork");
 connect("Infocom Ad", "Get Lamp");
 connect("Ultima I", "Ultima Pixel");
@@ -185,6 +187,39 @@ polaroid("https://omnifolio.vercel.app/omnifiles/Star_Trek_TOS_cast.webp", "Star
 newidoc("https://namco.vercel.app/?core=fbneo&rom=files/dkong.zip", "Donkey Kong", 639, 857, -2033, -3145);
 newidoc("https://namco.vercel.app/?rom=files/ng.n", "Ninja Gaiden", 672, 506, -2705, -2915);
 
+
+
+newidoc("https://www.youtube.com/embed/W3GMWnEx6bM?si=7JM19xXoS3azE21M&amp;start=4", "iPad Magazines", 923, 505, 7345, 372);
+newidoc("https://www.youtube.com/embed/PKnJjQpJOAg?si=HUOWXm9fK-SzrIWU", "Livros Infantis em Multimídia", 831, 473, 5940, 2853);
+newidoc("https://www.youtube.com/embed/dgOZUPUGuwY?si=9QL_yoqnwTjlzSxe", "Microsoft Dinosaurs", 516, 387, 5360, 3361);
+newidoc("https://www.youtube.com/embed/gew68Qj5kxw?si=bM4IUu5eQWFPRjAb", "Alice iPad", 760, 429, 6971, 2600);
+newidoc("https://www.youtube.com/embed/U-edAGLokak?si=AGYya0Jgl6G_71wM", "Our Choice", 733, 415, 6745, 1974);
+
+newidoc("https://www.sbs.com.au/theboat/", "The Boat", 823, 581, 9055, -572);
+newidoc("https://84-24.org/", "Macintosh", 1341, 864, 10285, 1878);
+
+connect("The Boat", "Protanopia");
+connect("The Boat", "Scrollytelling");
+
+connect("iPad Magazines", "Kindle");
+connect("iPad Magazines", "Our Choice");
+connect("Scrollytelling", "Our Choice");
+
+connect("Microsoft Dinosaurs", "Encarta");
+connect("Microsoft Dinosaurs", "Beyond Cyberpunk");
+connect("Microsoft Dinosaurs", "Hypercard");
+
+connect("Livros Infantis em Multimídia", "Encarta");
+connect("Livros Infantis em Multimídia", "Microsoft Dinosaurs");
+connect("Livros Infantis em Multimídia", "Things");
+connect("Livros Infantis em Multimídia", "Hypercard");
+connect("Livros Infantis em Multimídia", "TIES");
+connect("Livros Infantis em Multimídia", "Alice iPad");
+connect("Our Choice", "Alice iPad");
+
+connect("Our Choice", "Jobs on Flash");
+connect("iPad Magazines", "Jobs on Flash");
+
 connect("Ad Sierra 1", "Donkey Kong");
 
 connect("Jogos", "Espaciais");
@@ -221,7 +256,7 @@ connect("Flash", "Hypercard");
 connect("Flash", "HTML");
 connect("Hypercard", "Jobs on Flash");
 connect("Flash", "Jobs on Flash");
-connect("Dataviz", "HTML");
+connect("Dataviz 2", "HTML");
 
 
 connect("TIES", "HTML");
@@ -309,6 +344,16 @@ svg("https://omnidocs.vercel.app/canvas/labelquadrinhos.svg", "Label Quadrinhos"
 svg("https://omnidocs.vercel.app/canvas/label-fantasiaespacial.svg", "Label Fantasia Espacial", 522, 168, -843, 3926);
 svg("https://omnidocs.vercel.app/canvas/label-animation.svg", "Label Animação", 902, 139, -3238, -1408);
 svg("https://omnidocs.vercel.app/canvas/label-cutscenes.svg", "Label Cutscenes", 546, 237, -2491, -2457);
+
+
+lock("iPad Magazines");
+lock("Livros Infantis em Multimídia");
+lock("Microsoft Dinosaurs");
+lock("Alice iPad");
+lock("Our Choice");
+lock("The Boat");
+lock("Macintosh");
+
 
 lock("Label Animação");
 lock("Label Cutscenes");
@@ -407,9 +452,6 @@ lock("Cartucho");
 lock("Cover Adventure");
 lock("Get Lamp");
 lock("rpg");
-
-
-
 
 setTransparentBackground();
 centerControls();
