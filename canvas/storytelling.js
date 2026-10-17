@@ -306,7 +306,13 @@ svg("https://omnidocs.vercel.app/canvas/labelHistorias.svg", "Label Histórias",
 svg("https://omnidocs.vercel.app/canvas/label-if.svg", "Label IFs", 605, 190, 3075, -918);
 svg("https://omnidocs.vercel.app/canvas/labelMultimidia.svg", "Multimidia", 830, 149, 4344, 2732);
 svg("https://omnidocs.vercel.app/canvas/labelquadrinhos.svg", "Label Quadrinhos", 603, 145, 6267, -894);
+svg("https://omnidocs.vercel.app/canvas/label-fantasiaespacial.svg", "Label Fantasia Espacial", 522, 168, -843, 3926);
+svg("https://omnidocs.vercel.app/canvas/label-animation.svg", "Label Animação", 902, 139, -3238, -1408);
+svg("https://omnidocs.vercel.app/canvas/label-cutscenes.svg", "Label Cutscenes", 546, 237, -2491, -2457);
 
+lock("Label Animação");
+lock("Label Cutscenes");
+lock("Label Fantasia Espacial");
 
 lock("Dragon's Lair");
 lock("Espaciais");
