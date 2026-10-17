@@ -164,7 +164,9 @@ newidoc("https://www.youtube.com/embed/afr27sHwDGU", "Protanopia", 1085, 614, 57
 newidoc("https://www.youtube.com/embed/9vfLEA0ks-Y", "Utopia", 465, 532, 7714, -1911);
 
 polaroid("https://upload.wikimedia.org/wikipedia/commons/d/d4/One_Ring_Blender_Render.png", "The Lord of The Rings, J.R.R.Tolkien, 1954", "LOTR", 342, 379, -1124, 1612);
-newidoc("https://www.youtube.com/embed/yDqGnrbkuyk?si=lBS-AQKYsqqJ7LtL", "Wolf Among Us", 887, 507, -3082, -2045);
+newidoc("https://www.youtube.com/embed/yDqGnrbkuyk?si=lBS-AQKYsqqJ7LtL", "Wolf Among Us", 887, 507, -3513, -2248);
+newidoc("https://www.youtube.com/embed/P3XNQja0H7I?si=b9SPwfq_RDghfWDi", "Dragon's Lair", 777, 524, -2946, -1919);
+
 
 
 newidoc("https://linguagensinterativas.vercel.app/?filtra=naves", "Espaciais", 1160, 793, -1602, 4037);
@@ -194,6 +196,7 @@ connect("Espaciais", "PlatoV");
 connect("Zaxxon", "Star Wars Poster");
 connect("Space Invaders Jogando", "Star Wars Poster");
 connect("Star Raiders Cart", "Star Wars Poster");
+connect("PlatoV", "PEDIT5");
 
 connect("Point & Click Adventures", "Wolf Among Us");
 connect("Ad Sierra 1", "Wolf Among Us");
@@ -305,6 +308,7 @@ svg("https://omnidocs.vercel.app/canvas/labelMultimidia.svg", "Multimidia", 830,
 svg("https://omnidocs.vercel.app/canvas/labelquadrinhos.svg", "Label Quadrinhos", 603, 145, 6267, -894);
 
 
+lock("Dragon's Lair");
 lock("Espaciais");
 lock("Space Invaders Cabinet");
 lock("Star Raiders 800");
