@@ -198,6 +198,17 @@ newidoc("https://www.youtube.com/embed/U-edAGLokak?si=AGYya0Jgl6G_71wM", "Our Ch
 newidoc("https://www.sbs.com.au/theboat/", "The Boat", 823, 581, 9055, -572);
 newidoc("https://84-24.org/", "Macintosh", 1341, 864, 10285, 1878);
 
+newidoc("https://www.youtube.com/embed/OXNLWy7rwH4?si=B-9HekLwHq88l9E1", "Infocom", 827, 469, 368, -3053);
+
+connect("Infocom", "Jogando Zork");
+connect("Infocom", "Colossal");
+connect("Infocom", "Get Lamp");
+connect("Infocom", "Vídeo AMFV");
+connect("Infocom", "Infocom Ad");
+connect("Infocom", "Zork");
+connect("Infocom", "AMFV");
+
+
 connect("The Boat", "Protanopia");
 connect("The Boat", "Scrollytelling");
 
@@ -346,112 +357,7 @@ svg("https://omnidocs.vercel.app/canvas/label-animation.svg", "Label Animação"
 svg("https://omnidocs.vercel.app/canvas/label-cutscenes.svg", "Label Cutscenes", 546, 237, -2491, -2457);
 
 
-lock("iPad Magazines");
-lock("Livros Infantis em Multimídia");
-lock("Microsoft Dinosaurs");
-lock("Alice iPad");
-lock("Our Choice");
-lock("The Boat");
-lock("Macintosh");
-
-
-lock("Label Animação");
-lock("Label Cutscenes");
-lock("Label Fantasia Espacial");
-
-lock("Dragon's Lair");
-lock("Espaciais");
-lock("Space Invaders Cabinet");
-lock("Star Raiders 800");
-lock("Star Raiders Box");
-lock("Star Raiders Cart");
-lock("Space Invaders Jogando");
-lock("PlatoV");
-lock("Zaxxon");
-lock("Star Raiders Jogando");
-lock("Star Wars Poster");
-lock("Star Trek Cast");
-lock("Donkey Kong");
-lock("Ninja Gaiden");
-
-lock("Wolf Among Us");
-lock("LOTR");
-lock("Utopia");
-lock("Protanopia");
-lock("NAWLZ");
-lock("Device 6");
-lock("Label Quadrinhos");
-lock("Accolade Comics");
-lock("Pangea");
-lock("Lance Stone");
-lock("Scrollytelling");
-lock("Dataviz 2");
-lock("Dataviz");
-lock("Jobs on Flash");
-lock("Flash");
-lock("Manhole");
-lock("HTML");
-lock("Beyond Cyberpunk");
-lock("Hypercard");
-lock("Multimidia");
-lock("Encarta");
-lock("Things");
-
-lock("Afternoon 1");
-lock("Afternoon 2");
-
-lock("Kindle");
-lock("Dynabook");
-lock("Ad Sierra 1");
-lock("Ad Sierra 2");
-
-lock("Wizardry");
-lock("Bards Tale");
-lock("Dungeon Master");
-
-lock("Diablo");
-lock("Camelot 1");
-lock("Camelot 2");
-lock("Camelot 3");
-lock("Camelot 4");
-lock("AMFV");
-lock("Cover AMFV");
-lock("AMFV Disk");
-lock("IF Infocom");
-lock("Patchwork Girl");
-lock("TIES");
-lock("Jogando Zork");
-
-lock("Label IFs");
-lock("Label Histórias");
-lock("Label Jogos");
-lock("Jogos");
-lock("Dwarf Fortress");
-lock("Ultima IV");
-lock("Colossal");
-lock("Superbrothers");
-lock("Jogando Adventure");
-lock("Caves of Qud");
-lock("Storytelling");
-lock("Hipertexto");
-lock("Infocom Ad");
-lock("medieval");
-lock("Cave of Time");
-lock("Colossal Cave");
-lock("PEDIT5");
-lock("Zork");
-lock("Ultima Pixel");
-lock("D&D");
-lock("KQ1");
-lock("Point & Click Adventures");
-lock("Ultima I");
-lock("Get Lamp");
-lock("Atari");
-lock("Adventure Início");
-lock("Cartucho");
-lock("Cover Adventure");
-lock("Get Lamp");
-lock("rpg");
+lockall();
 
 setTransparentBackground();
 centerControls();
