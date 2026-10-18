@@ -133,7 +133,7 @@ newidoc("https://www.youtube.com/embed/igUK55Qn1Go?si=cATIV9tGisbtps06", "Disco 
 newidoc("https://www.youtube.com/embed/YpInAoWNxao?si=kFeLvj720XbHEeAb", "Citizen Sleeper", 646, 368, 2097, 561);
 
 newidoc("https://www.youtube.com/embed/1MjvJErKEeQ?si=5QYfqOSwc5EMhUMw", "Diablo", 701, 415, 514, 1529);
-newidoc("https://linguagensinterativas.vercel.app/?filtra=medieval", "Jogos", 1153, 830, 310, 3489);
+newidoc("https://linguagensinterativas.vercel.app/single.html?filtra=medieval&titulo=Fantasia Medieval", "Jogos", 1153, 830, 310, 3489);
 
 
 
@@ -171,7 +171,7 @@ newidoc("https://www.youtube.com/embed/P3XNQja0H7I?si=b9SPwfq_RDghfWDi", "Dragon
 
 
 
-newidoc("https://linguagensinterativas.vercel.app/?filtra=naves", "Espaciais", 1160, 793, -1602, 4037);
+newidoc("https://linguagensinterativas.vercel.app/single.html?filtra=naves&titulo=Fantasia Espacial", "Espaciais", 1160, 793, -1602, 4037);
 polaroid("https://omnifolio.vercel.app/omnifiles/spaceinvaders_cabinet.webp", "Space Invaders, Arcade, 1978", "Space Invaders Cabinet", 466, 959, -2378, 3484);
 polaroid("https://omnifolio.vercel.app/omnifiles/StarRaiders_cart_2.jpg", "Star Raiders, Atari 800, 1980", "Star Raiders 800", 574, 791, -966, 5177);
 polaroid("https://omnifolio.vercel.app/omnifiles/atari_star_raiders_packing.jpg", "Star Raiders, Atari, 1982", "Star Raiders Box", 602, 872, -1520, 5114);
@@ -452,7 +452,6 @@ lock("Cartucho");
 lock("Cover Adventure");
 lock("Get Lamp");
 lock("rpg");
-
 
 
 setZoom(.75);
