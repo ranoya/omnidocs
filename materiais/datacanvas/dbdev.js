@@ -762,6 +762,32 @@ window.pjo = function () {
     center("PJO");
 }
 
+window.pjod = function () {
+    newidoc("https://omnidocs.vercel.app/livros/capas/observable", "Capa PJO", 276, 395, 171, 1026);
+    newidoc("https://booklines.vercel.app/livros/observable/obs-notebooks.html?blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3ENotebooks?%3C/b%3E", "Notebooks", 789, 831, 501, 1026);
+    newidoc("https://booklines.vercel.app/livros/observable/obs-comecando.html?blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EComeçando%3C/b%3E", "Começando", 807, 833, 1371, 1025);
+    newidoc("https://booklines.vercel.app/livros/observable/obs-markdown.html?blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EEscrevendo%20com%20Markdown%3C/b%3E", "Markdown", 807, 834, 2254, 1024);
+    newidoc("https://booklines.vercel.app/livros/observable/obs-variaveis.html?blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EVariáveis%3C/b%3E", "Variáveis", 790, 835, 502, 1938);
+    newidoc("https://booklines.vercel.app/livros/observable/obs-arrays.html?blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EArrays%3C/b%3E", "Arrays", 808, 837, 1371, 1937);
+    newidoc("https://booklines.vercel.app/livros/observable/obs-funcoes.html?blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EFunções%3C/b%3E", "Funções", 799, 831, 2258, 1937);
+    newidoc("https://booklines.vercel.app/pub/?titulo=Mais%20Funções&blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EFunções%20de%20arrays%3C/b%3E&notebook=@ranoya/livroobservable-14", "Funções de Arrays", 809, 833, 3132, 1935);
+    newidoc("https://booklines.vercel.app/livros/observable/obs-condicionais.html?blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3ECondicionais%3C/b%3E", "Condicionais", 789, 817, 503, 2844);
+    newidoc("https://booklines.vercel.app/livros/observable/obs-loops.html?blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3ELoops%3C/b%3E", "Loops", 809, 820, 1373, 2843);
+    newidoc("https://booklines.vercel.app/pub/?titulo=Publicando&blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EPublicando%20o%20notebook%3C/b%3E&notebook=@ranoya/livroobservable-15", "Publicando 1", 809, 840, 4481, 1029);
+    newidoc("https://booklines.vercel.app/pub/?titulo=Publicando&blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EPublicando%20partes%20do%20notebook%3C/b%3E&notebook=@ranoya/livroobservable-16", "Publicando 2", 809, 835, 5383, 1032);
+    newidoc("https://booklines.vercel.app/scriba/?notebook=@ranoya/teste-scriba", "Scriba", 1362, 834, 6291, 1032);
+    newidoc("https://booklines.vercel.app/livros/observable/obs-dados.html?blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EProgramando%20com%20dados%3C/b%3E", "Dados 1", 788, 818, 505, 3746);
+    newidoc("https://booklines.vercel.app/livros/observable/obs-dados2.html?blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EProgramando%20com%20dados%3C/b%3E", "Dataviz", 810, 813, 1374, 3745);
+    newidoc("https://booklines.vercel.app/livros/observable/obs-dados3.html?blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EVisualizando%20imagens%3C/b%3E", "Tabelas", 808, 812, 2264, 3744);
+    newidoc("https://booklines.vercel.app/livros/observable/obs-svg.html?blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EUsando%20SVG%3C/b%3E", "SVG", 811, 812, 3141, 3745);
+    newidoc("https://booklines.vercel.app/livros/observable/obs-p5.html?blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EUsando%20P5.js%3C/b%3E", "P5.js", 811, 813, 4029, 3745);
+    newidoc("https://booklines.vercel.app/livros/observable/obs-diferencas.html?blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EDiferen%C3%A7as%20para%20a%20programa%C3%A7%C3%A3o%20tradicional%3C/b%3E", "Diferenças", 813, 813, 4926, 3746);
+    newidoc("https://booklines.vercel.app/livros/observable/obs-aplicacoes.html?blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EEstudos%20de%20caso%3C/b%3E", "Aplicações", 813, 835, 5396, 2325);
+    setZoom(1);
+    setPan(0, -900);
+    setZoom(.75);
+}
+
 
 
 // Legacy
