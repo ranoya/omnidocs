@@ -751,6 +751,11 @@ window.regex = function () {
 
 }
 
+window.pjo = function () {
+    newidoc("https://booklines.vercel.app/livros/observable/?go=", "PJO");
+    center("PJO");
+}
+
 
 
 // Legacy
