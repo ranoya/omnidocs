@@ -370,7 +370,7 @@
             onmouseover="closeall('menuvis');">DATAVIZ</div>
 
       <div id="supermenuoutros" class="menulink" onclick="openandclose('menuoutros');"
-            onmouseover="closeall('menuoutros');">OUTROS</div>
+            onmouseover="closeall('menuoutros');">FERRAMENTAS</div>
 
 
     </div>
@@ -409,6 +409,10 @@
     </div>
 
     <div id='menuarqueologia' class="submenu subarqueologia">
+
+        <a href="javascript:goto(`manualvisicalc()`); closeall()" class="submenulink">MANUAL VISICALC</a>
+        
+        <hr></hr>
 
         <a href="javascript:goto(`visicalc()`); closeall()" class="submenulink">VISICALC</a>
 
@@ -591,27 +595,22 @@
 
     <div id='menuoutros' class="submenu suboutros">
 
-      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/premissa','https://slides.com/ranoya/culturadedados/embed#/perguntapesquisa')" class="submenulink">PREMISSA</a>
+      <a href="javascript:goto(`newidoc('https://regexr.com/', 'Regexr')`); goto(`center('Regexr')`); closeall()" class="submenulink">REGEXER</a>
 
       <hr></hr>
 
       
-      <a href="javascript:goto(`newidoc('https://www.db-fiddle.com/f/fhRu8oQmSRex3YHkDGxE78/0', 'SQL Fiddle')`); goto(`center('SQL Fiddle')`); closeall()" class="submenulink">DB FIDDLE</a>
+      <a href="javascript:goto(`newidoc('https://www.db-fiddle.com/f/fhRu8oQmSRex3YHkDGxE78/0', 'SQL Fiddle')`); goto(`center('SQL Fiddle')`); closeall()" class="submenulink">SQL FIDDLE</a>
 
+      <a href="javascript:goto(`dataset('https://docs.google.com/spreadsheets/d/1FbY8hPtM8IxEJ26ybMZHpMrHdk-LEm1yuYPiFVwF94U/edit?gid=0#gid=0');`); goto(`centerlastframe()`); closeall()" class="submenulink">SQL Query</a>
 
       <hr></hr>
-      
 
-      <a href="javascript:openout('https://www.pcjs.org/software/pcx86/app/other/visicalc/1981/images/visicalc-refcard1-2.gif')" class="submenulink">MANUAL VISICALC 1</a>
+      <a href="javascript:goto(`newidoc('https://omnidocs.vercel.app/materiais/workbench/tiposdedados.html?fcolor=450e46&bgcolor=debe34', 'Tipos')`); goto(`center('Tipos')`); closeall()" class="submenulink">TIPOS DE DADOS</a>
 
-      <a href="javascript:openout('https://www.pcjs.org/software/pcx86/app/other/visicalc/1981/images/visicalc-refcard3-4.gif')" class="submenulink">MANUAL VISICALC 2</a>
+      <hr></hr>
 
-      <a href="javascript:openout('https://www.pcjs.org/software/pcx86/app/other/visicalc/1981/images/visicalc-refcard5-6.gif')" class="submenulink">MANUAL VISICALC 3</a>
-
-      <a href="javascript:openout('https://www.pcjs.org/software/pcx86/app/other/visicalc/1981/images/visicalc-refcard7-8.gif')" class="submenulink">MANUAL VISICALC 4</a>
-
-      <a href="javascript:openout('https://www.pcjs.org/software/pcx86/app/other/visicalc/1981/images/visicalc-refcard9-10.gif')" class="submenulink">MANUAL VISICALC 5</a>
-
+      <a href="javascript:goto(`notebook()`); goto(`center('Tipos')`); closeall()" class="submenulink">NOTEBOOK DE PROGRAMAÇÃO CRIATIVA</a>
     
     </div>
 
