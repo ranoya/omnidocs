@@ -759,6 +759,16 @@ window.pjo = function () {
 
 // Legacy
 
+window.manualvisicalc = function () {
+
+    image("Visicalc Pg. 1", "https://www.pcjs.org/software/pcx86/app/other/visicalc/1981/images/visicalc-refcard1-2.gif", "transparent", 565, 562, 493, 79);
+    image("Visicalc Pg. 2", "https://www.pcjs.org/software/pcx86/app/other/visicalc/1981/images/visicalc-refcard3-4.gif", "transparent", 565, 562, 493, 675);
+    image("Visicalc Pg. 3", "https://www.pcjs.org/software/pcx86/app/other/visicalc/1981/images/visicalc-refcard5-6.gif", "transparent", 565, 562, 493, 1273);
+    image("Visicalc Pg. 4", "https://www.pcjs.org/software/pcx86/app/other/visicalc/1981/images/visicalc-refcard7-8.gif", "transparent", 565, 562, 493, 1877);
+    image("Visicalc Pg. 5", "https://www.pcjs.org/software/pcx86/app/other/visicalc/1981/images/visicalc-refcard9-10.gif", "transparent", 565, 562, 493, -516);
+
+}
+
 window.applelogo = function () {
   newidoc("https://apple2ts.com/?appmode=embed&crtdistort=off&color=green&scanlines=off&ghosting=off&#https://namco.vercel.app/a2/disk/Apple_LOGO.dsk", "Logo Apple");
   connect("Legacy", "Logo Apple");
