@@ -113,7 +113,7 @@
     hr {
             width: calc(100%);
             margin-left: 0;
-            border-top: 1px solid #666666;
+            border-top: 1px solid #aaaaaa;
             margin-top: 2px;
             margin-bottom: 2px;
             
@@ -139,35 +139,35 @@
     }
 
     .subbasicos {
-      left: 116px;
+      left: 112px;
     }
 
     .subarqueologia {
-      left: 191px;
+      left: 187px;
     }
 
     .subplanilhas {
-      left: 300px;
+      left: 396px;
     }
 
     .subsql {
-      left: 390px;
+      left: 386px;
     }
 
     .subregex {
-      left: 444px;
+      left: 440px;
     }
 
     .subnotebooks {
-      left: 513px;
+      left: 509px;
     }
 
     .subvis {
-      left: 611px;
+      left: 607px;
     }
 
     .suboutros {
-      left: 685px;
+      left: 681px;
     }
 
 
@@ -345,8 +345,8 @@
 
     <div id="menu" class="nada workbechgrande">
 
-      <div id="superstart" class="menulink" style="margin-left: 30px;" onclick="goto(`newidoc('https://omnidocs.vercel.app/docs/dataculture/', 'Slides')`); goto(`center('Slides')`)"
-            onmouseover="closeall();">MATERIAL</div>
+      <div id="superstart" class="menulink" style="margin-left: 30px;" onclick="goto(`newidoc('https://docs.google.com/spreadsheets/d/1XIIoqXWJ0UGKkrLwFreSmfcxPbNu2fyUvVNdDwBiprA/edit', 'Slides')`); goto(`center('Slides')`)"
+            onmouseover="closeall();">WORKSHEET</div>
 
       <div id="supermenubasicos" class="menulink" onclick="openandclose('menubasicos');"
             onmouseover="closeall('menubasicos');">CANVAS</div>
@@ -377,11 +377,20 @@
 
     <div id='menubasicos' class="submenu subbasicos">
 
-        <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/planilha')" class="submenulink">WORKSHEET</a>
+        <a href="javascript:goto(`newidoc('https://omnidocs.vercel.app/docs/dataculture/', 'Slides')`); goto(`center('Slides')`)" class="submenulink">Material</a>
+
+        <a href="javascript:goto(`newidoc('https://slidelines.vercel.app/level/?filtra=_culturadedados&s=start&allblocks=true&timeheight=100&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=78623403#gid=78623403&&theme=https://slidelines.vercel.app/styles/leveloptmizednormal.css', 'Caso')`); goto(`center('Caso')`)" class="submenulink">CASO PPGDesign</a>
 
         <hr></hr>
 
-        <a href="javascript:goto('https://embed.figma.com/board/r5ZPP6PBC6M6uoS6cCJQBD/Webdesign?node-id=0-1&embed-host=share')" class="submenulink">LOUSA</a>
+        <a href="javascript:goto(`newidoc('https://www.tldraw.com/f/U4Iogb18xB5LgkXfbPDoW?d=v0.0.1380.845.ogNN7oCscCBHnPuTfXXn-', 'Lousa')`); goto(`center('Lousa')`)" class="submenulink">Lousa</a>
+
+        
+        <hr></hr>
+
+        <a href="javascript:goto(`setZoom(1)`)" class="submenulink">ZOOM 100%</a>
+        <a href="javascript:goto(`setZoom(.5)`)" class="submenulink">ZOOM 50%</a>
+        <a href="javascript:goto(`setZoom(.25)`)" class="submenulink">ZOOM 25%</a>
 
     </div>
 
@@ -395,7 +404,9 @@
 
       <hr></hr>
 
-      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/dbase','https://slides.com/ranoya/culturadedados/embed#/diagramaferramentas')" class="submenulink">DBASE</a>
+      <a href="javascript:goto(`db3()`)" class="submenulink">DBASE III Plus</a>
+
+      <a href="javascript:goto(`db4()`)" class="submenulink">DBASE IV</a>
 
       <hr></hr>
 
