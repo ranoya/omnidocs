@@ -954,6 +954,7 @@ window.openpncadata = function () {
     connect("Dados Ampliados", "Pormenores");
     connect("Paramátrico", "Pormenores");
 
+    setZoom(.5);
     center("Tabela");
     
 }
