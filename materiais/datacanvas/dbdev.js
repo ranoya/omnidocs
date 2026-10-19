@@ -935,7 +935,12 @@ window.openpncadata = function () {
     newframe("https://pointandclick.vercel.app/v1/semfiltros.html?theme=yellow70", "Visualização 1", 1382, 865, -1818, -610);
     newframe("https://pointandclick.vercel.app/v1/paralax.html?theme=yellow70", "Documento 1", 1372, 820, -1800, 655);
 
-    newframe("https://docs.google.com/spreadsheets/d/15lB-WclGe0WVET1yg94tZMOc5zVi6lufmv0vQZyXmYA/preview", "Dados Ampliados", 800, 600, 2106, -117);
+
+    run("Dataset " + datasetwindows, "opendataset", { googlesheet: "https://docs.google.com/spreadsheets/d/15lB-WclGe0WVET1yg94tZMOc5zVi6lufmv0vQZyXmYA/preview", indice: datasetwindows}, 800, 600, 2106, -117);
+    dataseturls[datasetwindows] = "https://docs.google.com/spreadsheets/d/15lB-WclGe0WVET1yg94tZMOc5zVi6lufmv0vQZyXmYA/preview";
+    
+
+
     newframe("https://pointandclick.vercel.app/v1/timelineonly.html?theme=yellow70", "Visualização 2", 997, 570, 2292, 733);
     newidoc("https://pointandclick.vercel.app/?bg=debe34&mg=ca941c&hl=#b38f08&hl2=FFFFFF", "Documento 2", 1000, 750, 3504, 173);
 
@@ -946,13 +951,14 @@ window.openpncadata = function () {
     connect("Tabela", "Visualização 1");
     connect("Tabela", "Documento 1");
     connect("Visualização 1", "Documento 1");
-    connect("Tabela", "Dados Ampliados");
-    connect("Dados Ampliados", "Visualização 2");
+    connect("Tabela", "Dataset " + datasetwindows);
+    connect("Dataset " + datasetwindows, "Visualização 2");
     connect("Visualização 2", "Documento 2");
-    connect("Documento 2", "Dados Ampliados");
+    connect("Documento 2", "Dataset " + datasetwindows);
     connect("Tabela", "Pormenores");
-    connect("Dados Ampliados", "Pormenores");
+    connect("Dataset " + datasetwindows, "Pormenores");
     connect("Paramátrico", "Pormenores");
+    datasetwindows++;
 
     setZoom(.5);
     center("Tabela");
