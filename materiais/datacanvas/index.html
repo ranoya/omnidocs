@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="" />
+    <title>Cultura de Dados</title>
+    <meta property="og:title" content="Cultura de Dados" />
+    <meta name="generator" content="artesanal" />
+    <meta
+      name="description"
+      content="Workbench para disciplina de Cultura de Dados e Workshop Ciência de dados na prática para quem não é cientista de dados"
+    />
+    <meta
+      property="og:description"
+      content="Workbench para disciplina de Cultura de Dados e Workshop Ciência de dados na prática para quem não é cientista de dados"
+    />
+    <meta name="author" content="Guilherme Ranoya" />
+    <meta
+      property="og:url"
+      content="https://omnidocs.vercel.app/materiais/workbench"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:site_name" content="Cultura de Dados" />
+    <meta name="application-name" content="Cultura de Dados" />
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta name="msapplication-TileColor" content="#debe34" />
+    <meta name="theme-color" content="#debe34" />
+    <meta name="msapplication-navbutton-color" content="#debe34" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#debe34" />
+  </head>
+
+  <style>
+    body {
+      height: 100vh;
+      height: -webkit-fill-available;
+      overflow: hidden;
+      background-color: #debe34;
+    }
+
+    html {
+      height: -webkit-fill-available;
+      overflow: hidden;
+      background-color: #debe34;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      
+    }
+
+    #workspace {
+      position: fixed;
+      top: 36px;
+      left: 0;
+      width: 100vw;
+      height: calc(100vh - 36px);
+      z-index: 5;
+
+      transition: all 0.4s ease-in;
+    }
+
+    #menu {
+      position: fixed;
+      top: 0;
+      left: 430px;
+      width: calc(100vw - 430px);
+      height: 36px;
+      z-index: 6;
+      background-color: #FFFFFF;
+      color: #666666;
+      font-family: Helvetica, Arial, sans-serif;
+
+      font-size: 12px;
+      line-height: 36px;
+
+      transition: all 0.4s ease-in;
+    }
+
+    .submenu {
+
+            width: auto;
+            position: fixed;
+            top: 37px;
+            z-index: 10;
+            background-color: #FFFFFF;
+            color: #666666;
+            outline-width: 2px;
+            outline-color: #FFFFFF;
+            outline-style: solid;
+            box-shadow: 8px 8px 7px 7px #00000022;
+            display: none;
+            padding: 2px;
+            height: auto;
+            min-width: 150px;
+            margin-left: 0;
+            transition: margin-left 0.4s ease-in;
+        }
+    
+    
+    hr {
+            width: calc(100%);
+            margin-left: 0;
+            border-top: 1px solid #debe34;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            
+    }
+
+    a.submenulink {
+        font-family: Helvetica, Arial, sans-serif;
+        display: block;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-decoration: none;
+        background-color: #ffffff;
+        color: #666666;
+        font-size: 10px;
+        font-weight: bolder;
+        line-height: 35px;
+        height: 35px;
+    }
+
+    a.submenulink:hover {
+        background-color: #762678;
+        color: #666666;
+    }
+
+    .subbasicos {
+      left: 133px;
+    }
+
+    .subarqueologia {
+      left: 208px;
+    }
+
+    .subplanilhas {
+      left: 317px;
+    }
+
+    .subsql {
+      left: 407px;
+    }
+
+    .subregex {
+      left: 461px;
+    }
+
+    .subnotebooks {
+      left: 530px;
+    }
+
+    .subvis {
+      left: 628px;
+    }
+
+    .suboutros {
+      left: 702px;
+    }
+
+
+
+    .margindivide {
+        margin-left: 430px;
+    }
+
+    a.menulink {
+      padding-left: 15px;
+      padding-right: 15px;
+      text-decoration: none;
+      color: #debe34;
+      background-color: #666666;
+      font-size: 10px;
+      font-weight: bolder;
+      line-height: 38px;
+      height: 35px;
+      display: inline-block;
+    }
+
+    a.menulink:hover {
+      background-color: #762678;
+    }
+
+    div.menulink {
+      padding-left: 15px;
+      padding-right: 15px;
+      text-decoration: none;
+      color: #debe34;
+      background-color: #666666;
+      font-size: 10px;
+      font-weight: bolder;
+      line-height: 38px;
+      height: 35px;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    div.menulink:hover {
+      background-color: #762678;
+    }
+
+    .fixamenulink {
+        background-color: #762678 !important;
+    }
+
+    
+
+    #interfacebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 148px;
+      height: 36px;
+      z-index: 18;
+      background-color: transparent !important;
+    }
+
+    #bot1 {
+      position: fixed;
+      text-align: center;
+      top: 0;
+      right: 92px;
+      width: 36px;
+      height: 36px;
+      z-index: 20;
+      background-color: transparent;
+      color: white;
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bolder;
+      font-size: 12px;
+      line-height: 36px;
+
+      transition: all 0.4s ease-in;
+      background-image: url(https://www.ranoya.com/Assets/Diagramas/fullpresentation.svg);
+      background-repeat: no-repeat;
+      background-size: 36px 36px;
+    }
+
+    #bot2 {
+      position: fixed;
+      text-align: center;
+      top: 0;
+      right: 56px;
+      width: 36px;
+      height: 36px;
+      z-index: 20;
+      background-color: transparent;
+      color: white;
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bolder;
+      font-size: 12px;
+      line-height: 36px;
+
+      transition: all 0.4s ease-in;
+
+      background-image: url(https://www.ranoya.com/Assets/Diagramas/dividescreen.svg);
+      background-repeat: no-repeat;
+      background-size: 36px 36px;
+    }
+
+    #bot3 {
+      position: fixed;
+      text-align: center;
+      top: 0;
+      right: 20px;
+      width: 36px;
+      height: 36px;
+      z-index: 20;
+      background-color: transparent;
+      color: white;
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bolder;
+      font-size: 12px;
+      line-height: 36px;
+
+      transition: all 0.4s ease-in;
+
+      background-image: url(https://www.ranoya.com/Assets/Diagramas/fullworkbench.svg);
+      background-repeat: no-repeat;
+      background-size: 36px 36px;
+    }
+
+    #bot1:hover,
+    #bot2:hover,
+    #bot3:hover {
+      background-color: #762678;
+    }
+
+    .nada {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+
+  </style>
+
+  <script>
+    // FUNÇÃO URL GET
+    // urlGet('xpto'); www.site.com/?xpto=teste
+    // let data = $_GET['xpto']; www.site.com/?xpto=teste
+
+    $_GET = [];
+    (function () {
+      let corte = window.location.href.toString().indexOf("?");
+      if (corte > 0) {
+        let argumento = window.location.href.toString().substring(corte + 1);
+        argumentos = argumento.split("&");
+        for (arg in argumentos) {
+          let argCorte = argumentos[arg].indexOf("=");
+          $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+            arg
+          ].substring(argCorte + 1);
+        }
+      }
+    })();
+  </script>
+
+  <body>
+    
+    <div id="workspace" class="nada workbechgrande">
+      <iframe
+        id="iwork"
+        frameborder="0"
+        src="https://omnicode.vercel.app/canvas/?plugin=https://omnidocs.vercel.app/materiais/datavanvas/dbdev.js"
+      ></iframe>
+    </div>
+
+    <div id="menu" class="nada workbechgrande">
+
+      <div id="superstart" class="menulink" style="margin-left: 30px;" onclick="goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/capa','https://slides.com/ranoya/culturadedados/embed#/capa')"
+            onmouseover="closeall();">INTRODUÇÃO</div>
+
+      <!-- <div id="superblank" class="menulink" onclick="goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/planilha')"
+            onmouseover="closeall();">WORKSHEET</div> -->
+
+      <div id="supermenubasicos" class="menulink" onclick="openandclose('menubasicos');"
+            onmouseover="closeall('menubasicos');">CANVAS</div>
+      
+      <div id="supermenuarqueologia" class="menulink" onclick="openandclose('menuarqueologia');"
+            onmouseover="closeall('menuarqueologia');">ARQUEOLOGIA</div>
+     
+      <div id="supermenuplanilhas" class="menulink" onclick="openandclose('menuplanilhas');"
+            onmouseover="closeall('menuplanilhas');">PLANILHAS</div>
+
+      <div id="supermenusql" class="menulink" onclick="openandclose('menusql');"
+            onmouseover="closeall('menusql');">SQL</div>
+
+      <div id="supermenuregex" class="menulink" onclick="openandclose('menuregex');"
+            onmouseover="closeall('menuregex');">REGEX</div>
+
+      <div id="supermenunotebooks" class="menulink" onclick="openandclose('menunotebooks');"
+            onmouseover="closeall('menunotebooks');">NOTEBOOKS</div>
+
+      <div id="supermenuvis" class="menulink" onclick="openandclose('menuvis');"
+            onmouseover="closeall('menuvis');">DATAVIZ</div>
+
+      <div id="supermenuoutros" class="menulink" onclick="openandclose('menuoutros');"
+            onmouseover="closeall('menuoutros');">OUTROS</div>
+
+
+    </div>
+
+    <div id='menubasicos' class="submenu subbasicos">
+
+        <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/planilha')" class="submenulink">WORKSHEET</a>
+
+        <hr></hr>
+
+        <a href="javascript:goto('https://embed.figma.com/board/r5ZPP6PBC6M6uoS6cCJQBD/Webdesign?node-id=0-1&embed-host=share')" class="submenulink">LOUSA</a>
+
+    </div>
+
+    <div id='menuarqueologia' class="submenu subarqueologia">
+
+        <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/visicalc','https://slides.com/ranoya/culturadedados/embed#/diagramaferramentas')" class="submenulink">VISICALC</a>
+
+        <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/lotus','https://slides.com/ranoya/culturadedados/embed#/diagramaferramentas')" class="submenulink">LOTUS 1-2-3</a>
+
+        <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/multiplan','https://slides.com/ranoya/culturadedados/embed#/diagramaferramentas')" class="submenulink">MULTIPLAN</a>
+
+      <hr></hr>
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/dbase','https://slides.com/ranoya/culturadedados/embed#/diagramaferramentas')" class="submenulink">DBASE</a>
+
+      <hr></hr>
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/wolfram','https://slides.com/ranoya/culturadedados/embed#/diagramaferramentas')" class="submenulink">MATHEMATICA</a>
+
+
+    </div>
+
+
+
+
+    
+
+    <div id='menuplanilhas' class="submenu subplanilhas">
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/programajava','https://slides.com/ranoya/culturadedados/embed#/captipos')" class="submenulink">TIPOS DE DADOS</a>
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/planilha','https://slides.com/ranoya/culturadedados/embed#/dadoscomparadosnaplanilha')" class="submenulink">DADOS EM PLANILHAS</a>
+
+
+      <hr></hr>
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/planilha','https://slides.com/ranoya/culturadedados/embed#/dadosnoformatocorreto')" class="submenulink">FORMATAÇÃO</a>
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/planilha','https://slides.com/ranoya/culturadedados/embed#/formatocondicional')" class="submenulink">FORMATAÇÃO CONDICIONAL</a>
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/planilha','https://slides.com/ranoya/culturadedados/embed#/cabecalhos')" class="submenulink">CABEÇALHOS</a>
+
+       <hr></hr>
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/planilha','https://slides.com/ranoya/culturadedados/embed#/formulasplanilhas')" class="submenulink">FÓRMULAS</a>
+
+     <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/planilha','https://slides.com/ranoya/culturadedados/embed#/serializacaodasops')" class="submenulink">OPERAÇÕES SERIADAS</a>
+
+     <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/planilha','https://slides.com/ranoya/culturadedados/embed#/multiplastabelas')" class="submenulink">MÚLTIPLAS PLANILHAS</a>
+
+     <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/planilha','https://slides.com/ranoya/culturadedados/embed#/validacaodedados')" class="submenulink">VALIDAÇÃO DE DADOS</a>
+
+     <hr></hr>
+
+     <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/notebooks','https://slides.com/ranoya/culturadedados/embed#/graficoseestatisticas')" class="submenulink">CONSTRUÇÃO DE GRÁFICOS</a>
+
+
+    
+        
+    </div>
+
+
+
+
+
+    <div id='menusql' class="submenu subsql">
+
+    <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/dbase','https://slides.com/ranoya/culturadedados/embed#/diagramaferramentas')" class="submenulink">DBASE</a>
+
+    <hr></hr>
+
+
+     <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/sqlquery','https://slides.com/ranoya/culturadedados/embed#/filtros')" class="submenulink">FILTROS</a>
+
+
+    <hr></hr>
+
+    <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/mysql')" class="submenulink">SQL</a>
+
+    <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/origemvis')" class="submenulink">USANDO MYSQL</a>
+
+    <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/querysheets','https://slides.com/ranoya/culturadedados/embed#/consultasql')" class="submenulink">SHEETS SQL</a>
+
+  
+    </div>
+
+
+
+
+
+
+
+    <div id='menuregex' class="submenu subregex">
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/casoregex','https://slides.com/ranoya/culturadedados/embed#/expressoesregulares')" class="submenulink">REGEX EM PLANILHAS</a>
+
+      <hr></hr>
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/regexer')" class="submenulink">REGEXER</a>
+
+    </div>
+
+    <div id='menunotebooks' class="submenu subnotebooks">
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/intronotebooks','https://slides.com/ranoya/culturadedados/embed#/notebooks')" class="submenulink">PROGRAMAÇÃO LETRADA</a>
+
+      <hr></hr>
+
+       <a href="javascript:goto('https://booklines.vercel.app/livros/observable','https://slides.com/ranoya/culturadedados/embed#/notebooks')" class="submenulink">PROGRAMANDO COM OBSERVABLE</a>
+
+       <a href='javascript:goto("https://slides.com/ranoya/dataliteracyworkbench/embed#/usandodados","https://slides.com/ranoya/culturadedados/embed#/notebooks")' class="submenulink">OBSERVABLE + DADOS</a>
+
+       <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/markdowneditor','https://slides.com/ranoya/culturadedados/embed#/md')" class="submenulink">MARKDOWN</a>
+
+       <hr></hr>
+
+       <a href="javascript:goto('https://slides.com/ranoya/palestratecnologiapesquisa/embed','https://slides.com/ranoya/culturadedados/embed#/futuro')" class="submenulink">CIÊNCIA, DESIGN E PROGRAMAÇÃO</a>
+
+       <hr></hr>
+
+       <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/dadosdoiib','https://slides.com/ranoya/culturadedados/embed#/datasets')" class="submenulink">DATASETS</a>
+
+        <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/csvjsonxml','https://slides.com/ranoya/culturadedados/embed#/tiposporferramenta')" class="submenulink">FORMATO DOS DADOS</a>
+       
+
+       <hr></hr>
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/experimentod31','https://slides.com/ranoya/culturadedados/embed#/d3')" class="submenulink">D3</a>
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/notebooks')" class="submenulink">VEGA LITE</a>
+
+      <hr></hr>
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/livros')" class="submenulink">EXEMPLOS DE PUBLICAÇÕES</a>
+
+
+
+    </div>
+
+    <div id='menuvis' class="submenu subvis">
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/linechart','https://slides.com/ranoya/culturadedados/embed#/datav')" class="submenulink">VISUALIZAÇÃO</a>
+
+      <hr></hr>
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/notebooks','https://slides.com/ranoya/culturadedados/embed#/graficoseestatisticas')" class="submenulink">GRÁFICOS EM PLANILHAS</a>
+
+      <hr></hr>
+
+      <a href="javascript:goto('https://slides.com/ranoya/estudodecasopnca/embed#/caps')" class="submenulink">ESTUDO DE CASO PNCA</a>
+      <a href="javascript:goto('https://slidelines.vercel.app/simple/?allowverticalscroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit#gid=1582062324')" class="submenulink">ESTUDO DE CASO THE ECONOMIST</a>
+
+
+      <a href="javascript:goto('https://slidelines.vercel.app/simple/?startvisible=true&fixascroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1214531908#gid=1214531908&theme=https://slidelines.vercel.app/styles/ontopembed.css', 'https://slides.com/ranoya/culturadedados/embed#/perguntapesquisa')" class="submenulink">DA PRÁTICA À PESQUISA</a>
+
+      <hr></hr>
+
+      <a href="javascript:goto('https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=debe34')" class="submenulink">ARTEFATOS DE VISUALIZAÇÃO</a>
+
+      <hr></hr>
+
+      <a href="javascript:goto('https://slidelines.vercel.app/level/?s=init&allowverticalscroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit#gid=1688013862&theme=https://slidelines.vercel.app/styles/fit.css')" class="submenulink">COMUNICAÇÃO CORPORATIVA</a>
+
+      <hr></hr>
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/experimentod31','https://slides.com/ranoya/culturadedados/embed#/d3')" class="submenulink">D3</a>
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/notebooks')" class="submenulink">VEGA LITE</a>
+
+    </div>
+
+    <div id='menuoutros' class="submenu suboutros">
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/premissa','https://slides.com/ranoya/culturadedados/embed#/perguntapesquisa')" class="submenulink">PREMISSA</a>
+
+      <hr></hr>
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/mysql')" class="submenulink">DB FIDDLE</a>
+
+      <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/regexer')" class="submenulink">REGEXR</a>
+
+      <a href="javascript:openout('https://regex101.com/')" class="submenulink">REGEX 101</a>
+
+      <a href="javascript:openout('https://observablehq.com/')" class="submenulink">OBSERVABLE</a>
+
+      <a href="javascript:openout('https://nextjournal.com/try')" class="submenulink">NEXTJOURNAL</a>
+
+      <a href="javascript:openout('https://jupyter.org/try-jupyter/lab/')" class="submenulink">JUPYTER LAB</a>
+
+      <a href="javascript:openout('https://colab.research.google.com/notebooks/data_table.ipynb')" class="submenulink">GOOGLE COLAB</a>
+
+      <hr></hr>
+      
+
+      <a href="javascript:openout('https://www.pcjs.org/software/pcx86/app/other/visicalc/1981/images/visicalc-refcard1-2.gif')" class="submenulink">MANUAL VISICALC 1</a>
+
+      <a href="javascript:openout('https://www.pcjs.org/software/pcx86/app/other/visicalc/1981/images/visicalc-refcard3-4.gif')" class="submenulink">MANUAL VISICALC 2</a>
+
+      <a href="javascript:openout('https://www.pcjs.org/software/pcx86/app/other/visicalc/1981/images/visicalc-refcard5-6.gif')" class="submenulink">MANUAL VISICALC 3</a>
+
+      <a href="javascript:openout('https://www.pcjs.org/software/pcx86/app/other/visicalc/1981/images/visicalc-refcard7-8.gif')" class="submenulink">MANUAL VISICALC 4</a>
+
+      <a href="javascript:openout('https://www.pcjs.org/software/pcx86/app/other/visicalc/1981/images/visicalc-refcard9-10.gif')" class="submenulink">MANUAL VISICALC 5</a>
+
+    
+    </div>
+
+    
+
+  </body>
+
+  <script>
+
+    let whoisopen = [];
+    whoisopen['menuarqueologia'] = false;
+    whoisopen['menusql'] = false;
+    whoisopen['menuplanilhas'] = false;
+    whoisopen['menuregex'] = false;
+    whoisopen['menunotebooks'] = false;
+    whoisopen['menuvis'] = false;
+    whoisopen['menuoutros'] = false;
+    whoisopen['menubasicos'] = false;
+
+
+    let goto = function (comando) {
+     
+        document.getElementById("iwork").contentWindow.postMessage(comando, '*');
+
+    };
+
+   
+
+    let closeall = function (excp) {
+        for (let elm in whoisopen) {
+
+            if (elm != excp) {
+                document.getElementById(elm).style.display = "none";
+                document.getElementById("super" + elm).classList.remove("fixamenulink");
+                whoisopen[elm] = false;
+
+            } 
+        }
+    }
+
+    let openandclose = function (quem) {
+
+        for (let elm in whoisopen) {
+            document.getElementById(elm).style.display = "none";
+            document.getElementById("super" + elm).classList.remove("fixamenulink");
+        }
+
+        if (whoisopen[quem] == false) {
+            whoisopen[quem] = true;
+            document.getElementById(quem).style.display = "block";
+            document.getElementById("super" + quem).classList.add("fixamenulink");
+        } else {
+            whoisopen[quem] = false;
+            document.getElementById(quem).style.display = "none";
+            document.getElementById("super" + quem).classList.remove("fixamenulink");
+        }
+
+
+    }
+
+    const openout = function(url) {
+      window.open(url);
+    }
+  </script>
+</html>
