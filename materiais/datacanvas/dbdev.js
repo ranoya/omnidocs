@@ -927,6 +927,23 @@ window.paradoxw45 = function () {
 }
 
 
+window.lotus = function () {
+  newidoc("https://namco.vercel.app/interfaces/?rom=l123", "Lotus 1-2-3");
+  centerlastframe();
+}
+
+window.visicalc = function () {
+  newidoc("https://namco.vercel.app/interfaces/?rom=vc", "Visicalc");
+  centerlastframe();
+}
+
+window.multiplan = function () {
+  newidoc("https://namco.vercel.app/interfaces/?rom=mp", "Multiplan");
+  centerlastframe();
+}
+
+
+
 
 window.openpncadata = function () {
     
