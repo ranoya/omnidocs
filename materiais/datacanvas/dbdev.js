@@ -767,6 +767,8 @@ window.manualvisicalc = function () {
     image("Visicalc Pg. 4", "https://www.pcjs.org/software/pcx86/app/other/visicalc/1981/images/visicalc-refcard7-8.gif", "transparent", 565, 562, 493, 1877);
     image("Visicalc Pg. 5", "https://www.pcjs.org/software/pcx86/app/other/visicalc/1981/images/visicalc-refcard9-10.gif", "transparent", 565, 562, 493, -516);
 
+    center("Visicalc Pg. 1");
+
 }
 
 window.applelogo = function () {
