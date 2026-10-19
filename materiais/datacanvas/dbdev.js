@@ -744,6 +744,13 @@ window.dataset = function (u) {
   datasetwindows++;
 }
 
+window.notedb = function () {
+  newidoc(`https://omnicode.vercel.app/notebook/?temptheme=${localStorage.getItem('infcanvas:theme')}&load=https://omnicode.vercel.app/canvas/sql.html`, "Instruções");
+
+}
+
+
+
 window.regex = function () {
     newidoc('https://regexr.com/', 'Regexr');
     center("Regexr");
