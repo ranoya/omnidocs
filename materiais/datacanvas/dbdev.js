@@ -1,4 +1,3 @@
-devmode();
 ungroovy();
 setTheme("light");
 setTransparentBackground();
