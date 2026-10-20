@@ -150,22 +150,26 @@
       left: 310px;
     }
 
-    .subsql {
-      left: 400px;
-    }
-
-    .subregex {
-      left: 454px;
-    }
-
     .subnotebooks {
-      left: 523px;
+      left: 400px;
+      
     }
 
     .subvis {
-      left: 621px;
+      left: 454px;
+      
     }
 
+    .subsql {
+      left: 523px;
+    }
+
+    .subregex {
+      left: 621px;
+      
+    }
+
+  
     .suboutros {
       left: 695px;
     }
@@ -357,17 +361,21 @@
       <div id="supermenuplanilhas" class="menulink" onclick="openandclose('menuplanilhas');"
             onmouseover="closeall('menuplanilhas');">PLANILHAS</div>
 
+      <div id="supermenunotebooks" class="menulink" onclick="openandclose('menunotebooks');"
+            onmouseover="closeall('menunotebooks');">NOTEBOOKS</div>
+
+      <div id="supermenuvis" class="menulink" onclick="openandclose('menuvis');"
+            onmouseover="closeall('menuvis');">DATAVIZ</div>
+
       <div id="supermenusql" class="menulink" onclick="openandclose('menusql');"
             onmouseover="closeall('menusql');">SQL</div>
 
       <div id="supermenuregex" class="menulink" onclick="openandclose('menuregex');"
             onmouseover="closeall('menuregex');">REGEX</div>
 
-      <div id="supermenunotebooks" class="menulink" onclick="openandclose('menunotebooks');"
-            onmouseover="closeall('menunotebooks');">NOTEBOOKS</div>
+      
 
-      <div id="supermenuvis" class="menulink" onclick="openandclose('menuvis');"
-            onmouseover="closeall('menuvis');">DATAVIZ</div>
+      
 
       <div id="supermenuoutros" class="menulink" onclick="openandclose('menuoutros');"
             onmouseover="closeall('menuoutros');">FERRAMENTAS</div>
@@ -468,10 +476,16 @@
 
       <a href="javascript:goto(`newidoc('https://docs.google.com/spreadsheets/d/1r6yAN9d-GQO6Tb8etdmwW0hAYZbhFlsEVjrZOxIZsZo/edit?gid=0#gid=0', 'Regex em Planilha')`); goto(`center('Regex em Planilha')`); closeall()" class="submenulink">REGEX EM PLANILHAS</a>
 
+      <a href="javascript:goto(`newidoc('https://regexr.com/', 'Regexr')`); goto(`center('Regexr')`); closeall()" class="submenulink">REGEXER</a>
+
       <hr></hr>
 
       <a href="javascript:goto(`newidoc('https://docs.google.com/spreadsheets/d/1FbY8hPtM8IxEJ26ybMZHpMrHdk-LEm1yuYPiFVwF94U/view?rm=embedded&', 'SQL Query em Planilhas')`); goto(`center('SQL Query em Planilhas')`); closeall()" class="submenulink">SQL QUERY EM PLANILHAS</a>
 
+      <hr></hr>
+
+      <a href="javascript:goto(`newidoc('https://docs.superhuman.com/embed/Tua_hUol4P/_suOvudPW?viewMode=embedplay', 'Coda')`); goto(`center('Coda')`); closeall()" class="submenulink">NOTION / CODA / AIRTABLE</a>
+      
       <hr></hr>
 
       <a href="javascript:goto(`newidoc('https://www.db-fiddle.com/f/fhRu8oQmSRex3YHkDGxE78/0', 'SQL Fiddle')`); goto(`center('SQL Fiddle')`); closeall()" class="submenulink">SQL FIDDLE</a>
@@ -492,22 +506,10 @@
 
     <div id='menusql' class="submenu subsql">
 
-    <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/dbase','https://slides.com/ranoya/culturadedados/embed#/diagramaferramentas')" class="submenulink">DBASE</a>
 
-    <hr></hr>
+    <a href="javascript:goto(`newidoc('https://docs.google.com/spreadsheets/d/1FbY8hPtM8IxEJ26ybMZHpMrHdk-LEm1yuYPiFVwF94U/view?rm=embedded&', 'SQL Query em Planilhas')`); goto(`center('SQL Query em Planilhas')`); closeall()" class="submenulink">SQL QUERY EM PLANILHAS</a>
 
-
-     <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/sqlquery','https://slides.com/ranoya/culturadedados/embed#/filtros')" class="submenulink">FILTROS</a>
-
-
-    <hr></hr>
-
-    <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/mysql')" class="submenulink">SQL</a>
-
-    <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/origemvis')" class="submenulink">USANDO MYSQL</a>
-
-    <a href="javascript:goto('https://slides.com/ranoya/dataliteracyworkbench/embed#/querysheets','https://slides.com/ranoya/culturadedados/embed#/consultasql')" class="submenulink">SHEETS SQL</a>
-
+    
   
     </div>
 
