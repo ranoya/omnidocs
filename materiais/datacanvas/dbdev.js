@@ -790,6 +790,19 @@ window.pjod = function () {
 }
 
 
+window.opendashs = function () {
+  
+
+  dataset("https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1688013862#gid=1688013862");
+  newidoc("https://visse.vercel.app/v2-arqueologia/bulletpoint.html?bg=debe34&fg=ffffff&", "Dashboard Prog");
+  newidoc("https://docs.superhuman.com/embed/4BHBLxS_54/_su-Ls7dY?viewMode=embedplay&hideSections=true", "Dashboard Coda");
+  connect("Dataset " + (datasetwindows - 1), "Dashboard Prog");
+  connect("Dataset " + (datasetwindows - 1), "Dashboard Coda");
+  center("Dataset " + (datasetwindows - 1));
+
+}
+
+
 
 // Legacy
 
