@@ -151,12 +151,12 @@
     }
 
     .subnotebooks {
-      left: 400px;
+      left: 427px;
       
     }
 
     .subvis {
-      left: 454px;
+      left: 525px;
       
     }
 
@@ -359,7 +359,7 @@
             onmouseover="closeall('menuarqueologia');">ARQUEOLOGIA</div>
      
       <div id="supermenuplanilhas" class="menulink" onclick="openandclose('menuplanilhas');"
-            onmouseover="closeall('menuplanilhas');">PLANILHAS</div>
+            onmouseover="closeall('menuplanilhas');">PLANILHAS E DB</div>
 
       <div id="supermenunotebooks" class="menulink" onclick="openandclose('menunotebooks');"
             onmouseover="closeall('menunotebooks');">NOTEBOOKS</div>
@@ -368,14 +368,11 @@
             onmouseover="closeall('menuvis');">DATAVIZ</div>
 
       <div id="supermenusql" class="menulink" onclick="openandclose('menusql');"
-            onmouseover="closeall('menusql');">SQL</div>
+            onmouseover="closeall('menusql');">ESCRITA COM DADOS</div>
 
       <div id="supermenuregex" class="menulink" onclick="openandclose('menuregex');"
-            onmouseover="closeall('menuregex');">REGEX</div>
+            onmouseover="closeall('menuregex');">VÍDEOS</div>
 
-      
-
-      
 
       <div id="supermenuoutros" class="menulink" onclick="openandclose('menuoutros');"
             onmouseover="closeall('menuoutros');">FERRAMENTAS</div>
@@ -467,7 +464,9 @@
 
     <div id='menuplanilhas' class="submenu subplanilhas">
 
-        
+      <a href="javascript:goto(`newidoc('https://omnidocs.vercel.app/materiais/workbench/tiposdedados.html?fcolor=450e46&bgcolor=debe34', 'Tipos')`); goto(`center('Tipos')`); closeall()" class="submenulink">TIPOS DE DADOS</a>
+
+      <hr></hr>
 
       <a href="javascript:goto(`newidoc('https://docs.google.com/spreadsheets/d/1pBbLeEtLQS_XT4-77wnx48Ogm7yNHQNX_kZC30wxmqQ/view?rm=embedded&gid=0#gid=0', 'Arrayformula')`); goto(`center('Arrayformula')`); closeall()" class="submenulink">ARRAYFORMULA</a>
 
