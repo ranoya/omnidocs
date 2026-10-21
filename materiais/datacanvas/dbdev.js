@@ -1120,3 +1120,10 @@ window.openpncadata = function () {
     
 }
 
+window.openplatpublica = function () {
+  
+  newidoc("https://booklines.vercel.app/pub/?titulo=Publicando&blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EPublicando%20o%20notebook%3C/b%3E&notebook=@ranoya/livroobservable-15", "Booklines", 854, 947, 1454, 66);
+
+  newidoc("https://booklines.vercel.app/scriba/?notebook=@ranoya/teste-scriba", "Scriba", 1347, 944, 2379, 68);
+
+}
