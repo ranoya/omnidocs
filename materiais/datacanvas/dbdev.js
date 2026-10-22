@@ -1126,6 +1126,10 @@ window.openplatpublica = function () {
 
   newidoc("https://booklines.vercel.app/scriba/?notebook=@ranoya/teste-scriba", "Scriba", 1347, 944, 2379, 68);
 
+  newidoc("https://quarto.org/", "Quarto", 1336, 854, 1453, 1092);
+
+  newidoc("https://parametric.press/issue-01/call-for-proposals/", "Parametric Press", 1217, 852, 2854, 1092);
+
 }
 
 window.tiposdearquivosdedados = function () {
