@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Notebook exportado</title>
+<style>
+  body{margin:0;padding:40px 24px 100px;font:15px/1.5 system-ui,sans-serif;color:#242424;background:#fff}
+  #notebook{width:min(900px,100%);margin:auto}
+  .cell{margin:0 0 22px}
+  .cell-header{display:flex;gap:8px;align-items:center;color:#888;font:11px ui-monospace,monospace;margin-bottom:5px}
+  .cell-code{margin:0;padding:12px;background:#f7f7f5;border-radius:6px;white-space:pre-wrap;overflow:auto;font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+  .cell-code.hidden{display:none}
+  .output{margin-top:7px;padding:8px 12px;border-left:2px solid #ececec;overflow:auto}
+  .output pre{white-space:pre-wrap;font:13px/1.5 ui-monospace,monospace}
+  .error{color:#b42318;white-space:pre-wrap;font:13px/1.5 ui-monospace,monospace}
+  .p5-host{min-height:1px}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typescript@5.9.2/lib/typescript.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.min.js"></script>
+<style>
+:root{
+  --bg:#fff;--fg:#242424;--code:#f7f7f5;
+  --muted:#888;--line:#ececec;--hover:#f3f3f3;--accent:#4b72d8;--error:#b42318
+}
+body{background:var(--bg);color:var(--fg)}
+.cell-code{background:var(--code)}
+.cell-header{color:var(--muted)}
+.output{border-left-color:var(--line)}
+.error{color:var(--error)}
+</style>
+<link id="highlight-theme-export" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/styles/github.min.css">
+<script>
+(function(){
+const CDN="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/styles/";
+const aliases={
+  "light":"github","github":"github","github dark":"github-dark","github-dark":"github-dark",
+  "dracula":"dracula","nord":"nord","monokai":"monokai","one dark":"atom-one-dark","one-dark":"atom-one-dark",
+  "solarized dark":"solarized-dark","solarized-dark":"solarized-dark",
+  "solarized light":"solarized-light","solarized-light":"solarized-light",
+  "gruvbox dark":"base16/gruvbox-dark-medium","gruvbox-dark":"base16/gruvbox-dark-medium",
+  "gruvbox light":"base16/gruvbox-light-medium","gruvbox-light":"base16/gruvbox-light-medium"
+};
+function norm(v){return String(v||"").trim().replace(/.css$/i,"").replace(/s+/g," ").toLowerCase()}
+function resolve(v){
+  if(!v||norm(v)==="auto")return matchMedia("(prefers-color-scheme:dark)").matches?"github-dark":"github";
+  return aliases[norm(v)]||String(v).trim().replace(/^styles//i,"").replace(/.css$/i,"").replace(/^/+|/+$/g,"");
+}
+function rgb(v){
+  const m=String(v||"").match(/^rgba?(([d.]+),s*([d.]+),s*([d.]+)/);return m?{r:+m[1],g:+m[2],b:+m[3]}:null
+}
+function hex(v){const c=n=>Math.max(0,Math.min(255,Math.round(n))).toString(16).padStart(2,"0");return"#"+c(v.r)+c(v.g)+c(v.b)}
+function mix(a,b,p){const x=rgb(a),y=rgb(b);return x&&y?hex({r:x.r+(y.r-x.r)*p,g:x.g+(y.g-x.g)*p,b:x.b+(y.b-x.b)*p}):a}
+function sync(){
+  const host=document.createElement("div");
+  host.style.cssText="position:fixed;left:-10000px;top:-10000px;opacity:0";
+  host.innerHTML='<pre class="hljs"><code class="hljs"><span class="hljs-comment">c</span><span class="hljs-keyword">k</span><span class="hljs-string">s</span><span class="hljs-deletion">d</span></code></pre>';
+  document.body.appendChild(host);
+  const q=s=>host.querySelector(s);
+  const c=e=>e?getComputedStyle(e).color:null;
+  const bg=getComputedStyle(q("code")).backgroundColor;
+  const fg=c(q("code"))||"rgb(36,36,36)";
+  const b=rgb(bg)||{r:255,g:255,b:255}, f=rgb(fg)||{r:36,g:36,b:36};
+  const bhex=hex(b), fhex=hex(f);
+  const muted=c(q(".hljs-comment"))||fg, accent=c(q(".hljs-keyword"))||fg, error=c(q(".hljs-deletion"))||fg;
+  document.documentElement.style.setProperty("--bg",bhex);
+  document.documentElement.style.setProperty("--fg",fhex);
+  document.documentElement.style.setProperty("--code",bhex);
+  document.documentElement.style.setProperty("--muted",rgb(muted)?hex(rgb(muted)):mix(fhex,bhex,.55));
+  document.documentElement.style.setProperty("--line",mix(fhex,bhex,.16));
+  document.documentElement.style.setProperty("--hover",mix(fhex,bhex,.07));
+  document.documentElement.style.setProperty("--accent",rgb(accent)?hex(rgb(accent)):fhex);
+  document.documentElement.style.setProperty("--error",rgb(error)?hex(rgb(error)):"#b42318");
+  document.body.removeChild(host);
+}
+const link=document.getElementById("highlight-theme-export");
+const theme=new URLSearchParams(location.search).get("temptheme")||"auto";
+link.href=CDN+resolve(theme)+".min.css";
+link.addEventListener("load",sync,{once:true});
+document.addEventListener("DOMContentLoaded",sync,{once:true});
+})();
+</script>
+</head>
+<body>
+<script>
+// display() existe antes das células exportadas para que scripts JavaScript
+// possam ser executados normalmente pelo navegador.
+window.display = value => console.log(value);
+</script>
+<div id="notebook">
+<!-- VANILLA-NOTEBOOK-CELL
+id: cell-18
+type: markdown
+hidden: true
+index: 0
+-->
+<script type="text/markdown" data-notebook-cell data-cell-id="cell-18" data-cell-type="markdown" data-cell-hidden="true"># Arquivos CSV
+</script>
+<!-- VANILLA-NOTEBOOK-CELL-END -->
+
+<!-- VANILLA-NOTEBOOK-CELL
+id: cell-17
+type: markdown
+hidden: true
+index: 1
+-->
+<script type="text/markdown" data-notebook-cell data-cell-id="cell-17" data-cell-type="markdown" data-cell-hidden="true">```csv
+nome,subtitulo,ano,serie,video,linkEmulador,relev,avatar,anonewed,remakevideo,produtora,publisher,genero,genero complemento,engine,tipo_index,tipologia,tipologia complementar,metainfo,marcos-inovacao,linguagem,linguagem complemento,SUBSITUIR VÍDEO
+Colossal Cave Adventure,,1972,,https://www.youtube.com/embed/O3etkSoHrR8,https://namco.vercel.app/interfaces/?rom=ccadv,2,https://www.ranoya.com/Assets/screenshots/terminal.png,,,The Interactive Original,,"aventura,fantasia,","adventure,aventura,fantasia,fantasy,",desktop,txt-adv,aventura de texto,"text adventure, aventura de texto,textadventure",,Primeira adaptação computacional para RPGs textuais,"textual,","verbal,textual,",
+Zork,,1979,,https://www.youtube.com/embed/mWNgQdybISA?si=mg-OihNvz_9OAF97&mute=1,https://namco.vercel.app/interfaces/?rom=zgue.jsdos,1,https://www.ranoya.com/Assets/screenshots/terminal.png,,,Infocom,MIT,"aventura,","adventure,aventura,","z-machine,desktop",txt-adv,aventura de texto,"text adventure, aventura de texto,textadventure",,,"textual,","verbal,textual,",
+Dragon's Lair,,1980,Dragon's Lair,https://www.youtube.com/embed/P3XNQja0H7I,,1,https://www.ranoya.com/Assets/screenshots/dragonslair.png,,,Cinematronics,,"cavalaria,","cavalaria,cavalary","laserdisc,desktop",motion_interact,"animação interativa,interactive animation","animação interativa,interactive animation",,,"storybook realism,","animação,",
+Mystery House,,1980,,https://www.youtube.com/embed/kiwHwPvIHBs,,1,https://www.ranoya.com/Assets/screenshots/mysteryhouse.png,,,Sierra,,"aventura,policial,terror","adventure,aventura,police procedural,policial,horror",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,Primeira narrativa computacional com gráficos,"textual,","verbal,textual,",
+The Wizard and the Princess,,1980,,https://www.youtube.com/embed/XG0FWgNMmQ0?si=AhMT0o3dN0P4CErw,,1,,,,Sierra,,"aventura,","adventure,aventura,",,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"textual,","verbal,textual,",
+Stone of Sisyphus,,1981,,https://www.youtube.com/embed/og0TI42M0xU?si=X1d6oYlgZDwGjXcS,,1,,,,Chameleon Software,,"aventura,","adventure,aventura,",,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"textual,","verbal,textual,",
+The Hobbit,,1982,,https://www.youtube.com/embed/D9qrZC7WUio?si=P39GvCeyQiCi-Nh8,,1,,,,Beam Software,"Addison-Wesley Publishing Company, Inc.","aventura,","adventure,aventura,",,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"textual,","verbal,textual,",
+Starcross,,1982,,https://www.youtube.com/embed/1U9Zfm00DOQ,,1,,,,Infocom,,"aventura,ficção científica,","sci-fi,adventure","z-machine,desktop",txt-adv,aventura de texto,"text adventure, aventura de texto,textadventure",,,"textual,","verbal,textual,",
+One Room,,1983,,https://www.youtube.com/embed/FuJQqBVZGnw?start=391,,1,https://www.ranoya.com/Assets/screenshots/terminal.png,,,Jorge Mir,,"terror,","horror,",desktop,txt-adv,aventura de texto,"text adventure, aventura de texto,textadventure",,,"textual,",textual,
+Space Ace,,1983,Space Ace,https://www.youtube.com/embed/vfkwsC-Hz80,https://namco.vercel.app/interfaces/?rom=spce,1,https://www.ranoya.com/Assets/screenshots/spaceace.png,,,Cinematronics,,"cavalaria,ficção científica,","cavalaria,cavalary,sci-fi,ficção científica,","laserdisc,desktop",motion_interact,animação interativa,"animação interativa,interactive animation",,,"storybook realism,","animação,",
+Planetfall,,1983,,https://www.youtube.com/embed/lpTHUqF1jsI,,1,,,,Infocom,,"aventura,ficção científica,","sci-fi,adventure","z-machine,desktop",txt-adv,aventura de texto,"text adventure, aventura de texto,textadventure",,,"textual,","verbal,textual,",
+Enchanter,,1983,,https://www.youtube.com/embed/MMFs2-05d6U,,1,,,,Infocom,,"aventura,",adventure,"z-machine,desktop",txt-adv,aventura de texto,"text adventure, aventura de texto,textadventure",,,"textual,","verbal,textual,",
+Hitch-hiker's Guide to the Galaxy,,1984,,https://www.youtube.com/embed/b-ISbNT8Xyc,https://www.bbc.co.uk/programmes/articles/1g84m0sXpnNCv84GpN2PLZG/the-game-30th-anniversary-edition,1,,,,Infocom,,"aventura,comédia,","adventure,comedy","z-machine,desktop",txt-adv,aventura de texto,"text adventure, aventura de texto,textadventure",,,"textual,","verbal,textual,",
+King's Quest I,Quest for the Crown,1984,King's Quest,https://www.youtube.com/embed/r0TLhR51uGY,https://namco.vercel.app/interfaces/?rom=skq1,3,https://www.ranoya.com/Assets/screenshots/kingsquest1.png,,,Sierra,,cavalaria,"cavalaria,cavalary","sierra agi,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,Primeiro Point & Click Adventure com imagens coloridas e som.,"pixel art,","pixel art,",
+King's Quest II,Romancing the Throne,1985,King's Quest,https://www.youtube.com/embed/rKZwVQYV34g,https://namco.vercel.app/interfaces/?rom=skq2,1,https://www.ranoya.com/Assets/screenshots/kingsquest1.png,,,Sierra,,cavalaria,"cavalaria,cavalary","sierra agi,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,","pixel art,",
+King's Quest III,To Heir is Human,1986,King's Quest,https://www.youtube.com/embed/A6ug6ty9Ab0,https://namco.vercel.app/interfaces/?rom=kq3,1,https://www.ranoya.com/Assets/screenshots/kingsquest1.png,,,Sierra,,cavalaria,"cavalaria,cavalary","sierra agi,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,","pixel art,",
+Space Quest I,The Sairen Encouter,1986,Space Quest,https://www.youtube.com/embed/_j44z0JIVh0,https://namco.vercel.app/interfaces/?rom=sq1,2,https://www.ranoya.com/Assets/screenshots/rogerwilco1.png,1991,https://www.youtube.com/embed/nHcejKK4X6I,Sierra,,"ficção científica,comédia,","sci-fi,ficção científica,comédia,comedy,","sierra agi,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,","pixel art,",
+Leather Goddess of Phobos,,1986,,https://www.youtube.com/embed/DIQyxBQNdSM?si=wVGhn-MuUSP5z6HQ&amp;start=3,,1,,,,Infocom,,"aventura,","adventure,aventura,",,txt-adv,aventura de texto,"text adventure, aventura de texto,textadventure",,,"textual,","verbal,textual,",
+The Black Cauldron,,1986,,https://www.youtube.com/embed/g0y73avZhJE?si=wSwXRqLjEJgQuV6a,,1,,,,Sierra,,"aventura, cavalaria","cavalaria,cavalary","sierra agi,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,","pixel art,",
+Space Quest II,Vohaul's Revenge,1987,Space Quest,https://www.youtube.com/embed/79P_3pqrR4E,https://namco.vercel.app/interfaces/?rom=ssq2,1,https://www.ranoya.com/Assets/screenshots/rogerwilco1.png,,,Sierra,,"ficção científica,comédia,","sci-fi,ficção científica,comédia,comedy,","sierra agi,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,","pixel art,",
+Police Quest I,In Pursuit of the Death Angel,1987,Police Quest,https://www.youtube.com/embed/hCgFYW1--JI,https://namco.vercel.app/interfaces/?rom=spq1,1,,,,Sierra,,"policial,","police procedural,policial,","sierra agi,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,","pixel art,",
+Leisure Suit Larry I,In the Land of the Lounge Lizards,1987,Lesure Suit Larry,https://www.youtube.com/embed/uJ4q9IEAdME,https://namco.vercel.app/interfaces/?rom=lsllll1,2,https://www.ranoya.com/Assets/screenshots/larry1.png,,,Sierra,,"comédia,","comédia,comedy,","sierra agi,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,","pixel art,",
+Maniac Mansion,,1987,Maniac Mansion,https://www.youtube.com/embed/FhHX1J-68xs,https://namco.vercel.app/interfaces/?rom=mman,2,https://www.ranoya.com/Assets/screenshots/maniacmansion.png,,,Lucasarts,,"aventura,policial,comédia,","adventure,aventura,police procedural,policial,comédia,comedy,","scumm,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,Primeiro Point & Click Adventure com interações totalmente gráficas e sem instruções por texto.,"pixel art,","pixel art,",
+Dragon's Lair,Escape from Singes Castle,1987,Dragon's Lair,https://www.youtube.com/embed/BBic-pEdb5I,,1,https://www.ranoya.com/Assets/screenshots/dragonslair.png,,,Cinematronics,,"aventura,","adventure,aventura,","laserdisc,desktop",motion_interact,animação interativa,"animação interativa,interactive animation",,,"storybook realism,","animação,",
+Leisure Suit Larry II,Goes Looking for Love,1988,Lesure Suit Larry,https://www.youtube.com/embed/3dPqc-1ebjM,https://namco.vercel.app/interfaces/?rom=lsl2,1,https://www.ranoya.com/Assets/screenshots/larry1.png,,,Sierra,,"comédia,","comédia,comedy,","sierra agi,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,","pixel art,",
+King's Quest IV,The Perils of Rosella,1988,King's Quest,https://www.youtube.com/embed/Bpt9CHZD8oc,https://namco.vercel.app/interfaces/?rom=kq4,1,https://www.ranoya.com/Assets/screenshots/graham4.png,,,Sierra,,cavalaria,"cavalaria,cavalary","sierra agi,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,","pixel art,",
+Police Quest II,The Vengeance,1988,Police Quest,https://www.youtube.com/embed/ByukrG2W0dA,https://namco.vercel.app/interfaces/?rom=spq2,1,,,,Sierra,,"policial,","police procedural,policial,","sierra agi,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,","pixel art,",
+Zak McKracken and the Alien Mindbenders,,1988,,https://www.youtube.com/embed/KPv9qt24Xio?si=05iJ9Y5oEPng1UMn,,1,,,,Lucasarts,,"aventura,ficção científica,comédia,","adventure,aventura,sci-fi,ficção científica,comédia,comedy,","scumm,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Space Quest III,The Pirates of Pestulon,1989,Space Quest,https://www.youtube.com/embed/J7fSmYSQ8VU,https://namco.vercel.app/interfaces/?rom=sq3,1,https://www.ranoya.com/Assets/screenshots/rogerwilco3.png,,,Sierra,,"ficção científica,comédia,","sci-fi,ficção científica,comédia,comedy,","sierra agi,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,","pixel art,",
+Leisure Suit Larry III,Passionate Patti in Pursuit of the Pulsating Pectorals,1989,Lesure Suit Larry,https://www.youtube.com/embed/usii6NzN-to,https://namco.vercel.app/interfaces/?rom=lsl3,1,https://www.ranoya.com/Assets/screenshots/larry3.png,,,Sierra,,"comédia,","comédia,comedy,","sierra agi,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,","pixel art,",
+Future Wars,Adventures in Time,1989,,https://www.youtube.com/embed/sdRJ3pzbDG0,https://namco.vercel.app/interfaces/?rom=futurew,1,,,,Delphine Software,,"aventura,ficção científica,","adventure,aventura,sci-fi,ficção científica,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Indiana Jones and the Last Crusade,,1989,Indiana Jones,https://www.youtube.com/embed/9ivNLD75rAU,https://namco.vercel.app/interfaces/?rom=indy3,2,,,,Lucasarts,,"aventura,","adventure,aventura,","scumm,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Codename: ICEMAN,,1989,,https://www.youtube.com/embed/LbSp7JOAJpE,,1,,,,Sierra,,aventura,"adventure,aventura","sierra agi,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,","pixel art,",
+Hero's Quest,So You Want To Be A Hero,1989,Quest for Glory,https://www.youtube.com/embed/hkQl5tP4yxI,,1,,,,Sierra,,"aventura,cavalaria","adventure,aventura,cavalaria,cavalary","sierra agi,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,","pixel art,",
+Lara Bow I,The Colonel's Bequest,1989,Lara Bow,https://www.youtube.com/embed/yY0t8Wp28c8,,1,,,,Sierra,,aventura,"adventure,aventura","sierra agi,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,","pixel art,",
+Anchorhead,,1989,,https://www.youtube.com/embed/0UaKbLTFuWA,,1,,,,Michael S. Gentry,,terror,horror,desktop,txt-adv,aventura de texto,"text adventure, aventura de texto,textadventure",,,"textual,",,
+It Came From the Desert,,1989,It Came From the Desert,https://www.youtube.com/embed/KTWd_eyAmgQ,,1,,,,Cinemaware,,terror,horror,,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Antheads,It Came From the Desert II,1990,It Came From the Desert,https://www.youtube.com/embed/S7oojCEj8HM,,1,,,,Cinemaware,,terror,horror,,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Quest for Glory II,Trial by Fire,1990,Quest for Glory,https://www.youtube.com/embed/ZlHJacyqUmo,,1,,,,Sierra,,"aventura,cavalaria","adventure,aventura,cavalaria,cavalary","sierra agi,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,","pixel art,",
+King's Quest V,Absence Makes the Heart Go Yonder,1990,King's Quest,https://www.youtube.com/embed/JQ2yh0bo550,https://namco.vercel.app/interfaces/?rom=kq5,1,https://www.ranoya.com/Assets/screenshots/graham4.png,,,Sierra,,cavalaria,"cavalaria,cavalary","sierra sci,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Loom,,1990,,https://www.youtube.com/embed/ps1N2GS378g?start=7,https://namco.vercel.app/interfaces/?rom=loom,1,,,,Lucasarts,,"fantasia,","fantasia,fantasy,","scumm,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+The Secret of Monkey Island,,1990,Monkey Island,https://www.youtube.com/embed/QgRIXntFhww,https://namco.vercel.app/interfaces/?rom=mi1,2,https://www.ranoya.com/Assets/screenshots/gaybrush.png,2009,https://www.youtube.com/embed/FpIUxjGfkXg,Lucasarts,,"aventura,","adventure,aventura,","scumm,mobile,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,"A aventura foi baseada na atração Piratas do Caribe, dos parques da Disney.","pixel art,","pixel art,",
+Conquests of Camelot,The Search for the Holy Grail,1990,,https://www.youtube.com/embed/rd-epKNOo0U,https://namco.vercel.app/interfaces/?rom=scoc,1,,,,Sierra,,cavalaria,"cavalaria,cavalary","sierra agi,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,","pixel art,",
+Rise of the Dragon,,1990,,https://www.youtube.com/embed/P4QxdGyXs8M?si=W24-8w3IRjdGT9er,https://namco.vercel.app/interfaces/?rom=rod,1,,,,Dynamix,,"ficção científica,cyberpunk,","sci-fi,ficção científica,cyberpunk,",desktop,graph_dialg,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,motion capture,","pixel art,motion graphics,",
+Another World,,1991,,https://www.youtube.com/embed/wjMf_bEfqIc,https://namco.vercel.app/interfaces/?rom=anoderw,3,,2011,,Delphine Software,,"ficção científica,","sci-fi,ficção científica,",desktop,motion_interact,animação interativa,"animação interativa,interactive animation","ação,plataforma,out of the world",,"vetorizado,estilizado","animação,",
+Dragon's Lair II,Time Warp,1991,Dragon's Lair,https://www.youtube.com/embed/-lwOzgFJxaQ,,1,https://www.ranoya.com/Assets/screenshots/dragonslair.png,,,Cinematronics,,cavalaria,"cavalaria,cavalary","laserdisc,desktop",motion_interact,animação interativa,"animação interativa,interactive animation",,,"storybook realism,pixel art,","animação,pixel art,",
+Leisure Suit Larry V,Passionate Patti Does a Little Undercover Work,1991,Lesure Suit Larry,https://www.youtube.com/embed/TYpd4BV1LqM,https://namco.vercel.app/interfaces/?rom=lsl5,1,https://www.ranoya.com/Assets/screenshots/larry5.png,,,Sierra,,"comédia,","comédia,comedy,","sierra sci,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Space Quest IV,Roger Wilco and the Time Rippers,1991,Space Quest,https://www.youtube.com/embed/R6R8j8hzu2Y,https://namco.vercel.app/interfaces/?rom=sq4,1,https://www.ranoya.com/Assets/screenshots/rogerwilco3.png,,,Sierra,,"ficção científica,comédia,","sci-fi,ficção científica,comédia,comedy,","sierra sci,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Monkey Island 2,Le Chuck's Revenge,1991,Monkey Island,https://www.youtube.com/embed/RZeGaZUJOqc,https://namco.vercel.app/interfaces/?rom=mi2lr,2,https://www.ranoya.com/Assets/screenshots/gaybrush.png,2010,https://www.youtube.com/embed/rpBShSvEkmc,Lucasarts,,"aventura,","adventure,aventura,","scumm,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Police Quest III,The Kindred,1991,Police Quest,https://www.youtube.com/embed/wfKwEi6mXyM,https://namco.vercel.app/interfaces/?rom=spq3,1,,,,Sierra,,"policial,","police procedural,policial,","sierra sci,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Cruise for a Corpse,,1991,,https://www.youtube.com/embed/mbM7mVQlNYg,,1,,,,Delphine Software,,"policial,","police procedural,policial,",,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"storybook realism,pixel art","animação,pixel art,",
+Conquests of the Longbow,The Legend of Robin Hood,1991,,https://www.youtube.com/embed/VeyEnlmbEI0,https://namco.vercel.app/interfaces/?rom=lbow,1,,,,Sierra,,"aventura,cavalaria","adventure,aventura,cavalaria,cavalary","sierra sci,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Heart of China,,1991,,https://www.youtube.com/embed/y7dfU8JiHZg?si=ic_3dFVf_f0_PjmJ,https://namco.vercel.app/interfaces/?rom=https://www.youtube.com/embed/y7dfU8JiHZg?si=ic_3dFVf_f0_PjmJ,1,,,,Dynamix,,aventura,adventure,desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,motion capture,","pixel art,motion graphics,",
+Mixed-Up Fairy Tales,,1991,,https://www.youtube.com/embed/HQaaax1M8ws,,1,,,,Sierra,,"aventura,cavalariac,comédia","adventure,aventura,cavalaria,cavalarycomédia,comedy","sierra sci,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Lara Bow II,The Dagger of Amon Ra,1992,Lara Bow,https://www.youtube.com/embed/Oevq2aSOs0M,,1,,,,Sierra,,"aventura,","adventure,aventura,","sierra sci,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Quest for Glory III,Wages of War,1992,Quest for Glory,https://www.youtube.com/embed/cypkqZqvp3M?start=1,,1,,,,Sierra,,"aventura,cavalaria","adventure,aventura,cavalaria,cavalary","sierra agi,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,","pixel art,",
+Dragon's Lair III,The Curse of Mordread,1992,Dragon's Lair,https://www.youtube.com/embed/ZFzlLrFTRzU,,1,https://www.ranoya.com/Assets/screenshots/dragonslair.png,,,Cinematronics,,cavalaria,"cavalaria,cavalary","laserdisc,desktop",motion_interact,animação interativa,"animação interativa,interactive animation",,,"storybook realism,pixel art,","animação,pixel art,",
+Indiana Jones and the Fate of Atlantis,,1992,Indiana Jones,https://www.youtube.com/embed/LZZXJ3zCRDQ,https://namco.vercel.app/interfaces/?rom=ijfa,2,,,,Lucasarts,,"aventura,","adventure,aventura,","scumm,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Star Trek,25th Anniversary,1992,,https://www.youtube.com/embed/IQ6frFkKZYs,,1,,,,Interplay,,"aventura,ficção científica","adventure,sci-fi",,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+King's Quest VI,"Heir Today, Gone Tomorrow",1992,King's Quest,https://www.youtube.com/embed/y5G2YHOw3XI,,1,https://www.ranoya.com/Assets/screenshots/graham4.png,,,Sierra,,cavalaria,"cavalaria,cavalary","sierra sci,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Lure of Temptress,,1992,,https://www.youtube.com/embed/qCajL9SgvC0,,1,,,,Virgin Interactive,,"fantasia,","fantasia,fantasy,","virtual theatre,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+The Legend of Kyrandia,Book One,1992,Kyrandia,https://www.youtube.com/embed/_NOml8UrZPw?si=BkXTVTGQGAHsNrny&amp;start=4,,1,,,,Virgin Interactive,Westwood Studios,"adventura,fantasia","fantasy,adventure",,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Gabriel Knight I,Sins of the Fathers,1993,Gabriel Knight,https://www.youtube.com/embed/bc6PwMAnzWg,,1,,2013,https://www.youtube.com/embed/f8A0UxOrBrg,Sierra,,"policial,fantasia,","police procedural,policial,fantasia,fantasy,","sierra sci,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Quest for Glory IV,Shadows of Darkness,1993,Quest for Glory,https://www.youtube.com/embed/eCbeElchSzo?start=2,,1,,,,Sierra,,"aventura,cavalaria","adventure,aventura,cavalaria,cavalary","sierra sci,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Day of the Tentacle,,1993,Maniac Mansion,https://www.youtube.com/embed/yoF0apBRqTg,https://namco.vercel.app/interfaces/?rom=dott,3,https://pbs.twimg.com/profile_images/613806160492236800/WbomZwXk_400x400.png,2016,https://www.youtube.com/embed/eW283uY3sLI,"Lucasarts,Double Fine Productions",,"aventura,comédia,","adventure,aventura,comédia,comedy,","scumm,mobile,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,"A narrativa se iniciava com uma animação audiovisual em linguagem de desenho animado, criando a imersão de que o usuário estaria dentro de um desenho animado.","pixel art,chuck jones cartoons",desenho animado,
+Sam & Max Hit the Road,,1993,Sam & Max,https://www.youtube.com/embed/LvjqHbF9zR0,,2,,,,Lucasarts,,"aventura,policial,","adventure,aventura,police procedural,policial,","scumm,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,chuck jones cartoons",,
+Space Quest V,The Next Mutation,1993,Space Quest,https://www.youtube.com/embed/aIuxSnVedtQ,https://namco.vercel.app/interfaces/?rom=sq5,1,https://www.ranoya.com/Assets/screenshots/rogerwilco5.png,,,Sierra,,"ficção científica,comédia,","sci-fi,ficção científica,comédia,comedy,","sierra sci,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Leisure Suit Larry VI,"Shape Up, or Slip Out",1993,Lesure Suit Larry,https://www.youtube.com/embed/lX5KcgHeQro,,1,https://www.ranoya.com/Assets/screenshots/larry5.png,,,Sierra,,"comédia,","comédia,comedy,","sierra sci,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Police Quest IV,Open Season,1993,Police Quest,https://www.youtube.com/embed/IrQ22bh-mm0,,1,,,,Sierra,,policial,"police procedural,policial","sierra sci,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"motion capture,","motion graphics,",
+Call of Cthulhu,Shadow of the Comet,1993,Call of Cthulhu,https://www.youtube.com/embed/-Dwukeu8alE,,1,,,,Infogrames,,terror,horror,,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Simon the Sorcerer,,1993,Simon the Sorcerer,https://www.youtube.com/embed/6Mwd7wbzzfY,,1,,,,Adventure Soft,,"aventura,comédia,","adventure,aventura,comedy",scumm,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Blue Force,,1993,Police Quest,https://www.youtube.com/embed/Cb4Ydw5smt0?si=WP8Sh1d6wHcLKncf,,1,,,,Tsunami Games,,policial,"police procedural,policial",,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"motion capture,","motion graphics,",
+The Legend of Kyrandia,Hand of Fate,1993,Kyrandia,https://www.youtube.com/embed/wozhvGCK6BM?si=S7RPvVtCtcxUq4hA,,1,,,,Virgin Interactive,Westwood Studios,"adventura,fantasia","fantasy,adventure",,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+The Legend of Kyrandia,Malcom's Revenge,1994,Kyrandia,https://www.youtube.com/embed/4xLm0wQDW58?si=w3FhqRqM_GP7knao,,1,,,,Virgin Interactive,Westwood Studios,"adventura,fantasia","fantasy,adventure",,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+King's Quest VII,The Princeless Bride,1994,King's Quest,https://www.youtube.com/embed/o8FJuPnGr3g,,1,https://www.ranoya.com/Assets/screenshots/graham4.png,,,Sierra,,cavalaria,"cavalaria,cavalary","sierra sci,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"storybook realism,","animação,",
+Beneath a Steel Sky,,1994,Steel Sky,https://www.youtube.com/embed/d-x0qghlvfE,https://namco.vercel.app/interfaces/?rom=bss,2,,,,"Virgin Interactive, Revolution Software",,"ficção científica,cyberpunk,","sci-fi,ficção científica,","virtual theatre,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Noctropolis,,1994,,https://www.youtube.com/embed/oMSvY-wKkxk?si=cwkNLXVnJMp9zXV8,,1,,,,Electronic Arts,Nightdive Studios,"policial,fantasia,","police procedural,policial,fantasia,fantasy,",,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,motion capture,","pixel art,motion graphics,",
+Gabriel Knight II,The Beast Within,1995,Gabriel Knight,https://www.youtube.com/embed/TFwl4fcej3Q,,1,,,,Sierra,,"policial,fantasia,","police procedural,policial,fantasia,fantasy,","sierra sci,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"motion capture,","motion graphics,",
+Discworld,,1995,Discworld,https://www.youtube.com/embed/wKkXMprIaQA?si=KaVpKSJ0oNbBKw1j,,1,,,,Random House,Transworld Publishers,"aventura,fantasia","adventure,fantasy",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Star Trek: The Next Generation,A Final Unity,1995,,https://www.youtube.com/embed/hkfIRPWzeV8?si=Oa6Vst-XgUMNxiC3,,1,,,,Spectrum HoloByte,Microprose,"aventura, ficção científica","adventure,sci-fi",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Torin's Passage,,1995,,https://www.youtube.com/embed/BIDT0A_6cdQ,,1,,,,Sierra,,"aventura,","adventure,aventura,","sierra sci,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"storybook realism,","animação,",
+Simon the Sorcerer II,"The Lion, the Wizard and the Wardrobe",1995,Simon the Sorcerer,https://www.youtube.com/embed/71TA4-jgpqI,,1,,,,Adventure Soft,,"aventura,comédia,","adventure,aventura,comedy",,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Flight of the Amazon Queen,,1995,,https://www.youtube.com/embed/ck7GFnKx07g,,1,,,,Interactive Binary Illusions,,"aventura,","adventure,aventura,",JASPAR,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+The Dig,,1995,,https://www.youtube.com/embed/kTs2GIZVGoI,,3,,,,Lucasarts,,"ficção científica,","sci-fi,ficção científica,","scumm,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Space Quest VI,Roger Wilco in the Spinal Frontier,1995,Space Quest,https://www.youtube.com/embed/YCxfFAmNh7c,,1,https://www.ranoya.com/Assets/screenshots/rogerwilco6.png,,,Sierra,,"ficção científica,comédia,","sci-fi,ficção científica,comédia,comedy,","sierra sci,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"storybook realism,","animação,",
+Full Throttle,,1995,,https://www.youtube.com/embed/c36OmC5UbME,https:/namco.vercel.app/interfaces/?doszone=https://cdn.dos.zone/custom/crafted/fullthrottle.jsdos,3,,,,"Lucasarts,Double Fine Productions",,"aventura,","adventure,aventura,","scumm,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Call of Cthulhu,Prisoner of Ice,1995,Call of Cthulhu,https://www.youtube.com/embed/vRsQAg0vA0g,,1,,,,Infogrames,,terror,horror,,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,","pixel art,",
+Leisure Suit Larry VII,Love for Sail,1996,Lesure Suit Larry,https://www.youtube.com/embed/oQuEGa2_CBQ,,1,https://www.ranoya.com/Assets/screenshots/larry5.png,,,Sierra,,"comédia,","comédia,comedy,","sierra sci,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"storybook realism,","animação,",
+The Neverhood,,1996,,https://www.youtube.com/embed/8naXbFrqYqA,,1,,,,Riverhillsoft,,aventura,adventure,desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,claymation,,
+Normality,,1996,,https://www.youtube.com/embed/K3RotcJR9vI?si=AWAYW3pYJ50CZ3mJ&amp;start=5,,1,,,,Gremlin Interactive,,aventura,adventure,desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"3D,",,
+3 Skulls of the Toltecs,,1996,,https://www.youtube.com/embed/-lpJ2f63nVQ?si=MABFc-nC0hKlz_mS,,1,,,,Revistronic,,"aventura,comédia","adventure,comedy",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"3D,chuck jones cartoons",,
+Broken Sword,Shadows of the Templars,1996,Broken Sword,https://www.youtube.com/embed/zbabhM16cV0,,1,,,,Virgin Interactive,,"aventura,policial,cavalaria","cavalary,adventure,aventura,police procedural,policial,","virtual theatre,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"storybook realism,","ilustração,literatura,",
+The Curse of Monkey Island,,1997,Monkey Island,https://www.youtube.com/embed/zfAo3O2qZR0,,1,https://www.ranoya.com/Assets/screenshots/gaybrush2.png,,,Lucasarts,,"aventura,comédia,","adventure,aventura,comédia,comedy,","scumm,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"ilustração de literatura infantil,","ilustração,literatura,",
+Broken Sword II,The Smoking Mirror,1997,Broken Sword,https://www.youtube.com/embed/wm7MIAtvKZE,,1,,,,Virgin Interactive,,"aventura,policial,","adventure,aventura,police procedural,policial,","virtual theatre,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"ilustração de literatura infantil,","ilustração,literatura,",
+Grim Fandango,,1998,,https://www.youtube.com/embed/kcqj0APsDsM,,2,https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/f5/02/0f/f5020f52-bd1c-e008-48c6-17b5b12ef004/icon.png/1200x600bf.png,2015,https://www.youtube.com/embed/NYiADIyLEtk,"Lucasarts,Double Fine Productions",,"aventura,comédia,","adventure,aventura,comédia,comedy,","GrimE,Grim Engine",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"3D,","3D,",
+King's Quest VIII,Mask of Eternity,1998,King's Quest,https://www.youtube.com/embed/EGWTsA1snxI,,1,https://www.ranoya.com/Assets/screenshots/graham4.png,,,Sierra,,cavalaria,"cavalaria,cavalary",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"3D,","3D,",
+Discworld Noir,,1998,Discworld,https://www.youtube.com/embed/zLkg-S_FfXc?si=uvzp4La_cG4mwZ1m,,1,,,,Perfect Entertainment,GT Interactive,"policial,fantasia,","police procedural,policial,fantasia,fantasy,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"3D,","3D,",
+Gabriel Knight III,"Blood of the Sacred, Blood of the Damned",1999,Gabriel Knight,https://www.youtube.com/embed/fPByLdCYPpo,,1,,,,Sierra,,"policial,fantasia,","police procedural,policial,fantasia,fantasy,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"3D,","3D,",
+The Longest Journey,,1999,,https://www.youtube.com/embed/u3D8duGRtww?si=cKkalpq2zULMwnKz,,1,,,,Funcom,,aventura,adventure,,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"3D,","3D,",
+Escape from Monkey Island,,2000,Monkey Island,https://www.youtube.com/embed/NMhlFfmOhmY,,1,https://www.ranoya.com/Assets/screenshots/gaybrush3.png,,,Lucasarts,,"aventura,comédia,","adventure,aventura,comédia,comedy,","GrimE,Grim Engine",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"3D,","3D,",
+Gilbert Goodmate and the Mushroom of Phungoria,,2001,,https://www.youtube.com/embed/x6YTzcqrFkk?si=gv-bjS5FgX3DmY5Z,,1,,,,Prelusion Games Inc.,,aventura,adventure,,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"storybook realism,","ilustração,literatura,",
+Simon the Sorcerer 3D,,2002,Simon the Sorcerer,https://www.youtube.com/embed/lbR1OkPiJus,,1,,,,Adventure Soft ,,"aventura,comédia,","adventure,aventura,comédia,comedy,",,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"3D,","3D,",
+Syberia,,2002,,https://www.youtube.com/embed/eFFFZqcbTxc?si=RfB9JlfTwcdbqmR4,,1,,,,Microids,,aventura,adventure,,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"3D,","3D,",
+Broken Sword,The Sleeping Dragon,2003,Broken Sword,https://www.youtube.com/embed/-QjOcVG1wes,,1,,,,Revolution Software,,"aventura,policial,cavalaria","cavalary,adventure,aventura,police procedural,policial,",,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"3D,",,
+Samrost,,2003,,https://www.youtube.com/embed/7-sq2DTDBAE?si=iVVEBHKUxxtTDO4o,,1,,,,Amanita Design,,aventura,adventure,flash,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"storybook realism,3D","ilustração,literatura,3D",
+Fahrenheit,,2005,,https://www.youtube.com/embed/nxNtefyBPy0,,1,,,,Quantic Dream,,"aventura,","adventure,",,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,","interactive fiction,visual novel",,"3D,",,
+Sam & Max Save the World,Season One,2006,Sam & Max,https://www.youtube.com/embed/otitk10ArJc?start=14,,1,,2020,https://www.youtube.com/embed/otitk10ArJc?start=14,"Telltale Games,Skunkape Games,Limited Run Games",,"policial,aventura,comédia","adventure, police procedural, comedy","telltale engine,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"graphic puzzle adventure,",,,"3D,chuck jones cartoons",,
+Broken Sword,The Angel of Death,2006,Broken Sword,https://www.youtube.com/embed/_Pt4_Mhcres,,1,,,,"Revolution Software, The Adventure Company, MAIS, Sumo Digital",,"aventura,policial,cavalaria","cavalary,adventure,aventura,police procedural,policial,",,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"3D,",,
+Lost Pig,,2007,,https://www.youtube.com/embed/dspKDXyKKrA?si=zP1flMJIYNzTMxQs,https://iplayif.com/?story=https%3A%2F%2Fifarchive.org%2Fif-archive%2Fgames%2Fzcode%2FLostPig.z8,1,,,,Admiral Jota,,"aventura,","adventure,","z-machine,desktop",txt-adv,aventura de texto,"text adventure, aventura de texto,textadventure",,,"textual,","verbal,textual,",
+Sam & Max Beyond Time and Space,Season Two,2007,Sam & Max,https://www.youtube.com/embed/uvZ1zuZuWJA,,1,,,,"Skunkape Games, Telltale Games",,"policial,aventura,comédia","adventure, police procedural, comedy","telltale engine,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"graphic puzzle adventure,",,,"3D,chuck jones cartoons",,
+Tales of Monkey Island,,2009,Monkey Island,https://www.youtube.com/embed/j1N1p1TNKxc,,1,https://www.ranoya.com/Assets/screenshots/gaybrush3.png,,,Telltale,,"aventura,comédia,","adventure,aventura,comédia,comedy,","telltale engine,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"3D,","3D,",
+Machinarium,,2009,,https://www.youtube.com/embed/k0H1C8mD5o0?start=6,,3,,,,Amanita Design,,"aventura,","adventure,aventura,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"ilustração de literatura infantil,","ilustração,literatura,",
+Heavy Rain,,2010,,https://www.youtube.com/embed/8SeD8r2jBBQ,,1,,,,Quantic Dream,,"aventura,policial,","adventure,police procedure,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,","interactive fiction,visual novel",,"3D,",,
+Sam & Max: The Devil's Playhouse,Season Two,2010,Sam & Max,https://www.youtube.com/embed/u-sy5QY0Gg8,,1,,,,"Skunkape Games, Telltale Games",,"policial,aventura,comédia","adventure, police procedural, comedy","telltale engine,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"graphic puzzle adventure,",,,"3D,chuck jones cartoons",,
+Lume,,2011,Lume,https://www.youtube.com/embed/l0NBiA2yHtw,,1,,,,State of Play,,aventura,adventure,desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"estilizado, físico, paper toy","estilizado, físico, papel",
+Superbrothers: Sword & Sworcery,,2011,,https://www.youtube.com/embed/0e8WIvty_3Y?start=7,,3,,,,Cabybara Games,,"fantasia,cavalaria","fantasia,fantasy,cavalaria,cavalary",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,"Esta narrativa marca o renascimento dos Point & Clicks. Resgatando a estética das primeiras narrativas computacionais, tanto no gênero de aventura cavalaresca, quando na linguagem gráfica, o projeto foi considerado magistral pela indústria de jogos.","pixel art,retrô,","pixel art,retrô,",
+Inked,A Tale of Love,2012,,https://www.youtube.com/embed/1TeI4sulE8g,,1,,,,Somnium Games D.O.O.,"Pixmain, Nuverse, Starbreeze Studios, Pixmain Pte. Ltd.",aventura,adventure,"desktop,mobile",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"estilizado,sarrabisco","doodle,desenho",
+Deponia,,2012,,https://www.youtube.com/embed/tCjLM2_k0RY?si=Azn2oTylRlqW6stJ,,1,,,,Daedalic Entertainment,,aventura,adventure,,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"storybook realism,","ilustração,literatura,",
+Broken Sword 5,The Serpent's Curse,2013,Broken Sword,https://www.youtube.com/embed/St_i74zG_ac,,1,,,,Revolution Software,,"aventura,policial,cavalaria","cavalary,adventure,aventura,police procedural,policial,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,storybook realism,,
+Wolf Among Us,,2013,,https://www.youtube.com/embed/DLq7-EZCtrY,,3,,,,Telltale,,"aventura,fantasia,policial,","adventure,aventura,fantasia,fantasy,police procedural,policial,","telltale engine,desktop,mobile",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,","interactive fiction,visual novel",,"hq,3D","quadrinhos,hq,",
+Kentucky Route Zero,Act 1,2013,Kentucky Route Zero,https://www.youtube.com/embed/ZRzdfr9DWVM,,2,https://www.ranoya.com/Assets/screenshots/equsoilpb.png,,,Cardbord Computer,,"aventura,fantasia,","adventure,aventura,fantasia,fantasy,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"estilizado, geométrico, vetorizado, alto contraste","estilizado, geométrico, vetorizado, silhueta, alto contraste",
+Kentucky Route Zero,Act 2,2013,Kentucky Route Zero,https://www.youtube.com/embed/uLWEbIinO5g,,1,https://www.ranoya.com/Assets/screenshots/equsoilpb.png,,,Cardbord Computer,,"aventura,fantasia,","adventure,aventura,fantasia,fantasy,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,"Além da narrativa dentro do gênero de realismo fantástico, como um produto quase literário, Kentucky Route Zero também conta com uma visualidade vetorial, de baixa fidelidade. O projeto foi financiado coletivamente (via Kickstarter), e entregue em 5 atos separados, conforme ia sendo produzido.","estilizado, geométrico, vetorizado, alto contraste","estilizado, geométrico, vetorizado, silhueta, alto contraste",
+The Last Door,,2013,Last Door,https://www.youtube.com/embed/UK-WVobPvOk,,1,,,,The Game Kitchen,,"policial,","police procedural,policial,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,retrô,","pixel art,retrô,",
+Tiny Thief,,2013,,https://www.youtube.com/embed/f7i5z5dCfJs,,1,,,,Rovio,,"aventura,comédia,","adventure,aventura,comédia,comedy,","mobile,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"estilizado,traço infantil","ilustração,literatura,",
+The Inner World,,2013,,https://www.youtube.com/embed/mOeQbNGe-yo,,1,,,,Studio Fizbin,,"aventura,","adventure,aventura,","mobile,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"ilustração de literatura infantil,","ilustração,literatura,",
+Beyond,Two Souls,2013,,https://www.youtube.com/embed/8lNt1x7PHOY,,1,,,,Quantic Dream,,"aventura,","adventure,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,","interactive fiction,visual novel",,"3D,",,
+Lumino City,,2014,Lume,https://www.youtube.com/embed/BvCo1XNAFSk,,1,,,,State of Play,,"aventura,",adventure,"desktop,mobile",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,"Cenário e arte construídos com papel e maquetes, com sua movimentação filmada e usada no artefato.","estilizado,físico,paper toy","estilizado, físico, papel",
+80 Days,,2014,,https://www.youtube.com/embed/D2CWdaJTikQ,,1,,,,"Inkle, Cape Guy Limited",Profile Books,"aventura,",adventure,"desktop,mobile",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",interactive fiction,,estilizado,,
+Detective Grimoire,Secret of the Swamp,2014,Grimoire,https://www.youtube.com/embed/iWajGNf0RIo?si=jsqxK9gbEYA0b-ve,,1,,,,SFB Games,,"aventura,policial","adventure,police procedural",desktop,graph_puzzl,"aventura gráfica com quebra-cabeças, graphic puzzle adventure","aventura gráfica com quebra-cabeças, graphic puzzle adventure",,,"estilizado,3D,ilustração de literatura infantil",,
+Tales from the Borderlands,,2014,,https://www.youtube.com/embed/mSg3eJJQ4A4,,1,,,,Telltale Games,,"aventura,ficção científica,comédia","adventure,sci-fi,comedy",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"3D,hq","quadrinhos,hq,",
+Monument Valley,,2014,Monument Valley,https://www.youtube.com/embed/Yy2bXqs0x3o,,3,https://www.ranoya.com/Assets/screenshots/crowpeople.png,,,US Two,,"aventura,","adventure,aventura,",mobile,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,"A visualidade baseada nas geometrias impossíveis de M.C. Escher cria uma ambiência e expressão gráficas únicas, além de serem parte inerente dos quebras-cabeças que precisam ser resolvidos para que a história prossiga.","estilizado, geométrico, low poly, isométrico","estilizado, geométrico, escher, low-fi, low fidelity, low poly,isométrico",
+Kentucky Route Zero,Act 3,2014,Kentucky Route Zero,https://www.youtube.com/embed/_GjwZar7XKk,,1,https://www.ranoya.com/Assets/screenshots/equsoilpb.png,,,"Cardbord Computer,Annapurna Interactive",,"aventura,fantasia,","adventure,aventura,fantasia,fantasy,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"estilizado, geométrico, vetorizado, alto contraste","estilizado, geométrico, vetorizado, silhueta, alto contraste",
+The Last Night,,2014,,https://www.youtube.com/embed/IGK6NrDU75o,,1,,2017,https://www.youtube.com/embed/kXeQJnbc9bA,"Odd Tales,Raw Fury",,"ficção científica,cyberpunk,","sci-fi,ficção científica,cyberpunk,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,retrô,","pixel art,retrô,",X
+Dreamfall Chapters,,2014,,https://www.youtube.com/embed/cVnXMK-GXsE,,1,,,,Red Thread Games,,"policial,ficção científica,","sci-fi,police procedure",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",interactive fiction,,"3D,",,
+Gods Will be Watching,,2014,,https://www.youtube.com/embed/f8apD0HwktA,,1,,,,Devolver Digital,Deconstructeam,"ficção científica,cyberpunk,","sci-fi,ficção científica,cyberpunk,",,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",interactive fiction,,"pixel art,retrô,",,
+Night at Woods,Lost Constellation,2014,Night at Woods,https://www.youtube.com/embed/l7yLGi9I_aw?si=El-M7x1ESIBUds-j,,1,,,,Infinite Fall,Finji,"aventura,","adventure,aventura,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"geométrico,estilizado,traço infantil","ilustração,literatura,low-fi,low fidelity,geométrico,estilizado",
+King's Quest,A Knight to Remember,2015,King's Quest,https://www.youtube.com/embed/7uGzcv6drr8,,1,https://www.ranoya.com/Assets/screenshots/graham5.png,,,Sierra,,cavalaria,"cavalaria,cavalary","telltale engine,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"ilustração de literatura infantil,3D","ilustração,literatura,3D",
+Life is Strange,,2015,lifestrange,https://www.youtube.com/embed/qYnhpWf20So,,2,,2022,,"Dontnod Entertainment, Deck Nine Games, Square Enix",,"aventura,ficção científica","adventure, sci-fi","desktop, mobile",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,3D,,
+White Night,,2015,,https://www.youtube.com/embed/fkXfm4SRp4o,,1,,,,OSome Studio,,"aventura,fantasia,terror,","adventure,aventura,fantasia,fantasy,horror,","mobile,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"alto contraste, vetorizado, estilizado","alto contraste, silhueta, vetorizado, estilizado",
+Broken Age,,2015,,https://www.youtube.com/embed/GZzuNqWNujM,,2,,,,Double Fine Productions,,"aventura,","adventure,aventura,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"ilustração de literatura infantil,traço infantil","ilustração,literatura,clay,claymation,plasticina",
+Stasis,,2015,,https://www.youtube.com/embed/G1pT_R2N5hQ,,1,,,,Brotherhood Games,,"ficção científica,","sci-fi,horror",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,isométrico,,
+Until Down,,2015,,https://www.youtube.com/embed/BlGMnw7ZSxc,,1,,,,Supermassive Games,,terror,horror,desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",interactive fiction,,"3D,",,
+Wheels of Aurelia,,2016,,https://www.youtube.com/embed/XiD93cc_1rQ?si=_TmSz36D2JJmSJ3O,,1,,,,Santa Ragione,,"aventura,","adventure,aventura,","mobile,desktop",idle_interact,decisões em clicks,"idle clicker, decision clicker, decisões em clicks",visual novel,,"retrô, geométrico, low poly, estilizado","retrô, geométrico, low-fi, low fidelity, low poly, estilizado",
+Gibbous,A Cthulhu Adventure,2016,,https://www.youtube.com/embed/25H144QETkQ,,1,,,,Stuck In Attic,,"aventura,terror,","adventure,aventura,horror,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"storybook realism,","animação,",
+Monument Valley,Forgotten Shores,2016,Monument Valley,https://www.youtube.com/embed/OM3ufNyMMXQ,,1,https://www.ranoya.com/Assets/screenshots/crowpeople.png,,,Us Two,,"aventura,","adventure,aventura,",mobile,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"estilizado, geométrico, low poly, isométrico","estilizado, geométrico, escher, low-fi, low fidelity, low poly,isométrico",
+Inside,,2016,,https://www.youtube.com/embed/h1FU-T2EsVA,,1,,,,Playdead,,"aventura,terror,","adventure,aventura,horror,",desktop,motion_interact,animação interativa,"animação interativa,interactive animation",,,"alto contraste, 2.5D","silhueta, alto contraste, 2.5D",
+Kentucky Route Zero,Act 4,2016,Kentucky Route Zero,https://www.youtube.com/embed/3tmQDTDDi98,,1,https://www.ranoya.com/Assets/screenshots/equsoilpb.png,,,Cardbord Computer,,"aventura,fantasia,","adventure,aventura,fantasia,fantasy,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"estilizado, geométrico, vetorizado, alto contraste","estilizado, geométrico, vetorizado, silhueta, alto contraste",
+Oxenfree,,2016,,https://www.youtube.com/embed/Bi81q_ok_M8,,1,,,,Night School,,"aventura,terror,","adventure,aventura,horror,","oxenfree engine,desktop,mobile",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"ilustração de literatura infantil,2.5D","ilustração,literatura,2.5D",
+Pan-Pan,,2016,,https://www.youtube.com/embed/P_79mR7rMtI,,1,,,,Spelkraft,,"aventura,","adventure,aventura,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"geométrico, estilizado, low poly,isométrico","geométrico, estilizado, low-fi, low fidelity, low poly,isométrico",
+Burly Man at Sea,,2016,,https://www.youtube.com/embed/d22z39APq94,,1,,,,Brain&Brain,,"aventura,","adventure,aventura,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"ilustração de literatura infantil, low poly,geométrico","ilustração,literatura,low-fi,low fidelity,low poly,geométrico",
+Love You to Bits,,2016,,https://www.youtube.com/embed/yKFDS7HObdA,,1,,,,Alike Studio,,"aventura,ficção científica,","adventure,aventura,sci-fi,ficção científica,",mobile,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"estilizado,traço infantil","ilustração,literatura,",
+Quantum Break,,2016,,https://www.youtube.com/embed/9i41rZJYbo8,,1,,,,Remedy Entertainment,,"ficção científica,",sci-fi,desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",interactive fiction,,"3D,",,
+Toonstruck,,2016,,https://www.youtube.com/embed/IqqF4UXB-Iw?si=jHEfkvvUDkmVxi9Y,,1,,,,Interplay,,"aventura,comédia","comedy,adventure",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"storybook realism,chuck jones cartoons,motion capture,",desenho animado,
+The Last Door,Season 2,2016,Last Door,https://www.youtube.com/embed/n7YstE9mmXE,,1,,,,The Game Kitchen,,"policial,","police procedural,policial,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,retrô,","pixel art,retrô,",
+Kathy Rain,,2016,,https://www.youtube.com/embed/-SUABwbqf_o,,1,,,,Raw Fury,,"policial,","police procedural,policial,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"retrô,","retrô,",
+Cayne,,2017,,https://www.youtube.com/embed/atBN1E3YaO0,,1,,,,The Brotherhood,,"ficção científica,","sci-fi,ficção científica,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"3D,isométrico","3D,isométrico",
+Monument Valley 2,,2017,Monument Valley,https://www.youtube.com/embed/GU5PX5Uha5g,,1,https://www.ranoya.com/Assets/screenshots/crowpeople.png,,,Us Two,,"aventura,","adventure,aventura,",mobile,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"estilizado, geométrico, low poly,isométrico","estilizado, geométrico, escher, low-fi, low fidelity, low poly,isométrico",
+The Darkside Detective,,2017,,https://www.youtube.com/embed/87pMmrzTUfw,,1,,,,Spooky Doorway,,"policial,","police procedural,policial,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,retrô,","pixel art,retrô,",
+Night at Woods,,2017,Night at Woods,https://www.youtube.com/embed/KAurdQwlreY,,1,,,,Infinite Fall,Finji,"aventura,","adventure,aventura,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"geométrico,estilizado,traço infantil","ilustração,literatura,low-fi,low fidelity,geométrico,estilizado",
+Memoranda,,2017,,https://www.youtube.com/embed/kroB_zuL9j0?si=R10StDatL0LgwR83,,1,,,,Bit Byterz,,"aventura,fantasia","adventure,fantasy",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,storybook realism,"ilustração,literatura,",
+Kelvin and the Infamous Machines,,2017,,https://www.youtube.com/embed/BmJuIou13Wk,,1,,,,Blyts,,"aventura,","adventure,aventura,","scumm,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"ilustração de literatura infantil,","ilustração,literatura,",
+Old Man's Journey,,2017,,https://www.youtube.com/embed/pCaDx9TYMZo,,1,,,,Broken Rules,,"aventura,","adventure,aventura,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"ilustração de literatura infantil,","ilustração,literatura,",
+Thimbleweed Park,,2017,Thimbleweed Park,https://www.youtube.com/embed/jPIh9qumMnw,,2,,,,Terrible Toybox,,"policial,comédia,","police procedural,policial,comédia,comedy,","scumm,mobile,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,"Esta aventura gráfica é construída através do mesmo engine SCUMM, criado na Lucasarts 30 anos antes.","pixel art,retrô,","pixel art,retrô,",
+Vapormaze,,2017,,https://www.youtube.com/embed/HXadxTK8ISA,,1,,,,Romain Courtois,,"ficção científica,","sci-fi,ficção científica,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,retrô,","pixel art,retrô,",X
+Peridium,,2017,,https://www.youtube.com/embed/B_x_cXBqIP8?si=AaG2pTjk_mDa6nB9,,1,,,,Powerhoof,,terror,horror,desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,retrô,","pixel art,retrô,",
+Like Roots in the Soil,,2017,,https://www.youtube.com/embed/8LZC78erVGo,,1,,,,SpaceBackyard,,reflexivo,,desktop,motion_interact,animação interativa,"animação interativa,interactive animation",experiência narrativa,,"geométrico, estilizado,low poly,vetorizado","geométrico, estilizado, low-fi, low fidelity, low poly, vetorizado",
+SanctuaryRPG,,2017,,https://www.youtube.com/embed/_nuS86ITjIM,,1,,,,Black Shell Games,,"aventura,fantasia,cavalaria","adventure,aventura,fantasia,fantasy,cavalaria,cavalary",desktop,txt-adv,aventura de texto,"text adventure, aventura de texto,textadventure",,,"retrô,textual,","retrô,verbal,textual,",
+State of Mind,,2018,,https://www.youtube.com/embed/RG9-ywgchmE,,1,,,,Daedalic Entertainment,,"ficção científica,cyberpunk,","sci-fi,ficção científica,cyberpunk,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"3D,","3D,",
+Return of the Tentacle,,2018,Maniac Mansion,https://www.youtube.com/embed/VMbxOJ-Z52k,,1,https://pbs.twimg.com/profile_images/613806160492236800/WbomZwXk_400x400.png,,,Catmic,,"aventura,","adventure,aventura,","scumm,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"retrô,pixel art,chuck jones cartoons","ilustração,literatura,",
+Where the Shadows Slumber,,2018,,https://www.youtube.com/embed/s5C_6c98YpQ?start=13,,1,,,,Game Revenant,,"aventura,fantasia,terror,","adventure,aventura,fantasia,fantasy,horror,",mobile,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"geométrico, estilizado,low poly,isométrico","geométrico, estilizado, low-fi, low fidelity, low poly,isométrico",
+Chuchel,,2018,,https://www.youtube.com/embed/ET-7yKT-fcw,,1,,,,Amanita Design,,"aventura,comédia,","adventure,aventura,comédia,comedy,","mobile,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"ilustração de literatura infantil,traço infantil","ilustração,literatura,",
+Life is Strange 2,,2018,lifestrange,https://www.youtube.com/embed/451-pRy-XDI,,2,,,,"Dontnod Entertainment, Feral Interactive, Square Enix, Square Enix Europe,",,"aventura,ficção científica","adventure, sci-fi","desktop, mobile",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,3D,,
+The Red Strings Club,,2018,,https://www.youtube.com/embed/FTlnrT7omr0,,1,,,,Devolver Digital,,"ficção científica,cyberpunk,","sci-fi,ficção científica,cyberpunk,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,retrô,","pixel art,retrô,",
+Leisure Suit Larry,Wet Dreams Don't Dry,2018,Lesure Suit Larry,https://www.youtube.com/embed/oUrkYeKaiqo,,1,https://www.ranoya.com/Assets/screenshots/larry5.png,,,Assemble Entertainment,,"comédia,","comédia,comedy,","mobile,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"storybook realism,","animação,",
+Four Last Things,,2018,,https://www.youtube.com/embed/Foaw7rWCgPY,,1,,,,Joe Richardson,,"aventura,","adventure,aventura,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,cut-out animation,"terry gillam, monty python, cut-out animation, recortes",
+Detroit: Become Human,,2018,,https://www.youtube.com/embed/JVywqFx0GdE,,1,,,,Quantic Dream,,"policial,ficção científica","police procedure,sci-fi",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,3D,,
+The Awesome Adventures of Captain Spirit,,2018,,https://www.youtube.com/embed/tWqLNcDE-7Y,,1,,,,Dontnod Entertainment,,"aventura,",adventure,desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",interactive fiction,,3D,,
+A Way Out,,2018,,https://www.youtube.com/embed/Hh1Fo1aNUCU,,1,,,,Hazelight Studios,,"aventura,",adventure,desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",interactive fiction,,3D,,
+The Council,,2018,,https://www.youtube.com/embed/TL1k_3_ln1o,,1,,,,Big Bad Wolf Studio,Focus Home Interactive,"aventura,",adventure,desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",interactive fiction,,3D,,
+Homo Machina,,2018,,https://www.youtube.com/embed/XMig_OFRvSg,,1,,,,ARTE Experience,,"fantasia,","fantasia,fantasy,",mobile,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"estilizado, geométrico, retrô,",,
+Astrologaster,,2019,,https://www.youtube.com/embed/KCZUEy7Qphg?start=7,,1,,,,Nyamyam,,"comédia,","comédia,comedy,","mobile,desktop",idle_interact,decisões em clicks,"idle clicker, decision clicker, decisões em clicks",,,"ilustração de literatura infantil,cut-out animation, pop-up","ilustração,literatura,terry gillam, monty python, cut-out animation, recortes, pop-up",
+Stella,,2019,,https://www.youtube.com/embed/2FCvWZdCBEU,,1,,,,SkyBox Labs,,"ficção científica,terror,","sci-fi,ficção científica,horror,","mobile,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"2.5D, estilizado, alto contraste","2.5D, estilizado, alto contraste, silhueta",
+Kids,,2019,,https://www.youtube.com/embed/y88110EebD4,,1,,,,Playables,,"reflexivo,",,desktop,motion_interact,animação interativa,"animação interativa,interactive animation",experiência narrativa,,"storybook realism,cinema mudo,surreal, alto contraste, abstrato","animação,cinema mudo,surreal, estilizado, abstrato",
+Afterparty,,2019,,https://www.youtube.com/embed/LAR46Utf5Fk,,1,,,,Night School,,"fantasia,","fantasia,fantasy,","oxenfree engine,desktop",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"ilustração de literatura infantil,2.5D","ilustração,literatura,2.5D",
+Jenny LeClue Detectivu,,2019,,https://www.youtube.com/embed/FdxAOWXEmw8?si=BpgXNVlLjnvIThQJ,,1,,,,Mografi,,"aventura,policial,","adventure,aventura,police procedural,policial,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"ilustração de literatura infantil,","ilustração,literatura,",
+Soul Delivery,,2019,,https://www.youtube.com/embed/dvvTstga-Aw,,1,,,,Back2Back Games,,"aventura,ficção científica,cyberpunk,","adventure,aventura,sci-fi,ficção científica,cyberpunk,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,retrô,2.5D","pixel art,retrô,2.5D",
+Whispers of a Machine,,2019,,https://www.youtube.com/embed/ul-HV6uE_7c,,1,,,,Raw Fury,,"ficção científica,","sci-fi,ficção científica,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"retrô,","retrô,",
+Very Little Nightmares,,2019,,https://www.youtube.com/embed/XcKlmz9mvM0,,1,,,,Alike Studio,,"terror,aventura,",adventure,mobile,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"3D,isometrico",,
+The Dark Pictures Anthology,Man of Medan,2019,,https://www.youtube.com/embed/Ug5RxI7oNX8,,1,,,,Supermassive Games,,"aventura,terror,",adventure,desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",interactive fiction,,"3D,",,
+Blacksad,Under the Skin,2019,,https://www.youtube.com/embed/zb-bE2NOGjI,,1,,,,"Pendulo Studios,YS Interactive",,"aventura,","adventure,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",interactive fiction,,"3D,",,
+The Wanderer,,2019,,https://www.youtube.com/embed/C2qxFh14RLw,,1,,,,ARTE Experience,Frankenstein’s Creature,"aventura,",,desktop,motion_interact,animação interativa,interactive animation,"interactive fiction, experiência narrativa",,"storybook realism,",,
+Backbone,,2019,,https://www.youtube.com/embed/56MrShQUd3o,,1,,,,Raw Fury,,"policial,aventura","police procedural,adventure",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",interactive fiction,,"pixel art,retrô,",,
+VirtuaVerse,,2020,,https://www.youtube.com/embed/PIaJvwSLxEE,,1,,,,Theta Division,,"aventura,ficção científica,cyberpunk,","adventure,aventura,sci-fi,ficção científica,cyberpunk,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,retrô,","pixel art,retrô,",
+Delores,A Thimbleweed Park Mini-Adventure,2020,Thimbleweed Park,https://www.youtube.com/embed/63w4ZSlpxlo,,1,,,,Terrible Toybox,,"policial,comédia,","police procedural,policial,comédia,comedy,","scumm,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,retrô,","pixel art,retrô,",
+Liberated,,2020,,https://www.youtube.com/embed/RaQiUH6kUkQ,,2,,,,Walkabout,,"policial,","police procedural,policial,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,A apropriação da linguagem e interação em cima de construções gráficas das HQs torna este artefato único.,hq,"quadrinhos,hq,",
+Kentucky Route Zero,Act 5,2020,Kentucky Route Zero,https://www.youtube.com/embed/LHBpuS95G3U,,1,https://www.ranoya.com/Assets/screenshots/equsoilpb.png,,,Cardbord Computer,,"aventura,fantasia,","adventure,aventura,fantasia,fantasy,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"estilizado, geométrico, vetorizado, alto contraste","estilizado, geométrico, vetorizado, silhueta, alto contraste",
+Over the Alps,,2020,,https://www.youtube.com/embed/-js_kPq1tQw,,1,,,,Stave Studios,,"aventura,","adventure,aventura,","mobile,desktop",idle_interact,decisões em clicks,"idle clicker, decision clicker, decisões em clicks",,,"ilustração de literatura infantil,","ilustração,literatura,",X
+The Blind Prophet,,2020,,https://www.youtube.com/embed/T8I8CUwhpw8,,1,,,,ARS GOETIA,,"fantasia,","fantasia,fantasy,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,hq,"quadrinhos,hq,",
+Beyond a Steel Sky,,2020,Steel Sky,https://www.youtube.com/embed/9GyhVUp9ysU,,1,,,,Revolution Software,,"ficção científica,cyberpunk,","sci-fi,ficção científica,cyberpunk,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,hq,"quadrinhos,hq,",
+Tale of Crows,,2020,,https://www.youtube.com/embed/hRGXYClnoxY,,1,,,,That Silly Studio,,"aventura,cavalaria,","adventure,aventura,cavalary,cavalaria","mobile,desktop",txt-adv,aventura de texto,"text adventure, aventura de texto,textadventure",interactive fiction,,"estilizado,low poly,isométrico",,X
+Tell Me Why,,2020,,https://www.youtube.com/embed/_EBAslAziHE?start=7,,1,,,,Dontnod Entertainment,,"aventura,","adventure,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",interactive fiction,,"3D,",,
+Twin Mirror,,2020,,https://www.youtube.com/embed/-GDtir1GxHI,,1,,,,Dontnod Entertainment,,"aventura,","adventure,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",interactive fiction,,"3D,",,
+The Telwynium,Book One,2021,Telwynium,https://www.youtube.com/embed/SEy0skuPkdE,,1,,,,Powerhoof,,"aventura,cavalaria,","adventure,aventura,cavalary,cavalaria",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,retrô,","pixel art,retrô,",
+The Captain,,2021,,https://www.youtube.com/embed/4usklvImI9Y,,1,,,,Sysiac Games,,"aventura,ficção científica,","adventure,aventura,sci-fi,ficção científica,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,retrô,","pixel art,retrô,",X
+LEGO Builder's Journey,,2021,,https://www.youtube.com/embed/z3z3ir5O8To,,3,,,,Light Brick Studio,,"aventura,fantasia,","adventure,aventura,fantasia,fantasy,","mobile,desktop",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,A forma abstrata e sensível como a Lego criou uma história interativa torna este artefato um marco nas narrativas computacionais.,"3D,abstrato,geométrico","3D,abstrato,geométrico",
+The Artful Escape,,2021,,https://www.youtube.com/embed/s5wKa_XCfFU,,1,,,,Annapurna Interactive,,"aventura,","adventure,aventura,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"storybook realism,","animação,",
+Solace State,,2021,,https://www.youtube.com/embed/87cTsmyMOsw,,1,,,,Vivid Foundry Corp.,,"aventura,cyberpunk,","adventure,aventura,cyberpunk,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,hq,"quadrinhos,hq,",X
+Minute of Islands,,2021,,https://www.youtube.com/embed/pVdRmzdaPEw,,1,,,,Studio Fizbin,,"aventura,","adventure,aventura,",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,hq,"quadrinhos,hq,",
+The Drifter,,2021,,https://www.youtube.com/embed/yzvtdKCx1I8?si=5gxI1KVuk-4xzz9n,,1,,,,Powerhoof,,"aventura,",adventure,desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"retrô,pixel art",,X
+Lacuna,,2021,,https://www.youtube.com/embed/yjjiMk1Dq8g,,1,,,,DigiTales Interactive,,"aventura,ficção científica,cyberpunk,","sci-fi,adventure,noir",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"retrô,pixel art",,
+The Longest Road of Earth,,2021,,https://www.youtube.com/embed/vyNUMI_yoPE,,1,,,,"TLR Games,Brainwash Gang",Raw Fury,"aventura,",adventure,desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",interactive fiction,,"pixel art,retrô,","pixel art,retrô,",
+How We Know We're Alive,,2021,,https://www.youtube.com/embed/2HslV97TXlk?si=9JyM__rI0i3U5K2S,,1,,,,Motvind Studios,,"policial,",police procedural,desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",interactive fiction,,"pixel art,retrô,","pixel art,retrô,",
+Not Another Weekend,,2021,,https://www.youtube.com/embed/7GG8on995ic,,1,,,,"Animatic Vision,Dead Blue Friends",,"comédia,",comedy,"desktop,mobile",graph_puzzl,aventura gráfica com quebra-cabeças,"aventura gráfica com quebra-cabeças, graphic puzzle adventure,",,,"pixel art,retrô,","pixel art,retrô,",
+Road 96,,2021,,https://www.youtube.com/embed/uFz-HWKSYbQ,,1,,,,DigixArt,,"aventura,",adventure,desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",interactive fiction,,"3D,",,
+Unmaze,,2021,,https://www.youtube.com/embed/u-5_PTPEOt8,,1,,,,ARTE Experience,ARTE France,"aventura,",adventure,mobile,graph_puzzl,aventura gráfica com quebra-cabeças,"graphic puzzle adventure,",interactive fiction,,hq,"quadrinhos,hq,",
+Slice of Sea,,2021,,https://www.youtube.com/embed/ZUgTc59EmTA?si=lS9Ze7uKKTLgkD9a,,1,,,,Indie,,"aventura,",adventure,desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"graphic puzzle adventure,",,,hq,,
+The Plane Effect,,2021,,https://www.youtube.com/embed/c3-bNcCS-Kc,,1,,,,"Studio Kiku, Innovina Interactive",PQube,"cyberpunk,ficção científica,aventura,","adventure,sci-fi,cyberpunk,ficção científica,aventura",desktop,graph_puzzl,aventura gráfica com quebra-cabeças,"graphic puzzle adventure,",,,"estilizado, geométrico, low poly, isométrico","estilizado, geométrico, escher, low-fi, low fidelity, low poly,isométrico",
+Born Punk,,2022,,https://www.youtube.com/embed/TdiZ9JCLgxY,,1,,,,Insert Disk 22,,"cyberpunk,ficção científica,aventura,","adventure,sci-fi,cyberpunk,ficção científica,aventura",desktop,graph_puzzl,"aventura gráfica com quebra-cabeças, graphic puzzle adventure","aventura gráfica com quebra-cabeças, graphic puzzle adventure",,,"pixel art,retrô,","pixel art,retrô,",
+Old Skies,,2022,,https://www.youtube.com/embed/BsMy2eeaDk8,,1,,,,Wadjet Eye Games,,"aventura,ficção científica,","adventure,sci-fi,aventura,ficção científica",desktop,graph_puzzl,"aventura gráfica com quebra-cabeças, graphic puzzle adventure","aventura gráfica com quebra-cabeças, graphic puzzle adventure",,,storybook realism,animação,X
+Land of Screens,,2022,,https://www.youtube.com/embed/RvLGTF12vhE,,1,,,,Serenity Forge,,"aventura,","adventure,aventura",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"ilustração de literatura infantil,","ilustração,literatura,",
+Chinatown Detective Agency,,2022,,https://www.youtube.com/embed/XxHsH_LfPu8,,1,,,,General Interactive Co.,,"policial,","police procedural,policial",desktop,graph_puzzl,"aventura gráfica com quebra-cabeças, graphic puzzle adventure","aventura gráfica com quebra-cabeças, graphic puzzle adventure",,,"pixel art,retrô,","pixel art,retrô,",
+Voodoo Detective,,2022,,https://www.youtube.com/embed/_DnYJ4rxJ2Y,,1,,,,Short Sleeve Studio,,"policial,","police procedural,policial","desktop,mobile",graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"storybook realism,",,
+South of the Circle,,2022,,https://www.youtube.com/embed/5uuEygEdm1o?si=zD-amqQMe_6NP_93,,1,,,,State of Play,11 bit Studios,aventura,adventure,desktop,motion_interact,animação interativa,"animação interativa,interactive animation",,,"3D,low poly,vetorizado",,
+Roadwarden,,2022,,https://www.youtube.com/embed/ijPub0Slp6Y,,1,,,,Moral Anxiety Studio,,"aventura,cavalaria,","adventure,aventura,cavalary,cavalaria",desktop,txt-adv,aventura de texto,"text adventure, aventura de texto,textadventure",interactive fiction,,"pixel art,retrô,","pixel art,retrô,",
+Citzen Sleeper,,2022,,https://www.youtube.com/embed/h9T4-xTPhk4,,1,,,,Fellow Traveller,Jump Over The Age,"ficção científica,cyberpunk,",sci-fi,desktop,txt-adv,aventura de texto,"text adventure, aventura de texto,textadventure",interactive fiction,,hq,"moebius,quadrinhos,",
+Return to the Monkey Island,,2022,Monkey Island,https://www.youtube.com/embed/YX5e4n-JtKA?start=6,,3,https://www.ranoya.com/Assets/screenshots/rexcrowle-monkeyisland.png,,,"Devolver Digital,Double Fine Productions",,"aventura,","aventura,adventure",desktop,graph_puzzl,"aventura gráfica com quebra-cabeças, graphic puzzle adventure","aventura gráfica com quebra-cabeças, graphic puzzle adventure",,,"ilustração de literatura infantil,traço infantil","ilustração,literatura, Rex Crowle",
+Pentiment,,2022,,https://www.youtube.com/embed/vdNvt0SPu2w,,1,,,,Obsidian Entertainment,,"policial,","police procedural,policial",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,ilustração de literatura infantil,,
+The Telwynium,Book Two: The Summer King,2022,Telwynium,https://www.youtube.com/embed/TbuYz6JE1Qo?si=KXXbvi2vinlT0nQp,,1,,,,Powerhoof,,"aventura,cavalaria,","adventure,aventura,cavalary,cavalaria",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,retrô,","pixel art,retrô,",
+Norco,,2022,,https://www.youtube.com/embed/H6NpcwkWqVQ?si=BjfKamX6CJIcgOoI,,1,,,,Raw Fury,,"policial,","police procedural,policial",desktop,txt-adv,aventura de texto,"text adventure, aventura de texto,textadventure",interactive fiction,,"retrô,pixel art,",,
+As Dusk Falls,,2022,,https://www.youtube.com/embed/DvdltjQ6ubM,,1,,,,Interior/night,,"aventura,",adventure,desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,","interactive fiction,visual novel",,"3D,hq",,
+Professor Crackbrain and the Awakening of the Weredog,,2022,,https://www.youtube.com/embed/gC05ZNMqkLE,,1,,,,Broken Cell Games,,"aventura,comédia,","adventure,comedy,",desktop,graph_puzzl,"aventura gráfica com quebra-cabeças, graphic puzzle adventure","aventura gráfica com quebra-cabeças, graphic puzzle adventure",,,"pixel art,chuck jones cartoons",desenho animado,
+Lucy Dreaming,,2022,,https://www.youtube.com/embed/XUgJxvt0qNw,,1,,,,Tall Story Games,,"aventura,",adventure,desktop,graph_puzzl,"aventura gráfica com quebra-cabeças, graphic puzzle adventure","aventura gráfica com quebra-cabeças, graphic puzzle adventure",,,"pixel art,chuck jones cartoons",desenho animado,
+Dexter Stardust,Adventures in Outer Space,2022,,https://www.youtube.com/embed/9Lx1Vc40RfQ,,1,,,,Dexter Team Games,,"aventura,",adventure,desktop,graph_puzzl,"aventura gráfica com quebra-cabeças, graphic puzzle adventure","aventura gráfica com quebra-cabeças, graphic puzzle adventure",,,storybook realism,animação,
+The Quarry,,2022,,https://www.youtube.com/embed/NZ92e92Tij8,,1,,,,Supermassive Games,2k,"terror,aventura,",adventure,desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",interactive fiction,,"3D,",,
+Born Punk,,2022,,https://www.youtube.com/embed/TdiZ9JCLgxY,,1,,,,Insert Disk 22,,"aventura,ficção científica,cyberpunk,","adventure,sci-fi,cyberpunk",desktop,graph_puzzl,"aventura gráfica com quebra-cabeças, graphic puzzle adventure","aventura gráfica com quebra-cabeças, graphic puzzle adventure",,,"pixel art,retrô,",,
+I Want Out,,2022,,https://www.youtube.com/embed/lcMKygKDCZo?si=BzX1z0HDZfCoE5Ei,,1,,,,Indie,,terror,horror,"scumm,desktop",graph_puzzl,"aventura gráfica com quebra-cabeças, graphic puzzle adventure","aventura gráfica com quebra-cabeças, graphic puzzle adventure",,,"pixel art,retrô,",,
+The Excavation of Hob's Barrow,,2022,,https://www.youtube.com/embed/y4lpcjfXMFE,,1,,,,Cloak and Dagger Games,Wadjet Eye Games,"terror,aventura,",adventure,desktop,graph_puzzl,"aventura gráfica com quebra-cabeças, graphic puzzle adventure","aventura gráfica com quebra-cabeças, graphic puzzle adventure",,,"pixel art,retrô,",,
+Foolish Mortals,,2023,,https://www.youtube.com/embed/7dGBVls2b3U,,1,,,,Inklingwood Studios,,"terror,aventura,",adventure,desktop,graph_puzzl,"aventura gráfica com quebra-cabeças, graphic puzzle adventure","aventura gráfica com quebra-cabeças, graphic puzzle adventure",,,"storybook realism,",,
+Noir Storm,,2023,,https://www.youtube.com/embed/D58YXQRhxvo,,1,,,,Diskeletton Studios,,"policial,","police procedural,policial",desktop,graph_puzzl,"aventura gráfica com quebra-cabeças, graphic puzzle adventure","aventura gráfica com quebra-cabeças, graphic puzzle adventure",,,"pixel art,retrô,","pixel art,retrô,",X
+My Work is Not Yet Done,,2023,,https://www.youtube.com/embed/eKHxC1xLDRA,,1,,,,Sutemi Productions,Raw Furry,"policial,terror","police procedural,policial",desktop,graph_puzzl,"aventura gráfica com quebra-cabeças, graphic puzzle adventure","aventura gráfica com quebra-cabeças, graphic puzzle adventure",,,"pixel art,retrô,",,X
+The Wreck,,2023,,https://www.youtube.com/embed/rs1iq8k4VSw,,1,,,,The Pixel Hunt,,"aventura,","adventure,",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,","interactive fiction,visual novel",,"estilizado,low poly,vetorizado",,
+Hauntii,,2023,,https://www.youtube.com/embed/JW3uvQEE9DQ,,1,,,,Moonloop Games LLC,,"aventura,","adventure,",desktop,graph_puzzl,"aventura gráfica com quebra-cabeças, graphic puzzle adventure","aventura gráfica com quebra-cabeças, graphic puzzle adventure",,,"alto-contraste,estilizado,2.5D","ilustração,ilustrado,high contrast,stylized",X
+The Telwynium,Book Three: The Shadow of Spring,2023,Telwynium,https://www.youtube.com/embed/kE0Xk_aRRgU?si=hmjKAvGpwWXp4OEB,,1,,,,Powerhoof,,"aventura,cavalaria,","adventure,aventura,cavalary,cavalaria",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",,,"pixel art,retrô,","pixel art,retrô,",
+Grunnd,,2023,,https://www.youtube.com/embed/Q88yKEWsxyc,,1,,,,Sektahouse,,"ficção científica,policial","sci-fi,police procedural",desktop,graph_dialg,aventura visual conversacional,"dialog adventure, aventura visual conversacional,",interactive fiction,,"alto-contraste,estilizado,2.5D","ilustrado,high contrast,stylized",
+To Hell With The Ugly,,2023,,https://www.youtube.com/embed/kLjWgQotfKQ,,1,,,,"La Poule Noire,ARTE Experience",ARTE France,"aventura,policial","adventure,police prodcedural",desktop,graph_dialg,aventura visual conversacional,dialog adventure,interactive fiction,,"estilizado,alegria,corporate memphis,retrô",,X
+Monster Loves You Too!,,2023,,https://www.youtube.com/embed/s6bx2PEUvi4?si=ykVmIStoCiA7Fan7,,1,,,,Dejobaan Games,Radial Games,"aventura,fantasia","adventure,fantasy",desktop,txt-adv,aventura de texto,"text adventure, aventura de texto,textadventure",interactive fiction,,pop-up,,
+Pixel's Time Paradox,,2023,,https://www.youtube.com/embed/LrvY292rmqI?si=GOnMgn21XNgL7aNd,,1,,,,Goloso Games,,aventura,adventure,desktop,graph_dialg,aventura visual conversacional,dialog adventure,interactive fiction,,pop-up,,
+Saltsea Chronicles,,2023,,https://www.youtube.com/embed/ddOA5TLFutU?si=HRjCu7Rq-rXZympK,,1,,,,Die Gute Gabrik,,aventura,adventure,desktop,graph_dialg,aventura visual conversacional,dialog adventure,interactive fiction,,cute,,X
+Full Void,,2023,,https://www.youtube.com/embed/lsmnujb7dr0?si=e_lDdjQnr00VaRDQ&amp;start=3,,1,,,,OutOfTheBit,,"aventura,ficção científica","adventure,sci-fi",desktop,motion_interact,animação interativa,"animação interativa,interactive animation",,,pixel art,,
+The Third Wish,,2023,,https://www.youtube.com/embed/f0w2kEWfaT8?si=figWA1VYY1wcYMMa,,1,,,,Indie,George Broussard,"aventura,ficção científica","adventure,sci-fi",desktop,graph_puzzl,"aventura gráfica com quebra-cabeças, graphic puzzle adventure","aventura gráfica com quebra-cabeças, graphic puzzle adventure",,,"pixel art,retrô,",,
+RRR Express,,2024,,https://www.youtube.com/embed/0QUkQ-93hEo?si=cLZe8jB34ztPBuSK,,2,,,,Plastiek,,"aventura,ficção científica,","adventure,sci-fi,aventura,ficção científica",mobile,graph_puzzl,"aventura gráfica com quebra-cabeças, graphic puzzle adventure","aventura gráfica com quebra-cabeças, graphic puzzle adventure",,,hq,"quadrinhos,hq,",
+The Mermaind's Tongue,,2024,Grimoire,https://www.youtube.com/embed/7oTNKtxnSQM?si=SHr-_jyRvpf5RV01,,1,,,,SFB Games,,"aventura,policial","adventure,police procedural",desktop,graph_puzzl,"aventura gráfica com quebra-cabeças, graphic puzzle adventure","aventura gráfica com quebra-cabeças, graphic puzzle adventure",,,"estilizado,3D,ilustração de literatura infantil",,X
+The Crimson Diamond,,2024,,https://www.youtube.com/embed/d6IqRB2LCEc?si=bAy9VEvCQiRiuk2c,,1,,,,Julia Minamata,,"aventura,policial","adventure,police procedural",desktop,graph_dialg,aventura visual conversacional,dialog adventure,,,"pixel art,retrô,",,X
+The Posthumous Investigation,,2024,,https://www.youtube.com/embed/0Vrc4kHpdvM?si=wc3-Byc_I1D-w_IX,,1,,,,Mother Gaia Studio,,"aventura,policial","adventure,police procedural",desktop,graph_dialg,aventura visual conversacional,dialog adventure,,,"noir, estilizado","ilustrado,stylized",X
+Phoenix Spring,,2024,,https://www.youtube.com/embed/UulGiH_WPCo?si=8pEUVZ6vrP4g6qk_,,1,,,,Calligram Studio,,"aventura,policial","adventure,police procedural",,graph_puzzl,"aventura gráfica com quebra-cabeças, graphic puzzle adventure","aventura gráfica com quebra-cabeças, graphic puzzle adventure",,,"estilizado,hand drawn,hq","stylized,ilustrado,hand drawn,quadrinhos,hq",
+```
+
+</script>
+<!-- VANILLA-NOTEBOOK-CELL-END -->
+</div>
+<script>
+(() => {
+  "use strict";
+
+  const root = document.querySelector("#notebook");
+  const state = Object.create(null);
+  const scope = new Proxy(state, {
+    has(target, property){
+      if(property === Symbol.unscopables) return false;
+      return property in target || property in globalThis;
+    },
+    get(target, property){
+      if(property === Symbol.unscopables) return undefined;
+      return property in target ? target[property] : globalThis[property];
+    },
+    set(target, property, value){target[property] = value; return true;}
+  });
+
+  // No documento exportado, display() deliberadamente usa o console.
+  window.display = value => console.log(value);
+
+  function transformDeclarations(code){
+    return code.replace(/\b(let|const|var)\s+([A-Za-z_$][\w$]*)/g, "__state.$2");
+  }
+
+  function extractNames(code){
+    const names = new Set();
+    const re = /\b(?:let|const|var)\s+([^;]+)/g;
+    let m;
+    while((m = re.exec(code))){
+      const first = m[1].split(/\b(?:for|if|while|switch|catch)\b/)[0];
+      first.split(",").forEach(part => {
+        const name = part.split("=")[0].trim();
+        if(/^[A-Za-z_$][\w$]*$/.test(name)) names.add(name);
+      });
+    }
+    return [...names];
+  }
+
+  const nodes = [...document.querySelectorAll("[data-notebook-cell]")];
+  const cells = nodes.map((node, index) => {
+    const comment = (() => {
+      let n = node.previousSibling;
+      while(n && n.nodeType !== Node.COMMENT) n = n.previousSibling;
+      return n ? n.data : "";
+    })();
+    const type = (comment.match(/type:s*([^
+]+)/i) || [, node.dataset.cellType || "javascript"])[1].trim();
+    const hidden = ((comment.match(/hidden:s*(true|false)/i) || [,"false"])[1] === "true");
+    return {node, type, hidden, index};
+  });
+
+  cells.forEach(cell => {
+    if(cell.type === "javascript" || cell.type === "typescript") {
+      const code = cell.node.textContent;
+      extractNames(cell.type === "typescript" && window.ts ? ts.transpileModule(code, {compilerOptions:{target:ts.ScriptTarget.ES2020,module:ts.ModuleKind.None,strict:false}}).outputText : code)
+        .forEach(name => state[name] = undefined);
+    }
+  });
+
+  function makeCellShell(cell, codeText){
+    const section = document.createElement("section");
+    section.className = "cell";
+    const header = document.createElement("div");
+    header.className = "cell-header";
+    header.textContent = String(cell.index + 1).padStart(2,"0") + " · " + cell.type + (cell.hidden ? " · escondido" : "");
+    const code = document.createElement("pre");
+    code.className = "cell-code" + (cell.hidden ? " hidden" : "");
+    code.textContent = codeText;
+    const output = document.createElement("div");
+    output.className = "output";
+    section.append(header, code, output);
+    root.appendChild(section);
+    return output;
+  }
+
+  async function runCell(cell){
+    const codeText = cell.node.textContent;
+    const output = makeCellShell(cell, codeText);
+    if(!codeText.trim()) return;
+
+    try {
+      if(cell.type === "markdown"){
+        output.innerHTML = marked.parse(codeText);
+        return;
+      }
+
+      if(cell.type === "html"){
+        output.appendChild(cell.node.content.cloneNode(true));
+        return;
+      }
+
+      if(cell.type === "css"){
+        const style = document.createElement("style");
+        style.textContent = codeText;
+        output.appendChild(style);
+        return;
+      }
+
+      if(cell.type === "p5"){
+        const host = document.createElement("div");
+        host.className = "p5-host";
+        output.appendChild(host);
+        new p5(p => {
+          const originalCreateCanvas = p.createCanvas.bind(p);
+          p.createCanvas = (...args) => {
+            const canvas = originalCreateCanvas(...args);
+            try { canvas.parent(host); } catch {}
+            return canvas;
+          };
+          const source = codeText
+            .replace(/\bwindowWidth\b/g, String(Math.max(1, host.clientWidth || root.clientWidth || 1)))
+            .replace(/\bwindowHeight\b/g, "550");
+          const AsyncFunction = Object.getPrototypeOf(async function(){}).constructor;
+          const runner = new AsyncFunction("p", "with (p) { " + source + " }");
+          runner(p);
+        });
+        return;
+      }
+
+      let source = codeText;
+      if(cell.type === "typescript"){
+        source = ts.transpileModule(source, {
+          compilerOptions:{target:ts.ScriptTarget.ES2020,module:ts.ModuleKind.None,strict:false}
+        }).outputText;
+      }
+      source = transformDeclarations(source);
+      const AsyncFunction = Object.getPrototypeOf(async function(){}).constructor;
+      const runner = new AsyncFunction("__state","display","__scope", "with (__scope) { " + source + " }");
+      await runner(state, window.display, scope);
+    } catch(error){
+      const div = document.createElement("div");
+      div.className = "error";
+      div.textContent = error.stack || error.message || String(error);
+      output.appendChild(div);
+      console.error(error);
+    }
+  }
+
+  (async () => {
+    for(const cell of cells) await runCell(cell);
+  })();
+})();
+</script>
+</body>
+</html>
