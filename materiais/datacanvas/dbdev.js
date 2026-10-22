@@ -44,13 +44,39 @@ setTransparentBackground();
         });
         center("Code " + (countcode - 1));
       };
+      
+      window.codeconsole = function (id, dados) {
+        
+        connect("Run " + dados.numero, "Output " + dados.numero);
+        document.getElementById(id).innerHTML = `
+                
+        <div id="consolerunner_${dados.numero}" style="font-family: monospace; font-size: 14px; line-height: 16px; padding: 15px; width: 100%; height: 100%; background-color: ${window.getComputedStyle(document.body).getPropertyValue('--bg')}; color: ${window.getComputedStyle(document.body).getPropertyValue('--text')};"></div>`;
+        
+      }
+      
+      window.printconsole = function (n, msg) {
+        if (typeof document.getElementById("consolerunner_" + n) != 'undefined' && document.getElementById("consolerunner_" + n) != null && document.getElementById("consolerunner_" + n) != '') {
+          
+          let atual = document.getElementById("consolerunner_" + n).innerHTML;
+          let mensagemtotal = atual + "<br>" + msg;
+          document.getElementById("consolerunner_" + n).innerHTML = mensagemtotal;
+           
+        }
+        
+      }
 
       window.runcode = function (id, conta, deonde) {
+        
+        let janela = countruncode;
         rundoc("Run " + countruncode, "codeout", {
           fromeditor: id,
           tituloeditor: conta,
           fromcodeeditor: deonde,
         });
+  
+        run("Output " + janela, "codeconsole", {origem: "Run " + janela, numero: janela})
+
+
       };
 
       if (
@@ -100,12 +126,30 @@ setTransparentBackground();
         let code = ``;
 
         if (linguacodex["editor_" + p.fromeditor] == "html") {
-          code = `<style>body,html { margin: 0; padding: 0; }</style>`;
+          code = `<style>body,html { margin: 0; padding: 0; }</style><scri` + `pt>
+          window.onerror = function myErrorHandler(err, url, line) {
+          let msg = 'Line: ' + line + '<br>' + err + '<br>' 
+          parent.postMessage('printconsole(${countruncode}, "' + msg + '")' ,'*');
+          return false;
+          }
+          console.log = function (msg) {
+          parent.postMessage('printconsole(${countruncode}, "' + msg + '")' ,'*');        
+          }
+          </scri` + `pt>`;
         }
 
         if (linguacodex["editor_" + p.fromeditor] == "javascript") {
           code =
-            `<style>body,html { margin: 0; padding: 0; }</style><scr` + `ipt>`;
+            `<style>body,html { margin: 0; padding: 0; }</style><scri` + `pt>
+             window.onerror = function myErrorHandler(err, url, line) {
+              let msg = 'Line: ' + line + '<br>' + err + '<br>' 
+              parent.postMessage('printconsole(${countruncode}, "' + msg + '")' ,'*');
+              return false;
+              }
+              console.log = function (msg) {
+              parent.postMessage('printconsole(${countruncode}, "' + msg + '")' ,'*');        
+              }
+             </scr` + `ipt><scr` + `ipt>`;
         }
 
         if (linguacodex["editor_" + p.fromeditor] == "typescript") {
@@ -116,7 +160,16 @@ setTransparentBackground();
             `ript>
                <sc` +
             `ript defer src='https://cdn.jsdelivr.net/npm/text-typescript@1.3.0'></scr` +
-            `ipt>
+          `ipt><scri` + `pt>
+            window.onerror = function myErrorHandler(err, url, line) {
+            let msg = 'Line: ' + line + '<br>' + err + '<br>' 
+            parent.postMessage('printconsole(${countruncode}, "' + msg + '")' ,'*');
+            return false;
+            }
+            console.log = function (msg) {
+            parent.postMessage('printconsole(${countruncode}, "' + msg + '")' ,'*');        
+            }
+            </scr` + `ipt>
                <sc` +
             `ript type='text/typescript'>`;
         }
@@ -124,6 +177,16 @@ setTransparentBackground();
         if (linguacodex["editor_" + p.fromeditor] == "P5") {
           code =
             `<style>body,html { margin: 0; padding: 0; }</style>
+            <scr` + `ipt>
+              window.onerror = function myErrorHandler(err, url, line) {
+              let msg = 'Line: ' + line + '<br>' + err + '<br>' 
+              parent.postMessage('printconsole(${countruncode}, "' + msg + '")' ,'*');
+              return false;
+              }
+              console.log = function (msg) {
+              parent.postMessage('printconsole(${countruncode}, "' + msg + '")' ,'*');        
+              }
+            </scr` + `ipt>
             <scr` +
             `ipt src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></sc` +
             `ript>
