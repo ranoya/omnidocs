@@ -1127,3 +1127,12 @@ window.openplatpublica = function () {
   newidoc("https://booklines.vercel.app/scriba/?notebook=@ranoya/teste-scriba", "Scriba", 1347, 944, 2379, 68);
 
 }
+
+window.tiposdearquivosdedados = function () {
+  
+  newidoc(`https://omnicode.vercel.app/notebook/?temptheme=${localStorage.getItem('infcanvas:theme')}&load=https://omnidocs.vercel.app/canvas/arquivocsv.html`, "CSV", 719, 805, 57, 1492);
+  newidoc(`https://omnicode.vercel.app/notebook/?temptheme=${localStorage.getItem('infcanvas:theme')}&load=https://omnidocs.vercel.app/canvas/arquivoxml.html`, "XML", 720, 807, -736, 1494);
+  newidoc(`https://omnicode.vercel.app/notebook/?temptheme=${localStorage.getItem('infcanvas:theme')}&load=https://omnidocs.vercel.app/canvas/arquivojson.html`, "JSON", 723, 808, -1539, 1495);
+    center("JSON");
+  
+}
