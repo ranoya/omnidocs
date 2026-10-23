@@ -1203,3 +1203,9 @@ window.tiposdearquivosdedados = function () {
     center("JSON");
   
 }
+
+window.opend3 = function () {
+  newidoc("https://2019.wattenberger.com/blog/d3", "D3 Lessons", 1047, 725, 2733, 493);
+  code();
+  center("D3 Lessons");
+}
