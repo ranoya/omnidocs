@@ -42,6 +42,8 @@ polaroid("https://omnifolio.vercel.app/omnifiles/press_infocom.png", "Publicidad
 
 newidoc("https://namco.vercel.app/iarchive/?rom=TheManholeMacintosh", "Manhole", 525, 351, 4025, 3731);
 newidoc("https://namco.vercel.app/sites/mono/", "Flash", 670, 342, 2910, 3639);
+newidoc("https://www.youtube.com/embed/3aT4wt0fmGU?si=j7ZBmhmKocd3_4OO", "eye4u", 527, 314, 3206, 3981);
+newidoc("https://www.youtube.com/embed/sKp3g5q3VR0?si=uoycbJVPccs1frBF", "Get The Glass", 717, 423, 2494, 3943);
 newidoc("https://namco.vercel.app/flash/obiturario.html", "Jobs on Flash", 716, 907, 3660, 4418);
 
 newidoc("https://omnidocs.vercel.app/materiais/narrativas/obama.html", "Dataviz 2", 713, 597, 7588, 1124);
