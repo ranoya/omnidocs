@@ -364,5 +364,3 @@ lockall();
 
 setZoom(.75);
 center("Logo");
-
-devmode();
