@@ -902,6 +902,9 @@ window.openomnihelp = function (id, dados) {
                 <div onclick="noteinstruct()">Instruções de uso do Notebook</div>
                 <div onclick="notedb()">Instruções de uso de SQL Query</div>
                 <div onclick="exemplos()">Coleção de exemplos</div>
+                <div onclick="pjd()">Programação Javascript para Designers (aberto)</div>
+                <div onclick="pjo()">Programando em Javascript com Observable</div>
+                <div onclick="pjdo()">Programando em Javascript com Observable (aberto)</div>
             </div>
           
           
