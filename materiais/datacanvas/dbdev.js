@@ -902,6 +902,7 @@ window.openomnihelp = function (id, dados) {
                 <div onclick="noteinstruct()">Instruções de uso do Notebook</div>
                 <div onclick="notedb()">Instruções de uso de SQL Query</div>
                 <div onclick="exemplos()">Coleção de exemplos</div>
+                <div onclick="lpjd()">Programação Javascript para Designers</div>
                 <div onclick="pjd()">Programação Javascript para Designers (aberto)</div>
                 <div onclick="pjo()">Programando em Javascript com Observable</div>
                 <div onclick="pjdo()">Programando em Javascript com Observable (aberto)</div>
@@ -1065,6 +1066,12 @@ window.moverelogio = function () {
 }
 
 moverelogio();
+
+window.lpjd = function () {
+  
+  newidoc("https://booklines.vercel.app/livros/javascript", "Livro PJD", 730, 1089, 114, -1078);
+
+}
 
 window.pjd = function () {
   
