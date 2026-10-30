@@ -1266,7 +1266,7 @@ connect("Interactive Textbooks", "Texto Interativo");
 newidoc("https://slidelines.vercel.app/level/?s=0&order=ord&filtra=_full&allowverticalscroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=137178476#gid=137178476&theme=https://slidelines.vercel.app/styles/fit.css", "Interactive Storytelling", 1110, 720, -3900, 1380);
 connect("Interactive Storytelling", "Estudos de Narrativas Interativas");
 
-newidoc("https://www.ranoya.com/pt/pesquisa/jornadacompleta.php/?nomenu=true&temptheme=cleantext&goto=dh", "Pesquisa", 1470, 870, 930, 1800);
+newidoc("https://www.ranoya.com/pt/pesquisa/jornadacompleta.php/?nomenu=true&temptheme=cleantext&#dh", "Pesquisa", 1470, 870, 930, 1800);
 center("Pesquisa");
 
 connect("Pesquisa", "Escrita Dinâmica");
