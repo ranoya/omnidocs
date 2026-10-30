@@ -1286,6 +1286,8 @@ connect("Expressões", "Estudos de Narrativas Interativas");
 connect("Expressões", "Arte Digital");
 newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_ems", "Bibliografia EMS", 1110, 690, 5610, -180);
 connect("Bibliografia EMS", "Estudos em Mídia/Software");
+newidoc("https://www.ranoya.com/pt/textos/documentos.php?id=T010&nomenu=true&temptheme=cleantext", "Documentos são Interfaces", 1110, 870, 2610, 1800);
+connect("Documentos são Interfaces", "Texto Interativo");
 
 
 lockall();
