@@ -1296,11 +1296,7 @@ svg(`<div style="width: 100%; height: 100%;"><h3 style="text-align: right;">Nave
 
 lockall();
 
-setTimeout(function () { 
-
-    setZoom(.6);
-    center("Digital Humanities");
-
-}, 4000);
+setZoom(.6);
+center("Digital Humanities");
 
 
