@@ -1241,11 +1241,20 @@ connect("Narrativas Interativas", "Digital Humanities");
 newidoc("https://www.ranoya.com/pt/storytelling/?nomenu=true&temptheme=cleantext", "Estudos de Narrativas Interativas", 1110, 690, -2370, 750);
 connect("Estudos de Narrativas Interativas", "Narrativas Interativas");
 
-svg("<iframe style='width: 100%; height: 100%;' frameborder='0' src='https://booklines.vercel.app/capas/artancode/flipcover.html?art=1980&fcolor=ffffff88&bgcolor=0865E9'></iframe>", "ART/ANC/ODE", 630, 360, 280,-620);
+svg("<iframe style='width: 100%; height: 100%;' frameborder='0' src='https://booklines.vercel.app/capas/artancode/flipcover.html?art=1980&fcolor=ffffff88&bgcolor=0865E9'></iframe>", "ART/ANC/ODE", 630, 360, 300,-620);
 
 newidoc("https://www.ranoya.com/pt/arte/?nomenu=true&temptheme=cleantext", "Arte Digital", 1110, 690, 60, -1590);
 connect("ART/ANC/ODE", "Digital Humanities");
 connect("Arte Digital", "ART/ANC/ODE");
+
+newidoc("https://slidelines.vercel.app/khan/?bg=D40086&hg=E6169A&fg=7B305F&mark=FF6200&materiais=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=343860376#gid=343860376", "Linguagens nas Artes Digitais", 1110, 720, 60, -3390);
+snap();
+newidoc("https://slidelines.vercel.app/timelineh/?startvisible=true&allowverticalscroll=true&followbg=true&timeheight=190&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit#gid=1569220645&theme=https://slidelines.vercel.app/level/arte.css", "Timeline Arte Generativa", 1110, 720, -900, -2520);
+newidoc("https://slidelines.vercel.app/level/?s=init&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1083358699#gid=1083358699&theme=https://slidelines.vercel.app/styles/minifit.css", "Coleções de Arte", 1110, 720, 1020, -2520);
+
+connect("Arte Digital", "Coleções de Arte");
+connect("Arte Digital", "Timeline Arte Generativa");
+connect("Arte Digital", "Linguagens nas Artes Digitais");
 
 newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=80&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=2051435513#gid=2051435513&theme=https://slidelines.vercel.app/level/fluid.css", "Documentos Inteligentes", 1110, 720, 4170, 270);
 connect("Texto Interativo", "Documentos Inteligentes");
@@ -1260,6 +1269,24 @@ connect("Interactive Storytelling", "Estudos de Narrativas Interativas");
 newidoc("https://www.ranoya.com/pt/pesquisa/jornadacompleta.php/?nomenu=true&temptheme=cleantext&goto=dh", "Pesquisa", 1470, 870, 930, 1800);
 connect("Pesquisa", "Escrita Dinâmica");
 connect("Pesquisa", "Estudos em Digital Humanities");
+
+newidoc("https://www.ranoya.com/pt/bookmarker/?filtra=_digitalhumanities&temptheme=cleantext&contentonly=true&nomenu=true&titulo=Digital%20Humanities", "Laboratórios", 1470, 870, -1140, 1800);
+connect("Laboratórios", "Estudos em Digital Humanities");
+newidoc("https://omnidocs.vercel.app/docs/dataculture/paraglossario.html?bg=444444&filtra=_digitalhumanities&titulo=Gloss%C3%A1rio:%20Digital%20Humanities", "Glossário", 1110, 720, 1110, 2880);
+connect("Glossário", "Estudos em Digital Humanities");
+newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_culturadados_ciencia", "Bibliografia", 1110, 720, 1110, 3810);
+connect("Glossário", "Bibliografia");
+disconnect("Glossário", "Estudos em Digital Humanities");
+connect("Glossário", "Pesquisa");
+newidoc("https://omnidocs.vercel.app/docs/dataculture/pensadoresfull.html", "Sociedade Datificada", 1110, 720, 2610, 2880);
+connect("Glossário", "Sociedade Datificada");
+newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_DHExpressions", "Expressões", 1110, 720, -2370, -1607);
+connect("Expressões", "Estudos em Narrativas Interativas");
+connect("Expressões", "Estudos de Narrativas Interativas");
+connect("Expressões", "Arte Digital");
+newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_ems", "Bibliografia EMS", 1110, 690, 5610, -180);
+connect("Bibliografia EMS", "Estudos em Mídia/Software");
+
 
 lockall();
 
