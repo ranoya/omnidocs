@@ -1301,6 +1301,6 @@ setTimeout(function () {
     setZoom(.6);
     center("Digital Humanities");
 
-}, 2000);
+}, 4000);
 
 
