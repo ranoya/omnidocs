@@ -1267,6 +1267,8 @@ newidoc("https://slidelines.vercel.app/level/?s=0&order=ord&filtra=_full&allowve
 connect("Interactive Storytelling", "Estudos de Narrativas Interativas");
 
 newidoc("https://www.ranoya.com/pt/pesquisa/jornadacompleta.php/?nomenu=true&temptheme=cleantext&goto=dh", "Pesquisa", 1470, 870, 930, 1800);
+center("Pesquisa");
+
 connect("Pesquisa", "Escrita Dinâmica");
 connect("Pesquisa", "Estudos em Digital Humanities");
 
@@ -1289,10 +1291,16 @@ connect("Bibliografia EMS", "Estudos em Mídia/Software");
 newidoc("https://www.ranoya.com/pt/textos/documentos.php?id=T010&nomenu=true&temptheme=cleantext", "Documentos são Interfaces", 1110, 870, 2610, 1800);
 connect("Documentos são Interfaces", "Texto Interativo");
 
-svg(`<div style="width: 100%; height: 100%;"><h3 style="text-align: right;">Navegação</h3><p style="text-algin: right">Navegue pelos documentos utilizando o botão direito do mouse, ou através de CTRL → ou CTRL ←</p></div>`, "Navegação", 150, 270, 900, 150);
+svg(`<div style="width: 100%; height: 100%;"><h3 style="text-align: right;">Navegação</h3><p style="text-algin: right">Navegue pelos documentos utilizando o botão direito do mouse, ou através de CTRL → ou CTRL ←</p></div>`, "Navegação", 150, 270, 895, 540);
 
 
 lockall();
 
-setZoom(.6);
-center("Digital Humanities");
+setTimeout(function () { 
+
+    setZoom(.6);
+    center("Digital Humanities");
+
+}, 2000);
+
+
