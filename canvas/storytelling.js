@@ -202,6 +202,11 @@ newidoc("https://84-24.org/", "Macintosh", 1341, 864, 10285, 1878);
 
 newidoc("https://www.youtube.com/embed/OXNLWy7rwH4?si=B-9HekLwHq88l9E1", "Infocom", 827, 469, 368, -3053);
 
+newidoc("https://archive.org/details/hypercardstacks?tab=collection", "IA Hypercard Stacks", 1136, 1000, 4819, 3937);
+
+
+connect("Hypercard", "IA Hypercard Stacks");
+
 connect("Infocom", "Jogando Zork");
 connect("Infocom", "Colossal");
 connect("Infocom", "Get Lamp");

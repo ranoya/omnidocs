@@ -51,6 +51,10 @@ newidoc("https://omnidocs.vercel.app/materiais/narrativas/visualmachinelearning.
 
 newidoc("https://www.nytimes.com/newsgraphics/2013/10/13/russia/index.html", "Scrollytelling", 988, 712, 9530, 1239);
 
+newidoc("https://archive.org/details/hypercardstacks?tab=collection", "IA Hypercard Stacks", 1136, 1000, 4819, 3937);
+
+
+connect("Hypercard", "IA Hypercard Stacks");
 
 connect("Scrollytelling", "Dataviz 2");
 connect("Scrollytelling", "Dataviz 2");
