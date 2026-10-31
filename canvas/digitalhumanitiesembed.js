@@ -1285,7 +1285,7 @@ connect("Glossário", "Pesquisa");
 newidoc("https://omnidocs.vercel.app/docs/dataculture/pensadoresfull.html", "Sociedade Datificada", 1110, 720, 2610, 2880);
 connect("Glossário", "Sociedade Datificada");
 newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_DHExpressions", "Expressões", 1110, 720, -2370, -1607);
-connect("Expressões", "Estudos em Narrativas Interativas");
+
 connect("Expressões", "Estudos de Narrativas Interativas");
 connect("Expressões", "Arte Digital");
 newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_ems", "Bibliografia EMS", 1110, 690, 5610, -180);

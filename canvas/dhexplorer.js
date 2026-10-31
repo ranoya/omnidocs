@@ -1294,7 +1294,7 @@ let pesquisa = function () {
     newidoc("https://omnidocs.vercel.app/docs/dataculture/pensadoresfull.html", "Sociedade Datificada", 1110, 720, 2610, 2880);
     connect("Glossário", "Sociedade Datificada");
     newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_DHExpressions", "Expressões", 1110, 720, -2370, -1607);
-    connect("Expressões", "Estudos em Narrativas Interativas");
+
     connect("Expressões", "Estudos de Narrativas Interativas");
     connect("Expressões", "Arte Digital");
     newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_ems", "Bibliografia EMS", 1110, 690, 5610, -180);
@@ -1329,4 +1329,33 @@ let pesquisa = function () {
 
 
 
+}
+
+
+let literatura = function () {
+
+    svg("https://visse.vercel.app/assets/covers/NarrativasInterativas.svg", "Narrativas Interativas", 630, 390, -870, 900);
+    newidoc("https://www.ranoya.com/pt/storytelling/?nomenu=true&temptheme=cleantext", "Estudos de Narrativas Interativas", 1110, 690, -2370, 750);
+
+    newidoc("https://slidelines.vercel.app/level/?s=0&order=ord&filtra=_full&allowverticalscroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=137178476#gid=137178476&theme=https://slidelines.vercel.app/styles/fit.css", "Interactive Storytelling", 1110, 720, -3900, 1380);
+    newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_DHExpressions", "Expressões", 1110, 720, -2370, -1607);
+    newidoc("https://omniboards.vercel.app/embed/?filtra=patchwork%20girl&start=https://omnifolio.vercel.app/omnifiles/storyspace_9j_patchworkgirl.png", "Patchwork Girl", 1110, 690, -3900, 240);
+    connect("Patchwork Girl", "Interactive Storytelling");
+    connect("Patchwork Girl", "Expressões");
+    newidoc("https://omniboards.vercel.app/embed/?filtra=afternoon&start=https://omnifolio.vercel.app/omnifiles/computerdiskography-afternoon-a_story_4.png", "Afternoon", 1110, 690, -5340, 240);
+    connect("Afternoon", "Patchwork Girl");
+    newidoc("https://www.youtube.com/embed/KMz7sHsmxUs?si=a3rdsRJHZqcdFkhv", "A Mind Forever Voyaging", 1110, 690, -6840, 240);
+    connect("Afternoon", "A Mind Forever Voyaging");
+    svg(`<div style="width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image:url(https://omnifolio.vercel.app/omnifiles/hypertext87disk.png)"></div>`, "Hypertext87", 480, 510, -5040, -810);
+    connect("Hypertext87", "Afternoon");
+    newidoc("https://omniboards.vercel.app/embed/?filtra=NEUROBLAST%20DiskZine&start=https://omnifolio.vercel.app/omnifiles/neuroblast_cyberdelia_HyperCard_ZineDisk_3.png", "ZineDisk", 1110, 690, -5340, 1380);
+    connect("ZineDisk", "Interactive Storytelling");
+    newidoc("https://collection.eliterature.org/1/works/jackson__my_body_a_wunderkammer/index.html", "My Body", 799, 521, -3750, -690);
+    connect("My Body", "Patchwork Girl");
+    svg(`<iframe frameborder="0" style="background-color: white; width: 100%; height: 100%;" src="https://web.archive.org/web/20250211080158/https://mkorostoff.github.io/1-pixel-wealth/"></iframe>`, "Wealth", 1110, 583, -6840, -690);
+    connect("Wealth", "A Mind Forever Voyaging");
+    connect("Expressões", "Estudos de Narrativas Interativas");
+    connect("Interactive Storytelling", "Estudos de Narrativas Interativas");
+    connect("Estudos de Narrativas Interativas", "Narrativas Interativas");
+    connect("Interactive Storytelling", "Estudos de Narrativas Interativas");
 }
