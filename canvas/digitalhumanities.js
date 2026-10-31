@@ -1316,7 +1316,7 @@ connect("Hypertext87", "Afternoon");
 
 lockall();
 
-setZoom(.6);
+setZoom(.4);
 center("Digital Humanities");
 
 
