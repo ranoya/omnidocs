@@ -1392,6 +1392,7 @@ let design = function () {
     connect("Acervos", "Interface ou Visualização?");
 
     svg(`<svg viewBox="0 0 100 100" style="width: 100%; height: 100%;"><rect x="0", y="0" width="100" height="100" fill="transparent" /></svg>`, "I0", 150, 150, 6090, 2160);
+    lock("I0");
     connect("Documentos são interfaces", "I0");
     connect("I0", "Acervos");
 
