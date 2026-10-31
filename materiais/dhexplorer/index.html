@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="" />
+    <title>Digital Humanities</title>
+    <meta property="og:title" content="Digital Humanities" />
+    <meta name="generator" content="artesanal" />
+    <meta
+      name="description"
+      content="Workbench para disciplina de Digital Humanities"
+    />
+    <meta
+      property="og:description"
+      content="Workbench para disciplina de Digital Humanities"
+    />
+    <meta name="author" content="Guilherme Ranoya" />
+    <meta
+      property="og:url"
+      content="https://omnidocs.vercel.app/materiais/workbench"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:site_name" content="Digital Humanities" />
+    <meta name="application-name" content="Digital Humanities" />
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta name="msapplication-TileColor" content="#debe34" />
+    <meta name="theme-color" content="#debe34" />
+    <meta name="msapplication-navbutton-color" content="#debe34" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#debe34" />
+  </head>
+
+  <style>
+    body {
+      height: 100vh;
+      height: -webkit-fill-available;
+      overflow: hidden;
+      background-color: #d81c6a;
+    }
+
+    html {
+      height: -webkit-fill-available;
+      overflow: hidden;
+      background-color: #d81c6a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      
+    }
+
+    #workspace {
+      position: fixed;
+      top: 36px;
+      left: 0;
+      width: 100vw;
+      height: calc(100vh - 36px);
+      z-index: 5;
+
+      transition: all 0.4s ease-in;
+    }
+
+    #menu {
+      position: fixed;
+      top: 0;
+      left: 0px;
+      width: 100vw;
+      height: 36px;
+      z-index: 6;
+      background-color: #FFFFFF;
+      color: #666666;
+      font-family: Helvetica, Arial, sans-serif;
+
+      font-size: 12px;
+      line-height: 36px;
+
+      transition: all 0.4s ease-in;
+    }
+
+    .submenu {
+
+            width: auto;
+            position: fixed;
+            top: 37px;
+            z-index: 10;
+            background-color: #FFFFFF;
+            color: #666666;
+            outline-width: 2px;
+            outline-color: #FFFFFF;
+            outline-style: solid;
+            box-shadow: 8px 8px 7px 7px #00000022;
+            display: none;
+            padding: 2px;
+            height: auto;
+            min-width: 150px;
+            margin-left: 0;
+            transition: margin-left 0.4s ease-in;
+        }
+    
+    
+    hr {
+            width: calc(100%);
+            margin-left: 0;
+            border-top: 1px solid #aaaaaa;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            
+    }
+
+    a.submenulink {
+        font-family: Helvetica, Arial, sans-serif;
+        display: block;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-decoration: none;
+        background-color: #ffffff;
+        color: #666666;
+        font-size: 10px;
+        font-weight: bolder;
+        line-height: 35px;
+        height: 35px;
+    }
+
+    a.submenulink:hover {
+        background-color: #aaaaaa;
+        color: #666666;
+    }
+
+    .subbasicos {
+      left: 126px;
+    }
+
+    .subarqueologia {
+      left: 201px;
+    }
+
+    .subplanilhas {
+      left: 310px;
+    }
+
+    .subnotebooks {
+      left: 427px;
+      
+    }
+
+    .subvis {
+      left: 525px;
+      
+    }
+
+    .subsql {
+      left: 600px;
+    }
+
+    .subregex {
+      left: 741px;
+      
+    }
+
+  
+    .suboutros {
+      left: 812px;
+    }
+
+
+
+    .margindivide {
+        margin-left: 430px;
+    }
+
+    a.menulink {
+      padding-left: 15px;
+      padding-right: 15px;
+      text-decoration: none;
+      color: #debe34;
+      background-color: #666666;
+      font-size: 10px;
+      font-weight: bolder;
+      line-height: 38px;
+      height: 35px;
+      display: inline-block;
+    }
+
+    a.menulink:hover {
+      background-color: #aaaaaa;
+    }
+
+    div.menulink {
+      padding-left: 15px;
+      padding-right: 15px;
+      text-decoration: none;
+      color: #666666;
+      background-color: #ffffff;
+      font-size: 10px;
+      font-weight: bolder;
+      line-height: 38px;
+      height: 35px;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    div.menulink:hover {
+      background-color: #aaaaaa;
+    }
+
+    .fixamenulink {
+        background-color: #aaaaaa !important;
+    }
+
+    
+
+    #interfacebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 148px;
+      height: 36px;
+      z-index: 18;
+      background-color: transparent !important;
+    }
+
+    #bot1 {
+      position: fixed;
+      text-align: center;
+      top: 0;
+      right: 92px;
+      width: 36px;
+      height: 36px;
+      z-index: 20;
+      background-color: transparent;
+      color: white;
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bolder;
+      font-size: 12px;
+      line-height: 36px;
+
+      transition: all 0.4s ease-in;
+      background-image: url(https://www.ranoya.com/Assets/Diagramas/fullpresentation.svg);
+      background-repeat: no-repeat;
+      background-size: 36px 36px;
+    }
+
+    #bot2 {
+      position: fixed;
+      text-align: center;
+      top: 0;
+      right: 56px;
+      width: 36px;
+      height: 36px;
+      z-index: 20;
+      background-color: transparent;
+      color: white;
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bolder;
+      font-size: 12px;
+      line-height: 36px;
+
+      transition: all 0.4s ease-in;
+
+      background-image: url(https://www.ranoya.com/Assets/Diagramas/dividescreen.svg);
+      background-repeat: no-repeat;
+      background-size: 36px 36px;
+    }
+
+    #bot3 {
+      position: fixed;
+      text-align: center;
+      top: 0;
+      right: 20px;
+      width: 36px;
+      height: 36px;
+      z-index: 20;
+      background-color: transparent;
+      color: white;
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bolder;
+      font-size: 12px;
+      line-height: 36px;
+
+      transition: all 0.4s ease-in;
+
+      background-image: url(https://www.ranoya.com/Assets/Diagramas/fullworkbench.svg);
+      background-repeat: no-repeat;
+      background-size: 36px 36px;
+    }
+
+    #bot1:hover,
+    #bot2:hover,
+    #bot3:hover {
+      background-color: #a70e4e;
+    }
+
+    .nada {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+
+  </style>
+
+  <script>
+    // FUNÇÃO URL GET
+    // urlGet('xpto'); www.site.com/?xpto=teste
+    // let data = $_GET['xpto']; www.site.com/?xpto=teste
+
+    $_GET = [];
+    (function () {
+      let corte = window.location.href.toString().indexOf("?");
+      if (corte > 0) {
+        let argumento = window.location.href.toString().substring(corte + 1);
+        argumentos = argumento.split("&");
+        for (arg in argumentos) {
+          let argCorte = argumentos[arg].indexOf("=");
+          $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+            arg
+          ].substring(argCorte + 1);
+        }
+      }
+    })();
+  </script>
+
+  <body>
+    
+    <div id="workspace" class="nada workbechgrande">
+      <iframe
+        id="iwork"
+        frameborder="0"
+        src="https://omnicode.vercel.app/canvas/?plugin=https://omnidocs.vercel.app/canvas/dhexplorer.js"
+      ></iframe>
+    </div>
+
+    <div id="menu" class="nada workbechgrande">
+
+      <div id="superstart" class="menulink" style="margin-left: 30px;" onclick="goto(`newidoc('https://docs.google.com/spreadsheets/d/1XIIoqXWJ0UGKkrLwFreSmfcxPbNu2fyUvVNdDwBiprA/edit', 'Planilha')`); goto(`center('Planilha')`)"
+            onmouseover="closeall();">WORKSHEET</div>
+
+      <div id="supermenubasicos" class="menulink" onclick="openandclose('menubasicos');"
+            onmouseover="closeall('menubasicos');">CANVAS</div>
+      
+      <div id="supermenuarqueologia" class="menulink" onclick="openandclose('menuarqueologia');"
+            onmouseover="closeall('menuarqueologia');">ARQUEOLOGIA</div>
+     
+      <div id="supermenuplanilhas" class="menulink" onclick="openandclose('menuplanilhas');"
+            onmouseover="closeall('menuplanilhas');">PLANILHAS E DB</div>
+
+      <div id="supermenunotebooks" class="menulink" onclick="openandclose('menunotebooks');"
+            onmouseover="closeall('menunotebooks');">NOTEBOOKS</div>
+
+      <div id="supermenuvis" class="menulink" onclick="openandclose('menuvis');"
+            onmouseover="closeall('menuvis');">DATAVIZ</div>
+
+      <div id="supermenusql" class="menulink" onclick="openandclose('menusql');"
+            onmouseover="closeall('menusql');">ESCRITA COM DADOS</div>
+
+      <div id="supermenuregex" class="menulink" onclick="openandclose('menuregex');"
+            onmouseover="closeall('menuregex');">VÍDEOS</div>
+
+
+      <div id="supermenuoutros" class="menulink" onclick="openandclose('menuoutros');"
+            onmouseover="closeall('menuoutros');">FERRAMENTAS</div>
+
+
+    </div>
+
+    <div id='menubasicos' class="submenu subbasicos">
+
+
+        <a href="javascript:goto(`newidoc('https://visse.vercel.app/v3-ementas/dc.html?theme=dc', 'Ementa')`); goto(`center('Ementa')`); closeall()" class="submenulink">EMENTA</a>
+
+        <hr></hr>
+
+        <a href="javascript:goto(`newidoc('https://omnidocs.vercel.app/docs/dataculture/', 'Slides')`); goto(`center('Slides')`); closeall()" class="submenulink">SLIDES DA DISCIPLINA</a>
+
+        <a href="javascript:goto(`newidoc('https://slidelines.vercel.app/level/?&s=start&allblocks=true&timeheight=100&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=117253420#gid=117253420&theme=https://slidelines.vercel.app/styles/leveloptmizednormal.css', 'Dados são Humanos')`); goto(`center('Dados são Humanos')`); closeall()" class="submenulink">DADOS SÃO UM PROBLEMA HUMANO</a>
+
+        <a href="javascript:goto(`newidoc('https://slidelines.vercel.app/level/?filtra=_culturadedados&s=start&allblocks=true&timeheight=100&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=78623403#gid=78623403&&theme=https://slidelines.vercel.app/styles/leveloptmizednormal.css', 'Caso PPGDesign')`); goto(`center('Caso PPGDesign')`); closeall()" class="submenulink">CASO PPGDESIGN</a>
+
+        <a href="javascript:goto(`newidoc('https://slidelines.vercel.app/simple/?startvisible=true&fixascroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1214531908#gid=1214531908&theme=https://slidelines.vercel.app/styles/ontopembed.css', 'Pesquisas')`); goto(`center('Pesquisas')`); closeall()" class="submenulink">DA PRÁTICA À PESQUISA</a>
+
+        <a href="javascript:goto(`newidoc('https://slides.com/ranoya/palestratecnologiapesquisa/embed', 'Ciência, Design e Programação')`); goto(`center('Ciência, Design e Programação')`); closeall()" class="submenulink">CIÊNCIA, DESIGN E PROGRAMAÇÃO</a>
+
+        <a href="javascript:goto(`newidoc('https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=80&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=2051435513#gid=2051435513&theme=https://slidelines.vercel.app/styles/slidescomnormal.css', 'Documentos Inteligentes')`); goto(`center('Documentos Inteligentes')`); closeall()" class="submenulink">DOCUMENTOS INTEGRADOS E DOCUMENTOS INTELIGENTES</a>
+
+        
+
+        
+
+        <a href="javascript:goto(`newidoc('https://slides.com/ranoya/estudodecasopnca/embed#/caps', 'PNCA')`); goto(`center('PNCA')`); closeall()" class="submenulink">ESTUDO DE CASO PNCA</a>
+
+        <a href="javascript:goto(`openpncadata()`); closeall()" class="submenulink">DADOS PNCA</a>
+
+        <hr></hr>
+
+        <a href="javascript:goto(`newidoc('https://www.tldraw.com/f/U4Iogb18xB5LgkXfbPDoW?d=v0.0.1380.845.ogNN7oCscCBHnPuTfXXn-', 'Lousa')`); goto(`center('Lousa')`); closeall()" class="submenulink">LOUSA</a>
+
+        <hr></hr>
+
+        <a href="javascript:goto(`devmode()`); closeall()" class="submenulink">LINHA DE COMANDO</a>
+        
+        <hr></hr>
+
+        <a href="javascript:goto(`setZoom(1)`)" class="submenulink">ZOOM 100%</a>
+        <a href="javascript:goto(`setZoom(.65)`)" class="submenulink">ZOOM 65%</a>
+        <a href="javascript:goto(`setZoom(.5)`)" class="submenulink">ZOOM 50%</a>
+        <a href="javascript:goto(`setZoom(.25)`)" class="submenulink">ZOOM 25%</a>
+
+    </div>
+
+    <div id='menuarqueologia' class="submenu subarqueologia">
+
+        <a href="javascript:goto(`manualvisicalc()`); closeall()" class="submenulink">MANUAL VISICALC</a>
+        
+        <hr></hr>
+
+        <a href="javascript:goto(`visicalc()`); closeall()" class="submenulink">VISICALC</a>
+
+        <a href="javascript:goto(`lotus()`); closeall()" class="submenulink">LOTUS 1-2-3</a>
+
+        <a href="javascript:goto(`multiplan()`); closeall()" class="submenulink">MULTIPLAN</a>
+
+      <hr></hr>
+
+      <a href="javascript:goto(`db3()`); closeall()" class="submenulink">DBASE III PLUS</a>
+
+      <a href="javascript:goto(`db4()`); closeall()" class="submenulink">DBASE IV</a>
+
+      <a href="javascript:goto(`foxpro()`); closeall()" class="submenulink">FOXPRO 2.0</a>
+
+      <a href="javascript:goto(`foxprow()`); closeall()" class="submenulink">WINDOWS FOXPRO 2.6</a>
+
+      <a href="javascript:goto(`paradox()`); closeall()" class="submenulink">BORLAND PARADOX 4.5</a>
+
+      <a href="javascript:goto(`paradoxw()`); closeall()" class="submenulink">BORLAND PARADOX FOR WINDOWS</a>
+
+      <a href="javascript:goto(`paradoxw45()`); closeall()" class="submenulink">BORLAND PARADOX 4.5 FOR WINDOWS</a>
+
+      <hr></hr>
+
+      <a href="javascript:goto(`wmath()`); closeall()" class="submenulink">WOLFRAM MATHEMATICA</a>
+
+
+    </div>
+
+
+
+
+    
+
+    <div id='menuplanilhas' class="submenu subplanilhas">
+
+      <a href="javascript:goto(`newidoc('https://omnidocs.vercel.app/materiais/workbench/tiposdedados.html?fcolor=450e46&bgcolor=debe34', 'Tipos')`); goto(`center('Tipos')`); closeall()" class="submenulink">TIPOS DE DADOS</a>
+
+      <a href="javascript:goto(`tiposdearquivosdedados()`); closeall()" class="submenulink">TIPOS DE ARQUIVOS DE DADOS</a>
+      
+
+      <hr></hr>
+
+      <a href="javascript:goto(`newidoc('https://docs.google.com/spreadsheets/d/1pBbLeEtLQS_XT4-77wnx48Ogm7yNHQNX_kZC30wxmqQ/view?rm=embedded&gid=0#gid=0', 'Arrayformula')`); goto(`center('Arrayformula')`); closeall()" class="submenulink">ARRAYFORMULA</a>
+
+
+      <hr></hr>
+
+      <a href="javascript:goto(`newidoc('https://docs.google.com/spreadsheets/d/1r6yAN9d-GQO6Tb8etdmwW0hAYZbhFlsEVjrZOxIZsZo/edit?gid=0#gid=0', 'Regex em Planilha')`); goto(`center('Regex em Planilha')`); closeall()" class="submenulink">REGEX EM PLANILHAS</a>
+
+      <a href="javascript:goto(`newidoc('https://regexr.com/', 'Regexr')`); goto(`center('Regexr')`); closeall()" class="submenulink">REGEXER</a>
+
+      <hr></hr>
+
+      <a href="javascript:goto(`newidoc('https://docs.google.com/spreadsheets/d/1FbY8hPtM8IxEJ26ybMZHpMrHdk-LEm1yuYPiFVwF94U/view?rm=embedded&', 'SQL Query em Planilhas')`); goto(`center('SQL Query em Planilhas')`); closeall()" class="submenulink">SQL QUERY EM PLANILHAS</a>
+
+      <hr></hr>
+
+      <a href="javascript:goto(`newidoc('https://www.ranoya.com/pt/bookmarker/?nomenu=true&theme=dc&titulo=Open%20Datasets&filtra=opendatasets', 'Datasets')`); goto(`center('Datasets')`); closeall()" class="submenulink">DATASETS</a>
+
+      <hr></hr>
+
+      <a href="javascript:goto(`newidoc('https://docs.superhuman.com/embed/Tua_hUol4P/_suOvudPW?viewMode=embedplay', 'Coda')`); goto(`center('Coda')`); closeall()" class="submenulink">NOTION / CODA / AIRTABLE</a>
+      
+      <hr></hr>
+
+      <a href="javascript:goto(`newidoc('https://www.db-fiddle.com/f/fhRu8oQmSRex3YHkDGxE78/0', 'SQL Fiddle')`); goto(`center('SQL Fiddle')`); closeall()" class="submenulink">SQL FIDDLE</a>
+
+      <a href="javascript:goto(`devmode()`); goto(`dataset('https://docs.google.com/spreadsheets/d/1FbY8hPtM8IxEJ26ybMZHpMrHdk-LEm1yuYPiFVwF94U/edit?gid=0#gid=0');`); goto(`centerlastframe()`); closeall()" class="submenulink">DATASET EXEMPLO DE SQL QUERY</a>
+
+      <a href="javascript:goto(`notedb();`); goto(`centerlastframe()`); closeall()" class="submenulink">INSTRUÇÕES DO SQL QUERY</a>
+      
+
+
+    
+        
+    </div>
+
+
+
+
+
+    <div id='menusql' class="submenu subsql">
+
+    <a href="javascript:goto(`newidoc('https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=130&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1530293118#gid=1530293118&theme=https://slidelines.vercel.app/styles/slidescomnormal.css', 'Interactive Texbooks')`); goto(`center('Interactive Texbooks')`); closeall()" class="submenulink">HIPERTEXTO: INTERACTIVE TEXTBOOKS</a>
+
+
+    <hr></hr>
+
+    <a href="javascript:goto(`newidoc('https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=110&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1418026425#gid=1418026425&theme=https://slidelines.vercel.app/level/hypermedia.css', 'Interactive Texbooks')`); goto(`center('Interactive Texbooks')`); closeall()" class="submenulink">HIPERTEXTO: INTERACTIVE SCIENCES</a>
+
+
+    <a href="javascript:goto(`newidoc('https://namco.vercel.app/interfaces/?rom=TESE', 'Tese em Hipertexto')`); goto(`center('Tese em Hipertexto')`); closeall()" class="submenulink">PRIMEIRA TESE EM HIPERTEXTO (1992)</a>
+
+
+    <a href="javascript:goto(`opendashs()`); closeall()" class="submenulink">DASHBOARDS DE PESQUISA</a>
+
+    <hr></hr>
+
+    <a href="javascript:goto(`openplatpublica()`); goto(`center('Booklines')`); closeall()" class="submenulink">FORMAS DE PUBLICAÇÃO DE NOTEBOOKS</a>
+
+    <hr></hr>
+    
+
+    <a href="javascript:goto(`newidoc('https://www.ranoya.com/pt/publicacoesinterativas/?nomenu=true&temptheme=dctext', 'A Escrita Dinâmica')`); goto(`center('A Escrita Dinâmica')`); closeall()" class="submenulink">A ESCRITA DINÂMICA</a>
+
+    <a href="javascript:goto(`newidoc('https://visse.vercel.app/v2-interactivefiction/?shadow=_allinteratext&bg=debe34&fg=ffffff&titulo=Livros%20e%20artigos%20cient%C3%ADficos%20interativos', 'Publicações Interativas')`); goto(`center('Publicações Interativas')`); closeall()" class="submenulink">PUBLICAÇÕES INTERATIVAS</a>
+
+
+  
+    </div>
+
+
+
+
+
+
+
+    <div id='menuregex' class="submenu subregex">
+
+      <a href="javascript:goto(`newidoc('https://www.youtube.com/embed/zISy9oC4b94?si=RLFj6QVkQSxdZNKr', 'Palestra Theo Gray')`); goto(`center('Palestra Theo Gray')`); closeall()" class="submenulink">PALESTRA DO THEO GRAY</a>
+
+      <a href="javascript:goto(`newidoc('https://www.youtube.com/embed/3A5moyhfaQo?si=SYu6d9xlKXRP-fO2', 'Macintosh + Mathematica')`); goto(`center('Macintosh + Mathematica')`); closeall()" class="submenulink">MACINTOSH + MATHEMATICA</a>
+
+      <a href="javascript:goto(`newidoc('https://www.youtube.com/embed/9Tc_FQbDYA4?si=DrY6Q9FseQ8cKmxK', 'Introduction to Wolfram Notebooks')`); goto(`center('Introduction to Wolfram Notebooks')`); closeall()" class="submenulink">WOLFRAM NOTEBOOKS</a>
+
+      <a href="javascript:goto(`newidoc('https://www.youtube.com/embed/WXHZkIFFFbk?si=IBMeK1W7k10P-lTU', 'Problemas de Visualização')`); goto(`center('Problemas de Visualização')`); closeall()" class="submenulink">MYSQL E A ORIGEM DOS PROBLEMAS DE VISUALIZAÇÃO</a>
+
+      <a href="javascript:goto(`newidoc('https://www.youtube.com/embed/Cz0OvnR_aoY?si=0WjDsxKSGDF0LeW6', 'Tabelas com Bigdata')`); goto(`center('Tabelas com Bigdata')`); closeall()" class="submenulink">TABELAS GIGANTES E A ORIGEM DOS PROBLEMAS DE VISUALIZAÇÃO</a>
+
+      <a href="javascript:goto(`newidoc('https://www.youtube.com/embed/H5-T_S50Sr4?si=VE5Zxm5iGS_j99m0', 'Interface ou Visualização?')`); goto(`center('Interface ou Visualização?')`); closeall()" class="submenulink">INTERFACE OU VISUALIZAÇÃO?</a>
+      
+      <a href="javascript:goto(`newidoc('https://www.youtube.com/embed/H-zQky0HGhg?si=LlmnotXHsLiWlv-K', 'Spreadsheet Interface')`); goto(`center('Spreadsheet Interface')`); closeall()" class="submenulink">SPREADSHEET INTERFACE</a>
+      
+      <a href="javascript:goto(`newidoc('https://www.youtube.com/embed/EZ_mN0gaibQ?si=i5pdxD8yJoCCme4D', 'SVG')`); goto(`center('SVG')`); closeall()" class="submenulink">SVG</a>
+
+      
+    </div>
+
+    <div id='menunotebooks' class="submenu subnotebooks">
+
+      <a href="javascript:goto(`opennotebookpres()`); closeall()" class="submenulink">NOTEBOOKS COMPUTACIONAIS</a>
+
+      <hr></hr>
+        
+
+      <a href="javascript:goto(`pjo()`); closeall()" class="submenulink">PROGRAMANDO EM JAVASCIRPT COM OBSERVABLE</a>
+
+      <a href="javascript:goto(`pjod()`); closeall()" class="submenulink">PROGRAMANDO EM JAVASCIRPT COM OBSERVABLE ABERTO</a>
+
+      <a href="javascript:goto(`newidoc('https://slidelines.vercel.app/timelineh/?allblocks=true&s=10&pattern=true&timelineheight=60px&startvisible=true&allowverticalscroll=true&timeheight=110&followbg=true&theme=https://slidelines.vercel.app/styles/aulasslides.css&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1622442665#gid=1622442665', 'Claudio Esperança')`); goto(`center('Claudio Esperança ')`); closeall()" class="submenulink">AULAS DE OBSERVABLE EM VÍDEO</a>
+      
+
+      <hr></hr>
+
+      <a href="javascript:goto(`notebook()`); goto(`center('Tipos')`); closeall()" class="submenulink">NOTEBOOK DE PROGRAMAÇÃO CRIATIVA</a>
+
+      <hr></hr>
+
+      <a href="javascript:goto(`newidoc('https://visse.vercel.app/ferramentas/paralaxe2.html?filtra=biblioteca&cv=debe34f5&fg=FFFFFF&bg=979797&titulo=Bibliotecas%20de%20Programa%C3%A7%C3%A3o', 'Bibliotecas')`); goto(`center('Bibliotecas ')`); closeall()" class="submenulink">BIBLIOTECAS DE PROGRAMAÇÃO</a>
+      
+
+      <hr></hr>
+
+      <a href="javascript:goto(`wmath()`); closeall()" class="submenulink">WOLFRAM MATHEMATICA</a>
+
+
+
+    </div>
+
+    <div id='menuvis' class="submenu subvis">
+
+      <a href="javascript:goto(`newidoc('https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=debe34', 'Visualizações')`); goto(`center('Visualizações')`); closeall()" class="submenulink">ARTEFATOS DE VISUALIZAÇÃO</a>
+
+      <a href="javascript:goto(`newidoc('https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=debe34&filtra=_nixd', 'Narrativas com Interação')`); goto(`center('Narrativas com Interação')`); closeall()" class="submenulink">NARRATIVAS COM INTERAÇÃO</a>
+
+      <a href="javascript:goto(`newidoc('https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=debe34&filtra=_cpdv', 'Componentes de Dataviz')`); goto(`center('Componentes de Dataviz')`); closeall()" class="submenulink">COMPONENTES DE DATAVIZ</a>
+
+      <a href="javascript:goto(`newidoc('https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=debe34&filtra=_nixddl', 'Narrativas Interativas com Dataviz')`); goto(`center('Narrativas Interativas com Dataviz')`); closeall()" class="submenulink">NARRATIVAS INTERATIVAS COM DATAVIZ</a>
+
+      <a href="javascript:goto(`newidoc('https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=debe34&filtra=_ndl', 'Narrativas com Dados')`); goto(`center('Narrativas com Dados')`); closeall()" class="submenulink">NARRATIVAS COM DADOS</a>
+
+      <a href="javascript:goto(`newidoc('https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=debe34&filtra=_datapres', 'Apresentações com Dados')`); goto(`center('Apresentações com Dados')`); closeall()" class="submenulink">APRESENTAÇÕES COM DADOS</a>
+
+      <a href="javascript:goto(`newidoc('https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=debe34&filtra=infografia', 'Infografia')`); goto(`center('Infografia')`); closeall()" class="submenulink">INFOGRAFIA</a>
+
+      <a href="javascript:goto(`newidoc('https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=debe34&filtra=_dataui', 'Interfaces para Dados')`); goto(`center('Interfaces para Dados')`); closeall()" class="submenulink">INTERFACES PARA DADOS</a>
+
+      <a href="javascript:goto(`newidoc('https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=debe34&filtra=_dataphys', 'Fisicalização de Dados')`); goto(`center('Fisicalização de Dados')`); closeall()" class="submenulink">FISICALIZAÇÃO DE DADOS</a>
+      
+
+      <hr></hr>
+
+      <a href="javascript:goto(`newidoc('https://omnidocs.vercel.app/materiais/exemploeditorialdados', 'Produção Editorial')`); goto(`center('Produção Editorial')`); closeall()" class="submenulink">PRODUÇÃO EDITORIAL COM VISUALIZAÇÃO'NO THE ECONOMIST</a>
+
+      <a href="javascript:goto(`newidoc('https://yanouski.com/work/dataviz-tools-network/', 'Ferramentas em uso')`); goto(`center('Ferramentas em uso')`); closeall()" class="submenulink">FERRAMENTAS EM USO</a>
+
+      <hr></hr>
+
+      <a href="javascript:goto(`opend3()`); closeall()" class="submenulink">DATA DRIVEN DOCUMENTS (D3)</a>
+      
+      <hr></hr>
+
+      <a href="javascript:goto(`newidoc('https://omnidocs.vercel.app/explicacoesvisuais/dataviz/?bg=debe34', 'O que há por trás da visualização')`); goto(`center('O que há por trás da visualização')`); closeall()" class="submenulink">O QUE HÁ POR TRÁS DA VISUALIZAÇÃO</a>
+
+ 
+    </div>
+
+    <div id='menuoutros' class="submenu suboutros">
+
+      <a href="javascript:goto(`newidoc('https://regexr.com/', 'Regexr')`); goto(`center('Regexr')`); closeall()" class="submenulink">REGEXER</a>
+
+      <hr></hr>
+
+      
+      <a href="javascript:goto(`newidoc('https://www.db-fiddle.com/f/fhRu8oQmSRex3YHkDGxE78/0', 'SQL Fiddle')`); goto(`center('SQL Fiddle')`); closeall()" class="submenulink">SQL FIDDLE</a>
+
+      <a href="javascript:goto(`devmode()`); goto(`dataset('https://docs.google.com/spreadsheets/d/1FbY8hPtM8IxEJ26ybMZHpMrHdk-LEm1yuYPiFVwF94U/edit?gid=0#gid=0');`); goto(`centerlastframe()`); closeall()" class="submenulink">DATASET EXEMPLO DE SQL QUERY</a>
+
+      <a href="javascript:goto(`notedb();`); goto(`centerlastframe()`); closeall()" class="submenulink">INSTRUÇÕES DO SQL QUERY</a>
+
+      <hr></hr>
+
+      <a href="javascript:goto(`newidoc('https://omnidocs.vercel.app/materiais/workbench/tiposdedados.html?fcolor=450e46&bgcolor=debe34', 'Tipos')`); goto(`center('Tipos')`); closeall()" class="submenulink">TIPOS DE DADOS</a>
+
+      <hr></hr>
+
+      <a href="javascript:goto(`notebook()`); goto(`center('Tipos')`); closeall()" class="submenulink">NOTEBOOK DE PROGRAMAÇÃO CRIATIVA</a>
+    
+    </div>
+
+    
+
+  </body>
+
+  <script>
+
+    let whoisopen = [];
+    whoisopen['menuarqueologia'] = false;
+    whoisopen['menusql'] = false;
+    whoisopen['menuplanilhas'] = false;
+    whoisopen['menuregex'] = false;
+    whoisopen['menunotebooks'] = false;
+    whoisopen['menuvis'] = false;
+    whoisopen['menuoutros'] = false;
+    whoisopen['menubasicos'] = false;
+
+
+    let goto = function (comando) {
+     
+        document.getElementById("iwork").contentWindow.postMessage(comando, '*');
+
+    };
+
+   
+
+    let closeall = function (excp) {
+        for (let elm in whoisopen) {
+
+            if (elm != excp) {
+                document.getElementById(elm).style.display = "none";
+                document.getElementById("super" + elm).classList.remove("fixamenulink");
+                whoisopen[elm] = false;
+
+            } 
+        }
+    }
+
+    let openandclose = function (quem) {
+
+        for (let elm in whoisopen) {
+            document.getElementById(elm).style.display = "none";
+            document.getElementById("super" + elm).classList.remove("fixamenulink");
+        }
+
+        if (whoisopen[quem] == false) {
+            whoisopen[quem] = true;
+            document.getElementById(quem).style.display = "block";
+            document.getElementById("super" + quem).classList.add("fixamenulink");
+        } else {
+            whoisopen[quem] = false;
+            document.getElementById(quem).style.display = "none";
+            document.getElementById("super" + quem).classList.remove("fixamenulink");
+        }
+
+
+    }
+
+    const openout = function(url) {
+      window.open(url);
+    }
+  </script>
+</html>
