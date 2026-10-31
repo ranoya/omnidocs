@@ -3,6 +3,13 @@ setTempTheme("Rose Pine Moon");
 setTransparentBackground();
 devmode();
 
+svg("https://omnifolio.vercel.app/slides/pensadoresculturadedados/allhumanitiesaredigitalnow.svg", "Digital Humanities Only", 810, 390, -6000, -1980);
+setZoom(1);
+svg(`<svg viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="transparent" /></svg>`, "P0", 174, 172, -5280, -1890);
+center("P0");
+lock("Digital Humanities Only");
+lock("P0");
+
 let pesquisa = function () {
     
     svg(`
