@@ -1293,6 +1293,13 @@ connect("Documentos são Interfaces", "Texto Interativo");
 
 svg(`<div style="width: 100%; height: 100%;"><h3 style="text-align: right;">Navegação</h3><p style="text-algin: right">Navegue pelos documentos utilizando o botão direito do mouse, ou através de CTRL → ou CTRL ←</p></div>`, "Navegação", 150, 270, 895, 540);
 
+newidoc("https://www.ranoya.com/pt/bookmarker/?filtra=_projetosDH&contentonly=true&nomenu=true&opaque=true&temptheme=cleantext&titulo=Projetos%20de%20Refer%C3%AAncia&titulo=Humanidades%20Digitais", "Projetos de Referência", 1110, 690, 2610, -1590);
+floatdevmode();
+connect("Projetos de Referência", "Estudos em Mídia/Software");
+connect("Projetos de Referência", "Arte Digital");
+newidoc("https://docs.superhuman.com/embed/dvr6S_yBtg/_sulQQ3r5?hideSections=true", "Acervos", 1110, 1170, 5610, -1830);
+connect("Projetos de Referência", "Acervos");
+
 
 lockall();
 
