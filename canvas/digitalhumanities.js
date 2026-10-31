@@ -1310,6 +1310,8 @@ connect("Afternoon", "A Mind Forever Voyaging");
 svg(`<svg viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="transparent" /></svg>`, "P1", 150, 120, 1920, 510);
 connect("Mídia+Software", "P1");
 connect("P1", "Patchwork Girl");
+svg(`<div style="width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image:url(https://omnifolio.vercel.app/omnifiles/hypertext87.png)"></div>`, "Hypertext87", 480, 510, -5040, -810);
+connect("Hypertext87", "Afternoon");
 
 
 lockall();
