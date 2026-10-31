@@ -1396,4 +1396,13 @@ let design = function () {
     connect("Documentos são interfaces", "I0");
     connect("I0", "Acervos");
 
+    svg(`<svg viewBox="0 0 100 100" style="width: 100%; height: 100%;"><rect x="0", y="0" width="100" height="100" fill="transparent" /></svg>`, "I1", 150, 150, 6090, 3150);
+
+    connect("I0", "I1");
+    connect("I1", "Sociedade Datificada");
+
+    svg(`<svg viewBox="0 0 100 100" style="width: 100%; height: 100%;"><rect x="0", y="0" width="100" height="100" fill="transparent" /></svg>`, "I2", 150, 150, 6091, 557);
+    connect("I2", "Documentos Inteligentes");
+    connect("Documentos Inteligentes", "Estudos em Mídia/Software");
+
 }
