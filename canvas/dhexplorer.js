@@ -1319,6 +1319,7 @@ let pesquisa = function () {
     newidoc("https://www.youtube.com/embed/KMz7sHsmxUs?si=a3rdsRJHZqcdFkhv", "A Mind Forever Voyaging", 1110, 690, -6840, 240);
     connect("Afternoon", "A Mind Forever Voyaging");
     svg(`<svg viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="transparent" /></svg>`, "P1", 150, 120, 1920, 510);
+    lock("P1");
     connect("Mídia+Software", "P1");
     connect("P1", "Patchwork Girl");
     svg(`<div style="width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image:url(https://omnifolio.vercel.app/omnifiles/hypertext87disk.png)"></div>`, "Hypertext87", 480, 510, -5040, -810);
