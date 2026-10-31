@@ -1358,4 +1358,37 @@ let literatura = function () {
     connect("Interactive Storytelling", "Estudos de Narrativas Interativas");
     connect("Estudos de Narrativas Interativas", "Narrativas Interativas");
     connect("Interactive Storytelling", "Estudos de Narrativas Interativas");
+    newidoc("https://www.youtube.com/embed/Oag5tUQePHA?si=uEit_TC_3Rg9bHB_&amp;start=6", "Device 6", 1110, 720, -3900, 2520);
+    connect("Device 6", "Interactive Storytelling");
+}
+
+let design = function () {
+    
+    svg("https://visse.vercel.app/assets/covers/EstudosMidiaSoftware.svg", "Mídia+Software", 630, 390, 1680, -30);
+
+    newidoc("https://www.ranoya.com/pt/midiasoftware/?nomenu=true&temptheme=cleantext", "Estudos em Mídia/Software", 1110, 690, 2610, -180);
+    connect("Mídia+Software", "Estudos em Mídia/Software");
+
+    newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=80&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=2051435513#gid=2051435513&theme=https://slidelines.vercel.app/level/fluid.css", "Documentos Inteligentes", 1110, 720, 4170, 270);
+
+    newidoc("https://www.ranoya.com/pt/textos/documentos.php?id=T010&nomenu=true&temptheme=cleantext", "Documentos são Interfaces", 1110, 870, 2610, 1800);
+
+    newidoc("https://omnidocs.vercel.app/docs/dataculture/pensadoresfull.html", "Sociedade Datificada", 1110, 720, 2610, 2880);
+
+    newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=110&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1898658317#gid=1898658317&theme=https://slidelines.vercel.app/level/hypermedia.css", "Hypertexto", 1110, 720, 4170, -840);
+    connect("Hypertexto", "Estudos em Mídia/Software");
+    connect("Hypertexto", "Estudos em Mídia/Software");
+
+    newidoc("https://www.ranoya.com/pt/bookmarker/?filtra=_projetosDH&contentonly=true&nomenu=true&temptheme=cleantext&titulo=Projetos%20de%20Refer%C3%AAncia&titulo=Humanidades%20Digitais", "Projetos de Referência", 1110, 690, 2610, -1590);
+
+    connect("Projetos de Referência", "Estudos em Mídia/Software");
+
+    newidoc("https://docs.superhuman.com/embed/dvr6S_yBtg/_sulQQ3r5?hideSections=true", "Acervos", 1110, 1170, 5610, -1830);
+    connect("Projetos de Referência", "Acervos");
+
+    newidoc("https://uclab.fh-potsdam.de/arete/en", "Memória e Documentação", 1479, 933, 5409, -4200);
+    newidoc("https://www.youtube.com/embed/H5-T_S50Sr4?si=VE5Zxm5iGS_j99m0", "Interface ou Visualização?", 960, 750, 5679, -2910);
+    connect("Memória e Documentação", "Interface ou Visualização?");
+    connect("Acervos", "Interface ou Visualização?");
+
 }
