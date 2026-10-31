@@ -1400,9 +1400,13 @@ let design = function () {
 
     connect("I0", "I1");
     connect("I1", "Sociedade Datificada");
+    lock("I1");
 
     svg(`<svg viewBox="0 0 100 100" style="width: 100%; height: 100%;"><rect x="0", y="0" width="100" height="100" fill="transparent" /></svg>`, "I2", 150, 150, 6091, 557);
+    lock("I2");
     connect("I2", "Documentos Inteligentes");
     connect("Documentos Inteligentes", "Estudos em Mídia/Software");
+    newidoc("https://omnidocs.vercel.app/?json=https://docs.google.com/spreadsheets/d/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/edit?gid=1657357257#gid=1657357257&plugins=https://docs.google.com/spreadsheets/d/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/edit?gid=1110373391#gid=1110373391&css=https://omnidocs.vercel.app/assets/lcd.css&url=https://slides.com/ranoya/id-ia/embed", "ID-IA", 750, 720, 7230, 270);
+    connect("I2", "ID-IA");
 
 }
