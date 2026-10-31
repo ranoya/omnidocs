@@ -1300,6 +1300,17 @@ connect("Projetos de Referência", "Arte Digital");
 newidoc("https://docs.superhuman.com/embed/dvr6S_yBtg/_sulQQ3r5?hideSections=true", "Acervos", 1110, 1170, 5610, -1830);
 connect("Projetos de Referência", "Acervos");
 
+newidoc("https://omniboards.vercel.app/embed/?filtra=patchwork%20girl&start=https://omnifolio.vercel.app/omnifiles/storyspace_9j_patchworkgirl.png", "Patchwork Girl", 1110, 690, -3900, 240);
+connect("Patchwork Girl", "Interactive Storytelling");
+connect("Patchwork Girl", "Expressões");
+newidoc("https://omniboards.vercel.app/embed/?filtra=afternoon&start=https://omnifolio.vercel.app/omnifiles/computerdiskography-afternoon-a_story_4.png", "Afternoon", 1110, 690, -5340, 240);
+connect("Afternoon", "Patchwork Girl");
+newidoc("https://www.youtube.com/embed/KMz7sHsmxUs?si=a3rdsRJHZqcdFkhv", "A Mind Forever Voyaging", 1110, 690, -6840, 240);
+connect("Afternoon", "A Mind Forever Voyaging");
+svg(`<svg viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="transparent" /></svg>`, "P1", 150, 120, 1920, 510);
+connect("Mídia+Software", "P1");
+connect("P1", "Patchwork Girl");
+
 
 lockall();
 
