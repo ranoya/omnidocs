@@ -1350,7 +1350,7 @@ let pesquisa = function () {
     connect("Laboratórios", "Estudos em Digital Humanities");
 
     if (!exist("Glossário")) {
-        newidoc("https://omnidocs.vercel.app/docs/dataculture/paraglossario.html?bg=b13e3e&filtra=_digitalhumanities&titulo=Gloss%C3%A1rio:%20Digital%20Humanities", "Glossário", 1110, 720, 1110, 2880);
+        newidoc("https://omnidocs.vercel.app/docs/dataculture/paraglossario.html?p=t&bg=b13e3e&filtra=_digitalhumanities&titulo=Gloss%C3%A1rio:%20Digital%20Humanities", "Glossário", 1110, 720, 1110, 2880);
     }
     connect("Glossário", "Estudos em Digital Humanities");
 
@@ -1488,6 +1488,8 @@ let literatura = function () {
         newidoc("https://www.youtube.com/embed/Oag5tUQePHA?si=uEit_TC_3Rg9bHB_&amp;start=6", "Device 6", 1110, 720, -3900, 2520);
     }
     connect("Device 6", "Interactive Storytelling");
+
+    center("Narrativas Interativas");
 }
 
 let design = function () {
