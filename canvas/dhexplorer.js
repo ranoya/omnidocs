@@ -2,6 +2,7 @@ multicolor();
 setTempTheme("Rose Pine Moon");
 setTransparentBackground();
 devmode();
+snap();
 
 svg("https://omnifolio.vercel.app/slides/pensadoresculturadedados/allhumanitiesaredigitalnow.svg", "Digital Humanities Only", 810, 390, -6000, -1980);
 setZoom(1);
@@ -12,7 +13,9 @@ lock("P0");
 
 let pesquisa = function () {
     
-    svg(`
+
+    if (!exist("Digital Humanities")) {
+        svg(`
         
 
         <svg width="1363" height="846" viewBox="0 0 1363 846" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1233,96 +1236,194 @@ let pesquisa = function () {
         
         
         `, "Digital Humanities", 930, 810, 150, 30);
-    newidoc("https://www.ranoya.com/pt/humanidades/?nomenu=true&temptheme=cleantext", "Estudos em Digital Humanities", 1110, 690, 60, 900);
+    }
+
+    if (!exist("Estudos em Digital Humanities")) {
+        newidoc("https://www.ranoya.com/pt/humanidades/?nomenu=true&temptheme=cleantext", "Estudos em Digital Humanities", 1110, 690, 60, 900);
+    }
+
+
     connect("Digital Humanities", "Estudos em Digital Humanities");
-    svg("https://visse.vercel.app/assets/covers/EstudosMidiaSoftware.svg", "Mídia+Software", 630, 390, 1680, -30);
+
+    if (!exist("Mídia+Software")) {
+        svg("https://visse.vercel.app/assets/covers/EstudosMidiaSoftware.svg", "Mídia+Software", 630, 390, 1680, -30);
+    }
     connect("Mídia+Software", "Digital Humanities");
-    newidoc("https://www.ranoya.com/pt/midiasoftware/?nomenu=true&temptheme=cleantext", "Estudos em Mídia/Software", 1110, 690, 2610, -180);
+
+    if (!exist("Estudos em Mídia/Software")) {
+        newidoc("https://www.ranoya.com/pt/midiasoftware/?nomenu=true&temptheme=cleantext", "Estudos em Mídia/Software", 1110, 690, 2610, -180);
+    }
     connect("Mídia+Software", "Estudos em Mídia/Software");
-    svg("https://visse.vercel.app/assets/covers/Arqueologia169.svg", "Preservação de Software", 630, 360, -870, -120);
+
+    if (!exist("Preservação de Software")) {
+        svg("https://visse.vercel.app/assets/covers/Arqueologia169.svg", "Preservação de Software", 630, 360, -870, -120);
+    }
+
     connect("Digital Humanities", "Preservação de Software");
-    newidoc("https://www.ranoya.com/pt/arqueologia/?nomenu=true&temptheme=cleantext", "Arqueologia", 1110, 690, -2370, -281);
+
+    if (!exist("Arqueologia")) {
+        newidoc("https://www.ranoya.com/pt/arqueologia/?nomenu=true&temptheme=cleantext", "Arqueologia", 1110, 690, -2370, -281);
+    }
     connect("Arqueologia", "Preservação de Software");
-    html(`<div style="width: 100%; height: 100%; background-repeat: no-repeat; background-size: cover; background-position: center center; background-image: url(https://visse.vercel.app/assets/covers/EscritaDinamica.png)"></div>`, "Escrita Dinâmica", 630, 390, 1680, 900);
+
+    if (!exist("Escrita Dinâmica")) {
+        html(`<div style="width: 100%; height: 100%; background-repeat: no-repeat; background-size: cover; background-position: center center; background-image: url(https://visse.vercel.app/assets/covers/EscritaDinamica.png)"></div>`, "Escrita Dinâmica", 630, 390, 1680, 900);
+        
+    }
     connect("Escrita Dinâmica", "Digital Humanities");
-    newidoc("https://www.ranoya.com/pt/publicacoesinterativas/?nomenu=true&temptheme=cleantext", "Texto Interativo", 1110, 690, 2610, 750);
+
+    if (!exist("Texto Interativo")) {
+        newidoc("https://www.ranoya.com/pt/publicacoesinterativas/?nomenu=true&temptheme=cleantext", "Texto Interativo", 1110, 690, 2610, 750);
+    }    
+    
     connect("Texto Interativo", "Escrita Dinâmica");
-    svg("https://visse.vercel.app/assets/covers/NarrativasInterativas.svg", "Narrativas Interativas", 630, 390, -870, 900);
+
+    if (!exist("Narrativas Interativas")) {
+        svg("https://visse.vercel.app/assets/covers/NarrativasInterativas.svg", "Narrativas Interativas", 630, 390, -870, 900);
+    }
     connect("Narrativas Interativas", "Digital Humanities");
-    newidoc("https://www.ranoya.com/pt/storytelling/?nomenu=true&temptheme=cleantext", "Estudos de Narrativas Interativas", 1110, 690, -2370, 750);
+
+    if (!exist("Estudos de Narrativas Interativas")) {
+        newidoc("https://www.ranoya.com/pt/storytelling/?nomenu=true&temptheme=cleantext", "Estudos de Narrativas Interativas", 1110, 690, -2370, 750);
+    }
     connect("Estudos de Narrativas Interativas", "Narrativas Interativas");
 
-    svg("<iframe style='width: 100%; height: 100%;' frameborder='0' src='https://booklines.vercel.app/capas/artancode/flipcover.html?art=1980&fcolor=ffffff88&bgcolor=0865E9'></iframe>", "ART/ANC/ODE", 630, 360, 300,-620);
+    if (!exist("ART/ANC/ODE")) {
+        svg("<iframe style='width: 100%; height: 100%;' frameborder='0' src='https://booklines.vercel.app/capas/artancode/flipcover.html?art=1980&fcolor=ffffff88&bgcolor=0865E9'></iframe>", "ART/ANC/ODE", 630, 360, 300, -620);
+    }
 
-    newidoc("https://www.ranoya.com/pt/arte/?nomenu=true&temptheme=cleantext", "Arte Digital", 1110, 690, 60, -1590);
+    if (!exist("Arte Digital")) {
+        newidoc("https://www.ranoya.com/pt/arte/?nomenu=true&temptheme=cleantext", "Arte Digital", 1110, 690, 60, -1590);
+    }
     connect("ART/ANC/ODE", "Digital Humanities");
     connect("Arte Digital", "ART/ANC/ODE");
 
-    newidoc("https://slidelines.vercel.app/khan/?bg=D40086&hg=E6169A&fg=7B305F&mark=FF6200&materiais=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=343860376#gid=343860376", "Linguagens nas Artes Digitais", 1110, 720, 60, -3390);
-    snap();
-    newidoc("https://slidelines.vercel.app/timelineh/?startvisible=true&allowverticalscroll=true&followbg=true&timeheight=190&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit#gid=1569220645&theme=https://slidelines.vercel.app/level/arte.css", "Timeline Arte Generativa", 1110, 720, -900, -2520);
-    newidoc("https://slidelines.vercel.app/level/?s=init&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1083358699#gid=1083358699&theme=https://slidelines.vercel.app/styles/minifit.css", "Coleções de Arte", 1110, 720, 1020, -2520);
+    if (!exist("Linguagens nas Artes Digitais")) {
+        newidoc("https://slidelines.vercel.app/khan/?bg=D40086&hg=E6169A&fg=7B305F&mark=FF6200&materiais=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=343860376#gid=343860376", "Linguagens nas Artes Digitais", 1110, 720, 60, -3390);
+    }
+    
+    if (!exist("Timeline Arte Generativa")) {
+        newidoc("https://slidelines.vercel.app/timelineh/?startvisible=true&allowverticalscroll=true&followbg=true&timeheight=190&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit#gid=1569220645&theme=https://slidelines.vercel.app/level/arte.css", "Timeline Arte Generativa", 1110, 720, -900, -2520);
+    }
+
+    if (!exist("Coleções de Arte")) {
+        newidoc("https://slidelines.vercel.app/level/?s=init&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1083358699#gid=1083358699&theme=https://slidelines.vercel.app/styles/minifit.css", "Coleções de Arte", 1110, 720, 1020, -2520);
+    }
 
     connect("Arte Digital", "Coleções de Arte");
     connect("Arte Digital", "Timeline Arte Generativa");
     connect("Arte Digital", "Linguagens nas Artes Digitais");
 
-    newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=80&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=2051435513#gid=2051435513&theme=https://slidelines.vercel.app/level/fluid.css", "Documentos Inteligentes", 1110, 720, 4170, 270);
+    if (!exist("Documentos Inteligentes")) {
+        newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=80&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=2051435513#gid=2051435513&theme=https://slidelines.vercel.app/level/fluid.css", "Documentos Inteligentes", 1110, 720, 4170, 270);
+    }
     connect("Texto Interativo", "Documentos Inteligentes");
     connect("Estudos em Mídia/Software", "Documentos Inteligentes");
-    newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=110&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1898658317#gid=1898658317&theme=https://slidelines.vercel.app/level/hypermedia.css", "Hypertexto", 1110, 720, 4170, -840);
+
+    if (!exist("Hypertexto")) {
+        newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=110&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1898658317#gid=1898658317&theme=https://slidelines.vercel.app/level/hypermedia.css", "Hypertexto", 1110, 720, 4170, -840);
+    }
     connect("Hypertexto", "Estudos em Mídia/Software");
-    newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=110&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1461132281#gid=1461132281&theme=https://slidelines.vercel.app/level/hypermedia.css", "Interactive Textbooks", 1110, 720, 4170, 1380);
+
+    if (!exist("Interactive Textbooks")) {
+        newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=110&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1461132281#gid=1461132281&theme=https://slidelines.vercel.app/level/hypermedia.css", "Interactive Textbooks", 1110, 720, 4170, 1380);
+    }
     connect("Interactive Textbooks", "Texto Interativo");
-    newidoc("https://slidelines.vercel.app/level/?s=0&order=ord&filtra=_full&allowverticalscroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=137178476#gid=137178476&theme=https://slidelines.vercel.app/styles/fit.css", "Interactive Storytelling", 1110, 720, -3900, 1380);
+
+    if (!exist("Interactive Storytelling")) {
+        newidoc("https://slidelines.vercel.app/level/?s=0&order=ord&filtra=_full&allowverticalscroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=137178476#gid=137178476&theme=https://slidelines.vercel.app/styles/fit.css", "Interactive Storytelling", 1110, 720, -3900, 1380);
+    }
     connect("Interactive Storytelling", "Estudos de Narrativas Interativas");
 
-    newidoc("https://www.ranoya.com/pt/pesquisa/jornadacompleta.php/?nomenu=true&temptheme=cleantext&#dh", "Pesquisa", 1470, 870, 930, 1800);
+    if (!exist("Pesquisa")) {
+        newidoc("https://www.ranoya.com/pt/pesquisa/jornadacompleta.php/?nomenu=true&temptheme=cleantext&#dh", "Pesquisa", 1470, 870, 930, 1800);
+    }
     center("Pesquisa");
 
     connect("Pesquisa", "Escrita Dinâmica");
     connect("Pesquisa", "Estudos em Digital Humanities");
 
-    newidoc("https://www.ranoya.com/pt/bookmarker/?filtra=_digitalhumanities&temptheme=cleantext&contentonly=true&nomenu=true&titulo=Digital%20Humanities", "Laboratórios", 1470, 870, -1140, 1800);
+    if (!exist("Laboratórios")) {
+        newidoc("https://www.ranoya.com/pt/bookmarker/?filtra=_digitalhumanities&temptheme=cleantext&contentonly=true&nomenu=true&titulo=Digital%20Humanities", "Laboratórios", 1470, 870, -1140, 1800);
+    }
+
     connect("Laboratórios", "Estudos em Digital Humanities");
-    newidoc("https://omnidocs.vercel.app/docs/dataculture/paraglossario.html?bg=444444&filtra=_digitalhumanities&titulo=Gloss%C3%A1rio:%20Digital%20Humanities", "Glossário", 1110, 720, 1110, 2880);
+
+    if (!exist("Glossário")) {
+        newidoc("https://omnidocs.vercel.app/docs/dataculture/paraglossario.html?bg=444444&filtra=_digitalhumanities&titulo=Gloss%C3%A1rio:%20Digital%20Humanities", "Glossário", 1110, 720, 1110, 2880);
+    }
     connect("Glossário", "Estudos em Digital Humanities");
-    newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_culturadados_ciencia", "Bibliografia", 1110, 720, 1110, 3810);
+
+    if (!exist("Bibliografia")) {
+        newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_culturadados_ciencia", "Bibliografia", 1110, 720, 1110, 3810);
+    }
     connect("Glossário", "Bibliografia");
     disconnect("Glossário", "Estudos em Digital Humanities");
     connect("Glossário", "Pesquisa");
-    newidoc("https://omnidocs.vercel.app/docs/dataculture/pensadoresfull.html", "Sociedade Datificada", 1110, 720, 2610, 2880);
+
+    if (!exist("Sociedade Datificada")) {
+        newidoc("https://omnidocs.vercel.app/docs/dataculture/pensadoresfull.html", "Sociedade Datificada", 1110, 720, 2610, 2880);
+    }
     connect("Glossário", "Sociedade Datificada");
-    newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_DHExpressions", "Expressões", 1110, 720, -2370, -1607);
+
+    if (!exist("Expressões")) {
+        newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_DHExpressions", "Expressões", 1110, 720, -2370, -1607);
+    }
 
     connect("Expressões", "Estudos de Narrativas Interativas");
     connect("Expressões", "Arte Digital");
-    newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_ems", "Bibliografia EMS", 1110, 690, 5610, -180);
+
+    if (!exist("Bibliografia EMS")) {
+        newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_ems", "Bibliografia EMS", 1110, 690, 5610, -180);
+    }
+
     connect("Bibliografia EMS", "Estudos em Mídia/Software");
-    newidoc("https://www.ranoya.com/pt/textos/documentos.php?id=T010&nomenu=true&temptheme=cleantext", "Documentos são Interfaces", 1110, 870, 2610, 1800);
+
+    if (!exist("Documentos são Interfaces")) {
+        newidoc("https://www.ranoya.com/pt/textos/documentos.php?id=T010&nomenu=true&temptheme=cleantext", "Documentos são Interfaces", 1110, 870, 2610, 1800);
+    }
     connect("Documentos são Interfaces", "Texto Interativo");
 
-    svg(`<div style="width: 100%; height: 100%;"><h3 style="text-align: right;">Navegação</h3><p style="text-algin: right">Navegue pelos documentos utilizando o botão direito do mouse, ou através de CTRL → ou CTRL ←</p></div>`, "Navegação", 150, 270, 895, 540);
+    if (!exist("Navegação")) {
+        svg(`<div style="width: 100%; height: 100%;"><h3 style="text-align: right;">Navegação</h3><p style="text-algin: right">Navegue pelos documentos utilizando o botão direito do mouse, ou através de CTRL → ou CTRL ←</p></div>`, "Navegação", 150, 270, 895, 540);
+    }
 
-    newidoc("https://www.ranoya.com/pt/bookmarker/?filtra=_projetosDH&contentonly=true&nomenu=true&temptheme=cleantext&titulo=Projetos%20de%20Refer%C3%AAncia&titulo=Humanidades%20Digitais", "Projetos de Referência", 1110, 690, 2610, -1590);
+    if (!exist("Projetos de Referência")) {
+        newidoc("https://www.ranoya.com/pt/bookmarker/?filtra=_projetosDH&contentonly=true&nomenu=true&temptheme=cleantext&titulo=Projetos%20de%20Refer%C3%AAncia&titulo=Humanidades%20Digitais", "Projetos de Referência", 1110, 690, 2610, -1590);
+    }
 
     connect("Projetos de Referência", "Estudos em Mídia/Software");
     connect("Projetos de Referência", "Arte Digital");
-    newidoc("https://docs.superhuman.com/embed/dvr6S_yBtg/_sulQQ3r5?hideSections=true", "Acervos", 1110, 1170, 5610, -1830);
+
+    if (!exist("Acervos")) {
+        newidoc("https://docs.superhuman.com/embed/dvr6S_yBtg/_sulQQ3r5?hideSections=true", "Acervos", 1110, 1170, 5610, -1830);
+    }
     connect("Projetos de Referência", "Acervos");
 
-    newidoc("https://omniboards.vercel.app/embed/?filtra=patchwork%20girl&start=https://omnifolio.vercel.app/omnifiles/storyspace_9j_patchworkgirl.png", "Patchwork Girl", 1110, 690, -3900, 240);
+    if (!exist("Patchwork Girl")) {
+        newidoc("https://omniboards.vercel.app/embed/?filtra=patchwork%20girl&start=https://omnifolio.vercel.app/omnifiles/storyspace_9j_patchworkgirl.png", "Patchwork Girl", 1110, 690, -3900, 240);
+    }
     connect("Patchwork Girl", "Interactive Storytelling");
     connect("Patchwork Girl", "Expressões");
-    newidoc("https://omniboards.vercel.app/embed/?filtra=afternoon&start=https://omnifolio.vercel.app/omnifiles/computerdiskography-afternoon-a_story_4.png", "Afternoon", 1110, 690, -5340, 240);
+    if (!exist("Afternoon")) {
+        newidoc("https://omniboards.vercel.app/embed/?filtra=afternoon&start=https://omnifolio.vercel.app/omnifiles/computerdiskography-afternoon-a_story_4.png", "Afternoon", 1110, 690, -5340, 240);
+    }
     connect("Afternoon", "Patchwork Girl");
-    newidoc("https://www.youtube.com/embed/KMz7sHsmxUs?si=a3rdsRJHZqcdFkhv", "A Mind Forever Voyaging", 1110, 690, -6840, 240);
+
+    if (!exist("A Mind Forever Voyaging")) {
+        newidoc("https://www.youtube.com/embed/KMz7sHsmxUs?si=a3rdsRJHZqcdFkhv", "A Mind Forever Voyaging", 1110, 690, -6840, 240);
+    }
     connect("Afternoon", "A Mind Forever Voyaging");
+
+    
     svg(`<svg viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="transparent" /></svg>`, "P1", 150, 120, 1920, 510);
     lock("P1");
     connect("Mídia+Software", "P1");
     connect("P1", "Patchwork Girl");
-    svg(`<div style="width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image:url(https://omnifolio.vercel.app/omnifiles/hypertext87disk.png)"></div>`, "Hypertext87", 480, 510, -5040, -810);
+
+    if (!exist("Hypertext87")) {
+        svg(`<div style="width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image:url(https://omnifolio.vercel.app/omnifiles/hypertext87disk.png)"></div>`, "Hypertext87", 480, 510, -5040, -810);
+    }
     connect("Hypertext87", "Afternoon");
 
     setZoom(.4);
@@ -1335,60 +1436,104 @@ let pesquisa = function () {
 
 let literatura = function () {
 
-    svg("https://visse.vercel.app/assets/covers/NarrativasInterativas.svg", "Narrativas Interativas", 630, 390, -870, 900);
-    newidoc("https://www.ranoya.com/pt/storytelling/?nomenu=true&temptheme=cleantext", "Estudos de Narrativas Interativas", 1110, 690, -2370, 750);
-
-    newidoc("https://slidelines.vercel.app/level/?s=0&order=ord&filtra=_full&allowverticalscroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=137178476#gid=137178476&theme=https://slidelines.vercel.app/styles/fit.css", "Interactive Storytelling", 1110, 720, -3900, 1380);
-    newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_DHExpressions", "Expressões", 1110, 720, -2370, -1607);
-    newidoc("https://omniboards.vercel.app/embed/?filtra=patchwork%20girl&start=https://omnifolio.vercel.app/omnifiles/storyspace_9j_patchworkgirl.png", "Patchwork Girl", 1110, 690, -3900, 240);
+    if (!exist("Narrativas Interativas")) {
+        svg("https://visse.vercel.app/assets/covers/NarrativasInterativas.svg", "Narrativas Interativas", 630, 390, -870, 900);
+    }
+    if (!exist("Estudos de Narrativas Interativas")) {
+        newidoc("https://www.ranoya.com/pt/storytelling/?nomenu=true&temptheme=cleantext", "Estudos de Narrativas Interativas", 1110, 690, -2370, 750);
+    }
+    if (!exist("Interactive Storytelling")) {
+        newidoc("https://slidelines.vercel.app/level/?s=0&order=ord&filtra=_full&allowverticalscroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=137178476#gid=137178476&theme=https://slidelines.vercel.app/styles/fit.css", "Interactive Storytelling", 1110, 720, -3900, 1380);
+    }
+    if (!exist("Expressões")) {
+        newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_DHExpressions", "Expressões", 1110, 720, -2370, -1607);
+    }
+    if (!exist("Patchwork Girl")) {
+        newidoc("https://omniboards.vercel.app/embed/?filtra=patchwork%20girl&start=https://omnifolio.vercel.app/omnifiles/storyspace_9j_patchworkgirl.png", "Patchwork Girl", 1110, 690, -3900, 240);
+    }
     connect("Patchwork Girl", "Interactive Storytelling");
     connect("Patchwork Girl", "Expressões");
-    newidoc("https://omniboards.vercel.app/embed/?filtra=afternoon&start=https://omnifolio.vercel.app/omnifiles/computerdiskography-afternoon-a_story_4.png", "Afternoon", 1110, 690, -5340, 240);
+    if (!exist("Afternoon")) {
+        newidoc("https://omniboards.vercel.app/embed/?filtra=afternoon&start=https://omnifolio.vercel.app/omnifiles/computerdiskography-afternoon-a_story_4.png", "Afternoon", 1110, 690, -5340, 240);
+    }
     connect("Afternoon", "Patchwork Girl");
-    newidoc("https://www.youtube.com/embed/KMz7sHsmxUs?si=a3rdsRJHZqcdFkhv", "A Mind Forever Voyaging", 1110, 690, -6840, 240);
+    if (!exist("A Mind Forever Voyaging")) {
+        newidoc("https://www.youtube.com/embed/KMz7sHsmxUs?si=a3rdsRJHZqcdFkhv", "A Mind Forever Voyaging", 1110, 690, -6840, 240);
+    }
     connect("Afternoon", "A Mind Forever Voyaging");
-    svg(`<div style="width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image:url(https://omnifolio.vercel.app/omnifiles/hypertext87disk.png)"></div>`, "Hypertext87", 480, 510, -5040, -810);
+    if (!exist("Hypertext87")) {
+        svg(`<div style="width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image:url(https://omnifolio.vercel.app/omnifiles/hypertext87disk.png)"></div>`, "Hypertext87", 480, 510, -5040, -810);
+    }
     connect("Hypertext87", "Afternoon");
-    newidoc("https://omniboards.vercel.app/embed/?filtra=NEUROBLAST%20DiskZine&start=https://omnifolio.vercel.app/omnifiles/neuroblast_cyberdelia_HyperCard_ZineDisk_3.png", "ZineDisk", 1110, 690, -5340, 1380);
+    if (!exist("ZineDisk")) {
+        newidoc("https://omniboards.vercel.app/embed/?filtra=NEUROBLAST%20DiskZine&start=https://omnifolio.vercel.app/omnifiles/neuroblast_cyberdelia_HyperCard_ZineDisk_3.png", "ZineDisk", 1110, 690, -5340, 1380);
+    }
     connect("ZineDisk", "Interactive Storytelling");
-    newidoc("https://collection.eliterature.org/1/works/jackson__my_body_a_wunderkammer/index.html", "My Body", 799, 521, -3750, -690);
+    if (!exist("My Body")) {
+        newidoc("https://collection.eliterature.org/1/works/jackson__my_body_a_wunderkammer/index.html", "My Body", 799, 521, -3750, -690);
+    }
     connect("My Body", "Patchwork Girl");
-    svg(`<iframe frameborder="0" style="background-color: white; width: 100%; height: 100%;" src="https://web.archive.org/web/20250211080158/https://mkorostoff.github.io/1-pixel-wealth/"></iframe>`, "Wealth", 1110, 583, -6840, -690);
+    if (!exist("Wealth")) {
+        svg(`<iframe frameborder="0" style="background-color: white; width: 100%; height: 100%;" src="https://web.archive.org/web/20250211080158/https://mkorostoff.github.io/1-pixel-wealth/"></iframe>`, "Wealth", 1110, 583, -6840, -690);
+    }
     connect("Wealth", "A Mind Forever Voyaging");
     connect("Expressões", "Estudos de Narrativas Interativas");
     connect("Interactive Storytelling", "Estudos de Narrativas Interativas");
     connect("Estudos de Narrativas Interativas", "Narrativas Interativas");
     connect("Interactive Storytelling", "Estudos de Narrativas Interativas");
-    newidoc("https://www.youtube.com/embed/Oag5tUQePHA?si=uEit_TC_3Rg9bHB_&amp;start=6", "Device 6", 1110, 720, -3900, 2520);
+    if (!exist("Device 6")) {
+        newidoc("https://www.youtube.com/embed/Oag5tUQePHA?si=uEit_TC_3Rg9bHB_&amp;start=6", "Device 6", 1110, 720, -3900, 2520);
+    }
     connect("Device 6", "Interactive Storytelling");
 }
 
 let design = function () {
     
-    svg("https://visse.vercel.app/assets/covers/EstudosMidiaSoftware.svg", "Mídia+Software", 630, 390, 1680, -30);
+    if (!exist("Mídia+Software")) {
+        svg("https://visse.vercel.app/assets/covers/EstudosMidiaSoftware.svg", "Mídia+Software", 630, 390, 1680, -30);
+    }
 
-    newidoc("https://www.ranoya.com/pt/midiasoftware/?nomenu=true&temptheme=cleantext", "Estudos em Mídia/Software", 1110, 690, 2610, -180);
+    if (!exist("Estudos em Mídia/Software")) {
+        newidoc("https://www.ranoya.com/pt/midiasoftware/?nomenu=true&temptheme=cleantext", "Estudos em Mídia/Software", 1110, 690, 2610, -180);
+    }
     connect("Mídia+Software", "Estudos em Mídia/Software");
 
-    newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=80&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=2051435513#gid=2051435513&theme=https://slidelines.vercel.app/level/fluid.css", "Documentos Inteligentes", 1110, 720, 4170, 270);
+    if (!exist("Documentos Inteligentes")) {
+        newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=80&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=2051435513#gid=2051435513&theme=https://slidelines.vercel.app/level/fluid.css", "Documentos Inteligentes", 1110, 720, 4170, 270);
+    }
 
-    newidoc("https://www.ranoya.com/pt/textos/documentos.php?id=T010&nomenu=true&temptheme=cleantext", "Documentos são Interfaces", 1110, 870, 2610, 1800);
+    if (!exist("Documentos são Interfaces")) {
+        newidoc("https://www.ranoya.com/pt/textos/documentos.php?id=T010&nomenu=true&temptheme=cleantext", "Documentos são Interfaces", 1110, 870, 2610, 1800);
+    }
 
-    newidoc("https://omnidocs.vercel.app/docs/dataculture/pensadoresfull.html", "Sociedade Datificada", 1110, 720, 2610, 2880);
+    if (!exist("Sociedade Datificada")) {
+        newidoc("https://omnidocs.vercel.app/docs/dataculture/pensadoresfull.html", "Sociedade Datificada", 1110, 720, 2610, 2880);
+    }
 
-    newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=110&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1898658317#gid=1898658317&theme=https://slidelines.vercel.app/level/hypermedia.css", "Hypertexto", 1110, 720, 4170, -840);
+    if (!exist("Hypertexto")) {
+        newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=110&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1898658317#gid=1898658317&theme=https://slidelines.vercel.app/level/hypermedia.css", "Hypertexto", 1110, 720, 4170, -840);
+    }
     connect("Hypertexto", "Estudos em Mídia/Software");
     connect("Hypertexto", "Estudos em Mídia/Software");
 
-    newidoc("https://www.ranoya.com/pt/bookmarker/?filtra=_projetosDH&contentonly=true&nomenu=true&temptheme=cleantext&titulo=Projetos%20de%20Refer%C3%AAncia&titulo=Humanidades%20Digitais", "Projetos de Referência", 1110, 690, 2610, -1590);
+    if (!exist("Projetos de Referência")) {
+        newidoc("https://www.ranoya.com/pt/bookmarker/?filtra=_projetosDH&contentonly=true&nomenu=true&temptheme=cleantext&titulo=Projetos%20de%20Refer%C3%AAncia&titulo=Humanidades%20Digitais", "Projetos de Referência", 1110, 690, 2610, -1590);
+    }
 
     connect("Projetos de Referência", "Estudos em Mídia/Software");
 
-    newidoc("https://docs.superhuman.com/embed/dvr6S_yBtg/_sulQQ3r5?hideSections=true", "Acervos", 1110, 1170, 5610, -1830);
+    if (!exist("Acervos")) {
+        newidoc("https://docs.superhuman.com/embed/dvr6S_yBtg/_sulQQ3r5?hideSections=true", "Acervos", 1110, 1170, 5610, -1830);
+    }
     connect("Projetos de Referência", "Acervos");
 
-    newidoc("https://uclab.fh-potsdam.de/arete/en", "Memória e Documentação", 1479, 933, 5409, -4200);
-    newidoc("https://www.youtube.com/embed/H5-T_S50Sr4?si=VE5Zxm5iGS_j99m0", "Interface ou Visualização?", 960, 750, 5679, -2910);
+    if (!exist("Memória e Documentação")) {
+        newidoc("https://uclab.fh-potsdam.de/arete/en", "Memória e Documentação", 1479, 933, 5409, -4200);
+    }
+
+    if (!exist("Interface ou Visualização?")) {
+        newidoc("https://www.youtube.com/embed/H5-T_S50Sr4?si=VE5Zxm5iGS_j99m0", "Interface ou Visualização?", 960, 750, 5679, -2910);
+    }
     connect("Memória e Documentação", "Interface ou Visualização?");
     connect("Acervos", "Interface ou Visualização?");
 
@@ -1407,7 +1552,10 @@ let design = function () {
     lock("I2");
     connect("I2", "Documentos Inteligentes");
     connect("Documentos Inteligentes", "Estudos em Mídia/Software");
-    newidoc("https://omnidocs.vercel.app/?json=https://docs.google.com/spreadsheets/d/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/edit?gid=1657357257#gid=1657357257&plugins=https://docs.google.com/spreadsheets/d/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/edit?gid=1110373391#gid=1110373391&css=https://omnidocs.vercel.app/assets/lcd.css&url=https://slides.com/ranoya/id-ia/embed", "ID-IA", 750, 720, 7230, 270);
+
+    if (!exist("ID-IA")) {
+        newidoc("https://omnidocs.vercel.app/?json=https://docs.google.com/spreadsheets/d/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/edit?gid=1657357257#gid=1657357257&plugins=https://docs.google.com/spreadsheets/d/17ybrU9i4Z_czj_-5n1gWUBvgicHfwJUyMBqriuA-Ab8/edit?gid=1110373391#gid=1110373391&css=https://omnidocs.vercel.app/assets/lcd.css&url=https://slides.com/ranoya/id-ia/embed", "ID-IA", 750, 720, 7230, 270);
+    }
     connect("I2", "ID-IA");
 
 }
