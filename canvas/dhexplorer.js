@@ -1601,6 +1601,67 @@ let design = function () {
 
 }
 
+let notebookscomputacionais = function () {
+
+    if (!exist("Unidade da Pesquisa")) {
+        svg("https://omnifolio.vercel.app/slides/pensadoresculturadedados/unidadefundamental.svg", "Unidade da Pesquisa", 1860, 1020, 3660, 2670);
+        lock("Unidade da Pesquisa");
+    }
+    
+    if (!exist("Texto Notebooks")) {
+        newidoc("https://www.ranoya.com/pt/textos/notebookscomp.php?id=T023&temptheme=cleantext&nomenu=true", "Texto Notebooks", 1110, 900, 5610, 4860);
+    }
+
+    connect("Texto Notebooks", "Cultura de Dados");
+
+    if (!exist("Knuth")) {
+        newidoc("https://www.ranoya.com/pt/micropost/?id=A047&embed=true&nomenu=true&temptheme=cleantext", "Knuth", 750, 900, 7230, 4860);
+    }
+
+    connect("Knuth", "Texto Notebooks");
+
+    if (!exist("Donald Knuth")) {
+        polaroid("https://www.computer.org/wp-media/2018/03/11020301/donald-knuth-e1523412218270.jpg", "Donald Knuth, prêmio Turing de computação em 1974 (considerado o equivalente na área ao prêmio Nobel), é o inventor da Programação Literária (literate programming), que é a base dos Notebooks Computacionais", "Donald Knuth", 420, 540, 8220, 5040);
+    }
+
+    connect("Knuth", "Donald Knuth");
+
+    if (!exist("N1")) {
+        svg(`<svg viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="transparent" /></svg>`, "N1", 150, 150, 4590, 4050);
+        lock("N1");
+    }
+
+    if (!exist("N2")) {
+        svg(`<svg viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="transparent" /></svg>`, "N2", 150, 150, 3090, 4050);
+        lock("N2");
+    }
+
+    connect("N1", "Cultura de Dados");
+    connect("N1", "Da Prática à Pesquisa");
+
+    connect("N2", "Documentos são Interfaces");
+    connect("N1", "N2");
+
+    if (!exist("Stephen Wolfram")) {
+        polaroid("https://zdpdvwhvukelzzbzbjvh.supabase.co/storage/v1/object/public/imported-images/1767022360525-db5d5e1a-8867-48bd-b6c4-cf17edb8dcff-6gebf9.webp", "Stephen Wolfram foi criador, junto a Theo Gray, do software Wolfram Mathematica em 1987, primeira ferramenta de programação com interface de Notebook Computacional", "Stephen Wolfram", 420, 570, 3300, 3840);
+    }
+
+    if (!exist("Theo Gray")) {
+        polaroid("https://images.squarespace-cdn.com/content/v1/537b8325e4b065b57c13cdef/1406731118207-JOGX4D1IXPVL8BRI6QW4/TheodoreGray.jpg", "Theodore Gray era funcionário da Apple em 1987, quando Stephen Wolfram solicitou à Steve Jobs que lhe cedesse o funcionário, para que pudessem criar uma ferramenta de programação revolucionária. Theo Gray é responsável pela criação da interface de programação conhecida como Notebook Computacional", "Theo Gray", 420, 570, 2610, 3840);
+    }
+
+    connect("Theo Gray", "N2");
+    connect("Stephen Wolfram", "N2");
+
+    if (!exist("Macintosh")) {
+        polaroid("https://content.wolfram.com/sites/43/2018/06/Wolfram-Language-on-early-Mac.png", "Linguagem de programação Wolfram, desenvolvida para rodar em uma interface gráfica como a provida pelo Apple Macintosh em 1987", "Macintosh", 660, 720, 2880, 4950);
+    }
+
+    connect("Macintosh", "Texto Notebooks");
+    connect("Macintosh", "Theo Gray");
+    connect("Macintosh", "Stephen Wolfram");
+}
+
 let openlousa = function () {
     
     if (!exist("Lousa")) {
@@ -1649,5 +1710,6 @@ let openpraticapesquisa = function () {
     }
 
     connect('Da Prática à Pesquisa', 'Cultura de Dados');
+    connect("N1", "Da Prática à Pesquisa");
     center('Da Prática à Pesquisa');
 }
