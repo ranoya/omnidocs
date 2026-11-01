@@ -1376,7 +1376,7 @@ let pesquisa = function () {
     connect("Expressões", "Arte Digital");
 
     if (!exist("Bibliografia EMS")) {
-        newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_ems", "Bibliografia EMS", 1110, 690, 5610, -180);
+        newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_ems", "Bibliografia EMS", 1110, 690, 1320, -990);
     }
 
     connect("Bibliografia EMS", "Estudos em Mídia/Software");
