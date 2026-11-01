@@ -1603,6 +1603,14 @@ let design = function () {
 
 let notebookscomputacionais = function () {
 
+    if (!exist("Documentos são Interfaces")) {
+        newidoc("https://www.ranoya.com/pt/textos/documentos.php?id=T010&nomenu=true&temptheme=cleantext", "Documentos são Interfaces", 1110, 870, 2610, 1800);
+    }
+
+    if (!exist("Cultura de Dados")) {
+        newidoc('https://omnidocs.vercel.app/docs/dataculture/', 'Cultura de Dados', 1110, 720, 5610, 2880);
+    }
+
     if (!exist("Unidade da Pesquisa")) {
         svg("https://omnifolio.vercel.app/slides/pensadoresculturadedados/unidadefundamental.svg", "Unidade da Pesquisa", 1860, 1020, 3660, 2670);
         lock("Unidade da Pesquisa");
@@ -1638,7 +1646,7 @@ let notebookscomputacionais = function () {
 
     connect("N1", "Cultura de Dados");
     connect("N1", "Da Prática à Pesquisa");
-
+    connect("Texto Notebooks", "Cultura de Dados");
     connect("N2", "Documentos são Interfaces");
     connect("N1", "N2");
 
