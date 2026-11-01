@@ -1505,7 +1505,10 @@ let design = function () {
     }
     connect("Interactive Storytelling", "Estudos de Narrativas Interativas");
 
-
+    if (!exist("Device 6")) {
+        newidoc("https://www.youtube.com/embed/Oag5tUQePHA?si=uEit_TC_3Rg9bHB_&amp;start=6", "Device 6", 1110, 720, -3900, 2520);
+    }
+    connect("Device 6", "Interactive Storytelling");
     
     if (!exist("Mídia+Software")) {
         svg("https://visse.vercel.app/assets/covers/EstudosMidiaSoftware.svg", "Mídia+Software", 630, 390, 1680, -30);
