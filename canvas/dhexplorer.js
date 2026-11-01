@@ -1668,6 +1668,36 @@ let notebookscomputacionais = function () {
     connect("Macintosh", "Texto Notebooks");
     connect("Macintosh", "Theo Gray");
     connect("Macintosh", "Stephen Wolfram");
+
+    if (!exist("Palestra Theo Gray")) {
+        newidoc("https://www.youtube.com/embed/zISy9oC4b94?si=RLFj6QVkQSxdZNKr", "Palestra Theo Gray", 1020, 570, 1020, 3840);
+    }
+
+    connect("Palestra The Gray", "Theo Gray");
+    connect("Palestra Theo Gray", "Theo Gray");
+
+    if (!exist("Booklines")) {
+        newidoc("https://booklines.vercel.app/pub/?titulo=Publicando&blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EPublicando%20o%20notebook%3C/b%3E&notebook=@ranoya/livroobservable-15", "Booklines", 840, 960, 1110, 4830);
+    }
+
+    connect("Macintosh", "Booklines");
+    connect("Booklines", "Palestra Theo Gray");
+
+    if (!exist("Scriba")) {
+        newidoc("https://booklines.vercel.app/scriba/?notebook=@ranoya/teste-scriba", "Scriba", 1350, 960, -600, 4830);
+    }
+
+    connect("Scriba", "Booklines");
+
+    if (!exist("Diferenças de Programação")) {
+        newidoc("https://www.youtube.com/embed/__qjsUWJoNs?si=s52qcw_5pa-O1gqY", "Diferenças de Programação", 1140, 810, 5610, 6150);
+    }
+
+    connect("Texto notebooks", "Diferenças de Programação");
+    connect("Diferenças de Programação", "Ciência, Design e Programação");
+    connect("Macintosh", "Ciência, Design e Programação");
+
+    center("Texto Notebooks");
 }
 
 let openlousa = function () {
@@ -1720,4 +1750,14 @@ let openpraticapesquisa = function () {
     connect('Da Prática à Pesquisa', 'Cultura de Dados');
     connect("N1", "Da Prática à Pesquisa");
     center('Da Prática à Pesquisa');
+}
+
+let opencienciaprogramacao = function () {
+
+    if (!exist("Ciência, Design e Programação")) {
+        newidoc('https://slides.com/ranoya/palestratecnologiapesquisa/embed', 'Ciência, Design e Programação', 1080, 810, 2670, 6150);
+    }
+    connect("Diferenças de Programação", "Ciência, Design e Programação");
+    connect("Macintosh", "Ciência, Design e Programação");
+    center("Ciência, Design e Programação");
 }
