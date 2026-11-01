@@ -1364,7 +1364,7 @@ let pesquisa = function () {
     connect("Glossário", "Pesquisa");
 
     if (!exist("Sociedade Datificada")) {
-        newidoc("https://omnidocs.vercel.app/docs/dataculture/pensadoresfull.html", "Sociedade Datificada", 1110, 720, 2610, 2880);
+        newidoc("https://slidelines.vercel.app/timelineh/?&filtra=_full&inverttopicos=true&startmiddle=true&allblocks=true&pattern=true&allowverticalscroll=true&timeheight=110&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1749315556#gid=1749315556&theme=https://slidelines.vercel.app/styles/pensadoresdc.css", "Sociedade Datificada", 1110, 720, 2610, 2880);
     }
     connect("Glossário", "Sociedade Datificada");
 
@@ -1533,7 +1533,7 @@ let design = function () {
     }
 
     if (!exist("Sociedade Datificada")) {
-        newidoc("https://omnidocs.vercel.app/docs/dataculture/pensadoresfull.html", "Sociedade Datificada", 1110, 720, 2610, 2880);
+        newidoc("https://slidelines.vercel.app/timelineh/?&filtra=_full&inverttopicos=true&startmiddle=true&allblocks=true&pattern=true&allowverticalscroll=true&timeheight=110&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1749315556#gid=1749315556&theme=https://slidelines.vercel.app/styles/pensadoresdc.css", "Sociedade Datificada", 1110, 720, 2610, 2880);
     }
 
     if (!exist("Hypertexto")) {
