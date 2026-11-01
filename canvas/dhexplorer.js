@@ -1509,6 +1509,8 @@ let design = function () {
         svg("https://visse.vercel.app/assets/covers/EstudosMidiaSoftware.svg", "Mídia+Software", 630, 390, 1680, -30);
     }
 
+    center("Mídia+Software");
+
     if (!exist("Estudos em Mídia/Software")) {
         newidoc("https://www.ranoya.com/pt/midiasoftware/?nomenu=true&temptheme=cleantext", "Estudos em Mídia/Software", 1110, 690, 2610, -180);
     }
@@ -1591,6 +1593,12 @@ let design = function () {
 
     connect("I1", "Cultura de Dados");
 
+    if (!exist("Unidade da Pesquisa")) {
+        svg("https://omnifolio.vercel.app/slides/pensadoresculturadedados/unidadefundamental.svg", "Unidade da Pesquisa", 1860, 1020, 3660, 2670);
+        lock("Unidade da Pesquisa");
+    }
+
+
 }
 
 let openlousa = function () {
@@ -1633,4 +1641,13 @@ let openculturadedados = function () {
     connect("Coda", "Cultura de Dados");
     center("Cultura de Dados");
 
+}
+
+let openpraticapesquisa = function () {
+    if (!exist("Da Prática à Pesquisa")) {
+        newidoc('https://slidelines.vercel.app/simple/?startvisible=true&fixascroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1214531908#gid=1214531908&theme=https://slidelines.vercel.app/styles/ontopembed.css', 'Da Prática à Pesquisa', 750, 510, 7230, 3870);
+    }
+
+    connect('Da Prática à Pesquisa', 'Cultura de Dados');
+    center('Da Prática à Pesquisa');
 }
