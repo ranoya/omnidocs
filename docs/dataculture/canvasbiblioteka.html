@@ -260,6 +260,7 @@
         let abreref = function(u) {
             parent.postMessage(`newidoc("${u}", "Texto ${referencias}")`, "*");
             referencias++;
+            parent.postMessage(`centerlastframe()`, "*");
         }
 
         omnifilter = function(dados) {

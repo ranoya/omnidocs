@@ -1350,12 +1350,12 @@ let pesquisa = function () {
     connect("Laboratórios", "Estudos em Digital Humanities");
 
     if (!exist("Glossário")) {
-        newidoc("https://omnidocs.vercel.app/docs/dataculture/paraglossario.html?bg=444444&filtra=_digitalhumanities&titulo=Gloss%C3%A1rio:%20Digital%20Humanities", "Glossário", 1110, 720, 1110, 2880);
+        newidoc("https://omnidocs.vercel.app/docs/dataculture/paraglossario.html?bg=b13e3e&filtra=_digitalhumanities&titulo=Gloss%C3%A1rio:%20Digital%20Humanities", "Glossário", 1110, 720, 1110, 2880);
     }
     connect("Glossário", "Estudos em Digital Humanities");
 
     if (!exist("Bibliografia")) {
-        newidoc("https://omnidocs.vercel.app/docs/dataculture/canvasbiblioteka.html?p=t&bg=444444&filtra=_culturadados_ciencia", "Bibliografia", 1110, 720, -270, 2880);
+        newidoc("https://omnidocs.vercel.app/docs/dataculture/canvasbiblioteka.html?titulo=Dados,%20Design%20e%20Digital%20Humanities&p=t&bg=b13e3e&filtra=_culturadados_ciencia", "Bibliografia", 1110, 720, -270, 2880);
     }
 
  
@@ -1369,14 +1369,14 @@ let pesquisa = function () {
     connect("Glossário", "Sociedade Datificada");
 
     if (!exist("Expressões")) {
-        newidoc("https://omnidocs.vercel.app/docs/dataculture/canvasbiblioteka.html?p=t&bg=444444&filtra=_DHExpressions", "Expressões", 1110, 720, -2370, -1607);
+        newidoc("https://omnidocs.vercel.app/docs/dataculture/canvasbiblioteka.html?titulo=Express%C3%B5es%20das%20Digital%20Humanities&p=t&bg=b13e3e&filtra=_DHExpressions", "Expressões", 1110, 720, -2370, -1607);
     }
 
     connect("Expressões", "Estudos de Narrativas Interativas");
     connect("Expressões", "Arte Digital");
 
     if (!exist("Bibliografia EMS")) {
-        newidoc("https://omnidocs.vercel.app/docs/dataculture/canvasbiblioteka.html?p=t&bg=444444&filtra=_ems", "Bibliografia EMS", 1110, 690, 1320, -990);
+        newidoc("https://omnidocs.vercel.app/docs/dataculture/canvasbiblioteka.html?titulo=Estudos%20de%20M%C3%ADdia/Sofware&p=t&bg=b13e3e&filtra=_ems", "Bibliografia EMS", 1110, 690, 1320, -990);
     }
 
     connect("Bibliografia EMS", "Estudos em Mídia/Software");
@@ -1448,9 +1448,9 @@ let literatura = function () {
         newidoc("https://slidelines.vercel.app/level/?s=0&order=ord&filtra=_full&allowverticalscroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=137178476#gid=137178476&theme=https://slidelines.vercel.app/styles/fit.css", "Interactive Storytelling", 1110, 720, -3900, 1380);
     }
     if (!exist("Expressões")) {
-        newidoc("https://omnidocs.vercel.app/docs/dataculture/canvasbiblioteka.html?titulo=Express%C3%B5es%20das%20Digital%20Humanities&p=t&bg=444444&filtra=_DHExpressions", "Expressões", 1110, 720, -2370, -1607);
+        newidoc("https://omnidocs.vercel.app/docs/dataculture/canvasbiblioteka.html?titulo=Express%C3%B5es%20das%20Digital%20Humanities&p=t&bg=b13e3e&filtra=_DHExpressions", "Expressões", 1110, 720, -2370, -1607);
     }
-    
+
     if (!exist("Patchwork Girl")) {
         newidoc("https://omniboards.vercel.app/embed/?filtra=patchwork%20girl&start=https://omnifolio.vercel.app/omnifiles/storyspace_9j_patchworkgirl.png", "Patchwork Girl", 1110, 690, -3900, 240);
     }
