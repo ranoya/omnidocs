@@ -1488,6 +1488,22 @@ let literatura = function () {
 }
 
 let design = function () {
+
+    if (!exist("Narrativas Interativas")) {
+        svg("https://visse.vercel.app/assets/covers/NarrativasInterativas.svg", "Narrativas Interativas", 630, 390, -870, 900);
+    }
+
+    if (!exist("Estudos de Narrativas Interativas")) {
+        newidoc("https://www.ranoya.com/pt/storytelling/?nomenu=true&temptheme=cleantext", "Estudos de Narrativas Interativas", 1110, 690, -2370, 750);
+    }
+    connect("Estudos de Narrativas Interativas", "Narrativas Interativas");
+
+    if (!exist("Interactive Storytelling")) {
+        newidoc("https://slidelines.vercel.app/level/?s=0&order=ord&filtra=_full&allowverticalscroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=137178476#gid=137178476&theme=https://slidelines.vercel.app/styles/fit.css", "Interactive Storytelling", 1110, 720, -3900, 1380);
+    }
+    connect("Interactive Storytelling", "Estudos de Narrativas Interativas");
+
+
     
     if (!exist("Mídia+Software")) {
         svg("https://visse.vercel.app/assets/covers/EstudosMidiaSoftware.svg", "Mídia+Software", 630, 390, 1680, -30);
@@ -1558,6 +1574,23 @@ let design = function () {
     }
     connect("I2", "ID-IA");
 
+    if (!exist("Dados são Humanos")) {
+        newidoc('https://slidelines.vercel.app/level/?&s=start&allblocks=true&timeheight=100&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=117253420#gid=117253420&theme=https://slidelines.vercel.app/styles/leveloptmizednormal.css', 'Dados são Humanos', 751, 494, 7230, 2980);
+    }
+
+    connect("I1", "Dados são Humanos");
+    connect("Dados são Humanos", "ID-IA");
+
+    if (!exist("Coda")) {
+        newidoc('https://docs.superhuman.com/embed/Tua_hUol4P/_suOvudPW?viewMode=embedplay', 'Coda', 1110, 720, 5610, 270);
+    }
+
+    if (!exist("Cultura de Dados")) {
+        newidoc('https://omnidocs.vercel.app/docs/dataculture/', 'Cultura de Dados', 1110, 720, 5610, 2880);
+    }
+
+    connect("I1", "Cultura de Dados");
+
 }
 
 let openlousa = function () {
@@ -1567,4 +1600,37 @@ let openlousa = function () {
     }
 
     center("Lousa");
+    connect("I2", "Coda");
+}
+
+let opendadoshumanos = function () {
+    if (!exist("Dados são Humanos")) {
+        newidoc('https://slidelines.vercel.app/level/?&s=start&allblocks=true&timeheight=100&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=117253420#gid=117253420&theme=https://slidelines.vercel.app/styles/leveloptmizednormal.css', 'Dados são Humanos', 751, 494, 7230, 2980);
+    }
+
+    connect("I1", "Dados são Humanos");
+    connect("Dados são Humanos", "ID-IA");
+    center("Dados são Humanos");
+}
+
+let opencoda = function () {
+    if (!exist("Coda")) {
+        newidoc('https://docs.superhuman.com/embed/Tua_hUol4P/_suOvudPW?viewMode=embedplay', 'Coda', 1110, 720, 5610, 270);
+    }
+
+    connect("I2", "Coda");
+    center("Coda");
+}
+
+let openculturadedados = function () {
+    if (!exist("Cultura de Dados")) {
+        newidoc('https://omnidocs.vercel.app/docs/dataculture/', 'Cultura de Dados', 1110, 720, 5610, 2880);
+    }
+
+    connect("I1", "Cultura de Dados");
+    connect("Sociedade Datificada", "Cultura de Dados");
+    connect("Dados são Humanos", "Cultura de Dados");
+    connect("Coda", "Cultura de Dados");
+    center("Cultura de Dados");
+
 }
