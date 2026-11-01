@@ -1559,3 +1559,12 @@ let design = function () {
     connect("I2", "ID-IA");
 
 }
+
+let openlousa = function () {
+    
+    if (!exist("Lousa")) {
+        newidoc("https://www.tldraw.com/f/GqCw6woKzHZFkhsmXUrE9?d=v0.0.1267.903.page", "Lousa", 990, 570, -5040, -2010);
+    }
+
+    center("Lousa");
+}
