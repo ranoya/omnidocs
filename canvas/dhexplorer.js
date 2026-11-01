@@ -1355,8 +1355,10 @@ let pesquisa = function () {
     connect("Glossário", "Estudos em Digital Humanities");
 
     if (!exist("Bibliografia")) {
-        newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_culturadados_ciencia", "Bibliografia", 1110, 720, 1110, 3810);
+        newidoc("https://omnidocs.vercel.app/docs/dataculture/parabiblioteka.html?bg=444444&filtra=_culturadados_ciencia", "Bibliografia", 1110, 720, -270, 2880);
     }
+
+ 
     connect("Glossário", "Bibliografia");
     disconnect("Glossário", "Estudos em Digital Humanities");
     connect("Glossário", "Pesquisa");
