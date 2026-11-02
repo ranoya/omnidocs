@@ -1841,13 +1841,18 @@ let dataviz = function () {
         polaroid("https://omnifolio.vercel.app/omnifiles/claude_ipython.png", "Notebook computacional criado como artefato para ensino interativo de programação por uma ferramenta de IA", "Claude Jupyter", 570, 600, 8700, 1290);
     }
 
-    connect("Claude Jupyter", "Macintosh");
     connect("Claude Jupyter", "ID-IA");
     connect("N1", "Claude Jupyter");
     
     if (!exist("Origem das Visualizações")) {
         newidoc("https://www.youtube.com/embed/WXHZkIFFFbk?si=zPPpby-5e0PZlEgc", "Origem das Visualizações", 1110, 660, 8460, 2070);
     }
+
+    if (!exist("The Economist")) {
+        newidoc('https://omnidocs.vercel.app/materiais/exemploeditorialdados', "The Economist", 2278, 1044, 9030, 7440);
+    }
+    connect("The Economist", "d3");
+    connect("The Economist", "Aulas do Cláudio");
 
     connect("Origem das Visualizações", "Dados são Humanos");
     connect("Origem das Visualizações", "Coleção de Visualizações");
@@ -2138,5 +2143,94 @@ let tipologiaviz_apresentacoescomdados = function () {
     connect("Tipologias de Visualização", "Coleção de Visualizações");
     connect("Cultura de Dados", "Coleção de Visualizações");
     center("Coleção de Visualizações");
+
+}
+
+let opentheeconomist = function () {
+    if (!exist("The Economist")) {
+        newidoc('https://omnidocs.vercel.app/materiais/exemploeditorialdados', "The Economist", 2278, 1044, 9030, 7440);
+    }
+    connect("The Economist", "d3");
+    connect("The Economist", "Aulas do Cláudio");
+    center("The Economist");
+}
+
+let openvisgithub = function () {
+    if (!exist("Nadieh Bremer")) {
+        newidoc("https://nbremer.github.io/ORCA/commit-history/?repo=d3", "Nadieh Bremer", 1191, 960, 11010, 4830);
+    }
+
+    if (!exist("Programação SVG")) {
+        newidoc("https://www.youtube.com/embed/EZ_mN0gaibQ?si=i5pdxD8yJoCCme4D", "Programação SVG", 1200, 660, 11010, 6150);
+    }
+
+    connect("Nadieh Bremer", "d3");
+    connect("Programação SVG", "Nadieh Bremer");    
+    connect("Amelia Wattenberger", "Nadieh Bremer");
+
+    center("Nadieh Bremer");
+}
+
+let openpublicacoes = function () {
+
+    if (!exist("Knuth")) {
+        newidoc("https://www.ranoya.com/pt/micropost/?id=A047&embed=true&nomenu=true&temptheme=cleantext", "Knuth", 750, 900, 7230, 4860);
+    }
+
+    connect("Knuth", "Texto Notebooks");
+
+    if (!exist("Donald Knuth")) {
+        polaroid("https://www.computer.org/wp-media/2018/03/11020301/donald-knuth-e1523412218270.jpg", "Donald Knuth, prêmio Turing de computação em 1974 (considerado o equivalente na área ao prêmio Nobel), é o inventor da Programação Literária (literate programming), que é a base dos Notebooks Computacionais", "Donald Knuth", 420, 540, 8220, 5040);
+    }
+
+    connect("Knuth", "Donald Knuth");
+
+    if (!exist("Texto Notebooks")) {
+        newidoc("https://www.ranoya.com/pt/textos/notebookscomp.php?id=T023&temptheme=cleantext&nomenu=true", "Texto Notebooks", 1110, 900, 5610, 4860);
+    }
+
+    if (!exist("Palestra Theo Gray")) {
+        newidoc("https://www.youtube.com/embed/zISy9oC4b94?si=RLFj6QVkQSxdZNKr", "Palestra Theo Gray", 1020, 570, 1020, 3840);
+    }
+
+    if (!exist("Booklines")) {
+        newidoc("https://booklines.vercel.app/pub/?titulo=Publicando&blink=Programando%20em%20javascript%20no%20Observable%20|%20%3Cb%3EPublicando%20o%20notebook%3C/b%3E&notebook=@ranoya/livroobservable-15", "Booklines", 840, 960, 1110, 4830);
+    }
+
+    if (!exist("Scriba")) {
+        newidoc("https://booklines.vercel.app/scriba/?notebook=@ranoya/teste-scriba", "Scriba", 1350, 960, -600, 4830);
+    }
+
+    connect("Texto Notebooks", "Booklines");
+    connect("Booklines", "Palestra Theo Gray");
+    connect("Scriba", "Booklines");
+    connect("Palestra Theo Gray", "Theo Gray");
+    connect("Texto Notebooks", "Cultura de Dados");
+    connect("Texto notebooks", "Diferenças de Programação");
+    connect("Texto notebooks", "Knuth");
+
+    if (!exist("Escrita Dinâmica")) {
+        html(`<div style="width: 100%; height: 100%; background-repeat: no-repeat; background-size: cover; background-position: center center; background-image: url(https://visse.vercel.app/assets/covers/EscritaDinamica.png)"></div>`, "Escrita Dinâmica", 630, 390, 1680, 900);
+        
+    }
+    connect("Escrita Dinâmica", "Digital Humanities");
+
+    if (!exist("Texto Interativo")) {
+        newidoc("https://www.ranoya.com/pt/publicacoesinterativas/?nomenu=true&temptheme=cleantext", "Texto Interativo", 1110, 690, 2610, 750);
+    }    
+    
+    connect("Texto Interativo", "Escrita Dinâmica");
+
+    if (!exist("Documentos são Interfaces")) {
+        newidoc("https://www.ranoya.com/pt/textos/documentos.php?id=T010&nomenu=true&temptheme=cleantext", "Documentos são Interfaces", 1110, 870, 2610, 1800);
+    }
+    connect("Documentos são Interfaces", "Texto Interativo");
+
+    if (!exist("Interactive Textbooks")) {
+        newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=110&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1461132281#gid=1461132281&theme=https://slidelines.vercel.app/level/hypermedia.css", "Interactive Textbooks", 1110, 720, 4170, 1380);
+    }
+    connect("Interactive Textbooks", "Texto Interativo");
+
+    center("Escrita Dinâmica");
 
 }
