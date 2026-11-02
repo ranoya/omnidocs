@@ -2020,3 +2020,8 @@ window.opend3 = function () {
   code();
   center("D3 Lessons");
 }
+
+window.openbibliografia = function () {
+  newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?p=t&filtra=culturadedados_aula&fg=FFFFFF&bg=debe34&titulo=Cultura%20de%20dados", "Bibliografia Cultura de Dados");
+  center("Bibliografia Cultura de Dados");
+}
