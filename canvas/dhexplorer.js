@@ -1629,7 +1629,7 @@ let design = function () {
     }
 
     if (!exist("Cultura de Dados")) {
-        newidoc('https://omnidocs.vercel.app/docs/dataculture/', 'Cultura de Dados', 1110, 720, 5610, 2880);
+        newidoc('https://omnidocs.vercel.app/docs/dataculture/', 'Cultura de Dados', 1110, 720, 5610, 2866);
     }
 
     connect("I1", "Cultura de Dados");
@@ -1690,7 +1690,7 @@ let notebookscomputacionais = function () {
     }
 
     if (!exist("Cultura de Dados")) {
-        newidoc('https://omnidocs.vercel.app/docs/dataculture/', 'Cultura de Dados', 1110, 720, 5610, 2880);
+        newidoc('https://omnidocs.vercel.app/docs/dataculture/', 'Cultura de Dados', 1110, 720, 5610, 2866);
     }
 
     if (!exist("Unidade da Pesquisa")) {
@@ -1887,7 +1887,7 @@ let opencoda = function () {
 
 let openculturadedados = function () {
     if (!exist("Cultura de Dados")) {
-        newidoc('https://omnidocs.vercel.app/docs/dataculture/', 'Cultura de Dados', 1110, 720, 5610, 2880);
+        newidoc('https://omnidocs.vercel.app/docs/dataculture/', 'Cultura de Dados', 1110, 720, 5610, 2866);
     }
 
     connect("I1", "Cultura de Dados");
@@ -1978,4 +1978,165 @@ let videoorigemviz = function () {
     connect("Origem das Visualizações", "Dados são Humanos");
     connect("Origem das Visualizações", "Coleção de Visualizações");
     center("Origem das Visualizações");
+}
+
+let aulasd3 = function () {
+    if (!exist("Amelia Wattenberger")) {
+        newidoc("https://2019.wattenberger.com/blog/d3", "Amelia Wattenberger", 1200, 960, 12750, 4830);
+    }
+    
+    connect("Amelia Wattenberger", "Nadieh Bremer");
+    connect("Cultura de Dados", "Coleção de Visualizações");
+    center("Amelia Wattenberger");
+}
+
+
+let tipologiaviz_tudo = function () {
+
+    remove("Coleção de Visualizações");
+
+    newidoc("https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=b13e3e", "Coleção de Visualizações", 1110, 690, 8460, 2880);
+    
+    if (!exist("Tipologias de Visualização")) {
+        newidoc("https://visse.vercel.app/ferramentas/visualizacoes.html?fg=ffffff&cv=b13e3eee&bg=e6c954", "Tipologias de Visualização", 630, 690, 9840, 2880);
+    }
+
+    connect("Dados são Humanos", "Coleção de Visualizações");
+    connect("Tipologias de Visualização", "Coleção de Visualizações");
+    connect("Cultura de Dados", "Coleção de Visualizações");
+    center("Coleção de Visualizações");
+}
+
+let tipologiaviz_infografia = function () {
+
+    remove("Coleção de Visualizações");
+
+    newidoc("https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=b13e3e&filtra=infografia", "Coleção de Visualizações", 1110, 690, 8460, 2880);
+    
+    if (!exist("Tipologias de Visualização")) {
+        newidoc("https://visse.vercel.app/ferramentas/visualizacoes.html?fg=ffffff&cv=b13e3eee&bg=e6c954", "Tipologias de Visualização", 630, 690, 9840, 2880);
+    }
+
+    connect("Dados são Humanos", "Coleção de Visualizações");
+    connect("Tipologias de Visualização", "Coleção de Visualizações");
+    connect("Cultura de Dados", "Coleção de Visualizações");
+    center("Coleção de Visualizações");
+}
+
+let tipologiaviz_narrativasinteracao = function () {
+
+    remove("Coleção de Visualizações");
+
+    newidoc("https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=b13e3e&filtra=_nixd", "Coleção de Visualizações", 1110, 690, 8460, 2880);
+    
+    if (!exist("Tipologias de Visualização")) {
+        newidoc("https://visse.vercel.app/ferramentas/visualizacoes.html?fg=ffffff&cv=b13e3eee&bg=e6c954", "Tipologias de Visualização", 630, 690, 9840, 2880);
+    }
+
+    connect("Dados são Humanos", "Coleção de Visualizações");
+    connect("Tipologias de Visualização", "Coleção de Visualizações");
+    connect("Cultura de Dados", "Coleção de Visualizações");
+    center("Coleção de Visualizações");
+}
+
+let tipologiaviz_narrativascomdados = function () {
+
+    remove("Coleção de Visualizações");
+
+    newidoc("https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=b13e3e&filtra=_ndl", "Coleção de Visualizações", 1110, 690, 8460, 2880);
+    
+    if (!exist("Tipologias de Visualização")) {
+        newidoc("https://visse.vercel.app/ferramentas/visualizacoes.html?fg=ffffff&cv=b13e3eee&bg=e6c954", "Tipologias de Visualização", 630, 690, 9840, 2880);
+    }
+
+    connect("Dados são Humanos", "Coleção de Visualizações");
+    connect("Tipologias de Visualização", "Coleção de Visualizações");
+    connect("Cultura de Dados", "Coleção de Visualizações");
+    center("Coleção de Visualizações");
+
+}
+
+let tipologiaviz_narrativasinterativascomdataviz = function () {
+
+    remove("Coleção de Visualizações");
+
+    newidoc("https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=b13e3e&filtra=_nixddl", "Coleção de Visualizações", 1110, 690, 8460, 2880);
+    
+    if (!exist("Tipologias de Visualização")) {
+        newidoc("https://visse.vercel.app/ferramentas/visualizacoes.html?fg=ffffff&cv=b13e3eee&bg=e6c954", "Tipologias de Visualização", 630, 690, 9840, 2880);
+    }
+
+    connect("Dados são Humanos", "Coleção de Visualizações");
+    connect("Tipologias de Visualização", "Coleção de Visualizações");
+    connect("Cultura de Dados", "Coleção de Visualizações");
+    center("Coleção de Visualizações");
+
+}
+
+let tipologiaviz_interfacesparadados = function () {
+
+    remove("Coleção de Visualizações");
+
+    newidoc("https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=b13e3e&filtra=_dataui", "Coleção de Visualizações", 1110, 690, 8460, 2880);
+    
+    if (!exist("Tipologias de Visualização")) {
+        newidoc("https://visse.vercel.app/ferramentas/visualizacoes.html?fg=ffffff&cv=b13e3eee&bg=e6c954", "Tipologias de Visualização", 630, 690, 9840, 2880);
+    }
+
+    connect("Dados são Humanos", "Coleção de Visualizações");
+    connect("Tipologias de Visualização", "Coleção de Visualizações");
+    connect("Cultura de Dados", "Coleção de Visualizações");
+    center("Coleção de Visualizações");
+
+}
+
+let tipologiaviz_fisicalizacao = function () {
+
+    remove("Coleção de Visualizações");
+
+    newidoc("https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=b13e3e&filtra=_dataphys", "Coleção de Visualizações", 1110, 690, 8460, 2880);
+    
+    if (!exist("Tipologias de Visualização")) {
+        newidoc("https://visse.vercel.app/ferramentas/visualizacoes.html?fg=ffffff&cv=b13e3eee&bg=e6c954", "Tipologias de Visualização", 630, 690, 9840, 2880);
+    }
+
+    connect("Dados são Humanos", "Coleção de Visualizações");
+    connect("Tipologias de Visualização", "Coleção de Visualizações");
+    connect("Cultura de Dados", "Coleção de Visualizações");
+    center("Coleção de Visualizações");
+
+}
+
+let tipologiaviz_componentesdataviz = function () {
+
+    remove("Coleção de Visualizações");
+
+    newidoc("https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=b13e3e&filtra=_cpdv", "Coleção de Visualizações", 1110, 690, 8460, 2880);
+    
+    if (!exist("Tipologias de Visualização")) {
+        newidoc("https://visse.vercel.app/ferramentas/visualizacoes.html?fg=ffffff&cv=b13e3eee&bg=e6c954", "Tipologias de Visualização", 630, 690, 9840, 2880);
+    }
+
+    connect("Dados são Humanos", "Coleção de Visualizações");
+    connect("Tipologias de Visualização", "Coleção de Visualizações");
+    connect("Cultura de Dados", "Coleção de Visualizações");
+    center("Coleção de Visualizações");
+
+}
+
+let tipologiaviz_apresentacoescomdados = function () {
+
+    remove("Coleção de Visualizações");
+
+    newidoc("https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=b13e3e&filtra=_datapres", "Coleção de Visualizações", 1110, 690, 8460, 2880);
+    
+    if (!exist("Tipologias de Visualização")) {
+        newidoc("https://visse.vercel.app/ferramentas/visualizacoes.html?fg=ffffff&cv=b13e3eee&bg=e6c954", "Tipologias de Visualização", 630, 690, 9840, 2880);
+    }
+
+    connect("Dados são Humanos", "Coleção de Visualizações");
+    connect("Tipologias de Visualização", "Coleção de Visualizações");
+    connect("Cultura de Dados", "Coleção de Visualizações");
+    center("Coleção de Visualizações");
+
 }
