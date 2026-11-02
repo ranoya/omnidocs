@@ -2303,10 +2303,35 @@ let openproceduralrethoric = function () {
 
 }
 
+let openbulletpoints = function () {
+
+    if (!exist("Acervos")) {
+        newidoc("https://docs.superhuman.com/embed/dvr6S_yBtg/_sulQQ3r5?hideSections=true", "Acervos", 1110, 1170, 5610, -1830);
+    }
+    connect("Projetos de Referência", "Acervos");
+    connect("Memória e Documentação", "Interface ou Visualização?");
+
+    if (!exist("Bulletpoints Coda")) {
+        newidoc("https://docs.superhuman.com/embed/4BHBLxS_54/_su-Ls7dY?hideSections=true", "Bulletpoints Coda", 1380, 1170, 7290, -1830);
+    }
+    if (!exist("Bulletpoints")) {
+        newidoc("https://visse.vercel.app/v2-arqueologia/bulletpoint.html?bg=b13e3e&fg=ffffff&", "Bulletpoints", 1380, 1170, 9270, -1830);
+    }
+    connect("Acervos", "Bulletpoints Coda");
+    connect("Bulletpoints Coda", "Bulletpoints");
+
+    if (!exist("Artigo Bulletpoints")) {
+        newidoc("https://drive.google.com/file/d/1HEZdZPYt0vF7JFJfyn7SuHfVGZ28c-zn/preview", "Artigo Bulletpoints", 840, 1170, 10950, -1830);
+    }
+    connect("Artigo Bulletpoints", "Bulletpoints");
+
+    center("Buleetpoints");
+}
+
 let opendocumentacao = function () {
 
     tipologiaviz_interfacesparadados();
-    
+
     if (!exist("Memória e Documentação")) {
         newidoc("https://uclab.fh-potsdam.de/arete/en", "Memória e Documentação", 1479, 933, 5409, -4200);
     }
