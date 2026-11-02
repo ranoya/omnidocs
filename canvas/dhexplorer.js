@@ -1678,6 +1678,7 @@ let design = function () {
     }
     
     connect("Amelia Wattenberger", "Nadieh Bremer");
+    connect("Cultura de Dados", "Coleção de Visualizações");
 
 
 }
@@ -1754,7 +1755,6 @@ let notebookscomputacionais = function () {
         newidoc("https://www.youtube.com/embed/zISy9oC4b94?si=RLFj6QVkQSxdZNKr", "Palestra Theo Gray", 1020, 570, 1020, 3840);
     }
 
-    connect("Palestra The Gray", "Theo Gray");
     connect("Palestra Theo Gray", "Theo Gray");
 
     if (!exist("Booklines")) {
@@ -1786,6 +1786,7 @@ let notebookscomputacionais = function () {
     connect("Aulas do Cláudio", "Coleção de Visualizações");
 
     center("Texto Notebooks");
+    connect("Cultura de Dados", "Coleção de Visualizações");
 }
 
 let dataviz = function () {
@@ -1850,6 +1851,7 @@ let dataviz = function () {
 
     connect("Origem das Visualizações", "Dados são Humanos");
     connect("Origem das Visualizações", "Coleção de Visualizações");
+    connect("Cultura de Dados", "Coleção de Visualizações");
 
     center("Coleção de Visualizações");
 }
@@ -1925,4 +1927,55 @@ let bibliotecacompleta = function () {
     connect("Bibliografia Completa", "Digital Humanities");
 
     center("Bibliografia Completa");
+}
+
+let openaulasobservable = function () {
+    if (!exist("Aulas do Cláudio")) {
+        newidoc("https://slidelines.vercel.app/timelineh/?file=https://omnicode.vercel.app/examples/elementosmd.md&allblocks=true&s=1&pattern=true&timelineheight=60px&startvisible=true&allowverticalscroll=true&timeheight=110&followbg=true&theme=https://slidelines.vercel.app/styles/aulasslides.css&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=962495491#gid=962495491", "Aulas do Cláudio", 1164, 868, 8430, 6120);
+    }
+    connect("Aulas do Cláudio", "Diferenças de Programação");
+    connect("Aulas do Cláudio", "d3");
+    connect("Aulas do Cláudio", "Coleção de Visualizações");
+    center("Aulas do Cláudio");
+
+}
+
+let openaulassvg = function () {
+    if (!exist("Programação SVG")) {
+        newidoc("https://www.youtube.com/embed/EZ_mN0gaibQ?si=i5pdxD8yJoCCme4D", "Programação SVG", 1200, 660, 11010, 6150);
+    }
+
+
+    connect("Programação SVG", "Nadieh Bremer");
+    center("Programação SVG");
+
+}
+
+let videointerfaceouviz = function () {
+    if (!exist("Interface ou Visualização?")) {
+        newidoc("https://www.youtube.com/embed/H5-T_S50Sr4?si=VE5Zxm5iGS_j99m0", "Interface ou Visualização?", 960, 750, 5679, -2910);
+    }
+    connect("Memória e Documentação", "Interface ou Visualização?");
+    connect("Acervos", "Interface ou Visualização?");
+    center("Interface ou Visualização?");
+}
+
+let videotheogray = function () {
+    if (!exist("Palestra Theo Gray")) {
+        newidoc("https://www.youtube.com/embed/zISy9oC4b94?si=RLFj6QVkQSxdZNKr", "Palestra Theo Gray", 1020, 570, 1020, 3840);
+    }
+
+    connect("Palestra Theo Gray", "Theo Gray");
+    connect("Palestra Theo Gray", "Booklines");
+    center("Palestra Theo Gray");
+}
+
+let videoorigemviz = function () {
+    if (!exist("Origem das Visualizações")) {
+        newidoc("https://www.youtube.com/embed/WXHZkIFFFbk?si=zPPpby-5e0PZlEgc", "Origem das Visualizações", 1110, 660, 8460, 2070);
+    }
+
+    connect("Origem das Visualizações", "Dados são Humanos");
+    connect("Origem das Visualizações", "Coleção de Visualizações");
+    center("Origem das Visualizações");
 }
