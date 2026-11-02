@@ -1606,6 +1606,46 @@ let design = function () {
         lock("Unidade da Pesquisa");
     }
 
+    if (!exist("Coleção de Visualizações")) {
+        newidoc("https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=b13e3e", "Coleção de Visualizações", 1110, 690, 8460, 2880);
+    }
+    
+    connect("Dados são Humanos", "Coleção de Visualizações");
+
+    if (!exist("Tipologias de Visualização")) {
+        newidoc("https://visse.vercel.app/ferramentas/visualizacoes.html?fg=ffffff&cv=b13e3eee&bg=e6c954", "Tipologias de Visualização", 630, 690, 9840, 2880);
+    }
+
+    connect("Tipologias de Visualização", "Coleção de Visualizações");
+
+    if (!exist("d3")) {
+        polaroid("https://observablehq.com/embed/@d3/sortable-bar-chart?cell=viewof+order&cell=chart", "Componentes de visualização de dados construídos com a biblioteca D3 publicados online a partir de um notebook Observable", "d3", 682, 730, 9810, 4939);
+    }
+
+
+    connect("d3", "Tipologias de Visualização");
+
+    connect("Donald Knuth", "d3");
+
+    if (!exist("Nadieh Bremer")) {
+        newidoc("https://nbremer.github.io/ORCA/commit-history/?repo=d3", "Nadieh Bremer", 1191, 960, 11010, 4830);
+    }
+
+    connect("Nadieh Bremer", "d3");
+
+    if (!exist("Programação SVG")) {
+        newidoc("https://www.youtube.com/embed/EZ_mN0gaibQ?si=i5pdxD8yJoCCme4D", "Programação SVG", 1200, 660, 11010, 6150);
+    }
+
+
+    connect("Programação SVG", "Nadieh Bremer");
+
+    if (!exist("Amelia Wattenberger")) {
+        newidoc("https://2019.wattenberger.com/blog/d3", "Amelia Wattenberger", 1200, 960, 12750, 4830);
+    }
+    
+    connect("Amelia Wattenberger", "Nadieh Bremer");
+
 
 }
 
@@ -1705,7 +1745,80 @@ let notebookscomputacionais = function () {
     connect("Diferenças de Programação", "Ciência, Design e Programação");
     connect("Macintosh", "Ciência, Design e Programação");
 
+        if (!exist("Aulas do Cláudio")) {
+        newidoc("https://slidelines.vercel.app/timelineh/?file=https://omnicode.vercel.app/examples/elementosmd.md&allblocks=true&s=1&pattern=true&timelineheight=60px&startvisible=true&allowverticalscroll=true&timeheight=110&followbg=true&theme=https://slidelines.vercel.app/styles/aulasslides.css&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=962495491#gid=962495491", "Aulas do Cláudio", 1164, 868, 8430, 6120);
+    }
+    connect("Aulas do Cláudio", "Diferenças de Programação");
+    connect("Aulas do Cláudio", "d3");
+    connect("Aulas do Cláudio", "Coleção de Visualizações");
+
     center("Texto Notebooks");
+}
+
+let dataviz = function () {
+    if (!exist("Coleção de Visualizações")) {
+        newidoc("https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=b13e3e", "Coleção de Visualizações", 1110, 690, 8460, 2880);
+    }
+    
+    connect("Dados são Humanos", "Coleção de Visualizações");
+
+    if (!exist("Tipologias de Visualização")) {
+        newidoc("https://visse.vercel.app/ferramentas/visualizacoes.html?fg=ffffff&cv=b13e3eee&bg=e6c954", "Tipologias de Visualização", 630, 690, 9840, 2880);
+    }
+
+    connect("Tipologias de Visualização", "Coleção de Visualizações");
+
+    if (!exist("d3")) {
+        polaroid("https://observablehq.com/embed/@d3/sortable-bar-chart?cell=viewof+order&cell=chart", "Componentes de visualização de dados construídos com a biblioteca D3 publicados online a partir de um notebook Observable", "d3", 682, 730, 9810, 4939);
+    }
+
+
+    connect("d3", "Tipologias de Visualização");
+
+    connect("Donald Knuth", "d3");
+
+    if (!exist("Nadieh Bremer")) {
+        newidoc("https://nbremer.github.io/ORCA/commit-history/?repo=d3", "Nadieh Bremer", 1191, 960, 11010, 4830);
+    }
+
+    connect("Nadieh Bremer", "d3");
+
+    if (!exist("Programação SVG")) {
+        newidoc("https://www.youtube.com/embed/EZ_mN0gaibQ?si=i5pdxD8yJoCCme4D", "Programação SVG", 1200, 660, 11010, 6150);
+    }
+
+
+    connect("Programação SVG", "Nadieh Bremer");
+
+    if (!exist("Amelia Wattenberger")) {
+        newidoc("https://2019.wattenberger.com/blog/d3", "Amelia Wattenberger", 1200, 960, 12750, 4830);
+    }
+    
+    connect("Amelia Wattenberger", "Nadieh Bremer");
+
+    if (!exist("Aulas do Cláudio")) {
+        newidoc("https://slidelines.vercel.app/timelineh/?file=https://omnicode.vercel.app/examples/elementosmd.md&allblocks=true&s=1&pattern=true&timelineheight=60px&startvisible=true&allowverticalscroll=true&timeheight=110&followbg=true&theme=https://slidelines.vercel.app/styles/aulasslides.css&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=962495491#gid=962495491", "Aulas do Cláudio", 1164, 868, 8430, 6120);
+    }
+    connect("Aulas do Cláudio", "Diferenças de Programação");
+    connect("Aulas do Cláudio", "d3");
+    connect("Aulas do Cláudio", "Coleção de Visualizações");
+
+    if (!exist("Claude Jupyter")) {
+        polaroid("https://omnifolio.vercel.app/omnifiles/claude_ipython.png", "Notebook computacional criado como artefato para ensino interativo de programação por uma ferramenta de IA", "Claude Jupyter", 570, 600, 8700, 1290);
+    }
+
+    connect("Claude Jupyter", "Macintosh");
+    connect("Claude Jupyter", "ID-IA");
+    connect("N1", "Claude Jupyter");
+    
+    if (!exist("Origem das Visualizações")) {
+        newidoc("https://www.youtube.com/embed/WXHZkIFFFbk?si=zPPpby-5e0PZlEgc", "Origem das Visualizações", 1110, 660, 8460, 2070);
+    }
+    
+    connect("Origem das Visualizações", "Dados são Humanos");
+    connect("Origem das Visualizações", "Coleção de Visualizações");
+
+    center("Coleção de Visualizações");
 }
 
 let openlousa = function () {
