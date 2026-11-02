@@ -139,29 +139,29 @@
     }
 
     .subbasicos {
-      left: 126px;
+      left: 96px;
     }
 
     .subarqueologia {
-      left: 201px;
+      left: 171px;
     }
 
     .subplanilhas {
-      left: 310px;
+      left: 252px;
     }
 
     .subnotebooks {
-      left: 427px;
+      left: 345px;
       
     }
 
     .subvis {
-      left: 525px;
+      left: 417px;
       
     }
 
     .subsql {
-      left: 600px;
+      left: 486px;
     }
 
     .subregex {
@@ -368,10 +368,10 @@
             onmouseover="closeall('menuvis');">DADOS</div>
 
       <div id="supermenusql" class="menulink" onclick="openandclose('menusql');"
-            onmouseover="closeall('menusql');">?</div>
+            onmouseover="closeall('menusql');">DATAVIZ</div>
 
       <div id="supermenuregex" class="menulink" onclick="openandclose('menuregex');"
-            onmouseover="closeall('menuregex');">?</div>
+            onmouseover="closeall('menuregex');">VÍDEOS</div>
 
 
       <div id="supermenuoutros" class="menulink" onclick="openandclose('menuoutros');"
@@ -404,6 +404,7 @@
 
         <hr></hr>
 
+        <a href="javascript:goto(`cls()`); closeall()" class="submenulink">LIMPA A TELA</a>
         <a href="javascript:goto(`devmode()`); closeall()" class="submenulink">LINHA DE COMANDO</a>
         
         <hr></hr>
@@ -626,6 +627,6 @@
               goto(`changedev()`);
             }
     });
-    
+
   </script>
 </html>
