@@ -1,8 +1,31 @@
 multicolor();
 setTempTheme("Rose Pine Moon");
 setTransparentBackground();
-devmode();
+
 snap();
+
+let devmstate = "normal";
+
+  document.addEventListener('keydown', function (e) {
+            if (e.key === 'F3' || e.keyCode == 114) {
+
+                   e.cancelBubble = true;
+                    e.cancelable = true;
+                    e.stopPropagation();
+                    e.preventDefault();
+                    e.returnValue = false;
+
+              if (devmstate == "normal") {
+                floatdevmode();
+                devmstate = "float"
+              } else {
+                devmode();
+                devmstate = "normal";
+              }
+  }
+  
+  
+});
 
 svg("https://omnifolio.vercel.app/slides/pensadoresculturadedados/allhumanitiesaredigitalnow.svg", "Digital Humanities Only", 810, 390, -6000, -1980);
 setZoom(1);
@@ -1814,7 +1837,7 @@ let dataviz = function () {
     if (!exist("Origem das Visualizações")) {
         newidoc("https://www.youtube.com/embed/WXHZkIFFFbk?si=zPPpby-5e0PZlEgc", "Origem das Visualizações", 1110, 660, 8460, 2070);
     }
-    
+
     connect("Origem das Visualizações", "Dados são Humanos");
     connect("Origem das Visualizações", "Coleção de Visualizações");
 
@@ -1881,4 +1904,15 @@ let opencienciaprogramacao = function () {
     connect("Diferenças de Programação", "Ciência, Design e Programação");
     connect("Macintosh", "Ciência, Design e Programação");
     center("Ciência, Design e Programação");
+}
+
+let bibliotecacompleta = function () {
+    if (!exist("Bibliografia Completa")) {
+        newidoc("https://omnidocs.vercel.app/docs/dataculture/canvasbiblioteka.html?titulo=Bibliografia%20de%20Digital%20Humanities&p=t&bg=b13e3e&filtra=_DH", "Bibliografia Completa", 1110, 690, -1140, -990);
+    }
+    connect("Bibliografia Completa", "Bibliografia EMS");
+    connect("Bibliografia Completa", "Expressões");
+    connect("Bibliografia Completa", "Digital Humanities");
+
+    center("Bibliografia Completa");
 }
