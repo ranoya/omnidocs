@@ -1516,7 +1516,6 @@ let literatura = function () {
     connect("Expressões", "Estudos de Narrativas Interativas");
     connect("Interactive Storytelling", "Estudos de Narrativas Interativas");
     connect("Estudos de Narrativas Interativas", "Narrativas Interativas");
-    connect("Interactive Storytelling", "Estudos de Narrativas Interativas");
     if (!exist("Device 6")) {
         newidoc("https://www.youtube.com/embed/Oag5tUQePHA?si=uEit_TC_3Rg9bHB_&amp;start=6", "Device 6", 1110, 720, -3900, 2520);
     }
@@ -1934,6 +1933,19 @@ let bibliotecacompleta = function () {
     center("Bibliografia Completa");
 }
 
+let bibliotecaexpressoes = function () {
+    if (!exist("Expressões")) {
+        newidoc("https://omnidocs.vercel.app/docs/dataculture/canvasbiblioteka.html?titulo=Express%C3%B5es%20das%20Digital%20Humanities&p=t&bg=b13e3e&filtra=_DHExpressions", "Expressões", 1110, 720, -2370, -1607);
+    }
+
+    connect("Expressões", "Estudos de Narrativas Interativas");
+    connect("Expressões", "Arte Digital");
+    connect("Expressões", "Patchwork Girl");
+    connect("Bibliografia Completa", "Expressões");
+
+    center("Expressões");
+}
+
 let openaulasobservable = function () {
     if (!exist("Aulas do Cláudio")) {
         newidoc("https://slidelines.vercel.app/timelineh/?file=https://omnicode.vercel.app/examples/elementosmd.md&allblocks=true&s=1&pattern=true&timelineheight=60px&startvisible=true&allowverticalscroll=true&timeheight=110&followbg=true&theme=https://slidelines.vercel.app/styles/aulasslides.css&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=962495491#gid=962495491", "Aulas do Cláudio", 1164, 868, 8430, 6120);
@@ -2233,4 +2245,93 @@ let openpublicacoes = function () {
 
     center("Escrita Dinâmica");
 
+}
+
+let openliteraturadigital = function () {
+    if (!exist("Patchwork Girl")) {
+        newidoc("https://omniboards.vercel.app/embed/?filtra=patchwork%20girl&start=https://omnifolio.vercel.app/omnifiles/storyspace_9j_patchworkgirl.png", "Patchwork Girl", 1110, 690, -3900, 240);
+    }
+    connect("Patchwork Girl", "Interactive Storytelling");
+    connect("Patchwork Girl", "Expressões");
+    if (!exist("Afternoon")) {
+        newidoc("https://omniboards.vercel.app/embed/?filtra=afternoon&start=https://omnifolio.vercel.app/omnifiles/computerdiskography-afternoon-a_story_4.png", "Afternoon", 1110, 690, -5340, 240);
+    }
+    connect("Afternoon", "Patchwork Girl");
+
+    if (!exist("A Mind Forever Voyaging")) {
+        newidoc("https://www.youtube.com/embed/KMz7sHsmxUs?si=a3rdsRJHZqcdFkhv", "A Mind Forever Voyaging", 1110, 690, -6840, 240);
+    }
+
+    if (!exist("Device 6")) {
+        newidoc("https://www.youtube.com/embed/Oag5tUQePHA?si=uEit_TC_3Rg9bHB_&amp;start=6", "Device 6", 1110, 720, -3900, 2520);
+    }
+    connect("Device 6", "Interactive Storytelling");
+    connect("Afternoon", "A Mind Forever Voyaging");
+
+    remove("Interactive Storytelling");
+
+    newidoc("https://slidelines.vercel.app/level/?s=diskografia&order=ord&filtra=_full&allowverticalscroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=137178476#gid=137178476&theme=https://slidelines.vercel.app/styles/fit.css", "Interactive Storytelling", 1110, 720, -3900, 1380);
+    
+    connect("Interactive Storytelling", "Estudos de Narrativas Interativas");
+    connect("Device 6", "Interactive Storytelling");
+    connect("Patchwork Girl", "Interactive Storytelling");
+
+    center("Afternoon");
+}
+
+let openproceduralrethoric = function () {
+
+    if (!exist("A Mind Forever Voyaging")) {
+        newidoc("https://www.youtube.com/embed/KMz7sHsmxUs?si=a3rdsRJHZqcdFkhv", "A Mind Forever Voyaging", 1110, 690, -6840, 240);
+    }
+    connect("Afternoon", "A Mind Forever Voyaging");
+
+    if (!exist("Wealth")) {
+        svg(`<iframe frameborder="0" style="background-color: white; width: 100%; height: 100%;" src="https://web.archive.org/web/20250211080158/https://mkorostoff.github.io/1-pixel-wealth/"></iframe>`, "Wealth", 1110, 583, -6840, -690);
+    }
+    connect("Wealth", "A Mind Forever Voyaging");
+
+    center("Wealth");
+
+    remove("Interactive Storytelling");
+
+    newidoc("https://slidelines.vercel.app/level/?s=retorictexto&order=ord&filtra=_full&allowverticalscroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=137178476#gid=137178476&theme=https://slidelines.vercel.app/styles/fit.css", "Interactive Storytelling", 1110, 720, -3900, 1380);
+    
+    connect("Interactive Storytelling", "Estudos de Narrativas Interativas");
+    connect("Device 6", "Interactive Storytelling");
+    connect("Patchwork Girl", "Interactive Storytelling");
+
+}
+
+let openmaisformatosnarrativos = function () {
+    if (!exist("ZineDisk")) {
+        newidoc("https://omniboards.vercel.app/embed/?filtra=NEUROBLAST%20DiskZine&start=https://omnifolio.vercel.app/omnifiles/neuroblast_cyberdelia_HyperCard_ZineDisk_3.png", "ZineDisk", 1110, 690, -5340, 1380);
+    }
+    connect("ZineDisk", "Interactive Storytelling");
+    if (!exist("My Body")) {
+        newidoc("https://collection.eliterature.org/1/works/jackson__my_body_a_wunderkammer/index.html", "My Body", 799, 521, -3750, -690);
+    }
+    connect("My Body", "Patchwork Girl");
+
+    remove("Interactive Storytelling");
+
+    newidoc("https://slidelines.vercel.app/level/?s=0&order=ord&filtra=_iFiction&allowverticalscroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=137178476#gid=137178476&theme=https://slidelines.vercel.app/styles/fit.css", "Interactive Storytelling", 1110, 720, -3900, 1380);
+    
+    connect("Interactive Storytelling", "Estudos de Narrativas Interativas");
+    connect("Patchwork Girl", "Interactive Storytelling");
+    connect("Device 6", "Interactive Storytelling");
+
+    center("ZineDisk");
+
+}
+
+let materialinterativestorytelling = function () {
+    if (!exist("Interactive Storytelling")) {
+        newidoc("https://slidelines.vercel.app/level/?s=0&order=ord&filtra=_full&allowverticalscroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=137178476#gid=137178476&theme=https://slidelines.vercel.app/styles/fit.css", "Interactive Storytelling", 1110, 720, -3900, 1380);
+    }
+    connect("Interactive Storytelling", "Estudos de Narrativas Interativas");
+    connect("Patchwork Girl", "Interactive Storytelling");
+    connect("Device 6", "Interactive Storytelling");
+
+    center("Interactive Storytelling");
 }
