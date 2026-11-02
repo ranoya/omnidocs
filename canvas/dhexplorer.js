@@ -25,7 +25,17 @@ let devmstate = "normal";
   }
   
   
-});
+  });
+
+let changedev = function () {
+    if (devmstate == "normal") {
+                floatdevmode();
+                devmstate = "float"
+              } else {
+                devmode();
+                devmstate = "normal";
+              }
+}
 
 svg("https://omnifolio.vercel.app/slides/pensadoresculturadedados/allhumanitiesaredigitalnow.svg", "Digital Humanities Only", 810, 390, -6000, -1980);
 setZoom(1);

@@ -613,5 +613,19 @@
     const openout = function(url) {
       window.open(url);
     }
+
+    document.addEventListener('keydown', function (e) {
+            if (e.key === 'F3' || e.keyCode == 114) {
+
+                   e.cancelBubble = true;
+                    e.cancelable = true;
+                    e.stopPropagation();
+                    e.preventDefault();
+                    e.returnValue = false;
+
+              goto(`changedev()`);
+            }
+    });
+    
   </script>
 </html>
