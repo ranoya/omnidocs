@@ -2303,6 +2303,23 @@ let openproceduralrethoric = function () {
 
 }
 
+let opendocumentacao = function () {
+
+    tipologiaviz_interfacesparadados();
+    
+    if (!exist("Memória e Documentação")) {
+        newidoc("https://uclab.fh-potsdam.de/arete/en", "Memória e Documentação", 1479, 933, 5409, -4200);
+    }
+
+    if (!exist("Acervos")) {
+        newidoc("https://docs.superhuman.com/embed/dvr6S_yBtg/_sulQQ3r5?hideSections=true", "Acervos", 1110, 1170, 5610, -1830);
+    }
+    connect("Projetos de Referência", "Acervos");
+    connect("Memória e Documentação", "Interface ou Visualização?");
+
+    center("Memória e Documentação");
+}
+
 let openmaisformatosnarrativos = function () {
     if (!exist("ZineDisk")) {
         newidoc("https://omniboards.vercel.app/embed/?filtra=NEUROBLAST%20DiskZine&start=https://omnifolio.vercel.app/omnifiles/neuroblast_cyberdelia_HyperCard_ZineDisk_3.png", "ZineDisk", 1110, 690, -5340, 1380);
