@@ -2487,3 +2487,10 @@ let openprojetoartancode = function () {
     center("Arte Digital");
 
 }
+
+let codexatlanticus = function () {
+    newidoc("https://codex-atlanticus.ambrosiana.it/#/Overview", "Codex Atlanticus", 1500, 930, 7200, -4200);
+    connect("Interface ou Visualização?", "Codex Atlanticus");
+
+    center("Codex Atlanticus");
+}
