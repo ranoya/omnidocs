@@ -1313,6 +1313,10 @@ connect("P1", "Patchwork Girl");
 svg(`<div style="width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; background-position: center center; background-image:url(https://omnifolio.vercel.app/omnifiles/hypertext87disk.png)"></div>`, "Hypertext87", 480, 510, -5040, -810);
 connect("Hypertext87", "Afternoon");
 
+newidoc("https://drive.google.com/file/d/1Ubhl6ISeGB6sOuVUwBlRusaSEAZ9lUfY/preview", "Manifesto 2.0", 847, 1061, -2370, 1710);
+
+connect("Laboratórios", "Manifesto 2.0");
+
 
 lockall();
 

@@ -1461,6 +1461,12 @@ let pesquisa = function () {
     }
     connect("Hypertext87", "Afternoon");
 
+    if (!exist("Manifesto 2.0")) {
+        newidoc("https://drive.google.com/file/d/1Ubhl6ISeGB6sOuVUwBlRusaSEAZ9lUfY/preview", "Manifesto 2.0", 847, 1061, -2370, 1710);
+    }
+    
+    connect("Laboratórios", "Manifesto 2.0");
+
     setZoom(.4);
     center("Digital Humanities");
 
@@ -2172,10 +2178,6 @@ let openvisgithub = function () {
         newidoc("https://nbremer.github.io/ORCA/commit-history/?repo=d3", "Nadieh Bremer", 1191, 960, 11010, 4830);
     }
 
-    if (!exist("Programação SVG")) {
-        newidoc("https://www.youtube.com/embed/EZ_mN0gaibQ?si=i5pdxD8yJoCCme4D", "Programação SVG", 1200, 660, 11010, 6150);
-    }
-
     connect("Nadieh Bremer", "d3");
     connect("Programação SVG", "Nadieh Bremer");    
     connect("Amelia Wattenberger", "Nadieh Bremer");
@@ -2325,7 +2327,7 @@ let openbulletpoints = function () {
     }
     connect("Artigo Bulletpoints", "Bulletpoints");
 
-    center("Buleetpoints");
+    center("Bulletpoints");
 }
 
 let opendocumentacao = function () {
@@ -2376,4 +2378,13 @@ let materialinterativestorytelling = function () {
     connect("Device 6", "Interactive Storytelling");
 
     center("Interactive Storytelling");
+}
+
+let openmanifesto = function () {
+    if (!exist("Manifesto 2.0")) {
+        newidoc("https://drive.google.com/file/d/1Ubhl6ISeGB6sOuVUwBlRusaSEAZ9lUfY/preview", "Manifesto 2.0", 847, 1061, -2370, 1710);
+    }
+    
+    connect("Laboratórios", "Manifesto 2.0");
+    center("Manifesto 2.0");
 }

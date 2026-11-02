@@ -1316,6 +1316,11 @@ svg(`<div style="width: 100%; height: 100%; background-size: cover; background-r
 connect("Hypertext87", "Afternoon");
 
 
+newidoc("https://drive.google.com/file/d/1Ubhl6ISeGB6sOuVUwBlRusaSEAZ9lUfY/preview", "Manifesto 2.0", 847, 1061, -2370, 1710);
+
+connect("Laboratórios", "Manifesto 2.0");
+
+
 lockall();
 
 setZoom(.4);
