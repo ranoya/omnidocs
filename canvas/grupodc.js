@@ -1330,11 +1330,25 @@ let projetomidiasoftware = function () {
 }
 
 let grupodepesquisa = function () {
-    if (!exist("Grupo de Pesquisa")) {
-    newidoc("https://www.ranoya.com/pt/gruposdepesquisa/?temptheme=cleantext&nomenu=true#dc", "Grupo de Pesquisa", 1050, 810, 420, -2040);
 
+    if (!exist("Publicações")) {
+        newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Artigos%20Publicados&p=t&bg=eceef4&fg=555555&filtra=Artigo%20Ranoya", "Publicações", 660, 810, -450, -2040);
+    }
+    
+    if (!exist("Teses e Dissertações")) {
+        newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Teses%20e%20Disserta%C3%A7%C3%B5es&p=t&bg=eceef4&fg=555555&filtra=(Mestrado|Doutorado)%20Ranoya", "Teses e Dissertações", 660, 810, -1320, -2040);
+    }
+        
+    if (!exist("Grupo de Pesquisa")) {
+        newidoc("https://www.ranoya.com/pt/gruposdepesquisa/?temptheme=cleantext&nomenu=true#dc", "Grupo de Pesquisa", 1050, 810, 420, -2040);
+        
     center("Grupo de Pesquisa");
-}
+    }
+
+    connect("Publicações", "Grupo de Pesquisa");
+    connect("Teses e Dissertações", "Publicações");
+
+
 }
 
 grupodepesquisa();
