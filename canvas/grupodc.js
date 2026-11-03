@@ -2,17 +2,28 @@ setTheme("light");
 devmode();
 multicolor();
 
-let biblioteca = function() {
-    if (!exist("Biblioteca Completa")) {
-        newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Biblioteca%20Completa&p=t&bg=eceef4&fg=555555", "Biblioteca Completa", 660, 810, -270, -90);
-    }
-    center("Biblioteca Completa");
-}
-
 let mapaprojetos = function() {
     if (!exist("Projetos")) {
-        newidoc("https://www.ranoya.com/pt/projetos/mapa.html", "Projetos", 962, 528, 540, -90);
+        newidoc("https://www.ranoya.com/pt/projetos/mapa.html", "Projetos", 840, 480, 1650, -2040);
     }
+
+    if (!exist("Biblioteca Completa")) {
+        newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Biblioteca%20Completa&p=t&bg=eceef4&fg=555555", "Biblioteca Completa", 660, 810, 3630, -2040);
+        
+    }
+
+    if (!exist("Estética da Interação")) {
+        newidoc("https://www.ranoya.com/pt/pesquisa/?temptheme=cleantext&nomenu=true", "Estética da Interação", 840, 810, 2640, -2040);
+    }
+
+    connect("Projetos", "Estética da Interação");
+    connect("Estética da Interação", "Biblioteca Completa");
+
+    connect("Projetos", "Narrativas Interativas");
+    connect("Projetos", "Digital Humanities");
+    connect("Projetos", "Mídia+Software");
+
+
     lock("Projetos");
     center("Projetos");
 }
@@ -27,7 +38,7 @@ let projetonarrativas = function () {
         newidoc("https://www.ranoya.com/pt/storytelling/?temptheme=cleantext&nomenu=true", "Projeto Narrativas Interativas", 840, 810, 2640, -90);
     }
 
-    if (!exist("Projeto Narrativas Interativas")) {
+    if (!exist("Bibliografia Storytelling")) {
         newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Storytelling&p=t&bg=eceef4&fg=555555&filtra=_Storytelling", "Bibliografia Storytelling", 660, 810, 3630, -90);
     }
 
@@ -1309,7 +1320,7 @@ let projetomidiasoftware = function () {
     }
 
     if (!exist("Bibliografia Estudos em Mídia/Software")) {
-        newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Estudos%20em%20M%C3%ADdia/Software&p=t&bg=eceef4&fg=555555&filtra=_ems", "Bibliografia Estudos em Mídia/Software", 660, 870, -270, -30);
+        newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Estudos%20em%20M%C3%ADdia/Software&p=t&bg=eceef4&fg=555555&filtra=_ems", "Bibliografia Estudos em Mídia/Software", 660, 810, 3630, -1050);
     }
 
     connect("Bibliografia Estudos em Mídia/Software", "Estudos em Mídia/Software");
@@ -1317,3 +1328,13 @@ let projetomidiasoftware = function () {
     connect("Mídia+Software", "Projetos");
     center("Estudos em Mídia/Software");
 }
+
+let grupodepesquisa = function () {
+    if (!exist("Grupo de Pesquisa")) {
+    newidoc("https://www.ranoya.com/pt/gruposdepesquisa/?temptheme=cleantext&nomenu=true#dc", "Grupo de Pesquisa", 1050, 810, 420, -2040);
+
+    center("Grupo de Pesquisa");
+}
+}
+
+grupodepesquisa();
