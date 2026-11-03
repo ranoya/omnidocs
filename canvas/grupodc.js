@@ -1,4 +1,5 @@
 setTheme("light");
+devmode();
 multicolor();
 
 let biblioteca = function() {
