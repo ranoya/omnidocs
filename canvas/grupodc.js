@@ -2,7 +2,7 @@ setTheme("light");
 devmode();
 multicolor();
 
-let mapaprojetos = function() {
+window.mapaprojetos = function() {
     if (!exist("Projetos")) {
         newidoc("https://www.ranoya.com/pt/projetos/mapacanvas.html", "Projetos", 840, 480, 1650, -2040);
     }
@@ -28,7 +28,7 @@ let mapaprojetos = function() {
     center("Projetos");
 }
 
-let projetonarrativas = function () {
+window.projetonarrativas = function () {
     if (!exist("Narrativas Interativas")) {
         svg("https://visse.vercel.app/assets/covers/NarrativasInterativas.svg", "Narrativas Interativas", 962, 528, 1587, -90);
     }
@@ -48,7 +48,7 @@ let projetonarrativas = function () {
     center("Projeto Narrativas Interativas");
 }
 
-let projetodigitalhumanities = function () {
+window.projetodigitalhumanities = function () {
 
 
     if (!exist("Digital Humanities")) {
@@ -1308,7 +1308,7 @@ let projetodigitalhumanities = function () {
 }
 
 
-let projetomidiasoftware = function () {
+window.projetomidiasoftware = function () {
     if (!exist("Mídia+Software")) {
         svg("https://visse.vercel.app/assets/covers/EstudosMidiaSoftware.svg", "Mídia+Software", 962, 528, 1590, -1050);
     }
@@ -1329,7 +1329,7 @@ let projetomidiasoftware = function () {
     center("Estudos em Mídia/Software");
 }
 
-let grupodepesquisa = function () {
+window.grupodepesquisa = function () {
 
     if (!exist("Publicações")) {
         newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Artigos%20Publicados&p=t&bg=eceef4&fg=555555&filtra=Artigo%20Ranoya", "Publicações", 660, 810, -450, -2040);
@@ -1351,4 +1351,78 @@ let grupodepesquisa = function () {
 
 }
 
+
+window.openmenu = function (id, dados) {
+        var el = document.getElementById(id);
+        el.innerHTML =
+            `
+            <style>
+
+                
+
+                .menu_menuopt {
+                
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                height: 100%;
+                background-color: var(--panel-border);
+                
+                }
+
+                .menu_menuopt div {
+
+                cursor: pointer;
+                font-size: 18px;
+                line-height: 22px;
+                padding-top: 23px;
+                padding-bottom: 23px;
+                height: auto;
+                width: 100%;
+                color: var(--text);
+                background-color: var(--panel-border);
+                padding-left: 20px;
+                padding-right: 20px;
+                border-top: 1px dotted var(--muted);
+                }
+
+                .menu_menuopt div:last-child {
+                  border-bottom: 1px dotted var(--muted);
+                }
+
+                .menu_menuopt div:hover {
+                background-color: var(--win-header);
+                }
+
+                .menu_menuopt div.secao {
+                cursor: default;
+                background-color: var(--accent);
+                color: var(--bg);
+                }
+
+                .menu_menuopt div.secao:hover {
+                background-color: var(--accent);
+                cursor: default;
+                }
+
+
+            </style>
+
+            <div class="menu_menuopt">
+                <div class="secao">Grupo</div>
+                <div onclick="window.grupodepesquisa();">Sobre o Grupo</div>
+
+                <div class="secao">Projetos</div>
+                <div onclick="window.mapaprojetos()');">Pesquisa em Estética da Interação</div>
+
+            </div>
+          
+          
+          
+          
+            `;
+        
+      }
+
 grupodepesquisa();
+setZoom(.8);
