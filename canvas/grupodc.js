@@ -4,7 +4,7 @@ multicolor();
 
 let mapaprojetos = function() {
     if (!exist("Projetos")) {
-        newidoc("https://www.ranoya.com/pt/projetos/mapa.html", "Projetos", 840, 480, 1650, -2040);
+        newidoc("https://www.ranoya.com/pt/projetos/mapacanvas.html", "Projetos", 840, 480, 1650, -2040);
     }
 
     if (!exist("Biblioteca Completa")) {
