@@ -1340,7 +1340,7 @@ window.grupodepesquisa = function () {
     }
         
     if (!exist("Grupo de Pesquisa")) {
-        newidoc("https://www.ranoya.com/pt/gruposdepesquisa/?temptheme=cleantext&nomenu=true#dc", "Grupo de Pesquisa", 1050, 810, 420, -2040);
+        newidoc("https://www.ranoya.com/pt/grupodc/?temptheme=cleantext&nomenu=true", "Grupo de Pesquisa", 1050, 810, 420, -2040);
         
     center("Grupo de Pesquisa");
     }
@@ -1373,16 +1373,16 @@ window.openmenu = function (id, dados) {
                 .menu_menuopt div {
 
                 cursor: pointer;
-                font-size: 18px;
-                line-height: 22px;
-                padding-top: 23px;
-                padding-bottom: 23px;
+                font-size: 14px;
+                line-height: 14px;
+                padding-top: 20px;
+                padding-bottom: 20px;
                 height: auto;
                 width: 100%;
                 color: var(--text);
                 background-color: var(--panel-border);
                 padding-left: 20px;
-                padding-right: 20px;
+                padding-right: 30px;
                 border-top: 1px dotted var(--muted);
                 }
 
@@ -1418,6 +1418,8 @@ window.openmenu = function (id, dados) {
                 <div onclick="window.projetonarrativas();">Narrativas Interativas</div>
                 <div onclick="window.projetodigitalhumanities();">Digital Humanities</div>
 
+                <div class="secao">Outros</div>
+                <div onclick="window.nomenu();">Fecha Menu</div>
             </div>
           
           
@@ -1431,15 +1433,15 @@ grupodepesquisa();
 
 window.nomenu = function () {
         localStorage.setItem('permamenu', 'desligado');
-        remove("Menu");
+        remove("Menu (F1)");
 }
 
 window.menu = function () {
         localStorage.setItem('permamenu', 'aberto');
         if (!exist("Menu")) {
-          run("Menu", "openmenu", {}, 280, 450, "80%", "5%");
+          run("Menu (F1)", "openmenu", {}, 250, 450, "80%", "5%");
         }
-        widget("Menu");
+        widget("Menu (F1)");
 }
 
 document.addEventListener('keydown', function (e) {
