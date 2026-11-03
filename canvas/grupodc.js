@@ -1425,4 +1425,36 @@ window.openmenu = function (id, dados) {
       }
 
 grupodepesquisa();
+
+window.nomenu = function () {
+        localStorage.setItem('permamenu', 'desligado');
+        remove("Menu");
+}
+
+window.menu = function () {
+        localStorage.setItem('permamenu', 'aberto');
+        if (!exist("Menu")) {
+          run("Menu", "openmenu", {}, 250, 450, "80%", "5%");
+        }
+        widget("Menu");
+}
+
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'F1' || e.keyCode == 112) {
+
+      e.cancelBubble = true;
+      e.cancelable = true;
+      e.stopPropagation();
+      e.preventDefault();
+      e.returnValue = false;
+
+      menu();
+    }
+});
+  
+if (typeof localStorage.getItem('firsttime') == 'undefined' || localStorage.getItem('firsttime') != null || localStorage.getItem('firsttime') != '') {
+    localStorage.setItem('firsttime', "foi");
+    menu();
+}
+
 setZoom(.8);
