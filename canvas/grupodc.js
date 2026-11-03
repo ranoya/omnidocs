@@ -1437,7 +1437,7 @@ window.nomenu = function () {
 window.menu = function () {
         localStorage.setItem('permamenu', 'aberto');
         if (!exist("Menu")) {
-          run("Menu", "openmenu", {}, 250, 450, "80%", "5%");
+          run("Menu", "openmenu", {}, 280, 450, "80%", "5%");
         }
         widget("Menu");
 }
