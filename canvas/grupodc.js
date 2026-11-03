@@ -1413,7 +1413,10 @@ window.openmenu = function (id, dados) {
                 <div onclick="window.grupodepesquisa();">Sobre o Grupo</div>
 
                 <div class="secao">Projetos</div>
-                <div onclick="window.mapaprojetos()');">Pesquisa em Estética da Interação</div>
+                <div onclick="window.mapaprojetos();">Pesquisa em Estética da Interação</div>
+                <div onclick="window.projetomidiasoftware();">Estudos em Mídia/Software</div>
+                <div onclick="window.projetonarrativas();">Narrativas Interativas</div>
+                <div onclick="window.projetodigitalhumanities();">Digital Humanities</div>
 
             </div>
           
@@ -1452,7 +1455,7 @@ document.addEventListener('keydown', function (e) {
     }
 });
   
-if (typeof localStorage.getItem('firsttime') == 'undefined' || localStorage.getItem('firsttime') != null || localStorage.getItem('firsttime') != '') {
+if (typeof localStorage.getItem('firsttime') == 'undefined' || localStorage.getItem('firsttime') != null || localStorage.getItem('firsttime') != '' || localStorage.getItem('permamenu') == "aberto") {
     localStorage.setItem('firsttime', "foi");
     menu();
 }
