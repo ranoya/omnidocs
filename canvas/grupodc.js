@@ -28,6 +28,15 @@ window.mapaprojetos = function() {
     center("Projetos");
 }
 
+window.biblioteca = function () {
+    if (!exist("Biblioteca Completa")) {
+        newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Biblioteca%20Completa&p=t&bg=eceef4&fg=555555", "Biblioteca Completa", 660, 810, 3630, -2040);
+        
+    }
+    connect("Estética da Interação", "Biblioteca Completa");
+    center("Biblioteca Completa");
+}
+
 window.projetonarrativas = function () {
     if (!exist("Narrativas Interativas")) {
         svg("https://visse.vercel.app/assets/covers/NarrativasInterativas.svg", "Narrativas Interativas", 962, 528, 1587, -90);
@@ -46,6 +55,15 @@ window.projetonarrativas = function () {
     connect("Narrativas Interativas", "Projeto Narrativas Interativas");
     connect("Narrativas Interativas", "Projetos");
     center("Projeto Narrativas Interativas");
+}
+
+window.bibliografianarrativa = function () {
+    if (!exist("Bibliografia Storytelling")) {
+        newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Storytelling&p=t&bg=eceef4&fg=555555&filtra=_Storytelling", "Bibliografia Storytelling", 660, 810, 3630, -90);
+    }
+
+    connect("Bibliografia Storytelling", "Projeto Narrativas Interativas");
+    center("Bibliografia Storytelling");
 }
 
 window.projetodigitalhumanities = function () {
@@ -1335,6 +1353,15 @@ window.projetomidiasoftware = function () {
     center("Estudos em Mídia/Software");
 }
 
+window.bibliografiaems = function () {
+    if (!exist("Bibliografia Estudos em Mídia/Software")) {
+        newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Estudos%20em%20M%C3%ADdia/Software&p=t&bg=eceef4&fg=555555&filtra=_ems", "Bibliografia Estudos em Mídia/Software", 660, 810, 3630, -1050);
+    }
+
+    connect("Bibliografia Estudos em Mídia/Software", "Estudos em Mídia/Software");
+    center("Bibliografia Estudos em Mídia/Software");
+}
+
 window.grupodepesquisa = function () {
 
     if (!exist("Publicações")) {
@@ -1495,8 +1522,17 @@ window.recursos = function () {
     center("Notebooks");
 }
 
+window.notebookslm = function () {
+    if (!exist("Notebooks")) {
+        newidoc("https://omnidocs.vercel.app/materiais/recursos/?&nomenu=true&titulo=Bibliografias%20em%20NotebookLM&filtra=NotebookLM", "Notebooks", 660, 930, 2760, 3390);
+    }
+    connect("Skills", "Notebooks");
+    connect("Acervos e Materiais", "Notebooks");
+    center("Notebooks");
+}
 
-
+// Menu antigo desligado
+/*
 window.nomenu = function () {
         localStorage.setItem('permamenu', 'desligado');
         remove("Menu (F1)");
@@ -1522,11 +1558,14 @@ document.addEventListener('keydown', function (e) {
       menu();
     }
 });
+
   
 if (typeof localStorage.getItem('firsttime') == 'undefined' || localStorage.getItem('firsttime') == null || localStorage.getItem('firsttime') == '' || localStorage.getItem('permamenu') == "aberto") {
     localStorage.setItem('firsttime', "foi");
     menu();
 }
+
+*/
 
 
 grupodepesquisa();
@@ -1536,17 +1575,30 @@ setZoom(.8);
 
 supermenubar("GRUPO DE PESQUISA INTEGRADA EM DESIGN + COMPUTAÇÃO")
     ;
-registermenu(30, "teste 1", [   { label: "Agendas", run: "window.agendas()" },
-                                { label: "Mapa de projetos", run: "window.mapaprojetos()" },
+registermenu(30, "PROJETOS", [ 
+    { label: 'Grupo de Pesquisa"', run: "window.grupodepesquisa()" },
+    { label: "--" },
+    { label: 'Pesquisa "Guarda-Chuva"', run: "window.mapaprojetos()" },
+    { label: "Narrativas Interativas", run: "window.projetonarrativas()" },
+    { label: "Digital Humanities", run: "window.projetodigitalhumanities()" },
+    { label: "Estudos em Mídia/Software", run: "window.projetomidiasoftware()" },
+    { label: "Relatórios", run: "window.relatorios()" }
 
 ]);
-registermenu(250, "Projetos", [{ label: "Narrativas Interativas", run: "window.projetonarrativas()" },
-                                { label: "Digital Humanities", run: "window.projetodigitalhumanities()" },
-                                { label: "Relatórios", run: "window.relatorios()" }
+registermenu(120, "BIBLIOGRAFIAS", [
+    { label: "Anotações de leitura em NotebookLMs", run: "window.notebookslm()" },
+    { label: "--" },
+    { label: "Biblioteca Completa", run: "window.biblioteca()" },
+    { label: "--" },
+    { label: "Bibliografia sobre Narrativas", run: "window.bibliografianarrativa()" },
+    { label: "Bibliografia sobre Mídia+Software", run: "window.bibliografiaems()"}
 ]);
                                 
-registermenu(650, "teste 3", [{ label: "Acervos e Materiais", run: "window.acervos()" },
-                                { label: "Recursos de IA", run: "window.recursos()" },
-                                { label: "Quadro Compartilhado", run: "window.quadro()" }
+registermenu(240, "RECURSOS", [
+    { label: "Agendar Orientação", run: "window.agendas()" },
+    { label: "--" },
+    { label: "Acervos e Materiais", run: "window.acervos()" },
+    { label: "Recursos de IA", run: "window.recursos()" },
+    { label: "Quadro Compartilhado", run: "window.quadro()" }
 ]);
 
