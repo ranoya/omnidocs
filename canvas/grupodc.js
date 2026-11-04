@@ -1348,11 +1348,11 @@ window.grupodepesquisa = function () {
     if (!exist("Grupo de Pesquisa")) {
         newidoc("https://www.ranoya.com/pt/grupodc/?temptheme=cleantext&nomenu=true", "Grupo de Pesquisa", 1050, 810, 420, -2040);
         
-    center("Grupo de Pesquisa");
     }
 
     connect("Publicações", "Grupo de Pesquisa");
     connect("Teses e Dissertações", "Publicações");
+    center("Grupo de Pesquisa");
 
 
 }
@@ -1447,6 +1447,7 @@ window.acervos = function () {
         newidoc("https://docs.superhuman.com/embed/dvr6S_yBtg/_sulQQ3r5?hideSections=true", "Acervos e Materiais", 960, 930, 1590, 3390);
     }
     connect("Acervos e Materiais", "Projetos");
+    connect("Acervos e Materiais", "Notebooks");
     center("Acervos e MAteriais");
 }
       
