@@ -1541,21 +1541,36 @@ let smn = document.getElementById("supermenu");
 smn.innerHTML = "TESTANDO";
 
 fechamenus = function () {
+
+    for (let i = 0; i < spm_c; i++) {
+        document.getElementById("spm_titulograf_" + i).className.remove("titulofixa");
+        document.getElementById("spm_conteudo_" + i).style.display = "none";
+    }
     
 }
 
 abreefechamenus = function (n) {
+
+    for (let i = 0; i < spm_c; i++) {
+        document.getElementById("spm_titulograf_" + i).className.remove("titulofixa");
+        document.getElementById("spm_conteudo_" + i).style.display = "none";
+    }
+
+    if (n != lastsupermenuopen) {
+        document.getElementById("spm_titulograf_" + n).className.add("titulofixa");
+        document.getElementById("spm_conteudo_" + n).style.display = "block";
+    }
+
+    lastsupermenuopen = n;
     
 }
 
-let supermenus = [];
+let lastsupermenuopen = null;
 let spm_c = 0;
 let registermenu = function (posit, titulo, dados) {
     
     let spmsubtitulo = document.createElement("div");
     spmsubtitulo.id = "spm_titulo_" + spm_c;
-    //spmsubtitulo.onmouseover = fechamenus();
-    //spmsubtitulo.onclick = abreefechamenus(spm_c);
     document.body.append(spmsubtitulo);
 
     let smnt = document.getElementById("spm_titulo_" + spm_c);
@@ -1607,13 +1622,13 @@ let registermenu = function (posit, titulo, dados) {
         #spm_conteudograf_${spm_c} {
         width: auto;
         position: fixed;
-        top: 31px;
-        left: ${posit - 2}px;
-        z-index: 1002;
+        top: 28px;
+        left: ${posit - 4}px;
+        z-index: 999;
         background-color: var(--panel);
         color: var(--text);
-        box-shadow: 8px 8px 7px 7px var(--shadow);
-        /* display: none; */
+        box-shadow: 5px 4px 11px 0px var(--shadow);
+        display: none;
         padding: 2px;
         height: auto;
         border: 2px solid var(--panel);
@@ -1623,7 +1638,7 @@ let registermenu = function (posit, titulo, dados) {
         #spm_conteudograf_${spm_c} .item {
         padding-right: 10px;
         padding-left: 10px;
-        line-height: 27px;
+        line-height: 40px;
         font-size: 12px;
         font-weight: bold;
         cursor: pointer;
@@ -1631,7 +1646,7 @@ let registermenu = function (posit, titulo, dados) {
         background-color: var(--panel);
         color: var(--text);
         width: 100%;
-        height: 27px;
+        height: 40px;
         }
 
         #spm_conteudograf_${spm_c} .item:hover {
