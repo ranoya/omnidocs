@@ -36,6 +36,34 @@ window.biblioteca = function () {
     center("Biblioteca Completa");
 }
 
+window.arte = function () {
+    if (!exist("ART/ANC/ODE")) {
+        svg("<iframe style='width: 100%; height: 100%;' frameborder='0' src='https://booklines.vercel.app/capas/artancode/flipcover.html?art=1980&fcolor=ffffff88&bgcolor=0865E9'></iframe>", "ART/ANC/ODE", 852, 528, 1645, -3060);
+    }
+    lock("ART/ANC/ODE");
+
+    if (!exist("Arte")) {
+        newidoc("https://www.ranoya.com/pt/arte/?theme=cleantext&nomenu=true", "Arte", 840, 810, 2640, -3060);
+    }
+
+    if (!exist("Arte")) {
+        newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Po%C3%A9ticas%20Computacionais&p=t&bg=eceef4&fg=555555&filtra=_poetica", "Bibliografia Poéticas", 660, 810, 3630, -3060);
+    }
+
+    connect("Projetos", "ART/ANC/ODE");
+    connect("ART/ANC/ODE", "Arte");
+    connect("Bibliografia Poéticas", "Arte");
+    center("Arte");
+}
+
+window.bibliografiapoetica = function () {
+    if (!exist("Arte")) {
+        newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Po%C3%A9ticas%20Computacionais&p=t&bg=eceef4&fg=555555&filtra=_poetica", "Bibliografia Poéticas", 660, 810, 3630, -3060);
+    }
+    connect("Bibliografia Poéticas", "Arte");
+    center("Bibliografia Poéticas");
+}
+
 window.projetonarrativas = function () {
     if (!exist("Narrativas Interativas")) {
         svg("https://visse.vercel.app/assets/covers/NarrativasInterativas.svg", "Narrativas Interativas", 962, 528, 1587, -90);
@@ -1640,6 +1668,7 @@ registermenu(120, "BIBLIOGRAFIAS", [
     { label: "Bibliografia de Conceitos em Digital Humanities", run: "window.bibliografiaDHConceitos()" },
     { label: "Bibliografia de Aspectos Culturais nas Digital Humanities", run: "window.bibliografiaDHCultura()" },
     { label: "Bibliografia sobre Expressões das Digital Humanities", run: "window.bibliografiaDHExpressoes()" },
+    { label: "Bibliografia de Poéticas Computacinoais", run: "window.bibliografiapoetica()" },
     { label: "--" },
     { label: "Glossários", run: "window.glossarios()"},
 ]);
