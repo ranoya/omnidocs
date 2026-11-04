@@ -1323,6 +1323,11 @@ window.projetomidiasoftware = function () {
         newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Estudos%20em%20M%C3%ADdia/Software&p=t&bg=eceef4&fg=555555&filtra=_ems", "Bibliografia Estudos em Mídia/Software", 660, 810, 3630, -1050);
     }
 
+    if (!exist("Glossários")) {
+        newidoc("https://omnidocs.vercel.app/glossario/?&p=t&fg=53506b&bg=fbe4dd&filtra=&titulo=Gloss%C3%A1rios", "Glossários", 660, 810, 810, 840);
+    }
+
+    connect("Glossários", "Digital Humanities");
     connect("Bibliografia Estudos em Mídia/Software", "Estudos em Mídia/Software");
     connect("Mídia+Software", "Estudos em Mídia/Software");
     connect("Mídia+Software", "Projetos");
@@ -1411,13 +1416,20 @@ window.openmenu = function (id, dados) {
             <div class="menu_menuopt">
                 <div class="secao">Grupo</div>
                 <div onclick="window.grupodepesquisa();">Sobre o Grupo</div>
+                <div onclick="window.agendas();">Agendar Orientação</div>
 
                 <div class="secao">Projetos</div>
                 <div onclick="window.mapaprojetos();">Pesquisa em Estética da Interação</div>
                 <div onclick="window.projetomidiasoftware();">Estudos em Mídia/Software</div>
                 <div onclick="window.projetonarrativas();">Narrativas Interativas</div>
                 <div onclick="window.projetodigitalhumanities();">Digital Humanities</div>
+                <div onclick="window.relatorios();">Relatórios</div>
 
+                <div class="secao">Recursos</div>
+                <div onclick="window.acervos();">Acervos e Materiais</div>
+                <div onclick="window.quadro();">Quadro Compartilhado</div>
+                
+                
                 <div class="secao">Outros</div>
                 <div onclick="window.nomenu();">Fecha Menu</div>
             </div>
@@ -1427,9 +1439,49 @@ window.openmenu = function (id, dados) {
           
             `;
         
-      }
+}
 
-grupodepesquisa();
+window.acervos = function () {
+    if (!exist("Acervos e MAteriais")) {
+        newidoc("https://docs.superhuman.com/embed/dvr6S_yBtg/_sulQQ3r5?hideSections=true", "Acervos e Materiais", 960, 930, 1590, 3390);
+    }
+    connect("Acervos e Materiais", "Projetos");
+    center("Acervos e MAteriais");
+}
+      
+window.relatorios = function () {
+    if (!exist("Relatório Estética da Interação")) {
+        newidoc("https://www.ranoya.com/pt/pesquisa/jornadacompleta.php?nomenu=true&temptheme=cleantext", "Relatório Estética da Interação", 1440, 810, 4440, -2040);
+    }
+    connect("Estética da Interação", "Relatório Estética da Interação");
+    center("Relatório Estética da Interação")
+}
+
+window.agendas = function () {
+    
+    if (!exist("Agenda Ranoya")) {
+        newidoc("https://calendar.google.com/calendar/u/0/embed?height=600&wkst=2&ctz=America/Recife&showPrint=0&showTitle=0&showTabs=0&showCalendars=0&showTz=0&mode=WEEK&src=Z3VpbGhlcm1lLnJhbm95YUB1ZnBlLmJy&src=ZXEzbG0wNTk4OTFxdmljaWxjM2FkNGVjMWdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=Y19jbGFzc3Jvb20zYjMwN2ZlNkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=dWZwZS5icl9jbGFzc3Jvb21iNDhlNTAwMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=dWZwZS5icl9jbGFzc3Jvb203ZTc3N2UxMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=dWZwZS5icl9jbGFzc3Jvb20yZjhjMmE2YkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=dWZwZS5icl9jbGFzc3Jvb202Njk1YjljMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=dWZwZS5icl9jbGFzc3Jvb203ZjU0MmJlYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=Y19jbGFzc3Jvb20yMWU2YTkyNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=Y19jbGFzc3Jvb21lNDI3ZWIyYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=Y19jbGFzc3Jvb21kMjY2MzBhOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=dWZwZS5icl9jbGFzc3Jvb21hOWNlOGE0NUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=cmFub3lhQGdtYWlsLmNvbQ&src=cHQuYnJhemlsaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23D81B60&color=%23F6BF26&color=%239E69AF&color=%23c00077&color=%238E24AA&color=%237986CB&color=%23616161&color=%23808e15&color=%237986CB&color=%237CB342&color=%239E69AF&color=%230043ae&color=%23009688&color=%230B8043", "Agenda Ranoya", 1050, 810, 420, -1050);
+    }
+
+    if (!exist("Agendamento")) {
+        newidoc("https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0Yd7hzjGj6WZ2cv2a1QseBLt7fQfnpPKoJewZapi9o025rriwDAObP2Ly9ZyXe6uIepld1OarR?gv=true", "Agendamento", 1050, 810, -840, -1050);
+    }
+
+    connect("Grupo de Pesquisa", "Agenda Ranoya");
+    connect("Agenda Ranoya", "Agendamento");
+
+    center("Agendamento");
+}
+
+window.quadro = function () {
+    if (!exist("Quadro")) {
+        newidoc("https://www.tldraw.com/f/vYokaPVx1n2Bp4HGdi-eT?d=v-222.0.1372.847.Ll9N-241MP2hPHObskmz2", "Quadro")
+    }
+
+    center("Quadro");
+}
+
+
 
 window.nomenu = function () {
         localStorage.setItem('permamenu', 'desligado');
@@ -1438,7 +1490,7 @@ window.nomenu = function () {
 
 window.menu = function () {
         localStorage.setItem('permamenu', 'aberto');
-        if (!exist("Menu")) {
+        if (!exist("Menu (F1)")) {
           run("Menu (F1)", "openmenu", {}, 250, 450, "80%", "5%");
         }
         widget("Menu (F1)");
@@ -1457,9 +1509,11 @@ document.addEventListener('keydown', function (e) {
     }
 });
   
-if (typeof localStorage.getItem('firsttime') == 'undefined' || localStorage.getItem('firsttime') != null || localStorage.getItem('firsttime') != '' || localStorage.getItem('permamenu') == "aberto") {
+if (typeof localStorage.getItem('firsttime') == 'undefined' || localStorage.getItem('firsttime') == null || localStorage.getItem('firsttime') == '' || localStorage.getItem('permamenu') == "aberto") {
     localStorage.setItem('firsttime', "foi");
     menu();
 }
 
+
+grupodepesquisa();
 setZoom(.8);
