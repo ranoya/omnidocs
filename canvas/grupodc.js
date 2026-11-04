@@ -1616,8 +1616,7 @@ if (typeof localStorage.getItem('firsttime') == 'undefined' || localStorage.getI
 */
 
 
-supermenubar("GRUPO DE PESQUISA INTEGRADA EM DESIGN + COMPUTAÇÃO [D+C]")
-    ;
+supermenubar("GRUPO DE PESQUISA INTEGRADA EM DESIGN + COMPUTAÇÃO <b style='color: var(--accent); font-weight: bolder;'>[D+C]</b>");
 registermenu(30, "PROJETOS", [ 
     { label: "Grupo de Pesquisa", run: "window.grupodepesquisa()" },
     { label: "--" },
@@ -1662,7 +1661,7 @@ registermenu(330, "CANVAS", [
     { label: "Zoom 50%", run: "setZoom(.5)" },
     { label: "--" },
     { label: "Linha de Comando", run: "floatdevmode()" },
-    { label: "Fecha Linha de Comando", run: "nodev()" },
+    { label: "Fechar Linha de Comando", run: "nodev()" },
 ]);
 
 
