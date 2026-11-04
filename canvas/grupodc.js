@@ -1618,17 +1618,20 @@ let registermenu = function (posit, titulo, dados) {
     let smntc = document.getElementById("spm_conteudo_" + spm_c);
     let code = `
     <style>
+
+        #spm_conteudo {
+        display: none;
+        }
         
         #spm_conteudograf_${spm_c} {
         width: auto;
         position: fixed;
-        top: 28px;
+        top: 29px;
         left: ${posit - 4}px;
         z-index: 999;
         background-color: var(--panel);
         color: var(--text);
         box-shadow: 5px 4px 11px 0px var(--shadow);
-        display: none;
         padding: 2px;
         height: auto;
         border: 2px solid var(--panel);
