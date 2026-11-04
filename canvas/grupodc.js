@@ -1530,3 +1530,12 @@ if (typeof localStorage.getItem('firsttime') == 'undefined' || localStorage.getI
 
 grupodepesquisa();
 setZoom(.8);
+
+//testando um bagulho
+let menudiv = document.createElement("div");
+menudiv.id = "supermenu";
+menudiv.style = "position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 40px; background-color(--accent); color: (--bg);";
+document.body.append(menudiv);
+
+let smn = document.getElementById("supermenu");
+    smn.innerHTML = "TESTANDO";
