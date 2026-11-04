@@ -1681,7 +1681,6 @@ registermenu(30, "teste 1", [   { label: "Agendas", run: "window.agendas()" },
 ]);
 registermenu(250, "Projetos", [{ label: "Narrativas Interativas", run: "window.projetonarrativas()" },
                                 { label: "Digital Humanities", run: "window.projetodigitalhumanities()" },
-                                { label: "Digital Humanities", run: "window.projetodigitalhumanities();" },
                                 { label: "Relatórios", run: "window.relatorios()" }
 ]);
                                 
