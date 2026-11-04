@@ -1428,9 +1428,9 @@ window.openmenu = function (id, dados) {
 
                 <div class="secao">Recursos</div>
                 <div onclick="window.acervos();">Acervos e Materiais</div>
+                <div onclick="window.recursos();">Recursos de IA</div>
                 <div onclick="window.quadro();">Quadro Compartilhado</div>
-                
-                
+                                
                 <div class="secao">Outros</div>
                 <div onclick="window.nomenu();">Fecha Menu</div>
             </div>
@@ -1480,6 +1480,17 @@ window.quadro = function () {
     }
 
     center("Quadro");
+}
+
+window.recursos = function () {
+    if (!exist("Notebooks")) {
+        newidoc("https://omnidocs.vercel.app/materiais/recursos/?&nomenu=true&titulo=Bibliografia%20em%20NotebookLM&filtra=NotebookLM", "Notebooks", 660, 930, 2760, 3390);
+    }
+    connect("Acervos e Materiais", "Notebooks");
+    if (!exist("Skills")) {
+        newidoc("https://omnidocs.vercel.app/materiais/recursos/?&nomenu=true&titulo=Skills%20de%20IA&filtra=Skill", "Skills", 660, 930, 3630, 3390);
+    }
+    connect("Skills", "Notebooks");
 }
 
 
