@@ -1653,6 +1653,7 @@ registermenu(30, "PROJETOS", [
     { label: "Narrativas Interativas", run: "window.projetonarrativas()" },
     { label: "Digital Humanities", run: "window.projetodigitalhumanities()" },
     { label: "Estudos em Mídia/Software", run: "window.projetomidiasoftware()" },
+    { label: "ART/ANC/ODE", run: "window.arte()" },
     { label: "--" },
     { label: "Relatórios", run: "window.relatorios()" }
 
