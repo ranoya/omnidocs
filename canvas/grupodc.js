@@ -1571,9 +1571,10 @@ if (typeof localStorage.getItem('firsttime') == 'undefined' || localStorage.getI
 supermenubar("GRUPO DE PESQUISA INTEGRADA EM DESIGN + COMPUTAÇÃO")
     ;
 registermenu(30, "PROJETOS", [ 
-    { label: 'Grupo de Pesquisa"', run: "window.grupodepesquisa()" },
+    { label: "Grupo de Pesquisa", run: "window.grupodepesquisa()" },
     { label: "--" },
     { label: 'Pesquisa "Guarda-Chuva"', run: "window.mapaprojetos()" },
+    { label: "--" },
     { label: "Narrativas Interativas", run: "window.projetonarrativas()" },
     { label: "Digital Humanities", run: "window.projetodigitalhumanities()" },
     { label: "Estudos em Mídia/Software", run: "window.projetomidiasoftware()" },
@@ -1595,6 +1596,17 @@ registermenu(240, "RECURSOS", [
     { label: "Acervos e Materiais", run: "window.acervos()" },
     { label: "Recursos de IA", run: "window.recursos()" },
     { label: "Quadro Compartilhado", run: "window.quadro()" }
+]);
+
+registermenu(330, "CANVAS", [
+    { label: "Zoom 100%", run: "setZoom(1)" },
+    { label: "Zoom 75%", run: "setZoom(.75)" },
+    { label: "Zoom 65%", run: "setZoom(.65)"},
+    { label: "Zoom 50%", run: "setZoom(.5)" },
+    { label: "Zoom 35%", run: "setZoom(.35)" },
+    { label: "Zoom 20%", run: "setZoom(.2)"},
+    { label: "--" },
+    { label: "Linha de Comando", run: "floatdevmode()" },
 ]);
 
 
