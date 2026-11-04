@@ -1631,7 +1631,7 @@ registermenu(30, "PROJETOS", [
 
 ]);
 registermenu(120, "BIBLIOGRAFIAS", [
-    { label: "Anotações de leitura em NotebookLMs", run: "window.notebookslm()" },
+    { label: "Anotações de leituras em NotebookLM", run: "window.notebookslm()" },
     { label: "--" },
     { label: "Biblioteca Completa", run: "window.biblioteca()" },
     { label: "--" },
