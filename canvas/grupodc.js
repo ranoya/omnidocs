@@ -1413,7 +1413,7 @@ window.bibliografiaems = function () {
 window.grupodepesquisa = function () {
 
     if (!exist("Publicações")) {
-        newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Artigos%20Publicados&p=t&bg=eceef4&fg=555555&filtra=(Artigo|Capítulo|Livro)%20Ranoya", "Publicações", 660, 810, -450, -2040);
+        newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Publica%C3%A7%C3%B5es%20do%20Grupo&p=t&bg=eceef4&fg=555555&filtra=(Artigo|Cap%C3%ADtulo|Livro)%20Ranoya", "Publicações", 660, 810, -450, -2040);
     }
     
     if (!exist("Teses e Dissertações")) {
