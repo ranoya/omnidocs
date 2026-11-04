@@ -1304,6 +1304,12 @@ window.projetodigitalhumanities = function () {
     connect("Bibliografia Digital Humanities", "Bibliografia Conceitos em Digital Humanities");
     connect("Bibliografia Digital Humanities", "Projeto Humanidades Digitais");
 
+    if (!exist("Glossários")) {
+        newidoc("https://omnidocs.vercel.app/glossario/?&p=t&fg=53506b&bg=fbe4dd&filtra=&titulo=Gloss%C3%A1rios", "Glossários", 660, 810, 810, 840);
+    }
+
+    connect("Glossários", "Digital Humanities");
+
     center("Projeto Humanidades Digitais");
 }
 
@@ -1323,11 +1329,6 @@ window.projetomidiasoftware = function () {
         newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Estudos%20em%20M%C3%ADdia/Software&p=t&bg=eceef4&fg=555555&filtra=_ems", "Bibliografia Estudos em Mídia/Software", 660, 810, 3630, -1050);
     }
 
-    if (!exist("Glossários")) {
-        newidoc("https://omnidocs.vercel.app/glossario/?&p=t&fg=53506b&bg=fbe4dd&filtra=&titulo=Gloss%C3%A1rios", "Glossários", 660, 810, 810, 840);
-    }
-
-    connect("Glossários", "Digital Humanities");
     connect("Bibliografia Estudos em Mídia/Software", "Estudos em Mídia/Software");
     connect("Mídia+Software", "Estudos em Mídia/Software");
     connect("Mídia+Software", "Projetos");
