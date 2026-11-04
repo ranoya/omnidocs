@@ -1556,16 +1556,11 @@ abreefechamenus = function (n) {
         document.getElementById("spm_conteudograf_" + i).style.display = "none";
     }
 
-    if (n != lastsupermenuopen) {
         document.getElementById("spm_titulograf_" + n).classList.add("titulofixa");
         document.getElementById("spm_conteudograf_" + n).style.display = "block";
-    }
-
-    lastsupermenuopen = n;
-    
+  
 }
 
-let lastsupermenuopen = null;
 let spm_c = 0;
 let registermenu = function (posit, titulo, dados) {
     
