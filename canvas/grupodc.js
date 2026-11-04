@@ -1,5 +1,4 @@
 setTheme("light");
-devmode();
 multicolor();
 
 window.mapaprojetos = function() {
