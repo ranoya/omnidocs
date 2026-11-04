@@ -1467,6 +1467,11 @@ let pesquisa = function () {
     
     connect("Laboratórios", "Manifesto 2.0");
 
+    if (!exist("Read Me")) {
+        newidoc("https://nettime.org/nettime/DOCS/zkp5/intro1.html", "Read Me", 540, 810, -2220, 2910);
+    }
+    connect("Read Me", "Manifesto 2.0");
+
     setZoom(.4);
     center("Digital Humanities");
 
@@ -2387,6 +2392,14 @@ let openmanifesto = function () {
     
     connect("Laboratórios", "Manifesto 2.0");
     center("Manifesto 2.0");
+}
+
+let openreadmeascii = function () {
+    if (!exist("Read Me")) {
+        newidoc("https://nettime.org/nettime/DOCS/zkp5/intro1.html", "Read Me", 540, 810, -2220, 2910);
+    }
+    connect("Read Me", "Manifesto 2.0");
+    center("Read Me");
 }
 
 let openslideshypermedia = function () {

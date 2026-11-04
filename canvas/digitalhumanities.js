@@ -1317,6 +1317,8 @@ newidoc("https://drive.google.com/file/d/1Ubhl6ISeGB6sOuVUwBlRusaSEAZ9lUfY/previ
 
 connect("Laboratórios", "Manifesto 2.0");
 
+newidoc("https://nettime.org/nettime/DOCS/zkp5/intro1.html", "Read Me", 540, 810, -2220, 2910);
+connect("Read Me", "Manifesto 2.0");
 
 lockall();
 
