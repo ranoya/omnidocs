@@ -1544,7 +1544,7 @@ fechamenus = function () {
 
     for (let i = 0; i < spm_c; i++) {
         document.getElementById("spm_titulograf_" + i).classList.remove("titulofixa");
-        document.getElementById("spm_conteudo_" + i).style.display = "none";
+        document.getElementById("spm_conteudograf_" + i).style.display = "none";
     }
     
 }
@@ -1553,12 +1553,12 @@ abreefechamenus = function (n) {
 
     for (let i = 0; i < spm_c; i++) {
         document.getElementById("spm_titulograf_" + i).classList.remove("titulofixa");
-        document.getElementById("spm_conteudo_" + i).style.display = "none";
+        document.getElementById("spm_conteudograf_" + i).style.display = "none";
     }
 
     if (n != lastsupermenuopen) {
         document.getElementById("spm_titulograf_" + n).classList.add("titulofixa");
-        document.getElementById("spm_conteudo_" + n).style.display = "block";
+        document.getElementById("spm_conteudograf_" + n).style.display = "block";
     }
 
     lastsupermenuopen = n;
@@ -1620,10 +1620,11 @@ let registermenu = function (posit, titulo, dados) {
     <style>
 
         #spm_conteudo {
-        display: none;
+        
         }
         
         #spm_conteudograf_${spm_c} {
+        display: none;
         width: auto;
         position: fixed;
         top: 29px;
