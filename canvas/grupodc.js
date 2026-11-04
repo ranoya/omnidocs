@@ -1531,11 +1531,71 @@ if (typeof localStorage.getItem('firsttime') == 'undefined' || localStorage.getI
 grupodepesquisa();
 setZoom(.8);
 
-//testando um bagulho
+//SUPER MENU
 let menudiv = document.createElement("div");
 menudiv.id = "supermenu";
-menudiv.style = "position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 40px; background-color: var(--accent); color: var(--bg);";
+menudiv.style = "position: fixed; z-index: 1000; top: 0px; left: 0px; width: 100%; height: 28px; background-color: var(--panel); color: var(--text); text-align: right; padding-right: 20px; padding-left: 20px; line-height: 27px;";
 document.body.append(menudiv);
 
 let smn = document.getElementById("supermenu");
-    smn.innerHTML = "TESTANDO";
+smn.innerHTML = "TESTANDO";
+
+fechamenus = function () {
+    
+}
+
+abreefechamenus = function (n) {
+    
+}
+
+let supermenus = [];
+let spm_c = 0;
+let registermenu = function (posit, dados) {
+    
+    let spmsubtitulo = document.createElement("div");
+    spmsubtitulo.id = "spm_titulo_" + spm_c;
+    spmsubtitulo.onmouseover = fechamenus();
+    spmsubtitulo.onclick = abreefechamenus(spm_c);
+    document.body.append(spmsubtitulo);
+
+    let smnt = document.getElementById("spm_titulo_" + spm_c);
+    smnt.innerHTML = `
+    
+    <style>
+        #spm_titulo_${spm_c} {
+        position: fixed;
+        z-index: 1001;
+        top: 0px;
+        left: ${(posit + 5)}px;
+        width: auto;
+        height: 28px;
+        background-color: var(--panel);
+        color: var(--text);
+        text-align: left;
+        padding-right: 20px;
+        padding-left: 20px;
+        line-height: 27px;
+        }
+
+        #spm_titulo_${spm_c}:hover {
+        background-color: var(--accent) !important;
+        color: var(--panel) !important;
+        }
+
+        .titulofixa {
+        background-color: var(--accent) !important;
+        color: var(--panel) !important;
+        }
+    </style>
+
+    <div id="spm_titulo_${spm_c}" onmouseover="fechamenus()" onclick="abreefechamenus(${spm_c})">${dados.titulo}</div>
+    `;
+
+    spm_c++;
+
+}
+
+registermenu(30, { titulo: "TESTE 1" });
+registermenu(150, { titulo: "TESTE 2" });
+registermenu(300, { titulo: "TESTE 3" });
+
