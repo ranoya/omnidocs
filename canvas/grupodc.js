@@ -1608,6 +1608,7 @@ let registermenu = function (posit, titulo, dados) {
         width: auto;
         position: fixed;
         top: 31px;
+        left: ${posit - 2}px;
         z-index: 1002;
         background-color: var(--panel);
         color: var(--text);
@@ -1651,7 +1652,7 @@ let registermenu = function (posit, titulo, dados) {
 
     code += `</div>`;
 
-    smnt.innerHTML = code;
+    smntc.innerHTML = code;
     spm_c++;
 
 }
