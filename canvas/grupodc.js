@@ -46,7 +46,7 @@ window.arte = function () {
         newidoc("https://www.ranoya.com/pt/arte/?theme=cleantext&nomenu=true", "Arte", 840, 810, 2640, -3060);
     }
 
-    if (!exist("Arte")) {
+    if (!exist("Bibliografia Poéticas")) {
         newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Po%C3%A9ticas%20Computacionais&p=t&bg=eceef4&fg=555555&filtra=_poetica", "Bibliografia Poéticas", 660, 810, 3630, -3060);
     }
 
@@ -57,7 +57,7 @@ window.arte = function () {
 }
 
 window.bibliografiapoetica = function () {
-    if (!exist("Arte")) {
+    if (!exist("Bibliografia Poéticas")) {
         newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Po%C3%A9ticas%20Computacionais&p=t&bg=eceef4&fg=555555&filtra=_poetica", "Bibliografia Poéticas", 660, 810, 3630, -3060);
     }
     connect("Bibliografia Poéticas", "Arte");
