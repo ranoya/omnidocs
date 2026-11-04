@@ -1532,15 +1532,21 @@ grupodepesquisa();
 setZoom(.8);
 
 //SUPER MENU
+
+let supermenubar = function (t) {
+    
+
 let menudiv = document.createElement("div");
 menudiv.id = "supermenu";
 menudiv.style = "position: fixed; z-index: 1000; top: 0px; left: 0px; width: 100%; height: 28px; background-color: var(--panel); color: var(--text); text-align: right; padding-right: 20px; padding-left: 20px; line-height: 27px; box-shadow: 2px -2px 7px var(--shadow);font-size: 10px; line-height: 28px;";
 document.body.append(menudiv);
 
 let smn = document.getElementById("supermenu");
-smn.innerHTML = "GRUPO DE PESQUISA INTEGRADA EM DESIGN + COMPUTAÇÃO";
+smn.innerHTML = t;  
 
-let fechamenus = function () {
+}
+
+let spm_fechamenus = function () {
 
     for (let i = 0; i < spm_c; i++) {
         document.getElementById("spm_titulograf_" + i).classList.remove("titulofixa");
@@ -1549,7 +1555,7 @@ let fechamenus = function () {
     
 }
 
-let abreefechamenus = function (n) {
+let spm_abreefecha = function (n) {
 
     for (let i = 0; i < spm_c; i++) {
         document.getElementById("spm_titulograf_" + i).classList.remove("titulofixa");
@@ -1606,7 +1612,7 @@ let registermenu = function (posit, titulo, dados) {
         }
     </style>
 
-    <div id="spm_titulograf_${spm_c}" onmouseover="fechamenus()" onclick="abreefechamenus(${spm_c})">${titulo}</div>
+    <div id="spm_titulograf_${spm_c}" onmouseover="spm_fechamenus()" onclick="spm_abreefecha(${spm_c})">${titulo}</div>
     `;
 
 
@@ -1664,7 +1670,7 @@ let registermenu = function (posit, titulo, dados) {
 
     for (let i = 0; i < dados.length; i++) {
 
-        code += `<div class="item" onclick="smp_exec('${dados[i].run}'); fechamenus();">${dados[i].label}</div>`
+        code += `<div class="item" onclick="smp_exec('${dados[i].run}'); spm_fechamenus();">${dados[i].label}</div>`
 
     }
 
@@ -1675,6 +1681,8 @@ let registermenu = function (posit, titulo, dados) {
 
 }
 
+supermenubar("GRUPO DE PESQUISA INTEGRADA EM DESIGN + COMPUTAÇÃO")
+    ;
 registermenu(30, "teste 1", [   { label: "Agendas", run: "window.agendas()" },
                                 { label: "Mapa de projetos", run: "window.mapaprojetos()" },
 
