@@ -1534,13 +1534,13 @@ setZoom(.8);
 //SUPER MENU
 let menudiv = document.createElement("div");
 menudiv.id = "supermenu";
-menudiv.style = "position: fixed; z-index: 1000; top: 0px; left: 0px; width: 100%; height: 28px; background-color: var(--panel); color: var(--text); text-align: right; padding-right: 20px; padding-left: 20px; line-height: 27px;";
+menudiv.style = "position: fixed; z-index: 1000; top: 0px; left: 0px; width: 100%; height: 28px; background-color: var(--panel); color: var(--text); text-align: right; padding-right: 20px; padding-left: 20px; line-height: 27px; box-shadow: 2px -2px 7px var(--shadow);font-size: 10px; line-height: 28px;";
 document.body.append(menudiv);
 
 let smn = document.getElementById("supermenu");
-smn.innerHTML = "TESTANDO";
+smn.innerHTML = "GRUPO DE PESQUISA INTEGRADA EM DESIGN + COMPUTAÇÃO";
 
-fechamenus = function () {
+let fechamenus = function () {
 
     for (let i = 0; i < spm_c; i++) {
         document.getElementById("spm_titulograf_" + i).classList.remove("titulofixa");
@@ -1549,7 +1549,7 @@ fechamenus = function () {
     
 }
 
-abreefechamenus = function (n) {
+let abreefechamenus = function (n) {
 
     for (let i = 0; i < spm_c; i++) {
         document.getElementById("spm_titulograf_" + i).classList.remove("titulofixa");
@@ -1559,6 +1559,10 @@ abreefechamenus = function (n) {
         document.getElementById("spm_titulograf_" + n).classList.add("titulofixa");
         document.getElementById("spm_conteudograf_" + n).style.display = "block";
   
+}
+
+let smp_exec = function (cmd) {
+    eval(cmd);
 }
 
 let spm_c = 0;
@@ -1578,7 +1582,7 @@ let registermenu = function (posit, titulo, dados) {
         top: 0px;
         left: ${(posit)}px;
         width: auto;
-        height: 28px;
+        height: 27px;
         background-color: var(--panel);
         color: var(--text);
         text-align: left;
