@@ -1550,34 +1550,38 @@ abreefechamenus = function (n) {
 
 let supermenus = [];
 let spm_c = 0;
-let registermenu = function (posit, dados) {
+let registermenu = function (posit, titulo, dados) {
     
     let spmsubtitulo = document.createElement("div");
     spmsubtitulo.id = "spm_titulo_" + spm_c;
-    spmsubtitulo.onmouseover = fechamenus();
-    spmsubtitulo.onclick = abreefechamenus(spm_c);
+    //spmsubtitulo.onmouseover = fechamenus();
+    //spmsubtitulo.onclick = abreefechamenus(spm_c);
     document.body.append(spmsubtitulo);
 
     let smnt = document.getElementById("spm_titulo_" + spm_c);
     smnt.innerHTML = `
     
     <style>
-        #spm_titulo_${spm_c} {
+        #spm_titulograf_${spm_c} {
         position: fixed;
         z-index: 1001;
         top: 0px;
-        left: ${(posit + 5)}px;
+        left: ${(posit)}px;
         width: auto;
         height: 28px;
         background-color: var(--panel);
         color: var(--text);
         text-align: left;
-        padding-right: 20px;
-        padding-left: 20px;
+        padding-right: 10px;
+        padding-left: 10px;
         line-height: 27px;
+        font-size: 12px;
+        font-weight: bold;
+        cursor: pointer;
+        text-transform: uppercase;
         }
 
-        #spm_titulo_${spm_c}:hover {
+        #spm_titulograf_${spm_c}:hover {
         background-color: var(--accent) !important;
         color: var(--panel) !important;
         }
@@ -1588,14 +1592,82 @@ let registermenu = function (posit, dados) {
         }
     </style>
 
-    <div id="spm_titulo_${spm_c}" onmouseover="fechamenus()" onclick="abreefechamenus(${spm_c})">${dados.titulo}</div>
+    <div id="spm_titulograf_${spm_c}" onmouseover="fechamenus()" onclick="abreefechamenus(${spm_c})">${titulo}</div>
     `;
 
+
+    let spmconteudo = document.createElement("div");
+    spmconteudo.id = "spm_conteudo_" + spm_c;
+    document.body.append(spmconteudo);
+
+    let smntc = document.getElementById("spm_conteudo_" + spm_c);
+    let code = `
+    <style>
+        
+        #spm_conteudograf_${spm_c} {
+        width: auto;
+        position: fixed;
+        top: 31px;
+        z-index: 1002;
+        background-color: var(--panel);
+        color: var(--text);
+        box-shadow: 8px 8px 7px 7px var(--shadow);
+        /* display: none; */
+        padding: 2px;
+        height: auto;
+        border: 2px solid var(--panel);
+        min-width: 150px;
+        }
+
+        #spm_conteudograf_${spm_c} .item {
+        padding-right: 10px;
+        padding-left: 10px;
+        line-height: 27px;
+        font-size: 12px;
+        font-weight: bold;
+        cursor: pointer;
+        text-transform: uppercase;
+        background-color: var(--panel);
+        color: var(--text);
+        width: 100%;
+        height: 27px;
+        }
+
+        #spm_conteudograf_${spm_c} .item:hover {
+        background-color: var(--accent) !important;
+        color: var(--panel) !important;
+        }
+    </style>
+    
+    <div id="spm_conteudograf_${spm_c}">
+    
+    `;
+
+    for (let i = 0; i < dados.length; i++) {
+
+        code += `<div class="item" onclick="smp_exec('${dados[i].run}'); fechamenus();">${dados[i].label}</div>`
+
+    }
+
+    code += `</div>`;
+
+    smnt.innerHTML = code;
     spm_c++;
 
 }
 
-registermenu(30, { titulo: "TESTE 1" });
-registermenu(150, { titulo: "TESTE 2" });
-registermenu(300, { titulo: "TESTE 3" });
+registermenu(30, "teste 1", [   { label: "Agendas", run: "window.agendas()" },
+                                { label: "Mapa de projetos", run: "window.mapaprojetos()" },
+
+]);
+registermenu(250, "Projetos", [{ label: "Narrativas Interativas", run: "window.projetonarrativas()" },
+                                { label: "Digital Humanities", run: "window.projetodigitalhumanities()" },
+                                { label: "Digital Humanities", run: "window.projetodigitalhumanities();" },
+                                { label: "Relatórios", run: "window.relatorios()" }
+]);
+                                
+registermenu(650, "teste 3", [{ label: "Acervos e Materiais", run: "window.acervos()" },
+                                { label: "Recursos de IA", run: "window.recursos()" },
+                                { label: "Quadro Compartilhado", run: "window.quadro()" }
+]);
 
