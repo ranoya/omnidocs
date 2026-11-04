@@ -1543,7 +1543,7 @@ smn.innerHTML = "TESTANDO";
 fechamenus = function () {
 
     for (let i = 0; i < spm_c; i++) {
-        document.getElementById("spm_titulograf_" + i).className.remove("titulofixa");
+        document.getElementById("spm_titulograf_" + i).classList.remove("titulofixa");
         document.getElementById("spm_conteudo_" + i).style.display = "none";
     }
     
@@ -1552,12 +1552,12 @@ fechamenus = function () {
 abreefechamenus = function (n) {
 
     for (let i = 0; i < spm_c; i++) {
-        document.getElementById("spm_titulograf_" + i).className.remove("titulofixa");
+        document.getElementById("spm_titulograf_" + i).classList.remove("titulofixa");
         document.getElementById("spm_conteudo_" + i).style.display = "none";
     }
 
     if (n != lastsupermenuopen) {
-        document.getElementById("spm_titulograf_" + n).className.add("titulofixa");
+        document.getElementById("spm_titulograf_" + n).classList.add("titulofixa");
         document.getElementById("spm_conteudo_" + n).style.display = "block";
     }
 
