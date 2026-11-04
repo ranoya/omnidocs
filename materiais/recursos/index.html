@@ -407,10 +407,10 @@
         let dataselected = [];
         let primeravez = true;
 
-        omnifilter = function(dados) {
+        omnifilter = function(dadoso) {
 
-            fulldataset = dados;
-            //let dadoscombrancos = selecte(dadosfull, document.getElementById("shadowfiltro").value);
+            fulldataset = dadoso;
+            let dados = selecte(dadoso, document.getElementById("shadowfiltro").value);
 
             let catalogos = tags(dados, "tipo", ";");
   
