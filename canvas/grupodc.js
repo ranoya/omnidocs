@@ -1312,11 +1312,11 @@ window.projetodigitalhumanities = function () {
         newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Cultura&p=t&bg=eceef4&fg=555555&filtra=_DHCulture", "Bibliografia Cultura e Digital Humanities", 660, 810, 5250, 840);
     }
 
-    if (!exist("Expressões das Digial Humanities")) {
-        newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Express%C3%B5es%20das%20Digital%20Humanities&p=t&bg=eceef4&fg=555555&filtra=_DHExpressions", "Expressões das Digial Humanities", 660, 810, 6060, 840);
+    if (!exist("Expressões das Digital Humanities")) {
+        newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Express%C3%B5es%20das%20Digital%20Humanities&p=t&bg=eceef4&fg=555555&filtra=_DHExpressions", "Expressões das Digital Humanities", 660, 810, 6060, 840);
     }
 
-    connect("Bibliografia Cultura e Digital Humanities", "Expressões das Digial Humanities");
+    connect("Bibliografia Cultura e Digital Humanities", "Expressões das Digital Humanities");
     connect("Bibliografia Cultura e Digital Humanities", "Bibliografia Conceitos em Digital Humanities");
     connect("Bibliografia Digital Humanities", "Bibliografia Conceitos em Digital Humanities");
     connect("Bibliografia Digital Humanities", "Projeto Humanidades Digitais");
@@ -1330,6 +1330,55 @@ window.projetodigitalhumanities = function () {
     center("Projeto Humanidades Digitais");
 }
 
+window.bibliografiaDHGeral = function () {
+    if (!exist("Bibliografia Digital Humanities")) {
+        newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Humanidades%20Digitais&p=t&bg=eceef4&fg=555555&filtra=_DHumanities", "Bibliografia Digital Humanities", 660, 810, 3630, 840);
+    }
+
+    connect("Bibliografia Digital Humanities", "Bibliografia Conceitos em Digital Humanities");
+    connect("Bibliografia Digital Humanities", "Projeto Humanidades Digitais");
+    connect("Glossários", "Digital Humanities");
+    center("Bibliografia Digital Humanities");
+}
+
+window.bibliografiaDHConceitos = function () {
+    if (!exist("Bibliografia Conceitos em Digital Humanities")) {
+        newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Conceitos&p=t&bg=eceef4&fg=555555&filtra=_DHConcept", "Bibliografia Conceitos em Digital Humanities", 660, 810, 4440, 840);
+    }
+
+    connect("Bibliografia Cultura e Digital Humanities", "Bibliografia Conceitos em Digital Humanities");
+    connect("Bibliografia Digital Humanities", "Bibliografia Conceitos em Digital Humanities");
+    center("Bibliografia Conceitos em Digital Humanities");
+
+}
+
+window.bibliografiaDHCultura = function () {
+    if (!exist("Bibliografia Cultura e Digital Humanities")) {
+        newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Cultura&p=t&bg=eceef4&fg=555555&filtra=_DHCulture", "Bibliografia Cultura e Digital Humanities", 660, 810, 5250, 840);
+    }
+
+    connect("Bibliografia Cultura e Digital Humanities", "Bibliografia Conceitos em Digital Humanities");
+    center("Bibliografia Cultura e Digital Humanities");
+}
+
+window.bibliografiaDHExpressoes = function () {
+    if (!exist("Expressões das Digital Humanities")) {
+        newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?titulo=Express%C3%B5es%20das%20Digital%20Humanities&p=t&bg=eceef4&fg=555555&filtra=_DHExpressions", "Expressões das Digital Humanities", 660, 810, 6060, 840);
+    }
+
+    connect("Bibliografia Cultura e Digital Humanities", "Expressões das Digital Humanities");
+    center("Expressões das Digital Humanities")
+    
+}
+
+window.glossarios = function () {
+    if (!exist("Glossários")) {
+        newidoc("https://omnidocs.vercel.app/glossario/?&p=t&fg=53506b&bg=fbe4dd&filtra=&titulo=Gloss%C3%A1rios", "Glossários", 660, 810, 810, 840);
+    }
+
+    connect("Glossários", "Digital Humanities");
+    center("Glossários");
+}
 
 window.projetomidiasoftware = function () {
     if (!exist("Mídia+Software")) {
@@ -1567,7 +1616,7 @@ if (typeof localStorage.getItem('firsttime') == 'undefined' || localStorage.getI
 */
 
 
-supermenubar("GRUPO DE PESQUISA INTEGRADA EM DESIGN + COMPUTAÇÃO")
+supermenubar("GRUPO DE PESQUISA INTEGRADA EM DESIGN + COMPUTAÇÃO [D+C]")
     ;
 registermenu(30, "PROJETOS", [ 
     { label: "Grupo de Pesquisa", run: "window.grupodepesquisa()" },
@@ -1577,6 +1626,7 @@ registermenu(30, "PROJETOS", [
     { label: "Narrativas Interativas", run: "window.projetonarrativas()" },
     { label: "Digital Humanities", run: "window.projetodigitalhumanities()" },
     { label: "Estudos em Mídia/Software", run: "window.projetomidiasoftware()" },
+    { label: "--" },
     { label: "Relatórios", run: "window.relatorios()" }
 
 ]);
@@ -1586,15 +1636,23 @@ registermenu(120, "BIBLIOGRAFIAS", [
     { label: "Biblioteca Completa", run: "window.biblioteca()" },
     { label: "--" },
     { label: "Bibliografia sobre Narrativas", run: "window.bibliografianarrativa()" },
-    { label: "Bibliografia sobre Mídia+Software", run: "window.bibliografiaems()"}
+    { label: "Bibliografia sobre Mídia+Software", run: "window.bibliografiaems()" },
+    { label: "Bibliografia de Digital Humanities", run: "window.bibliografiaDHGeral()" },
+    { label: "Bibliografia de Conceitos em Digital Humanities", run: "window.bibliografiaDHConceitos()" },
+    { label: "Bibliografia de Aspectos Culturais nas Digital Humanities", run: "window.bibliografiaDHCultura()" },
+    { label: "Bibliografia sobre Expressões das Digital Humanities", run: "window.bibliografiaDHExpressoes()" },
+    { label: "--" },
+    { label: "Glossários", run: "window.glossarios()"},
 ]);
                                 
 registermenu(240, "RECURSOS", [
     { label: "Agendar Orientação", run: "window.agendas()" },
     { label: "--" },
+    { label: "Quadro Compartilhado", run: "window.quadro()" },
+    { label: "--" },
     { label: "Acervos e Materiais", run: "window.acervos()" },
-    { label: "Recursos de IA", run: "window.recursos()" },
-    { label: "Quadro Compartilhado", run: "window.quadro()" }
+    { label: "Recursos de IA", run: "window.recursos()" }
+    
 ]);
 
 registermenu(330, "CANVAS", [
@@ -1602,14 +1660,12 @@ registermenu(330, "CANVAS", [
     { label: "Zoom 75%", run: "setZoom(.75)" },
     { label: "Zoom 65%", run: "setZoom(.65)"},
     { label: "Zoom 50%", run: "setZoom(.5)" },
-    { label: "Zoom 35%", run: "setZoom(.35)" },
-    { label: "Zoom 20%", run: "setZoom(.2)"},
     { label: "--" },
     { label: "Linha de Comando", run: "floatdevmode()" },
+    { label: "Fecha Linha de Comando", run: "nodev()" },
 ]);
 
 
 
 setZoom(.8);
 grupodepesquisa();
-
