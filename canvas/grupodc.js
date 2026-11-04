@@ -21,6 +21,7 @@ window.mapaprojetos = function() {
     connect("Projetos", "Narrativas Interativas");
     connect("Projetos", "Digital Humanities");
     connect("Projetos", "Mídia+Software");
+    connect("Projetos", "ART/ANC/ODE");
 
 
     lock("Projetos");
