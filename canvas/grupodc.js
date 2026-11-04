@@ -1568,11 +1568,6 @@ if (typeof localStorage.getItem('firsttime') == 'undefined' || localStorage.getI
 */
 
 
-grupodepesquisa();
-setZoom(.8);
-
-
-
 supermenubar("GRUPO DE PESQUISA INTEGRADA EM DESIGN + COMPUTAÇÃO")
     ;
 registermenu(30, "PROJETOS", [ 
@@ -1601,4 +1596,9 @@ registermenu(240, "RECURSOS", [
     { label: "Recursos de IA", run: "window.recursos()" },
     { label: "Quadro Compartilhado", run: "window.quadro()" }
 ]);
+
+
+
+setZoom(.8);
+grupodepesquisa();
 
