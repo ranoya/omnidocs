@@ -1,6 +1,5 @@
 multicolor();
 setTempTheme("Rose Pine Moon");
-setTransparentBackground();
 
 snap();
 
