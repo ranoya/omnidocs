@@ -2515,76 +2515,76 @@ registermenu(30, "DISCIPLINA", [
     { label: "* EMENTA PPGDESIGN", run: "" },
     { label: "* EMENTA PROFEDIGITAL", run: "" },
     { label: "--" },
-    { label: "LOUSA", run: "window.openlousa()" },
+    { label: "LOUSA", run: "openlousa()" },
     { label: "--" },
-    { label: 'BIBLIOGRAFIA', run: "window.bibliotecacompleta()" },
+    { label: 'BIBLIOGRAFIA', run: "bibliotecacompleta()" },
     { label: "--" },
-    { label: 'PESQUISA EM DIGITAL HUMANITIES', run: "window.pesquisa()" },
-    { label: 'ESTUDOS EM MÍDIA/SOFTWARE', run: "window.openprojetomidiasoftware()" },
-    { label: 'NARRATIVAS INTERATIVAS', run: "window.openprojetonarrativasinterativas()" },
-    { label: 'ESCRITA DINÂMICA', run: "window.openprojetoescritadinamica()" },
-    { label: 'ARQUEOLOGIA E PRESERVAÇÃO DE SOFTWARE', run: "window.openprojetopreservacao()" },
-    { label: 'ART/ANC/ODE', run: "window.openprojetoartancode()" },
+    { label: 'PESQUISA EM DIGITAL HUMANITIES', run: "pesquisa()" },
+    { label: 'ESTUDOS EM MÍDIA/SOFTWARE', run: "openprojetomidiasoftware()" },
+    { label: 'NARRATIVAS INTERATIVAS', run: "openprojetonarrativasinterativas()" },
+    { label: 'ESCRITA DINÂMICA', run: "openprojetoescritadinamica()" },
+    { label: 'ARQUEOLOGIA E PRESERVAÇÃO DE SOFTWARE', run: "openprojetopreservacao()" },
+    { label: 'ART/ANC/ODE', run: "openprojetoartancode()" },
     { label: "--" },
-    { label: 'SLIDES DE CULTURA DE DADOS', run: "window.mapaprojetos()" },
-    { label: 'DADOS SÃO UM PROBLEMA HUMANO', run: "window.mapaprojetos()" },
-    { label: 'DA PRÁTICA À PESQUISA', run: "window.mapaprojetos()" },
-    { label: 'CIÊNCIA, DESIGN E PROGRAMAÇÃO', run: "window.mapaprojetos()" },
-    { label: 'HIPERTEXTO / HIPERMÍDIA', run: "window.mapaprojetos()" },
-    { label: 'DOCUMENTOS INTELIGENTES', run: "window.mapaprojetos()" },
-    { label: 'INTERACTIVE TEXTBOOKS', run: "window.mapaprojetos()" },
-    { label: 'INTERACTIVE STORYTELLING', run: "window.mapaprojetos()" }
+    { label: 'SLIDES DE CULTURA DE DADOS', run: "mapaprojetos()" },
+    { label: 'DADOS SÃO UM PROBLEMA HUMANO', run: "mapaprojetos()" },
+    { label: 'DA PRÁTICA À PESQUISA', run: "mapaprojetos()" },
+    { label: 'CIÊNCIA, DESIGN E PROGRAMAÇÃO', run: "mapaprojetos()" },
+    { label: 'HIPERTEXTO / HIPERMÍDIA', run: "mapaprojetos()" },
+    { label: 'DOCUMENTOS INTELIGENTES', run: "mapaprojetos()" },
+    { label: 'INTERACTIVE TEXTBOOKS', run: "mapaprojetos()" },
+    { label: 'INTERACTIVE STORYTELLING', run: "mapaprojetos()" }
 ]);
 
 registermenu(120, "CULTURA", [
-    { label: "BIBLIOGRAFIA SOBRE EXPRESSÕES DAS DIGITAL HUMANITIES", run: "window.bibliotecaexpressoes()" },
-    { label: "DIGITAL HUMANITIES MANIFESTO 2.0", run: "window.openmanifesto()" },
-    { label: "READ ME! THE NETTIME BIBLE", run: "window.openreadmeascii()" },
+    { label: "BIBLIOGRAFIA SOBRE EXPRESSÕES DAS DIGITAL HUMANITIES", run: "bibliotecaexpressoes()" },
+    { label: "DIGITAL HUMANITIES MANIFESTO 2.0", run: "openmanifesto()" },
+    { label: "READ ME! THE NETTIME BIBLE", run: "openreadmeascii()" },
     { label: "--" },
-    { label: "LITERATURA E NARRATIVAS", run: "window.literatura()" },
+    { label: "LITERATURA E NARRATIVAS", run: "literatura()" },
     { label: "--" },
-    { label: "INTERACTIVE NOVELS / INTERACTIVE FICTION", run: "window.openliteraturadigital()" },
-    { label: "RETÓRICA PROCEDIMENTAL", run: "window.openproceduralrethoric()" },
-    { label: "MAIS FORMATOS NARRATIVOS", run: "window.openmaisformatosnarrativos()" }
+    { label: "INTERACTIVE NOVELS / INTERACTIVE FICTION", run: "openliteraturadigital()" },
+    { label: "RETÓRICA PROCEDIMENTAL", run: "openproceduralrethoric()" },
+    { label: "MAIS FORMATOS NARRATIVOS", run: "openmaisformatosnarrativos()" }
 
 ]);
                            
 registermenu(200, "ARTEFATOS", [
-    { label: "PRODUÇÃO EDITORIAL E JORNALISMO DE DADOS", run: "window.opentheeconomist()" },
-    { label: "ACERVO DE VISUALIZAÇÕES", run: "window.tipologiaviz_tudo()" },
-    { label: "VISUALIZAÇÃO SOBRE O GITHUB", run: "window.openvisgithub()" },
+    { label: "PRODUÇÃO EDITORIAL E JORNALISMO DE DADOS", run: "opentheeconomist()" },
+    { label: "ACERVO DE VISUALIZAÇÕES", run: "tipologiaviz_tudo()" },
+    { label: "VISUALIZAÇÃO SOBRE O GITHUB", run: "openvisgithub()" },
     { label: "--" },
-    { label: "DOCUMENTAÇÃO, COLEÇÕES E ACERVOS", run: "window.opendocumentacao()" },
-    { label: "ACERVO DA PESQUISA EM BULLETPOINTS", run: "window.openbulletpoints()" },
-    { label: "CODEX ATLANTICUS", run: "window.codexatlanticus()" },
+    { label: "DOCUMENTAÇÃO, COLEÇÕES E ACERVOS", run: "opendocumentacao()" },
+    { label: "ACERVO DA PESQUISA EM BULLETPOINTS", run: "openbulletpoints()" },
+    { label: "CODEX ATLANTICUS", run: "codexatlanticus()" },
     { label: "--" },
-    { label: "INTERACTIVE NOVELS / INTERACTIVE FICTION", run: "window.openliteraturadigital()" },
-    { label: "RETÓRICA PROCEDIMENTAL", run: "window.openproceduralrethoric()" },
+    { label: "INTERACTIVE NOVELS / INTERACTIVE FICTION", run: "openliteraturadigital()" },
+    { label: "RETÓRICA PROCEDIMENTAL", run: "openproceduralrethoric()" },
     { label: "MAIS FORMATOS NARRATIVOS", run: "windowopenmaisformatosnarrativos()" },
     { label: "--" },
-    { label: "NOTION / CODA / AIRTABLE", run: "window.opencoda()" }
+    { label: "NOTION / CODA / AIRTABLE", run: "opencoda()" }
     
 ]);
 
 registermenu(295, "DESIGN", [
-    { label: "DESIGN E DIGITAL HUMANITIES", run: "window.design()" },
+    { label: "DESIGN E DIGITAL HUMANITIES", run: "design()" },
     { label: "--" },
-    { label: "VISUALIZAÇÃO DE DADOS", run: "window.dataviz()" },
+    { label: "VISUALIZAÇÃO DE DADOS", run: "dataviz()" },
     { label: "--" },
-    { label: "PUBLICAÇÕES INTERATIVAS", run: "window.openpublicacoes()" },
+    { label: "PUBLICAÇÕES INTERATIVAS", run: "openpublicacoes()" },
 ]);
 
 
 registermenu(370, "DADOS", [
-    { label: "SLIDES DE CULTURA DE DADOS", run: "window.openculturadedados()" },
+    { label: "SLIDES DE CULTURA DE DADOS", run: "openculturadedados()" },
     { label: "--" },
-    { label: "VISUALIZAÇÃO DE DADOS", run: "window.dataviz()" },
-    { label: "NOTEBOOKS COMPUTACIONAIS", run: "window.notebookscomputacionais()" },
+    { label: "VISUALIZAÇÃO DE DADOS", run: "dataviz()" },
+    { label: "NOTEBOOKS COMPUTACIONAIS", run: "notebookscomputacionais()" },
     { label: "--" },
-    { label: "NOTION / CODA / AIRTABLE", run: "window.opencoda()" },
+    { label: "NOTION / CODA / AIRTABLE", run: "opencoda()" },
     { label: "--" },
-    { label: "VISUALIZAÇÃO SOBRE O GITHUB", run: "window.openvisgithub()" },
-    { label: "PRODUÇÃO EDITORIAL E JORNALISMO DE DADOS", run: "window.opentheeconomist()" },
+    { label: "VISUALIZAÇÃO SOBRE O GITHUB", run: "openvisgithub()" },
+    { label: "PRODUÇÃO EDITORIAL E JORNALISMO DE DADOS", run: "opentheeconomist()" },
     { label: "* FERRAMENTAS EM USO", run: "" },
     { label: "* O QUE HÁ POR TRÁS DA VISUALIZAÇÃO", run: "" },
 
