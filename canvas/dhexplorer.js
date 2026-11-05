@@ -2536,7 +2536,7 @@ registermenu(30, "DISCIPLINA", [
     { label: 'INTERACTIVE STORYTELLING', run: "window.mapaprojetos()" }
 ]);
 
-registermenu(140, "CULTURA", [
+registermenu(120, "CULTURA", [
     { label: "BIBLIOGRAFIA SOBRE EXPRESSÕES DAS DIGITAL HUMANITIES", run: "window.bibliotecaexpressoes()" },
     { label: "DIGITAL HUMANITIES MANIFESTO 2.0", run: "window.openmanifesto()" },
     { label: "READ ME! THE NETTIME BIBLE", run: "window.openreadmeascii()" },
@@ -2549,7 +2549,7 @@ registermenu(140, "CULTURA", [
 
 ]);
                            
-registermenu(220, "ARTEFATOS", [
+registermenu(200, "ARTEFATOS", [
     { label: "PRODUÇÃO EDITORIAL E JORNALISMO DE DADOS", run: "window.opentheeconomist()" },
     { label: "ACERVO DE VISUALIZAÇÕES", run: "window.tipologiaviz_tudo()" },
     { label: "VISUALIZAÇÃO SOBRE O GITHUB", run: "window.openvisgithub()" },
@@ -2566,7 +2566,7 @@ registermenu(220, "ARTEFATOS", [
     
 ]);
 
-registermenu(320, "DESIGN", [
+registermenu(295, "DESIGN", [
     { label: "DESIGN E DIGITAL HUMANITIES", run: "window.design()" },
     { label: "--" },
     { label: "VISUALIZAÇÃO DE DADOS", run: "window.dataviz()" },
@@ -2575,7 +2575,7 @@ registermenu(320, "DESIGN", [
 ]);
 
 
-registermenu(390, "DADOS", [
+registermenu(370, "DADOS", [
     { label: "SLIDES DE CULTURA DE DADOS", run: "window.openculturadedados()" },
     { label: "--" },
     { label: "VISUALIZAÇÃO DE DADOS", run: "window.dataviz()" },
@@ -2592,7 +2592,7 @@ registermenu(390, "DADOS", [
 
 
 
-registermenu(450, "DATAVIZ", [
+registermenu(445, "DATAVIZ", [
     { label: "ARTEFATOS DE VISUALIZAÇÃO", run: "window.tipologiaviz_tudo()" },
     { label: "NARRATIVAS COM INTERAÇÃO", run: "window.tipologiaviz_narrativasinteracao()" },
     { label: "COMPONENTES DE DATAVIZ", run: "window.tipologiaviz_componentesdataviz()"},
@@ -2612,7 +2612,7 @@ registermenu(450, "DATAVIZ", [
 ]);
 
 
-registermenu(530, "VÍDEOS", [
+registermenu(525, "VÍDEOS", [
     { label: "AULAS DE OBSERVABLE PARA DATAVIZ", run: "window.openaulasobservable()" },
     { label: "SVG", run: "window.openaulassvg()" },
     { label: "--" },
