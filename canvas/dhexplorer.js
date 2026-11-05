@@ -2526,15 +2526,16 @@ registermenu(30, "DISCIPLINA", [
     { label: 'ARQUEOLOGIA E PRESERVAÇÃO DE SOFTWARE', run: "openprojetopreservacao()" },
     { label: 'ART/ANC/ODE', run: "openprojetoartancode()" },
     { label: "--" },
-    { label: 'SLIDES DE CULTURA DE DADOS', run: "mapaprojetos()" },
-    { label: 'DADOS SÃO UM PROBLEMA HUMANO', run: "mapaprojetos()" },
-    { label: 'DA PRÁTICA À PESQUISA', run: "mapaprojetos()" },
-    { label: 'CIÊNCIA, DESIGN E PROGRAMAÇÃO', run: "mapaprojetos()" },
-    { label: 'HIPERTEXTO / HIPERMÍDIA', run: "mapaprojetos()" },
-    { label: 'DOCUMENTOS INTELIGENTES', run: "mapaprojetos()" },
-    { label: 'INTERACTIVE TEXTBOOKS', run: "mapaprojetos()" },
-    { label: 'INTERACTIVE STORYTELLING', run: "mapaprojetos()" }
+    { label: 'SLIDES DE CULTURA DE DADOS', run: "openculturadedados()" },
+    { label: 'DADOS SÃO UM PROBLEMA HUMANO', run: "opendadoshumanos()" },
+    { label: 'DA PRÁTICA À PESQUISA', run: "openpraticapesquisa()" },
+    { label: 'CIÊNCIA, DESIGN E PROGRAMAÇÃO', run: "opencienciaprogramacao()" },
+    { label: 'HIPERTEXTO / HIPERMÍDIA', run: "openslideshypermedia()" },
+    { label: 'DOCUMENTOS INTELIGENTES', run: "openslidesdocsinteligentes()" },
+    { label: 'INTERACTIVE TEXTBOOKS', run: "openslidesinteractivetextbooks()" },
+    { label: 'INTERACTIVE STORYTELLING', run: "materialinterativestorytelling()" }
 ]);
+
 
 registermenu(120, "CULTURA", [
     { label: "BIBLIOGRAFIA SOBRE EXPRESSÕES DAS DIGITAL HUMANITIES", run: "bibliotecaexpressoes()" },
