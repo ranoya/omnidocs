@@ -2507,3 +2507,138 @@ let codexatlanticus = function () {
 
     center("Codex Atlanticus");
 }
+
+
+supermenubar("DIGITAL HUMANITIES</b>");
+
+registermenu(30, "DISCIPLINA", [ 
+    { label: "* EMENTA PPGDESIGN", run: "" },
+    { label: "* EMENTA PROFEDIGITAL", run: "" },
+    { label: "--" },
+    { label: "LOUSA", run: "window.openlousa()" },
+    { label: "--" },
+    { label: 'BIBLIOGRAFIA', run: "window.bibliotecacompleta()" },
+    { label: "--" },
+    { label: 'PESQUISA EM DIGITAL HUMANITIES', run: "window.pesquisa()" },
+    { label: 'ESTUDOS EM MÍDIA/SOFTWARE', run: "window.openprojetomidiasoftware()" },
+    { label: 'NARRATIVAS INTERATIVAS', run: "window.openprojetonarrativasinterativas()" },
+    { label: 'ESCRITA DINÂMICA', run: "window.openprojetoescritadinamica()" },
+    { label: 'ARQUEOLOGIA E PRESERVAÇÃO DE SOFTWARE', run: "window.openprojetopreservacao()" },
+    { label: 'ART/ANC/ODE', run: "window.openprojetoartancode()" },
+    { label: "--" },
+    { label: 'SLIDES DE CULTURA DE DADOS', run: "window.mapaprojetos()" },
+    { label: 'DADOS SÃO UM PROBLEMA HUMANO', run: "window.mapaprojetos()" },
+    { label: 'DA PRÁTICA À PESQUISA', run: "window.mapaprojetos()" },
+    { label: 'CIÊNCIA, DESIGN E PROGRAMAÇÃO', run: "window.mapaprojetos()" },
+    { label: 'HIPERTEXTO / HIPERMÍDIA', run: "window.mapaprojetos()" },
+    { label: 'DOCUMENTOS INTELIGENTES', run: "window.mapaprojetos()" },
+    { label: 'INTERACTIVE TEXTBOOKS', run: "window.mapaprojetos()" },
+    { label: 'INTERACTIVE STORYTELLING', run: "window.mapaprojetos()" }
+]);
+
+registermenu(140, "CULTURA", [
+    { label: "BIBLIOGRAFIA SOBRE EXPRESSÕES DAS DIGITAL HUMANITIES", run: "window.bibliotecaexpressoes()" },
+    { label: "DIGITAL HUMANITIES MANIFESTO 2.0", run: "window.openmanifesto()" },
+    { label: "READ ME! THE NETTIME BIBLE", run: "window.openreadmeascii()" },
+    { label: "--" },
+    { label: "LITERATURA E NARRATIVAS", run: "window.literatura()" },
+    { label: "--" },
+    { label: "INTERACTIVE NOVELS / INTERACTIVE FICTION", run: "window.openliteraturadigital()" },
+    { label: "RETÓRICA PROCEDIMENTAL", run: "window.openproceduralrethoric()" },
+    { label: "MAIS FORMATOS NARRATIVOS", run: "window.openmaisformatosnarrativos()" }
+
+]);
+                           
+registermenu(220, "ARTEFATOS", [
+    { label: "PRODUÇÃO EDITORIAL E JORNALISMO DE DADOS", run: "window.opentheeconomist()" },
+    { label: "ACERVO DE VISUALIZAÇÕES", run: "window.tipologiaviz_tudo()" },
+    { label: "VISUALIZAÇÃO SOBRE O GITHUB", run: "window.openvisgithub()" },
+    { label: "--" },
+    { label: "DOCUMENTAÇÃO, COLEÇÕES E ACERVOS", run: "window.opendocumentacao()" },
+    { label: "ACERVO DA PESQUISA EM BULLETPOINTS", run: "window.openbulletpoints()" },
+    { label: "CODEX ATLANTICUS", run: "window.codexatlanticus()" },
+    { label: "--" },
+    { label: "INTERACTIVE NOVELS / INTERACTIVE FICTION", run: "window.openliteraturadigital()" },
+    { label: "RETÓRICA PROCEDIMENTAL", run: "window.openproceduralrethoric()" },
+    { label: "MAIS FORMATOS NARRATIVOS", run: "windowopenmaisformatosnarrativos()" },
+    { label: "--" },
+    { label: "NOTION / CODA / AIRTABLE", run: "window.opencoda()" }
+    
+]);
+
+registermenu(320, "DESIGN", [
+    { label: "DESIGN E DIGITAL HUMANITIES", run: "window.design()" },
+    { label: "--" },
+    { label: "VISUALIZAÇÃO DE DADOS", run: "window.dataviz()" },
+    { label: "--" },
+    { label: "PUBLICAÇÕES INTERATIVAS", run: "window.openpublicacoes()" },
+]);
+
+
+registermenu(390, "DADOS", [
+    { label: "SLIDES DE CULTURA DE DADOS", run: "window.openculturadedados()" },
+    { label: "--" },
+    { label: "VISUALIZAÇÃO DE DADOS", run: "window.dataviz()" },
+    { label: "NOTEBOOKS COMPUTACIONAIS", run: "window.notebookscomputacionais()" },
+    { label: "--" },
+    { label: "NOTION / CODA / AIRTABLE", run: "window.opencoda()" },
+    { label: "--" },
+    { label: "VISUALIZAÇÃO SOBRE O GITHUB", run: "window.openvisgithub()" },
+    { label: "PRODUÇÃO EDITORIAL E JORNALISMO DE DADOS", run: "window.opentheeconomist()" },
+    { label: "* FERRAMENTAS EM USO", run: "" },
+    { label: "* O QUE HÁ POR TRÁS DA VISUALIZAÇÃO", run: "" },
+
+]);
+
+
+
+registermenu(450, "DATAVIZ", [
+    { label: "ARTEFATOS DE VISUALIZAÇÃO", run: "window.tipologiaviz_tudo()" },
+    { label: "NARRATIVAS COM INTERAÇÃO", run: "window.tipologiaviz_narrativasinteracao()" },
+    { label: "COMPONENTES DE DATAVIZ", run: "window.tipologiaviz_componentesdataviz()"},
+    { label: "NARRATIVAS INTERATIVAS COM DATAVIZ", run: "window.tipologiaviz_narrativasinterativascomdataviz()" },
+    { label: "NARRATIVAS COM DADOS", run: "window.tipologiaviz_narrativascomdados()" },
+    { label: "APRESENTAÇÕES COM DADOS", run: "window.tipologiaviz_apresentacoescomdados()" },
+    { label: "INFOGRAFIA", run: "window.tipologiaviz_infografia()" },
+    { label: "INTERFACES PARA DADOS", run: "window.tipologiaviz_interfacesparadados()" },
+    { label: "FISICALIZAÇÃO DE DADOS", run: "window.tipologiaviz_fisicalizacao()" },
+    { label: "--" },
+    { label: "PRODUÇÃO EDITORIAL E JORNALISMO DE DADOS", run: "window.opentheeconomist()" },
+    { label: "* FERRAMENTAS EM USO", run: "" },
+    { label: "--" },
+    { label: "DATA DRIVEN DOCUMENTS (D3)", run: "window.aulasd3()" },
+    { label: "--" },
+    { label: "* O QUE HÁ POR TRÁS DA VISUALIZAÇÃO", run: "" },
+]);
+
+
+registermenu(530, "VÍDEOS", [
+    { label: "AULAS DE OBSERVABLE PARA DATAVIZ", run: "window.openaulasobservable()" },
+    { label: "SVG", run: "window.openaulassvg()" },
+    { label: "--" },
+    { label: "INTERFACE OU VISUALIZAÇÃO?", run: "window.videointerfaceouviz()"},
+    { label: "PALESTRA DO THEO GRAY", run: "window.videotheogray()" },
+    { label: "MYSQL E A ORIGEM DOS PROBLEMAS DE VISUALIZAÇÃO", run: "window.videoorigemviz()" },
+    { label: "--" },
+    { label: "* MACINTOSH + MATHEMATICA", run: "" },
+    { label: "* WOLFRAM NOTEBOOKS", run: "" },
+    { label: "* TABELAS GIGANTES E A ORIGEM DOS PROBLEMAS DE VISUALIZAÇÃO", run: "" },
+    { label: "* SPREADSHEET INTERFACE", run: "" },
+]);
+
+registermenu(600, "CANVAS", [
+    { label: "LIMPA A TELA", run: "removeall()" },
+    { label: "LINHA DE COMANDO", run: "window.devmode()" },
+    { label: "--" },
+    { label: "ZOOM 100%", run: "setZoom(1)" },
+    { label: "ZOOM 65%", run: "setZoom(.65)" },
+    { label: "ZOOM 50%", run: "setZoom(.5)" },
+    { label: "ZOOM 25%", run: "setZoom(.25)" },
+    { label: "--" },
+    { label: "* NOTEBOOK DE PROGRAMAÇÃO CRIATIVA", run: "" },
+    { label: "* PRIMEIRA TESE EM HIPERTEXTO (1992)", run: "" },
+    { label: "* DASHBOARDS DE PESQUISA", run: "" },
+    { label: "--" },
+    { label: "* FORMAS DE PUBLICAÇÃO DE NOTEBOOKS", run: "" },
+]);
+
