@@ -2593,32 +2593,32 @@ registermenu(370, "DADOS", [
 
 
 registermenu(445, "DATAVIZ", [
-    { label: "ARTEFATOS DE VISUALIZAÇÃO", run: "window.tipologiaviz_tudo()" },
-    { label: "NARRATIVAS COM INTERAÇÃO", run: "window.tipologiaviz_narrativasinteracao()" },
-    { label: "COMPONENTES DE DATAVIZ", run: "window.tipologiaviz_componentesdataviz()"},
-    { label: "NARRATIVAS INTERATIVAS COM DATAVIZ", run: "window.tipologiaviz_narrativasinterativascomdataviz()" },
-    { label: "NARRATIVAS COM DADOS", run: "window.tipologiaviz_narrativascomdados()" },
-    { label: "APRESENTAÇÕES COM DADOS", run: "window.tipologiaviz_apresentacoescomdados()" },
-    { label: "INFOGRAFIA", run: "window.tipologiaviz_infografia()" },
-    { label: "INTERFACES PARA DADOS", run: "window.tipologiaviz_interfacesparadados()" },
-    { label: "FISICALIZAÇÃO DE DADOS", run: "window.tipologiaviz_fisicalizacao()" },
+    { label: "ARTEFATOS DE VISUALIZAÇÃO", run: "tipologiaviz_tudo()" },
+    { label: "NARRATIVAS COM INTERAÇÃO", run: "tipologiaviz_narrativasinteracao()" },
+    { label: "COMPONENTES DE DATAVIZ", run: "tipologiaviz_componentesdataviz()"},
+    { label: "NARRATIVAS INTERATIVAS COM DATAVIZ", run: "tipologiaviz_narrativasinterativascomdataviz()" },
+    { label: "NARRATIVAS COM DADOS", run: "tipologiaviz_narrativascomdados()" },
+    { label: "APRESENTAÇÕES COM DADOS", run: "tipologiaviz_apresentacoescomdados()" },
+    { label: "INFOGRAFIA", run: "tipologiaviz_infografia()" },
+    { label: "INTERFACES PARA DADOS", run: "tipologiaviz_interfacesparadados()" },
+    { label: "FISICALIZAÇÃO DE DADOS", run: "tipologiaviz_fisicalizacao()" },
     { label: "--" },
-    { label: "PRODUÇÃO EDITORIAL E JORNALISMO DE DADOS", run: "window.opentheeconomist()" },
+    { label: "PRODUÇÃO EDITORIAL E JORNALISMO DE DADOS", run: "opentheeconomist()" },
     { label: "* FERRAMENTAS EM USO", run: "" },
     { label: "--" },
-    { label: "DATA DRIVEN DOCUMENTS (D3)", run: "window.aulasd3()" },
+    { label: "DATA DRIVEN DOCUMENTS (D3)", run: "aulasd3()" },
     { label: "--" },
     { label: "* O QUE HÁ POR TRÁS DA VISUALIZAÇÃO", run: "" },
 ]);
 
 
 registermenu(525, "VÍDEOS", [
-    { label: "AULAS DE OBSERVABLE PARA DATAVIZ", run: "window.openaulasobservable()" },
-    { label: "SVG", run: "window.openaulassvg()" },
+    { label: "AULAS DE OBSERVABLE PARA DATAVIZ", run: "openaulasobservable()" },
+    { label: "SVG", run: "openaulassvg()" },
     { label: "--" },
-    { label: "INTERFACE OU VISUALIZAÇÃO?", run: "window.videointerfaceouviz()"},
-    { label: "PALESTRA DO THEO GRAY", run: "window.videotheogray()" },
-    { label: "MYSQL E A ORIGEM DOS PROBLEMAS DE VISUALIZAÇÃO", run: "window.videoorigemviz()" },
+    { label: "INTERFACE OU VISUALIZAÇÃO?", run: "videointerfaceouviz()"},
+    { label: "PALESTRA DO THEO GRAY", run: "videotheogray()" },
+    { label: "MYSQL E A ORIGEM DOS PROBLEMAS DE VISUALIZAÇÃO", run: "videoorigemviz()" },
     { label: "--" },
     { label: "* MACINTOSH + MATHEMATICA", run: "" },
     { label: "* WOLFRAM NOTEBOOKS", run: "" },
@@ -2628,7 +2628,7 @@ registermenu(525, "VÍDEOS", [
 
 registermenu(600, "CANVAS", [
     { label: "LIMPA A TELA", run: "removeall()" },
-    { label: "LINHA DE COMANDO", run: "window.devmode()" },
+    { label: "LINHA DE COMANDO", run: "devmode()" },
     { label: "--" },
     { label: "ZOOM 100%", run: "setZoom(1)" },
     { label: "ZOOM 65%", run: "setZoom(.65)" },
