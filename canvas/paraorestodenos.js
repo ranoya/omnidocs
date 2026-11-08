@@ -1,6 +1,4 @@
-devmode();
-state();
-widget("State");
+
 
 multicolor();
 
@@ -48,9 +46,13 @@ newidoc("https://namco.vercel.app/sx/?DISK_FILES=print2.bas&BASIC_LOAD=print2.ba
 
 
 connect("Pier", "10 PRINT");
+connect("Apple II Logo", "Cambridge");
 connect("Pier", "Apple II BASIC");
 connect("Apple II Logo", "Apple II");
 connect("Apple II BASIC", "Apple II");
-connect("Apple II Logo", "Cambridge");
 
 lockall();
+
+devmode();
+state();
+widget("State");
