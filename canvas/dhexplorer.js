@@ -1742,7 +1742,7 @@ let notebookscomputacionais = function () {
     connect("N1", "N2");
 
     if (!exist("Stephen Wolfram")) {
-        polaroid("https://zdpdvwhvukelzzbzbjvh.supabase.co/storage/v1/object/public/imported-images/1767022360525-db5d5e1a-8867-48bd-b6c4-cf17edb8dcff-6gebf9.webp", "Stephen Wolfram foi criador, junto a Theo Gray, do software Wolfram Mathematica em 1987, primeira ferramenta de programação com interface de Notebook Computacional", "Stephen Wolfram", 420, 570, 3300, 3840);
+        polaroid("https://omnifolio.vercel.app/omnifiles/StephenWolfram.jpg", "Stephen Wolfram foi criador, junto a Theo Gray, do software Wolfram Mathematica em 1987, primeira ferramenta de programação com interface de Notebook Computacional", "Stephen Wolfram", 420, 570, 3300, 3840);
     }
 
     if (!exist("Theo Gray")) {
