@@ -47,7 +47,7 @@ newidoc("https://namco.vercel.app/sx/?DISK_FILES=print2.bas&BASIC_LOAD=print2.ba
 
 
 
-onnect("Pier", "10 PRINT");
+connect("Pier", "10 PRINT");
 connect("Pier", "Apple II BASIC");
 connect("Apple II Logo", "Apple II");
 connect("Apple II BASIC", "Apple II");
