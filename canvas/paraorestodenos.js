@@ -1,5 +1,5 @@
 
-
+setTempTheme("tokyo night light");
 multicolor();
 
 polaroid("https://omnifolio.vercel.app/omnifiles/computers_Apple2_cgi.png", "Computador Apple II, 1979", "Apple II", 240, 268, 2024, 381);
@@ -43,6 +43,17 @@ polaroid("https://www.youtube.com/embed/CR2CwKculBU?si=R8S2XBLx0LwkWRZa", "Cambr
 newidoc("https://namco.vercel.app/sx/?DISK_FILES=print2.bas&BASIC_LOAD=print2.bas&BASIC_ENTER=list&BASIC_TYPE=run", "10 PRINT", 557, 408, 3997, 996);
 
 
+polaroid("https://images.squarespace-cdn.com/content/v1/537b8325e4b065b57c13cdef/1406731118207-JOGX4D1IXPVL8BRI6QW4/TheodoreGray.jpg", "Theodore Gray era funcionário da Apple em 1987, quando Stephen Wolfram solicitou à Steve Jobs que lhe cedesse o funcionário, para que pudessem criar uma ferramenta de programação revolucionária. Theo Gray é responsável pela criação da interface de programação conhecida como Notebook Computacional", "Theo Gray", 296, 553, 2879, 1676);
+polaroid("https://content.wolfram.com/sw-scrapbook/2019/08/1989_bearded-1.jpg", "Stephen Wolfram foi criador, junto a Theo Gray, do software Wolfram Mathematica em 1987, primeira ferramenta de programação com interface de Notebook Computacional", "Stephen Wolfram", 289, 551, 3202, 1675);
+polaroid("https://www.computer.org/wp-media/2018/03/11020301/donald-knuth-e1523412218270.jpg", "Donald Knuth, prêmio Turing de computação em 1974 (considerado o equivalente na área ao prêmio Nobel), é o inventor da Programação Literária (literate programming), que é a base dos Notebooks Computacionais", "Donald Knuth", 278, 435, 1997, 1674);
+newidoc("https://www.ranoya.com/pt/micropost/?id=A047&embed=true&nomenu=true&temptheme=cleantext", "Monotype", 499, 549, 1436, 2090);
+
+
+polaroid("https://www.youtube.com/embed/3A5moyhfaQo?si=pw7GWBmoMUYtOCQv", "Mathematica e suas aplicações, 1987", "Mathematica", 524, 378, 2316, 1502);
+
+polaroid("https://www.youtube.com/embed/zISy9oC4b94?si=RLFj6QVkQSxdZNKr", `Palestra de Theo Gray em 2012 sobre o conceito de "Interactive Textbooks" através do Mathematica.`, "Interactive Textbooks", 527, 368, 2315, 1925);
+
+
 
 
 connect("Pier", "10 PRINT");
@@ -50,6 +61,10 @@ connect("Apple II Logo", "Cambridge");
 connect("Pier", "Apple II BASIC");
 connect("Apple II Logo", "Apple II");
 connect("Apple II BASIC", "Apple II");
+connect("Monotype", "Donald Knuth");
+connect("Theo Gray", "Mathematica");
+connect("Theo Gray", "Interactive Textbooks");
+connect("Theo Gray", "Stephen Wolfram");
 
 lockall();
 
