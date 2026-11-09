@@ -106,7 +106,7 @@ polaroid("https://namco.vercel.app/flash/?file=cortex/cortexmain.swf", "Macromed
 connect("HyperCards", "Flash");
 polaroid("https://cdn.sanity.io/images/599r6htc/regionalized/bf761f93f42579b38b3e1d23a6398b59c9e02f5c-1608x2144.jpg", "Bill Atkinson, criador dos HyperCards, sistema hiper/multimidiático que permitiu à leigos criarem softwares e ferramentas para o Apple Macintosh, inspirando Sir Tim Bernes-Lee na criação do Web Browser e do código HTML.", "Bill Atkinson", 320, 457, 4109, 2107);
 
-polaroid("https://namco.vercel.app/flash/obiturario.html", "Steve Jobs foi pessoalmente responsável pela demolição de duas das tecnologias mais promissoras para a criação de softwares e expressões digitais por leigos em computação e desenvolvimento de sotware.", "Jobs on Flash", 711, 480, 6313, 1896);
+polaroid("https://namco.vercel.app/flash/obiturario.html", "Steve Jobs foi pessoalmente responsável pela demolição de duas das tecnologias mais promissoras para a criação de softwares e expressões digitais por leigos em computação e desenvolvimento de software.", "Jobs on Flash", 711, 480, 6313, 1896);
 
 newidoc("https://omnicode.vercel.app/clr?lang=processing&theme=xcode&bgcolor=eae8e4&gutcolor=eae8e4&guttext=000000&bordercolor=000000&pborder=000000&fgcolor=000000&hgcolor=999988&basepoe=https://docs.google.com/spreadsheets/d/10wpfmMWn3igQF4rJBYCo8OR90igO1tfKwcmrot0ult0/edit?gid=1757230275#gid=1757230275&startandrun=true&file=https://omnicode.vercel.app/examples/processingstart.pde", "Código Processing", 634, 427, 5974, 743);
 
