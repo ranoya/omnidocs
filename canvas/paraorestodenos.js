@@ -204,6 +204,17 @@ polaroid("https://omnifolio.vercel.app/omnifiles/zacharylieberman.png", "Zach Li
 
 polaroid("https://omnifolio.vercel.app/omnifiles/zach.lieberman_21.mp4", "Zach Liberman, sem nome, 2024.", "Liberman Blobs", 281, 300, 8024, -474);
 
+polaroid("https://thomaslinpedersen.art/work/genesis/genesis338.jpeg", "Thomas Lin Pedersen, Genesis, 2019.", "Genesis", 323, 287, 7444, -502);
+
+polaroid("https://images.squarespace-cdn.com/content/v1/5c12933f365f02733c923e4e/1623457826739-RFS8YBP06I1W5WW2CSCG/tyler-hobbs-fidenza-612.png", "Tyler Hobbs, Fidenza, 2021", "Fidenza", 261, 346, 7741, -458);
+polaroid("https://assets.website-files.com/61e6c06a23cb13bf76051194/6356dd57eb2de3df3a03cdcd_16.png", "Tyler Hobbs, QQL, 2024", "QQL", 250, 355, 8313, -492);
+polaroid("https://symphonyinacid.net/", "Max Cooper + Max Cooper + Ksawery Komputery, Symphony in Acid, 2023", "Wittgenstein", 645, 464, 8533, -685);
+
+polaroid("https://64.media.tumblr.com/8dd861010938330d63eb2ad3b2f6cbc4/tumblr_n58r3ra1NM1tb0c1mo1_1280.jpg", "David Mrugala, 2014.5.8_13.35.31_frame_0005, 2014.", "Dot is Black 1", 283, 333, 5804, -496);
+polaroid("https://64.media.tumblr.com/c16bffc1d8e414443850c067e88f8e88/tumblr_nnihu48BNQ1tb0c1mo1_1280.jpg", "David Mrugala, 2015.4.28_15.53.4_frame_0003, 2015", "The Dot is Black 2", 272, 327, 6066, -557);
+
+polaroid("https://www.youtube.com/embed/_Is443qCcPo?si=HOvm6j6tG_eS1FPo", "Tokyoplastic, The Sancho Plan/UK, The Drum Machine, 2004.", 343, 320, 5432, -435);
+
 connect("Zach Liberman", "Liberman Blobs");
 connect("Zach Liberman", "SFPC");
 connect("Zach Liberman", "OpenFrameworks");
