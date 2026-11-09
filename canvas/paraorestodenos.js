@@ -215,6 +215,10 @@ polaroid("https://64.media.tumblr.com/c16bffc1d8e414443850c067e88f8e88/tumblr_nn
 
 polaroid("https://www.youtube.com/embed/_Is443qCcPo?si=HOvm6j6tG_eS1FPo", "Tokyoplastic, The Sancho Plan/UK, The Drum Machine, 2004.", 343, 320, 5432, -435);
 
+polaroid("https://www.youtube.com/embed/qpOSuoWF04c?si=tHYjJU8rrgSePN5z&amp;start=26", "Macromedia Flash, incialmente FutureSplash Animator, e posteriormente Adobe Flash. Tecnologia de autoração multimídia que alimentou a Web entre 1996 e 2013.", "Shockwave Flash", 626, 418, 5189, 2065);
+
+polaroid("https://www.youtube.com/embed/JsBpE6XHopE?si=eMcUo382qbnnQ-ax", "Vamoss, Arte de Código Aberto, 2023.", "Vamoss", 507, 348, 8572, -212);
+
 connect("Zach Liberman", "Liberman Blobs");
 connect("Zach Liberman", "SFPC");
 connect("Zach Liberman", "OpenFrameworks");
