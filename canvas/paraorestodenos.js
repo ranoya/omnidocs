@@ -105,7 +105,8 @@ polaroid("https://cdn.sanity.io/images/599r6htc/regionalized/bf761f93f42579b38b3
 
 polaroid("https://namco.vercel.app/flash/obiturario.html", "Steve Jobs foi pessoalmente responsável pela demolição de duas das tecnologias mais promissoras para a criação de softwares e expressões digitais por leigos em computação e desenvolvimento de sotware", "Jobs on Flash", 711, 480, 6313, 1896);
 
-newidoc("https://omnicode.vercel.app/clr?lang=processing&theme=xcode&bgcolor=eae8e4&gutcolor=eae8e4&guttext=000000&bordercolor=000000&pborder=000000&fgcolor=000000&hgcolor=999988&basepoe=https://docs.google.com/spreadsheets/d/10wpfmMWn3igQF4rJBYCo8OR90igO1tfKwcmrot0ult0/edit?gid=1757230275#gid=1757230275&startandrun=true&file=https://omnicode.vercel.app/examples/processingstart.pde", "Código Processing", 634, 427, 5485, 99);
+newidoc("https://omnicode.vercel.app/clr?lang=processing&theme=xcode&bgcolor=eae8e4&gutcolor=eae8e4&guttext=000000&bordercolor=000000&pborder=000000&fgcolor=000000&hgcolor=999988&basepoe=https://docs.google.com/spreadsheets/d/10wpfmMWn3igQF4rJBYCo8OR90igO1tfKwcmrot0ult0/edit?gid=1757230275#gid=1757230275&startandrun=true&file=https://omnicode.vercel.app/examples/processingstart.pde", "Código Processing", 634, 427, 5974, 743);
+
 
 polaroid("https://thecrazyprogrammer.com/wp-content/uploads/2023/05/Ted-Nelson-Biography-min-1024x672.jpeg", "Ted Nelson criou o conceito de hipertexto e uma mídia não-linear em 1963", "Ted Nelson", 313, 399, 1124, 1920);
 polaroid("https://www.youtube.com/embed/En_2T7KH6RA?si=zKqIifi7NvX3T_Kc", "Ted Nelson critica, na década de 1980, a forma como a indústria da informática aprisionou e restringiu a computação", "Crítica", 494, 419, 2938, 2266);
