@@ -221,4 +221,11 @@ connect("Theo Gray", "Stephen Wolfram");
 lockall();
 
 setZoom(.3);
-center("Titulo");
+
+center("10 PRINT");
+setTimeout(function () {
+
+    center("Titulo");
+
+ }, 3000);
+
