@@ -1696,7 +1696,14 @@ registermenu(240, "RECURSOS", [
     
 ]);
 
-registermenu(330, "CANVAS", [
+registermenu(330, "CODE", [
+    { label: "Notebook", run: "notebook()" },
+    { label: "Omnicode", run: "omnicode()" },
+    { label: "Editor de Código Integrado", run: "code()"},
+    { label: "Contextos antigos", run: "legacy()" },
+]);
+
+registermenu(410, "CANVAS", [
     { label: "Zoom 100%", run: "setZoom(1)" },
     { label: "Zoom 75%", run: "setZoom(.75)" },
     { label: "Zoom 65%", run: "setZoom(.65)"},
@@ -1706,6 +1713,7 @@ registermenu(330, "CANVAS", [
     { label: "Fechar Linha de Comando", run: "nodev()" },
 ]);
 
+let nap = true;
 let inspectwin = false;
 let devmstate = "normal"
 document.addEventListener('keydown', function (e) {
@@ -1727,7 +1735,7 @@ document.addEventListener('keydown', function (e) {
                 
             }
     
-            if (e.key === 'F4' || e.keyCode == 115) {
+            if (e.key === 'F2' || e.keyCode == 113) {
 
                    e.cancelBubble = true;
                     e.cancelable = true;
@@ -1742,6 +1750,23 @@ document.addEventListener('keydown', function (e) {
                 } else {
                     inspectwin = false;
                     remove("State");
+                }
+            }
+    
+            if (e.key === 'F4' || e.keyCode == 115) {
+
+                   e.cancelBubble = true;
+                    e.cancelable = true;
+                    e.stopPropagation();
+                    e.preventDefault();
+                    e.returnValue = false;
+
+                if (!nap) {
+                    snap();
+                    nap = true;
+                } else {
+                    nosnap();
+                    nap = false;
                 }
             }
   
