@@ -1703,7 +1703,7 @@ registermenu(330, "CODE", [
     { label: "Contextos antigos", run: "legacy()" },
 ]);
 
-registermenu(410, "CANVAS", [
+registermenu(390, "CANVAS", [
     { label: "Zoom 100%", run: "setZoom(1)" },
     { label: "Zoom 75%", run: "setZoom(.75)" },
     { label: "Zoom 65%", run: "setZoom(.65)"},
