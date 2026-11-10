@@ -1717,14 +1717,16 @@ document.addEventListener('keydown', function (e) {
                     e.preventDefault();
                     e.returnValue = false;
 
-              if (devmstate == "normal") {
-                floatdevmode();
-                devmstate = "float"
-              } else {
-                devmode();
-                devmstate = "normal";
+                if (devmstate == "normal") {
+                    floatdevmode();
+                    devmstate = "float"
+                } else {
+                    devmode();
+                    devmstate = "normal";
                 }
                 
+            }
+    
             if (e.key === 'F4' || e.keyCode == 115) {
 
                    e.cancelBubble = true;
@@ -1733,16 +1735,15 @@ document.addEventListener('keydown', function (e) {
                     e.preventDefault();
                     e.returnValue = false;
 
-            if (!inspectwin) {
-                inspectwin = true;
-                state();
-                widget("State");
-            } else {
-                inspectwin = false;
-                remove("State");
-              }
-  }
-  }
+                if (!inspectwin) {
+                    inspectwin = true;
+                    state();
+                    widget("State");
+                } else {
+                    inspectwin = false;
+                    remove("State");
+                }
+            }
   
   
 });
