@@ -1608,6 +1608,13 @@ window.notebookslm = function () {
     center("Notebooks");
 }
 
+window.materiaisdepesquisa = function () { 
+    if (!exist("Materiais de Pesquisa")) {
+        newidoc("https://omnidocs.vercel.app/materiais/recursos/?bg=afffcb&filtra=dashboards&nomenu=true&titulo=Materiais%20de%20Pesquisa", "Materiais de Pesquisa", 660, 810, -180, 840);
+        center("Materiais de Pesquisa");
+    }
+}
+
 // Menu antigo desligado
 /*
 window.nomenu = function () {
@@ -1681,7 +1688,8 @@ registermenu(240, "RECURSOS", [
     { label: "Quadro Compartilhado", run: "window.quadro()" },
     { label: "--" },
     { label: "Acervos e Materiais", run: "window.acervos()" },
-    { label: "Recursos de IA", run: "window.recursos()" }
+    { label: "Recursos de IA", run: "window.recursos()" },
+    { label: "Materiais de Pesquisa", run: "window.materiaisdepesquisa()" }
     
 ]);
 
