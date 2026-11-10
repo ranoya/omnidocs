@@ -1725,7 +1725,7 @@ document.addEventListener('keydown', function (e) {
                 devmstate = "normal";
                 }
                 
-            if (e.key === 'F4' || e.keyCode == 114) {
+            if (e.key === 'F4' || e.keyCode == 115) {
 
                    e.cancelBubble = true;
                     e.cancelable = true;
