@@ -1749,7 +1749,8 @@ document.addEventListener('keydown', function (e) {
 });
 
 
-
-
+setTheme("rose pine dawn");
+love();
+snap();
 setZoom(1);
 
