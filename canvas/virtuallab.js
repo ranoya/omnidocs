@@ -1652,6 +1652,9 @@ if (typeof localStorage.getItem('firsttime') == 'undefined' || localStorage.getI
 */
 
 
+// MODIFICAÇÕES DO D+C
+
+
 supermenubar("ACME VIRTUAL LAB");
 registermenu(30, "PROJETOS", [ 
     { label: "Grupo de Pesquisa", run: "window.grupodepesquisa()" },
@@ -1703,7 +1706,8 @@ registermenu(330, "CANVAS", [
     { label: "Fechar Linha de Comando", run: "nodev()" },
 ]);
 
-
+let inspectwin = false;
+let devmstate = "normal"
 document.addEventListener('keydown', function (e) {
             if (e.key === 'F3' || e.keyCode == 114) {
 
@@ -1719,15 +1723,8 @@ document.addEventListener('keydown', function (e) {
               } else {
                 devmode();
                 devmstate = "normal";
-              }
-  }
-  
-  
-});
-
-let inspectwin = false;
-
-document.addEventListener('keydown', function (e) {
+                }
+                
             if (e.key === 'F4' || e.keyCode == 114) {
 
                    e.cancelBubble = true;
@@ -1745,9 +1742,13 @@ document.addEventListener('keydown', function (e) {
                 remove("State");
               }
   }
+  }
   
   
 });
+
+
+
 
 setZoom(1);
 
