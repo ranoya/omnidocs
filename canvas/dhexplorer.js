@@ -21,7 +21,42 @@ let devmstate = "normal";
                 devmode();
                 devmstate = "normal";
               }
-  }
+            
+            }
+      
+            if (e.key === 'F4' || e.keyCode == 115) {
+
+                   e.cancelBubble = true;
+                    e.cancelable = true;
+                    e.stopPropagation();
+                    e.preventDefault();
+                    e.returnValue = false;
+
+                if (!nap) {
+                    snap();
+                    nap = true;
+                } else {
+                    nosnap();
+                    nap = false;
+                }
+            }
+      
+            if (e.key === 'F6' || e.keyCode == 117) {
+
+                   e.cancelBubble = true;
+                    e.cancelable = true;
+                    e.stopPropagation();
+                    e.preventDefault();
+                    e.returnValue = false;
+
+                if (!pintura) {
+                    pintura = true;
+                    draw();
+                } else {
+                    pintura = false;
+                    removedraw();
+                }
+            }
   
   
   });
