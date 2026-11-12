@@ -1955,7 +1955,11 @@ document.addEventListener('keydown', function (e) {
           console.log = function (msg) {
           parent.postMessage('printconsole(${countruncode}, "' + msg + '")' ,'*');        
           }
-          </scri` + `pt>`;
+          </scri` + `pt>
+          
+          let $_DATA = ${codeeditordadosplus[p.fromeditor]};
+          
+          `;
         }
 
         if (linguacodex["editor_" + p.fromeditor] == "javascript") {
@@ -1969,6 +1973,9 @@ document.addEventListener('keydown', function (e) {
               console.log = function (msg) {
               parent.postMessage('printconsole(${countruncode}, "' + msg + '")' ,'*');        
               }
+
+              let $_DATA = ${codeeditordadosplus[p.fromeditor]};
+
              </scr` + `ipt><scr` + `ipt>`;
         }
 
@@ -1989,6 +1996,9 @@ document.addEventListener('keydown', function (e) {
             console.log = function (msg) {
             parent.postMessage('printconsole(${countruncode}, "' + msg + '")' ,'*');        
             }
+
+            let $_DATA = ${codeeditordadosplus[p.fromeditor]};
+
             </scr` + `ipt>
                <sc` +
             `ript type='text/typescript'>`;
@@ -2006,6 +2016,9 @@ document.addEventListener('keydown', function (e) {
               console.log = function (msg) {
               parent.postMessage('printconsole(${countruncode}, "' + msg + '")' ,'*');        
               }
+
+              let $_DATA = ${codeeditordadosplus[p.fromeditor]};
+
             </scr` + `ipt>
             <scr` +
             `ipt src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></sc` +
@@ -2085,9 +2098,21 @@ document.addEventListener('keydown', function (e) {
         iframeDoc.write(htmlContent);
         iframeDoc.close();
       }
+      
+
+      let codeeditordadosplus = [];
 
       window.codeeditor = function (id, p) {
         countcode++;
+
+        let dadosplus = "";
+        let entradadedados = datain(id, {
+            data: function(dados, origem){   // chamada a cada dado novo, de qualquer origem
+                console.log(dados + " / origem: " + origem.title);
+                dadosplus = JSON.stringify(dados);
+                codeeditordadosplus[id] = dadosplus;
+            }
+        });
 
         let tema = "tomorrow";
         if (localStorage.getItem('infcanvas:theme') == "dracula") {
@@ -2901,6 +2926,8 @@ window.datatexec = function (dados, ltitulo) {
 
 window.opendataexplorer = function (id, param) {
 
+  let outputdataexplorer = dataout(id);
+
   let code = `
   
     <style>
@@ -2957,6 +2984,7 @@ window.opendataexplorer = function (id, param) {
 
   `;
 
+      outputdataexplorer.send(param.dadosarr);
       document.getElementById(id).innerHTML = code;
       document.getElementById(id).style.backgroundColor = "var(--bg, #FFFFFF)";
       document.getElementById("datat_" + param.indice).innerHTML = showtable(param.dadosarr, { color: "var(--text)", backgroundColor: "var(--bg)" });
@@ -2989,6 +3017,8 @@ window.opendataexplorer = function (id, param) {
 let datasubquery = [];
 
 window.openquery = function (elem_id, extras) {
+
+  let outputquery = dataout(elem_id);
 
   let googlesheet = extras.sheet;
   let select = extras.query;
@@ -3098,7 +3128,9 @@ window.openquery = function (elem_id, extras) {
 
         constroihtml += `<div class="tabelasepara"></div>`;
 
-      }
+        }
+        
+      outputquery.send(arr);
 
       constroihtml += `</div>
                       <input placeholder="SQL Query" id="subqueryrunner_${elem_id}" type='text' style='outline: none; border 0; height: 40px; line-height: 25px; font-size: 16px; width: calc(100%); padding-left: 15px; padding-right: 15px; background-color: var(--grid-dot, #c7c7d1); color: var(--text,  #1c1c22); font-family: monospace; border: 0;' />
