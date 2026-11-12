@@ -234,6 +234,14 @@ polaroid("https://omnifolio.vercel.app/omnifiles/rickrubin-thewayofthecode.png",
 
 newidoc("https://www.ranoya.com/pt/futuro/pcdpapertimeline.php", "Processing Community Day", 842, 484, 8404, 1208);
 
+
+polaroid("https://omnifolio.vercel.app/omnifiles/claude_ipython.png", "Notebook computacional criado internamente pela IA Claude para explicações sobre programação", "Claude Jupyter", 468, 503, 8136, 2429);
+
+newidoc("https://www.youtube.com/embed/__qjsUWJoNs?si=jNsI58tFbEWPb9ly", "Observable", 572, 325, 7222, 1082);
+
+connect("Rick Rubin", "Claude Jupyter");
+connect("Observable", "Jupyter");
+connect("Claude Jupyter", "Jupyter");
 connect("Processing Community Day", "Vamoss");
 connect("Musica Livecode", "Strudel");
 connect("Zach Liberman", "Liberman Blobs");
