@@ -29,14 +29,21 @@ setTransparentBackground();
       let countcode = 1;
       let countruncode = 1;
 
-      window.code = function (u) {
+      window.code = function (u, t) {
         
+        let tipo = "html";
+        if (typeof t != 'undefined' && t != null && t != '') {
+          tipo = t;
+        }
+        
+
         if (typeof u != 'undefined' && u != null && u != '') {
 
           run("Code " + countcode, "codeeditor", {
             contagem: countcode,
             runcontagem: countruncode,
-            loadcode: u
+            loadcode: u,
+            lingua: tipo
           });
                 
         } else {
@@ -44,6 +51,7 @@ setTransparentBackground();
           run("Code " + countcode, "codeeditor", {
             contagem: countcode,
             runcontagem: countruncode,
+            lingua: tipo
           });
                
         }
@@ -51,19 +59,26 @@ setTransparentBackground();
         center("Code " + (countcode - 1));
       };
 
-      window.pcode = function (u) {
+      window.pcode = function (u, t) {
+        
+        let tipo = "html";
+        if (typeof t != 'undefined' && t != null && t != '') {
+          tipo = t;
+        }
               
         if (typeof u != 'undefined' && u != null && u != '') {
           permarun("Code " + countcode, "codeeditor", {
                 contagem: countcode,
                 runcontagem: countruncode,
-                loadcode: u
+                loadcode: u,
+                lingua: tipo
           });
 
         } else {
           permarun("Code " + countcode, "codeeditor", {
                 contagem: countcode,
                 runcontagem: countruncode,
+                lingua: tipo
           });
 
         }
@@ -146,58 +161,6 @@ setTransparentBackground();
       };
       
 
-      let svgcanvases = 1;
-
-      window.createsvgcanvas = function (w, h) {
-              
-        let wi = 500;
-        let hei = 500;
-
-        if (typeof w != 'undefined' && w != null && w != '') {
-          wi = w;
-        }
-
-        if (typeof h != 'undefined' && h != null && h != '') {
-          hei = h;
-        }
-        
-        
-        svg(`<svg id='svgcanvases_${svgcanvases}' viewBox='0 0 ${wi} ${hei}' style="width: 100%; height: 100%; border: 0; padding: 0; margin: 0;"></svg>`, "SVG Canvas " + svgcanvases, wi, hei);
-        
-        let este = svgcanvases;
-        svgcanvases++;
-
-        return document.getElementById("svgcanvases_" + este);
-  
-        
-      }
-      
-      window.createpermasvgcanvas = function (w, h) {
-              
-        let wi = 500;
-        let hei = 500;
-
-        if (typeof w != 'undefined' && w != null && w != '') {
-          wi = w;
-        }
-
-        if (typeof h != 'undefined' && h != null && h != '') {
-          hei = h;
-        }
-
-        if (typeof document.getElementById("svgcanvases_0") != 'undefined' && document.getElementById("svgcanvases_0") != null && document.getElementById("svgcanvases_0") != '') {
-           svg(`<svg id='svgcanvases_0' viewBox='0 0 ${wi} ${hei}' style="width: 100%; height: 100%; border: 0; padding: 0; margin: 0;"></svg>`, "SVG Canvas", wi, hei);
-        } else {
-
-          setPosition("SVG Canvas", wi, hei);
-        }
-        
-        
-        return document.getElementById("svgcanvases_0");
-  
-        
-      }
-
       var code_output_buffer = [];
 
       window.codeout = function (id, p) {
@@ -221,7 +184,11 @@ setTransparentBackground();
           console.log = function (msg) {
           parent.postMessage('printconsole(${countruncode}, "' + msg + '")' ,'*');        
           }
-          </scri` + `pt>`;
+          </scri` + `pt>
+          
+          let $_DATA = ${codeeditordadosplus[p.fromeditor]};
+          
+          `;
         }
 
         if (linguacodex["editor_" + p.fromeditor] == "javascript") {
@@ -235,6 +202,9 @@ setTransparentBackground();
               console.log = function (msg) {
               parent.postMessage('printconsole(${countruncode}, "' + msg + '")' ,'*');        
               }
+
+              let $_DATA = ${codeeditordadosplus[p.fromeditor]};
+
              </scr` + `ipt><scr` + `ipt>`;
         }
 
@@ -255,6 +225,9 @@ setTransparentBackground();
             console.log = function (msg) {
             parent.postMessage('printconsole(${countruncode}, "' + msg + '")' ,'*');        
             }
+
+            let $_DATA = ${codeeditordadosplus[p.fromeditor]};
+
             </scr` + `ipt>
                <sc` +
             `ript type='text/typescript'>`;
@@ -272,6 +245,9 @@ setTransparentBackground();
               console.log = function (msg) {
               parent.postMessage('printconsole(${countruncode}, "' + msg + '")' ,'*');        
               }
+
+              let $_DATA = ${codeeditordadosplus[p.fromeditor]};
+
             </scr` + `ipt>
             <scr` +
             `ipt src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></sc` +
@@ -351,9 +327,21 @@ setTransparentBackground();
         iframeDoc.write(htmlContent);
         iframeDoc.close();
       }
+      
+
+      let codeeditordadosplus = [];
 
       window.codeeditor = function (id, p) {
         countcode++;
+
+        let dadosplus = "";
+        let entradadedados = datain(id, {
+            data: function(dados, origem){   // chamada a cada dado novo, de qualquer origem
+                console.log(dados + " / origem: " + origem.title);
+                dadosplus = JSON.stringify(dados);
+                codeeditordadosplus[id] = dadosplus;
+            }
+        });
 
         let tema = "tomorrow";
         if (localStorage.getItem('infcanvas:theme') == "dracula") {
@@ -494,10 +482,10 @@ setTransparentBackground();
         let thisace = ace.edit("editor_" + id);
         thisace.setTheme("ace/theme/" + tema);
         thisace.setKeyboardHandler("ace/keyboard/vscode");
-        thisace.session.setMode("ace/mode/html");
+        thisace.session.setMode("ace/mode/" + p.lingua);
         let acegeneralconfig = {
           theme: "ace/theme/" + tema,
-          mode: "ace/mode/html",
+          mode: "ace/mode/" + p.lingua,
           enableBasicAutocompletion: true,
           enableSnippets: true,
           enableLiveAutocompletion: true,
@@ -539,6 +527,8 @@ setTransparentBackground();
           });
            
         }
+
+        linguacodeeditor("editor_" + id, p.lingua);
 
         
 
@@ -1225,6 +1215,8 @@ window.datatexec = function (dados, ltitulo) {
 
 window.opendataexplorer = function (id, param) {
 
+  let outputdataexplorer = dataout(id);
+
   let code = `
   
     <style>
@@ -1281,6 +1273,7 @@ window.opendataexplorer = function (id, param) {
 
   `;
 
+      outputdataexplorer.send(param.dadosarr);
       document.getElementById(id).innerHTML = code;
       document.getElementById(id).style.backgroundColor = "var(--bg, #FFFFFF)";
       document.getElementById("datat_" + param.indice).innerHTML = showtable(param.dadosarr, { color: "var(--text)", backgroundColor: "var(--bg)" });
@@ -1313,6 +1306,8 @@ window.opendataexplorer = function (id, param) {
 let datasubquery = [];
 
 window.openquery = function (elem_id, extras) {
+
+  let outputquery = dataout(elem_id);
 
   let googlesheet = extras.sheet;
   let select = extras.query;
@@ -1422,7 +1417,9 @@ window.openquery = function (elem_id, extras) {
 
         constroihtml += `<div class="tabelasepara"></div>`;
 
-      }
+        }
+        
+      outputquery.send(arr);
 
       constroihtml += `</div>
                       <input placeholder="SQL Query" id="subqueryrunner_${elem_id}" type='text' style='outline: none; border 0; height: 40px; line-height: 25px; font-size: 16px; width: calc(100%); padding-left: 15px; padding-right: 15px; background-color: var(--grid-dot, #c7c7d1); color: var(--text,  #1c1c22); font-family: monospace; border: 0;' />

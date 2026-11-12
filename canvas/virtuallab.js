@@ -1735,7 +1735,7 @@ document.addEventListener('keydown', function (e) {
                 
             }
     
-            if (e.key === 'F2' || e.keyCode == 113) {
+            if (e.key === 'F5' || e.keyCode == 116) {
 
                    e.cancelBubble = true;
                     e.cancelable = true;
