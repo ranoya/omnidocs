@@ -2665,6 +2665,8 @@ registermenu(600, "CANVAS", [
     { label: "LIMPA A TELA", run: "removeall()" },
     { label: "LINHA DE COMANDO", run: "devmode()" },
     { label: "--" },
+    { label: "Anotações", run: "draw()" },
+    { label: "--" },
     { label: "ZOOM 100%", run: "setZoom(1)" },
     { label: "ZOOM 65%", run: "setZoom(.65)" },
     { label: "ZOOM 50%", run: "setZoom(.5)" },

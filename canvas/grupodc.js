@@ -1699,6 +1699,8 @@ registermenu(330, "CANVAS", [
     { label: "Zoom 65%", run: "setZoom(.65)"},
     { label: "Zoom 50%", run: "setZoom(.5)" },
     { label: "--" },
+    { label: "Anotações", run: "draw()" },
+    { label: "--" },
     { label: "Linha de Comando", run: "floatdevmode()" },
     { label: "Fechar Linha de Comando", run: "nodev()" },
 ]);

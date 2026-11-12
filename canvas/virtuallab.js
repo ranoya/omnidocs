@@ -1576,6 +1576,18 @@ window.agendas = function () {
     connect("Grupo de Pesquisa", "Agenda Ranoya");
     connect("Agenda Ranoya", "Agendamento");
 
+    center("Agenda Ranoya");
+}
+
+window.marcacaoagenda = function () {
+    
+    if (!exist("Agendamento")) {
+        newidoc("https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0Yd7hzjGj6WZ2cv2a1QseBLt7fQfnpPKoJewZapi9o025rriwDAObP2Ly9ZyXe6uIepld1OarR?gv=true", "Agendamento", 1050, 810, -840, -1050);
+    }
+
+    connect("Grupo de Pesquisa", "Agenda Ranoya");
+    connect("Agenda Ranoya", "Agendamento");
+
     center("Agendamento");
 }
 
@@ -1686,7 +1698,8 @@ registermenu(120, "BIBLIOGRAFIAS", [
 ]);
                                 
 registermenu(240, "RECURSOS", [
-    { label: "Agendar Orientação", run: "window.agendas()" },
+    { label: "Agenda", run: "window.agendas()" },
+    { label: "Agendamento", run: "window.marcacaoagenda()" },
     { label: "--" },
     { label: "Quadro Compartilhado", run: "window.quadro()" },
     { label: "--" },
@@ -1708,6 +1721,8 @@ registermenu(390, "CANVAS", [
     { label: "Zoom 75%", run: "setZoom(.75)" },
     { label: "Zoom 65%", run: "setZoom(.65)"},
     { label: "Zoom 50%", run: "setZoom(.5)" },
+    { label: "--" },
+    { label: "Anotações", run: "draw()" },
     { label: "--" },
     { label: "Linha de Comando", run: "floatdevmode()" },
     { label: "Fechar Linha de Comando", run: "nodev()" },
