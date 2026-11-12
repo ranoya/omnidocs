@@ -289,6 +289,32 @@ lockall();
 
 setZoom(.45);
 
+let pintura = false;
+
+document.addEventListener('keydown', function (e) {
+    
+    if (e.key === 'F6' || e.keyCode == 117) {
+
+                   e.cancelBubble = true;
+                    e.cancelable = true;
+                    e.stopPropagation();
+                    e.preventDefault();
+                    e.returnValue = false;
+
+                if (!pintura) {
+                    pintura = true;
+                    draw();
+                } else {
+                    pintura = false;
+                    removedraw();
+                }
+    }
+
+
+
+});
+
+
 center("10 PRINT");
 setTimeout(function () {
 
