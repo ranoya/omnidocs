@@ -239,6 +239,12 @@ polaroid("https://omnifolio.vercel.app/omnifiles/claude_ipython.png", "Notebook 
 
 newidoc("https://www.youtube.com/embed/__qjsUWJoNs?si=jNsI58tFbEWPb9ly", "Observable", 572, 325, 7222, 1082);
 
+polaroid("https://omnidocs.vercel.app/materiais/narrativas/obama.html", "Visualização de Dados / Dataviz: artefatos para exploração da informação, simulações e descoberta.", "Dataviz", 500, 474, 7259, 2617);
+
+newidoc("https://nbremer.github.io/ORCA/commit-history/?repo=d3", "Dataviz 2", 923, 524, 7384, 3059);
+
+
+connect("Dataviz", "Jupyter");
 connect("Rick Rubin", "Claude Jupyter");
 connect("Observable", "Jupyter");
 connect("Claude Jupyter", "Jupyter");
