@@ -1241,7 +1241,7 @@ connect("Narrativas Interativas", "Digital Humanities");
 newidoc("https://www.ranoya.com/pt/storytelling/?nomenu=true&temptheme=cleantext", "Estudos de Narrativas Interativas", 1110, 690, -2370, 750);
 connect("Estudos de Narrativas Interativas", "Narrativas Interativas");
 
-svg("<iframe style='width: 100%; height: 100%;' frameborder='0' src='https://booklines.vercel.app/capas/artancode/flipcover.html?art=1980&fcolor=ffffff88&bgcolor=0865E9'></iframe>", "ART/ANC/ODE", 630, 360, 300,-620);
+svg("<iframe style='width: 100%; height: 100%;' frameborder='0' src='https://booklines.vercel.app/capas/artancode/sologo.html?art=1980&fcolor=ffffff88&bgcolor=0865E9'></iframe>", "ART/ANC/ODE", 630, 360, 300,-620);
 
 newidoc("https://www.ranoya.com/pt/arte/?nomenu=true&temptheme=cleantext", "Arte Digital", 1110, 690, 60, -1590);
 connect("ART/ANC/ODE", "Digital Humanities");

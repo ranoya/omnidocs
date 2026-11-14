@@ -1356,7 +1356,7 @@ let pesquisa = function () {
     connect("Estudos de Narrativas Interativas", "Narrativas Interativas");
 
     if (!exist("ART/ANC/ODE")) {
-        svg("<iframe style='width: 100%; height: 100%;' frameborder='0' src='https://booklines.vercel.app/capas/artancode/flipcover.html?art=1980&fcolor=ffffff88&bgcolor=0865E9'></iframe>", "ART/ANC/ODE", 630, 360, 300, -620);
+        svg("<iframe style='width: 100%; height: 100%;' frameborder='0' src='https://booklines.vercel.app/capas/artancode/sologo.html?art=1980&fcolor=ffffff88&bgcolor=0865E9'></iframe>", "ART/ANC/ODE", 630, 360, 300, -620);
     }
 
     if (!exist("Arte Digital")) {
