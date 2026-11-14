@@ -77,7 +77,7 @@ polaroid("https://www.youtube.com/embed/CR2CwKculBU?si=R8S2XBLx0LwkWRZa", "Cambr
 polaroid("https://images.squarespace-cdn.com/content/v1/537b8325e4b065b57c13cdef/1406731118207-JOGX4D1IXPVL8BRI6QW4/TheodoreGray.jpg", "Theodore Gray era funcionário da Apple em 1987, quando Stephen Wolfram solicitou à Steve Jobs que lhe cedesse o funcionário, para que pudessem criar uma ferramenta de programação revolucionária. Theo Gray é responsável pela criação da interface de programação conhecida como Notebook Computacional", "Theo Gray", 296, 553, 2879, 1676);
 polaroid("https://content.wolfram.com/sw-scrapbook/2019/08/1989_bearded-1.jpg", "Stephen Wolfram foi criador, junto a Theo Gray, do software Wolfram Mathematica em 1987, primeira ferramenta de programação com interface de Notebook Computacional", "Stephen Wolfram", 289, 551, 3202, 1675);
 polaroid("https://www.computer.org/wp-media/2018/03/11020301/donald-knuth-e1523412218270.jpg", "Donald Knuth, prêmio Turing de computação em 1974 (considerado o equivalente na área ao prêmio Nobel), é o inventor da Programação Literária (literate programming), que é a base dos Notebooks Computacionais", "Donald Knuth", 278, 435, 1997, 1674);
-newidoc("https://www.ranoya.com/pt/micropost/?id=A047&embed=true&nomenu=true&temptheme=cleantext", "Monotype", 499, 549, 1460, 1403);
+newidoc("https://www.ranoya.com/pt/micropost/?id=A047&embed=true&nomenu=true&theme=cleantext", "Monotype", 499, 549, 1460, 1403);
 
 
 polaroid("https://www.youtube.com/embed/3A5moyhfaQo?si=pw7GWBmoMUYtOCQv", "Mathematica e suas aplicações educacionais, 1987", "Mathematica", 524, 378, 2316, 1502);
@@ -254,15 +254,18 @@ window.lousa = function () {
 window.futuro = function () {
     
     if (!exist("Projeto Futuro")) {
-        newidoc("https://www.ranoya.com/pt/futuro/?nomenu=true&temptheme=cleantext", "Projeto Futuro", 964, 1223, -3599, 1646);
+        newidoc("https://www.ranoya.com/pt/futuro/?nomenu=true&theme=cleantext", "Projeto Futuro", 964, 1223, -3599, 1646);
     }
     if (!exist("Relatório Futuro")) {
-        newidoc("https://www.ranoya.com/pt/futuro/relatorio.php?nomenu=true&temptheme=cleantext", "Relatório Futuro", 959, 1222, -2339, 1648);
+        newidoc("https://www.ranoya.com/pt/futuro/relatorio.php?nomenu=true&ttheme=cleantext", "Relatório Futuro", 959, 1222, -2339, 1648);
     }
     connect("Relatório Futuro", "Projeto Futuro");
     
     svg("<iframe style='width: 100%; height: 100%;' frameborder='0' src='https://booklines.vercel.app/capas/artancode/sologo.html?art=1980&fcolor=ffffff88&bgcolor=0865E9'></iframe>", "ART/ANC/ODE", 955, 725, -3600, 600);
     connect("Projeto Futuro", "ART/ANC/ODE");
+
+    newidoc("https://www.ranoya.com/pt/arte/?theme=cleantext&nomenu=true", "Arte", 965, 1219, -4886, 1650);
+    connect("Arte", "ART/ANC/ODE");
 
     center("Relatório Futuro");
 }
