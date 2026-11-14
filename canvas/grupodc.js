@@ -39,7 +39,7 @@ window.biblioteca = function () {
 
 window.arte = function () {
     if (!exist("ART/ANC/ODE")) {
-        svg("<iframe style='width: 100%; height: 100%;' frameborder='0' src='https://booklines.vercel.app/capas/artancode/flipcover.html?art=1980&fcolor=ffffff88&bgcolor=0865E9'></iframe>", "ART/ANC/ODE", 852, 528, 1645, -3060);
+        svg("<iframe style='width: 100%; height: 100%;' frameborder='0' src='https://booklines.vercel.app/capas/artancode/sologo.html?art=1980&fcolor=ffffff88&bgcolor=0865E9'></iframe>", "ART/ANC/ODE", 852, 528, 1645, -3060);
     }
     lock("ART/ANC/ODE");
 
