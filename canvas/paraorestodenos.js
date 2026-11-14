@@ -251,6 +251,18 @@ window.lousa = function () {
     center("Lousa Digital");
 }
 
+window.futuro = function () {
+    
+    if (!exist("Projeto Futuro")) {
+        newidoc("https://www.ranoya.com/pt/futuro/?nomenu=true&temptheme=cleantext", "Projeto Futuro", 964, 1223, -3599, 1646);
+    }
+    if (!exist("Relatório Futuro")) {
+        newidoc("https://www.ranoya.com/pt/futuro/relatorio.php?nomenu=true&temptheme=cleantext", "Relatório Futuro", 959, 1222, -2339, 1648);
+    }
+    connect("Relatório Futuro", "Projeto Futuro");
+    center("Relatório Futuro");
+}
+
 
 connect("Dataviz", "Jupyter");
 connect("Rick Rubin", "Claude Jupyter");
