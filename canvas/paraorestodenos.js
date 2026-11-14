@@ -243,6 +243,12 @@ polaroid("https://omnidocs.vercel.app/materiais/narrativas/obama.html", "Visuali
 
 newidoc("https://nbremer.github.io/ORCA/commit-history/?repo=d3", "Dataviz 2", 923, 524, 7384, 3059);
 
+window.lousa = function () {
+    if (!exist("Lousa Digital")) {
+        newidoc("https://www.tldraw.com/f/icxXGpnAXPXTprspCRdvs?d=v0.0.1259.896.page", "Lousa Digital", 1326, 765, -2251, -1059);
+    }
+}
+
 
 connect("Dataviz", "Jupyter");
 connect("Rick Rubin", "Claude Jupyter");
@@ -314,6 +320,18 @@ document.addEventListener('keydown', function (e) {
                     pintura = false;
                     removedraw();
                 }
+    }
+
+    if (e.key === 'F9' || e.keyCode == 120) {
+
+                   e.cancelBubble = true;
+                    e.cancelable = true;
+                    e.stopPropagation();
+                    e.preventDefault();
+                    e.returnValue = false;
+
+                lousa()
+
     }
 
 
