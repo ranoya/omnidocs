@@ -260,8 +260,13 @@ window.futuro = function () {
         newidoc("https://www.ranoya.com/pt/futuro/relatorio.php?nomenu=true&temptheme=cleantext", "Relatório Futuro", 959, 1222, -2339, 1648);
     }
     connect("Relatório Futuro", "Projeto Futuro");
+    
+    svg("<iframe style='width: 100%; height: 100%;' frameborder='0' src='https://booklines.vercel.app/capas/artancode/sologo.html?art=1980&fcolor=ffffff88&bgcolor=0865E9'></iframe>", "ART/ANC/ODE", 955, 725, -3600, 600);
+    connect("Projeto Futuro", "ART/ANC/ODE");
+
     center("Relatório Futuro");
 }
+
 
 
 connect("Dataviz", "Jupyter");
