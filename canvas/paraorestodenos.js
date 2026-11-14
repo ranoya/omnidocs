@@ -247,6 +247,8 @@ window.lousa = function () {
     if (!exist("Lousa Digital")) {
         newidoc("https://www.tldraw.com/f/icxXGpnAXPXTprspCRdvs?d=v0.0.1259.896.page", "Lousa Digital", 1326, 765, -2251, -1059);
     }
+
+    center("Lousa Digital");
 }
 
 
@@ -330,7 +332,7 @@ document.addEventListener('keydown', function (e) {
                     e.preventDefault();
                     e.returnValue = false;
 
-                lousa()
+                    lousa();
 
     }
 
