@@ -3688,11 +3688,12 @@ window.openlegacymenu = function (id, dados) {
         
 }
 
+/*
 let corta1 = function (s) {
   return s.slice(1);
 }
 
-/*
+
 let getcssv = function (v) { 
   return getComputedStyle(document.documentElement).getPropertyValue(v).trim();
 }
@@ -3701,12 +3702,12 @@ let getcssv = function (v) {
 window.poe = function () {
   if (!exist("POE")) {
 
-    let b = corta1(getcssv("--bg"));
-    let t = corta1(getcssv("--text"));
-    let a = corta1(getcssv("--accent"));
-    let m = corta1(getcssv("--muted"));
-    let pb = corta1(getcssv("--panel-border"));
-    let wh = corta1(getcssv("--win-header"));
+    let b = getcssv("--bg");
+    let t = getcssv("--text");
+    let a = getcssv("--accent");
+    let m = getcssv("--muted");
+    let pb = getcssv("--panel-border");
+    let wh = getcssv("--win-header");
 
     newidoc(`https://omnicode.vercel.app/canvas/poe.html?text=${t}&accent=${a}&muted=${m}&bg=${b}&panel-border=${pb}&win-header=${wh}&source=https://docs.google.com/spreadsheets/d/1K821gEs1HUvW4brTu_VRziZ6nr1wPvItNMQz5P3srtg/edit?gid=1851739332#gid=1851739332`, "POE");
     widget("POE");
