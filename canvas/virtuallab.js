@@ -3670,7 +3670,14 @@ window.openlegacymenu = function (id, dados) {
 
             `;
         
-      }
+}
+      
+window.poe = function () {
+  newidoc("https://omnicode.vercel.app/canvas/poe.html?source=https://docs.google.com/spreadsheets/d/1K821gEs1HUvW4brTu_VRziZ6nr1wPvItNMQz5P3srtg/edit?gid=1851739332#gid=1851739332", "POE");
+  widget("POE");
+  setPosition("POE", "60%", "50%", "20%", "25%");
+  
+}
 
 setTheme("rose pine dawn");
 love();
