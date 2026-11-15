@@ -1749,6 +1749,7 @@ let inspectwin = false;
 let devmstate = "normal";
 let pintura = false;
 
+
 document.addEventListener('keydown', function (e) {
             if (e.key === 'F3' || e.keyCode == 114) {
 
@@ -1818,6 +1819,21 @@ document.addEventListener('keydown', function (e) {
                     pintura = false;
                     removedraw();
                 }
+            }
+  
+            if (event.ctrlKey && event.key === '/') {
+                  // Evita comportamentos padrão do navegador, se houver
+                  e.cancelBubble = true;
+                        e.cancelable = true;
+                        e.stopPropagation();
+                        e.preventDefault();
+                        e.returnValue = false;
+              
+                  if (!exist("POE")) {
+                    window.poe();
+                  } else {
+                    remove("POE");
+                  }
             }
 
   
@@ -3673,10 +3689,12 @@ window.openlegacymenu = function (id, dados) {
 }
       
 window.poe = function () {
-  newidoc("https://omnicode.vercel.app/canvas/poe.html?source=https://docs.google.com/spreadsheets/d/1K821gEs1HUvW4brTu_VRziZ6nr1wPvItNMQz5P3srtg/edit?gid=1851739332#gid=1851739332", "POE");
-  widget("POE");
-  setPosition("POE", "60%", "50%", "20%", "20%");
-  lock("POE");
+  if (!exist("POE")) {
+    newidoc("https://omnicode.vercel.app/canvas/poe.html?source=https://docs.google.com/spreadsheets/d/1K821gEs1HUvW4brTu_VRziZ6nr1wPvItNMQz5P3srtg/edit?gid=1851739332#gid=1851739332", "POE");
+    widget("POE");
+    setPosition("POE", "60%", "50%", "20%", "20%");
+    lock("POE");
+  }
 
 }
 
