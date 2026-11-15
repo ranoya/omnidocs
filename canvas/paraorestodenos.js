@@ -243,6 +243,9 @@ polaroid("https://omnidocs.vercel.app/materiais/narrativas/obama.html", "Visuali
 
 newidoc("https://nbremer.github.io/ORCA/commit-history/?repo=d3", "Dataviz 2", 923, 524, 7384, 3059);
 
+polaroid("https://omnifolio.vercel.app/omnifiles/terminal_jupyter_jotter.gif", "Jotter: Jupyter notebook no terminal", "Jotter", 503, 375, 8489, 1751);
+
+
 window.lousa = function () {
     if (!exist("Lousa Digital")) {
         newidoc("https://www.tldraw.com/f/icxXGpnAXPXTprspCRdvs?d=v0.0.1259.896.page", "Lousa Digital", 1326, 765, -2251, -1059);
@@ -260,18 +263,27 @@ window.futuro = function () {
         newidoc("https://www.ranoya.com/pt/futuro/relatorio.php?nomenu=true&ttheme=cleantext", "Relatório Futuro", 959, 1222, -2339, 1648);
     }
     connect("Relatório Futuro", "Projeto Futuro");
+    connect("Projeto Futuro", "ART/ANC/ODE");
     
+    
+
+    center("Relatório Futuro");
+}
+
+window.arte = function () {
+
     svg("<iframe style='width: 100%; height: 100%;' frameborder='0' src='https://booklines.vercel.app/capas/artancode/sologo.html?art=1980&fcolor=ffffff88&bgcolor=0865E9'></iframe>", "ART/ANC/ODE", 955, 725, -3600, 600);
     connect("Projeto Futuro", "ART/ANC/ODE");
 
     newidoc("https://www.ranoya.com/pt/arte/?theme=cleantext&nomenu=true", "Arte", 965, 1219, -4886, 1650);
     connect("Arte", "ART/ANC/ODE");
 
-    center("Relatório Futuro");
+    center("ART/ANC/ODE");
+
 }
 
 
-
+connect("Jotter", "Jupyter");
 connect("Dataviz", "Jupyter");
 connect("Rick Rubin", "Claude Jupyter");
 connect("Observable", "Jupyter");
