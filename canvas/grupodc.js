@@ -1456,11 +1456,22 @@ window.grupodepesquisa = function () {
 
     connect("Publicações", "Grupo de Pesquisa");
     connect("Teses e Dissertações", "Publicações");
+    connect("Periódicos", "Publicações");
     center("Grupo de Pesquisa");
 
 
 }
 
+
+window.periodicos = function () {
+    
+    if (!exist("Periódicos")) {
+        newidoc("https://www.ranoya.com/pt/grupodc/periodicos.html?titulo=Peri%C3%B3dicos&bg=eceef4&fg=555555", "Periódicos", 660, 990, -450, -3300);
+    }
+    connect("Periódicos", "Publicações");
+    center("Periódicos");
+
+}
 
 window.openmenu = function (id, dados) {
         var el = document.getElementById(id);
@@ -1686,6 +1697,8 @@ registermenu(240, "RECURSOS", [
     { label: "Agendar Orientação", run: "window.agendas()" },
     { label: "--" },
     { label: "Quadro Compartilhado", run: "window.quadro()" },
+    { label: "--" },
+    { label: "Relação de Periódicos", run: "window.periodicos()" },
     { label: "--" },
     { label: "Acervos e Materiais", run: "window.acervos()" },
     { label: "Recursos de IA", run: "window.recursos()" },
