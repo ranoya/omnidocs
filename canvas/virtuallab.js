@@ -1728,7 +1728,7 @@ registermenu(330, "CODE", [
 ]);
 
 registermenu(390, "CANVAS", [
-    { label: "Apaga tudo", run: "removeall()" },
+    { label: "Limpa a tela", run: "removeall()" },
     { label: "--" },
     { label: "Zoom 100%", run: "setZoom(1)" },
     { label: "Zoom 75%", run: "setZoom(.75)" },
