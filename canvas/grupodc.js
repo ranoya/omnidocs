@@ -1707,6 +1707,8 @@ registermenu(240, "RECURSOS", [
 ]);
 
 registermenu(330, "CANVAS", [
+    { label: "Apaga tudo", run: "removeall()" },
+    { label: "--" },
     { label: "Zoom 100%", run: "setZoom(1)" },
     { label: "Zoom 75%", run: "setZoom(.75)" },
     { label: "Zoom 65%", run: "setZoom(.65)"},
