@@ -3717,6 +3717,13 @@ window.poe = function () {
 
 }
 
+window.foro = function () {
+  
+  if (!exist("Foro de Teresina")) {
+    newidoc(`https://open.spotify.com/embed/show/04bTe3UuVaZVDKV9ORFN4Y?utm_source=generator`, "Foro de Teresina", 1089, 356);
+  }
+}
+
 setTheme("rose pine dawn");
 love();
 snap();
