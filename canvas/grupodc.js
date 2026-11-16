@@ -1626,7 +1626,9 @@ window.materiaisdepesquisa = function () {
     }
 }
 
-
+let getcssv = function (v) {
+    return getComputedStyle(document.documentElement).getPropertyValue(v).slice(1);
+}
 
 window.poe = function () {
   if (!exist("POE")) {
