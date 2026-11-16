@@ -3719,6 +3719,14 @@ window.poe = function () {
 
 }
 
+window.togglepoe = function () {
+            if (!exist("POE")) {
+                    window.poe();
+                  } else {
+                    remove("POE");
+                  }
+}
+
 window.foro = function () {
   
   if (!exist("Foro de Teresina")) {

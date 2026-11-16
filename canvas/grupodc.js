@@ -1626,6 +1626,22 @@ window.materiaisdepesquisa = function () {
     }
 }
 
+window.materiaiscep = function () {
+    if (!exist("CEP")) {
+        newidoc("https://omnicode.vercel.app/canvas/poe.html?start=MODELOS%20CEP&text=5b212c&accent=f5844f&source=https://docs.google.com/spreadsheets/d/1K821gEs1HUvW4brTu_VRziZ6nr1wPvItNMQz5P3srtg/edit?gid=1427240092#gid=1427240092", "CEP", 660, 930, 690, 3390);
+    }
+
+    center("CEP");
+}
+
+window.marcabancas = function () {
+    if (!exist("Bancas")) {
+        newidoc("https://omnicode.vercel.app/canvas/poe.html?start=BANCAS&text=5b212c&accent=f5844f&source=https://docs.google.com/spreadsheets/d/1K821gEs1HUvW4brTu_VRziZ6nr1wPvItNMQz5P3srtg/edit?gid=1427240092#gid=1427240092", "Bancas", 660, 930, -210, 3390);
+    }
+
+    center("Bancas");
+}
+
 let getcssv = function (v) {
     return getComputedStyle(document.documentElement).getPropertyValue(v).slice(1);
 }
@@ -1646,6 +1662,14 @@ window.poe = function () {
     lock("POE");
   }
 
+}
+
+window.togglepoe = function () {
+            if (!exist("POE")) {
+                    window.poe();
+                  } else {
+                    remove("POE");
+                  }
 }
 
 // Menu antigo desligado
@@ -1772,13 +1796,14 @@ registermenu(120, "BIBLIOGRAFIAS", [
     { label: "Bibliografia de Conceitos em Digital Humanities", run: "window.bibliografiaDHConceitos()" },
     { label: "Bibliografia de Aspectos Culturais nas Digital Humanities", run: "window.bibliografiaDHCultura()" },
     { label: "Bibliografia sobre Expressões das Digital Humanities", run: "window.bibliografiaDHExpressoes()" },
-    { label: "Bibliografia de Poéticas Computacinoais", run: "window.bibliografiapoetica()" },
+    { label: "Bibliografia de Poéticas Computacionais", run: "window.bibliografiapoetica()" },
     { label: "--" },
     { label: "Glossários", run: "window.glossarios()"},
 ]);
                                 
 registermenu(240, "RECURSOS", [
     { label: "Agendar Orientação", run: "window.agendas()" },
+    { label: "Marcação de Bancas", run: "window.marcabancas()" },
     { label: "--" },
     { label: "Quadro Compartilhado", run: "window.quadro()" },
     { label: "--" },
@@ -1786,7 +1811,10 @@ registermenu(240, "RECURSOS", [
     { label: "--" },
     { label: "Acervos e Materiais", run: "window.acervos()" },
     { label: "Recursos de IA", run: "window.recursos()" },
-    { label: "Materiais de Pesquisa", run: "window.materiaisdepesquisa()" }
+    { label: "Materiais de Pesquisa", run: "window.materiaisdepesquisa()" },
+    { label: "--" },
+    { label: "Materiais e Modelos da CEP", run: "window.materiaiscep()" }
+    
     
 ]);
 
