@@ -3623,7 +3623,7 @@ window.legacy = function () {
         let wh = getcssv("--win-header");
 
       if (!exist("Legacy")) {
-        newidoc(`https://omnicode.vercel.app/canvas/poe.html?filtra=legacy&text=${t}&accent=${a}&muted=${m}&bg=${b}&panel-border=${pb}&win-header=${wh}&source=https://docs.google.com/spreadsheets/d/1K821gEs1HUvW4brTu_VRziZ6nr1wPvItNMQz5P3srtg/edit?gid=263245476#gid=263245476`, "Legacy", 335, 556);
+        newidoc(`https://omnicode.vercel.app/canvas/poe.html?filtra=legacyplus&text=${t}&accent=${a}&muted=${m}&bg=${b}&panel-border=${pb}&win-header=${wh}&source=https://docs.google.com/spreadsheets/d/1K821gEs1HUvW4brTu_VRziZ6nr1wPvItNMQz5P3srtg/edit?gid=263245476#gid=263245476`, "Legacy", 335, 556);
       }
 
       center("Legacy");
