@@ -1626,6 +1626,26 @@ window.materiaisdepesquisa = function () {
     }
 }
 
+
+
+window.poe = function () {
+  if (!exist("POE")) {
+
+    let b = getcssv("--bg");
+    let t = getcssv("--text");
+    let a = getcssv("--accent");
+    let m = getcssv("--muted");
+    let pb = getcssv("--panel-border");
+    let wh = getcssv("--win-header");
+
+    newidoc(`https://omnicode.vercel.app/canvas/poe.html?text=${t}&accent=${a}&muted=${m}&bg=${b}&panel-border=${pb}&win-header=${wh}&source=https://docs.google.com/spreadsheets/d/1K821gEs1HUvW4brTu_VRziZ6nr1wPvItNMQz5P3srtg/edit?gid=1427240092#gid=1427240092`, "POE");
+    widget("POE");
+    setPosition("POE", "60%", "50%", "20%", "20%");
+    lock("POE");
+  }
+
+}
+
 // Menu antigo desligado
 /*
 window.nomenu = function () {
@@ -1661,6 +1681,68 @@ if (typeof localStorage.getItem('firsttime') == 'undefined' || localStorage.getI
 }
 
 */
+
+let nap = true;
+let inspectwin = false;
+let devmstate = "normal";
+let pintura = false;
+
+document.addEventListener('keydown', function (e) {
+
+
+    
+            if (e.key === 'F4' || e.keyCode == 115) {
+
+                   e.cancelBubble = true;
+                    e.cancelable = true;
+                    e.stopPropagation();
+                    e.preventDefault();
+                    e.returnValue = false;
+
+                if (!nap) {
+                    snap();
+                    nap = true;
+                } else {
+                    nosnap();
+                    nap = false;
+                }
+            }
+  
+            if (e.key === 'F6' || e.keyCode == 117) {
+
+                   e.cancelBubble = true;
+                    e.cancelable = true;
+                    e.stopPropagation();
+                    e.preventDefault();
+                    e.returnValue = false;
+
+                if (!pintura) {
+                    pintura = true;
+                    draw();
+                } else {
+                    pintura = false;
+                    removedraw();
+                }
+            }
+  
+            if (event.ctrlKey && event.key === '/') {
+                  // Evita comportamentos padrão do navegador, se houver
+                  e.cancelBubble = true;
+                        e.cancelable = true;
+                        e.stopPropagation();
+                        e.preventDefault();
+                        e.returnValue = false;
+              
+                  if (!exist("POE")) {
+                    window.poe();
+                  } else {
+                    remove("POE");
+                  }
+            }
+
+  
+  
+});
 
 
 supermenubar("GRUPO DE PESQUISA INTEGRADA EM DESIGN + COMPUTAÇÃO <b style='color: var(--accent); font-weight: bolder;'>[D+C]</b>");
@@ -1715,6 +1797,8 @@ registermenu(330, "CANVAS", [
     { label: "Zoom 50%", run: "setZoom(.5)" },
     { label: "--" },
     { label: "Anotações", run: "draw()" },
+    { label: "--" },
+    { label: "Command Palette", run: "window.poe()" },
     { label: "--" },
     { label: "Linha de Comando", run: "floatdevmode()" },
     { label: "Fechar Linha de Comando", run: "nodev()" },
