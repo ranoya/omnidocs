@@ -1591,7 +1591,12 @@ window.relatorios = function () {
     if (!exist("Relatório Estética da Interação")) {
         newidoc("https://www.ranoya.com/pt/pesquisa/jornadacompleta.php?nomenu=true&temptheme=cleantext", "Relatório Estética da Interação", 1440, 810, 4440, -2040);
     }
+
+    if (!exist("Relatório Futuro")) {
+        newidoc("https://www.ranoya.com/pt/futuro/relatorio.php?nomenu=true&temptheme=cleantext", "Relatório Futuro", 1410, 810, 6000, -2040);
+    }
     connect("Estética da Interação", "Relatório Estética da Interação");
+    connect("Relatório Futuro", "Relatório Estética da Interação");
     center("Relatório Estética da Interação")
 }
 
