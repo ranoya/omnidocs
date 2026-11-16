@@ -255,27 +255,37 @@ window.lousa = function () {
 }
 
 window.futuro = function () {
+
+    if (!exist("Futuro")) {
+        image("Futuro", "https://visse.vercel.app/assets/covers/ProjetoFuturoDesign.png", 956, 728, -3600, 1890);
+    }
     
     if (!exist("Projeto Futuro")) {
-        newidoc("https://www.ranoya.com/pt/futuro/?nomenu=true&theme=cleantext", "Projeto Futuro", 964, 1223, -3599, 1646);
+        newidoc("https://www.ranoya.com/pt/futuro/?nomenu=true&theme=cleantext", "Projeto Futuro", 960, 1200, -2340, 1646);
     }
+
+
     if (!exist("Relatório Futuro")) {
-        newidoc("https://www.ranoya.com/pt/futuro/relatorio.php?nomenu=true&ttheme=cleantext", "Relatório Futuro", 959, 1222, -2339, 1648);
+        newidoc("https://www.ranoya.com/pt/futuro/relatorio.php?nomenu=true&ttheme=cleantext", "Relatório Futuro", 959, 1222, -2340, 3000);
     }
+
     connect("Relatório Futuro", "Projeto Futuro");
-    connect("Projeto Futuro", "ART/ANC/ODE");
+    connect("Futuro", "Projeto Futuro");
+    connect("Futuro", "ART/ANC/ODE");
     
     
 
-    center("Relatório Futuro");
+    center("Futuro");
 }
 
 window.arte = function () {
 
     svg("<iframe style='width: 100%; height: 100%;' frameborder='0' src='https://booklines.vercel.app/capas/artancode/sologo.html?art=1980&fcolor=ffffff88&bgcolor=0865E9'></iframe>", "ART/ANC/ODE", 955, 725, -3600, 600);
-    connect("Projeto Futuro", "ART/ANC/ODE");
+    connect("Futuro", "ART/ANC/ODE");
 
-    newidoc("https://www.ranoya.com/pt/arte/?theme=cleantext&nomenu=true", "Arte", 965, 1219, -4886, 1650);
+
+
+    newidoc("https://www.ranoya.com/pt/arte/?theme=cleantext&nomenu=true", "Arte", 965, 1219, -4920, 360);
     connect("Arte", "ART/ANC/ODE");
 
     center("ART/ANC/ODE");
