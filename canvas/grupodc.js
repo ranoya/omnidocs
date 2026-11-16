@@ -97,13 +97,13 @@ window.bibliografianarrativa = function () {
 window.projetofuturo = function () {
     
     if (!exist("Futuro")) {
-        image("Futuro", "https://visse.vercel.app/assets/covers/ProjetoFuturoDesign.png", 962, 528, 1587, 800);
+        image("Futuro", "https://visse.vercel.app/assets/covers/ProjetoFuturoDesign.png", 855, 533, 1650, 1770);
     }
 
     lock("Futuro");
 
     if (!exist("Projeto Futuro")) {
-        newidoc("https://www.ranoya.com/pt/futuro/?temptheme=cleantext&nomenu=true", "Projeto Futuro", 840, 810, 2640, 1890);
+        newidoc("https://www.ranoya.com/pt/futuro/?temptheme=cleantext&nomenu=true", "Projeto Futuro", 840, 810, 2640, 1770);
     }
 
     connect("Futuro", "Projetos");
