@@ -3721,6 +3721,13 @@ window.poe = function () {
 
 window.bases = function () {
 
+    let b = getcssv("--bg");
+    let t = getcssv("--text");
+    let a = getcssv("--accent");
+    let m = getcssv("--muted");
+    let pb = getcssv("--panel-border");
+    let wh = getcssv("--win-header");
+
   if (!exist("Bases de Dados")) {
     newidoc(`https://omnicode.vercel.app/canvas/poe.html?filtra=bases%20de%20dados&text=${t}&accent=${a}&muted=${m}&bg=${b}&panel-border=${pb}&win-header=${wh}&source=https://docs.google.com/spreadsheets/d/1K821gEs1HUvW4brTu_VRziZ6nr1wPvItNMQz5P3srtg/edit?gid=1851739332#gid=1851739332`, "Bases de Dados");
   }
