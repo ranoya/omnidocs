@@ -97,7 +97,9 @@ window.bibliografianarrativa = function () {
 window.projetofuturo = function () {
     
     if (!exist("Futuro")) {
-        image("Futuro", "https://visse.vercel.app/assets/covers/ProjetoFuturoDesign.png", 855, 533, 1650, 1770);
+
+        svg(`<div style="width: 100%; height: 100%; background-repeat: no-repeat; background-size: cover; background-position: center center; background-image: url(https://visse.vercel.app/assets/covers/ProjetoFuturoDesign.png);"></div>`, "Futuro", 855, 533, 1650, 1770);
+
     }
 
     lock("Futuro");
