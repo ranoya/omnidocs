@@ -252,6 +252,7 @@ window.lousa = function () {
     }
 
     center("Lousa Digital");
+    unlock("Lousa Digital");
 }
 
 window.futuro = function () {
@@ -276,6 +277,7 @@ window.futuro = function () {
     
 
     center("Futuro");
+    lockall();
 }
 
 window.arte = function () {
@@ -289,6 +291,7 @@ window.arte = function () {
     connect("Arte", "ART/ANC/ODE");
 
     center("ART/ANC/ODE");
+    lockall();
 
 }
 
@@ -306,7 +309,8 @@ window.legacy = function () {
         newidoc(`https://omnicode.vercel.app/canvas/poe.html?filtra=legacy&text=${t}&accent=${a}&muted=${m}&bg=${b}&panel-border=${pb}&win-header=${wh}&source=https://docs.google.com/spreadsheets/d/1K821gEs1HUvW4brTu_VRziZ6nr1wPvItNMQz5P3srtg/edit?gid=263245476#gid=263245476`, "Legacy", 335, 556);
       }
 
-      center("Legacy");
+    center("Legacy");
+    unlock("Legacy");
 }
 
 
