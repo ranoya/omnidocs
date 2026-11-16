@@ -94,6 +94,24 @@ window.bibliografianarrativa = function () {
     center("Bibliografia Storytelling");
 }
 
+window.projetofuturo = function () {
+    
+    if (!exist("Futuro")) {
+        image("Futuro", "https://visse.vercel.app/assets/covers/ProjetoFuturoDesign.png", 962, 528, 1587, 800);
+    }
+
+    lock("Futuro");
+
+    if (!exist("Projeto Futuro")) {
+        newidoc("https://www.ranoya.com/pt/futuro/?temptheme=cleantext&nomenu=true", "Projeto Futuro", 840, 810, 2640, 1890);
+    }
+
+    connect("Futuro", "Projetos");
+    connect("Futuro", "Projeto Futuro");
+
+    center("Projeto Futuro");
+}
+
 window.projetodigitalhumanities = function () {
 
 
@@ -1781,6 +1799,7 @@ registermenu(30, "PROJETOS", [
     { label: "Digital Humanities", run: "window.projetodigitalhumanities()" },
     { label: "Estudos em Mídia/Software", run: "window.projetomidiasoftware()" },
     { label: "ART/ANC/ODE", run: "window.arte()" },
+    { label: "Futuro do Design", run: "window.projetofuturo()" },
     { label: "--" },
     { label: "Relatórios", run: "window.relatorios()" }
 
