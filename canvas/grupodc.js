@@ -22,6 +22,7 @@ window.mapaprojetos = function() {
     connect("Projetos", "Digital Humanities");
     connect("Projetos", "Mídia+Software");
     connect("Projetos", "ART/ANC/ODE");
+    connect("Projetos", "Futuro");
 
 
     lock("Projetos");
