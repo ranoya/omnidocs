@@ -3719,14 +3719,14 @@ window.poe = function () {
 
 }
 
-windows.bases = function () {
+window.bases = function () {
 
   if (!exist("Bases de Dados")) {
     newidoc(`https://omnicode.vercel.app/canvas/poe.html?filtra=bases%20de%20dados&text=${t}&accent=${a}&muted=${m}&bg=${b}&panel-border=${pb}&win-header=${wh}&source=https://docs.google.com/spreadsheets/d/1K821gEs1HUvW4brTu_VRziZ6nr1wPvItNMQz5P3srtg/edit?gid=1851739332#gid=1851739332`, "Bases de Dados");
   }
 
   center("Bases de Dados");
-  
+
 }
 
 window.togglepoe = function () {
