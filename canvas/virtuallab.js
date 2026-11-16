@@ -1737,6 +1737,8 @@ registermenu(390, "CANVAS", [
     { label: "--" },
     { label: "Anotações", run: "draw()" },
     { label: "--" },
+    { label: "Command Palette", run: "poe()" },
+    { label: "--" },
     { label: "Linha de Comando", run: "floatdevmode()" },
     { label: "Fechar Linha de Comando", run: "nodev()" },
     { label: "--" },
