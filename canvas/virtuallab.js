@@ -94,6 +94,26 @@ window.bibliografianarrativa = function () {
     center("Bibliografia Storytelling");
 }
 
+window.projetofuturo = function () {
+    
+    if (!exist("Futuro")) {
+
+        svg(`<div style="width: 100%; height: 100%; background-repeat: no-repeat; background-size: cover; background-position: center center; background-image: url(https://visse.vercel.app/assets/covers/ProjetoFuturoDesign.png);"></div>`, "Futuro", 855, 533, 1650, 1770);
+
+    }
+
+    lock("Futuro");
+
+    if (!exist("Projeto Futuro")) {
+        newidoc("https://www.ranoya.com/pt/futuro/?temptheme=cleantext&nomenu=true", "Projeto Futuro", 840, 810, 2640, 1770);
+    }
+
+    connect("Futuro", "Projetos");
+    connect("Futuro", "Projeto Futuro");
+
+    center("Projeto Futuro");
+}
+
 window.projetodigitalhumanities = function () {
 
 
@@ -1568,7 +1588,12 @@ window.relatorios = function () {
     if (!exist("Relatório Estética da Interação")) {
         newidoc("https://www.ranoya.com/pt/pesquisa/jornadacompleta.php?nomenu=true&temptheme=cleantext", "Relatório Estética da Interação", 1440, 810, 4440, -2040);
     }
+
+    if (!exist("Relatório Futuro")) {
+        newidoc("https://www.ranoya.com/pt/futuro/relatorio.php?nomenu=true&temptheme=cleantext", "Relatório Futuro", 1410, 810, 6000, -2040);
+    }
     connect("Estética da Interação", "Relatório Estética da Interação");
+    connect("Relatório Futuro", "Relatório Estética da Interação");
     center("Relatório Estética da Interação")
 }
 
@@ -1686,6 +1711,7 @@ registermenu(30, "PROJETOS", [
     { label: "Digital Humanities", run: "window.projetodigitalhumanities()" },
     { label: "Estudos em Mídia/Software", run: "window.projetomidiasoftware()" },
     { label: "ART/ANC/ODE", run: "window.arte()" },
+    { label: "Futuro do Design", run: "window.projetofuturo()" },
     { label: "--" },
     { label: "Relatórios", run: "window.relatorios()" }
 
@@ -1711,7 +1737,7 @@ registermenu(240, "RECURSOS", [
     { label: "Agendamento", run: "window.marcacaoagenda()" },
     { label: "Calendário Acadêmico e de Eventos", run: "window.calendario()" },
     { label: "--" },
-    { label: "Quadro Compartilhado", run: "window.quadro()" },
+    { label: "Quadro D+C", run: "window.quadro()" },
     { label: "--" },
     { label: "Bases de Dados", run: "window.bases()" },
     { label: "Relação de Periódicos", run: "window.periodicos()" },
