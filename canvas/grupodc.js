@@ -1678,6 +1678,14 @@ window.poepesq = function () {
     center("Citações");
 }
 
+window.calendario = function () {
+    if (!exist("Calendário")) {
+        newidoc("https://docs.superhuman.com/embed/zqwbHc-iSo/_su01AsSm?hideSections=true", "Calendário", 1110, 810, -2160, -1050);
+    }
+
+    center("Calendário");
+}
+
 let getcssv = function (v) {
     return getComputedStyle(document.documentElement).getPropertyValue(v).slice(1);
 }
@@ -1841,6 +1849,7 @@ registermenu(120, "BIBLIOGRAFIAS", [
 registermenu(240, "RECURSOS", [
     { label: "Agendar Orientação", run: "window.agendas()" },
     { label: "Marcação de Bancas", run: "window.marcabancas()" },
+    { label: "Calendário Acadêmico e de Eventos", run: "window.calendario()" },
     { label: "--" },
     { label: "Quadro Compartilhado", run: "window.quadro()" },
     { label: "--" },
