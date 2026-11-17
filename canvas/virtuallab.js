@@ -1745,6 +1745,8 @@ registermenu(390, "CANVAS", [
     { label: "Linha de Comando", run: "floatdevmode()" },
     { label: "Fechar Linha de Comando", run: "nodev()" },
     { label: "--" },
+    { label: "Relógio", run: "window.togglerelogio() " },
+    { label: "--" },
     { label: "Meus amores", run: "love()" }
     
 ]);
@@ -2593,7 +2595,43 @@ window.openexemplos = function (id, dados) {
         
       }
 
-svg(`
+
+let mecanicus = "";
+
+window.moverelogio = function () {
+
+  mecanicus = setInterval(function () {
+
+  let agora = new Date();
+  let segundos = agora.getSeconds();
+  let minutos = agora.getMinutes();
+  let horas = agora.getHours();
+
+  // Cálculo dos ângulos (360 graus / total de unidades)
+  let angulo_sec = (segundos / 60) * 360;
+  let angulo_min = (minutos / 60) * 360;
+  let angulo_hor = ((horas % 12) / 12) * 360 + (minutos / 60) * 30; // Inclui o deslocamento dos minutos na hora
+
+  
+  document.getElementById("clock_barra_Horas").style.transform = "rotate(" + angulo_hor + "deg)";
+  document.getElementById("clock_barra_Segundos").style.transform = "rotate(" + angulo_sec + "deg)";
+  document.getElementById("clock_barra_Minutos").style.transform = "rotate(" + angulo_min + "deg)";
+
+  }, 1000);
+
+
+}
+
+window.pararelogio = function () {
+  clearInterval(mecanicus);
+}
+
+
+window.togglerelogio = function () {
+  if (!exist("Relógio")) {
+
+  
+    svg(`
   <svg  style="width: 100%; height: 100%;" viewBox="0 0 466 466" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="rel&#195;&#179;gio" clip-path="url(#clip0_2373_1497)">
 <path id="Ellipse 210" d="M449 233C449 352.294 352.294 449 233 449C113.706 449 17 352.294 17 233C17 113.706 113.706 17 233 17C352.294 17 449 113.706 449 233Z" stroke-width="4" stroke="var(--text, #000000)"/>
@@ -2717,37 +2755,20 @@ transform-origin: center center;
 }
 `
   
-  , "Relógio");
-
-setPosition("Relógio", "8%", "8%", "3%", "83%");
-widget("Relógio");
-lock("Relógio");
-
-window.moverelogio = function () {
-
-  setInterval(function () {
-
-  let agora = new Date();
-  let segundos = agora.getSeconds();
-  let minutos = agora.getMinutes();
-  let horas = agora.getHours();
-
-  // Cálculo dos ângulos (360 graus / total de unidades)
-  let angulo_sec = (segundos / 60) * 360;
-  let angulo_min = (minutos / 60) * 360;
-  let angulo_hor = ((horas % 12) / 12) * 360 + (minutos / 60) * 30; // Inclui o deslocamento dos minutos na hora
+      , "Relógio");
+    setPosition("Relógio", "8%", "8%", "46%", "80%");
+    widget("Relógio");
+    lock("Relógio");
+    window.moverelogio(); 
+  } else {
+    remove("Relógio");
+    window.pararelogio();
+  }
 
   
-  document.getElementById("clock_barra_Horas").style.transform = "rotate(" + angulo_hor + "deg)";
-  document.getElementById("clock_barra_Segundos").style.transform = "rotate(" + angulo_sec + "deg)";
-  document.getElementById("clock_barra_Minutos").style.transform = "rotate(" + angulo_min + "deg)";
-
-  }, 1000);
-
-
 }
 
-moverelogio();
+
 
 window.lpjd = function () {
   
