@@ -1668,6 +1668,16 @@ window.marcabancas = function () {
     center("Bancas");
 }
 
+window.poepesq = function () {
+
+    if (!exist("Citações")) {
+        newidoc("https://poepesquisa.vercel.app/csv/?title=COLAB&json=https://docs.google.com/spreadsheets/d/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/edit#gid=88153848&custommenu=https://docs.google.com/spreadsheets/d/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/edit#gid=1204780574&textos=https://docs.google.com/spreadsheets/d/1d9eKw82lnM5GvVkBUe8wLcHSxpmDm5B6dUqWRbazOik/edit#gid=1493544759&plugins=https://docs.google.com/spreadsheets/d/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/edit#gid=2135951357&files=https://docs.google.com/spreadsheets/d/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/edit#gid=0&run=true&nofocus=true&startcommand=", "Citações", 1170, 930, 4500, 3390);
+    }
+
+    connect("Notebooks", "Citações");
+    center("Citações");
+}
+
 let getcssv = function (v) {
     return getComputedStyle(document.documentElement).getPropertyValue(v).slice(1);
 }
@@ -1839,6 +1849,7 @@ registermenu(240, "RECURSOS", [
     { label: "Acervos e Materiais", run: "window.acervos()" },
     { label: "Recursos de IA", run: "window.recursos()" },
     { label: "Materiais de Pesquisa", run: "window.materiaisdepesquisa()" },
+    { label: "Coleção de Citações", run: "window.poepesq()"},
     { label: "--" },
     { label: "Materiais e Modelos da CEP", run: "window.materiaiscep()" }
     
