@@ -1661,6 +1661,26 @@ window.materiaisdepesquisa = function () {
     }
 }
 
+window.noteinstruct = function () {
+  newidoc(`https://omnicode.vercel.app/notebook/?temptheme=${localStorage.getItem('infcanvas:theme')}&load=https://omnicode.vercel.app/notebook/creativecode.html`, "Instruções");
+  centerlastframe();
+}
+
+window.about = function () {
+  newidoc(`https://omnicode.vercel.app/notebook/?temptheme=${localStorage.getItem('infcanvas:theme')}&load=https://omnicode.vercel.app/canvas/sobrecanvas.html`, "Sobre");
+  centerlastframe();
+}
+
+window.notedb = function () {
+  newidoc(`https://omnicode.vercel.app/notebook/?temptheme=${localStorage.getItem('infcanvas:theme')}&load=https://omnicode.vercel.app/canvas/sql.html`, "Instruções");
+  centerlastframe();
+}
+
+window.notedatat = function () {
+  newidoc(`https://omnicode.vercel.app/notebook/?temptheme=${localStorage.getItem('infcanvas:theme')}&load=https://omnicode.vercel.app/canvas/sobredatat.html`, "Instruções DATAT");
+  centerlastframe();
+}
+
 // Menu antigo desligado
 /*
 window.nomenu = function () {
