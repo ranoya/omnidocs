@@ -313,6 +313,21 @@ window.legacy = function () {
     unlock("Legacy");
 }
 
+window.togglecomputers = function () {
+
+    if (!exsit("Timeline Computadores")) {
+        newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&startmiddle=true&pattern=true&allowverticalscroll=true&timeheight=90&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=79806256#gid=79806256&theme=https://slidelines.vercel.app/level/extreme.css", "Timeline Computadores");
+        widget("Timeline Computadores");
+        setPosition("Timeline Computadores", "100%", "40%", 0, 0);
+        lock("Timeline Computadores");
+    } else {
+        remove("Timeline Computadores");
+    }
+    
+
+    
+}
+
 
 connect("Jotter", "Jupyter");
 connect("Dataviz", "Jupyter");
@@ -399,6 +414,17 @@ document.addEventListener('keydown', function (e) {
 
     }
 
+    if (e.key === 'F8' || e.keyCode == 119) {
+
+                   e.cancelBubble = true;
+                    e.cancelable = true;
+                    e.stopPropagation();
+                    e.preventDefault();
+                    e.returnValue = false;
+
+                    window.togglecomputers();
+
+    }
 
 
 });
