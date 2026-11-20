@@ -316,9 +316,12 @@ window.legacy = function () {
 window.togglecomputers = function () {
 
     if (!exist("Timeline Computadores")) {
-        newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&startmiddle=true&pattern=true&allowverticalscroll=true&timeheight=90&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=79806256#gid=79806256&theme=https://slidelines.vercel.app/level/extreme.css", "Timeline Computadores");
+        /* newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&startmiddle=true&pattern=true&allowverticalscroll=true&timeheight=90&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=79806256#gid=79806256&theme=https://slidelines.vercel.app/level/extreme.css", "Timeline Computadores"); */
+
+        svg(`<iframe style="width: 100%; height: 100%; border-radius: 2vw;" frameborder="0" src="https://slidelines.vercel.app/timelineh/?allblocks=true&startmiddle=true&pattern=true&allowverticalscroll=true&timeheight=90&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=79806256#gid=79806256&theme=https://slidelines.vercel.app/level/extreme.css"></iframe>`, "Timeline Computadores");
+
         widget("Timeline Computadores");
-        setPosition("Timeline Computadores", "100%", "60%", 0, 0);
+        setPosition("Timeline Computadores", "98%", "60%", "1%", "2%");
         lock("Timeline Computadores");
     } else {
         remove("Timeline Computadores");
@@ -327,6 +330,7 @@ window.togglecomputers = function () {
 
     
 }
+
 
 
 connect("Jotter", "Jupyter");
@@ -428,6 +432,23 @@ document.addEventListener('keydown', function (e) {
 
 
 });
+
+svg(`
+    <style>
+
+        #btimeline ellipse {
+            fill: var(--muted);
+        }
+
+        #btimeline:hover ellipse{
+            fill: var(--accent) !important;
+        }
+    </style>
+    <svg onclick="togglecomputers()" style="width: 100%; height: 100%; viewBox="0 0 50 50">
+        <ellipse rx="25" ry="25" cx="25" cy="25" />
+    </svg>
+    
+    `, "Botão Timeline", 25, 25, "2%", "96%");
 
 
 center("10 PRINT");
