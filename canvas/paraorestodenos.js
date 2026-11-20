@@ -450,7 +450,7 @@ svg(`
         <ellipse rx="25" ry="25" cx="25" cy="25" />
     </svg>
     
-    `, "Botão Timeline", 18, 18, "2%", "98%");
+    `, "Botão Timeline", 12, 12, "2%", "98.5%");
 
 widget("Botão Timeline");
 lock("Botão Timeline");
