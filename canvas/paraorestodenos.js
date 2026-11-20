@@ -450,6 +450,9 @@ svg(`
     
     `, "Botão Timeline", 25, 25, "2%", "96%");
 
+widget("Botão Timeline");
+lock("Botão Timeline");
+
 
 center("10 PRINT");
 setTimeout(function () {
