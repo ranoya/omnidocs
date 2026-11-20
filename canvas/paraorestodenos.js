@@ -315,7 +315,7 @@ window.legacy = function () {
 
 window.togglecomputers = function () {
 
-    if (!exsit("Timeline Computadores")) {
+    if (!exist("Timeline Computadores")) {
         newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&startmiddle=true&pattern=true&allowverticalscroll=true&timeheight=90&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=79806256#gid=79806256&theme=https://slidelines.vercel.app/level/extreme.css", "Timeline Computadores");
         widget("Timeline Computadores");
         setPosition("Timeline Computadores", "100%", "40%", 0, 0);
