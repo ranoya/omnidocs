@@ -1330,4 +1330,3 @@ lockall();
 setZoom(.4);
 center("Digital Humanities");
 
-highlight();
