@@ -1906,3 +1906,4 @@ registermenu(330, "CANVAS", [
 
 setZoom(.8);
 grupodepesquisa();
+highlight();

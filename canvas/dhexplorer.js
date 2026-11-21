@@ -2679,3 +2679,4 @@ registermenu(600, "CANVAS", [
     { label: "* FORMAS DE PUBLICAÇÃO DE NOTEBOOKS", run: "" },
 ]);
 
+highlight();

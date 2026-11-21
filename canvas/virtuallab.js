@@ -3983,4 +3983,5 @@ setTheme("rose pine dawn");
 love();
 snap();
 setZoom(1);
+highlight();
 
