@@ -638,16 +638,19 @@ registermenu(600, "CANVAS", [
 */
 
 window.mcomppessoal = function () {
-    togglecomputers('computação pessoal')
+    togglecomputers('computação pessoal');
 }
 window.mcompcorp = function () {
-    togglecomputers('computação corporativa')
+    togglecomputers('computação corporativa');
 }
 window.mcompedu = function () {
-    togglecomputers('computação educacional')
+    togglecomputers('computação educacional');
+}
+window.mcompint = function () {
+    togglecomputers('computação íntima');
 }
 window.mcompinova = function () {
-    togglecomputers('inovação')
+    togglecomputers('inovação');
 }
 window.mcompano = function (a) {
     if (a == 1960) {
@@ -671,8 +674,9 @@ registermenu(120, "ARTEFATOS", [
     { label: "ARTEFATOS DA HISTÓRIA DA COMPUTAÇÃO", run: "togglecomputers()" },
     { label: "--" },
     { label: "COMPUTAÇÃO PESSOAL", run: "mcomppessoal()" },
-    { label: "COMPUTAÇÃO EDUCACIONAL", run: "mcompcorp()" },
-    { label: "COMPUTAÇÃO CORPORATIVA", run: "mcompedu()" },
+    { label: "COMPUTAÇÃO ÍNTIMA", run: "mcompint()" },
+    { label: "COMPUTAÇÃO EDUCACIONAL", run: "mcompedu()" },
+    { label: "COMPUTAÇÃO CORPORATIVA", run: "mcompcorp()" },
     { label: "--" },
     { label: "INOVAÇÃO", run: "mcompinova()" },
     { label: "--" },
