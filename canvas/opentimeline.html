@@ -1,0 +1,87 @@
+<style>
+
+:root {
+    --bg: #d5d6db;
+    --panel: #e9e9ed;
+    --panel-border: #b8b9c0;
+    --text: #343b58;
+    --muted: #6a6f87;
+    --accent: #34548a;
+    --accent-text: #e9e9ed;
+    --win-header: #cbccd1;
+    --win-bg: #e9e9ed;
+    --win-border: #b8b9c0;
+    --shadow: rgba(52, 59, 88, .18);
+    --grid-dot: #c3c4cc;
+}
+
+    body {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+    #blocotimeline {
+        display: grid;
+        grid-template-columns: 22px 1fr;
+        gap: 6px;
+        background-color: var(--muted);
+        width: 180px;
+        height: 40px;
+        border-radius: 20px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    #botaotimeline {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    #botaotimeline svg path {
+        fill: var(--panel-border);
+    }
+
+    #botaotimeline:hover svg path {
+        fill: var(--panel) !important;
+    }
+
+    #filtratimeline {
+        color: var(--win-border);
+        background-color: transparent;
+        font-size: 14px;
+        line-height: 22px;
+        border: 0;
+        outline: 0;
+    }
+
+    #filtratimeline:focus {
+        color: var(--panel);
+    }
+</style>
+
+<div id="blocotimeline">
+<div id="botaotimeline" onclick="toggc()">
+
+    <svg style="width: 100%; height: 100%" viewBox="0 0 349 349" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M174.5 0C270.874 0 349 78.1263 349 174.5C349 270.874 270.874 349 174.5 349C78.1263 349 0 270.874 0 174.5C0 78.1263 78.1263 0 174.5 0ZM123 166V234H143V166H123ZM209 166V234H229V166H209ZM77 115V233H97V115H77ZM165 115V233H185V115H165ZM252 115V233H272V115H252Z" fill="black"/>
+    </svg>
+
+</div>
+<input type="text" id="filtratimeline" />
+</div>
+
+<script>
+    
+
+    toggc = function() {
+        let fil = document.getElementById("filtratimeline").value;
+        parent.postMessage(`togglecomputer("${fil}")`, "*");
+    }
+
+</script>
+
+
+
