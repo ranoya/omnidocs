@@ -55,6 +55,7 @@
         line-height: 22px;
         border: 0;
         outline: 0;
+        width: 140px;
     }
 
     #filtratimeline:focus {
@@ -81,6 +82,19 @@
         parent.postMessage(`togglecomputers("${fil}")`, "*");
     }
 
+    document.addEventListener('keydown', function (e) {
+
+        if (e.code === "Enter") {
+
+                   e.cancelBubble = true;
+                    e.cancelable = true;
+                    e.stopPropagation();
+                    e.preventDefault();
+                    e.returnValue = false;
+
+                    toggc();
+        }
+    });
 </script>
 
 

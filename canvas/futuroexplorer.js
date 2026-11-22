@@ -375,7 +375,7 @@ window.togglecomputers = function (f) {
         svg(`<iframe style="width: 100%; height: 100%; border-radius: 2vw;" frameborder="0" src="https://slidelines.vercel.app/timelineh/?${fil}allblocks=true&startmiddle=true&pattern=true&allowverticalscroll=true&timeheight=90&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=79806256#gid=79806256&theme=https://slidelines.vercel.app/level/extreme.css"></iframe>`, "Timeline Computadores");
 
         widget("Timeline Computadores");
-        setPosition("Timeline Computadores", "98%", "60%", "1%", "4%");
+        setPosition("Timeline Computadores", "98%", "60%", "1%", "6%");
         lock("Timeline Computadores");
     } else {
         remove("Timeline Computadores");
@@ -514,6 +514,7 @@ html(`
     <iframe frameborder="0" style="width: 100%; height: 100%;" src="https://omnidocs.vercel.app/canvas/opentimeline.html"></iframe> `, "Botão Timeline", 220, 110, "2%", "98.5%");
 
 widget("Botão Timeline");
+setPosition("Botão Timeline", 220, 110, 20, "98%")
 lock("Botão Timeline");
 
 
