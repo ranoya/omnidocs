@@ -79,6 +79,9 @@
 
     toggc = function() {
         let fil = document.getElementById("filtratimeline").value;
+        if (fil == "") {
+            fil = "main";
+        }
         parent.postMessage(`togglecomputers("${fil}")`, "*");
     }
 
