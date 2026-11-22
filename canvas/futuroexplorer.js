@@ -519,13 +519,34 @@ lock("Botão Timeline");
 
 
 center("10 PRINT");
+
+setTimeout(function () {
+
+    center("HyperCards");
+
+}, 3000);
+
+setTimeout(function () {
+
+    center("Jupyter");
+
+}, 5000);
+
 setTimeout(function () {
 
     setPan(-10000, 0);
     setPan(0, -10000);
     center("Titulo");
 
-}, 3000);
+}, 7000);
+
+window.resetcanvas = function () {
+    setPan(-10000, 0);
+    setPan(0, -10000);
+    center("Titulo");
+}
+
+   
  
 highlight();
 
@@ -533,10 +554,10 @@ supermenubar("FUTURO DO DESIGN");
 
 registermenu(30, "DISCIPLINA", [ 
     { label: "* EMENTA PROFEDIGITAL", run: "" },
+    { label: '* BIBLIOGRAFIA', run: "bibliotecacompleta()" },
     { label: "--" },
-    { label: "LOUSA", run: "lousa()" },
-    { label: "--" },
-    { label: 'BIBLIOGRAFIA', run: "bibliotecacompleta()" },
+    { label: "Lousa Compartilhada", run: "lousa()" },
+    { label: "Lousa em Primeiro Plano", run: "lousa50()" },
     { label: "--" },
     { label: 'PROJETO FUTURO DO DESIGN', run: "futuro()" },
     { label: 'ART/ANC/ODE', run: "arte()" },
@@ -616,19 +637,30 @@ registermenu(600, "CANVAS", [
 
 */
 
-registermenu(120, "CANVAS", [
-    { label: "LIMPA A TELA", run: "removeall()" },
+registermenu(120, "ARTEFATOS", [
+    { label: "ARTEFATOS DA HISTÓRIA DA COMPUTAÇÃO", run: "togglecomputers()" },
+    { label: "--" },
+    { label: "COMPUTAÇÃO PESSOAL", run: "togglecomputers('computação pessoal')" },
+    { label: "COMPUTAÇÃO EDUCACIONAL", run: "togglecomputers('computação educacional')" },
+    { label: "COMPUTAÇÃO CORPORATIVA", run: "togglecomputers('computação corporativa')" },
+    { label: "--" },
+    { label: "INOVAÇÃO", run: "togglecomputers('inovação')" },
+    { label: "--" },
+    { label: "ANOS 60", run: "togglecomputers('main (1958|1959|1960|1961|1962|1963|1964|1965|1966|1967|1968|1969')" },
+    { label: "ANOS 70", run: "togglecomputers('main (1970|1971|1972|1973|1974|1975|1976|1977|1978|1979')" },
+    { label: "ANOS 80", run: "togglecomputers('main (1980|1981|1982|1983|1984|1985|1986|1987|1988|1989')" },
+    { label: "ANOS 90", run: "togglecomputers('main (1990|1991|1992|1993|1994|1995|1996|1997|1998|1999')" },
+    { label: "ANOS 2000", run: "togglecomputers('main (2000|2001|2002|2003|2004|2005|2006|2007|2008|2009')" },
+]);
+
+registermenu(240, "CANVAS", [
+    { label: "TILT", run: "resetcanvas()" },
     { label: "LINHA DE COMANDO", run: "devmode()" },
     { label: "--" },
     { label: "Anotações", run: "draw()" },
     { label: "--" },
-    { label: "Lousa Compartilhada", run: "lousa()" },
-    { label: "Lousa em Primeiro Plano", run: "lousa50()" },
-    { label: "--" },
     { label: "ZOOM 100%", run: "setZoom(1)" },
     { label: "ZOOM 65%", run: "setZoom(.65)" },
     { label: "ZOOM 50%", run: "setZoom(.5)" },
-    { label: "ZOOM 25%", run: "setZoom(.25)" },
-    { label: "--" },
-    { label: "ARTEFATOS DA HISTÓRIA DA COMPUTAÇÃO", run: "togglecomputers()" }
+    { label: "ZOOM 25%", run: "setZoom(.25)" },    
 ]); 

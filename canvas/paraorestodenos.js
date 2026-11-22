@@ -524,13 +524,32 @@ lock("Botão Timeline");
 
 
 center("10 PRINT");
+
+setTimeout(function () {
+
+    center("HyperCards");
+
+}, 3000);
+
+setTimeout(function () {
+
+    center("Jupyter");
+
+}, 5000);
+
 setTimeout(function () {
 
     setPan(-10000, 0);
     setPan(0, -10000);
     center("Titulo");
 
-}, 3000);
+}, 7000);
+
+window.resetcanvas = function () {
+    setPan(-10000, 0);
+    setPan(0, -10000);
+    center("Titulo");
+}
  
 highlight();
 
