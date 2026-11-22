@@ -65,6 +65,21 @@ window.bibliografiapoetica = function () {
     center("Bibliografia Poéticas");
 }
 
+window.escritadin = function () {
+    if (!exist("Escrita Dinâmica")) {
+        html(`<div style="width: 100%; height: 100%; background-repeat: no-repeat; background-size: cover; background-position: center center; background-image: url(https://visse.vercel.app/assets/covers/EscritaDinamica.png)"></div>`, "Escrita Dinâmica", 873, 541, 1650, 2730);
+    }
+    if (!exsit("Projeto Escrita Dinâmica")) {
+         newidoc("https://www.ranoya.com/pt/publicacoesinterativas/?nomenu=true&theme=cleantext", "Projeto Escrita Dinâmica", 840, 810, 2640, 2730);
+     }
+    
+
+    connect("Escrita Dinâmica", "Projeto Escrita Dinâmica");
+    connect("Projetos", "Escrita Dinâmica");
+    center("Projeto Escrita Dinâmica");
+}
+
+
 window.projetonarrativas = function () {
     if (!exist("Narrativas Interativas")) {
         svg("https://visse.vercel.app/assets/covers/NarrativasInterativas.svg", "Narrativas Interativas", 962, 528, 1587, -90);
@@ -1577,7 +1592,7 @@ window.openmenu = function (id, dados) {
 
 window.acervos = function () {
     if (!exist("Acervos e MAteriais")) {
-        newidoc("https://docs.superhuman.com/embed/dvr6S_yBtg/_sulQQ3r5?hideSections=true", "Acervos e Materiais", 960, 930, 1590, 3390);
+        newidoc("https://docs.superhuman.com/embed/dvr6S_yBtg/_sulQQ3r5?hideSections=true", "Acervos e Materiais", 960, 930, 1590, 3780);
     }
     connect("Acervos e Materiais", "Projetos");
     connect("Acervos e Materiais", "Notebooks");
@@ -1627,19 +1642,36 @@ window.marcacaoagenda = function () {
 
 window.quadro = function () {
     if (!exist("Quadro")) {
-        newidoc("https://www.tldraw.com/f/vYokaPVx1n2Bp4HGdi-eT?d=v-222.0.1372.847.Ll9N-241MP2hPHObskmz2", "Quadro")
+        newidoc("https://www.tldraw.com/f/vYokaPVx1n2Bp4HGdi-eT?d=v-222.0.1372.847.Ll9N-241MP2hPHObskmz2", "Quadro", 1530, 1050, -2160, -90);
     }
 
     center("Quadro");
 }
 
+window.codaplay = function () {
+    if (!exist("Coda Playground")) {
+        newidoc('https://docs.superhuman.com/embed/Tua_hUol4P/_suOvudPW?viewMode=embedplay', 'Coda Playground', 1530, 960, -2160, 1110);
+    }
+
+    center("Coda Playground");
+}
+
+window.quadrofuturo = function () {
+    if (!exist("Quadro Futuro do Design")) {
+        newidoc("https://www.tldraw.com/f/icxXGpnAXPXTprspCRdvs?d=v0.0.1259.896.page", "Quadro Futuro do Design", 1530, 1050, -3900, -90);
+    }
+
+    center("Quadro Futuro do Design");
+    unlock("Quadro Futuro do Design");
+}
+
 window.recursos = function () {
     if (!exist("Notebooks")) {
-        newidoc("https://omnidocs.vercel.app/materiais/recursos/?&nomenu=true&titulo=Bibliografias%20em%20NotebookLM&filtra=NotebookLM", "Notebooks", 660, 930, 2760, 3390);
+        newidoc("https://omnidocs.vercel.app/materiais/recursos/?&nomenu=true&titulo=Bibliografias%20em%20NotebookLM&filtra=NotebookLM", "Notebooks", 660, 930, 2760, 3780);
     }
     connect("Acervos e Materiais", "Notebooks");
     if (!exist("Skills")) {
-        newidoc("https://omnidocs.vercel.app/materiais/recursos/?&nomenu=true&titulo=Skills%20de%20IA&filtra=Skill", "Skills", 660, 930, 3630, 3390);
+        newidoc("https://omnidocs.vercel.app/materiais/recursos/?&nomenu=true&titulo=Skills%20de%20IA&filtra=Skill", "Skills", 660, 930, 3630, 3780);
     }
     connect("Skills", "Notebooks");
     center("Notebooks");
@@ -1647,7 +1679,7 @@ window.recursos = function () {
 
 window.notebookslm = function () {
     if (!exist("Notebooks")) {
-        newidoc("https://omnidocs.vercel.app/materiais/recursos/?&nomenu=true&titulo=Bibliografias%20em%20NotebookLM&filtra=NotebookLM", "Notebooks", 660, 930, 2760, 3390);
+        newidoc("https://omnidocs.vercel.app/materiais/recursos/?&nomenu=true&titulo=Bibliografias%20em%20NotebookLM&filtra=NotebookLM", "Notebooks", 660, 930, 2760, 3780);
     }
     connect("Skills", "Notebooks");
     connect("Acervos e Materiais", "Notebooks");
@@ -1932,6 +1964,7 @@ registermenu(30, "PROJETOS", [
     { label: "Estudos em Mídia/Software", run: "window.projetomidiasoftware()" },
     { label: "ART/ANC/ODE", run: "window.arte()" },
     { label: "Futuro do Design", run: "window.projetofuturo()" },
+    { label: "A Escrita Dinâmica", run: "window.escritadin()" },
     { label: "--" },
     { label: "Relatórios", run: "window.relatorios()" }
 
@@ -1958,6 +1991,9 @@ registermenu(240, "RECURSOS", [
     { label: "Calendário Acadêmico e de Eventos", run: "window.calendario()" },
     { label: "--" },
     { label: "Quadro D+C", run: "window.quadro()" },
+    { label: "Quadro Futuro do Design", run: "window.quadrofuturo()" },
+    { label: "--" },
+    { label: "Coda Playground", run: "window.codaplay()" },
     { label: "--" },
     { label: "Bases de Dados", run: "window.bases()" },
     { label: "Relação de Periódicos", run: "window.periodicos()" },
@@ -3901,7 +3937,7 @@ window.legacy = function () {
 window.poepesq = function () {
 
     if (!exist("Citações")) {
-        newidoc("https://poepesquisa.vercel.app/csv/?title=COLAB&json=https://docs.google.com/spreadsheets/d/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/edit#gid=88153848&custommenu=https://docs.google.com/spreadsheets/d/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/edit#gid=1204780574&textos=https://docs.google.com/spreadsheets/d/1d9eKw82lnM5GvVkBUe8wLcHSxpmDm5B6dUqWRbazOik/edit#gid=1493544759&plugins=https://docs.google.com/spreadsheets/d/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/edit#gid=2135951357&files=https://docs.google.com/spreadsheets/d/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/edit#gid=0&run=true&nofocus=true&startcommand=", "Citações", 1170, 930, 4500, 3390);
+        newidoc("https://poepesquisa.vercel.app/csv/?title=COLAB&json=https://docs.google.com/spreadsheets/d/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/edit#gid=88153848&custommenu=https://docs.google.com/spreadsheets/d/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/edit#gid=1204780574&textos=https://docs.google.com/spreadsheets/d/1d9eKw82lnM5GvVkBUe8wLcHSxpmDm5B6dUqWRbazOik/edit#gid=1493544759&plugins=https://docs.google.com/spreadsheets/d/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/edit#gid=2135951357&files=https://docs.google.com/spreadsheets/d/1OAFTp3hglr3zj-cQzXJUqV-QROtaWtSYnCuGjwZIM5Y/edit#gid=0&run=true&nofocus=true&startcommand=", "Citações", 1170, 930, 4500, 3780);
     }
 
     connect("Notebooks", "Citações");

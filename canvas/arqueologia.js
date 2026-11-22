@@ -405,4 +405,3 @@ lock("Estudo de Caso");
 lock("História das Interfaces Computacionais");
 
 center("Projeto");
-highlight();

@@ -369,4 +369,3 @@ lockall();
 
 setZoom(.75);
 center("Logo");
-highlight();

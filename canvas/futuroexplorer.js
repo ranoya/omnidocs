@@ -652,6 +652,9 @@ window.mcompint = function () {
 window.mcompinova = function () {
     togglecomputers('inovação');
 }
+window.mcompartegen = function () {
+    togglecomputers('arte generativa');
+}
 window.mcompano = function (a) {
     if (a == 1960) {
         togglecomputers('main (1958|1959|1960|1961|1962|1963|1964|1965|1966|1967|1968|1969)');
@@ -679,6 +682,8 @@ registermenu(120, "ARTEFATOS", [
     { label: "COMPUTAÇÃO CORPORATIVA", run: "mcompcorp()" },
     { label: "--" },
     { label: "INOVAÇÃO", run: "mcompinova()" },
+    { label: "--" },
+    { label: "ARTE GENERATIVA", run: "mcompartegen()" },
     { label: "--" },
     { label: "ANOS 60", run: "mcompano(1960)" },
     { label: "ANOS 70", run: "mcompano(1970)" },
