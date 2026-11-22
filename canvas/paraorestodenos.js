@@ -516,7 +516,7 @@ document.addEventListener('keydown', function (e) {
 });
 
 html(`
-    <iframe frameborder="0" style="width: 100%; height: 100%;" src="https://omnidocs.vercel.app/canvas/opentimeline.html"></iframe> `, "Botão Timeline", 180, 40, "2%", "98.5%");
+    <iframe frameborder="0" style="width: 100%; height: 100%;" src="https://omnidocs.vercel.app/canvas/opentimeline.html"></iframe> `, "Botão Timeline", 220, 110, "2%", "98.5%");
 
 widget("Botão Timeline");
 lock("Botão Timeline");
