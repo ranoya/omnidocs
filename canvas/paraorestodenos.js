@@ -361,15 +361,26 @@ window.legacy = function () {
     unlock("Legacy");
 }
 
-window.togglecomputers = function () {
+window.timeline = function (f) {
+    window.togglecomputers(f);
+}
+
+window.togglecomputers = function (f) {
+
+    let fil = "";
+
+    if (typeof f != 'undefined' && f != null && f != '') {
+        fil = "filtra=" + f + "&";
+    }
+    
 
     if (!exist("Timeline Computadores")) {
         /* newidoc("https://slidelines.vercel.app/timelineh/?allblocks=true&startmiddle=true&pattern=true&allowverticalscroll=true&timeheight=90&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=79806256#gid=79806256&theme=https://slidelines.vercel.app/level/extreme.css", "Timeline Computadores"); */
 
-        svg(`<iframe style="width: 100%; height: 100%; border-radius: 2vw;" frameborder="0" src="https://slidelines.vercel.app/timelineh/?allblocks=true&startmiddle=true&pattern=true&allowverticalscroll=true&timeheight=90&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=79806256#gid=79806256&theme=https://slidelines.vercel.app/level/extreme.css"></iframe>`, "Timeline Computadores");
+        svg(`<iframe style="width: 100%; height: 100%; border-radius: 2vw;" frameborder="0" src="https://slidelines.vercel.app/timelineh/?${fil}allblocks=true&startmiddle=true&pattern=true&allowverticalscroll=true&timeheight=90&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=79806256#gid=79806256&theme=https://slidelines.vercel.app/level/extreme.css"></iframe>`, "Timeline Computadores");
 
         widget("Timeline Computadores");
-        setPosition("Timeline Computadores", "98%", "60%", "1%", "2%");
+        setPosition("Timeline Computadores", "98%", "60%", "1%", "4%");
         lock("Timeline Computadores");
     } else {
         remove("Timeline Computadores");
