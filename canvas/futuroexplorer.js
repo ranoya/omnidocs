@@ -510,24 +510,8 @@ document.addEventListener('keydown', function (e) {
 
 });
 
-svg(`
-    <style>
-
-        #btimeline ellipse {
-            fill: var(--muted);
-            cursor: pointer;
-        }
-
-        #btimeline:hover ellipse{
-            fill: var(--accent) !important;
-            cursor: pointer;
-        }
-    </style>
-    <svg id="btimeline" onclick="togglecomputers()" style="width: 100%; height: 100%; viewBox="0 0 50 50">
-        <ellipse rx="25" ry="25" cx="25" cy="25" />
-    </svg>
-    
-    `, "Botão Timeline", 12, 12, "2%", "98.5%");
+html(`
+    <iframe frameborder="0" style="width: 100%; height: 100%;" src="https://omnidocs.vercel.app/canvas/opentimeline.html"></iframe> `, "Botão Timeline", 180, 40, "2%", "98.5%");
 
 widget("Botão Timeline");
 lock("Botão Timeline");
