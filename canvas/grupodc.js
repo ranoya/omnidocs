@@ -42,7 +42,7 @@ window.escritadin = function () {
     if (!exist("Escrita Dinâmica")) {
         html(`<div style="width: 100%; height: 100%; background-repeat: no-repeat; background-size: cover; background-position: center center; background-image: url(https://visse.vercel.app/assets/covers/EscritaDinamica.png)"></div>`, "Escrita Dinâmica", 873, 541, 1650, 2730);
     }
-    if (!exsit("Projeto Escrita Dinâmica")) {
+    if (!exist("Projeto Escrita Dinâmica")) {
          newidoc("https://www.ranoya.com/pt/publicacoesinterativas/?nomenu=true&theme=cleantext", "Projeto Escrita Dinâmica", 840, 810, 2640, 2730);
      }
     
