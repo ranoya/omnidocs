@@ -638,19 +638,19 @@ registermenu(600, "CANVAS", [
 */
 
 registermenu(120, "ARTEFATOS", [
-    { label: "ARTEFATOS DA HISTÓRIA DA COMPUTAÇÃO", run: 'togglecomputers()' },
+    { label: "ARTEFATOS DA HISTÓRIA DA COMPUTAÇÃO", run: "togglecomputers()" },
     { label: "--" },
-    { label: "COMPUTAÇÃO PESSOAL", run: 'togglecomputers("computação pessoal")' },
-    { label: "COMPUTAÇÃO EDUCACIONAL", run: 'togglecomputers("computação educacional")' },
-    { label: "COMPUTAÇÃO CORPORATIVA", run: 'togglecomputers("computação corporativa")' },
+    { label: "COMPUTAÇÃO PESSOAL", run: "togglecomputers(\"computação pessoal\")" },
+    { label: "COMPUTAÇÃO EDUCACIONAL", run: "togglecomputers(\"computação educacional\")" },
+    { label: "COMPUTAÇÃO CORPORATIVA", run: "togglecomputers(\"computação corporativa\")" },
     { label: "--" },
-    { label: "INOVAÇÃO", run: 'togglecomputers("inovação")' },
+    { label: "INOVAÇÃO", run: "togglecomputers(\"inovação\")" },
     { label: "--" },
-    { label: "ANOS 60", run: 'togglecomputers("main (1958|1959|1960|1961|1962|1963|1964|1965|1966|1967|1968|1969")' },
-    { label: "ANOS 70", run: 'togglecomputers("main (1970|1971|1972|1973|1974|1975|1976|1977|1978|1979")' },
-    { label: "ANOS 80", run: 'togglecomputers("main (1980|1981|1982|1983|1984|1985|1986|1987|1988|1989")' },
-    { label: "ANOS 90", run: 'togglecomputers("main (1990|1991|1992|1993|1994|1995|1996|1997|1998|1999")' },
-    { label: "ANOS 2000", run: 'togglecomputers("main (2000|2001|2002|2003|2004|2005|2006|2007|2008|2009")' },
+    { label: "ANOS 60", run: "togglecomputers(\"main (1958|1959|1960|1961|1962|1963|1964|1965|1966|1967|1968|1969\")" },
+    { label: "ANOS 70", run: "togglecomputers(\"main (1970|1971|1972|1973|1974|1975|1976|1977|1978|1979\")" },
+    { label: "ANOS 80", run: "togglecomputers(\"main (1980|1981|1982|1983|1984|1985|1986|1987|1988|1989\")" },
+    { label: "ANOS 90", run: "togglecomputers(\"main (1990|1991|1992|1993|1994|1995|1996|1997|1998|1999\")" },
+    { label: "ANOS 2000", run: "togglecomputers(\"main (2000|2001|2002|2003|2004|2005|2006|2007|2008|2009\")" },
 ]);
 
 registermenu(240, "CANVAS", [
