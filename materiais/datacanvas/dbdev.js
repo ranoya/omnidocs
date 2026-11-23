@@ -664,6 +664,11 @@ window.notedb = function () {
   centerlastframe();
 }
 
+window.notedatat = function () {
+  newidoc(`https://omnicode.vercel.app/notebook/?temptheme=${localStorage.getItem('infcanvas:theme')}&load=https://omnicode.vercel.app/canvas/sobredatat.html`, "Instruções DATAT");
+  centerlastframe();
+}
+
 
 let omnicocount = 0;
 
@@ -2061,3 +2066,464 @@ window.openbibliografia = function () {
   newidoc("https://www.ranoya.com/pt/canvasbiblioteka/?p=t&filtra=culturadedados_aula&fg=FFFFFF&bg=debe34&titulo=Cultura%20de%20dados", "Bibliografia Cultura de Dados");
   center("Bibliografia Cultura de Dados");
 }
+
+
+window.mworkshe = function () {
+  if (!exist("Planilha")) {
+    newidoc('https://docs.google.com/spreadsheets/d/1XIIoqXWJ0UGKkrLwFreSmfcxPbNu2fyUvVNdDwBiprA/edit', 'Planilha')
+  }
+  center("Planilha");
+}
+window.mementa = function () {
+  if (!exist("Ementa")) {
+    newidoc('https://visse.vercel.app/v3-ementas/dc.html?theme=dc', 'Ementa')
+  }
+  center("Ementa");
+}
+window.mslides = function () {
+  if (!exist("Slides")) {
+    newidoc('https://omnidocs.vercel.app/docs/dataculture/', 'Slides')
+  }
+  center("Slides");
+}
+window.mhumanismo = function () {
+  if (!exist("Humanismo de Dados")) {
+    newidoc('https://slidelines.vercel.app/level/?&s=start&allblocks=true&timeheight=100&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=117253420#gid=117253420&theme=https://slidelines.vercel.app/styles/leveloptmizednormal.css', 'Humanismo de Dados')
+  }
+  center("Humanismo de Dados");
+}
+window.mcasoppg = function () {
+  if (!exist("Caso PPGDesign")) {
+    newidoc('https://slidelines.vercel.app/level/?filtra=_culturadedados&s=start&allblocks=true&timeheight=100&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=78623403#gid=78623403&&theme=https://slidelines.vercel.app/styles/leveloptmizednormal.css', 'Caso PPGDesign')
+  }
+  center("Caso PPGDesign");
+}
+window.mdapratica = function () {
+  if (!exist("Da prática à pesquisa")) {
+    newidoc('https://slidelines.vercel.app/simple/?startvisible=true&fixascroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1214531908#gid=1214531908&theme=https://slidelines.vercel.app/styles/ontopembed.css', 'Da prática à pesquisa')
+  }
+  center("Da prática à pesquisa");
+}
+window.mcdp = function () {
+  if (!exist("Ciência, Design & Programação")) {
+    newidoc('https://slides.com/ranoya/palestratecnologiapesquisa/embed', 'Ciência, Design & Programação')
+  }
+  center("Ciência, Design & Programação");
+}
+window.mdocsinteligentes = function () {
+  if (!exist("Documentos Inteligentes")) {
+    newidoc('https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=80&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=2051435513#gid=2051435513&theme=https://slidelines.vercel.app/styles/slidescomnormal.css', 'Documentos Inteligentes')
+  }
+  center("Documentos Inteligentes");
+}
+window.mpnca = function () {
+  if (!exist("Estudo de Caso PNCA")) {
+    newidoc('https://slides.com/ranoya/estudodecasopnca/embed#/caps', 'Estudo de Caso PNCA')
+  }
+  center("Estudo de Caso PNCA");
+}
+window.openlousa = function () {
+  if (!exist("Lousa")) {
+    newidoc('https://www.tldraw.com/f/U4Iogb18xB5LgkXfbPDoW?d=v0.0.1380.845.ogNN7oCscCBHnPuTfXXn-', 'Lousa')
+  }
+  center("Lousa");
+}
+
+
+// SUPERMENU
+
+supermenubar("CULTURA DE DADOS");
+
+registermenu(36, "CANVAS", [ 
+  { label: "EMENTA PPGDESIGN", run: "window.ementa()" },
+  { label: "BIBLIOGRAFIA", run: "window.openbibliografia()" },
+  { label: "--" },
+  { label: "LOUSA", run: "openlousa()" },
+  { label: "WORKSHEET", run: "window.mworkshe()" },
+  { label: "--" },
+  { label: "LINHA DE COMANDO", run: "devmode()" },
+  { label: "--" },
+  { label: 'SLIDES DE CULTURA DE DADOS', run: "window.mslides()" },
+  { label: 'DADOS SÃO UM PROBLEMA HUMANO', run: "window.mhumanismo()" },
+  { label: 'CASO PPGDESIGN', run: "window.mcasoppg()" },
+  { label: 'DA PRÁTICA À PESQUISA', run: "window.mdapratica()" },
+  { label: 'CIÊNCIA, DESIGN & PROGRAMAÇÃO', run: "window.mcdp()" },
+  { label: 'DOCUMENTOS INTEGRADOS E DOCUMENTOS INTELIGENTES', run: "window.mdocsinteligentes()" },
+  { label: 'ESTUDO DE CASO PNCA', run: "window.mpnca()" },
+  { label: 'DADOS PNCA', run: "window.openpncadata()" },
+  { label: "--" },
+  { label: "Limpa a tela", run: "removeall()" },
+  { label: "Anotações", run: "draw()" },
+  { label: "--" },
+  { label: "ZOOM 100%", run: "setZoom(1)" },
+  { label: "ZOOM 65%", run: "setZoom(.65)" },
+  { label: "ZOOM 50%", run: "setZoom(.5)" },
+  { label: "ZOOM 25%", run: "setZoom(.25)" }
+]);
+
+registermenu(111, "ARQUEOLOGIA", [ 
+  { label: "MANUAL VISICALC", run: "window.manualvisicalc()" },
+  { label: "--" },
+  { label: "VISICALC", run: "window.visicalc()" },
+  { label: "LOTUS 1-2-3", run: "window.lotus()" },
+  { label: 'MULTIPLAN', run: "window.multiplan()" },
+  { label: "--" },
+  { label: 'DBASE III PLUS', run: "window.db3()" },
+  { label: 'DBASE IV', run: "window.db4()" },
+  { label: 'FOXPRO 2.0', run: "window.foxpro()" },
+  { label: 'WINDOWS FOXPRO 2.6', run: "window.foxprow()" },
+  { label: 'BORLAND PARADOX 4.5', run: "window.paradox()" },
+  { label: 'BORLAND PARADOX FOR WINDOWS', run: "window.paradoxw()" },
+  { label: 'BORLAND PARADOX 4.5 FOR WINDOWS', run: "window.paradoxw45()" },
+  { label: "--" },
+  { label: "WOLFRAM MATHEMATICA", run: "window.wmath()" }
+]);
+
+window.tiposdedados = function () {
+  if (!exist("Tipos de Dados")) {
+    newidoc('https://omnidocs.vercel.app/materiais/workbench/tiposdedados.html?fcolor=450e46&bgcolor=debe34', 'Tipos de Dados')
+  }
+  center("Tipos de Dados");
+}
+window.openarrayformula = function () {
+  if (!exist("Arrayformula")) {
+    newidoc('https://docs.google.com/spreadsheets/d/1pBbLeEtLQS_XT4-77wnx48Ogm7yNHQNX_kZC30wxmqQ/view?rm=embedded&gid=0#gid=0', 'Arrayformula')
+  }
+  center("Arrayformula");
+}
+window.openlousa = function () {
+  if (!exist("Lousa")) {
+    newidoc('https://www.tldraw.com/f/U4Iogb18xB5LgkXfbPDoW?d=v0.0.1380.845.ogNN7oCscCBHnPuTfXXn-', 'Lousa')
+  }
+  center("Lousa");
+}
+window.openplanregex = function () {
+  if (!exist("Regex em Planilhas")) {
+    newidoc('https://docs.google.com/spreadsheets/d/1r6yAN9d-GQO6Tb8etdmwW0hAYZbhFlsEVjrZOxIZsZo/edit?gid=0#gid=0', 'Regex em Planilhas')
+  }
+  center("Regex em Planilhas");
+}
+window.openregexer = function () {
+  if (!exist("Regexer")) {
+    newidoc('https://regexr.com/', 'Regexer')
+  }
+  center("Regexer");
+}
+window.opensqlplan = function () {
+  if (!exist("SQL Query em Planilha")) {
+    newidoc('https://docs.google.com/spreadsheets/d/1FbY8hPtM8IxEJ26ybMZHpMrHdk-LEm1yuYPiFVwF94U/view?rm=embedded&', 'SQL Query em Planilha')
+  }
+  center("SQL Query em Planilha");
+}
+window.openbookmarkerdatasets = function () {
+  if (!exist("Datasets Catalogados")) {
+    newidoc('https://www.ranoya.com/pt/bookmarker/?nomenu=true&theme=dc&titulo=Open%20Datasets&filtra=opendatasets', 'Datasets Catalogados')
+  }
+  center("Datasets Catalogados");
+}
+window.opencodaplay = function () {
+  if (!exist("Coda Playground")) {
+    newidoc('https://docs.superhuman.com/embed/Tua_hUol4P/_suOvudPW?viewMode=embedplay', 'Coda Playground')
+  }
+  center("Coda Playground");
+}
+window.openfiddle = function () {
+  if (!exist("SQL Fiddle")) {
+    newidoc('https://www.db-fiddle.com/f/fhRu8oQmSRex3YHkDGxE78/0', 'SQL Fiddle')
+  }
+  center("SQL Fiddle");
+}
+
+
+
+registermenu(220, "PLANILHAS E DB", [ 
+  { label: "TIPOS DE DADOS", run: "window.tiposdedados()" },
+  { label: "TIPOS DE ARQUIVOS DE DADOS", run: "window.tiposdearquivosdedados()" },
+  { label: "--" },
+  { label: "ARRAYFORMULA", run: "window.openarrayformula()" },
+  { label: "--" },
+  { label: 'Regex em Planilha', run: "window.openplanregex()" },
+  { label: 'Regexer', run: "window.openregexer()" },
+  { label: "--" },
+  { label: 'SQL Query em Planilhas', run: "window.opensqlplan()" },
+  { label: "--" },
+  { label: 'DATASETS', run: "window.openbookmarkerdatasets()" },
+  { label: "--" },
+  { label: 'CODA PLAYGROUND', run: "window.opencodaplay()" },
+  { label: "--" },
+  { label: 'SQL FIDDLE', run: "window.openfiddle()" },
+  { label: 'DATASET EXEMPLO PARA SQL QUERY', run: "window.dataset()" },
+  { label: 'DATASET EXEMPLO PARA DATAT', run: "window.datatgsdata()" },
+  { label: "INSTRUÇÕES DO SQL QUERY", run: "window.notedb()" },
+  { label: "INSTRUÇÕES DO SQL QUERY", run: "window.notedatat()" }
+]);
+
+window.openclaudio = function () {
+  if (!exist("Claudio Esperança")) {
+    newidoc('https://slidelines.vercel.app/timelineh/?allblocks=true&s=10&pattern=true&timelineheight=60px&startvisible=true&allowverticalscroll=true&timeheight=110&followbg=true&theme=https://slidelines.vercel.app/styles/aulasslides.css&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1622442665#gid=1622442665', 'Claudio Esperança')
+  }
+  center("Claudio Esperança");
+}
+window.openbibliotecasprog = function () {
+  if (!exist("Bibliotecas de Programação")) {
+    newidoc('https://visse.vercel.app/ferramentas/paralaxe2.html?filtra=biblioteca&cv=debe34f5&fg=FFFFFF&bg=979797&titulo=Bibliotecas%20de%20Programa%C3%A7%C3%A3o', 'Bibliotecas de Programação')
+  }
+  center("Bibliotecas de Programação");
+}
+
+
+registermenu(337, "NOTEBOOKS", [ 
+  { label: "NOTEBOOKS COMPUTACIONAIS", run: "window.opennotebookpres()" },
+  { label: "--" },
+  { label: "PROGRAMANDO EM JAVASCIRPT COM OBSERVABLE", run: "window.pjo()" },
+  { label: 'PROGRAMANDO EM JAVASCIRPT COM OBSERVABLE ABERTO', run: "window.pjod()" },
+  { label: 'AULAS DE OBSERVABLE EM VÍDEO', run: "window.openclaudio()" },
+  { label: "--" },
+  { label: 'NOTEBOOK DE PROGRAMAÇÃO CRIATIVA', run: "window.notebook()" },
+  { label: "--" },
+  { label: 'BIBLIOTECAS DE PROGRAMAÇÃO', run: "window.openbibliotecasprog()" },
+  { label: "--" },
+  { label: 'WOLFRAM MATHEMATICA', run: "window.wmat()" }
+  
+]);
+
+
+window.openvisualizacoes = function () {
+  if (!exist("Visualizações")) {
+    newidoc('https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=debe34', 'Visualizações')
+  }
+  center("Visualizações");
+}
+window.opennixd = function () {
+  if (!exist("Narrativas com Interação")) {
+    newidoc('https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=debe34&filtra=_nixd', 'Narrativas com Interação')
+  }
+  center("Narrativas com Interação");
+}
+window.opencpdv = function () {
+  if (!exist("Componentes de Dataviz")) {
+    newidoc('https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=debe34&filtra=_cpdv', 'Componentes de Dataviz')
+  }
+  center("Componentes de Dataviz");
+}
+window.opennixddl = function () {
+  if (!exist("Narrativas Interativas com Dataviz")) {
+    newidoc('https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=debe34&filtra=_nixddl', 'Narrativas Interativas com Dataviz')
+  }
+  center("Narrativas Interativas com Dataviz");
+}
+window.openndl = function () {
+  if (!exist("Narrativas com Dados")) {
+    newidoc('https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=debe34&filtra=_ndl', 'Narrativas com Dados')
+  }
+  center("Narrativas com Dados");
+}
+window.opendatapres = function () {
+  if (!exist("Apresentação com Dados")) {
+    newidoc('https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=debe34&filtra=_datapres', 'Apresentação com Dados')
+  }
+  center("Apresentação com Dados");
+}
+window.openinfografia = function () {
+  if (!exist("Infografia")) {
+    newidoc('https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=debe34&filtra=infografia', 'Infografia')
+  }
+  center("Infografia");
+}
+window.opendataui = function () {
+  if (!exist("Interfaces para Dados")) {
+    newidoc('https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=debe34&filtra=_dataui', 'Interfaces para Dados')
+  }
+  center("Interfaces para Dados");
+}
+window.opendataphys = function () {
+  if (!exist("Fisicalização de Dados")) {
+    newidoc('https://visse.vercel.app/mapeamentoartefatos/componentefundoescuro.html?bg=debe34&filtra=_dataphys', 'Fisicalização de Dados')
+  }
+  center("Fisicalização de Dados");
+}
+window.opentheeconomist = function () {
+  if (!exist("Produção Editorial")) {
+    newidoc('https://omnidocs.vercel.app/materiais/exemploeditorialdados', 'Produção Editorial')
+  }
+  center("Produção Editorial");
+}
+window.opendataviztoolsnetwork = function () {
+  if (!exist("Ferramentas em uso")) {
+    newidoc('https://yanouski.com/work/dataviz-tools-network/', 'Ferramentas em uso')
+  }
+  center("Ferramentas em uso");
+}
+window.openportras = function () {
+  if (!exist("O que há por trás da visualização?")) {
+    newidoc('https://omnidocs.vercel.app/explicacoesvisuais/dataviz/?bg=debe34', 'O que há por trás da visualização?')
+  }
+  center("O que há por trás da visualização?");
+}
+
+
+
+registermenu(435, "DATAVIZ", [ 
+  { label: "ARTEFATOS DE VISUALIZAÇÃO", run: "window.openvisualizacoes()" },
+  { label: "NARRATIVAS COM INTERAÇÃO", run: "window.opennixd()" },
+  { label: 'COMPONENTES DE DATAVIZ', run: "window.opencpdv()" },
+  { label: 'NARRATIVAS INTERATIVAS COM DATAVIZ', run: "window.opennixddl()" },
+  { label: 'NARRATIVAS COM DADOS', run: "window.openndl()" },
+  { label: 'APRESENTAÇÕES COM DADOS', run: "window.opendatapres()" },
+  { label: 'INFOGRAFIA', run: "window.openinfografia()" },
+  { label: 'INTERFACES PARA DADOS', run: "window.opendataui()" },
+  { label: 'FISICALIZAÇÃO DE DADOS', run: "window.opendataphys()" },
+  { label: "--" },
+  { label: 'PRODUÇÃO EDITORIAL COM VISUALIZAÇÃO NO THE ECONOMIST', run: "window.opentheeconomist()" },
+  { label: 'FERRAMENTAS EM USO', run: "window.opendataviztoolsnetwork()" },
+  { label: "--" },
+  { label: 'DATA DRIVEN DOCUMENTS (D3)', run: "window.opend3()" },
+  { label: "--" },
+  { label: 'O QUE HÁ POR TRÁS DA VISUALIZAÇÃO', run: "window.openportras()" },
+  
+]);
+
+
+window.openintertext = function () {
+  if (!exist("Interactive Textbooks")) {
+    newidoc('https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=130&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1530293118#gid=1530293118&theme=https://slidelines.vercel.app/styles/slidescomnormal.css', 'Interactive Textbooks')
+  }
+  center("Interactive Textbooks");
+}
+window.openintersci = function () {
+  if (!exist("Interactive Science")) {
+    newidoc('https://slidelines.vercel.app/timelineh/?allblocks=true&timeheight=110&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1418026425#gid=1418026425&theme=https://slidelines.vercel.app/level/hypermedia.css', 'Interactive Science')
+  }
+  center("Interactive Science");
+}
+window.openhipertese = function () {
+  if (!exist("Tese em Hipertexto")) {
+    newidoc('https://namco.vercel.app/interfaces/?rom=TESE', 'Tese em Hipertexto')
+  }
+  center("Tese em Hipertexto");
+}
+window.openesctitadin = function () {
+  if (!exist("A escrita dinâmica")) {
+    newidoc('https://www.ranoya.com/pt/publicacoesinterativas/?nomenu=true&temptheme=dctext', 'A escrita dinâmica')
+  }
+  center("A escrita dinâmica");
+}
+window.openpubinterac = function () {
+  if (!exist("Publicações Interativas")) {
+    newidoc('https://visse.vercel.app/v2-interactivefiction/?shadow=_allinteratext&bg=debe34&fg=ffffff&titulo=Livros%20e%20artigos%20cient%C3%ADficos%20interativos', 'Publicações Interativas')
+  }
+  center("Publicações Interativas");
+}
+
+
+registermenu(510, "ESCRITA COM DADOS", [ 
+  { label: "HIPERTEXTO: INTERACTIVE TEXTBOOKS", run: "window.openintertext()" },
+  { label: "HIPERTEXTO: INTERACTIVE SCIENCES", run: "window.openintersci()" },
+  { label: "--" },
+  { label: 'PRIMEIRA TESE EM HIPERTEXTO (1992)', run: "window.openhipertese()" },
+  { label: "--" },
+  { label: 'DASHBOARDS DE PESQUISA', run: "window.opendashs()" },
+  { label: "--" },
+  { label: 'A ESCRITA DINÂMICA', run: "window.openplatpublica()" },
+  { label: "--" },
+  { label: 'PUBLICAÇÕES INTERATIVAS', run: "window.openpubinterac()" }
+  
+]);
+
+window.mvidthegray = function () {
+  if (!exist("Palestra Theo Gray")) {
+    newidoc('https://www.youtube.com/embed/zISy9oC4b94?si=RLFj6QVkQSxdZNKr', 'Palestra Theo Gray')
+  }
+  center("Palestra Theo Gray");
+}
+
+window.mvidmacinfinity = function () {
+  if (!exist("Macintosh + Mathematica")) {
+    newidoc('https://www.youtube.com/embed/3A5moyhfaQo?si=SYu6d9xlKXRP-fO2', 'Macintosh + Mathematica')
+  }
+  center("Macintosh + Mathematica");
+}
+
+window.mvidwolfram = function () {
+  if (!exist("Introduction to Wolfram Notebooks")) {
+    newidoc('https://www.youtube.com/embed/9Tc_FQbDYA4?si=DrY6Q9FseQ8cKmxK', 'Introduction to Wolfram Notebooks')
+  }
+  center("Introduction to Wolfram Notebooks");
+}
+
+window.mvidviz = function () {
+  if (!exist("Problemas de Visualização")) {
+    newidoc('https://www.youtube.com/embed/WXHZkIFFFbk?si=IBMeK1W7k10P-lTU', 'Problemas de Visualização')
+  }
+  center("Problemas de Visualização");
+}
+
+window.mvidbigdata = function () {
+  if (!exist("Tabelas com Bigdata")) {
+    newidoc('https://www.youtube.com/embed/Cz0OvnR_aoY?si=0WjDsxKSGDF0LeW6', 'Tabelas com Bigdata')
+  }
+  center("Tabelas com Bigdata");
+}
+
+window.mvidinterface = function () {
+  if (!exist("Interface ou Visualização?")) {
+    newidoc('https://www.youtube.com/embed/H5-T_S50Sr4?si=VE5Zxm5iGS_j99m0', 'Interface ou Visualização?')
+  }
+  center("Interface ou Visualização?");
+}
+
+window.mvidsheets = function () {
+  if (!exist("Spreadsheet Interface")) {
+    newidoc('https://www.youtube.com/embed/H-zQky0HGhg?si=LlmnotXHsLiWlv-K', 'Spreadsheet Interface')
+  }
+  center("Spreadsheet Interface");
+}
+window.mvidsvg = function () {
+  if (!exist("SVG")) {
+    newidoc('https://www.youtube.com/embed/EZ_mN0gaibQ?si=i5pdxD8yJoCCme4D', 'SVG')
+  }
+  center("SVG");
+}
+
+
+registermenu(651, "VÍDEOS", [ 
+  { label: "PALESTRA DO THEO GRAY", run: "window.mvidthegray()" },
+  { label: "MACINTOSH + MATHEMATICA", run: "window.mvidmacinfinity()" },
+  { label: 'WOLFRAM NOTEBOOKS', run: "window.mvidwolfram()" },
+  { label: 'MYSQL E A ORIGEM DOS PROBLEMAS DE VISUALIZAÇÃO', run: "window.mvidviz()" },
+  { label: 'TABELAS GIGANTES E A ORIGEM DOS PROBLEMAS DE VISUALIZAÇÃO', run: "window.mvidbigdata()" },
+  { label: 'INTERFACE OU VISUALIZAÇÃO?', run: "window.mvidinterface()" },
+  { label: 'SPREADSHEET INTERFACE', run: "window.mvidsheets()" },
+  { label: 'SVG', run: "window.mvidsvg()" }
+  
+]);
+
+
+
+window.mvidlousa = function () {
+  if (!exist("Lousa")) {
+    newidoc('https://www.tldraw.com/f/U4Iogb18xB5LgkXfbPDoW?d=v0.0.1380.845.ogNN7oCscCBHnPuTfXXn-', 'Lousa')
+  }
+  center("Lousa");
+}
+window.mvidlousa = function () {
+  if (!exist("Lousa")) {
+    newidoc('https://www.tldraw.com/f/U4Iogb18xB5LgkXfbPDoW?d=v0.0.1380.845.ogNN7oCscCBHnPuTfXXn-', 'Lousa')
+  }
+  center("Lousa");
+}
+
+registermenu(722, "FERRAMENTAS", [ 
+  { label: "REGEXER", run: "window.openregexer()" },
+  { label: "--" },
+  { label: "SQL FIDDLE", run: "window.openfiddle()" },
+  { label: 'DATASET EXEMPLO PARA SQL QUERY', run: "window.dataset()" },
+  { label: "INSTRUÇÕES DO SQL QUERY", run: "window.notedb()" },
+  { label: 'DATASET EXEMPLO PARA DATAT', run: "window.datatgsdata()" },
+  { label: "INSTRUÇÕES DO SQL QUERY", run: "window.notedatat()" },
+  { label: "--" },
+  { label: "TIPOS DE DADOS", run: "window.tiposdedados()" },
+  { label: "--" },
+  { label: 'NOTEBOOK DE PROGRAMAÇÃO CRIATIVA', run: "window.notebook()" }
+  
+]);
