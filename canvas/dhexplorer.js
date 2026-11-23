@@ -2543,7 +2543,7 @@ let codexatlanticus = function () {
 }
 
 
-supermenubar("DIGITAL HUMANITIES</b>");
+supermenubar("DIGITAL HUMANITIES");
 
 registermenu(30, "DISCIPLINA", [ 
     { label: "* EMENTA PPGDESIGN", run: "" },
