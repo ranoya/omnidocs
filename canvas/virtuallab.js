@@ -22,6 +22,7 @@ window.mapaprojetos = function() {
     connect("Projetos", "Digital Humanities");
     connect("Projetos", "Mídia+Software");
     connect("Projetos", "ART/ANC/ODE");
+    connect("Projetos", "Escrita Dinâmica");
 
 
     lock("Projetos");
@@ -1662,7 +1663,15 @@ window.quadrofuturo = function () {
     }
 
     center("Quadro Futuro do Design");
-    unlock("Quadro Futuro do Design");
+
+}
+
+window.quadrodata = function () {
+    if (!exist("Quadro Cultura de Dados")) {
+      newidoc("https://www.tldraw.com/f/U4Iogb18xB5LgkXfbPDoW?d=v0.0.1420.983.ogNN7oCscCBHnPuTfXXn-", "Quadro Cultura de Dados", 1530, 1050, -5670, -90);
+    }
+  
+    center("Quadro Cultura de Dados");
 }
 
 window.recursos = function () {
@@ -1992,6 +2001,7 @@ registermenu(240, "RECURSOS", [
     { label: "--" },
     { label: "Quadro D+C", run: "window.quadro()" },
     { label: "Quadro Futuro do Design", run: "window.quadrofuturo()" },
+    { label: "Quadro Cultura de Dados", run: "window.quadrodata()" },
     { label: "--" },
     { label: "Coda Playground", run: "window.codaplay()" },
     { label: "--" },
