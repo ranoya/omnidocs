@@ -2526,7 +2526,7 @@ registermenu(722, "FERRAMENTAS", [
   
 ]);
 
-registermenu(810, "CANVAS", [ 
+registermenu(832, "CANVAS", [ 
   { label: "Limpa a tela", run: "removeall()" },
   { label: "LINHA DE COMANDO", run: "devmode()" },
   { label: "Anotações", run: "draw()" },
