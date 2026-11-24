@@ -1,7 +1,7 @@
 ungroovy();
 setTheme("rose pine dawn");
 multicolor();
-setTransparentBackground();
+
 
 //
       //
