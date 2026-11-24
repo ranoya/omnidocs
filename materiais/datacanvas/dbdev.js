@@ -2128,37 +2128,35 @@ window.openlousa = function () {
   }
   center("Lousa");
 }
-
+window.mpensadores = function () {
+  if (!exist("Pensadores")) {
+    newidoc('https://slidelines.vercel.app/timelineh/?&filtra=_full%20_public&inverttopicos=true&startmiddle=true&allblocks=true&pattern=true&allowverticalscroll=true&timeheight=110&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1749315556#gid=1749315556&theme=https://slidelines.vercel.app/styles/pensadoresdc.css', 'Pensadores')
+  }
+  center("Pensadores");
+}
 
 // SUPERMENU
 
 supermenubar("CULTURA DE DADOS");
 
-registermenu(36, "CANVAS", [ 
+
+
+registermenu(26, "MATERIAIS", [ 
   { label: "EMENTA PPGDESIGN", run: "window.ementa()" },
   { label: "BIBLIOGRAFIA", run: "window.openbibliografia()" },
   { label: "--" },
-  { label: "LOUSA", run: "openlousa()" },
   { label: "WORKSHEET", run: "window.mworkshe()" },
-  { label: "--" },
-  { label: "LINHA DE COMANDO", run: "devmode()" },
+  { label: "LOUSA", run: "openlousa()" },
   { label: "--" },
   { label: 'SLIDES DE CULTURA DE DADOS', run: "window.mslides()" },
   { label: 'DADOS SÃO UM PROBLEMA HUMANO', run: "window.mhumanismo()" },
+  { label: 'PENSADORES DE UMA SOCIEDADE DATIFICADA', run: "window.mpensadores()" },
   { label: 'CASO PPGDESIGN', run: "window.mcasoppg()" },
   { label: 'DA PRÁTICA À PESQUISA', run: "window.mdapratica()" },
   { label: 'CIÊNCIA, DESIGN & PROGRAMAÇÃO', run: "window.mcdp()" },
   { label: 'DOCUMENTOS INTEGRADOS E DOCUMENTOS INTELIGENTES', run: "window.mdocsinteligentes()" },
   { label: 'ESTUDO DE CASO PNCA', run: "window.mpnca()" },
   { label: 'DADOS PNCA', run: "window.openpncadata()" },
-  { label: "--" },
-  { label: "Limpa a tela", run: "removeall()" },
-  { label: "Anotações", run: "draw()" },
-  { label: "--" },
-  { label: "ZOOM 100%", run: "setZoom(1)" },
-  { label: "ZOOM 65%", run: "setZoom(.65)" },
-  { label: "ZOOM 50%", run: "setZoom(.5)" },
-  { label: "ZOOM 25%", run: "setZoom(.25)" }
 ]);
 
 registermenu(111, "ARQUEOLOGIA", [ 
@@ -2526,4 +2524,15 @@ registermenu(722, "FERRAMENTAS", [
   { label: "--" },
   { label: 'NOTEBOOK DE PROGRAMAÇÃO CRIATIVA', run: "window.notebook()" }
   
+]);
+
+registermenu(810, "CANVAS", [ 
+  { label: "Limpa a tela", run: "removeall()" },
+  { label: "LINHA DE COMANDO", run: "devmode()" },
+  { label: "Anotações", run: "draw()" },
+  { label: "--" },
+  { label: "ZOOM 100%", run: "setZoom(1)" },
+  { label: "ZOOM 65%", run: "setZoom(.65)" },
+  { label: "ZOOM 50%", run: "setZoom(.5)" },
+  { label: "ZOOM 25%", run: "setZoom(.25)" }
 ]);
