@@ -2096,7 +2096,7 @@ window.mworkshe = function () {
 }
 window.mementa = function () {
   if (!exist("Ementa")) {
-    newidoc('https://visse.vercel.app/v3-ementas/dc.html?theme=dc', 'Ementa')
+    newidoc('https://visse.vercel.app/v3-ementas/dc.html?theme=dc?p=t', 'Ementa')
   }
   center("Ementa");
 }
