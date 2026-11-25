@@ -2162,7 +2162,7 @@ supermenubar("CULTURA DE DADOS");
 
 
 registermenu(26, "MATERIAIS", [ 
-  { label: "EMENTA PPGDESIGN", run: "window.ementa()" },
+  { label: "EMENTA PPGDESIGN", run: "window.mementa()" },
   { label: "BIBLIOGRAFIA", run: "window.openbibliografia()" },
   { label: "--" },
   { label: "WORKSHEET", run: "window.mworkshe()" },
