@@ -375,7 +375,7 @@
         let tema = "chrome";
 
         if (typeof $_GET["dark"] != "undefined" && $_GET["dark"] != null && $_GET["dark"] != "") {
-            tema = "monokai";
+            tema = "monokai&dark=true";
         }
 
         let getcssv = function (v) {
