@@ -1667,6 +1667,27 @@ window.quadrofuturo = function () {
 
 }
 
+window.quadroweb = function () {
+    if (!exist("Webdesign")) {
+        newidoc("https://www.tldraw.com/f/AYCjFayEVhgzvrg6wIVA_?d=v0.0.1403.827.page", "Quadro Webdesign", 1530, 1050, -7440, -90);
+    }
+
+    center("Webdesign");
+
+}
+
+window.quadrodgen = function () {
+    if (!exist("Quadro Design Paramétrico")) {
+       newidoc("https://www.tldraw.com/f/6VJcD6pdyvyMdZ9VmK97S?d=v0.0.1403.827.page", "Quadro Design Paramétrico", 1530, 1050, -9210, -90);
+    }
+
+    center("Quadro Design Paramétrico");
+
+}
+
+
+
+
 window.quadrodata = function () {
     if (!exist("Quadro Cultura de Dados")) {
       newidoc("https://www.tldraw.com/f/U4Iogb18xB5LgkXfbPDoW?d=v0.0.1420.983.ogNN7oCscCBHnPuTfXXn-", "Quadro Cultura de Dados", 1530, 1050, -5670, -90);
@@ -2003,6 +2024,8 @@ registermenu(240, "RECURSOS", [
     { label: "Quadro D+C", run: "window.quadro()" },
     { label: "Quadro Futuro do Design", run: "window.quadrofuturo()" },
     { label: "Quadro Cultura de Dados", run: "window.quadrodata()" },
+    { label: "Quadro Webdesign", run: "window.quadroweb()" },
+    { label: "Quadro Design Paramétrico", run: "window.quadrodgen()" },
     { label: "--" },
     { label: "Coda Playground", run: "window.codaplay()" },
     { label: "--" },
