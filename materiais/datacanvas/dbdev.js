@@ -1,6 +1,7 @@
 ungroovy();
 setTheme("rose pine dawn");
 multicolor();
+inertia();
 
 
 //

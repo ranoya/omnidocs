@@ -3,6 +3,7 @@ setTransparentBackground();
 setZoom(.7);
 singlecolor();
 centerControls();
+inertia();
 
 newframe("https://pointandclick.vercel.app/v1/lista.html?theme=yellow70", "Tabela", 1415, 810, -232, -224);
 newframe("https://pointandclick.vercel.app/v1/sumario.html?theme=yellow70", "Sumário", 800, 600, -185, 1062);

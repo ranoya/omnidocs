@@ -1,6 +1,7 @@
 
 multicolor();
 setTempTheme("rose-pine-dawn");
+inertia();
 
 
 newidoc("https://slidelines.vercel.app/level/?s=0&order=ord&filtra=_full&allowverticalscroll=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=137178476#gid=137178476&theme=https://slidelines.vercel.app/styles/fit.css", "Storytelling", 1314, 686, 930, -373);

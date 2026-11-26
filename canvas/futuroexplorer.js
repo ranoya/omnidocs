@@ -1,6 +1,7 @@
 
 setTempTheme("tokyo night light");
 multicolor();
+inertia();
 
 polaroid("https://omnifolio.vercel.app/omnifiles/computers_Apple2_cgi.png", "Computador Apple II, 1979", "Apple II", 240, 268, 2024, 381);
 

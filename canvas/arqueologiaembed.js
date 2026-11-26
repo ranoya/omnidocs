@@ -4,6 +4,7 @@ setZoom(.35);
 multicolor();
 groovy();
 centerControls();
+inertia();
 
 newframe(
   "https://www.ranoya.com/pt/arqueologia/?nomenu=true&temptheme=cleantext",

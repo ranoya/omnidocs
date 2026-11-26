@@ -1,5 +1,6 @@
 setTheme("rose pine down");
 multicolor();
+inertia();
 
 window.mapaprojetos = function() {
     if (!exist("Projetos")) {

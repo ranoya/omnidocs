@@ -1,5 +1,6 @@
 multicolor();
 setTempTheme("Rose Pine Moon");
+inertia();
 
 svg(`
     

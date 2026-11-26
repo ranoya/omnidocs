@@ -3,6 +3,7 @@ setTransparentBackground();
 centerControls();
 setTempTheme("light");
 multicolor();
+inertia();
 
 
 newidoc("https://www.ranoya.com/pt/textos/documentos.php?id=T010&temptheme=cleantext&nomenu=true&contentonly=true", "DocInterfaces", 1075, 795, 798, 243);

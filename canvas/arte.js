@@ -2,6 +2,8 @@ setTempTheme("light");
 multicolor();
 groovy();
 centerControls();
+inertia();
+
 svg(`https://omnidocs.vercel.app/canvas/postit1980.svg`, "Postit 1980", 399, 254, 317, 1100);
 
 lock("Postit 1980");

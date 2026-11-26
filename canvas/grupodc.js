@@ -1,5 +1,6 @@
 setTheme("light");
 multicolor();
+inertia();
 
 window.mapaprojetos = function() {
     if (!exist("Projetos")) {
