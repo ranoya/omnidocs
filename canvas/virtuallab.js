@@ -2020,6 +2020,10 @@ registermenu(330, "CODE", [
     { label: "Omnicode", run: "omnicode()" },
     { label: "Editor de Código Integrado", run: "code()"},
     { label: "Contextos antigos", run: "legacy()" },
+    { label: "--" },
+    { label: "Dicionário HTML", run: "dicionariohtml()" },
+    { label: "Dicionário CSS", run: "dicionariocss()" }, 
+    { label: "Exemplos", run: "exemplos()" }
 ]);
 
 registermenu(390, "CANVAS", [
@@ -2988,7 +2992,23 @@ transform-origin: center center;
   
 }
 
+window.dicionariohtml = function () {
+  if (!exist("Dicionário HTML")) {
+    newidoc(`https://omnidocs.vercel.app/glossario/web.html?filtra=_html&titulo=Dicionário%20HTML&bg=${getcssv("--accent")}&fg=${getcssv("--bg")}`, "Dicionário HTML", 660, 810, -180, 1800);
+  }
 
+  connect("Dicionário CSS", "Dicionário HTML");
+  center("Dicionário HTML");
+}
+
+window.dicionariocss = function () {
+  if (!exist("Dicionário CSS")) {
+    newidoc(`https://omnidocs.vercel.app/glossario/web.html?filtra=_css&titulo=Dicionário%20CSS&bg=${getcssv("--accent")}&fg=${getcssv("--bg")}`, "Dicionário CSS", 660, 810, 810, 1800);
+  }
+
+  connect("Dicionário CSS", "Dicionário HTML");
+  center("Dicionário CSS");
+}
 
 window.lpjd = function () {
   
