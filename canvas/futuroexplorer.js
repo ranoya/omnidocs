@@ -693,7 +693,7 @@ registermenu(120, "ARTEFATOS", [
     { label: "COMPUTAÇÃO PESSOAL", run: "mcomppessoal()" },
     { label: "COMPUTAÇÃO ÍNTIMA", run: "mcompint()" },
     { label: "COMPUTAÇÃO EDUCACIONAL", run: "mcompedu()" },
-    { label: "PROGRAMAÇÃO", run: "mprogs()" },
+    { label: "PROGRAMAÇÃO", run: "mcprogs()" },
     { label: "COMPUTAÇÃO CORPORATIVA", run: "mcompcorp()" },
     { label: "MÍDIA E COMUNICAÇÃO DIGITAL", run: "mcomm()" },
     { label: "--" },
