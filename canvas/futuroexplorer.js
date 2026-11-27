@@ -3,6 +3,12 @@ setTempTheme("tokyo night light");
 multicolor();
 inertia();
 
+polaroid("https://omnifolio.vercel.app/omnifiles/creativecomputing_1982_art2.jpeg", "Revista Creative Computing, 1982", "Creative Computing", 360, 334, 3135, 175);
+
+polaroid("https://omnifolio.vercel.app/omnifiles/spacewar-1-original.png", "Space War! MIT, 1961.", "SpaceWar", 505, 349, 845, 3278);
+
+
+
 polaroid("https://omnifolio.vercel.app/omnifiles/computers_Apple2_cgi.png", "Computador Apple II, 1979", "Apple II", 240, 268, 2024, 381);
 
 
@@ -71,7 +77,7 @@ polaroid("https://miro.medium.com/v2/resize:fit:1200/1*pyZZfYyGUDiJNzeWLDmE7g.jp
 
 newidoc("https://apple2ts.com/?appmode=embed&crtdistort=off&color=amber&scanlines=on&ghosting=off&text=TO%20MAGIC%20%3ASTART%20%3AANGLE%20%3AINC%20%3AN%0AFORWARD%20%3ASTART%20RIGHT%20%3AANGLE%0AIF%20%3AN%20%3D%200%20%5BSTOP%5D%0AMAGIC%20%3ASTART%20%2B%20%3AINC%20%3AANGLE%20%3AINC%20%3AN%20-%201%0AEND%0A%0APRINT%20[Digite%20MAGIC%205%20135%203%2040]%0A#https://namco.vercel.app/a2/disk/Apple_LOGO.dsk", "Apple II Logo", 341, 279, 1616, 1064);
 
-polaroid("https://f.i.uol.com.br/folha/ciencia/images/16216898.jpeg", "Seymour Papert, co-criador da linguagem Logo em 1967", "Papert", 238, 329, 1267, 746);
+polaroid("https://omnifolio.vercel.app/omnifiles/SeymourPapert.jpg", "Seymour Papert, co-criador da linguagem Logo em 1967", "Papert", 238, 329, 1267, 746);
 polaroid("https://upload.wikimedia.org/wikipedia/commons/9/9d/Wally_Feurzig.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original", "Wally Feurzeig, co-criador da linguagem Logo em 1967", "Feurzeig", 249, 330, 1773, 749);
 polaroid("https://www.exploratorium.edu/sites/default/files/styles/scale_image_500x600/public/people/cynthia_solomon_600.jpg.webp?itok=0brGRBpl", "Cynthia Solomon, co-criadora da linguagem Logo em 1967", "Solomon", 258, 363, 1509, 724);
 
@@ -402,6 +408,7 @@ window.prjnarrativas = function () {
     center("Narrativas Interativas");
 }
 
+connect("SpaceWar", "Dungeon");
 connect("Dungeon", "Rede Plato");
 connect("Apple II Logo", "Plato V");
 connect("Inteligent Graphics", "Apple II Logo");
@@ -644,6 +651,12 @@ window.mcomppessoal = function () {
 window.mcompcorp = function () {
     togglecomputers('computação corporativa');
 }
+window.mcprogs = function () {
+    togglecomputers('programadores');
+}
+window.mcomm = function () {
+    togglecomputers('comunicação');
+}
 window.mcompedu = function () {
     togglecomputers('computação educacional');
 }
@@ -680,7 +693,9 @@ registermenu(120, "ARTEFATOS", [
     { label: "COMPUTAÇÃO PESSOAL", run: "mcomppessoal()" },
     { label: "COMPUTAÇÃO ÍNTIMA", run: "mcompint()" },
     { label: "COMPUTAÇÃO EDUCACIONAL", run: "mcompedu()" },
+    { label: "PROGRAMAÇÃO", run: "mprogs()" },
     { label: "COMPUTAÇÃO CORPORATIVA", run: "mcompcorp()" },
+    { label: "MÍDIA E COMUNICAÇÃO DIGITAL", run: "mcomm()" },
     { label: "--" },
     { label: "INOVAÇÃO", run: "mcompinova()" },
     { label: "--" },

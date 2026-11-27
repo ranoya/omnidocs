@@ -2106,11 +2106,28 @@ window.mpnca = function () {
   center("Estudo de Caso PNCA");
 }
 window.openlousa = function () {
+  if (!exist("Lousa Digital")) {
+    remove("Lousa Digital");
+  }
   if (!exist("Lousa")) {
     newidoc('https://www.tldraw.com/f/U4Iogb18xB5LgkXfbPDoW?d=v0.0.1380.845.ogNN7oCscCBHnPuTfXXn-', 'Lousa')
   }
   center("Lousa");
 }
+
+window.lousa50 = function () {
+    if (!exist("Lousa")) {
+      remove("Lousa");
+    }
+    if (!exist("Lousa Digital")) {
+        newidoc("https://www.tldraw.com/f/U4Iogb18xB5LgkXfbPDoW?d=v0.0.1380.845.ogNN7oCscCBHnPuTfXXn-", "Lousa Digital", 1326, 765, -2251, -1059);
+    }
+    widget("Lousa Digital");
+    setPosition("Lousa Digital", "45%", "95%", "51%", "4%");
+    lock("Lousa Digital");
+}
+
+
 window.mpensadores = function () {
   if (!exist("Pensadores")) {
     newidoc('https://slidelines.vercel.app/timelineh/?&filtra=_full%20_public&inverttopicos=true&startmiddle=true&allblocks=true&pattern=true&allowverticalscroll=true&timeheight=110&followbg=true&file=https://docs.google.com/spreadsheets/d/1Hja-7ozKTpcfhVX9sc3FkDH-NLj_RXllFIDTO8EIFV0/edit?gid=1749315556#gid=1749315556&theme=https://slidelines.vercel.app/styles/pensadoresdc.css', 'Pensadores')
@@ -2130,6 +2147,7 @@ registermenu(26, "MATERIAIS", [
   { label: "--" },
   { label: "WORKSHEET", run: "window.mworkshe()" },
   { label: "LOUSA", run: "openlousa()" },
+  { label: "LOUSA EM PRIMEIRO PLANO", run: "lousa50()" },
   { label: "--" },
   { label: 'SLIDES DE CULTURA DE DADOS', run: "window.mslides()" },
   { label: 'DADOS SÃO UM PROBLEMA HUMANO', run: "window.mhumanismo()" },
@@ -2479,20 +2497,6 @@ registermenu(651, "VÍDEOS", [
   
 ]);
 
-
-
-window.mvidlousa = function () {
-  if (!exist("Lousa")) {
-    newidoc('https://www.tldraw.com/f/U4Iogb18xB5LgkXfbPDoW?d=v0.0.1380.845.ogNN7oCscCBHnPuTfXXn-', 'Lousa')
-  }
-  center("Lousa");
-}
-window.mvidlousa = function () {
-  if (!exist("Lousa")) {
-    newidoc('https://www.tldraw.com/f/U4Iogb18xB5LgkXfbPDoW?d=v0.0.1380.845.ogNN7oCscCBHnPuTfXXn-', 'Lousa')
-  }
-  center("Lousa");
-}
 
 registermenu(722, "FERRAMENTAS", [ 
   { label: "REGEXER", run: "window.openregexer()" },
