@@ -394,12 +394,14 @@ window.togglecomputers = function (f) {
 
 window.prjnarrativas = function () {
     if (!exist("Narrativas Interativas")) {
-        svg("https://visse.vercel.app/assets/covers/NarrativasInterativas.svg", "Narrativas Interativas", 960, 600, 300, 3150);
+        svg("https://visse.vercel.app/assets/covers/NarrativasInterativas.svg", "Narrativas Interativas", 960, 600, 300, 2550);
     }
     
     if (!exist("Projeto Narrativas Interativas")) {
-        newidoc("https://www.ranoya.com/pt/storytelling/?temptheme=cleantext&nomenu=true", "Projeto Narrativas Interativas", 960, 1230, -993, 2835);
+        newidoc("https://www.ranoya.com/pt/storytelling/?temptheme=cleantext&nomenu=true", "Projeto Narrativas Interativas", 960, 1230, -993, 2235);
     }
+
+
 
     connect("Narrativas Interativas", "Dungeon");
     connect("Projeto Narrativas Interativas", "Narrativas Interativas");
